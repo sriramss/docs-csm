@@ -189,7 +189,11 @@ username=''
 password=''
 for bmc in $(grep -Eo ncn-.*-mgmt /var/lib/misc/dnsmasq.leases | grep s | sort); do
     echo ipmitool -I lanplus -U $username -P $password -H $bmc chassis bootdev pxe options=efiboot
-    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power on 2>/dev/null || echo ipmitool -I lanplus -U $username -P $password -H $bmc chassis power reset"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power off"
+    echo "sleep 5"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power status"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power on"
+    echo ""
 done
 ```
 
@@ -217,7 +221,11 @@ username=''
 password=''
 for bmc in $(grep -Eo ncn-.*-mgmt /var/lib/misc/dnsmasq.leases | grep -v s | sort); do
     echo ipmitool -I lanplus -U $username -P $password -H $bmc chassis bootdev pxe options=efiboot
-    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power on 2>/dev/null || echo ipmitool -I lanplus -U $username -P $password -H $bmc chassis power reset"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power off"
+    echo "sleep 5"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power status"
+    echo "ipmitool -I lanplus -U $username -P $password -H $bmc chassis power on"
+    echo ""
 done
 ```
 
