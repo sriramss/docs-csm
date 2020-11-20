@@ -1,3 +1,18 @@
+# CRAY System Management - Guides and References
+
+This repository serves to provides coherent guides for installing or upgrading a CRAY system across all its various node-types and states.
+
+Specifically this covers:
+- Cray Pre-Install Toolkit (LiveCD)
+- Non-Compute Nodes
+- Compute Nodes
+- User Access Nodes
+
+Beyond node types, you can also find technical information. See [chapters](002-CHAPTERS.md) for more information.
+
+## Chapters TODO
+# Move chapter doc into this section for less clicking
+
 # Non Compute Nodes (NCN)
 
 This space covers everything non-compute node, from admin guides for deployments and upgrades
