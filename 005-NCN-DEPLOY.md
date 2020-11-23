@@ -127,7 +127,7 @@ pit:~ # ls -l /var/www
 
 This step will ensure your NCNs follow 1.4 protocol for bootorder.
 
-> For more information about NCN boot order check [101-BOOTING](101-BOOTING.md)
+> For more information about NCN boot order check [101-BOOTING](101-NCN-BOOTING.md)
 
 
 Set each node to always UEFI Network Boot
