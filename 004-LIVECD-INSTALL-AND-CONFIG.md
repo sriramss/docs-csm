@@ -129,4 +129,4 @@ You should be able to resolve outside services like arti.dev.cray.com.
 ping arti.dev.cray.com
 ```
 
-Now you can start **Booting NCNs** [007-LIVECD-NCN-BOOTS.md](007-LIVECD-NCN-BOOTS.md)
+Now you can start **Booting NCNs** [NCN Deploy](005-NCN-DEPLOY.md)

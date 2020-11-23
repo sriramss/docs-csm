@@ -1,7 +1,7 @@
 # LiveCD NCN Boots
 
 Before starting this you are expected to have networking and services setup.
-If you are unsure, see the bottom of [006-LIVECD-SETUP.md](006-LIVECD-SETUP.md).
+If you are unsure, see the bottom of [LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md).
 
 ### IMPORTANT : NCN Power State & DHCP
 
@@ -127,7 +127,7 @@ pit:~ # ls -l /var/www
 
 This step will ensure your NCNs follow 1.4 protocol for bootorder.
 
-> For more information about NCN boot order check [101-BOOTING](101-BOOTING.md)
+> For more information about NCN boot order check [101-BOOTING](101-NCN-BOOTING.md)
 
 
 Set each node to always UEFI Network Boot
@@ -317,4 +317,4 @@ weave-net-schwt                    2/2     Running   0          2m39s
 weave-net-vwqbt                    2/2     Running   0          2m35s
 ```
 
-Now you can start **Installing platform services** [008-PLATFORM-INSTALL.md](008-PLATFORM-INSTALL.md)
+Now you can start **Installing platform services** [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md)

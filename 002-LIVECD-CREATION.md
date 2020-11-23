@@ -10,7 +10,7 @@ Before starting, you should have:
    - The block device should be `>=256GB`
 2. The drive letter of that device (i.e. `/dev/sdd`)
 3. If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001
-   - See [012-MOVE-SITE-CONNECTIONS.md](012-MOVE-SITE-CONNECTIONS.md).
+   - See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md).
 4. Access to stash, to `git clone https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git` onto your NCN.
 5. `csi` installed (get the [latest built rpm](http://car.dev.cray.com/artifactory/shasta-premium/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/)
 
@@ -553,4 +553,4 @@ for i in m002 m003 w001 w002 w003 s001 s002 s003;do ipmitool -I lanplus -U $user
 ```
 
 ## Manual Step 8 : Boot into your LiveCD.
-Now you can boot into your LiveCD [005-LIVECD-BOOTS.md](005-LIVECD-BOOTS.md)
+Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)

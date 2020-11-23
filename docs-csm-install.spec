@@ -1,5 +1,6 @@
 # Copyright 2020 Cray Inc. All Rights Reserved.
-Name: metal-docs-ncn
+Name: docs-csm-install
+Provides: metal-docs-ncn
 License: Cray Proprietary
 Summary: Documentation for Non-Compute Nodes on a Metal Cluster
 BuildArchitectures: noarch

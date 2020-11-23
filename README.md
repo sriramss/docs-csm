@@ -1,44 +1,14 @@
-# Non Compute Nodes (NCN)
+# CRAY System Management - Guides and References
 
-This space covers everything non-compute node, from admin guides for deployments and upgrades
-to overview/educational background information.
+This repository serves to provides coherent guides for installing or upgrading a CRAY system across all its various node-types and states.
 
-## Deployment Guides (LiveCD)
+Specifically this covers:
+- Cray Pre-Install Toolkit (LiveCD)
+- Non-Compute Nodes
+- Compute Nodes
+- User Access Nodes
 
-> If this topic is relevant to you, be sure to revisit this space for
-> updates.
-
-For **new users** of the liveCD on a Shasta metal cluster, start here:
-
-* [LiveCD Preflight](004-LIVECD-PREFLIGHT.md)
-* [LiveCD Boots](005-LIVECD-BOOTS.md)
-* [LiveCD Setup](006-LIVECD-SETUP.md)
-* [LiveCD NCN Boots](007-LIVECD-NCN-BOOTS.md)
-
-For **virtual** users, go [here](https://connect.us.cray.com/confluence/display/MTL/Shasta+Pre-install+Toolkit+Image%3A+Building+and+Booting) for assistance testing.
-
-## 1.3 Upgrade & Rollback Guides
-
-For guidance collecting information to embark on a 1.4 upgrade, see here:
-* Coming soon...
-
-For guidance on rolling back to the previous 1.3 install, see here:
-* [LiveCD 1.3 Rollback](003-LIVECD-1.3-ROLLBACK.md)
-
-## Packages in use
-
-In MTL-1163, we're trying to track down what packages were in use in 1.3.  The goal is to get a defined list of packages we need installed and their specific version so we can ship only what we need.  This file has everything from 1.3 that was discovered and a list of what we install in 1.4 (under the ## livecd heading).
-
-* [Package list](200-PACKAGES.md)
-
-## 1.4+ Upgrade Guides
-
-> TODO
-
-## NCN Architecture
-
-* [Images](100-IMAGES.md)
-* [Booting](101-BOOTING.md)
-* [Firmware](102-FIRMWARE.md)
-* [Networking](103-NETWORKING.md)
-* [Partitioning](104-PARTITIONING.md)
+Beyond node types, you can also find technical information, see the following for navigating and contributing 
+to this guidebook:
+- [000-INFO.md](000-INFO.md) Contribution and rules
+- [001-GUIDES,md](001-GUIDES.md) Lay of the land; where information is by chapter
