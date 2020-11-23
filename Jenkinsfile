@@ -1,6 +1,6 @@
 @Library("dst-shared@master") _
 rpmBuild (
-    specfile : "metal-docs-ncn.spec",
+    specfile : "docs-csm-install.spec",
     product : "csm",
     target_node : "ncn",
     fanout_params: ["sle15sp2"],
