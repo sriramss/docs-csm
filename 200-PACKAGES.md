@@ -1,3 +1,7 @@
+# Out of date
+
+> This was construced for NCNs in shasta-1.3 and does not reflect current 1.4 NCN images.
+
 ## sles_default_packages:
   - autoyast2
   - autoyast2-installation

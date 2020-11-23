@@ -36,7 +36,7 @@ If you observe the entire boot, you will see an integrity check occur before Lin
 Once the system boots, you will need to create a **new** password for the root account.  The initial password is empty for the root user.  After you hit return, it will prompt you to change the password.  
 We are setting the root password on 1.4 system to `!nitial0` to be consistent.
 
-(for information on _recovery_, see [010-LIVECD-RECOVERY.md](010-LIVECD-RECOVERY.md).
+(for information on _recovery_, see [LiveCD Troubleshooting](020-LIVECD-TROUBLESHOOTING.md)
 
 After logging in, have your network information handy so you can populate it in the next steps.  This is the information in qnd-1.4.sh.  You will source this file in the next page of steps.
 - IP and netmask for your external connection(s).
@@ -44,5 +44,5 @@ After logging in, have your network information handy so you can populate it in 
 - The CAN IP/CIDR (ex: `can_cidr=10.102.4.110/24`)
 
 Then you can move onto these next two pages:
-1. Setting up communication...[006-LIVECD-SETUP.md](006-LIVECD-SETUP.md)
-2. Booting NCNs [007-LIVECD-NCN-BOOTS.md](007-LIVECD-NCN-BOOTS.md)
+1. Setting up communication...[LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md))
+2. Booting NCNs [NCN Deploy](005-NCN-DEPLOY.md)
