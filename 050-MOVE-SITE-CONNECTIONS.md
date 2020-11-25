@@ -1,7 +1,7 @@
 # Move Site Connections 
 
 In 1.4, the site connections that were previously connection to ncn-w001 will be moved to ncn-m001.  This page will go over the process to make that change.
-
+> Note: In shasta-1.4, any number of managers may have external connections, pre-1.4 was strictly w001(a.k.a. sms01).
 1. Make request to DCHW to move the BMC/Host Connections and attach a USB to m001.
 
    Make sure ncn-w001 is up and accessible via the NMN from ncn-m001.
