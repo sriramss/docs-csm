@@ -85,6 +85,12 @@ To refresh your liveCD's packages for this guide, you must have an internet conn
 to the CRAY repositories -or- have obtained the package and served it from local-disk or
 reachable internal endpoint.
 
+Use the built-in alias:
+```bash
+pit:~ # refme
+```
+
+On the other hand you can use this command, and tailor it to your use:
 ```bash
 zypper \
   --no-gpg-checks \
