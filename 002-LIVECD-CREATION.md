@@ -16,16 +16,16 @@ Before starting, you should have:
 
 ### Steps:
 
-> These steps will be automated. CASM/MTL is automating this process  with the cray-site-init tool.
+> NOTE: These steps will be automated. CASM/MTL is automating this process  with the cray-site-init tool.
 
-1. Install `csi`
-2. Setup ENV vars for use with `csi`
-3. Create the USB Stick
-4. Gather the required input files
-5. Generate the configuration payload
-6. Download the artifacts for PXE booting
-7. Shutdown NCNs
-8. Boot into the LiveCD
+1. [Install `csi`](#manual-step-1-install-csi)
+2. [Setup ENV vars for use with `csi`](#manual-step-2-setup-csi)
+3. [Create the Bootable Media](#manual-step-3-create-the-bootable-media)
+4. [Gather and Create Seed Files](#manual-step-4-gather--create-seed-files)
+5. [Generate the Configuration Payload](#manual-step-5-configuration-payload)
+6. [Generate the Data Payload](#manual-step-6-data-payload)
+7. [Shutdown NCNs](#manual-step-7--shutdown-ncns)
+8. [Boot into the LiveCD](#manual-step-8--boot-into-your-livecd)
 
 ## Manual Step 1: Install `csi`
 
