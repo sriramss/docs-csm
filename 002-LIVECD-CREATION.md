@@ -38,17 +38,6 @@ zypper --no-gpg-checks --plus-repo http://dst.us.cray.com/dstrepo/shasta-cd-repo
 > NOTE: Alternatively, you can find the RPM in this repository and install it with the `rpm` command.
 > http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn
 
-##### MacOS
-
-> NOTE: You must have Go-lang installed. For help, lookup advice for installing Go & GoEnv.
-
-```bash
-macos:~ $ git clone https://stash.us.cray.com/scm/mtl/cray-site-init.git
-macos:~ $ cd cray-site-init
-macos:~ $ go build -o bin/csi ./main.go
-macos:~ $ bin/csi --help
-```
-
 ## Manual Step 2: Setup `csi`
 
 Create a file with a bunch of environmental variables in it.  These are example values, but set these to what you need for your system:
@@ -63,9 +52,9 @@ vim vars.sh
 #!/bin/bash
 # These vars will likely stay the same unless there are development changes
 export PIT_DISK_LABEL=/dev/disk/by-label/PITDATA
-export PIT_ISO_NAME=cray-pre-install-toolkit-latest.iso # TODO: Remove duplicate? This can be resolved by the URL.:w
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
 export PIT_ISO_URL=http://car.dev.cray.com/artifactory/internal/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
+export PIT_ISO_NAME=$(basename $PIT_ISO_URL)
 
 # These are the artifacts you want to be used to boot with
 export PIT_WRITE_SCRIPT=/root/cray-pre-install-toolkit/scripts/write-livecd.sh
@@ -113,6 +102,8 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
     # Make the USB.
     csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000 
     ```
+   
+   > Note: If this fails to find the creation script then [CASMINST-285](https://connect.us.cray.com/jira/browse/CASMINST-285) may be present. Regardless, you can specify the script with `-w` if you've cloned it manually with `git clone $PIT_REPO_URL`.
 
 2. Mount data partition:
 
@@ -122,18 +113,25 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
 
     Now that your disk is setup and the data partition is mounted, you can begin gathering info and configs and populating it to the USB disk so it's available when you boot into the livecd.
 
-3. Copy your vars file to the data partition
+3. Make the config and data directories, and a prep directory for our manual files:
+    ```bash
+   mkdir -pv /mnt/configs /mnt/data /mnt/prep
+   ```
+
+4. Copy your vars file to the data partition
 
     ```bash
-    cp vars.sh /mnt/
+    cp vars.sh /mnt/prep/
     ```
+
+> Note: We will unmount this device at the end of this page. For now, leave it mounted.
 
 ## Manual Step 4: Gather / Create Seed Files
 
 This is the set of files that you will currently need to create or find to generate the config payload for the system
 
   1. `ncn_metadata.csv` (NCN configuration)
-  2. `hmn_connections.json` (RedFish configurtation)
+  2. `hmn_connections.json` (RedFish configuration)
   3. `qnd-1.4.sh` (LiveCD configuration - shasta-1.4 shim for automation)
 
 file (see below) to configure the LiveCD node.
@@ -166,31 +164,43 @@ export system_name=sif
 Copy this file to the mounted data partition.
 
 ```bash
-linux:~ $ cp qnd-1.4.sh /mnt
+linux:~ # cp qnd-1.4.sh /mnt/prep/
 ```
 
 #### ncn_metadata.csv
 
 See [NCN Metadata BMC](301-NCN-METADATA-BMC.md) and [NCN Metadata BONDX](302-NCN-METADATA-BONDX.md) for information on creating this file.
 
+When you have this file, add it into the prep directory:
+
+```bash
+linux:~ # cp ncn_metadata.csv /mnt/prep/
+```
+
 #### hmn_connections.json
 
 - TODO: Move this section into 300-350 service guides.
 - TODO: Give context for xlsx file instead of surprising user with new dependency.
 
-Make sure you have an up-to-date hmn_connections.json (i.e. one generated from the lastest CID for the system).
+This file should come from the [shasta_system_configs](https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse) repository. 
+Each system has its own directory in the repository. If this is a new system that doesn't yet have the `hmn_connections.json` file,
+ then one will need to be generated from the CCD/SHCD (Cabling Diagram) for the system.
+ 
+If you do not have this file you can use Docker to generate a new one.
 
-This file should come from the shasta_system_configs repository at https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse. Each system has its own directory in the repository. If this is a new system that doesn't yet have the hmn_connections.json file then one will need to be generated from the CID for the system.
+If you need to fetch the cabling diagram, you can use CrayAD logins to fetch it from [SharePoint](http://inside.us.cray.com/depts/CustomerService/CID/Install%20Documents/Forms/AllItems.aspx?RootFolder=%2Fdepts%2FCustomerService%2FCID%2FInstall%20Documents%2FCray%2FShasta%20River&FolderCTID=0x012000C5B40D5925B4534FA7D60FAF1F12BAE9&View={79A8C99F-11EB-44B8-B1A6-02D02755BFC4}).
+
+> NOTE: Docker is available on 1.3 systems if you're making the LiveCD from there. Otherwise, you can install this through zypper or find out how through [Docker's documentation](https://docs.docker.com/desktop/)
 
 ```bash
 # Replace `${shcd_path}` with the absolute path to the latest CID for the system.
-mypc:~ $ docker run --rm -it --name hms-shcd-parser -v  ${shcd_path}:/input/shcd_file.xlsx -v $(pwd):/output dtr.dev.cray.com/cray/hms-shcd-parser:latest
+linux:~ # docker run --rm -it --name hms-shcd-parser -v  ${shcd_path}:/input/shcd_file.xlsx -v $(pwd):/output dtr.dev.cray.com/cray/hms-shcd-parser:latest
 ```
 
 Your files should appear in a `./output` directory, relative to where you ran the `docker` command. These files should be copied into the LiveCD:
 
 ```bash
-# TODO: Copy generated items into /mnt
+linux:~ # cp -r output/* /mnt/prep/
 ```
 
 ## Manual Step 5: Configuration Payload
@@ -419,7 +429,7 @@ The configuration payload comes from the `csi config init` command anywhere.
         - For HMN.conf, make sure the range specified in the `domain` line INCLUDES the ncn-XXXX-mgmt IPs that are fixed in statics.conf.
 
         ```bash
-        sif-ncn-m001-pit:/etc/dnsmasq.d # grep mgmt statics.conf
+        pit:~ /etc/dnsmasq.d # grep mgmt statics.conf
         dhcp-host=94:40:c9:37:67:72,10.254.1.5,ncn-s003-mgmt,infinite #HMN
         dhcp-host=94:40:c9:37:77:da,10.254.1.7,ncn-s002-mgmt,infinite #HMN
         dhcp-host=94:40:c9:37:77:14,10.254.1.9,ncn-s001-mgmt,infinite #HMN
@@ -479,7 +489,7 @@ The configuration payload comes from the `csi config init` command anywhere.
 4. Validate `data.json` to sanitize any human-error:
 
     ```bash
-    cat ${system_name}/data.son | jq
+    cat ${system_name}/data.json | jq
     ```
 
     If you do not see an error message, the format is valid.
@@ -487,8 +497,7 @@ The configuration payload comes from the `csi config init` command anywhere.
 5. Copy these files to the mounted data partition:
 
     ```bash
-    cp -r ${system_name} /mnt
-    mkdir /mnt/configs 
+    cp -r ${system_name} /mnt/prep/
     cp ${system_name}/data.json /mnt/configs
     ```
     
@@ -496,17 +505,20 @@ The configuration payload comes from the `csi config init` command anywhere.
 
 We'll use the previously defined URLs in `vars.sh` to fetch our data payload.
 
-> NOTE:  When running on a system that has 1.3 installed, you may hit a collision with an ip rule that prevents access to arti.dev.cray.com.   If you cannot ping that name, try removing this ip rule:
+> NOTE:  When running on a system that has 1.3 installed, you may hit a collision with an ip rule that prevents access to arti.dev.cray.com.  If you cannot ping that name, try removing this ip rule:
     `ip rule del from all to 10.100.0.0/17 lookup rt_smnet`
 
 This will fetch to your bootable USB:
 
 ```bash
 # If you didn't earlier:
-linux:~ # source vars.sh
+linux:~ # source /mnt/prep/vars.sh
 
 # Then download the artifacts:
 linux:~ # csi pit get
+
+# Check what downloaded:
+linux:~ # ls -lR /mnt/data/
 ```
 
 Now, unmount the bootable USB.
