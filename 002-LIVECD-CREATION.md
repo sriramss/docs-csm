@@ -1,6 +1,6 @@
 # LiveCD Setup
 
-This page will assist you with configuring the LiveCD, a.k.a. Shasta Pre-Install Toolkit.
+This page will assist you with configuring the LiveCD, a.k.a. CRAY Pre-Install Toolkit.
 
 ### Requirements:
 
@@ -11,8 +11,8 @@ Before starting, you should have:
 2. The drive letter of that device (i.e. `/dev/sdd`)
 3. If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001
    - See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md).
-4. Access to stash, to `git clone https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git` onto your NCN.
-5. `csi` installed (get the [latest built rpm](http://car.dev.cray.com/artifactory/shasta-premium/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/)
+4. Access to stash/bitbucket
+5. `csi` installed (get the [latest built rpm](http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn/))
 
 ### Steps:
 
@@ -29,18 +29,31 @@ Before starting, you should have:
 
 ## Manual Step 1: Install `csi`
 
-You'll most likely want to grab whatever is the latest version:
+##### OpenSuSE / SLES
 
 ```bash
-# This won't work for copy/paste--adjust the rpm name
-zypper in http://car.dev.cray.com/artifactory/shasta-premium/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-site-init-*.rpm
-# If nexus isn't working or the pod is gone, you can also install with the rpm command:
-rpm -Uhv http://car.dev.cray.com/artifactory/shasta-premium/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-site-init-*.rpm
+zypper --no-gpg-checks --plus-repo http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn/ -n in cray-site-init
 ```
 
-## Manual Step 2: Create ENV vars for use with `csi`
+> NOTE: Alternatively, you can find the RPM in this repository and install it with the `rpm` command.
+> http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn
+
+##### MacOS
+
+> NOTE: You must have Go-lang installed. For help, lookup advice for installing Go & GoEnv.
+
+```bash
+macos:~ $ git clone https://stash.us.cray.com/scm/mtl/cray-site-init.git
+macos:~ $ cd cray-site-init
+macos:~ $ go build -o bin/csi ./main.go
+macos:~ $ bin/csi --help
+```
+
+## Manual Step 2: Setup `csi`
 
 Create a file with a bunch of environmental variables in it.  These are example values, but set these to what you need for your system:
+
+For fetching image information, see [NCN Images](100-NCN-IMAGES.md).
 
 ```bash
 vim vars.sh
@@ -50,29 +63,26 @@ vim vars.sh
 #!/bin/bash
 # These vars will likely stay the same unless there are development changes
 export PIT_DISK_LABEL=/dev/disk/by-label/PITDATA
-export PIT_ISO_NAME=cray-pre-install-toolkit-latest.iso
+export PIT_ISO_NAME=cray-pre-install-toolkit-latest.iso # TODO: Remove duplicate? This can be resolved by the URL.:w
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
 export PIT_ISO_URL=http://car.dev.cray.com/artifactory/internal/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
 
-# These will likely need to be modified
 # These are the artifacts you want to be used to boot with
 export PIT_WRITE_SCRIPT=/root/cray-pre-install-toolkit/scripts/write-livecd.sh
 export PIT_DATA_DIR=/mnt/data
 export PIT_CEPH_DIR=/mnt/data/ceph
 export PIT_K8S_DIR=/mnt/data/k8s
-export PIT_INITRD_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/sles15-base/0.0.1-5/initrd.img-0.0.1-5.xz
-export PIT_KERNEL_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/sles15-base/0.0.1-5/5.3.18-24.24-default-0.0.1-5.kernel
-export PIT_MANAGER_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/kubernetes/0.0.1-11/kubernetes-0.0.1-11.squashfs
-export PIT_STORAGE_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/storage-ceph/0.0.1-12/storage-ceph-0.0.1-12.squashfs
-# Note: Choose a different suffix for each of the URLs.  For example, your suffix may look something like `b020b06-1601944128692`.
 
-# You can find the available builds here:
-# - kubernetes image:  http://arti.dev.cray.com:80/artifactory/node-images-unstable-local/shasta/kubernetes
-# - ceph image:  http://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/storage-ceph
-# - base image:  http://arti.dev.cray.com:80/artifactory/node-images-unstable-local/shasta/sles15-base
+# THESE WILL LIKELY NEED TO BE MODIFIED!
+# Latest stable base.
+export PIT_INITRD_URL=https://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/non-compute-common/0.0.4/initrd.img-0.0.4.xz
+export PIT_KERNEL_URL=https://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/non-compute-common/0.0.4/5.3.18-24.37-default-0.0.4.kernel
 
-# These won't be needed until you actually boot into the livecd, but you may want to set them now
-# Set to false for now, so you can validate each step as you walk through the instructions
+# Latest development/unstable k8s/ceph (built atop latest stable base).
+export PIT_MANAGER_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/kubernetes/0.0.4-2/kubernetes-0.0.4-2.squashfs
+export PIT_STORAGE_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/storage-ceph/0.0.3-2/storage-ceph-0.0.3-2.squashfs
+
+# Set to false for manual validation per the manual-steps, or set to true for CSI to validate automatically.
 export PIT_VALIDATE_CEPH=false
 export PIT_VALIDATE_DNS_DHCP=false
 export PIT_VALIDATE_K8S=false
@@ -81,36 +91,36 @@ export PIT_VALIDATE_NETWORK=false
 export PIT_VALIDATE_SERVICES=false
 ```
 
-
-`source` the above file and copy to the livecd
-
-Without this vars.sh file being `source`d you'd need to pass them manually at the command line.  
+Now load the newly created file:
 
 ```bash
-source vars.sh
+linux:~ $ source vars.sh
 ```
 
-## Manual Step 3: Create the USB Stick
+We'll also load this into the LiveCD USB in a later step so we can use it again.
+
+## Manual Step 3: Create the Bootable Media
 
 1. Make the USB and fetch artifacts.
 
     ```bash
     # Find your USB stick with your linux tool of choice, for this example it is /dev/sdd
-    wget $PIT_ISO_URL                                 
-    git clone $PIT_REPO_URL
-    # CASMINST-296 is requiring the -w flag even though PIT_WRITE_SCRIPT is set
-    csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000 -w /root/cray-pre-install-toolkit/scripts/write-livecd.sh
-    # If this fails, you may need the workaround for CASMINST-285
-    ```
+    wget $PIT_ISO_URL      
 
+    # Clone the script, CSI will auto-search for this at /root/
+    git clone $PIT_REPO_URL
+
+    # Make the USB.
+    csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000 
+    ```
 
 2. Mount data partition:
 
     ```bash
-    mount /dev/disk/by-label/PITDATA /mnt/
+    mount /dev/disk/by-label/PITDATA /mnt
     ```
 
-Now that your disk is setup and the data partition is mounted, you can begin gathering info and configs and populating it to the USB disk so it's available when you boot into the livecd.
+    Now that your disk is setup and the data partition is mounted, you can begin gathering info and configs and populating it to the USB disk so it's available when you boot into the livecd.
 
 3. Copy your vars file to the data partition
 
@@ -118,19 +128,19 @@ Now that your disk is setup and the data partition is mounted, you can begin gat
     cp vars.sh /mnt/
     ```
 
-## Manual Step 4: Gather Information
+## Manual Step 4: Gather / Create Seed Files
 
 This is the set of files that you will currently need to create or find to generate the config payload for the system
 
-  1. ncn_metadata.csv
-  2. hmn_connections.json
+  1. `ncn_metadata.csv` (NCN configuration)
+  2. `hmn_connections.json` (RedFish configurtation)
+  3. `qnd-1.4.sh` (LiveCD configuration - shasta-1.4 shim for automation)
 
-  In addition you will need to have the qnd-1.4.sh file to configure the LiveCD node.
+file (see below) to configure the LiveCD node.
 
 #### qnd-1.4.sh
 
-You will need to create the qnd-1.4.sh files with the following contents.   Replace values with those specific to your system.
-
+You will need to create the `qnd-1.4.sh` file with the following contents, replacing values with those specific to your system:
 
 ```bash
 export site_nic=em1
@@ -146,321 +156,291 @@ export can_cidr=10.102.4.110/24
 export system_name=sif
 ```
 
-- `site_nic`
-
-    The interface that is directly attached to the site network on ncn-m001.
-
-- `site_cidr`
-
-    The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
-
-- `site_gw`
-
-    The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
-
-- `site_dns`
-
-    ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
-
-- `bond_member0` and `bond_member1`
-
-    The two interfaces that will be bonded to the bond0 interface.
-
-- `mtl_cidr`, `nmn_cidr`, `hmn_cidr`, and `can_cidr`
-
-    The IP address and netmask in CIDR notation that is assigned to the bond0, vlan002, vlan004, and vlan007 interfaces on the LiveCD, respectively.  NOTE:  These include the IP address AND the netmask.  It is not just the network CIDR.
-
-    Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
-
+- `site_nic` The interface that is directly attached to the site network on ncn-m001.
+- `site_cidr` The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
+- `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
+- `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
+- `bond_member0` and `bond_member1` The two interfaces that will be bonded to the bond0 interface.
+- `mtl_cidr`, `nmn_cidr`, `hmn_cidr`, and `can_cidr` The IP address and netmask in CIDR notation that is assigned to the bond0, vlan002, vlan004, and vlan007 interfaces on the LiveCD, respectively.  NOTE:  These include the IP address AND the netmask.  It is not just the network CIDR. Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
 
 Copy this file to the mounted data partition.
 
 ```bash
-cp qnd-1.4.sh /mnt
+linux:~ $ cp qnd-1.4.sh /mnt
 ```
-
 
 #### ncn_metadata.csv
 
-This file should come from the shasta_system_configs repository at https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse.   Each system has its own directory in the repository.   If this is a new system that doesn't yet have the ncn_metadata.csv file then one will need to be created by hand.   This is the format of that file.
-
-```bash
-NCN xname,NCN Role,NCN Subrole,BMC MAC,BMC Switch Port,NMN MAC,NMN Switch Port
-x3000c0s9b0n0,Management,Storage,FIXME,x3000u14-j31,FIXME,NA
-x3000c0s8b0n0,Management,Storage,FIXME,x3000u14-j30,FIXME,NA
-x3000c0s7b0n0,Management,Storage,FIXME,x3000u14-j29,FIXME,NA
-x3000c0s6b0n0,Management,Worker,FIXME,x3000u14-j28,FIXME,NA
-x3000c0s5b0n0,Management,Worker,FIXME,x3000u14-j27,FIXME,NA
-x3000c0s4b0n0,Management,Worker,FIXME,x3000u14-j40,FIXME,NA
-x3000c0s3b0n0,Management,Master,FIXME,x3000u14-j26,FIXME,NA
-x3000c0s2b0n0,Management,Master,FIXME,x3000u14-j25,FIXME,NA
-x3000c0s1b0n0,Management,Master,FIXME,Site Connection,00:00:00:00:00:00,Site Connection
-```
-
-The NCN xname, BMC Switch Port, and NCN Switch Port can be determined from the CID for the system.
-The BMC MAC should be the MAC of the BMC channel used to manage the system.
-The NMN MAC should the MAC of the *first bond member*.
+See [NCN Metadata BMC](301-NCN-METADATA-BMC.md) and [NCN Metadata BONDX](302-NCN-METADATA-BONDX.md) for information on creating this file.
 
 #### hmn_connections.json
 
-This file should come from the shasta_system_configs repository at https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse.   Each system has its own directory in the repository.   If this is a new system that doesn't yet have the hmn_connections.json file then one will need to be generated from the CID for the system.
+- TODO: Move this section into 300-350 service guides.
+- TODO: Give context for xlsx file instead of surprising user with new dependency.
+
+Make sure you have an up-to-date hmn_connections.json (i.e. one generated from the lastest CID for the system).
+
+This file should come from the shasta_system_configs repository at https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse. Each system has its own directory in the repository. If this is a new system that doesn't yet have the hmn_connections.json file then one will need to be generated from the CID for the system.
 
 ```bash
-docker run --rm -it --name hms-shcd-parser -v  ${shcd-absolute-path}:/input/shcd_file.xlsx -v $(pwd):/output dtr.dev.cray.com/cray/hms-shcd-parser:latest
+# Replace `${shcd_path}` with the absolute path to the latest CID for the system.
+mypc:~ $ docker run --rm -it --name hms-shcd-parser -v  ${shcd_path}:/input/shcd_file.xlsx -v $(pwd):/output dtr.dev.cray.com/cray/hms-shcd-parser:latest
 ```
 
-Replace ${cid-absolute-path} with the absolute path to the latest CID for the system.
-   
-Make sure you have an up-to-date hmn_connections.json (i.e. one generated from the lastest CID for the system).
-  
+Your files should appear in a `./output` directory, relative to where you ran the `docker` command. These files should be copied into the LiveCD:
 
-## Manual Step 5:  Generate the config payload
+```bash
+# TODO: Copy generated items into /mnt
+```
 
-The configuration payload is generated with the `csi config init` command anywhere the command is installed and that has the required input files. 
+## Manual Step 5: Configuration Payload
+
+Now we need to generate our configuration payload around our system's schema. We now need:
+
+- The username and password for the BMCs (normally, root and initial0)
+- xnames for the spine and leaf switches. x3000c0wXX where XX is the slot in the rack (see [HSS Naming Convention](https://connect.us.cray.com/confluence/display/HSOS/Shasta+HSS+Component+Naming+Convention?)))
+- The number of mountain and river cabinets in the system.
+
+The configuration payload comes from the `csi config init` command anywhere.
+
+> NOTE: If you have not done so already, you must `source qnd-1.4.sh` to load vars such as the `$can_cidr`. 
 
 1.  To execute this command you will need the following:
+    > An example of the command to run with the required options.
 
-    - ncn_metadata.csv and hmn_connections.json in the current directory.
-
-    - The username and password for the BMCs (normally, root and initial0)
-
-    - xnames for the spine and leaf switches.   x3000c0wXX where XX is the slot in the rack
-
-    - The CAN network in CIDR format (e.g. 10.102.11.0/24).  This will be different for every system.
-
-    - The number of mountain and river cabinets in the system
-
-    An example of the command to run with the required options.
+    Example variables to use
     ``` bash
-    csi config init --bootstrap-ncn-bmc-user root --bootstrap-ncn-bmc-pass initial0 --leaf-switch-xnames="x3000c0w14" --spine-switch-xnames="x3000c0w12,x3000c0w13" --system-name sif  --mountain-cabinets 0 --river-cabinets 1 --can-cidr 10.102.11.0/24
+    username=root
+    password=changemetoday!
+    crayname=foo
+    leafnames=x3000c0w14
+    spinenames=x3000c0w12,x3000c0w13
     ```
 
+    Now generate the files:
+    ```bash
+    linux:~ $ csi config init \
+        --bootstrap-ncn-bmc-user $username \
+        --bootstrap-ncn-bmc-pass $password \
+        --leaf-switch-xnames $leafnames \
+        --spine-switch-xnames $spinenames \
+        --system-name $crayname \
+        --mountain-cabinets 0 \
+        --river-cabinets 1 \
+        --can-cidr $can_cidr
+    ```
 
     This will generate the following files in a subdirectory with the system name.
 
-    ``` bash
-    sif-ncn-m001-pit:~ # ls -R sif
-    sif:
+    ```bash
+    linux:~ # ls -R $crayname
+    foo:
     conman.conf  data.json      dnsmasq.d      metallb.yaml      sls_input_file.json
     credentials  manufacturing  networks       system_config.yaml
 
-    sif/credentials:
+    foo/credentials:
     bmc_password.json  mgmt_switch_password.json  root_password.json
 
-    sif/dnsmasq.d:
+    foo/dnsmasq.d:
     CAN.conf  HMN.conf  mtl.conf  NMN.conf	statics.conf
 
-    sif/manufacturing:
+    foo/manufacturing:
 
-    sif/networks:
+    foo/networks:
     CAN.yaml  HMN.yaml  HSN.yaml  MTL.yaml	NMN.yaml
     ```
 
-2.  There are a few additional workarounds that need to be done manually in the files until some further bugs are fixed.
+2. Apply work-arounds:
 
-- First generate a data.json that is easier to edit. (CASMINST-298)
+    - [CASMINST-298](https://connect.us.cray.com/jira/browse/CASMINST-298) 
+        - First, generate a pretty `data.json` that is easier to edit.
+          ```bash
+          linux:~ # cp $crayname/data.json $crayname/data.json.orig
+          cat $crayname/data.json.orig | python -mjson.tool > $crayname/data.json
+          ```
+    - [CASMINST-262](https://connect.us.cray.com/jira/browse/CASMINST-262) and [CASMINST-281](https://connect.us.cray.com/jira/browse/CASMINST-281)
 
-  ```bash
-  cp data.json data.json.orig
-  cat data.json.orig | python -mjson.tool > data.json
-  ```
-- CASMINST-262 and CASMINST-281
+        - Add `Global`, `Default`, `ncn-storage`, `ncn-master`, and `ncn-worker` sections to the end of `data.json` before the last curly bracket `}`.   Make sure to add a comma after the second-to-last curly bracket `{`.
 
-  - Add `Global`, `Default`, `ncn-storage`, `ncn-master`, and `ncn-worker` sections to the end of data.json before the last curly bracket `}`.   Make sure to add a comma after the second-to-last curly bracket `{`.
+        ```json
+         },
+         "Default": {
+           "meta-data": {
+             "foo": "bar",
+             "shasta-role": "ncn-storage"
+           },
+           "user-data": {}
+         },
+         "ncn-storage": {
+           "meta-data": {
+             "ceph_version": "1.0",
+             "self_destruct": "false"
+           },
+           "user-data": {
+             "test": "123",
+             "runcmd": [
+               "echo This is a storage cmd $(date) > /opt/runcmd"
+             ]
+           }
+         },
+         "ncn-master": {
+           "meta-data": {
+             "self_destruct": "false"
+           },
+           "user-data": {
+             "test": "123",
+             "runcmd": [
+               "echo This is a master cmd $(date) > /opt/runcmd"
+             ]
+           }
+         },
+         "ncn-worker": {
+           "meta-data": {
+             "self_destruct": "false"
+           },
+           "user-data": {
+             "test": "123",
+             "runcmd": [
+               "echo This is a worker cmd $(date) > /opt/runcmd"
+             ]
+           }
+         },
+         "Global": {
+           "meta-data": {
+             "can-gw": "~FIXME~ e.g. 10.102.9.20",
+             "can-if": "vlan007",
+             "ceph-cephfs-image": "dtr.dev.cray.com/cray/cray-cephfs-provisioner:0.1.0-nautilus-1.3",
+             "ceph-rbd-image": "dtr.dev.cray.com/cray/cray-rbd-provisioner:0.1.0-nautilus-1.3",
+             "chart-repo": "http://helmrepo.dev.cray.com:8080",
+             "dns-server": "~FIXME~ e.g. 10.252.1.1",
+             "docker-image-registry": "dtr.dev.cray.com",
+             "domain": "nmn hmn",
+             "first-master-hostname": "~FIXME~ e.g. ncn-m002",
+             "k8s-virtual-ip": "~FIXME~ e.g. 10.252.120.2",
+             "kubernetes-max-pods-per-node": "200",
+             "kubernetes-pods-cidr": "10.32.0.0/12",
+             "kubernetes-services-cidr": "10.16.0.0/12",
+             "kubernetes-weave-mtu": "1460",
+             "ntp_local_nets": "~FIXME~ e.g. 10.252.0.0/17,10.254.0.0/17",
+             "ntp_peers": "~FIXME~ e.g. ncn-w001 ncn-w002 ncn-w003 ncn-s001 ncn-s002 ncn-s003 ncn-m001 ncn-m002 ncn-m003",
+             "num_storage_nodes": "3",
+             "rgw-virtual-ip": "~FIXME~ e.g. 10.252.2.100",
+           "upstream_ntp_server": "~FIXME~",
+             "wipe-ceph-osds": "yes"
+           }
+         }
+        }
+        ```
 
+    - [CASMINST-320](https://connect.us.cray.com/jira/browse/CASMINST-320)
+        - Fix the customer-access-static and customer-access address pools to match what is in [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems)
+        - Set the hardware-management address pool to 10.94.100.0/24
+       ```bash
+        - name: hardware-management
+          protocol: bgp
+          addresses:
+          - 10.94.100.0/24
+       ```
+      - Set the node-management address pool to 10.92.100.0/24
+       ```bash
+        - name: node-management
+          protocol: bgp
+          addresses:
+          - 10.92.100.0/24
+       ```
 
-   ``` bash
-     },
-     "Default": {
-       "meta-data": {
-         "foo": "bar",
-         "shasta-role": "ncn-storage"
-       },
-       "user-data": {}
-     },
-     "ncn-storage": {
-       "meta-data": {
-         "ceph_version": "1.0",
-         "self_destruct": "false"
-       },
-       "user-data": {
-         "test": "123",
-         "runcmd": [
-           "echo This is a storage cmd $(date) > /opt/runcmd"
-         ]
-       }
-     },
-     "ncn-master": {
-       "meta-data": {
-         "self_destruct": "false"
-       },
-       "user-data": {
-         "test": "123",
-         "runcmd": [
-           "echo This is a master cmd $(date) > /opt/runcmd"
-         ]
-       }
-     },
-     "ncn-worker": {
-       "meta-data": {
-         "self_destruct": "false"
-       },
-       "user-data": {
-         "test": "123",
-         "runcmd": [
-           "echo This is a worker cmd $(date) > /opt/runcmd"
-         ]
-       }
-     },
-     "Global": {
-       "meta-data": {
-         "can-gw": "~FIXME~ e.g. 10.102.9.20",
-         "can-if": "vlan007",
-         "ceph-cephfs-image": "dtr.dev.cray.com/cray/cray-cephfs-provisioner:0.1.0-nautilus-1.3",
-         "ceph-rbd-image": "dtr.dev.cray.com/cray/cray-rbd-provisioner:0.1.0-nautilus-1.3",
-         "chart-repo": "http://helmrepo.dev.cray.com:8080",
-         "dns-server": "~FIXME~ e.g. 10.252.1.1",
-         "docker-image-registry": "dtr.dev.cray.com",
-         "domain": "nmn hmn",
-         "first-master-hostname": "~FIXME~ e.g. ncn-m002",
-         "k8s-virtual-ip": "~FIXME~ e.g. 10.252.120.2",
-         "kubernetes-max-pods-per-node": "200",
-         "kubernetes-pods-cidr": "10.32.0.0/12",
-         "kubernetes-services-cidr": "10.16.0.0/12",
-         "kubernetes-weave-mtu": "1460",
-         "ntp_local_nets": "~FIXME~ e.g. 10.252.0.0/17,10.254.0.0/17",
-         "ntp_peers": "~FIXME~ e.g. ncn-w001 ncn-w002 ncn-w003 ncn-s001 ncn-s002 ncn-s003 ncn-m001 ncn-m002 ncn-m003",
-         "num_storage_nodes": "3",
-         "rgw-virtual-ip": "~FIXME~ e.g. 10.252.2.100",
-       "upstream_ntp_server": "~FIXME~",
-         "wipe-ceph-osds": "yes"
-       }
-     }
-   }
-   ```
+    - [CASMINST-294](https://connect.us.cray.com/jira/browse/CASMINST-294)
 
-- CASMINST-320
+        - Add the MAC address for the MTL dhcp-host entry for each node in dnsmasq.d/statics.conf.   This should be the bond0 MAC (i.e. the same MAC as the one used for NMN, HMN, and CAN).
+       ```bash
+        # DHCP Entries for ncn-s002
+        dhcp-host=14:02:ec:da:b9:38,10.252.0.154,ncn-s002,infinite # NMN
+        dhcp-host=14:02:ec:da:b9:38,10.1.0.24,ncn-s002,infinite # MTL
+        dhcp-host=14:02:ec:da:b9:38,10.254.0.154,ncn-s002,infinite # HMN
+        dhcp-host=14:02:ec:da:b9:38,10.102.11.218,ncn-s002,infinite # CAN
+        dhcp-host=94:40:c9:37:77:da,10.254.0.153,ncn-s002-mgmt,infinite #HMN
+       ```
 
-  - Fix the customer-access-static and customer-access address pools to match what is in [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems)
+    - [CASMINST-321](https://connect.us.cray.com/jira/browse/CASMINST-321)
 
-  - Set the hardware-management address pool to 10.94.100.0/24
+        - Fix the `router` option in CAN.conf to match the *gateway* IP address of vlan7 on this spines.   For Aruba switches, this is the `active-gateway ip`.   For Mellanox switches, this is the `magp` IP.
+       ```bash
+       sw-spine01# show running-config interface vlan 7
+       interface vlan7
+        vsx-sync active-gateways
+        ip address 10.102.11.1/24
+        active-gateway ip mac 12:01:00:00:01:00
+        active-gateway ip 10.102.11.111
+        ip mtu 9198
+        exit
+       ```
+    
+       ```bash
+       dhcp-option=interface:vlan004,option:router,10.102.11.111
+       ```
 
+    - [CASMINST-251](https://connect.us.cray.com/jira/browse/CASMINST-251)
 
-   ```bash
-	- name: hardware-management
-	  protocol: bgp
-	  addresses:
-	  - 10.94.100.0/24
-   ```
+        - For NMN.conf, HMN.conf, CAN.conf, and mtl.conf, make sure the dhcp-range starts AFTER the IPs that are fixed in statics.conf.
 
-  - Set the node-management address pool to 10.92.100.0/24
+        ```bash
+        # Where 10.252 is the prefix to the NMN in this environment.
+        linux:~ # grep 10.252 $crayname/dnsmasq.d/statics.conf
+        dhcp-host=14:02:ec:d9:7a:90,10.252.0.153,ncn-s003,infinite # NMN
+        host-record=ncn-s003,ncn-s003.nmn,10.252.0.153
+        dhcp-host=14:02:ec:da:b9:38,10.252.0.154,ncn-s002,infinite # NMN
+        host-record=ncn-s002,ncn-s002.nmn,10.252.0.154
+        dhcp-host=14:02:ec:d9:77:a8,10.252.0.155,ncn-s001,infinite # NMN
+        host-record=ncn-s001,ncn-s001.nmn,10.252.0.155
+        dhcp-host=14:02:ec:d9:7a:30,10.252.0.156,ncn-w003,infinite # NMN
+        host-record=ncn-w003,ncn-w003.nmn,10.252.0.156
+        dhcp-host=14:02:ec:d9:7b:b0,10.252.0.157,ncn-w002,infinite # NMN
+        host-record=ncn-w002,ncn-w002.nmn,10.252.0.157
+        dhcp-host=14:02:ec:da:b7:28,10.252.0.158,ncn-w001,infinite # NMN
+        host-record=ncn-w001,ncn-w001.nmn,10.252.0.158
+        dhcp-host=14:02:ec:d9:79:a0,10.252.0.159,ncn-m003,infinite # NMN
+        host-record=ncn-m003,ncn-m003.nmn,10.252.0.159
+        dhcp-host=14:02:ec:d9:78:20,10.252.0.160,ncn-m002,infinite # NMN
+        host-record=ncn-m002,ncn-m002.nmn,10.252.0.160
+        dhcp-host=14:02:ec:d9:7a:18,10.252.0.161,ncn-m001,infinite # NMN
+        host-record=ncn-m001,ncn-m001.nmn,10.252.0.161
+        host-record=kubeapi-vip,kubeapi-vip.nmn,10.252.0.151 # k8s-virtual-ip
+        host-record=rgw-vip,rgw-vip.nmn,10.252.0.152 # rgw-virtual-ip
+        ```
 
+        For example, the last NMN IP in statics.conf is 10.252.0.161.   Therefore, the dhcp-range in NMN.conf should start AFTER 10.252.0.161.
 
-   ```bash
-	- name: node-management
-	  protocol: bgp
-	  addresses:
-	  - 10.92.100.0/24
-   ```
+        ```bash
+        dhcp-range=interface:vlan002,10.252.0.165,10.252.0.190,10m
+        ```
 
-- CASMINST-294
+    - [CASMINST-347](https://connect.us.cray.com/jira/browse/CASMINST-347)
 
-   Add the MAC address for the MTL dhcp-host entry for each node in dnsmasq.d/statics.conf.   This should be the bond0 MAC (i.e. the same MAC as the one used for NMN, HMN, and CAN).
+        - For HMN.conf, make sure the range specified in the `domain` line INCLUDES the ncn-XXXX-mgmt IPs that are fixed in statics.conf.
 
-   ```bash
-    # DHCP Entries for ncn-s002
-    dhcp-host=14:02:ec:da:b9:38,10.252.0.154,ncn-s002,infinite # NMN
-    dhcp-host=14:02:ec:da:b9:38,10.1.0.24,ncn-s002,infinite # MTL
-    dhcp-host=14:02:ec:da:b9:38,10.254.0.154,ncn-s002,infinite # HMN
-    dhcp-host=14:02:ec:da:b9:38,10.102.11.218,ncn-s002,infinite # CAN
-    dhcp-host=94:40:c9:37:77:da,10.254.0.153,ncn-s002-mgmt,infinite #HMN
-   ```
+        ```bash
+        sif-ncn-m001-pit:/etc/dnsmasq.d # grep mgmt statics.conf
+        dhcp-host=94:40:c9:37:67:72,10.254.1.5,ncn-s003-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:77:da,10.254.1.7,ncn-s002-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:77:14,10.254.1.9,ncn-s001-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:f3:90,10.254.1.11,ncn-w003-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:77:6a,10.254.1.13,ncn-w002-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:41:27:36,10.254.1.15,ncn-w001-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:67:46,10.254.1.17,ncn-m003-mgmt,infinite #HMN
+        dhcp-host=94:40:c9:37:67:36,10.254.1.19,ncn-m002-mgmt,infinite #HMN
+        dhcp-host=00:00:00:00:00:00,10.254.1.21,ncn-m001-mgmt,infinite #HMN
+        ```
 
+        ```bash
+        domain=hmn,10.254.1.5,10.254.1.62,local
+        ```
 
-- CASMINST-321
+3. Modify the `FIXME` entries in `data.json` to align to your system.
 
-   - Fix the `router` option in CAN.conf to match the *gateway* IP address of vlan7 on this spines.   For Aruba switches, this is the `active-gateway ip`.   For Mellanox switches, this is the `magp` IP.
-
-   ```bash
-   sw-spine01# show running-config interface vlan 7
-   interface vlan7
-    vsx-sync active-gateways
-    ip address 10.102.11.1/24
-    active-gateway ip mac 12:01:00:00:01:00
-    active-gateway ip 10.102.11.111
-    ip mtu 9198
-    exit
-   ```
-
-   ```bash
-   dhcp-option=interface:vlan004,option:router,10.102.11.111
-   ```
-
-- CASMINST-251
-
-    For NMN.conf, HMN.conf, CAN.conf, and mtl.conf, make sure the dhcp-range starts AFTER the IPs that are fixed in statics.conf.
-
-    ```bash
-    sif-ncn-m001-spit:~/johren/sif/sif/dnsmasq.d # grep 10.252 statics.conf
-    dhcp-host=14:02:ec:d9:7a:90,10.252.0.153,ncn-s003,infinite # NMN
-    host-record=ncn-s003,ncn-s003.nmn,10.252.0.153
-    dhcp-host=14:02:ec:da:b9:38,10.252.0.154,ncn-s002,infinite # NMN
-    host-record=ncn-s002,ncn-s002.nmn,10.252.0.154
-    dhcp-host=14:02:ec:d9:77:a8,10.252.0.155,ncn-s001,infinite # NMN
-    host-record=ncn-s001,ncn-s001.nmn,10.252.0.155
-    dhcp-host=14:02:ec:d9:7a:30,10.252.0.156,ncn-w003,infinite # NMN
-    host-record=ncn-w003,ncn-w003.nmn,10.252.0.156
-    dhcp-host=14:02:ec:d9:7b:b0,10.252.0.157,ncn-w002,infinite # NMN
-    host-record=ncn-w002,ncn-w002.nmn,10.252.0.157
-    dhcp-host=14:02:ec:da:b7:28,10.252.0.158,ncn-w001,infinite # NMN
-    host-record=ncn-w001,ncn-w001.nmn,10.252.0.158
-    dhcp-host=14:02:ec:d9:79:a0,10.252.0.159,ncn-m003,infinite # NMN
-    host-record=ncn-m003,ncn-m003.nmn,10.252.0.159
-    dhcp-host=14:02:ec:d9:78:20,10.252.0.160,ncn-m002,infinite # NMN
-    host-record=ncn-m002,ncn-m002.nmn,10.252.0.160
-    dhcp-host=14:02:ec:d9:7a:18,10.252.0.161,ncn-m001,infinite # NMN
-    host-record=ncn-m001,ncn-m001.nmn,10.252.0.161
-    host-record=kubeapi-vip,kubeapi-vip.nmn,10.252.0.151 # k8s-virtual-ip
-    host-record=rgw-vip,rgw-vip.nmn,10.252.0.152 # rgw-virtual-ip
-    ```
-
-    For example, the last NMN IP in statics.conf is 10.252.0.161.   Therefore, the dhcp-range in NMN.conf should start AFTER 10.252.0.161.
-
-    ```bash
-    dhcp-range=interface:vlan002,10.252.0.165,10.252.0.190,10m
-    ```
-
-
-- CASMINST-347
-
-    For HMN.conf, make sure the range specified in the `domain` line INCLUDES the ncn-XXXX-mgmt IPs that are fixed in statics.conf.
-
-
-    ```bash
-    sif-ncn-m001-pit:/etc/dnsmasq.d # grep mgmt statics.conf
-    dhcp-host=94:40:c9:37:67:72,10.254.1.5,ncn-s003-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:77:da,10.254.1.7,ncn-s002-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:77:14,10.254.1.9,ncn-s001-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:f3:90,10.254.1.11,ncn-w003-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:77:6a,10.254.1.13,ncn-w002-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:41:27:36,10.254.1.15,ncn-w001-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:67:46,10.254.1.17,ncn-m003-mgmt,infinite #HMN
-    dhcp-host=94:40:c9:37:67:36,10.254.1.19,ncn-m002-mgmt,infinite #HMN
-    dhcp-host=00:00:00:00:00:00,10.254.1.21,ncn-m001-mgmt,infinite #HMN
-    ```
-
-    ```bash
-    domain=hmn,10.254.1.5,10.254.1.62,local
-    ```
-
-3. There are some FIXMES that need to be fixed in data.json. 
- 
     ```
     # STOP!
     # Edit, adjust all the ~FIXMES
-    # The values for the `global_data` should be cross-referenced to `networks*.yml` and
-    # `kubernetes.yml`.
-    vim data.json
+    vim $crayname/data.json
     ```
 
     - `k8s-virtual-ip` and `rgw-virtual-ip`
@@ -496,7 +476,7 @@ The configuration payload is generated with the `csi config init` command anywhe
 
         Set this to `cfntp-4-1.us.cray.com`
 
-4.  Check the json format of data.json to make sure it is still valid
+4. Validate `data.json` to sanitize any human-error:
 
     ```bash
     cat ${system_name}/data.son | jq
@@ -504,7 +484,7 @@ The configuration payload is generated with the `csi config init` command anywhe
 
     If you do not see an error message, the format is valid.
 
-5.  Copy these files to the mounted data partition.
+5. Copy these files to the mounted data partition:
 
     ```bash
     cp -r ${system_name} /mnt
@@ -512,42 +492,37 @@ The configuration payload is generated with the `csi config init` command anywhe
     cp ${system_name}/data.json /mnt/configs
     ```
     
-## Manual Step 6: Download booting artifacts
+## Manual Step 6: Data Payload
 
-Fetch the current working set of artifacts.
+We'll use the previously defined URLs in `vars.sh` to fetch our data payload.
 
-> Note:  When running on a system that has 1.3 installed, you may hit a collision with an ip rule that prevents access to arti.dev.cray.com.   If you cannot ping that name, try removing this ip rule:
+> NOTE:  When running on a system that has 1.3 installed, you may hit a collision with an ip rule that prevents access to arti.dev.cray.com.   If you cannot ping that name, try removing this ip rule:
+    `ip rule del from all to 10.100.0.0/17 lookup rt_smnet`
 
-```
-ip rule del from all to 10.100.0.0/17 lookup rt_smnet
-```
-
-> NOTE: [CASMINST-245](https://connect.us.cray.com/jira/browse/CASMINST-245) k8s will encounter disk-pressure
-> because the mount points for /run/containerd, /var/lib/kubelet, and /var/lib/containerd are not ready.
-> These are coming in fast (week of 11/09), until then these images need to be fetched after running the `csi` command below.
-> - https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/kubernetes/b63f06b-1604671164414/kubernetes-b63f06b-1604671164414.squashfs
+This will fetch to your bootable USB:
 
 ```bash
-# This will pull from the vars created in step 1.  You can also pull individual components with the command flags.
 # If you didn't earlier:
-source vars.sh
+linux:~ # source vars.sh
+
 # Then download the artifacts:
-csi pit get
+linux:~ # csi pit get
 ```
 
-Unmount the data partition
+Now, unmount the bootable USB.
 
 ```bash
-    umount /mnt
+linux:~ # umount /mnt
 ```
 
 ## Manual Step 7 : Shutdown NCNs
 
-Make sure all of the NCNs other than ncn-m001 are powered off.  If you still have access to the BMC IPs, you can use ipmitool to confirm.
+Make sure all other NCNs (not including the one your liveCD will be on) are powered off. If you still have access to the BMC IPs, you can use `ipmitool` to confirm power state:
 
 ```bash
 for i in m002 m003 w001 w002 w003 s001 s002 s003;do ipmitool -I lanplus -U $username -P $password -H ncn-${i}-mgmt chassis power status;done
 ```
 
 ## Manual Step 8 : Boot into your LiveCD.
+
 Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)
