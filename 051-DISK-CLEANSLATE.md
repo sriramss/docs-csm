@@ -23,7 +23,7 @@ Ideally the Basic Wipe is enough, and should be tried first. All of these proced
 
 ```bash
 # Print off the disks for verification:
-ncn:~ # ls -1 /dev/sd* /dev/disk/bu-label/*
+ncn:~ # ls -1 /dev/sd* /dev/disk/by-label/*
 
 # Wipe the disks and the RAIDs:
 ncn:~ # wipefs --all --force /dev/sd* /dev/disk/by-label/*
@@ -37,7 +37,7 @@ ncn:~ # wipefs --all --force /dev/sd* /dev/disk/by-label/*
 ```bash
 # Delete CEPH Volumes
 ncn:~ # systemctl stop ceph-osd.target # Make sure the OSDs (if any) are not running
-ncn:~ # ls -1 /dev/sd* /dev/disk/bu-label/*
+ncn:~ # ls -1 /dev/sd* /dev/disk/by-label/*
 ncn:~ # vgremove -f --select 'vg_name=~ceph*'
 
 # Wipe the disks and RAIDs:
@@ -54,7 +54,7 @@ ncn:~ # wipefs --all --force /dev/sd* /dev/disk/by-label/*
 ```bash
 # Delete CEPH Volumes
 ncn:~ # systemctl stop ceph-osd.target # Make sure the OSDs (if any) are not running
-ncn:~ # ls -1 /dev/sd* /dev/disk/bu-label/*
+ncn:~ # ls -1 /dev/sd* /dev/disk/by-label/*
 ncn:~ # vgremove -f --select 'vg_name=~ceph*'
 
 
