@@ -29,9 +29,6 @@ Before starting, you should have:
 
 ## Manual Step 1: Install `csi`
 
-`csi` can be used to create and populate your liveCD.  You can think of it as a "`crayctl`" if you need a way understand what the tool exists for.
-
-
 You'll most likely want to grab whatever is the latest version:
 
 ```bash
