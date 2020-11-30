@@ -22,14 +22,14 @@ This page will go over how to install the Platform Manifest
 
 3. Check out the shasta-cfg repo for your system. Replace `sif` with your system name.
 
+    > **NOTE: This repository must be synced with the master branch of `stable` to deploy the appropriate manifests.**
+
     ```bash
     pit:~ # export system_name=sif
     pit:~ # cd /root
     pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${system_name}.git
     pit:~ # cd ${system_name}
     ```
-
-    Make sure this repo has been synced with the master branch of the `stable` repo.
 
     Make sure the IP addresses in the customizations.yaml file in this repo align with the IPs generated in CSI.  In particular, pay careful attention to
     spec.network.static_ips.dns.site_to_system_looksups
