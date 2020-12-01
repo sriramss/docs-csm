@@ -10,5 +10,5 @@ Specifically this covers:
 
 Beyond node types, you can also find technical information, see the following for navigating and contributing 
 to this guidebook:
-- [000-INFO.md](000-INFO.md) Contribution and rules
-- [001-GUIDES,md](001-GUIDES.md) Lay of the land; where information is by chapter
+- [Info / Inside-Panel.md](000-INFO.md) Contribution and rules
+- [Table of Contents](001-GUIDES.md) Lay of the land; where information is by chapter
