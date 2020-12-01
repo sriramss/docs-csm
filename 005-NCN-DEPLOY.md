@@ -102,7 +102,37 @@ surtur-ncn-m001-pit:~ # grep wipe /var/www/ephemeral/configs/data.json
         "wipe-ceph-osds": "yes"
 ```
 
-Make sure no instances of "wipe-ceph-ods" -- and if there are, fix them and then:
+Make sure no instances of "wipe-ceph-ods" -- and if there are, fix them.
+
+#### Update basecamp data to include Certificate Authority (CA) certificates
+
+Clone the respective shasta-cfg repository.
+
+```
+surtur-ncn-m001-pit:~ # cd /tmp/
+surtur-ncn-m001-pit:/tmp # mkdir --mode=750 shasta-cfg
+surtur-ncn-m001-pit:/tmp # cd shasta-cfg/
+surtur-ncn-m001-pit:/tmp/shasta-cfg # git clone https://stash.us.cray.com/scm/shasta-cfg/surtur.git
+Cloning into 'surtur'...
+remote: Counting objects: 88, done.
+remote: Compressing objects: 100% (87/87), done.
+remote: Total 88 (delta 18), reused 0 (delta 0)
+Unpacking objects: 100% (88/88), 34.24 MiB | 4.94 MiB/s, done.
+```
+
+Use ```csi``` to patch ```data.json``` using ```customizations.yaml``` and the private sealed secret key.
+
+```
+surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key 
+2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
+2020/12/01 11:41:29 Patched cloud-init seed data in place
+```
+
+Note, if using a non-default Certificate Autority (sealed secret), you'll need to verify that the vault chart overrides are updated with the correct sealed secret name to inject and use the ```--sealed-secret-name``` option to ```csi patch ca```.
+
+Optionally, clean up the cloned shasta-cfg directory structure. 
+
+#### Restart basecamp to pickup changes to data.json
 
 ```bash
 surtur-ncn-m001-pit:~ # systemctl restart basecamp
