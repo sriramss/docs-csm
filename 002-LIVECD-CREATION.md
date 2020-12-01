@@ -527,14 +527,6 @@ Now, unmount the bootable USB.
 linux:~ # umount /mnt
 ```
 
-## Manual Step 7 : Shutdown NCNs
-
-Make sure all other NCNs (not including the one your liveCD will be on) are powered off. If you still have access to the BMC IPs, you can use `ipmitool` to confirm power state:
-
-```bash
-for i in m002 m003 w001 w002 w003 s001 s002 s003;do ipmitool -I lanplus -U $username -P $password -H ncn-${i}-mgmt chassis power status;done
-```
-
-## Manual Step 8 : Boot into your LiveCD.
+## Manual Step 7 : Boot into your LiveCD.
 
 Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)

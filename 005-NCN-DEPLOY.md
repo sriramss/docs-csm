@@ -1,19 +1,25 @@
-# LiveCD NCN Boots
+# NCN Deployment
 
 Before starting this you are expected to have networking and services setup.
 If you are unsure, see the bottom of [LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md).
 
-### IMPORTANT : NCN Power State & DHCP
+## Warm-up / Pre-flight Checks
 
-Make sure the other nodes are shutdown.  This was done in an earlier section, but it's important
- you have **shut down all the other NCNs to prevent DHCP conflicts**.  
+> **Do not pass GO, do not collect $200.**
 
-### IMPORTANT : Switchport MTU
+First, there are some important checks to be done before continuing. These serve to prevent mayhem during 
+installs and operation that are hard to debug. Please note, more checks may be added over time
+ and existing checks may receive updates or become defunct. 
+
+#### Check : Switchport MTU
+
+CSI will either run a test if it exists, or will provide the command to run by hand:
 ```bash
-csi pit validate -m true
+pit:~ # csi pit validate --mtu
 ```
 
-Make sure the MTU of the spine ports connected to the NCNs is set to 9216.  Check this on both spines.
+Manually check the MTU of the spine ports connected to the NCNs is set to 9216. Check this on all spines that the
+first nine NCNs are using (minimum is two).
 
   ```bash
   sw-spine01 [standalone: master] # show interface status | include ^Mpo
@@ -33,15 +39,17 @@ Make sure the MTU of the spine ports connected to the NCNs is set to 9216.  Chec
   Mpo115                Up                    Enabled                                           9216              -
   ```
 
-
 Typically, we should have eight leases for NCN BMCs. Some systems may have less, but the
 recommended minimum is 3 of each type (k8s-managers, k8s-workers, ceph-storage).
 
-## STOP and Check: Manually Validate Controller Leases
+#### Check : Controller Leases
 
+CSI will either run a test if it exists, or will provide the command to run by hand.
 ```bash
-csi pit validate -d true
+pit:~ # csi pit validate --dns-dhcp
 ```
+
+To run the test by hand if CSI is unavailable or has doubt:
 
 1. Check for NCN lease count:
 
@@ -66,79 +74,115 @@ csi pit validate -d true
     ncn-s002-mgmt
     ncn-s003-mgmt
     ```
+#### Check : Update basecamp data to include Certificate Authority (CA) certificates
 
-# Manual Upgrade Step(s)
+Basecamp needs the right data to setup the certificates, if you already set this up please move onto the next check/step.
 
-If you are fresh-installing you can skip this section and move onto "Manual Step 1"
+> **IMPORTANT** Failure to validate/pass this check will entail request failure acorss all/core ingress gateways leading to ceph RGW failure (s3).
 
-#### Safe-guard against wiping RAIDs, overlayFS, and Wiping Partitons
+1. Clone the respective shasta-cfg repository.
+
+    ```bash
+    pit:~ # cd /tmp/
+    pit:/tmp # mkdir --mode=750 shasta-cfg
+    pit:/tmp # cd shasta-cfg/
+    pit:/tmp/shasta-cfg # git clone https://stash.us.cray.com/scm/shasta-cfg/surtur.git
+    Cloning into 'surtur'...
+    remote: Counting objects: 88, done.
+    remote: Compressing objects: 100% (87/87), done.
+    remote: Total 88 (delta 18), reused 0 (delta 0)
+    Unpacking objects: 100% (88/88), 34.24 MiB | 4.94 MiB/s, done.
+    ```
+
+2. Use `csi` to patch `data.json` using `customizations.yaml` and the private sealed secret key.
+
+    ```bash
+    surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key 
+    2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
+    2020/12/01 11:41:29 Patched cloud-init seed data in place
+    ```
+
+    > NOTE: If using a non-default Certificate Autority (sealed secret), you'll need to verify that the vault chart overrides are updated with the correct sealed secret name to inject and use the ```--sealed-secret-name``` option to ```csi patch ca```.
+
+
+3. Optionally, clean up the cloned shasta-cfg directory structure.
+
+4. Restart basecamp to pickup changes to data.json
+
+    ```bash
+    pit:~ # systemctl restart basecamp
+    ```
+
+#### Optional : Safeguards
+
+These safeguards should be disregarded for fresh-(re)installs and baremetal deploys. Skip to the first step:  [Manual Step 1](#manual-step-1--ensure-artifacts-are-in-place)
+
+**If you are upgrading** you should run through these safe-guards on a by-case basis:
+1. Whether or not CEPH should be preserved.
+2. Whether or not the RAIDs should be protected.
+
+##### Safeguard: CEPH OSDs
+
+
+Edit `/var/www/ephemeral/configs/data.json` and align the following options:
+
+```json
+{
+  ..
+  // Disables ceph wipe:
+  "wipe-ceph-osds": "no"
+  ..
+}
+```
+```json
+{
+  ..
+  // Restores default behavior:
+  "wipe-ceph-osds": "yes"
+  ..
+}
+```
+
+Quickly toggle yes or no to the file:
+
+```bash
+# set wipe-ceph-osds=no
+pit:~ # sed -i 's/wipe-ceph-osds": "yes"/wipe-ceph-osds": "no"/g' /var/www/ephemeral/configs/data.json
+
+# set wipe-ceph-osds=yes
+pit:~ # sed -i 's/wipe-ceph-osds": "no"/wipe-ceph-osds": "yes"/g' /var/www/ephemeral/configs/data.json
+```
+
+> NOTE: some earlier data.json files contain a typo of "wipe-ceph-**ods**": "yes", the typo is not
+> honored, please correct it to `wipe-ceph-osd`
+
+
+Verify setting:
+
+```bash
+pit:~ # grep wipe /var/www/ephemeral/configs/data.json | sort -u
+        "wipe-ceph-osds": "yes"
+```
+
+Activate the new setting:
+
+```bash
+pit:~ # systemctl restart basecamp
+```
+
+##### Safeguard: RAIDS / BOOTLOADERS / SquashFS / OverlayFS
 
 Edit `/var/www/boot/script.ipxe` and align the following options as you see them here:
 
 - `rd.live.overlay.reset=0` will prevent any overlayFS files from being cleared.
 - `metal.no-wipe=1` will guard against touching RAIDs, disks, and partitions.
 
-#### Safe-guard against wiping CEPH OSDs
+---
+# Deployment
 
-Edit `/var/www/ephemeral/configs/data.json` and align the following options:
+Once warmup / pre-flight checks are done the following procedure can be started.
 
-```json
-  "wipe-ceph-osds": "no"
-```
-
-> Note: some earlier data.json files contain a typo of "wipe-ceph-**ods**": "yes", the typo is not
-> honored, please align it to these docs.
-
-```bash
-surtur-ncn-m001-pit:~ # grep wipe /var/www/ephemeral/configs/data.json
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-        "wipe-ceph-osds": "yes"
-```
-
-Make sure no instances of "wipe-ceph-ods" -- and if there are, fix them.
-
-#### Update basecamp data to include Certificate Authority (CA) certificates
-
-Clone the respective shasta-cfg repository.
-
-```
-surtur-ncn-m001-pit:~ # cd /tmp/
-surtur-ncn-m001-pit:/tmp # mkdir --mode=750 shasta-cfg
-surtur-ncn-m001-pit:/tmp # cd shasta-cfg/
-surtur-ncn-m001-pit:/tmp/shasta-cfg # git clone https://stash.us.cray.com/scm/shasta-cfg/surtur.git
-Cloning into 'surtur'...
-remote: Counting objects: 88, done.
-remote: Compressing objects: 100% (87/87), done.
-remote: Total 88 (delta 18), reused 0 (delta 0)
-Unpacking objects: 100% (88/88), 34.24 MiB | 4.94 MiB/s, done.
-```
-
-Use ```csi``` to patch ```data.json``` using ```customizations.yaml``` and the private sealed secret key.
-
-```
-surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key 
-2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
-2020/12/01 11:41:29 Patched cloud-init seed data in place
-```
-
-Note, if using a non-default Certificate Autority (sealed secret), you'll need to verify that the vault chart overrides are updated with the correct sealed secret name to inject and use the ```--sealed-secret-name``` option to ```csi patch ca```.
-
-Optionally, clean up the cloned shasta-cfg directory structure. 
-
-#### Restart basecamp to pickup changes to data.json
-
-```bash
-surtur-ncn-m001-pit:~ # systemctl restart basecamp
-```
-
-# Manual Step 1:  Ensure artifacts are in place
+## Manual Step 1: Ensure artifacts are in place
 
 Mount the USB stick's data partition, and setup links for booting.
 
@@ -153,32 +197,44 @@ Make sure the correct images were selected.
 pit:~ # ls -l /var/www 
 ```
 
-# Manual Step 2: Set Boot Order
+## Manual Step 2: Set Boot Order
 
 This step will ensure your NCNs follow 1.4 protocol for bootorder.
 
 > For more information about NCN boot order check [101-BOOTING](101-NCN-BOOTING.md)
 
+## Manual Step 3: Shutdown NCNs
 
-Set each node to always UEFI Network Boot
+#### Wiping for Re-Installs
 
-```bash
-username=bob
-password=alice
+If you're reinstalling, you should wipe the nodes. (This is automated by [MTL-1135](https://connect.us.cray.com/jira/browse/MTL-1135)).
+For each node that is on, run the "Basic Wipe" defined in [Disk Cleanslate](051-DISK-CLEANSLATE.md).
 
-# ALWAYS PXE BOOT; sets a system to PXE
-ipmitool -I lanplus -U $username -P $password -H ncn-s003-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-s002-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-s001-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-w003-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-w002-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-w001-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-m003-mgmt chassis bootdev pxe options=efiboot,persistent
-ipmitool -I lanplus -U $username -P $password -H ncn-m002-mgmt chassis bootdev pxe options=efiboot,persistent
+1. **IMPORTANT** all other NCNs (not including the one your liveCD will be on) must be powered **off**. If you still have access to the BMC IPs, you can use `ipmitool` to confirm power state:
 
-# for installs still using w001 for the liveCD:
-ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev pxe options=efiboot,persistent
-```
+    ```bash
+    for i in m002 m003 w001 w002 w003 s001 s002 s003;do ipmitool -I lanplus -U $username -P $password -H ncn-${i}-mgmt chassis power status;done
+    ```
+
+2. Set each node to always UEFI Network Boot
+
+    ```bash
+    username=bob
+    password=alice
+    
+    # ALWAYS PXE BOOT; sets a system to PXE
+    ipmitool -I lanplus -U $username -P $password -H ncn-s003-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-s002-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-s001-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-w003-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-w002-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-w001-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-m003-mgmt chassis bootdev pxe options=efiboot,persistent
+    ipmitool -I lanplus -U $username -P $password -H ncn-m002-mgmt chassis bootdev pxe options=efiboot,persistent
+    
+    # for installs still using w001 for the liveCD:
+    ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev pxe options=efiboot,persistent
+    ```
 
 *That's it, you're done!* Move onto the next step. On the other hand, below you can find a block of code for 
 one-time disk booting via `ipmitool`.
@@ -198,7 +254,7 @@ ipmitool -I lanplus -U $username -P $password -H ncn-m002-mgmt chassis bootdev d
 ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev disk options=efiboot
 ```
 
-# Manual Step 3: Prepare for workarounds
+## Manual Step 4: Prepare for workarounds
 
 Clone the workaround repo to have access to the workarounds needed to get through some known issues until they are fully fixed.
 
@@ -209,7 +265,7 @@ pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.g
 
 If there are any workarounds in the before-ncn-boot directory, run those now.   Instructions are in the README files.
 
-# Manual Step 4: Boot Storage Nodes
+## Manual Step 5: Boot Storage Nodes
 
 This will again just `echo` the commands.  Look them over and validate they are ok before running them.  This just `grep`s out the storage nodes so you only get the workers and managers.
 
@@ -242,7 +298,7 @@ pit:~ # conman -q
 pit:~ # conman -j ncn-s002
 ```
 
-# Manual Step 5: Boot K8s
+## Manual Step 6: Boot K8s
 
 This will again just `echo` the commands.  Look them over and validate they are ok before running them.  This just `grep`s out the storage nodes so you only get the workers and managers.
 
@@ -259,10 +315,10 @@ for bmc in $(grep -Eo ncn-.*-mgmt /var/lib/misc/dnsmasq.leases | grep -v s | sor
 done
 ```
 
-## STOP and Check: Manually Inspect Storage
+> **STOP and Check: Manually Inspect Storage**
 
 ```bash
-csi pit validate -c true
+pit:~ # csi pit validate --ceph
 ```
 
 Run ceph -s and verify cluster is healthy from ncn-s001.nmn.  Verify that health is HEALTH_OK, and that we have mon, mgr, mds, osd and rgw services in the output:
@@ -300,7 +356,7 @@ k8s-block-replicated (default)   ceph.com/rbd      Delete          Immediate    
 sma-block-replicated             ceph.com/rbd      Delete          Immediate           true                   5m31s
 ```
 
-## STOP and Check: Manually Check K8s
+> **STOP and Check: Manually Check K8s**
 
 Verify all nodes have joined the cluster (can run on any master/worker):
 
