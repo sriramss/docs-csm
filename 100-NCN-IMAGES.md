@@ -20,6 +20,19 @@ To boot an NCN, you need 3 artifacts:
 
 > NOTE: The application stable and unstable images are all built atop the latest _stable_ NCN common. It is very uncommon to want the unstable NCN images.
 
+### Fetch Commands
+
+> NCN Artifacts
+```bash
+# NOTE: the kernel version; for now the version here should be correct and updated. 
+kernel_ver=5.3.18-24.37
+stream=stable
+curl -I https://arti.dev.cray.com/artifactory/node-images-${stream}-local/shasta/non-compute-common/[RELEASE]/${kernel_ver}-default-[RELEASE].kernel
+curl -I https://arti.dev.cray.com/artifactory/node-images-${stream}-local/shasta/non-compute-common/[RELEASE]/initrd.img-[RELEASE].xz
+curl -I https://arti.dev.cray.com/artifactory/node-images-${stream}-local/shasta/kubernetes/[RELEASE]/kubernetes-[RELEASE].squashfs
+curl -I https://arti.dev.cray.com/artifactory/node-images-${stream}-local/shasta/storage-ceph/[RELEASE]/storage-ceph-[RELEASE].squashfs
+```
+
 [1]: https://stash.us.cray.com/projects/CLOUD/repos/node-image-docs/browse
 [2]: http://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/non-compute-common
 [3]: http://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/non-compute-common
