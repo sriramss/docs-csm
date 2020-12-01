@@ -76,6 +76,8 @@ To run the test by hand if CSI is unavailable or has doubt:
     ```
 #### Check : Update basecamp data to include Certificate Authority (CA) certificates
 
+> **IMPORTANT** You must have a ```shasta-cfg``` git repo created and sync'd from ```stable``` (or a conscious deviation) to perform this step. Given the ```shasta-cfg``` model *may* be in flux, contact SSI if you need a new repo created. They can also provide you with a process to synchronize from ```stable```. 
+
 Basecamp needs the right data to setup the certificates, if you already set this up please move onto the next check/step.
 
 > **IMPORTANT** Failure to validate/pass this check will entail request failure acorss all/core ingress gateways leading to ceph RGW failure (s3).
