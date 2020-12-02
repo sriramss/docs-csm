@@ -53,7 +53,7 @@ vim vars.sh
 # These vars will likely stay the same unless there are development changes
 export PIT_DISK_LABEL=/dev/disk/by-label/PITDATA
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
-export PIT_ISO_URL=http://car.dev.cray.com/artifactory/internal/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
+export PIT_ISO_URL=http://car.dev.cray.com/artifactory/csm/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
 export PIT_ISO_NAME=$(basename $PIT_ISO_URL)
 
 # These are the artifacts you want to be used to boot with
