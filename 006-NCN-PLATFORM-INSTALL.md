@@ -26,7 +26,6 @@ This page will go over how to install all of the CSM manifests
     spec.network.static_ips.ncn_masters
     spec.network.static_ips.ncn_storage
 
-
 3. Generate various manifests
 
     > NOTE: the call to manifestgen should be done via ${system_name}/deploy/generate.sh when we're ready to use all manifests
