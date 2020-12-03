@@ -100,9 +100,9 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
     git clone $PIT_REPO_URL
 
     # Make the USB.
-    csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000 
+    csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000
     ```
-   
+
    > Note: If this fails to find the creation script then [CASMINST-285](https://connect.us.cray.com/jira/browse/CASMINST-285) may be present. Regardless, you can specify the script with `-w` if you've cloned it manually with `git clone $PIT_REPO_URL`.
 
 2. Mount data partition:
@@ -132,7 +132,8 @@ This is the set of files that you will currently need to create or find to gener
 
   1. `ncn_metadata.csv` (NCN configuration)
   2. `hmn_connections.json` (RedFish configuration)
-  3. `qnd-1.4.sh` (LiveCD configuration - shasta-1.4 shim for automation)
+  3. `switch_metadata.csv` (Switch configuration)
+  4. `qnd-1.4.sh` (LiveCD configuration - shasta-1.4 shim for automation)
 
 file (see below) to configure the LiveCD node.
 
@@ -151,7 +152,14 @@ export mtl_cidr=10.1.1.1/16
 export nmn_cidr=10.252.0.10/17
 export hmn_cidr=10.254.0.10/17
 export can_cidr=10.102.4.110/24
+export can_gw=10.102.4.111
+export can_static=10.102.9.112/28
+export can_dynamic=10.102.9.128/25
+export ntp_pool=time.nist.gov
 export system_name=sif
+export username=root
+export password=changemetoday!
+export install_ncn=ncn-m001
 ```
 
 - `site_nic` The interface that is directly attached to the site network on ncn-m001.
@@ -159,7 +167,10 @@ export system_name=sif
 - `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
 - `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
 - `bond_member0` and `bond_member1` The two interfaces that will be bonded to the bond0 interface.
-- `mtl_cidr`, `nmn_cidr`, `hmn_cidr`, and `can_cidr` The IP address and netmask in CIDR notation that is assigned to the bond0, vlan002, vlan004, and vlan007 interfaces on the LiveCD, respectively.  NOTE:  These include the IP address AND the netmask.  It is not just the network CIDR. Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
+- `mtl_cidr`, `nmn_cidr`, `hmn_cidr`, `can_cidr`, `can_static`, `can_dynamic`, and  `can_gw` The IP address and netmask in CIDR notation that is assigned to the bond0, vlan002, vlan004, and vlan007 interfaces on the LiveCD, respectively.  NOTE:  These include the IP address AND the netmask.  It is not just the network CIDR. Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
+- `ntp_pool` is the upstream time server
+- `username` is the BMC username
+- `password` is the BMC password
 
 Copy this file to the mounted data partition.
 
@@ -182,10 +193,10 @@ linux:~ # cp ncn_metadata.csv /mnt/prep/
 - TODO: Move this section into 300-350 service guides.
 - TODO: Give context for xlsx file instead of surprising user with new dependency.
 
-This file should come from the [shasta_system_configs](https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse) repository. 
+This file should come from the [shasta_system_configs](https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse) repository.
 Each system has its own directory in the repository. If this is a new system that doesn't yet have the `hmn_connections.json` file,
  then one will need to be generated from the CCD/SHCD (Cabling Diagram) for the system.
- 
+
 If you do not have this file you can use Docker to generate a new one.
 
 If you need to fetch the cabling diagram, you can use CrayAD logins to fetch it from [SharePoint](http://inside.us.cray.com/depts/CustomerService/CID/Install%20Documents/Forms/AllItems.aspx?RootFolder=%2Fdepts%2FCustomerService%2FCID%2FInstall%20Documents%2FCray%2FShasta%20River&FolderCTID=0x012000C5B40D5925B4534FA7D60FAF1F12BAE9&View={79A8C99F-11EB-44B8-B1A6-02D02755BFC4}).
@@ -203,6 +214,17 @@ Your files should appear in a `./output` directory, relative to where you ran th
 linux:~ # cp -r output/* /mnt/prep/
 ```
 
+#### switch_metadata.csv
+
+This file is manually created right now and follows this format:
+
+```
+Switch Xname,Type,Brand
+x3000c0w18,Leaf,Dell
+x3000c0w19L,Spine,Mellanox
+x3000c0w19R,Spine,Mellanox
+```
+
 ## Manual Step 5: Configuration Payload
 
 Now we need to generate our configuration payload around our system's schema. We now need:
@@ -213,56 +235,55 @@ Now we need to generate our configuration payload around our system's schema. We
 
 The configuration payload comes from the `csi config init` command anywhere.
 
-> NOTE: If you have not done so already, you must `source qnd-1.4.sh` to load vars such as the `$can_cidr`. 
+> NOTE: If you have not done so already, you must `source qnd-1.4.sh` to load vars such as the `$can_cidr`.
 
 1.  To execute this command you will need the following:
     > An example of the command to run with the required options.
-
-    Example variables to use
-    ``` bash
-    username=root
-    password=changemetoday!
-    crayname=foo
-    leafnames=x3000c0w14
-    spinenames=x3000c0w12,x3000c0w13
-    ```
 
     Now generate the files:
     ```bash
     linux:~ $ csi config init \
         --bootstrap-ncn-bmc-user $username \
         --bootstrap-ncn-bmc-pass $password \
-        --leaf-switch-xnames $leafnames \
-        --spine-switch-xnames $spinenames \
-        --system-name $crayname \
+        --system-name $system_name \
         --mountain-cabinets 0 \
         --river-cabinets 1 \
-        --can-cidr $can_cidr
+        --can-cidr $can_cidr \
+        --can-gateway $can_gw \
+        --can-static-pool $can_static \
+        --can-dynamic-pool $can_dynamic \
+        --ntp-pool $ntp_pool
     ```
 
     This will generate the following files in a subdirectory with the system name.
 
     ```bash
-    linux:~ # ls -R $crayname
-    foo:
-    conman.conf  data.json      dnsmasq.d      metallb.yaml      sls_input_file.json
-    credentials  manufacturing  networks       system_config.yaml
+    linux:~ # ls -R $system_name
+    ncn-w001:~/jsalmela # ls -R foo/
+    foo/:
+    basecamp  conman.conf  cpt-files  credentials  dnsmasq.d  manufacturing  metallb.yaml  networks  sls_input_file.json  system_config
+
+    foo/basecamp:
+    data.json
+
+    foo/cpt-files:
+    ifcfg-bond0  ifcfg-lan0  ifcfg-vlan002  ifcfg-vlan004  ifcfg-vlan007
 
     foo/credentials:
     bmc_password.json  mgmt_switch_password.json  root_password.json
 
     foo/dnsmasq.d:
-    CAN.conf  HMN.conf  mtl.conf  NMN.conf	statics.conf
+    CAN.conf  HMN.conf  mtl.conf  NMN.conf  statics.conf
 
     foo/manufacturing:
 
     foo/networks:
-    CAN.yaml  HMN.yaml  HSN.yaml  MTL.yaml	NMN.yaml
+    CAN.yaml  HMNLB.yaml  HMN.yaml  HSN.yaml  MTL.yaml  NMNLB.yaml  NMN.yaml
     ```
 
 2. Apply work-arounds:
 
-    - [CASMINST-298](https://connect.us.cray.com/jira/browse/CASMINST-298) 
+    - [CASMINST-298](https://connect.us.cray.com/jira/browse/CASMINST-298)
         - First, generate a pretty `data.json` that is easier to edit.
           ```bash
           linux:~ # cp $crayname/data.json $crayname/data.json.orig
@@ -384,7 +405,7 @@ The configuration payload comes from the `csi config init` command anywhere.
         ip mtu 9198
         exit
        ```
-    
+
        ```bash
        dhcp-option=interface:vlan004,option:router,10.102.11.111
        ```
@@ -498,9 +519,9 @@ The configuration payload comes from the `csi config init` command anywhere.
 
     ```bash
     cp -r ${system_name} /mnt/prep/
-    cp ${system_name}/data.json /mnt/configs
+    cp ${system_name}/basecamp/data.json /mnt/configs
     ```
-    
+
 ## Manual Step 6: Data Payload
 
 We'll use the previously defined URLs in `vars.sh` to fetch our data payload.
