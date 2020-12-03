@@ -85,7 +85,7 @@ will prevent the nodes from continuing to boot and end in undesired states.
 7. If you are not using onboard NICs, skip to step 8 and ignore this step. 
     > Tip: Mind the index (3, 2, 1.... ; not 1, 2, 3)
     ```
-    NCN Xname, NCN Role, NCN Subrole,BMC MAC,BOOTSTRAP MAC,BOND0 MAC0,BOND0 MAC1
+    Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0,Bond0 MAC1
     xXXXXcCsSSbBnN,Management,Storage3,********,************,BOND0 MAC0,BOND0 MAC1
     xXXXXcCsSSbBnN,Management,Storage2,********,************,BOND0 MAC0,BOND0 MAC1
     xXXXXcCsSSbBnN,Management,Storage1,********,************,BOND0 MAC0,BOND0 MAC1
@@ -100,7 +100,7 @@ will prevent the nodes from continuing to boot and end in undesired states.
 8. If you are not using onboard NICs, as is the new network modal for 1.4 use this format:
     > Tip: Mind the index (3, 2, 1.... ; not 1, 2, 3)
     ```
-    NCN Xname, NCN Role, NCN Subrole,BMC MAC,BOOTSTRAP MAC,BOND0 MAC0,BOND0 MAC1
+    Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0,Bond0 MAC1
     xXXXXcCsSSbBnN,Management,Storage3,********,--BOND0 MAC0-,BOND0 MAC0,BOND0 MAC1
     xXXXXcCsSSbBnN,Management,Storage2,********,--BOND0 MAC0-,BOND0 MAC0,BOND0 MAC1
     xXXXXcCsSSbBnN,Management,Storage1,********,--BOND0 MAC0-,BOND0 MAC0,BOND0 MAC1

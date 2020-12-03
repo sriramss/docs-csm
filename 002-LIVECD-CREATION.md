@@ -219,11 +219,17 @@ linux:~ # cp -r output/* /mnt/prep/
 This file is manually created right now and follows this format:
 
 ```
-Switch Xname,Type,Brand
-x3000c0w18,Leaf,Dell
-x3000c0w19L,Spine,Mellanox
-x3000c0w19R,Spine,Mellanox
+Switch Xname,Type,Brand,Model
+x3000c0w18,Leaf,Dell,S3048
+x3000c0w19L,Spine,Mellanox,SN2100
+x3000c0w19R,Spine,Mellanox,SN2100
 ```
+
+You can find the Model by logging into the switch and running one of the following commands.
+
+- On Dell:   `show system` 
+- On Mellanox:  `show inventory`
+- On Aruba: `show system`
 
 ## Manual Step 5: Configuration Payload
 
