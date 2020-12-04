@@ -3,73 +3,42 @@
 > Source qnd-1.4.sh to prepare the install env.
 
 ```bash
-pit:~ # source /var/www/ephemeral/qnd-1.4.sh
+pit:~ # source /var/www/ephemeral/prep/qnd-1.4.sh
 pit:~ # env
 ```
 
-> Note: you will need to fetch your external interface information from somewhere else.
-
-## Setup the Site-link (worker nodes, or managers for v3 networking)
+## Setup the Site-link 
 
 External, direct access.
 
 ```bash
-# These may have already been defined if you made them as part of the previous doc
 /root/bin/csi-setup-lan0.sh $site_cidr $site_gw $site_dns $site_nic
-```
-
-> Run `hostname`.   If you don't see the system name (e.g. fanta) in the hostname, run `csi-setup-lan0.sh` again.
-This will be fixed in [CASMINST-111](https://connect.us.cray.com/jira/browse/CASMINST-111).
-
-## Setup the Non-Compute Bond
-
-Then continue running the scripts that follow to set up the rest of the networking.  Setup the bond for talking to the full system, leverage link-resilience.  
-
-Internal, access to the Cray High-Performance Computer.
-
-Note, you must choose which interfaces to use for members in the
-LACP Link Aggregation.
-
-
-```bash
-pit:~ # /root/bin/csi-setup-bond0.sh $mtl_cidr $bond_member0 $bond_member1
-# If you have only one nic for the bond, then use this instead:
-pit:~ # /root/bin/csi-setup-bond0.sh $mtl_cidr $bond_member0
 ```
 
 # Log in now with SSH
 
 If you were on the Serial-over-LAN, now is a good time to log back in with SSH.  
 
-> If you do log in with SSH, make you `source /var/www/ephemeral/qnd-1.4.sh` again since you're logged in in a new session now.
+> If you do log in with SSH, make you `source /var/www/ephemeral/prep/qnd-1.4.sh` again since you're logged in in a new session now.
 
-## Setup the VLANS
+## Setup the bond and vlan interfaces
 
-#### Node management VLAN
+### Copy the CSI generated ifcfg files into place 
 
-This subnet handles discovering any trunked nodes (such as NCNs)
-and devices on unconfigured switchports (new switches, or factory reset).
+> Note we are not copying in the ifcfg-lan0 file at this time
 
 ```bash
-pit:~ # /root/bin/csi-setup-vlan002.sh $nmn_cidr
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/ifcfg-bond0 /etc/sysconfig/network
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/if*-vlan* /etc/sysconfig/network
 ```
 
-#### Hardware management VLAN
-
-This subnet handles hardware control, and communication. It is the primary
-network for talking to and powering on other nodes during bootstrap.
+### Bring up these interfaces
 
 ```bash
-pit:~ # /root/bin/csi-setup-vlan004.sh $hmn_cidr
-```
-
-#### Customer Access VLAN
-
-This subnet handles customer access to nodes and services as well as access to outside services from inside the cluster. It is the primary
-network for talking to NCNs from outside the cluster and access services in the cluster.
-
-```bash
-pit:~ # /root/bin/csi-setup-vlan007.sh $can_cidr
+pit:~ # wicked ifup bond0 
+pit:~ # wicked ifup vlan002 
+pit:~ # wicked ifup vlan004 
+pit:~ # wicked ifup vlan007 
 ```
 
 ## Manual Check 1 :: STOP :: Validate the LiveCD platform.
@@ -114,11 +83,10 @@ CONTAINER ID  IMAGE                                         COMMAND             
 
 # Manual Step 3: Access to External Services
 
-To access outside services like Stash or Artifactory, we need to set up /etc/resolv.conf.  Make sure the /etc/resolv.conf includes the site DNS servers at the end of the file.
+To access outside services like Stash or Artifactory, we need to set up /etc/resolv.conf.  Make sure the /etc/resolv.conf includes the site DNS server at the end of the file.
 
 ```bash
 nameserver 172.30.84.40
-nameserver 172.31.84.40
 ```
 
 # Manual Check 3: Verify Outside Name Resolution

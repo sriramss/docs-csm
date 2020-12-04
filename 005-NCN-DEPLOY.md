@@ -256,7 +256,7 @@ ipmitool -I lanplus -U $username -P $password -H ncn-m002-mgmt chassis bootdev d
 ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev disk options=efiboot
 ```
 
-## Manual Step 4: Prepare for workarounds
+## Manual Step 4: Apply workarounds
 
 Clone the workaround repo to have access to the workarounds needed to get through some known issues until they are fully fixed.
 
@@ -265,7 +265,7 @@ pit:~ # cd /root
 pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.git 
 ```
 
-If there are any workarounds in the before-ncn-boot directory, run those now.   Instructions are in the README files.
+### If there are any workarounds in the before-ncn-boot directory, run those now.   Instructions are in the README files.
 
 ## Manual Step 5: Boot Storage Nodes
 
@@ -372,37 +372,36 @@ ncn-w002   Ready    <none>   7m42s   v1.18.6
 ncn-w003   Ready    <none>   8m02s   v1.18.6
 ```
 
-Also verify that all the pods in the kube-system namespace are running:
+Verify that all the pods in the kube-system namespace are running.  Make sure all pods except coredns have an IP starting with 10.252.
 
 ```bash
 ncn-m002:~ # kubectl get po -n kube-system
-NAME                               READY   STATUS    RESTARTS   AGE
-coredns-66bff467f8-7psjb           1/1     Running   0          8m12s
-coredns-66bff467f8-hhw8f           1/1     Running   0          8m12s
-etcd-ncn-m001                      1/1     Running   0          8m20s
-etcd-ncn-m002                      1/1     Running   0          7m25s
-etcd-ncn-m003                      1/1     Running   0          2m34s
-kube-apiserver-ncn-m001            1/1     Running   0          8m20s
-kube-apiserver-ncn-m002            1/1     Running   0          7m5s
-kube-apiserver-ncn-m003            1/1     Running   0          2m21s
-kube-controller-manager-ncn-m001   1/1     Running   1          8m20s
-kube-controller-manager-ncn-m002   1/1     Running   0          7m5s
-kube-controller-manager-ncn-m003   1/1     Running   0          2m21s
-kube-multus-ds-amd64-7cnxz         1/1     Running   0          2m39s
-kube-multus-ds-amd64-8vdld         1/1     Running   0          2m35s
-kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s
-kube-multus-ds-amd64-ltncv         1/1     Running   0          8m12s
-kube-proxy-lr6z9                   1/1     Running   0          2m35s
-kube-proxy-pmv8l                   1/1     Running   0          7m30s
-kube-proxy-s7jsl                   1/1     Running   0          2m39s
-kube-proxy-z9r2m                   1/1     Running   0          8m12s
-kube-scheduler-ncn-m001            1/1     Running   1          8m20s
-kube-scheduler-ncn-m002            1/1     Running   0          7m4s
-kube-scheduler-ncn-m003            1/1     Running   0          2m20s
-weave-net-bf8qn                    2/2     Running   0          7m55s
-weave-net-hsczs                    2/2     Running   4          7m30s
-weave-net-schwt                    2/2     Running   0          2m39s
-weave-net-vwqbt                    2/2     Running   0          2m35s
+NAME                               READY   STATUS    RESTARTS   AGE	IP            NODE       NOMINATED NODE   READINESS GATES
+coredns-66bff467f8-7psjb           1/1     Running   0          8m12s	10.36.0.44    ncn-w001   <none>           <none>
+coredns-66bff467f8-hhw8f           1/1     Running   0          8m12s	10.44.0.3     ncn-m003   <none>           <none>
+etcd-ncn-m002                      1/1     Running   0          7m25s	10.252.1.14   ncn-m002   <none>           <none>
+etcd-ncn-m003                      1/1     Running   0          2m34s	10.252.1.13   ncn-m003   <none>           <none>
+kube-apiserver-ncn-m002            1/1     Running   0          7m5s	10.252.1.14   ncn-m002   <none>           <none>
+kube-apiserver-ncn-m003            1/1     Running   0          2m21s	10.252.1.13   ncn-m003   <none>           <none>
+kube-controller-manager-ncn-m002   1/1     Running   0          7m5s	10.252.1.14   ncn-m002   <none>           <none>
+kube-controller-manager-ncn-m003   1/1     Running   0          2m21s	10.252.1.13   ncn-m003   <none>           <none>
+kube-multus-ds-amd64-7cnxz         1/1     Running   0          2m39s	10.252.1.14   ncn-m002   <none>           <none>
+kube-multus-ds-amd64-8vdld         1/1     Running   0          2m35s	10.252.1.12   ncn-w001   <none>           <none>
+kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s	10.252.1.13   ncn-m003   <none>           <none>
+kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s	10.252.1.11   ncn-w002   <none>           <none>	
+kube-multus-ds-amd64-ps5zp         1/1     Running   0          8m12s	10.252.1.10   ncn-w003   <none>           <none>	
+kube-proxy-lr6z9                   1/1     Running   0          2m35s 	10.252.1.11   ncn-w002   <none>           <none>	
+kube-proxy-pmv8l                   1/1     Running   0          7m30s	10.252.1.10   ncn-w003   <none>           <none>
+kube-proxy-s7jsl                   1/1     Running   0          2m39s	10.252.1.14   ncn-m002   <none>           <none>
+kube-proxy-z9r2m                   1/1     Running   0          8m12s	10.252.1.13   ncn-m003   <none>           <none>
+kube-proxy-z4tkt                   1/1     Running   0          8m12s	10.252.1.12   ncn-w001   <none>           <none>	
+kube-scheduler-ncn-m002            1/1     Running   0          7m4s	10.252.1.14   ncn-m002   <none>           <none>
+kube-scheduler-ncn-m003            1/1     Running   0          2m20s	10.252.1.13   ncn-m003   <none>           <none>
+weave-net-bf8qn                    2/2     Running   0          7m55s	10.252.1.10   ncn-w003   <none>           <none>
+weave-net-hsczs                    2/2     Running   4          7m30s	10.252.1.13   ncn-m003   <none>           <none>
+weave-net-schwt                    2/2     Running   0          2m39s	10.252.1.12   ncn-w001   <none>           <none>
+weave-net-vwqbt                    2/2     Running   0          2m35s	10.252.1.14   ncn-m002   <none>           <none>
+weave-net-zm5t4                    2/2     Running   0          2m35s	10.252.1.11   ncn-w002   <none>           <none>
 ```
 
 Now you can start **Installing platform services** [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md)
