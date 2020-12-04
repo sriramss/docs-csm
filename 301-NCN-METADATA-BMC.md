@@ -65,7 +65,7 @@ If you are here with an unconfigured switch, milage may vary.
 3. From the above output, pickout the initial 8 BMCs (minus however many managers have external BMC connections).
     > Tip: Mind the index (3, 2, 1.... ; not 1, 2, 3)
     ```
-    NCN Xname, NCN Role, NCN Subrole,BMC MAC,BOOTSTRAP MAC,BOND0 MAC0,BOND0 MAC1
+    Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0,Bond0 MAC1
     xXXXXcCsSSbBnN,Management,Storage3,^^^^^^,
     xXXXXcCsSSbBnN,Management,Storage2,^^^^^^,
     xXXXXcCsSSbBnN,Management,Storage1,^^^^^^,
