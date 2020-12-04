@@ -1,4 +1,4 @@
-# Serivce Guides
+# Service Guides
 
 This guide goes over directions for constructing various procedure such as constructing bootstrap-files 
 or preflight checks/todos during initial racking.
