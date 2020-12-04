@@ -317,6 +317,33 @@ for bmc in $(grep -Eo ncn-.*-mgmt /var/lib/misc/dnsmasq.leases | grep -v s | sor
 done
 ```
 
+> **NOTE:  We have seem some systems hang at pxe boot with the following messages on the console, if you hang here for more than five minutes, power the node off and back on again, this appears to be intermittent:
+
+```bash
+RAS]No Valid Oem Memory Map Table Found
+[RAS]Set Error Type With Address structure locate: 0x0000000077EEAD98
+ 33%: BIOS Configuration Initialization
+RbsuSetupDxeEntry, failed to initial product lines feature: Unsupported
+Create243Record: Error finding ME Type 216 record.
+HpSmbiosType243AbsorokaFwInformationEntryPoint: SmbiosSystemOptionString failed! Status = Not Found
+CheckDebugCertificateStatus: unpack error.
+ 41%: Early PCI Initialization - Start
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x86|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x86|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x03|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x03|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x86|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+CreatePciIoDevice: The SR-IOV card[0x00000000|0x03|0x00|0x00] has invalid setting on InitialVFs register
+CreatePciIoDevice: its SR-IOV function will be disabled. We need to report the issue to card vandor
+```
+
+
+
 > **STOP and Check: Manually Inspect Storage**
 
 ```bash
@@ -348,14 +375,13 @@ ncn-s001:~ # ceph -s
     usage:   18 GiB used, 24 TiB / 24 TiB avail
     pgs:     968 active+clean
 ```
-Verify 3 storage classes have been created (can run on ncn-s001.nmn):
+Verify 3 storage config maps have been created (can run on ncn-s001.nmn):
 
 ```bash
-ncn-s001:~ # kubectl get storageclass
-NAME                             PROVISIONER       RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-ceph-cephfs-external             ceph.com/cephfs   Delete          Immediate           false                  4m47s
-k8s-block-replicated (default)   ceph.com/rbd      Delete          Immediate           true                   5m50s
-sma-block-replicated             ceph.com/rbd      Delete          Immediate           true                   5m31s
+ncn-s001:~ # kubectl get cm | grep csi-sc
+cephfs-csi-sc                    1      8d
+kube-csi-sc                      1      8d
+sma-csi-sc                       1      8d
 ```
 
 > **STOP and Check: Manually Check K8s**
