@@ -7,9 +7,9 @@ If you are unsure, see the bottom of [LiveCD Install and Config](004-LIVECD-INST
 
 > **Do not pass GO, do not collect $200.**
 
-First, there are some important checks to be done before continuing. These serve to prevent mayhem during 
+First, there are some important checks to be done before continuing. These serve to prevent mayhem during
 installs and operation that are hard to debug. Please note, more checks may be added over time
- and existing checks may receive updates or become defunct. 
+ and existing checks may receive updates or become defunct.
 
 #### Check : Switchport MTU
 
@@ -76,7 +76,7 @@ To run the test by hand if CSI is unavailable or has doubt:
     ```
 #### Check : Update basecamp data to include Certificate Authority (CA) certificates
 
-> **IMPORTANT** You must have a ```shasta-cfg``` git repo created and sync'd from ```stable``` (or a conscious deviation) to perform this step. Given the ```shasta-cfg``` model *may* be in flux, contact SSI if you need a new repo created. They can also provide you with a process to synchronize from ```stable```. 
+> **IMPORTANT** You must have a ```shasta-cfg``` git repo created and sync'd from ```stable``` (or a conscious deviation) to perform this step. Given the ```shasta-cfg``` model *may* be in flux, contact SSI if you need a new repo created. They can also provide you with a process to synchronize from ```stable```.
 
 Basecamp needs the right data to setup the certificates, if you already set this up please move onto the next check/step.
 
@@ -99,7 +99,7 @@ Basecamp needs the right data to setup the certificates, if you already set this
 2. Use `csi` to patch `data.json` using `customizations.yaml` and the private sealed secret key.
 
     ```bash
-    surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key 
+    surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key
     2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
     2020/12/01 11:41:29 Patched cloud-init seed data in place
     ```
@@ -172,6 +172,14 @@ Activate the new setting:
 pit:~ # systemctl restart basecamp
 ```
 
+# Configure NTP on the LiveCD
+
+Run this script to enable NTP on the LiveCD:
+
+```bash
+/root/bin/configure-ntp.sh
+```
+
 ##### Safeguard: RAIDS / BOOTLOADERS / SquashFS / OverlayFS
 
 Edit `/var/www/boot/script.ipxe` and align the following options as you see them here:
@@ -196,7 +204,7 @@ pit:~ # /root/bin/set-sqfs-links.sh
 
 Make sure the correct images were selected.
 ```bash
-pit:~ # ls -l /var/www 
+pit:~ # ls -l /var/www
 ```
 
 ## Manual Step 2: Set Boot Order
@@ -223,7 +231,7 @@ For each node that is on, run the "Basic Wipe" defined in [Disk Cleanslate](051-
     ```bash
     username=bob
     password=alice
-    
+
     # ALWAYS PXE BOOT; sets a system to PXE
     ipmitool -I lanplus -U $username -P $password -H ncn-s003-mgmt chassis bootdev pxe options=efiboot,persistent
     ipmitool -I lanplus -U $username -P $password -H ncn-s002-mgmt chassis bootdev pxe options=efiboot,persistent
@@ -233,12 +241,12 @@ For each node that is on, run the "Basic Wipe" defined in [Disk Cleanslate](051-
     ipmitool -I lanplus -U $username -P $password -H ncn-w001-mgmt chassis bootdev pxe options=efiboot,persistent
     ipmitool -I lanplus -U $username -P $password -H ncn-m003-mgmt chassis bootdev pxe options=efiboot,persistent
     ipmitool -I lanplus -U $username -P $password -H ncn-m002-mgmt chassis bootdev pxe options=efiboot,persistent
-    
+
     # for installs still using w001 for the liveCD:
     ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev pxe options=efiboot,persistent
     ```
 
-*That's it, you're done!* Move onto the next step. On the other hand, below you can find a block of code for 
+*That's it, you're done!* Move onto the next step. On the other hand, below you can find a block of code for
 one-time disk booting via `ipmitool`.
 
 ```bash
@@ -262,7 +270,7 @@ Clone the workaround repo to have access to the workarounds needed to get throug
 
 ```bash
 pit:~ # cd /root
-pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.git 
+pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.git
 ```
 
 ### If there are any workarounds in the before-ncn-boot directory, run those now.   Instructions are in the README files.
@@ -414,13 +422,13 @@ kube-controller-manager-ncn-m003   1/1     Running   0          2m21s	10.252.1.1
 kube-multus-ds-amd64-7cnxz         1/1     Running   0          2m39s	10.252.1.14   ncn-m002   <none>           <none>
 kube-multus-ds-amd64-8vdld         1/1     Running   0          2m35s	10.252.1.12   ncn-w001   <none>           <none>
 kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s	10.252.1.13   ncn-m003   <none>           <none>
-kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s	10.252.1.11   ncn-w002   <none>           <none>	
-kube-multus-ds-amd64-ps5zp         1/1     Running   0          8m12s	10.252.1.10   ncn-w003   <none>           <none>	
-kube-proxy-lr6z9                   1/1     Running   0          2m35s 	10.252.1.11   ncn-w002   <none>           <none>	
+kube-multus-ds-amd64-dxxvj         1/1     Running   1          7m30s	10.252.1.11   ncn-w002   <none>           <none>
+kube-multus-ds-amd64-ps5zp         1/1     Running   0          8m12s	10.252.1.10   ncn-w003   <none>           <none>
+kube-proxy-lr6z9                   1/1     Running   0          2m35s 	10.252.1.11   ncn-w002   <none>           <none>
 kube-proxy-pmv8l                   1/1     Running   0          7m30s	10.252.1.10   ncn-w003   <none>           <none>
 kube-proxy-s7jsl                   1/1     Running   0          2m39s	10.252.1.14   ncn-m002   <none>           <none>
 kube-proxy-z9r2m                   1/1     Running   0          8m12s	10.252.1.13   ncn-m003   <none>           <none>
-kube-proxy-z4tkt                   1/1     Running   0          8m12s	10.252.1.12   ncn-w001   <none>           <none>	
+kube-proxy-z4tkt                   1/1     Running   0          8m12s	10.252.1.12   ncn-w001   <none>           <none>
 kube-scheduler-ncn-m002            1/1     Running   0          7m4s	10.252.1.14   ncn-m002   <none>           <none>
 kube-scheduler-ncn-m003            1/1     Running   0          2m20s	10.252.1.13   ncn-m003   <none>           <none>
 weave-net-bf8qn                    2/2     Running   0          7m55s	10.252.1.10   ncn-w003   <none>           <none>
