@@ -50,6 +50,7 @@ vim vars.sh
 ```bash
 #!/bin/bash
 # These vars will likely stay the same unless there are development changes
+export PIT_USB_DEVICE=/dev/sdd
 export PIT_DISK_LABEL=/dev/disk/by-label/PITDATA
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
 export PIT_ISO_URL=http://car.dev.cray.com/artifactory/csm/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
@@ -58,6 +59,8 @@ export PIT_ISO_NAME=$(basename $PIT_ISO_URL)
 # These are the artifacts you want to be used to boot with
 export PIT_WRITE_SCRIPT=/root/cray-pre-install-toolkit/scripts/write-livecd.sh
 export PIT_DATA_DIR=/mnt/data
+export PIT_PREP_DIR=/mnt/prep
+export PIT_CONFIGS_DIR=/mnt/configs
 export PIT_CEPH_DIR=/mnt/data/ceph
 export PIT_K8S_DIR=/mnt/data/k8s
 
@@ -99,26 +102,26 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
     git clone $PIT_REPO_URL
 
     # Make the USB.
-    csi pit format /dev/sdd ./cray-pre-install-toolkit-latest.iso 20000
+    csi pit format $PIT_USB_DEVICE ./cray-pre-install-toolkit-latest.iso 20000
     ```
 
 2. Mount data partition:
 
     ```bash
-    mount /dev/disk/by-label/PITDATA /mnt
+    mount $PIT_DISK_LABEL /mnt
     ```
 
     Now that your disk is setup and the data partition is mounted, you can begin gathering info and configs and populating it to the USB disk so it's available when you boot into the livecd.
 
 3. Make the config and data directories, and a prep directory for our manual files:
     ```bash
-   mkdir -pv /mnt/configs /mnt/data /mnt/prep
+   mkdir -pv $PIT_CONFIGS_DIR $PIT_DATA_DIR $PIT_PREP_DIR
    ```
 
 4. Copy your vars file to the data partition
 
     ```bash
-    cp vars.sh /mnt/prep/
+    cp vars.sh $PIT_PREP_DIR
     ```
 
 > Note: We will unmount this device at the end of this page. For now, leave it mounted.
@@ -158,7 +161,7 @@ export password=changemetoday!
 - `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
 - `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
 - `can_cidr` The IP subnet for the CAN network assigned to this system.  Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
-- `can_gw`  The common gateway IP used for both spine switches.   Also commonly referred to as the Virtual IP for the CAN. 
+- `can_gw`  The common gateway IP used for both spine switches.   Also commonly referred to as the Virtual IP for the CAN.
 - `can_static` and `can_dynamic` The MetalLB address static and dynamic address pools for the customer access network
 - `ntp_pool` is the upstream time server
 - `system_name` is the system name
@@ -168,7 +171,7 @@ export password=changemetoday!
 Copy this file to the mounted data partition.
 
 ```bash
-linux:~ # cp qnd-1.4.sh /mnt/prep/
+linux:~ # cp qnd-1.4.sh $PIT_PREP_DIR
 ```
 
 #### ncn_metadata.csv
@@ -179,7 +182,7 @@ The format of this file has changed so make sure the column headings of your fil
 When you have this file, add it into the prep directory:
 
 ```bash
-linux:~ # cp ncn_metadata.csv /mnt/prep/
+linux:~ # cp ncn_metadata.csv $PIT_PREP_DIR
 ```
 
 #### hmn_connections.json
@@ -205,7 +208,7 @@ linux:~ # docker run --rm -it --name hms-shcd-parser -v  ${shcd_path}:/input/shc
 Your files should appear in a `./output` directory, relative to where you ran the `docker` command. These files should be copied into the LiveCD:
 
 ```bash
-linux:~ # cp -r output/* /mnt/prep/
+linux:~ # cp -r output/* $PIT_PREP_DIR
 ```
 
 #### switch_metadata.csv
@@ -221,7 +224,7 @@ x3000c0w19R,Spine,Mellanox,SN2100
 
 You can find the Model by logging into the switch and running one of the following commands.
 
-- On Dell:   `show system` 
+- On Dell:   `show system`
 - On Mellanox:  `show inventory`
 - On Aruba: `show system`
 
@@ -237,7 +240,7 @@ Now we need to generate our configuration payload around our system's schema. We
 The configuration payload comes from the `csi config init` command below.
 
 ```bash
-linux:~ $ cd /mnt/prep
+linux:~ $ cd $PIT_PREP_DIR
 linux:~ $ source qnd-1.4.sh
 ```
 
@@ -304,10 +307,10 @@ linux:~ $ source qnd-1.4.sh
 
     If you do not see an error message, the format is valid.
 
-4. Copy the data.json into the configs directory on the data partition. 
+4. Copy the `data.json` into the configs directory on the data partition.
 
     ```bash
-    cp /mnt/prep/${system_name}/basecamp/data.json /mnt/configs
+    cp /mnt/prep/${system_name}/basecamp/data.json $PIT_CONFIGS_DIR
     ```
 
 ## Manual Step 6: Data Payload
@@ -327,7 +330,7 @@ linux:~ # source /mnt/prep/vars.sh
 linux:~ # csi pit get
 
 # Check what downloaded:
-linux:~ # ls -lR /mnt/data/
+linux:~ # ls -lR $PIT_DATA_DIR
 ```
 
 Now, unmount the bootable USB.
