@@ -73,7 +73,7 @@ for data collection.
 
 Unless your system is sans-onboards, meaning it does not use or does not have onboard NICs on the non-compute nodes, then these guides will be necessary before (re)constructing the `ncn_metadata.csv` file.
 1. [Recabling from shasta-1.3 for shasta-1.4](050-MOVE-SITE-CONNECTIONS.md) (for machines still using w001 for BIS node)
-2. [Enabling Network Boots over Spine Switches](304-NCN-PXE-RECABLE.md) (for shasta 1.3 machines)
+2. [Enabling Network Boots over Spine Switches](304-NCN-PCIE-NETBOOT-AND-RECABLE.md) (for shasta 1.3 machines)
 
 The following two guides will assist with (re)creating `ncn_metadata.csv`
 1. [Collecting BMC MAC Addresses](301-NCN-METADATA-BMC.md)
