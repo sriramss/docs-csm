@@ -59,6 +59,12 @@ systemctl restart dnsmasq
 systemctl restart conman
 ```
 
+Start and configure NTP on the LiveCD for a fallback/recovery server:
+
+```bash
+pit:~ # /root/bin/configure-ntp.sh
+```
+
 ## Manual Check 2 :: STOP :: Validate the Services
 
 Now verify service health:

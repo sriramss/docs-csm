@@ -172,14 +172,6 @@ Activate the new setting:
 pit:~ # systemctl restart basecamp
 ```
 
-# Configure NTP on the LiveCD
-
-Run this script to enable NTP on the LiveCD:
-
-```bash
-/root/bin/configure-ntp.sh
-```
-
 ##### Safeguard: RAIDS / BOOTLOADERS / SquashFS / OverlayFS
 
 Edit `/var/www/boot/script.ipxe` and align the following options as you see them here:
