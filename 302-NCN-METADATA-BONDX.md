@@ -15,7 +15,7 @@ boot-check nodes to dump network device information without an OS. This works by
 2. Conman is active (`conman -q` to see consoles.)
 3. BMC MACs already collected
 
-For help with either of those, see [LIVECD-SETUP](006-LIVECD-SETUP.md).
+For help with either of those, see [LiveCD Install and Config.](004-LIVECD-INSTALL-AND-CONFIG.md).
 
 #### MAC Collection
 
@@ -118,7 +118,7 @@ For this, you will need to double-back to [NCN Metadata BMC](301-NCN-METADATA-BM
 the MACs for your BOND from each spine switch.
 
 > Tip: A PCIe card with dual-heads may go to either spine switch, meaning MAC0 ought to be collected from
-> spine-01. Please refer to your cabling diagram, or actual rack (in-person).
+> spine-01. Please refer to your cabling diagram, or actual rack (in-person302).
 
 1. Follow "Metadata BMC" on each spine switch that port1 and port2 of the bond isplugged into.
 2. Usually the 2nd/3rd/4th/Nth MAC on the PCIe card will be a 0x1 or 0x2 deviation from the first port. If you confirm this, then collection
