@@ -32,6 +32,7 @@ mypc:~ > ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt sol activat
 
 If you observe the entire boot, you will see an integrity check occur before Linux starts. This can be skipped by hitting OK when it appears. It is very quick.
 
+Since you pre-populated the partition with your networking config files, **you can connect via SSH when the node comes up**, but it's still helpful to watch it over the SOL to ensure there are no issues.
 
 Once the system boots, you will need to create a **new** password for the root account.  
 
@@ -61,6 +62,89 @@ Offline CSM documentation can be found at /usr/share/doc/metal (version: rpm -q 
 After logging in, have your network information handy so you can populate it in the next steps.
 - IP and netmask for your external connection(s).
 - The CAN IP/CIDR (ex: `10.102.4.110/24`)
+
+
+Once booted, your system will come up with all the interfaces configured:
+
+```
+[  OK  ] Started Permit User Sessions.
+[  OK  ] Started Serial Getty on ttyS0.
+[  OK  ] Started DNS caching server..
+[  OK  ] Reached target Host and Network Name Lookups.
+         Starting NTP client/server...
+[  OK  ] Started NTP client/server.
+[  OK  ] Reached target System Time Synchronized.
+[  OK  ] Started Daily rotation of log files.
+[  OK  ] Started Discard unused blocks once a week.
+[  OK  ] Reached target Timers.
+         Starting The Apache Webserver...
+[  OK  ] Started OpenSSH Daemon.
+[  OK  ] Started The Apache Webserver.
+[  OK  ] Started Getty on tty1.
+[  OK  ] Reached target Login Prompts.
+[  OK  ] Reached target Multi-User System.
+         Starting Update UTMP about System Runlevel Changes...
+         Starting Tell blogd to Quit...
+[  OK  ] Started Update UTMP about System Runlevel Changes.
+[  OK  ] Started Tell blogd to Quit.
+
+pit login: root
+Password:
+You are required to change your password immediately (administrator enforced)
+Changing password for root.
+Current password:
+New password:
+Retype new password:
+Welcome to the CRAY Prenstall Toolkit (LiveOS)
+
+Offline CSM documentation can be found at /usr/share/doc/metal (version: rpm -q docs-csm-install)
+pit:~ # ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host
+       valid_lft forever preferred_lft forever
+2: em1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master lan0 state UP group default qlen 1000
+    link/ether b4:2e:99:3a:26:08 brd ff:ff:ff:ff:ff:ff
+3: em2: <BROADCAST,MULTICAST> mtu 1500 qdisc noop state DOWN group default qlen 1000
+    link/ether b4:2e:99:3a:26:09 brd ff:ff:ff:ff:ff:ff
+4: p1p1: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc mq master bond0 state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+5: p1p2: <BROADCAST,MULTICAST,SLAVE,UP,LOWER_UP> mtu 1500 qdisc mq master bond0 state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+6: lan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b4:2e:99:3a:26:08 brd ff:ff:ff:ff:ff:ff
+    inet 172.30.52.183/20 brd 172.30.63.255 scope global lan0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::b62e:99ff:fe3a:2608/64 scope link
+       valid_lft forever preferred_lft forever
+7: bond0: <BROADCAST,MULTICAST,MASTER,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+    inet 10.1.1.2/16 brd 10.1.255.255 scope global bond0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ba59:9fff:fec7:12f2/64 scope link
+       valid_lft forever preferred_lft forever
+8: vlan004@bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+    inet 10.254.1.8/16 brd 10.254.255.255 scope global vlan004
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ba59:9fff:fec7:12f2/64 scope link
+       valid_lft forever preferred_lft forever
+9: vlan007@bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+    inet 10.102.3.6/26 brd 10.102.3.63 scope global vlan007
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ba59:9fff:fec7:12f2/64 scope link
+       valid_lft forever preferred_lft forever
+10: vlan002@bond0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether b8:59:9f:c7:12:f2 brd ff:ff:ff:ff:ff:ff
+    inet 10.252.1.7/16 brd 10.252.255.255 scope global vlan002
+       valid_lft forever preferred_lft forever
+    inet6 fe80::ba59:9fff:fec7:12f2/64 scope link
+       valid_lft forever preferred_lft forever
+pit:~ #
+```
 
 Then you can move onto these next two pages:
 1. Setting up communication...[LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md))

@@ -2,6 +2,15 @@
 
 This page provides directions on constructing the `switch_metadata.csv` file.
 
+This file is manually created right now and follows this format:
+
+```
+Switch Xname,Type,Brand
+x3000c0w18,Leaf,Dell
+x3000c0h19s1,Spine,Mellanox
+x3000c0h19s2,Spine,Mellanox
+```
+
 #### Requirements
 
 For this you will need:
@@ -14,7 +23,7 @@ guide handy while mapping names between the SHCD and your `switch_metadata.csv` 
 #### Format
 
 Spine and aggregation switches use the format `xXcChHsS` (`comptype_hl_switch`). Leaf switches use `xXcCwW` (`comptype_mgmt_switch`).
- 
+
 > More info: [HSS Naming Convention](https://connect.us.cray.com/confluence/display/HSOS/Shasta+HSS+Component+Naming+Convention)).
 
 #### Directions

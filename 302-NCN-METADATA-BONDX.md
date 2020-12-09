@@ -2,12 +2,12 @@
 
 This page will detail how to collect the NCN MAC addresses from a racked, shasta-1.4+ system.
 
-After completing this guide, you will have the MAC addresses needed for the `ncn_metadata.csv` file's BMC  column.
+After completing this guide, you will have the MAC addresses needed for the `ncn_metadata.csv` file's BMC column.
 
 The easy way to do this leverages the NIC-dump provided by the metal-ipxe package. This page will walk-throuogh
 booting NCNs and collecting their MACs from the conman console logs.
 > The alternative is to use serial cables (or SSH) to collect the MACs from the switch ARP tables, this can become exponentially difficult for large systems.
-> If this is the only way, please proceed to the bottom of this page. 
+> If this is the only way, please proceed to the bottom of this page.
 
 ## Procedure: iPXE Consoles
 
@@ -28,7 +28,7 @@ For help with either of those, see [LiveCD Install and Config](004-LIVECD-INSTAL
 
 #### MAC Collection
 
-1. (optional) shim the boot so nodes bail after dumping their netdevs. Removing the iPXE script will prevent network booting but beware of disk-boots. 
+1. (optional) shim the boot so nodes bail after dumping their netdevs. Removing the iPXE script will prevent network booting but beware of disk-boots.
 will prevent the nodes from continuing to boot and end in undesired states.
     ```bash
     pit:~ # mv /var/www/boot/script.ipxe /var/www/boot/script.ipxe.bak
@@ -51,11 +51,11 @@ will prevent the nodes from continuing to boot and end in undesired states.
     # Replace with actual username/passwords.
     username=bob
     password=alice
-    
+
     # ALWAYS PXE BOOT; sets a system to PXE
     for node in $(conman -q | grep ncn | grep mgmt); do
         ipmitool -I lanplus -U $username -P $password -H $node chassis bootdev pxe options=efiboot,persistent
-        if ipmitool -I lanplus -U $username -P $password -H $node power status =~ 'off' ; then 
+        if ipmitool -I lanplus -U $username -P $password -H $node power status =~ 'off' ; then
             ipmitool -I lanplus -U $username -P $password -H $node power on
         else
             ipmitool -I lanplus -U $username -P $password -H $node power reset
@@ -80,7 +80,7 @@ will prevent the nodes from continuing to boot and end in undesired states.
             echo $file
             grep -Eoh '(net[0-9] MAC .*)' $file | sort -u | grep PCI | grep -Ev "$did" && echo -----
         done
-        ``` 
+        ```
     - Note to filter out onboard NICs, or site-link cards, you can omit their device IDs as well. Use the above snippet but add the other IDs:
       **this snippet prints out only mgmt MACs, the `did` is the HSN and onboard NICs that is being ignored.**
         ```bash
@@ -123,8 +123,8 @@ For this, you will need to double-back to [NCN Metadata BMC](301-NCN-METADATA-BM
 the MACs for your BOND from each the spine01 and spine02 switch.
 
 > Tip: A PCIe card with dual-heads may go to either spine switch, meaning MAC0 ought to be collected from
-> spine-01. Please refer to your cabling diagram, or actual rack (in-person). 
+> spine-01. Please refer to your cabling diagram, or actual rack (in-person).
 
 1. Follow "Metadata BMC" on each spine switch that port1 and port2 of the bond is plugged into.
 2. Usually the 2nd/3rd/4th/Nth MAC on the PCIe card will be a 0x1 or 0x2 deviation from the first port. If you confirm this, then collection
-is quicker. 
+is quicker.
