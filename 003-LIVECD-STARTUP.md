@@ -17,7 +17,7 @@ BootNext
 Alternatively, if you cannot find the USB stick in `efibootmgr` you can use ipmitool to set the node to boot into the bios and you can select the USB device from there.
 
 ```bash
-mypc:~ > ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt chassis bootdev bios 
+mypc:~ > ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt chassis bootdev bios
 ```
 
 ```bash
@@ -33,8 +33,28 @@ mypc:~ > ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt sol activat
 If you observe the entire boot, you will see an integrity check occur before Linux starts. This can be skipped by hitting OK when it appears. It is very quick.
 
 
-Once the system boots, you will need to create a **new** password for the root account.  The initial password is empty for the root user.  After you hit return, it will prompt you to change the password.  
+Once the system boots, you will need to create a **new** password for the root account.  
+
+**The initial password is empty for the root user.**
+
+After you hit return, it will prompt you to change the password.  
 We are setting the root password on 1.4 system to `!nitial0` to be consistent.
+
+```
+macbook:~$ ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt sol activate
+[SOL Session operational.  Use ~? for help]
+
+pit login: root
+Password:           <-------just press Enter here for a blank password
+You are required to change your password immediately (administrator enforced)
+Changing password for root.
+Current password:   <------- press Enter here, again, for a blank password
+New password:       <------- type new password
+Retype new password:<------- retype new password
+Welcome to the CRAY Prenstall Toolkit (LiveOS)
+
+Offline CSM documentation can be found at /usr/share/doc/metal (version: rpm -q docs-csm-install)
+```
 
 (for information on _recovery_, see [LiveCD Troubleshooting](020-LIVECD-TROUBLESHOOTING.md)
 
