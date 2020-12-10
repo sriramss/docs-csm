@@ -216,19 +216,18 @@ linux:~ # cp -r output/* $PIT_PREP_DIR
 This file is manually created right now and follows this format:
 
 ```
-Switch Xname,Type,Brand,Model
-x3000c0w18,Leaf,Dell,S3048
-x3000c0w19L,Spine,Mellanox,SN2100
-x3000c0w19R,Spine,Mellanox,SN2100
+Switch Xname,Type,Brand
+x3000c0w18,Leaf,Dell
+x3000c0h19s1,Spine,Mellanox
+x3000c0h19s2,Spine,Mellanox
 ```
 
-You can find the Model by logging into the switch and running one of the following commands.
+For information on creating file see [NCN Switch Metadata](305-SWITCH-METADATA.md).
 
-- On Dell:   `show system`
-- On Mellanox:  `show inventory`
-- On Aruba: `show system`
-
-Switch Xname has the format x3000c0wXX where XX is the slot in the rack (see [HSS Naming Convention](https://connect.us.cray.com/confluence/display/HSOS/Shasta+HSS+Component+Naming+Convention?)))
+Once you have your file, copy this into the $PIT_PREP_DIR for safe-keeping:
+```bash
+linux:~ # cp -r your_switch_metadata.csv $PIT_PREP_DIR
+```
 
 ## Manual Step 5: Configuration Payload
 
