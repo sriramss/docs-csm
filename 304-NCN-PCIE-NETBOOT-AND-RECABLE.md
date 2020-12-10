@@ -1,4 +1,4 @@
-# Guide : Netbboot an NCN from a Spine
+# Guide : Netboot an NCN from a Spine
 
 This page details how to migrate NCNs from depending on their onboard NICs for PXE booting, and booting
 over the spine switches.
