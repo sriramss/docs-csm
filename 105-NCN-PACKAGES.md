@@ -1,201 +1,323 @@
-# Out of date
+# NCN Packages
 
-> This was construced for NCNs in shasta-1.3 and does not reflect current 1.4 NCN images.
+These are defined elserwhere, but this lis updates for quick-reference. These lists are generated
+on running nodes, but to account for drift there are collection commands listed for each image.
 
-## sles_default_packages:
-  - autoyast2
-  - autoyast2-installation
-  - btrfsprogs
-  - e2fsprogs
-  - dmraid
-  - glibc
-  - grub2
-  - kdump
-  - kdumpid
-  - kernel-default-devel
-  - kernel-source
-  - kernel-syms
-  - kexec-tools
-  - sles-release
-  - snapper
-  - xfsprogs
-  - yast2-update
-  - yast2
-## mellanox_ofed_packages:
-  - cray-shasta-ncn-mofed
-## various_playbooks:
-  - jq
-  - docker-compose
-  - python3-docker
-  - python3-pyghmi
-  - python2-netaddr
-  - python2-pyghmi
-  - vim-data
-  - insserv-compat # dependency that is not properly required by the mellanox rpm that needs it
-  - mft
-  - cray-shasta-ncn-mofed
-  - lldpad
-  - open-lldp
-  - chronyd
-  - rsync
-  - cpupower
-  - sysstat
-  - cron
-  - manifestgen
-  - loftsman
-## bis:
-  - dhcp-server
-  - docker
-  - python3-docker
-  - docker-bash-completion
-  - docker-compose
-  - tftpboot-installation-SLE-15-SP1-x86_64
-  - tftp
-  - gnu_parallel
-  - apache2-prefork==2.4.33
-  - apache2==2.4.33
-  - ansible
-## customer_localization:
-  - sssd
-  - sssd-ldap
-  - sssd-krb5-common
-  - sssd-tools
-  - pam_ldap
-  - nss_ldap
-  - nfs-kernel-server
-## livecd
----
-### base:
-  - sudo
-  - squashfs
-  - tar
-### ncn_common:
-  - apparmor-profiles
-  - arptables
-  - at
-  - bash-completion
-  - bc
-  - bind-utils
-  - crash
-  - createrepo_c
-  - cloud-init
-  - curl
-  - dnsmasq
-  - dump
-  - ebtables
-  - emacs
-  - ethtool
-  - expect
-  - fping
-  - gdb
-  - genders
-  - git-core
-  - gnuplot
-  - gperftools
-  - gptfdisk
-  - hplip
-  - haveged
-  - ipmitool
-  - iproute2-bash-completion
-  - ipset
-  - java-1_8_0-ibm
-  - java-1_8_0-ibm-plugin
-  - kmod-bash-completion
-  - libcanberra-gtk0
-  - libecpg6
-  - libpq5
-  - libunwind-devel
-  - ltrace
-  - lvm2
-  - man
-  - mariadb
-  - mariadb-tools
-  - minicom
-  - mlocate
-  - nmap
-  - open-lldp
-  - openssl
-  - pdsh
-  - perf
-  - perl-doc
-  - perl-MailTools
-  - pixz
-  - postgresql
-  - postgresql-contrib
-  - postgresql-docs
-  - postgresql-server
-  - rarpd
-  - rsync
-  - rsyslog
-  - rzsz
-  - screen
-  - smartmontools
-  - socat
-  - squashfs
-  - squid
-  - strace
-  - sysstat
-  - systemd-bash-completion
-  - systemtap
-  - usbutils
-  - tcpdump
-  - unixODBC
-  - unzip
-  - util-linux
-  - wireshark
-  - xfsdump
-  - yum-metadata-parser
-  - zip
-  - btrfsprogs
-  - e2fsprogs
-  - glibc
-  - kdump
-  - kdumpid
-  - kernel-source
-  - kernel-syms
-  - kexec-tools
-  - sles-release
-  - snapper
-  - xfsprogs
-  - python
-  - python-urlgrabber
-  - python3-click
-  - python3-colorama
-  - python3-curses
-  - python3-ipaddr
-  - python3-Jinja2
-  - python3-lxml
-  - python3-MarkupSafe
-  - python3-netaddr
-  - python3-pexpect
-  - python3-rpm
-  - python3-sip
-  - issue-generator
-  - vim
-  - wget
-### k8s:
-  - acpid
-  - cray-ncn-system-files
-  - cray-node-identity
-  - cray-power-button
-  - rasdaemon
-  - cray-craytrace-kmp-default
-  - cray-node-tokens
-  - cray-orca
-  - cray-heartbeat
-  - cray-cps-utils
-### storage:
-  - python3-boto3
-  - python3-xml
-  - python3-six
-  - python3-netaddr
-  - netcat
-  - jq
-  - python3-pip
-  - ceph-mon-$ceph_version
-  - ceph-mgr-$ceph_version
-  - ceph-mds-$ceph_version
-  - ceph-radosgw-$ceph_version
-  - ceph-osd-$ceph_version
-  - haproxy
-  - keepalived
+## Kubernetes Images
+
+Source: https://stash.us.cray.com/projects/CLOUD/repos/node-image-kubernetes/browse
+
+#### Collection 
+
+```bash
+ncn-w002:~ # zypper --disable-repositories se --installed-only | grep i+ | tr -d '|' | awk '{print $2}'
+```
+
+#### The List
+
+- SLE_HPC
+- SLE_HPC-release
+- acpid
+- apparmor-profiles
+- arptables
+- at
+- autoyast2
+- autoyast2-installation
+- base
+- bc
+- bind-utils
+- biosdevname
+- ceph-common
+- cfs-state-reporter
+- cloud-init
+- conntrack-tools
+- cpupower
+- crash
+- cray-cos-release
+- cray-cps-utils
+- cray-dvs-kmp-default
+- cray-dvs-service
+- cray-heartbeat
+- cray-lustre-client
+- cray-lustre-client-devel
+- cray-lustre-client-kmp-default
+- cray-network-config
+- cray-node-identity
+- cray-orca
+- cray-power-button
+- cray-sat-podman
+- craycli-wrapper
+- createrepo_c
+- dnsmasq
+- dosfstools
+- dracut-kiwi-live
+- dracut-metal-mdsquash
+- dump
+- e2fsprogs
+- ebtables
+- emacs
+- ethtool
+- expect
+- fping
+- gdb
+- genders
+- git-core
+- glibc
+- gnuplot
+- gperftools
+- gptfdisk
+- grub2
+- haproxy
+- hpe-csm-scripts
+- hplip
+- ipmitool
+- iproute2-bash-completion
+- ipset
+- ipvsadm
+- irqbalance
+- java-1_8_0-ibm
+- java-1_8_0-ibm-plugin
+- kdump
+- kdumpid
+- keepalived
+- kernel-mft-mlnx-kmp-default
+- kernel-source
+- kernel-syms
+- kexec-tools
+- kmod-bash-completion
+- kubeadm
+- kubectl
+- kubelet
+- less
+- libcanberra-gtk0
+- libecpg6
+- libpq5
+- libunwind-devel
+- ltrace
+- lvm2
+- man
+- mariadb
+- mariadb-tools
+- mdadm
+- minicom
+- mlocate
+- nmap
+- numactl
+- open-lldp
+- patterns-base-base
+- pdsh
+- perf
+- perl-MailTools
+- perl-doc
+- pixz
+- podman
+- podman-cni-config
+- postgresql
+- postgresql-contrib
+- postgresql-docs
+- postgresql-server
+- python
+- python-urlgrabber
+- python3-Jinja2
+- python3-MarkupSafe
+- python3-click
+- python3-colorama
+- python3-curses
+- python3-ipaddr
+- python3-lxml
+- python3-netaddr
+- python3-pexpect
+- python3-pip
+- python3-rpm
+- python3-sip
+- rarpd
+- rasdaemon
+- rsync
+- rsyslog
+- rzsz
+- screen
+- slingshot-network-config
+- smartmontools
+- socat
+- spire-agent
+- squashfs
+- squid
+- strace
+- sudo
+- sysstat
+- systemtap
+- tar
+- tcpdump
+- unixODBC
+- usbutils
+- vim
+- wget
+- wireshark
+- xfsdump
+- yast2-add-on
+- yast2-bootloader
+- yast2-country
+- yast2-network
+- yast2-services-manager
+- yast2-users
+- yum-metadata-parser
+- zip
+
+## CEPH
+
+Source: https://stash.us.cray.com/projects/CLOUD/repos/node-image-storage-ceph/browse
+
+#### Collection
+
+```bash
+ncn-s002:~ # zypper --disable-repositories se --installed-only | grep i+ | tr -d '|' | awk '{print $2}'
+```
+
+#### The List
+
+- SLE_HPC
+- SLE_HPC-release
+- acpid
+- apparmor-profiles
+- arptables
+- at
+- autoyast2
+- autoyast2-installation
+- base
+- bc
+- bind-utils
+- biosdevname
+- ceph-mds
+- ceph-mgr
+- ceph-mon
+- ceph-osd
+- ceph-radosgw
+- cfs-state-reporter
+- cloud-init
+- cpupower
+- crash
+- cray-cos-release
+- cray-dvs-kmp-default
+- cray-dvs-service
+- cray-heartbeat
+- cray-lustre-client
+- cray-lustre-client-devel
+- cray-lustre-client-kmp-default
+- cray-network-config
+- cray-node-identity
+- cray-power-button
+- craycli-wrapper
+- createrepo_c
+- dnsmasq
+- dosfstools
+- dracut-kiwi-live
+- dracut-metal-mdsquash
+- dump
+- e2fsprogs
+- ebtables
+- emacs
+- ethtool
+- expect
+- fping
+- gdb
+- genders
+- git-core
+- glibc
+- gnuplot
+- gperftools
+- gptfdisk
+- grub2
+- haproxy
+- hpe-csm-scripts
+- hplip
+- ipmitool
+- iproute2-bash-completion
+- ipset
+- irqbalance
+- java-1_8_0-ibm
+- java-1_8_0-ibm-plugin
+- kdump
+- kdumpid
+- keepalived
+- kernel-mft-mlnx-kmp-default
+- kernel-source
+- kernel-syms
+- kexec-tools
+- kmod-bash-completion
+- kubectl
+- less
+- libcanberra-gtk0
+- libecpg6
+- libpq5
+- libunwind-devel
+- ltrace
+- lvm2
+- man
+- mariadb
+- mariadb-tools
+- mdadm
+- minicom
+- mlocate
+- netcat-openbsd
+- nmap
+- numactl
+- open-lldp
+- patterns-base-base
+- pdsh
+- perf
+- perl-MailTools
+- perl-doc
+- pixz
+- podman
+- podman-cni-config
+- postgresql
+- postgresql-contrib
+- postgresql-docs
+- postgresql-server
+- python
+- python-urlgrabber
+- python3-Jinja2
+- python3-MarkupSafe
+- python3-boto3
+- python3-click
+- python3-colorama
+- python3-curses
+- python3-ipaddr
+- python3-lxml
+- python3-netaddr
+- python3-pexpect
+- python3-pip
+- python3-rpm
+- python3-sip
+- rarpd
+- rasdaemon
+- rsync
+- rsyslog
+- rzsz
+- screen
+- slingshot-network-config
+- smartmontools
+- socat
+- spire-agent
+- squashfs
+- squid
+- strace
+- sudo
+- sysstat
+- systemtap
+- tar
+- tcpdump
+- unixODBC
+- usbutils
+- vim
+- wget
+- wireshark
+- xfsdump
+- yast2-add-on
+- yast2-bootloader
+- yast2-country
+- yast2-network
+- yast2-services-manager
+- yast2-users
+- yum-metadata-parser
+- zip
