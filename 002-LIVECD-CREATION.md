@@ -12,7 +12,7 @@ Before starting, you should have:
 3. If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001
    - See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md).
 4. Access to stash/bitbucket
-5. `csi` installed (get the [latest built rpm](http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn/))
+5. `csi` installed (get the [latest built rpm](http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2/))
 
 ### Steps:
 
@@ -31,11 +31,11 @@ Before starting, you should have:
 ##### OpenSuSE / SLES
 
 ```bash
-zypper --no-gpg-checks --plus-repo http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn/ -n in cray-site-init
+zypper --no-gpg-checks --plus-repo http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2/ -n in cray-site-init
 ```
 
 > NOTE: Alternatively, you can find the RPM in this repository and install it with the `rpm` command.
-> http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/cray-sles15-sp2-ncn
+> http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2
 
 ## Manual Step 2: Setup `csi`
 
