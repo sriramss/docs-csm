@@ -205,7 +205,7 @@ This step will ensure your NCNs follow 1.4 protocol for bootorder.
 
 > For more information about NCN boot order check [101-BOOTING](101-NCN-BOOTING.md)
 
-## Manual Step 3: Shutdown NCNs
+## Manual Step 3: Wipe NCNs
 
 #### Wiping for Re-Installs
 
@@ -258,14 +258,12 @@ ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev d
 
 ## Manual Step 4: Apply workarounds
 
-Clone the workaround repo to have access to the workarounds needed to get through some known issues until they are fully fixed.
+    Check for workarounds in the `/root/$CSM_RELEASE/fix/before-ncn-boot` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
-```bash
-pit:~ # cd /root
-pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.git
-```
-
-### If there are any workarounds in the before-ncn-boot directory, run those now.   Instructions are in the README files.
+    ```bash
+    linux:~ # ls /root/$CSM_RELEASE/fix/before-ncn-boot
+    casminst-124
+    ```
 
 ## Manual Step 5: Boot Storage Nodes
 
