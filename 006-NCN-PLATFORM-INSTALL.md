@@ -54,10 +54,10 @@ This page will go over how to install all of the CSM manifests
     This should execute these manifests without error.
 
 
-6.  Check for workarounds in the `/var/www/ephemaral/prep/${CSM_RELEASE}/fix/after_platform_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+6.  Check for workarounds in the `/var/www/ephemeral/prep/${CSM_RELEASE}/fix/after_platform_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
     ```bash
-    pit:~ #  cd /var/www/ephemaral/prep/${CSM_RELEASE}/fix
+    pit:~ #  cd /var/www/ephemeral/prep/${CSM_RELEASE}/fix
     pit:~ #  cd after-platform-manifest
     ```
 
@@ -80,10 +80,10 @@ This page will go over how to install all of the CSM manifests
     pit:~ # ./deploy/deploy.sh ./build/manifests/sysmgmt.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
     ```
 
-10. Check for workarounds in the `/var/www/ephemaral/prep/${CSM_RELEASE}/fix/after_system_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+10. Check for workarounds in the `/var/www/ephemeral/prep/${CSM_RELEASE}/fix/after_system_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
     ```bash
-    pit:~ #  cd /var/www/ephemaral/prep/${CSM_RELEASE}/fix
+    pit:~ #  cd /var/www/ephemeral/prep/${CSM_RELEASE}/fix
     pit:~ #  cd after-sysmgmt-manifest
     ```
 
