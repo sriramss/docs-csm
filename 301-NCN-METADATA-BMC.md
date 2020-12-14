@@ -66,15 +66,8 @@ If you are here with an unconfigured switch, milage may vary.
     > Tip: Mind the index (3, 2, 1.... ; not 1, 2, 3)
     ```
     Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0,Bond0 MAC1
-    xXXXXcCsSSbBnN,Management,Storage3,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Storage2,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Storage1,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Master3,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Master2,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Master1,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Worker3,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Worker2,^^^^^^,
-    xXXXXcCsSSbBnN,Management,Worker1,^^^^^^,
+    x3000c0s9b0n0,Management,Storage,94:40:c9:37:77:26,94:40:c9:5f:b5:de,94:40:c9:5f:b5:de,14:02:ec:da:b9:98
+                                     ^^^^^^^^^^^^^^^^^
     ```
 
 You can take the file you've started and move onto [NCN Metadata BondX](302-NCN-METADATA-BONDX.md).
