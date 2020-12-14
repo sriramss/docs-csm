@@ -6,7 +6,7 @@ The remainder of _this_ page provides important nomenclature, notes, and environ
 help.
 
 >#### Pre-Spring 2020 CRAY System Upgrade Notice
-> Systems build before Sprint 2020 were originally using onboard NICs for netbooting. The new topologies for Shasta
+> Systems built before Sprint 2020 originally used onboard NICs for netbooting. The new topologies for Shasta
 > cease using the onboard NICs. If your system is running shasta-1.3, then it likely is using onboard NICs.
 >
 > It is recommended to cease using these for shasta-1.4, an admin would have one less MAC address to track and account for.
