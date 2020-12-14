@@ -1,45 +1,6 @@
-# Manual Step 1: Interfaces
-
-> Source qnd-1.4.sh to prepare the install env.
-
-```bash
-pit:~ # source /var/www/ephemeral/prep/qnd-1.4.sh
-pit:~ # env
-```
-
-## Setup the Site-link 
-
-External, direct access.
-
-```bash
-/root/bin/csi-setup-lan0.sh $site_cidr $site_gw $site_dns $site_nic
-```
-
 # Log in now with SSH
 
 If you were on the Serial-over-LAN, now is a good time to log back in with SSH.  
-
-> If you do log in with SSH, make you `source /var/www/ephemeral/prep/qnd-1.4.sh` again since you're logged in in a new session now.
-
-## Setup the bond and vlan interfaces
-
-### Copy the CSI generated ifcfg files into place 
-
-> Note we are not copying in the ifcfg-lan0 file at this time
-
-```bash
-pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/ifcfg-bond0 /etc/sysconfig/network
-pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/if*-vlan* /etc/sysconfig/network
-```
-
-### Bring up these interfaces
-
-```bash
-pit:~ # wicked ifup bond0 
-pit:~ # wicked ifup vlan002 
-pit:~ # wicked ifup vlan004 
-pit:~ # wicked ifup vlan007 
-```
 
 ## Manual Check 1 :: STOP :: Validate the LiveCD platform.
 
@@ -47,22 +8,6 @@ Check that IPs are set for each interface:
 
 ```bash
 pit:~ # csi pit validate --network
-```
-
-# Manual Step 2: Services
-
-Copy the config files generated earlier by `csi config init` into /etc/dnsmasq.d and /etc/conman.conf.
-```bash
-pit:~ # cp /var/www/ephemeral/prep/${system_name}/dnsmasq.d/* /etc/dnsmasq.d
-pit:~ # cp /var/www/ephemeral/prep/${system_name}/conman.conf /etc/conman.conf
-pit:~ # systemctl restart dnsmasq
-pit:~ # systemctl restart conman
-```
-
-Start and configure NTP on the LiveCD for a fallback/recovery server:
-
-```bash
-pit:~ # /root/bin/configure-ntp.sh
 ```
 
 ## Manual Check 2 :: STOP :: Validate the Services
@@ -87,15 +32,7 @@ CONTAINER ID  IMAGE                                         COMMAND             
 6fcdf2bfb58f  docker.io/sonatype/nexus3:3.25.0              sh -c ${SONATYPE_...  4 days ago  Up 4 days ago          nexus
 ```
 
-# Manual Step 3: Access to External Services
-
-To access outside services like Stash or Artifactory, we need to set up /etc/resolv.conf.  Make sure the /etc/resolv.conf includes the site DNS server at the end of the file.
-
-```bash
-nameserver 172.30.84.40
-```
-
-# Manual Check 3: Verify Outside Name Resolution
+## Manual Check 3: Verify Outside Name Resolution
 
 You should be able to resolve outside services like arti.dev.cray.com.
 
