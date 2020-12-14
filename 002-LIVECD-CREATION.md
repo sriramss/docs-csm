@@ -148,48 +148,6 @@ This is the set of files that you will currently need to create or find to gener
   1. `ncn_metadata.csv` (NCN configuration)
   2. `hmn_connections.json` (RedFish configuration)
   3. `switch_metadata.csv` (Switch configuration)
-  4. `qnd-1.4.sh` (LiveCD configuration - shasta-1.4 shim for automation)
-
-file (see below) to configure the LiveCD node.
-
-#### qnd-1.4.sh
-
-You will need to create the `qnd-1.4.sh` file with the following contents, replacing values with those specific to your system:
-
-```bash
-export site_nic=em1
-export site_ip=172.30.52.220/20
-export site_gw=172.30.48.1
-export site_dns=172.30.84.40
-export can_cidr=10.102.4.0/24
-export can_gw=10.102.4.111
-export can_static=10.102.9.112/28
-export can_dynamic=10.102.9.128/25
-export ntp_pool=time.nist.gov
-export system_name=sif
-export username=root
-export password=changemetoday!
-export bond_members="p1p1,p10p1"
-```
-
-- `site_nic` The interface that is directly attached to the site network on ncn-m001.
-- `site_ip` The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
-- `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
-- `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
-- `can_cidr` The IP subnet for the CAN network assigned to this system.  Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
-- `can_gw`  The common gateway IP used for both spine switches.   Also commonly referred to as the Virtual IP for the CAN.
-- `can_static` and `can_dynamic` The MetalLB address static and dynamic address pools for the customer access network
-- `ntp_pool` is the upstream time server
-- `system_name` is the system name
-- `username` is the BMC username
-- `password` is the BMC password
-- `bond_members` These are the two interfaces on LiveCD node attached to the spine switches that are bonded to create bond0.   For GB nodes, this is normally "p1p1,p1p2".  For HPE nodes, this is normally "p1p1,p10p1"
-
-Copy this file to the mounted data partition.
-
-```bash
-linux:~ # cp qnd-1.4.sh $PIT_PREP_DIR
-```
 
 #### ncn_metadata.csv
 
@@ -251,13 +209,12 @@ linux:~ # cp -r your_switch_metadata.csv $PIT_PREP_DIR
 Now we need to generate our configuration payload around our system's schema. We now need:
 
 - The number of mountain and river cabinets in the system.
-- The variables defined in qnd-1.4.sh above.
+- A set of confiugration information sufficient to fill out the listed flags
 
 The configuration payload comes from the `csi config init` command below.
 
 ```bash
 linux:~ $ cd $PIT_PREP_DIR
-linux:~ $ source qnd-1.4.sh
 ```
 
 1.  To execute this command you will need the following:
@@ -265,23 +222,26 @@ linux:~ $ source qnd-1.4.sh
     > The hsn_connections.json, ncn_metadata.csv, and switch_metadata.csv files in the current directory.
 
     Now generate the files:
+
     ```bash
     linux:~ $ csi config init \
-        --bootstrap-ncn-bmc-user $username \
-        --bootstrap-ncn-bmc-pass $password \
-        --system-name $system_name \
+        --bootstrap-ncn-bmc-user root \
+        --bootstrap-ncn-bmc-pass changeme \
+        --system-name eniac  \
         --mountain-cabinets 0 \
-        --river-cabinets 1 \
-        --can-cidr $can_cidr \
-        --can-gateway $can_gw \
-        --can-static-pool $can_static \
-        --can-dynamic-pool $can_dynamic \
-        --ntp-pool $ntp_pool \
-        --site-ip $site_ip \
-        --site-gw $site_gw \
-        --site-dns $site_dns \
-        --site-nic $site_nic \
-        --install-ncn-bond-members $bond_members
+        --river-cabinets 1  \
+        --can-cidr 10.103.11.0/24 \
+        --can-gateway 10.103.11.1/24 \
+        --can-static-pool 10.103.11.112/28 \
+        --can-dynamic-pool 10.103.11.128/25 \
+        --nmn-cidr 10.252.0.0/17 \
+        --hmn-cidr 10.254.0.0/17 \
+        --ntp-pool time.nist.gov \
+        --site-ip 172.30.53.79/20 \
+        --site-gw 172.30.48.1 \
+        --site-nic lan0 \
+        --site-dns 172.30.84.40 \
+        --install-ncn-bond-members p1p1,p10p1
     ```
 
     This will generate the following files in a subdirectory with the system name.

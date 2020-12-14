@@ -58,9 +58,9 @@ Offline CSM documentation can be found at /usr/share/doc/metal (version: rpm -q 
 
 (for information on _recovery_, see [LiveCD Troubleshooting](020-LIVECD-TROUBLESHOOTING.md)
 
-After logging in, have your network information handy so you can populate it in the next steps.  This is the information in qnd-1.4.sh.  You will source this file in the next page of steps.
+After logging in, have your network information handy so you can populate it in the next steps.
 - IP and netmask for your external connection(s).
-- The CAN IP/CIDR (ex: `can_cidr=10.102.4.110/24`)
+- The CAN IP/CIDR (ex: `10.102.4.110/24`)
 
 Then you can move onto these next two pages:
 1. Setting up communication...[LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md))
