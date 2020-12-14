@@ -46,17 +46,17 @@ pit:~ # wicked ifup vlan007
 Check that IPs are set for each interface:
 
 ```bash
-csi pit validate --network true
+pit:~ # csi pit validate --network
 ```
 
 # Manual Step 2: Services
 
 Copy the config files generated earlier by `csi config init` into /etc/dnsmasq.d and /etc/conman.conf.
 ```bash
-cp /var/www/ephemeral/prep/${system_name}/dnsmasq.d/* /etc/dnsmasq.d
-cp /var/www/ephemeral/prep/${system_name}/conman.conf /etc/conman.conf
-systemctl restart dnsmasq
-systemctl restart conman
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/dnsmasq.d/* /etc/dnsmasq.d
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/conman.conf /etc/conman.conf
+pit:~ # systemctl restart dnsmasq
+pit:~ # systemctl restart conman
 ```
 
 Start and configure NTP on the LiveCD for a fallback/recovery server:
@@ -72,7 +72,7 @@ Now verify service health:
 - No podman container(s) should be dead.
 
 ```bash
-csi pit validate --services true
+pit:~ # csi pit validate --services
 ```
 
 > - If basecamp is dead, restart it with `systemctl restart basecamp`.

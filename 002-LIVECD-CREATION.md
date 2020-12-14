@@ -12,36 +12,54 @@ Before starting, you should have:
 3. If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001
    - See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md).
 4. Access to stash/bitbucket
-5. `csi` installed (get the [latest built rpm](http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2/))
+5. A CSM release tarball
 
 ### Steps:
 
 > NOTE: These steps will be automated. CASM/MTL is automating this process  with the cray-site-init tool.
 
-1. [Install `csi`](#manual-step-1-install-csi)
-2. [Setup ENV vars for use with `csi`](#manual-step-2-setup-csi)
-3. [Create the Bootable Media](#manual-step-3-create-the-bootable-media)
-4. [Gather and Create Seed Files](#manual-step-4-gather--create-seed-files)
-5. [Generate the Configuration Payload](#manual-step-5-configuration-payload)
-6. [Generate the Data Payload](#manual-step-6-data-payload)
-7. [Boot into the LiveCD](#manual-step-7--boot-into-your-livecd)
+1. [Download and expand the CSM release](#manual-step-1-download-and-expand-the-csm-release)
+2. [Install `csi`](#manual-step-2-install-csi)
+3. [Setup ENV vars for use with `csi`](#manual-step-3-setup-csi)
+4. [Create the Bootable Media](#manual-step-4-create-the-bootable-media)
+5. [Gather and Create Seed Files](#manual-step-5-gather-create-seed-files)
+6. [Generate the Configuration Payload](#manual-step-6-configuration-payload)
+7. [Generate the Data Payload](#manual-step-7-data-payload)
+8. [Boot into the LiveCD](#manual-step-8-boot-into-your-livecd)
 
-## Manual Step 1: Install `csi`
+## Manual Step 1: Download and Expand the CSM Release
 
-##### OpenSuSE / SLES
+Download the CSM release tarball from the stable or unstable stream in artifactory.
 
 ```bash
-zypper --no-gpg-checks --plus-repo http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2/ -n in cray-site-init
+# Unstable
+csm_release=csm-0.0.0-alpha.1
+cd /root
+wget https://arti.dev.cray.com/artifactory/csm-distribution-unstable-local/${csm_release}.tar.gz
 ```
 
-> NOTE: Alternatively, you can find the RPM in this repository and install it with the `rpm` command.
-> http://dst.us.cray.com/dstrepo/shasta-cd-repo/bloblets/csm/rpms/csm-sle-15sp2
+```bash
+# Stable
+csm_release=csm-0.0.0
+cd /root
+wget https://arti.dev.cray.com/artifactory/csm-distribution-stable-local/${csm_release}.tar.gz
+```
 
-## Manual Step 2: Setup `csi`
+Expand the tarball
+
+```bash
+tar -zxvf ${csm_release}.tar.gz
+```
+
+## Manual Step 2: Install `csi`
+
+```bash
+zypper --no-gpg-checks --plus-repo ./${csm_release}/rpms/csm-sle-15sp2/ -n in cray-site-init
+```
+
+## Manual Step 3: Setup `csi`
 
 Create a file with a bunch of environmental variables in it.  These are example values, but set these to what you need for your system:
-
-For fetching image information, see [NCN Images](100-NCN-IMAGES.md).
 
 ```bash
 vim vars.sh
@@ -53,25 +71,23 @@ vim vars.sh
 export PIT_USB_DEVICE=/dev/sdd
 export PIT_DISK_LABEL=/dev/disk/by-label/PITDATA
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
-export PIT_ISO_URL=http://car.dev.cray.com/artifactory/csm/MTL/sle15_sp2_ncn/x86_64/dev/master/metal-team/cray-pre-install-toolkit-latest.iso
-export PIT_ISO_NAME=$(basename $PIT_ISO_URL)
 
 # These are the artifacts you want to be used to boot with
-export PIT_WRITE_SCRIPT=/root/cray-pre-install-toolkit/scripts/write-livecd.sh
+export PIT_WRITE_SCRIPT=$(pwd)/cray-pre-install-toolkit/scripts/write-livecd.sh
 export PIT_DATA_DIR=/mnt/data
 export PIT_PREP_DIR=/mnt/prep
 export PIT_CONFIGS_DIR=/mnt/configs
 export PIT_CEPH_DIR=/mnt/data/ceph
 export PIT_K8S_DIR=/mnt/data/k8s
 
-# THESE WILL LIKELY NEED TO BE MODIFIED!
-# Latest stable base.
-export PIT_INITRD_URL=https://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/non-compute-common/0.0.4/initrd.img-0.0.4.xz
-export PIT_KERNEL_URL=https://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/non-compute-common/0.0.4/5.3.18-24.37-default-0.0.4.kernel
+# SET THESE TO THE APPROPRIATE PATHS IN THE RELEASE TARBALL
+export CSM_RELEASE=csm-0.0.0-rc1
+export PIT_ISO_IMAGE=$(pwd)/$CSM_RELEASE/cray-pre-install-toolkit-latest.iso
+export PIT_INITRD_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/initrd.img-0.0.4.xz
+export PIT_KERNEL_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/5.3.18-24.37-default-0.0.4.kernel
 
-# Latest development/unstable k8s/ceph (built atop latest stable base).
-export PIT_MANAGER_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/kubernetes/0.0.4-2/kubernetes-0.0.4-2.squashfs
-export PIT_STORAGE_URL=https://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/storage-ceph/0.0.3-2/storage-ceph-0.0.3-2.squashfs
+export PIT_STORAGE_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/storage-ceph-0.0.4.squashfs
+export PIT_MANAGER_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/kubernetes/kubernetes-0.0.5.squashfs
 
 # Set to false for manual validation per the manual-steps, or set to true for CSI to validate automatically.
 export PIT_VALIDATE_CEPH=false
@@ -90,19 +106,18 @@ linux:~ $ source vars.sh
 
 We'll also load this into the LiveCD USB in a later step so we can use it again.
 
-## Manual Step 3: Create the Bootable Media
+## Manual Step 4: Create the Bootable Media
 
 1. Make the USB and fetch artifacts.
 
-    ```bash
-    # Find your USB stick with your linux tool of choice, for this example it is /dev/sdd
-    wget $PIT_ISO_URL      
+    TODO:  get write-livecd.sh into the release tarball so we no longer need to clone the repo
 
-    # Clone the script, CSI will auto-search for this at /root/
+    ```bash
+    # Clone the script, CSI will auto-search for this in your current directory
     git clone $PIT_REPO_URL
 
     # Make the USB.
-    csi pit format $PIT_USB_DEVICE ./cray-pre-install-toolkit-latest.iso 20000
+    csi pit format $PIT_USB_DEVICE $PIT_ISO_IMAGE 20000
     ```
 
 2. Mount data partition:
@@ -126,7 +141,7 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
 
 > Note: We will unmount this device at the end of this page. For now, leave it mounted.
 
-## Manual Step 4: Gather / Create Seed Files
+## Manual Step 5: Gather / Create Seed Files
 
 This is the set of files that you will currently need to create or find to generate the config payload for the system
 
@@ -143,7 +158,7 @@ You will need to create the `qnd-1.4.sh` file with the following contents, repla
 
 ```bash
 export site_nic=em1
-export site_cidr=172.30.52.220/20
+export site_ip=172.30.52.220/20
 export site_gw=172.30.48.1
 export site_dns=172.30.84.40
 export can_cidr=10.102.4.0/24
@@ -154,10 +169,11 @@ export ntp_pool=time.nist.gov
 export system_name=sif
 export username=root
 export password=changemetoday!
+export bond_members="p1p1,p10p1"
 ```
 
 - `site_nic` The interface that is directly attached to the site network on ncn-m001.
-- `site_cidr` The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
+- `site_ip` The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
 - `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
 - `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
 - `can_cidr` The IP subnet for the CAN network assigned to this system.  Customer Access Network information will need to be gathered by hand. (For current BGP Dev status, see [Can BGP status on Shasta systems](https://connect.us.cray.com/confluence/display/CASMPET/CAN-BGP+status+on+Shasta+systems))
@@ -167,6 +183,7 @@ export password=changemetoday!
 - `system_name` is the system name
 - `username` is the BMC username
 - `password` is the BMC password
+- `bond_members` These are the two interfaces on LiveCD node attached to the spine switches that are bonded to create bond0.   For GB nodes, this is normally "p1p1,p1p2".  For HPE nodes, this is normally "p1p1,p10p1"
 
 Copy this file to the mounted data partition.
 
@@ -229,7 +246,7 @@ Once you have your file, copy this into the $PIT_PREP_DIR for safe-keeping:
 linux:~ # cp -r your_switch_metadata.csv $PIT_PREP_DIR
 ```
 
-## Manual Step 5: Configuration Payload
+## Manual Step 6: Configuration Payload
 
 Now we need to generate our configuration payload around our system's schema. We now need:
 
@@ -259,7 +276,12 @@ linux:~ $ source qnd-1.4.sh
         --can-gateway $can_gw \
         --can-static-pool $can_static \
         --can-dynamic-pool $can_dynamic \
-        --ntp-pool $ntp_pool
+        --ntp-pool $ntp_pool \
+        --site-ip $site_ip \
+        --site-gw $site_gw \
+        --site-dns $site_dns \
+        --site-nic $site_nic \
+        --install-ncn-bond-members $bond_members
     ```
 
     This will generate the following files in a subdirectory with the system name.
@@ -273,7 +295,7 @@ linux:~ $ source qnd-1.4.sh
     data.json
 
     foo/cpt-files:
-    ifcfg-bond0  ifcfg-lan0  ifcfg-vlan002  ifcfg-vlan004  ifcfg-vlan007
+    ifcfg-bond0  ifcfg-lan0  ifcfg-vlan002  ifcfg-vlan004  ifcfg-vlan007 ifroute-vlan002
 
     foo/credentials:
     bmc_password.json  mgmt_switch_password.json  root_password.json
@@ -289,30 +311,20 @@ linux:~ $ source qnd-1.4.sh
 
 2. Apply workarounds
 
-    Clone the workaround repo to have access to the workarounds needed to get through some known issues until they are fully fixed.
+    Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
     ```bash
-    pit:~ # cd /root
-    pit:~ # git clone https://stash.us.cray.com/scm/spet/csm-installer-workarounds.git
+    linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
+    casminst-294  casminst-431  casminst-495  casminst-526
     ```
 
-    If there are any workarounds in the csi-config directory, run those now.   Instructions are in the README files.
-
-3. Validate `data.json` to sanitize any human-error:
-
-    ```bash
-    cat /mnt/prep/${system_name}/basecamp/data.json | jq
-    ```
-
-    If you do not see an error message, the format is valid.
-
-4. Copy the `data.json` into the configs directory on the data partition.
+3. Copy the `data.json` into the configs directory on the data partition.
 
     ```bash
     cp /mnt/prep/${system_name}/basecamp/data.json $PIT_CONFIGS_DIR
     ```
 
-## Manual Step 6: Data Payload
+## Manual Step 7: Data Payload
 
 We'll use the previously defined URLs in `vars.sh` to fetch our data payload.
 
@@ -325,11 +337,18 @@ This will fetch to your bootable USB:
 # If you didn't earlier:
 linux:~ # source /mnt/prep/vars.sh
 
-# Then download the artifacts:
-linux:~ # csi pit get
+# Copy the expanded tarball into the data partition
+linux:~ # cp -r /root/$CSM-RELEASE $PIT_PREP_DIR
 
-# Check what downloaded:
+# Place the images:
+linux:~ # cp $PIT_INITRD_IMAGE $PIT_DATA_DIR
+linux:~ # cp $PIT_KERNEL_IMAGE $PIT_DATA_DIR
+linux:~ # cp $PIT_STORAGE_IMAGE $PIT_CEPH_DIR
+linux:~ # cp $PIT_MANAGER_IMAGE $PIT_K8S_DIR
+
+# Check what is there:
 linux:~ # ls -lR $PIT_DATA_DIR
+
 ```
 
 Now, unmount the bootable USB.
@@ -338,6 +357,6 @@ Now, unmount the bootable USB.
 linux:~ # umount /mnt
 ```
 
-## Manual Step 7 : Boot into your LiveCD.
+## Manual Step 8 : Boot into your LiveCD.
 
 Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)
