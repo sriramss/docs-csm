@@ -1,21 +1,26 @@
 # Service Guides
 
-This guide goes over directions for constructing various procedure such as constructing bootstrap-files 
-or preflight checks/todos during initial racking.
+This guide centers around constructing bootstrap-files and contains various pre-install operations.
 
-The remainder of this page provides important nomenclature, notes, and environment
+The remainder of _this_ page provides important nomenclature, notes, and environment
 help.
 
-#### Pre-Spring 2020 CRAY System Upgrade Notice
-> This also applies for **systems running shasta-1.3 or older**.
+>#### Pre-Spring 2020 CRAY System Upgrade Notice
+> Systems build before Sprint 2020 were originally using onboard NICs for netbooting. The new topologies for Shasta
+> cease using the onboard NICs. If your system is running shasta-1.3, then it likely is using onboard NICs.
+>
+> It is recommended to cease using these for shasta-1.4, an admin would have one less MAC address to track and account for.
+> The NCN networking becomes relatively simpler as a result from caring about one less NIC.
 
-Upgrades from shasta-1.3, or systems wired for shasta-1.3 topology, this guide may receive more installments for other files as time goes on and adjustments are needed.
+This guide may receive more installments for other files as time goes on.
 
 ### Table of Contents:
 
 - [Environments](#environments)
-- [Nomenclature & Constraings](#nomenclature--constraints)
+- [Nomenclature & Constraints](#nomenclature--constraints)
 - [Files](#files)
+    - [`ncn_metadata.csv`](#ncn_metadatacsv)
+    - [`switch_metadata.csv`](#switch_metadatacsv)
 
 ## Environments
 
@@ -30,7 +35,7 @@ may be quicker the alternative method through the [303-NCN-METADATA-USB-SERIAL](
 
 There are 2 parts to the NCN metadata file:
 - Collecting the MAC of the BMC
-- Collecting the MAC(s) of the shasta-network interface(s).
+- Collecting the MAC(s) of the shasta-network interface(s)
 
 #### What is a "shasta-network interface"?
 
@@ -52,12 +57,18 @@ For more information, see [103-NETWORKING](103-NCN-NETWORKING.md) page for NCNs.
 
 ## Nomenclature & Constraints
 
-> MACs ...
-- "PXE MAC" or "BOOTSTRAP MAC" is the MAC address of the interface that your node will network boot over.
-- "BOND MACS" is the MACs for the physical interfaces that your node will use for the various VLANs.
+#### "PXE" or "BOOTSTRAP" MAC
+
+In general this refers to the literal interface the node will network-boot over. This varies between vintages
+of systems; systems before "Spring 2020" often booted NCNs with onboard NICs, newer systems boot over their PCIe cards.
+
+If the system is **booting over PCIe than the "bootstrap MAC" and the "bond0 MAC 0" will be identical**. If the 
+system is **booting over onboards then the "bootstrap MAC" and the "bond0 MAC 0" will be different.**
+
+> Other Nomenclature
+- "BOND MACS" are the MACs for the physical interfaces that your node will use for the various VLANs.
 - "NMN MAC" is this is the same as the BOND MACs, but with emphasise on the vlan-participation.
 > Relationships ...
-- It is possible for both the **BOOTSTRAP & BOND0 MAC0** to be the **SAME**.
 - BOND0 MAC0 and BOND0 MAC1 should **not** be on the same physical network card to establish redundancy for failed chips.
 - On the other hand, if any nodes' capacity prevents it from being redundant, then MAC1 and MAC0 will still produce a valid configuration if they do reside on the same physical chip/card.
 - The BMC MAC is the exclusive, dedicated LAN for the onboard BMC. It should not be swapped with any other device.
@@ -75,9 +86,53 @@ Unless your system is sans-onboards, meaning it does not use or does not have on
 1. [Recabling from shasta-1.3 for shasta-1.4](050-MOVE-SITE-CONNECTIONS.md) (for machines still using w001 for BIS node)
 2. [Enabling Network Boots over Spine Switches](304-NCN-PCIE-NETBOOT-AND-RECABLE.md) (for shasta 1.3 machines)
 
-The following two guides will assist with (re)creating `ncn_metadata.csv`
+The following two guides will assist with (re)creating `ncn_metadata.csv` (an example file is below).
+
 1. [Collecting BMC MAC Addresses](301-NCN-METADATA-BMC.md)
 2. [Collecting NCN MAC Addresses](302-NCN-METADATA-BONDX.md)
+
+> use case: single PCIe card (1 card with 1 or 2 ports):
+```
+Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0
+x3000c0s9b0n0,Management,Storage,94:40:c9:37:77:26,14:02:ec:d9:76:88,14:02:ec:d9:76:89
+x3000c0s8b0n0,Management,Storage,94:40:c9:37:87:5a,14:02:ec:d9:7b:c8,14:02:ec:d9:7b:c9
+x3000c0s7b0n0,Management,Storage,94:40:c9:37:0a:2a,14:02:ec:d9:7c:88,14:02:ec:d9:7c:89
+x3000c0s6b0n0,Management,Worker,94:40:c9:37:77:b8,14:02:ec:da:bb:00,14:02:ec:da:bb:01
+x3000c0s5b0n0,Management,Worker,94:40:c9:35:03:06,14:02:ec:d9:76:b8,14:02:ec:d9:76:b9
+x3000c0s4b0n0,Management,Worker,94:40:c9:37:67:60,14:02:ec:d9:7c:40,14:02:ec:d9:7c:41
+x3000c0s3b0n0,Management,Master,94:40:c9:37:04:84,14:02:ec:d9:79:e8,14:02:ec:d9:79:e9
+x3000c0s2b0n0,Management,Master,94:40:c9:37:f9:b4,14:02:ec:da:b8:18,14:02:ec:da:b8:19
+x3000c0s1b0n0,Management,Master,00:00:00:00:00:00,14:02:ec:da:b5:18,14:02:ec:da:b5:d9
+```
+> use case: dual PCIe cards (2 cards with 2 ports each for 4 ports total):
+```
+Xname,Role,Subrole,BMC MAC,Bootstrap MAC,Bond0 MAC0,Bond0 MAC1
+x3000c0s9b0n0,Management,Storage,94:40:c9:37:77:26,14:02:ec:d9:76:88,98:40:c9:d9:76:88
+x3000c0s8b0n0,Management,Storage,94:40:c9:37:87:5a,14:02:ec:d9:7b:c8,98:40:c9:d9:7b:c8
+x3000c0s7b0n0,Management,Storage,94:40:c9:37:0a:2a,14:02:ec:d9:7c:88,98:40:c9:d9:7c:88
+x3000c0s6b0n0,Management,Worker,94:40:c9:37:77:b8,14:02:ec:da:bb:00,98:40:c8:da:bb:00
+x3000c0s5b0n0,Management,Worker,94:40:c9:35:03:06,14:02:ec:d9:76:b8,98:40:c9:d9:76:b8
+x3000c0s4b0n0,Management,Worker,94:40:c9:37:67:60,14:02:ec:d9:7c:40,98:40:c9:d9:7c:40
+x3000c0s3b0n0,Management,Master,94:40:c9:37:04:84,14:02:ec:d9:79:e8,98:40:c9:d9:79:e8
+x3000c0s2b0n0,Management,Master,94:40:c9:37:f9:b4,14:02:ec:da:b8:18,98:40:c9:da:b8:18
+x3000c0s1b0n0,Management,Master,00:00:00:00:00:00,94:40:c9:5f:b5:de,94:40:c9:5f:b5:de
+```
+
+### `switch_metadata.csv`
+
+This file denotes your network topology devices, see [Switch Metadata](305-SWITCH-METADATA.md) for 
+directions about creating this file. 
+
+> use case: 2 leaf switches and 2 spine switches
+```
+pit:~ # cat example_switch_metadata.csv
+Switch Xname,Type,Brand
+x3000c0w38,Leaf,Dell
+x3000c0w36,Leaf,Dell
+x3000c0h33s1,Spine,Mellanox
+x3000c0h33s2,Spine,Mellanox
+```
+
 
 ## Refreshing the LiveCD
 
