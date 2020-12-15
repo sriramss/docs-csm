@@ -17,11 +17,12 @@ This page will go over how to install all of the CSM manifests
     ```bash
     pit:~ # export system_name=sif
     pit:~ # cd /root
-    pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${system_name}.git
-    pit:~ # cd ${system_name}
+    pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${system_name}.git site-init
+    pit:~ # cd site-init
     ```
 
     Make sure the IP addresses in the customizations.yaml file in this repo align with the IPs generated in CSI.  In particular, pay careful attention to
+    # TODO: This should be checked/validated by csi as a checkpoint before running manifests.
     spec.network.static_ips.dns.site_to_system_looksups
     spec.network.static_ips.ncn_masters
     spec.network.static_ips.ncn_storage
@@ -31,24 +32,24 @@ This page will go over how to install all of the CSM manifests
     > NOTE: the call to manifestgen should be done via ${system_name}/deploy/generate.sh when we're ready to use all manifests
 
     ```bash
-    pit:~ # mkdir -p ./build/manifests
-    pit:~ # manifestgen -c customizations.yaml -i ./manifests/platform.yaml > ./build/manifests/platform.yaml
-    pit:~ # manifestgen -c customizations.yaml -i ./manifests/keycloak-gatekeeper.yaml > ./build/manifests/keycloak-gatekeeper.yaml
-    pit:~ # manifestgen -c customizations.yaml -i ./manifests/sysmgmt.yaml > ./build/manifests/sysmgmt.yaml
-    pit:~ # manifestgen -c customizations.yaml -i ./manifests/core-services.yaml > ./build/manifests/core-services.yaml
+    pit:~/site-init # mkdir -p ./build/manifests
+    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/platform.yaml > ./build/manifests/platform.yaml
+    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/keycloak-gatekeeper.yaml > ./build/manifests/keycloak-gatekeeper.yaml
+    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/sysmgmt.yaml > ./build/manifests/sysmgmt.yaml
+    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/core-services.yaml > ./build/manifests/core-services.yaml
     ```
 
 4. Run the deploydecryptionkey.sh script provided by the shasta-cfg/<system_name>.git repo.
 
     ```bash
-    pit:~ # ./deploy/deploydecryptionkey.sh
+    pit:~/site-init # ./deploy/deploydecryptionkey.sh
     ```
 
 5. Run loftsman against the platform and keycloak-gatekeeper manifests using shasta-cfg/<system_name> provided-script.
 
     ```bash
-    pit:~ # ./deploy/deploy.sh ./build/manifests/platform.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
-    pit:~ # ./deploy/deploy.sh ./build/manifests/keycloak-gatekeeper.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
+    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/platform.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
+    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/keycloak-gatekeeper.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
     ```
 
     This should execute these manifests without error.
@@ -70,14 +71,14 @@ This page will go over how to install all of the CSM manifests
 8. Run loftsman against the core-services manifest using shasta-cfg/<system_name> provided-script.
 
     ```bash
-    pit:~ # cd /root/${system_name}
-    pit:~ # ./deploy/deploy.sh ./build/manifests/core-services.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
+    pit:~ # cd /root/site-init
+    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/core-services.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
     ```
 
 9. Run loftsman against the sysmgmt manifest using shasta-cfg/<system_name> provided-script.
 
     ```bash
-    pit:~ # ./deploy/deploy.sh ./build/manifests/sysmgmt.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
+    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/sysmgmt.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
     ```
 
 10. Check for workarounds in the `/var/www/ephemeral/prep/${CSM_RELEASE}/fix/after_system_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
