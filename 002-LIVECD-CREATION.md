@@ -14,6 +14,8 @@ Before starting, you should have:
 4. Access to stash/bitbucket
 5. A CSM release tarball
 
+To begin these LiveCD creation steps, you must be logged in to an operating system that is running on the disk of ncn-m001.  You should not be on the LiveCD running on the USB stick or other block device.
+
 ### Steps:
 
 > NOTE: These steps will be automated. CASM/MTL is automating this process  with the cray-site-init tool.
