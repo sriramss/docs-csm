@@ -56,7 +56,7 @@ tar -zxvf ${csm_release}.tar.gz
 ## Manual Step 2: Install `csi`
 
 ```bash
-zypper --no-gpg-checks --plus-repo ./${csm_release}/rpms/csm-sle-15sp2/ -n in cray-site-init
+zypper --no-gpg-checks --plus-repo ./${csm_release}/rpm/csm-sle-15sp2/ -n in cray-site-init
 ```
 
 ## Manual Step 3: Setup `csi`
