@@ -1,6 +1,51 @@
+# Manual Step 1: Interfaces
+
+> Set up variables for lan0 configuration
+
+```bash
+pit:~ # site_ip=172.30.XXX.YYY/20
+pit:~ # site_gw=172.30.48.1
+pit:~ # site_dns=172.30.84.40
+pit:~ # site_nic=p1p2
+```
+
+- `site_nic` The interface that is directly attached to the site network on ncn-m001.  This should not be lan0.
+- `site_ip` The IP address and netmask in CIDR notation that is assigned to the site connection on ncn-m001.  NOTE:  This is NOT just the network, but also the IP address.
+- `site_gw` The gateway address for the site network.  This will be used to set up the default gateway route on ncn-m001.
+- `site_dns` ONE of the site DNS servers.   The script does not currently handle setting more than one IP address here.
+
+## Setup the Site-link
+
+External, direct access.
+
+```bash
+pit:~ # /root/bin/csi-setup-lan0.sh $site_ip $site_gw $site_dns $site_nic
+```
+
 # Log in now with SSH
 
 If you were on the Serial-over-LAN, now is a good time to log back in with SSH.  
+
+## Setup the bond and vlan interfaces
+
+### Copy the CSI generated ifcfg files into place
+
+> Note we are not copying in the ifcfg-lan0 file at this time
+
+```bash
+pit:~ # system_name=barney
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/ifcfg-bond0 /etc/sysconfig/network
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/cpt-files/if*-vlan* /etc/sysconfig/network
+```
+
+### Bring up these interfaces
+
+```bash
+pit:~ # wicked ifup bond0
+pit:~ # wicked ifup vlan002
+pit:~ # wicked ifup vlan004
+pit:~ # wicked ifup vlan007
+```
 
 ## Manual Check 1 :: STOP :: Validate the LiveCD platform.
 
@@ -8,6 +53,22 @@ Check that IPs are set for each interface:
 
 ```bash
 pit:~ # csi pit validate --network
+```
+
+# Manual Step 2: Services
+
+Copy the config files generated earlier by `csi config init` into /etc/dnsmasq.d and /etc/conman.conf.
+```bash
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/dnsmasq.d/* /etc/dnsmasq.d
+pit:~ # cp /var/www/ephemeral/prep/${system_name}/conman.conf /etc/conman.conf
+pit:~ # systemctl restart dnsmasq
+pit:~ # systemctl restart conman
+```
+
+Start and configure NTP on the LiveCD for a fallback/recovery server:
+
+```bash
+pit:~ # /root/bin/configure-ntp.sh
 ```
 
 ## Manual Check 2 :: STOP :: Validate the Services
@@ -32,7 +93,7 @@ CONTAINER ID  IMAGE                                         COMMAND             
 6fcdf2bfb58f  docker.io/sonatype/nexus3:3.25.0              sh -c ${SONATYPE_...  4 days ago  Up 4 days ago          nexus
 ```
 
-## Manual Check 3: Verify Outside Name Resolution
+# Manual Check 3: Verify Outside Name Resolution
 
 You should be able to resolve outside services like arti.dev.cray.com.
 
