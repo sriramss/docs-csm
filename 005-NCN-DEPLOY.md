@@ -258,12 +258,13 @@ ipmitool -I lanplus -U $username -P $password -H ncn-m001-mgmt chassis bootdev d
 
 ## Manual Step 4: Apply workarounds
 
-    Check for workarounds in the `/root/$CSM_RELEASE/fix/before-ncn-boot` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+Check for workarounds in the `/var/www/ephemeral/prep/$CSM_RELEASE/fix/before-ncn-boot` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
-    ```bash
-    linux:~ # ls /root/$CSM_RELEASE/fix/before-ncn-boot
-    casminst-124
-    ```
+```bash
+# Example
+linux:~ # ls /var/www/ephemeral/prep/$CSM_RELEASE/fix/before-ncn-boot
+casminst-124
+```
 
 ## Manual Step 5: Boot Storage Nodes
 
