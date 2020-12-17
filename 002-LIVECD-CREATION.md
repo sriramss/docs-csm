@@ -132,7 +132,7 @@ We'll also load this into the LiveCD USB in a later step so we can use it again.
 
 3. Make the config and data directories, and a prep directory for our manual files:
     ```bash
-   mkdir -pv $PIT_CONFIGS_DIR $PIT_DATA_DIR $PIT_PREP_DIR
+   mkdir -pv $PIT_CONFIGS_DIR $PIT_PREP_DIR $PIT_CEPH_DIR $PIT_K8S_DIR
    ```
 
 4. Copy your vars file to the data partition
@@ -276,6 +276,7 @@ linux:~ $ cd $PIT_PREP_DIR
     Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
     ```bash
+    # Example
     linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
     casminst-294  casminst-431  casminst-495  casminst-526
     ```
@@ -300,7 +301,7 @@ This will fetch to your bootable USB:
 linux:~ # source /mnt/prep/vars.sh
 
 # Copy the expanded tarball into the data partition
-linux:~ # cp -r /root/$CSM-RELEASE $PIT_PREP_DIR
+linux:~ # cp -r /root/$CSM_RELEASE $PIT_PREP_DIR
 
 # Place the images:
 linux:~ # cp $PIT_INITRD_IMAGE $PIT_DATA_DIR
