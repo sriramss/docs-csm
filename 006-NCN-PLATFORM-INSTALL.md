@@ -22,7 +22,7 @@ This page will go over how to install all of the CSM manifests
     ```
 
     Make sure the IP addresses in the customizations.yaml file in this repo align with the IPs generated in CSI.  In particular, pay careful attention to
-    # TODO: This should be checked/validated by csi as a checkpoint before running manifests.
+    > TODO: This should be checked/validated by csi as a checkpoint before running manifests.
     spec.network.static_ips.dns.site_to_system_looksups
     spec.network.static_ips.ncn_masters
     spec.network.static_ips.ncn_storage
