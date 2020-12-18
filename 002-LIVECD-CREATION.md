@@ -29,36 +29,6 @@ To begin these LiveCD creation steps, you must be logged in to an operating syst
 7. [Generate the Data Payload](#manual-step-7-data-payload)
 8. [Boot into the LiveCD](#manual-step-8-boot-into-your-livecd)
 
-## Manual Step 1: Download and Expand the CSM Release
-
-Download the CSM release tarball from the stable or unstable stream in artifactory.
-
-```bash
-# Unstable
-csm_release=csm-0.0.0-alpha.1
-cd /root
-wget https://arti.dev.cray.com/artifactory/csm-distribution-unstable-local/${csm_release}.tar.gz
-```
-
-```bash
-# Stable
-csm_release=csm-0.0.0
-cd /root
-wget https://arti.dev.cray.com/artifactory/csm-distribution-stable-local/${csm_release}.tar.gz
-```
-
-Expand the tarball
-
-```bash
-tar -zxvf ${csm_release}.tar.gz
-```
-
-## Manual Step 2: Install `csi`
-
-```bash
-zypper --no-gpg-checks --plus-repo ./${csm_release}/rpm/csm-sle-15sp2/ -n in cray-site-init
-```
-
 ## Manual Step 3: Setup `csi`
 
 Create a file with a bunch of environmental variables in it.  These are example values, but set these to what you need for your system:
@@ -83,13 +53,18 @@ export PIT_CEPH_DIR=/mnt/data/ceph
 export PIT_K8S_DIR=/mnt/data/k8s
 
 # SET THESE TO THE APPROPRIATE PATHS IN THE RELEASE TARBALL
-export CSM_RELEASE=csm-0.0.0-rc1
-export PIT_ISO_IMAGE=$(pwd)/$CSM_RELEASE/cray-pre-install-toolkit-latest.iso
-export PIT_INITRD_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/initrd.img-0.0.4.xz
-export PIT_KERNEL_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/5.3.18-24.37-default-0.0.4.kernel
+export UNSTABLE_RELEASE=0.6.1-alpha.1
+export STABLE_RELEASE=0.7.1
+export CSM_UNSTABLE=csm-$UNSTABLE_RELEASE
+export CSM_STABLE=csm-$STABLE_RELEASE
+export UNSTABLE_TARBALL=https://arti.dev.cray.com/artifactory/csm-distribution-unstable-local/$CSM_UNSTABLE.tar.gz
+export STABLE_TARBALL=https://arti.dev.cray.com/artifactory/csm-distribution-stable-local/$CSM_STABLE.tar.gz
+export PIT_ISO_IMAGE=$(pwd)/$CSM_STABLE/cray-pre-install-toolkit-latest.iso
+export PIT_INITRD_IMAGE=$PIT_PREP_DIR/$CSM_STABLE/images/storage-ceph/initrd.img-0.0.4.xz
+export PIT_KERNEL_IMAGE=$PIT_PREP_DIR/$CSM_STABLE/images/storage-ceph/5.3.18-24.37-default-0.0.4.kernel
 
-export PIT_STORAGE_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/storage-ceph/storage-ceph-0.0.4.squashfs
-export PIT_MANAGER_IMAGE=$PIT_PREP_DIR/$CSM_RELEASE/images/kubernetes/kubernetes-0.0.5.squashfs
+export PIT_STORAGE_IMAGE=$PIT_PREP_DIR/$CSM_STABLE/images/storage-ceph/storage-ceph-0.0.4.squashfs
+export PIT_MANAGER_IMAGE=$PIT_PREP_DIR/$CSM_STABLE/images/kubernetes/kubernetes-0.0.5.squashfs
 
 # Set to false for manual validation per the manual-steps, or set to true for CSI to validate automatically.
 export PIT_VALIDATE_CEPH=false
@@ -106,7 +81,33 @@ Now load the newly created file:
 linux:~ $ source vars.sh
 ```
 
-We'll also load this into the LiveCD USB in a later step so we can use it again.
+## Manual Step 2: Download and Expand the CSM Release
+
+Download the CSM release tarball from the stable or unstable stream in artifactory.
+
+```bash
+# Unstable
+cd /root
+csi pit get . $CSM_UNSTABLE
+```
+
+```bash
+# Stable
+cd /root
+csi pit get . $CSM_STABLE
+```
+
+Expand the tarball
+
+```bash
+tar -zxvf ${CSM_STABLE}.tar.gz
+```
+
+## Manual Step 3: Install `csi`
+
+```bash
+zypper --no-gpg-checks --plus-repo ./${CSM_STABLE}/rpm/csm-sle-15sp2/ -n in cray-site-init
+```
 
 ## Manual Step 4: Create the Bootable Media
 
