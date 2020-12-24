@@ -32,8 +32,6 @@ mypc:~ > ipmitool -I lanplus -U $user -P $password -H ${system}-mgmt sol activat
 
 If you observe the entire boot, you will see an integrity check occur before Linux starts. This can be skipped by hitting OK when it appears. It is very quick.
 
-Since you pre-populated the partition with your networking config files, **you can connect via SSH when the node comes up**, but it's still helpful to watch it over the SOL to ensure there are no issues.
-
 Once the system boots, you will need to create a **new** password for the root account.  
 
 **The initial password is empty for the root user.**

@@ -1,3 +1,4 @@
+# HMN Connections File
 
 This file should come from the [shasta_system_configs](https://stash.us.cray.com/projects/DST/repos/shasta_system_configs/browse) repository.
 Each system has its own directory in the repository. If this is a new system that doesn't yet have the `hmn_connections.json` file,
