@@ -17,8 +17,8 @@ For this you will need:
 
 - The SHCD for your system
 
-It is worthwhile to have the [HSS Naming Convention](https://connect.us.cray.com/confluence/display/HSOS/Shasta+HSS+Component+Naming+Convention))
-guide handy while mapping names between the SHCD and your `switch_metadata.csv` file.
+It is worthwhile to have the [HSS Naming Convention](https://connect.us.cray.com/confluence/display/HSOS/Shasta+HSS+Component+Naming+Convention)
+guide handy, or bookmarked for later, while mapping names between the SHCD and your `switch_metadata.csv` file.
 
 #### Format
 
