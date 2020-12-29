@@ -23,3 +23,9 @@ This will report the version of your installed docs:
 pit:~ # rpm -q docs-csm-install`
 ```
 
+### Review and Contribution
+
+Anyone with Git access to this repo may feel free to submit changes for review, tagging to the relevant JIRA(s) (if necessary).
+
+All changes undergo a review process, this governance is up to the reviewers' own discrestions. The review serves to keep core contributors on the "same page" while maintaining coherency throughout the doc.
+
