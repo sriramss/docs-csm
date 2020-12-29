@@ -29,3 +29,15 @@ Anyone with Git access to this repo may feel free to submit changes for review, 
 
 All changes undergo a review process, this governance is up to the reviewers' own discrestions. The review serves to keep core contributors on the "same page" while maintaining coherency throughout the doc.
 
+##### Original Authors / Reviewers
+
+This document can be discussed in [#docs-csm-install](https://cray.slack.com/messages/docs-csm-install).
+
+These folks are main contributors or reviewers, none of which are the owners of this repository. Any email should include the list, otherwise ping the slack channel.
+
+- PET: [Brad Klein](bradley.klein@hpe.com)
+- PET: [Craig DeLatte](craig.delatte@hpe.com)
+- METAL: [Jacob Salmela](mailto:jacob.salmela@hpe.com)
+- PET: [Jeanne Ohren](jeanne.ohren@hpe.com)
+- METAL: [Russell Bunch](mailto:doomslayer@hpe.com)
+
