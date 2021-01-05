@@ -121,9 +121,8 @@ csi pit format $PIT_USB_DEVICE $PIT_ISO_NAME 50000
 2. Create and mount the partitions needed:
 
 ```bash
-mkdir -pv $PIT_DATA_MOUNT $PIT_COW_MOUNT
-mount $PIT_DATA_LABEL $PIT_DATA_MOUNT
-mount $PIT_COW_LABEL $PIT_COW_MOUNT
+mkdir -pv /mnt/{pitcow,pitdata}
+mount -L PITCOW /mnt/pitcow && mount -L PITDATA /mnt/pitdata
 ```
 
 ### Manual Step 5: Gather / Create Seed Files
