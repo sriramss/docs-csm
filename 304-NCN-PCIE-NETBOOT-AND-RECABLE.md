@@ -18,16 +18,30 @@ This onboard NCN port came from before spine-switches were added to the shasta-n
 
 This uses the [Mellanox CLI Tools][1] for configuring UEFI PXE from the Linux command line.
 
-You can install these tools onto the LiveCD (Cray Pre-Install Toolkit), which already has dependencies installed.
+On any NCN (using 0.0.10 k8s, or 0.0.8 ceph; anything built on ncn-0.0.21 or higher) can run this to begin interacting with Mellanox cards:
+If you are recovering NCNs with an earlier image without the mellanox tools, please refer to the section on the bottom of the Mellanox this segment.
+
+
+```bash
+ncn:~ # mst start
+```
+
+Now `mst status` and other commands like `mlxfwmanager` or `mlxconfig` will work, and devices required for these commands will be created in `/dev/mst`.
+
+### Print current UEFI and SR-IOV State
+
+> UEFI: all boots are UEFI, this needs to be enabled for access to the UEFI OpROM for configuration and for usage of UEFI firmwares.
+> SR_IOV: This is currently DISABLED because it can attribute to longer POSTs on HPE blades (Gen10+, i.e. DL325 or DL385) with Mellanox ConnectX-5 PCIe cards. The technology is not yet enabled for virtualiztion usage, but may be in the future.
 
 Use this snippet to print out device name and current UEFI PXE state.
 ```bash
-# Print name and current state.
+# Print name and current state; on an NCN or on the liveCD.
 mst status
 for MST in $(ls /dev/mst/*); do
-    mlxconfig -d ${MST} q | egrep "(Device|EXP_ROM)"
+    mlxconfig -d ${MST} q | egrep "(Device|EXP_ROM|SRIOV_EN)"
 done
 ```
+
 Use this snippet to enable and dump UEFI PXE state.
 ```bash
 # Set UEFI to YES
@@ -35,15 +49,36 @@ for MST in $(ls /dev/mst/*); do
     echo ${MST}
     mlxconfig -d ${MST} -y set EXP_ROM_UEFI_x86_ENABLE=1
     mlxconfig -d ${MST} -y set EXP_ROM_PXE_ENABLE=1
+    mlxconfig -d ${MST} -y set SRIOV_EN=0
     mlxconfig -d ${MST} q | egrep "EXP_ROM"
 done
 ```
 
 Your Mellanox is now configured for PXE booting.
 
+###### Obtaininig Mellanox Tools
+
+If you do not have tools available in your environment, you can obtain these directly through Mellanox.
+
+```bash
+linux:~ # wget https://www.mellanox.com/downloads/MFT/mft-4.15.1-9-x86_64-rpm.tgz
+linux:~ # tar -xzvf mft-4.15.1-9-x86_64-rpm.tgz
+linux:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # cd mft-4.15.1-9-x86_64-rpm/RPMS
+linux:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # rpm -ivh ./mft-4.15.1-9.x86_64.rpm
+linux:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # cd
+linux:~ # mst start
+```
+
 ##### QLogic FastLinq
 
 These should already be configured for PXE booting.
+
+###### Kernel Modules
+
+KMP modules for Qlogic are installed:
+
+- qlgc-fastlinq-kmp-default
+- qlgc-qla2xxx-kmp-default
 
 See [#casm-triage][2] if this is not the case.
 
