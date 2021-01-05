@@ -7,7 +7,8 @@ but in the context of a metal stack.
 | ---- | ---- | ---- |
 | `mgmt0` | Slot 1 on the SMNET card. | 9000
 | `mgmt1` | Slot 2 on the SMNET card, or slot 1 on the 2nd SMNET card. | 9000
-| `bond0` | LACP Link Agg. of `mgmt0`. | 9000
+| `bond0` | LACP Link Agg. of `mgmt0` and `mgmt1`, or `mgmt0` and `mgmt2` on dual-bonds (when `bond1` is present). | 9000
+| `bond1` | LACP Link Agg. of `mgmt1` and `mgmt3`. | 9000
 | `lan0` | Externally facing interface. | 1500
 | `lan1` | Yet-another externally facing interface, or anything (unused). | 1500
 | `hsn0` | High-speed network interface. | 9000
@@ -15,6 +16,22 @@ but in the context of a metal stack.
 | `vlan002` | Virtual LAN for managing nodes | 1500
 | `vlan004` | Virtual LAN for managing hardware | 1500
 | `vlan007` | Virtual LAN for the customer access network | 1500
+
+These interfaces can be observed on a live NCN (using `ip link` on the command line).
+
+#### Device Naming / udev
+
+The underlying naming relies on [BIOSDEVNAME][1], this helps conform device naming into a smaller
+set of possible names. It also helps show us when driver issues occur, if a non-BIOSDEVNAME interface appears
+ then METAL can/should receive a triage report/bug.
+ 
+MAC Based udev rules during initial boot in iPXE. When a node boots, iPXE will dump the PCI busses and sort
+network interfaces into 3 buckets:
+- `mgmt`: internal/management network connection
+- `hsn`: high-speed connection
+- `lan`: external/site-connection
+
+The source code for the rule generation is in [metal-ipxe][1], but for technical information on the PCI configuration/reading please read on.
 
 # Vendor and Bus ID Identification
 
@@ -53,3 +70,5 @@ swap IDs out for certain systems until smarter logic can be added to cloud-init.
 | Mellanox Technologies | ConnectX-4 | `1013` | **`15b3`** |
 | Mellanox Technologies | ConnectX-5 | **`1017`** | `15b3` | 
 | QLogic Corporation | FastLinQ QL41000 | `8070` | **`1077`** |
+
+[1]: https://stash.us.cray.com/projects/MTL/repos/ipxe/browse/boot/script.ipxe
