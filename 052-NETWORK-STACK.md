@@ -1,10 +1,14 @@
-# Network Stack
+# Network Stack (Software and Hardware)
 
 This page will detail how-to reload/reset interfaces within the network stack to fixup 
 wedged interfaces.
 
 Any process covered on this page will be covered by the installer.
 
+### Network Interfaces
+
+The NCNs have network device names set during first boot. The names vary based on the 
+available hardware. For more information, see [NCN Networking](103-NCN-NETWORKING.md).
 
 ### Network Stack
 
@@ -124,3 +128,5 @@ root:~ # wicked show --verbose all
 root:~ # systemctl show -p Id network.service
 Id=wicked.service
 ```
+
+[1]: https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide/sec-consistent_network_device_naming_using_biosdevname

@@ -1,35 +1,51 @@
-# Partitioning
-> This page will receive updates, but for now see this confluence article: https://connect.us.cray.com/confluence/display/MTL/NCN+Partition+Scheme
+# non-compute-node Mounts and File Systems
+
+This page serves to provide technical detail for the various filesystems on the non-compute nodes.
+
+
+### Quick-Reference FSTable
+
+The table below represents all recognizable FSLabels on any given NCN, varying slightly by node-role (i.e. kubernetes-manager vs. kubernetes-worker).
+
+##### Nomenclature
+
+In general, there are 3 kinds of disks:
 
 - **Ephemeral**: a disk that is not in the systems RAID
-- **BOOTRAID**: a RAID disk device in the system
+- **RAID**: a RAID (mirror/raid-1)
+- **CEPH**: a disk for use as a ceph OSD
 
-| FS Label | Partitions | Nodes	| Device | Size on Disk | Work Order | Memo
-| --- | --- | ---| --- | --- | --- | --- |
-| `BOOTRAID` |	Background | All NCNs | 2 small disks in RAID-1 | `500 MiB` | Present since Shasta-Preview 1 |
-| `SQFSRAID` | `/run/initramfs/live` | All NCNs | 2 small disks in RAID-1 | `100 GiB` | [CASM-1885](https://connect.us.cray.com/jira/browse/MTL-1885) |  squashfs should compress our images to about 1/3rd their uncompressed size. (20G → 6.6G)  On pepsi's ncn-w001, we're at ~20G of non-volatile data storage needed. |
-| `ROOTRAID` | `/run/initramfs/overlayfs` | All NCNs | 2 small disks in RAID-1 | Max/Remainder | Present since Shasta-Preview 1 | The persistent image file is loaded from this partition, when the image file is loaded the underlying drive is lazily unmounted (`umount -l`) so that when the overlay closes the disk follows suit. |
-| `CONRUN` | `/run/containerd` | All K8s Managers & Workers | Ephemeral | `75 GiB` | [MTL-916](https://connect.us.cray.com/jira/browse/MTL-916) | On pepsi ncn-w001, we have less than 200G of operational storage for this. |
-| `CONLIB` | `/var/lib/containerd` | All K8s Managers & Workers | Ephemeral | `25%` | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) | |
-| `K8SETCD` | `/var/lib/etcd` | All K8s Managers | Ephemeral | `32 GiB` | [CASMPET-338](https://connect.us.cray.com/jira/browse/CASMPPET-338) | |
-| `K8SKUBE` | `/var/lib/kubelet` | All K8s Managers & Workers | Ephemeral | `25%` |  [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) | |
+
+
+| k8s-manager | k8s-worker | storage-ceph | FS Label | Partitions | Device | OverlayFS | Size on Disk | Work Order(s) | Memo
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| ✅ | ✅ | ✅ | `BOOTRAID` | _Not Mounted_ | 2 small disks in RAID-1 | `500 MiB` | ❌ | Present since Shasta-Preview 1 |
+| ✅ | ✅ | ✅ | `SQFSRAID` | `/run/initramfs/live` | 2 small disks in RAID-1 | `100 GiB` | ✅ | [CASM-1885](https://connect.us.cray.com/jira/browse/MTL-1885) |  squashfs should compress our images to about 1/3rd their uncompressed size. (20G → 6.6G)  On pepsi's ncn-w001, we're at ~20G of non-volatile data storage needed. |
+| ✅ | ✅ | ✅ | `ROOTRAID` | `/run/initramfs/overlayfs` | 2 small disks in RAID-1 | Max/Remainder | ✅ | Present since Shasta-Preview 1 | The persistent image file is loaded from this partition, when the image file is loaded the underlying drive is lazily unmounted (`umount -l`) so that when the overlay closes the disk follows suit. |
+| ❌ | ✅ | ❌ | `CONRUN` | `/run/containerd` | Ephemeral | `75 GiB` | ❌ | [MTL-916](https://connect.us.cray.com/jira/browse/MTL-916) | On pepsi ncn-w001, we have less than 200G of operational storage for this. |
+| ❌ | ✅ | ❌ | `CONLIB` | `/var/lib/containerd` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
+| ✅ | ❌ | ❌ | `K8SETCD` | `/var/lib/etcd` |  Ephemeral | `32 GiB` | ❌ | [CASMPET-338](https://connect.us.cray.com/jira/browse/CASMPPET-338) | |
+| ❌ | ❌ | ❌ | `K8SKUBE` | `/var/lib/kubelet`| Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
 
 > For notes on previous/old labels, scroll to the bottom.
 
 # OverlayFS and Persistence
 
-There are a few overlays used for NCN image boots.
+There are a few overlays used for NCN image boots. These enable two critical functions; changes to data and new data will persist between reboots, and RAM (memory) is freed because we're using our block-devices (SATA/PCIe).
 
-1. The Ephemeral SquashFS Overlay
-2. The Persistent OverlayFS
+1. `ROOTRAID` is the persistent root overlayFS, it commits and saves all changes made to the running OS and it stands on a RAID1 mirror.
+2. `CONLIB` is a persistent overlayFS for containerd, it commits and saves all new changes while allowing read-through to pre-existing (baked-in) data from the squashFS.
+3. `K8SKUBE` is a persistent overlayFS for kubelet, it works exactly as the `CONLIB` overlayFS.
 
-The new filesystem organization can be best viewed with these three commands:
-1. `lsblk`, `lsblk -f` will show how the RAIDs and disks are mounted
-2. `losetup -a` will show where the squashFS is mounted from
-3. `mount | grep ' / '` will show you the overlay being layered atop the squashFS
+#### OverlayFS Example
 
-#### Example
+> Helpful commands... the overlayFS organization can be best viewed with these three commands:
+> 1. `lsblk`, `lsblk -f` will show how the RAIDs and disks are mounted
+> 2. `losetup -a` will show where the squashFS is mounted from
+> 3. `mount | grep ' / '` will show you the overlay being layered atop the squashFS
 
+
+Let's pick apart the `SQFSRAID` and `ROOTRAID` overlays. 
 - `/run/rootfsbase` is the SquashFS image itself
 - `/run/initramfs/live` is the squashFS's storage array, where one or more squashFS can live
 - `/run/initranfs/overlayfs` is the overlayFS storage array, where the persistent directories live
@@ -95,6 +111,9 @@ Only the following directories are persistent _by default_:
 - `srv`
 - `tmp`
 - `var`
+- `/run/containerd`
+- `/run/lib-containerd`
+- `/run/lib-kubelet`
 
 More directories can be added, but mileage varies. The initial set is actually managed by dracut, when
 using a reset toggle the above list is "reset/cleared". If more directories are added, they will be eradicated when
@@ -113,7 +132,7 @@ drwxr-xr-x 8 root root  76 Oct 13 16:52 var
 ```
 > Remeber: `/run/overlayfs` is a symbolic link to the real disk `/run/initramfs/overlayfs/*`.
 
-### Layering
+##### Layering - Upperdir and Lowerdir(s)
 
 The file-system the user is working on is really two layered file-systems (overlays).
 - The lower layer is the SquashFS image itself, read-only, which provides all that we need to run.
@@ -123,7 +142,7 @@ The file-system the user is working on is really two layered file-systems (overl
 > There are fancier options for overlays, such as multiple lower-layers, copy-up (lower-layer precedence),
 >  and opaque (removing a directory in the upper layer hides it in the lower layer). You can read more [here|https://www.kernel.org/doc/html/latest/filesystems/overlayfs.html#inode-properties]
 
-##### Example
+##### Layering Real World Example
 
 Let's take `/root` for example, we can see in the upper-dir (the overlay) we have these files:
 
@@ -171,9 +190,12 @@ drwx------ 1 root root  29 Oct 21 21:57 .ssh
 - Notice how `.bash_history` matches the upper-dir?
 - Notice how `.kube` exists here?
 
-#### Take-away
+The take-away here is: any change done to `/root/` will persist through `/run/overlayfs/root` and will take precedence to the squashFS image root.
 
-Any change done to `/root/` will persist through `/run/overlayfs/root` and will take precedence to the squashFS image root.
+
+# OverlayFS Features
+
+These features or toggles are passable on the kernel command line, and change the behavior of the overlayFS.
 
 ## Reset Toggles
 
@@ -259,7 +281,7 @@ rd.live.overlay.thin=1
 rd.live.overlay.thin=0
 ```
 
-## Old/Retired FS-Labels
+# Old/Retired FS-Labels
 
 Deprecated FSlabels/partitions from Shasta 1.3.X (no longer in Shasta 1.4.0 and onwards).
 
