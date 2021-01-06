@@ -103,7 +103,7 @@ tar -zxvf ${CSM_STABLE}.tar.gz
 ### Manual Step 3: Install `csi`
 
 ```bash
-zypper --no-gpg-checks --plus-repo ./${CSM_STABLE}/rpm/csm-sle-15sp2/ -n in cray-site-init
+rpm -Uvh ./${CSM_STABLE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
 ```
 
 ### Manual Step 4: Create the Bootable Media
