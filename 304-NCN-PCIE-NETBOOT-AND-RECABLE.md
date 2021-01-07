@@ -20,15 +20,6 @@ This uses the [Mellanox CLI Tools][1] for configuring UEFI PXE from the Linux co
 
 You can install these tools onto the LiveCD (Cray Pre-Install Toolkit), which already has dependencies installed.
 
-```bash
-pit:~ # wget https://www.mellanox.com/downloads/MFT/mft-4.15.1-9-x86_64-rpm.tgz
-pit:~ # tar -xzvf mft-4.15.1-9-x86_64-rpm.tgz
-pit:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # cd mft-4.15.1-9-x86_64-rpm/RPMS
-pit:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # rpm -ivh ./mft-4.15.1-9.x86_64.rpm
-pit:~ #/mft-4.15.1-9-x86_64-rpm/RPMS # cd
-pit:~ # mst start
-```
-
 Use this snippet to print out device name and current UEFI PXE state.
 ```bash
 # Print name and current state.
