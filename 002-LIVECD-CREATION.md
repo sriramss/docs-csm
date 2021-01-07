@@ -85,13 +85,13 @@ Download the CSM release tarball from the stable or unstable stream in artifacto
 ```bash
 # Unstable
 cd /root
-wget https://arti.dev.cray.com/artifactory/csm-distribution-unstable-local/${CSM_UNSTABLE}.tar.gz #csi pit get . $CSM_UNSTABLE
+wget $UNSTABLE_TARBALL
 ```
 
 ```bash
 # Stable
 cd /root
-wget https://arti.dev.cray.com/artifactory/csm-distribution-stable-local/${CSM_STABLE}.tar.gz #csi pit get . $CSM_STABLE
+wget $STABLE_TARBALL
 ```
 
 Expand the tarball
@@ -168,7 +168,7 @@ linux:~ $ csi config init \
     --mountain-cabinets 0 \
     --river-cabinets 1  \
     --can-cidr 10.103.11.0/24 \
-    --can-gateway 10.103.11.1/24 \
+    --can-gateway 10.103.11.1 \
     --can-static-pool 10.103.11.112/28 \
     --can-dynamic-pool 10.103.11.128/25 \
     --nmn-cidr 10.252.0.0/17 \
@@ -176,7 +176,7 @@ linux:~ $ csi config init \
     --ntp-pool time.nist.gov \
     --site-ip 172.30.53.79/20 \
     --site-gw 172.30.48.1 \
-    --site-nic lan0 \
+    --site-nic p1p2 \
     --site-dns 172.30.84.40 \
     --install-ncn-bond-members p1p1,p10p1
 ```
@@ -213,7 +213,7 @@ Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If 
 ```bash
 # Example
 linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
-casminst-294  casminst-431  casminst-495  casminst-526
+casminst-999
 ```
 
 ### Manual Step 7: Enable networking on first boot of the liveCD
@@ -260,8 +260,8 @@ csi pit populate pitdata $PIT_DATA_MOUNT $PIT_K8S_DIR -K
 # Copy any files in the current dir to the prep dir (example: copying over your three config files or vars.sh file)
 csi pit populate pitdata $PIT_DATA_MOUNT . -p
 
-# Copy the expanded tarball into the data partition
-linux:~ # cp -r /root/$CSM_RELEASE $PIT_PREP_DIR
+# Copy the CSI config files to prep dir
+cp -r /root/${system_name} $PIT_DATA_MOUNT/prep
 ```
 
 ### Manual Step 9: Boot into your LiveCD.
