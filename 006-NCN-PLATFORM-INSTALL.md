@@ -17,7 +17,7 @@ This page will go over how to install CSM applications and services (i.e., into 
     In particular, pay careful attention to:
 
     ```
-    spec.network.static_ips.dns.site_to_system_looksups
+    spec.network.static_ips.dns.site_to_system_lookups
     spec.network.static_ips.ncn_masters
     spec.network.static_ips.ncn_storage
     ```
@@ -30,6 +30,6 @@ This page will go over how to install CSM applications and services (i.e., into 
     pit:/var/www/ephemeral/prep/site-init # ./deploy/deploydecryptionkey.sh
     ```
 
-4. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in the README and as otherwise directed by the installer process.
+4. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process.
 
     See [002-LIVECD-CREATION](002-LIVECD-CREATION.md) for further details.
