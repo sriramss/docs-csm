@@ -1,94 +1,35 @@
 # Platform Install
 
-This page will go over how to install all of the CSM manifests 
+This page will go over how to install CSM applications and services (i.e., into the CSM Kubernetes cluster).
 
 
-1. Copy the kubernetes config to the LiveCD to be able to use kubectl with current admin credentials. 
+1. Copy the Kubernetes config to the LiveCD to be able to use `kubectl` as cluster administrator. 
     ```bash
     pit:~ # mkdir ~/.kube
     pit:~ # scp ncn-m002.nmn:/etc/kubernetes/admin.conf ~/.kube/config
     ```
     Now you can run `kubectl get nodes` to see the nodes in the cluster.
 
-2. Check out the shasta-cfg repo for your system. Replace `sif` with your system name.
+2. Make sure the IP addresses in the `customizations.yaml` file in this repo align with the IPs generated in CSI.  
 
-    > **NOTE: This repository must be synced with the master branch of `stable` to deploy the appropriate manifests.**
+    > File location: `/var/www/ephemeral/prep/site-init/customizations.yaml`
 
-    ```bash
-    pit:~ # export system_name=sif
-    pit:~ # cd /root
-    pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${system_name}.git site-init
-    pit:~ # cd site-init
+    In particular, pay careful attention to:
+
     ```
-
-    Make sure the IP addresses in the customizations.yaml file in this repo align with the IPs generated in CSI.  In particular, pay careful attention to:
-    
-    > TODO: For automation this should be checked, if this step is still used when automation lands.
-    
-    ```
-    spec.network.static_ips.dns.site_to_system_looksups
+    spec.network.static_ips.dns.site_to_system_lookups
     spec.network.static_ips.ncn_masters
     spec.network.static_ips.ncn_storage
     ```
+     > TODO: For automation this should be checked, if this step is still used when automation lands.
 
-3. Generate various manifests
-
-    > NOTE: the call to manifestgen should be done via ${system_name}/deploy/generate.sh when we're ready to use all manifests
-
-    ```bash
-    pit:~/site-init # mkdir -p ./build/manifests
-    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/platform.yaml > ./build/manifests/platform.yaml
-    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/keycloak-gatekeeper.yaml > ./build/manifests/keycloak-gatekeeper.yaml
-    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/sysmgmt.yaml > ./build/manifests/sysmgmt.yaml
-    pit:~/site-init # manifestgen -c customizations.yaml -i ./manifests/core-services.yaml > ./build/manifests/core-services.yaml
-    ```
-
-4. Run the deploydecryptionkey.sh script provided by the shasta-cfg/<system_name>.git repo.
+3. Run the `deploydecryptionkey.sh` script
 
     ```bash
-    pit:~/site-init # ./deploy/deploydecryptionkey.sh
+    pit:~/ # cd /var/www/ephemeral/prep/site-init/
+    pit:/var/www/ephemeral/prep/site-init # ./deploy/deploydecryptionkey.sh
     ```
 
-5. Run loftsman against the platform and keycloak-gatekeeper manifests using shasta-cfg/<system_name> provided-script.
+4. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process.
 
-    ```bash
-    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/platform.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
-    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/keycloak-gatekeeper.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
-    ```
-
-    This should execute these manifests without error.
-
-
-6.  Check for workarounds in the `/var/www/ephemeral/prep/${CSM_RELEASE}/fix/after_platform_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
-
-    ```bash
-    pit:~ #  cd /var/www/ephemeral/prep/${CSM_RELEASE}/fix
-    pit:~ #  cd after-platform-manifest
-    ```
-
-7. Deploy the metallb configuration
-
-    ```bash
-    pit:~ # kubectl apply -f /var/www/ephemeral/prep/${system_name}/metallb.yaml
-    ```
-
-8. Run loftsman against the core-services manifest using shasta-cfg/<system_name> provided-script.
-
-    ```bash
-    pit:~ # cd /root/site-init
-    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/core-services.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
-    ```
-
-9. Run loftsman against the sysmgmt manifest using shasta-cfg/<system_name> provided-script.
-
-    ```bash
-    pit:~/site-init # ./deploy/deploy.sh ./build/manifests/sysmgmt.yaml dtr.dev.cray.com http://packages.local:8081/repository/helmrepo.dev.cray.com/
-    ```
-
-10. Check for workarounds in the `/var/www/ephemeral/prep/${CSM_RELEASE}/fix/after_system_manifest` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
-
-    ```bash
-    pit:~ #  cd /var/www/ephemeral/prep/${CSM_RELEASE}/fix
-    pit:~ #  cd after-sysmgmt-manifest
-    ```
-
+    See [002-LIVECD-CREATION](002-LIVECD-CREATION.md) for further details.

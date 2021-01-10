@@ -74,46 +74,6 @@ To run the test by hand if CSI is unavailable or has doubt:
     ncn-s002-mgmt
     ncn-s003-mgmt
     ```
-#### Check : Update basecamp data to include Certificate Authority (CA) certificates
-
-> **IMPORTANT** You must have a ```shasta-cfg``` git repo created and sync'd from ```stable``` (or a conscious deviation) to perform this step. Given the ```shasta-cfg``` model *may* be in flux, contact SSI if you need a new repo created. They can also provide you with a process to synchronize from ```stable```.
-
-Basecamp needs the right data to setup the certificates, if you already set this up please move onto the next check/step.
-
-> **IMPORTANT** Failure to validate/pass this check will entail request failure acorss all/core ingress gateways leading to ceph RGW failure (s3).
-
-1. Clone the respective shasta-cfg repository.
-
-    ```bash
-    pit:~ # cd /tmp/
-    pit:/tmp # mkdir --mode=750 shasta-cfg
-    pit:/tmp # cd shasta-cfg/
-    pit:/tmp/shasta-cfg # git clone https://stash.us.cray.com/scm/shasta-cfg/surtur.git
-    Cloning into 'surtur'...
-    remote: Counting objects: 88, done.
-    remote: Compressing objects: 100% (87/87), done.
-    remote: Total 88 (delta 18), reused 0 (delta 0)
-    Unpacking objects: 100% (88/88), 34.24 MiB | 4.94 MiB/s, done.
-    ```
-
-2. Use `csi` to patch `data.json` using `customizations.yaml` and the private sealed secret key.
-
-    ```bash
-    surtur-ncn-m001-pit:/tmp/shasta-cfg # csi patch ca --customizations-file ./surtur/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file ./surtur/certs/sealed_secrets.key
-    2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
-    2020/12/01 11:41:29 Patched cloud-init seed data in place
-    ```
-
-    > NOTE: If using a non-default Certificate Autority (sealed secret), you'll need to verify that the vault chart overrides are updated with the correct sealed secret name to inject and use the ```--sealed-secret-name``` option to ```csi patch ca```.
-
-
-3. Optionally, clean up the cloned shasta-cfg directory structure.
-
-4. Restart basecamp to pickup changes to data.json
-
-    ```bash
-    pit:~ # systemctl restart basecamp
-    ```
 
 #### Optional : Safeguards
 
@@ -266,7 +226,42 @@ linux:~ # ls /var/www/ephemeral/prep/$CSM_RELEASE/fix/before-ncn-boot
 casminst-124
 ```
 
-## Manual Step 5: Boot Storage Nodes
+## Manual Step 5: Clone shasta-cfg repository and update Basecamp with CA certificates
+
+ > **NOTE: This repository must be synced with the master branch of `stable` to deploy updated customizations and sealed secrets.**
+
+Platform Certificate Authority (CA) certificates must be added to Basecamp (cloud-init), so that NCN nodes can verify the certificates for components such as the ingress gateways.
+
+> **IMPORTANT** Failure to perform this step will result in subsequent, often hard to diagnose and fix, problems. 
+
+1. Clone the shasta-cfg repository for the system.
+
+    ```bash
+    pit:~ # export SYSTEM_NAME=sif
+    pit:~ # cd /var/www/ephemeral/prep
+    pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${SYSTEM_NAME}.git site-init
+    ```
+
+2. Use `csi` to patch `data.json` using `customizations.yaml` and the sealed secret private key.
+
+    This process is idempotent if the CAs have already been added.
+
+    ```bash
+    pit:~ # cd /var/www/ephemeral/prep/site-init
+    pit:/var/www/ephemeral/prep/site-init # csi patch ca --customizations-file customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file certs/sealed_secrets.key
+    2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
+    2020/12/01 11:41:29 Patched cloud-init seed data in place
+    ```
+
+    > NOTE: If using a non-default Certificate Autority (sealed secret), you'll need to verify that the vault chart overrides are updated with the correct sealed secret name to inject and use the ```--sealed-secret-name``` option to ```csi patch ca```.
+
+3. Restart basecamp after adding CAs
+
+    ```bash
+    pit:~ # systemctl restart basecamp
+    ```
+
+## Manual Step 6: Boot Storage Nodes
 
 This will again just `echo` the commands.  Look them over and validate they are ok before running them.  This just `grep`s out the storage nodes so you only get the workers and managers.
 
@@ -299,7 +294,7 @@ pit:~ # conman -q
 pit:~ # conman -j ncn-s002
 ```
 
-## Manual Step 6: Boot K8s
+## Manual Step 7: Boot K8s
 
 This will again just `echo` the commands.  Look them over and validate they are ok before running them.  This just `grep`s out the storage nodes so you only get the workers and managers.
 
