@@ -2,15 +2,7 @@
 
 This page will go over how to install CSM applications and services (i.e., into the CSM Kubernetes cluster).
 
-
-1. Copy the Kubernetes config to the LiveCD to be able to use `kubectl` as cluster administrator. 
-    ```bash
-    pit:~ # mkdir ~/.kube
-    pit:~ # scp ncn-m002.nmn:/etc/kubernetes/admin.conf ~/.kube/config
-    ```
-    Now you can run `kubectl get nodes` to see the nodes in the cluster.
-
-2. Make sure the IP addresses in the `customizations.yaml` file in this repo align with the IPs generated in CSI.  
+1. Make sure the IP addresses in the `customizations.yaml` file in this repo align with the IPs generated in CSI.  
 
     > File location: `/var/www/ephemeral/prep/site-init/customizations.yaml`
 
@@ -23,13 +15,11 @@ This page will go over how to install CSM applications and services (i.e., into 
     ```
      > TODO: For automation this should be checked, if this step is still used when automation lands.
 
-3. Run the `deploydecryptionkey.sh` script
+2. Run the `deploydecryptionkey.sh` script
 
     ```bash
     pit:~/ # cd /var/www/ephemeral/prep/site-init/
     pit:/var/www/ephemeral/prep/site-init # ./deploy/deploydecryptionkey.sh
     ```
 
-4. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process.
-
-    See [002-LIVECD-CREATION](002-LIVECD-CREATION.md) for further details.
+3. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process. See [002-LIVECD-CREATION](002-LIVECD-SETUP.md) for further details.

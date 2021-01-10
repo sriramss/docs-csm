@@ -28,7 +28,6 @@ To begin these LiveCD creation steps, you must be logged in to an operating syst
 6. [Generate the Configuration Payload](#manual-step-6-configuration-payload)
 7. [Enable networking on first boot of the livecd](#manual-step-7-enable-networking-on-first-boot-of-the-livecd)
 8. [Populate the LiveCD with the payload](#manual-step-8-populate-the-livecd)
-9. [Boot into the LiveCD](#manual-step-9-boot-into-your-livecd)
 
 ### Manual Step 1: Setup `csi`
 
@@ -110,20 +109,20 @@ rpm -Uvh ./${CSM_STABLE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
 
 1. Fetch artifacts and format the USB device
 
-```bash
-# Clone the script, CSI will auto-search for this at /root/
-git clone $PIT_REPO_URL
-
-# Make the USB. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
-csi pit format $PIT_USB_DEVICE $PIT_ISO_NAME 50000
-```
+    ```bash
+    # Clone the script, CSI will auto-search for this at /root/
+    git clone $PIT_REPO_URL
+    
+    # Make the USB. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
+    csi pit format $PIT_USB_DEVICE $PIT_ISO_NAME 50000
+    ```
 
 2. Create and mount the partitions needed:
-
-```bash
-mkdir -pv /mnt/{cow,pitdata}
-mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
-```
+    
+    ```bash
+    mkdir -pv /mnt/{cow,pitdata}
+    mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
+    ```
 
 ### Manual Step 5: Gather / Create Seed Files
 
@@ -133,7 +132,7 @@ This is the set of files that you will currently need to create or find to gener
 2. `hmn_connections.json` (RedFish configuration)
 3. `switch_metadata.csv` (Switch configuration)
 
-From these three files, you can run `csi config init` and it will generate all of the necessary config files needed for begining an install.
+From these three files, you can run `csi config init` and it will generate all of the necessary config files needed for beginning an install.
 
 #### ncn_metadata.csv
 
@@ -154,77 +153,83 @@ Create [switch_metadata.csv](305-SWITCH-METADATA.md).
 
 The configuration payload comes from the `csi config init` command below.
 
-1.  To execute this command you will need the following:
+1. To execute this command you will need the following:
 
-> The hsn_connections.json, ncn_metadata.csv, and switch_metadata.csv files in the current directory as well as values for the flags listed below.
+    > The hsn_connections.json, ncn_metadata.csv, and switch_metadata.csv files in the current directory as well as values for the flags listed below.
 
-> An example of the command to run with the required options.
+    > An example of the command to run with the required options.
 
-```bash
-linux:~ $ csi config init \
-    --bootstrap-ncn-bmc-user root \
-    --bootstrap-ncn-bmc-pass changeme \
-    --system-name eniac  \
-    --mountain-cabinets 0 \
-    --river-cabinets 1  \
-    --can-cidr 10.103.11.0/24 \
-    --can-gateway 10.103.11.1 \
-    --can-static-pool 10.103.11.112/28 \
-    --can-dynamic-pool 10.103.11.128/25 \
-    --nmn-cidr 10.252.0.0/17 \
-    --hmn-cidr 10.254.0.0/17 \
-    --ntp-pool time.nist.gov \
-    --site-ip 172.30.53.79/20 \
-    --site-gw 172.30.48.1 \
-    --site-nic p1p2 \
-    --site-dns 172.30.84.40 \
-    --install-ncn-bond-members p1p1,p10p1
-```
+    ```bash
+    linux:~ $ csi config init \
+        --bootstrap-ncn-bmc-user root \
+        --bootstrap-ncn-bmc-pass changeme \
+        --system-name eniac  \
+        --mountain-cabinets 0 \
+        --river-cabinets 1  \
+        --can-cidr 10.103.11.0/24 \
+        --can-gateway 10.103.11.1 \
+        --can-static-pool 10.103.11.112/28 \
+        --can-dynamic-pool 10.103.11.128/25 \
+        --nmn-cidr 10.252.0.0/17 \
+        --hmn-cidr 10.254.0.0/17 \
+        --ntp-pool time.nist.gov \
+        --site-ip 172.30.53.79/20 \
+        --site-gw 172.30.48.1 \
+        --site-nic p1p2 \
+        --site-dns 172.30.84.40 \
+        --install-ncn-bond-members p1p1,p10p1
+    ```
 
-This will generate the following files in a subdirectory with the system name.
+    This will generate the following files in a subdirectory with the system name.
 
-```bash
-linux:~ # ls -R $system_name
-foo/:
-basecamp  conman.conf  cpt-files  credentials  dnsmasq.d  manufacturing  metallb.yaml  networks  sls_input_file.json  system_config
+    ```bash
+    linux:~ # ls -R $system_name
+    foo/:
+    basecamp  conman.conf  cpt-files  credentials  dnsmasq.d  manufacturing  metallb.yaml  networks  sls_input_file.json  system_config
 
-foo/basecamp:
-data.json
+    foo/basecamp:
+    data.json
 
-foo/cpt-files:
-ifcfg-bond0  ifcfg-lan0  ifcfg-vlan002  ifcfg-vlan004  ifcfg-vlan007
+    foo/cpt-files:
+    ifcfg-bond0  ifcfg-lan0  ifcfg-vlan002  ifcfg-vlan004  ifcfg-vlan007
 
-foo/credentials:
-bmc_password.json  mgmt_switch_password.json  root_password.json
+    foo/credentials:
+    bmc_password.json  mgmt_switch_password.json  root_password.json
 
-foo/dnsmasq.d:
-CAN.conf  HMN.conf  mtl.conf  NMN.conf  statics.conf
+    foo/dnsmasq.d:
+    CAN.conf  HMN.conf  mtl.conf  NMN.conf  statics.conf
 
-foo/manufacturing:
+    foo/manufacturing:
 
-foo/networks:
-CAN.yaml  HMNLB.yaml  HMN.yaml  HSN.yaml  MTL.yaml  NMNLB.yaml  NMN.yaml
-```
+    foo/networks:
+    CAN.yaml  HMNLB.yaml  HMN.yaml  HSN.yaml  MTL.yaml  NMNLB.yaml  NMN.yaml
+    ```
 
-2. Apply workarounds
+2. Clone the shasta-cfg repository for the system.
+    > **IMPORTANT - NOTE FOR `INTERNAL`** - It is recommended to sync with STABLE after cloning if you have not already done so. 
+ 
+    > **IMPORTANT - NOTE FOR `AIRGAP`** - You must do this now while preparing the USB on your local machine if your CRAY is airgapped or if it cannot otherwise reach your local GIT server.
+   ```bash
+    pit:~ # export SYSTEM_NAME=sif
+    pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/${SYSTEM_NAME}.git ${PIT_DATA_MOUNT}/ephemeral/prep/site-init
+    ```
 
-Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+3. Apply workarounds
 
-```bash
-# Example
-linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
-casminst-999
-```
+    Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+    
+    ```bash
+    # Example
+    linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
+    casminst-999
+    ```
 
 ### Manual Step 7: Enable networking on first boot of the liveCD
 
 This is accomplished by populating the cow partition with the necessary config files generated by `csi`
 
 ```bash
-csi pit populate cow $PIT_COW_MOUNT ${SYSTEM_NAME}/
-```
-
-```
+linux:~ # csi pit populate cow $PIT_COW_MOUNT ${SYSTEM_NAME}/
 config------------------------> /mnt/cow/rw/etc/sysconfig/network/config...OK
 ifcfg-bond0-------------------> /mnt/cow/rw/etc/sysconfig/network/ifcfg-bond0...OK
 ifcfg-lan0--------------------> /mnt/cow/rw/etc/sysconfig/network/ifcfg-lan0...OK
@@ -247,23 +252,28 @@ statics.conf------------------> /mnt/cow/rw/etc/dnsmasq.d/statics.conf...OK
 Populate your live cd with the kernel, initrd, and squashfs images (KIS), as well as the basecamp configs and any files you may have in your dir that you'll want on the livecd.
 
 ```bash
-# Copy basecamp data
-csi pit populate pitdata $PIT_DATA_MOUNT ${SYSTEM_NAME} -b
-# Copy kernel to data dir
-csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -k
-# Copy initrd to data dir
-csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -i
-# Copy ceph image to ceph dir
-csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -C
-# Copy kube image to k8s dir
-csi pit populate pitdata $PIT_DATA_MOUNT $PIT_K8S_DIR -K
-# Copy any files in the current dir to the prep dir (example: copying over your three config files or vars.sh file)
-csi pit populate pitdata $PIT_DATA_MOUNT . -p
+# 1. Copy basecamp data
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT ${SYSTEM_NAME} -b
 
-# Copy the CSI config files to prep dir
-cp -r /root/${system_name} $PIT_DATA_MOUNT/prep
+# 2. Copy kernel to data dir
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -k
+
+# 3. Copy initrd to data dir
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -i
+
+# 4. Copy ceph image to ceph dir
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -C
+
+# 5. Copy kube image to k8s dir
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_K8S_DIR -K
+
+# 6. Copy any files in the current dir to the prep dir (example: copying over your three config files or vars.sh file)
+linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT . -p
+
+# 7. Copy the CSI config files to prep dir
+linux:~ # cp -r /root/${system_name} $PIT_DATA_MOUNT/prep
 ```
 
-### Manual Step 9: Boot into your LiveCD.
+### Next: Boot into your LiveCD.
 
 Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)
