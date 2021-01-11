@@ -380,7 +380,7 @@ If it says no data found, then you may have a misalignment in your `ncn_metadata
 
 *Fix*: Run the work-around in CSM work-arounds.
 
-#### Manual Step 8: Add Cluster Credentials to the LiveCD
+### Manual Step 8: Add Cluster Credentials to the LiveCD
 
 After 5-10 minutes, the first master should be provisioning other nodes in the cluster. At this time, credentials can be
 obtained.
