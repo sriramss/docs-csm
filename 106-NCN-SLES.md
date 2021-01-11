@@ -39,7 +39,7 @@ ncn-s001:~ # grep '<summary' /etc/products.d/*.prod
 Kubernetes nodes on the other hand will report SLES HPC only, this is reflective in `kubectl` output:
 > Remember, vshasta will show SUSE Linux Enterprise Server instead.
 ```
-ncn-m002:~ # kubectl get nodes -o wide
+pit:~ # kubectl get nodes -o wide
 NAME       STATUS   ROLES    AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                                                  KERNEL-VERSION         CONTAINER-RUNTIME
 ncn-m002   Ready    master   128m   v1.18.6   10.252.1.14   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
 ncn-m003   Ready    master   127m   v1.18.6   10.252.1.13   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
