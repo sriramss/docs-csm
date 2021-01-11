@@ -131,6 +131,7 @@ This is the set of files that you will currently need to create or find to gener
 1. `ncn_metadata.csv` (NCN configuration)
 2. `hmn_connections.json` (RedFish configuration)
 3. `switch_metadata.csv` (Switch configuration)
+4. `application_node_config.yaml` (Optional: Application node configuration for SLS file generation)
 
 From these three files, you can run `csi config init` and it will generate all of the necessary config files needed for beginning an install.
 
@@ -148,6 +149,10 @@ Create [hmn_connections.json](307-HMN-CONNECTIONS.md) by running a container aga
 #### switch_metadata.csv
 
 Create [switch_metadata.csv](305-SWITCH-METADATA.md).
+
+#### application-node-config.yaml
+
+Create [application-node-config.yaml](308-APPLICATION-NODE-CONFIG.md). Optional configuration file. It allows modification to how CSI finds and treats applications nodes discovered from the `hmn_connections.json` file when building the SLS Input file. 
 
 ### Manual Step 6: Configuration Payload
 
@@ -204,6 +209,11 @@ The configuration payload comes from the `csi config init` command below.
     foo/networks:
     CAN.yaml  HMNLB.yaml  HMN.yaml  HSN.yaml  MTL.yaml  NMNLB.yaml  NMN.yaml
     ```
+
+    If you see warnings from `csi config init` that are similar to the following, it means that CSI encountered an unknown piece of hardware in the `hmn_connections.json` file. Due to systems having system specific application node source names in `hmn_connections.json` (and the SHCD) the `csi config init` command will need to be given additional configuration file to properly include these nodes in SLS Input file. The application-node-config.yaml can be created using [this procedure](308-APPLICATION-NODE-CONFIG.md). The argument `--application-node-config-yaml ./application-node-config.yaml` can be given to `csi config init` to include the additional application node configuration.
+    ```json
+    {"level":"warn","ts":1610405168.8705149,"msg":"Found unknown source prefix! If this is expected to be an Application node, please update application_node_config.yaml","row":{"Source":"gateway01","SourceRack":"x3000","SourceLocation":"u33","DestinationRack":"x3002","DestinationLocation":"u48","DestinationPort":"j29"}}
+    ``` 
 
 2. Clone the shasta-cfg repository for the system.
     > **IMPORTANT - NOTE FOR `INTERNAL`** - It is recommended to sync with STABLE after cloning if you have not already done so. 
