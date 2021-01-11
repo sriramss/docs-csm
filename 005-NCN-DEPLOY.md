@@ -193,8 +193,8 @@ Platform Certificate Authority (CA) certificates must be added to Basecamp (clou
     This process is idempotent if the CAs have already been added.
 
     ```bash
-    pit:~ # prep=/var/www/ephemeral/prep/site-init
-    pit:~ # csi patch ca --customizations-file $prep/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file $prep/certs/sealed_secrets.key
+    pit:~ # PREP=/var/www/ephemeral/prep/site-init
+    pit:~ # csi patch ca --customizations-file $PREP/customizations.yaml --cloud-init-seed-file /var/www/ephemeral/configs/data.json --sealed-secret-key-file $PREP/certs/sealed_secrets.key
     2020/12/01 11:41:29 Backup of cloud-init seed data at /var/www/ephemeral/configs/data.json-1606844489
     2020/12/01 11:41:29 Patched cloud-init seed data in place
     ```
