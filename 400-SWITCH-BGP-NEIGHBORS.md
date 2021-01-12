@@ -152,3 +152,4 @@ Mellanox
 ```
 
 - Once the IPs are updated for the route-maps and BGP neighbors you may need to restart the BGP process on the switches, you do this by running `clear ip bgp all` on the mellanox and `clear bgp *` on the Arubas.
+- If the BGP peers are still not coming up you should check the Metallb.yaml config file for errors. 
