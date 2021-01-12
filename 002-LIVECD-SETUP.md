@@ -49,7 +49,6 @@ export PIT_COW_MOUNT=/mnt/cow
 # URLs for resources needed
 export PIT_REPO_URL=https://stash.us.cray.com/scm/mtl/cray-pre-install-toolkit.git
 export PIT_REPO_FOLDER=$(basename $PIT_REPO_URL)
-export PIT_WRITE_SCRIPT=/root/${PIT_REPO_FOLDER%%.git}/scripts/write-livecd.sh
 
 # SET THESE TO THE APPROPRIATE PATHS IN THE RELEASE TARBALL
 export UNSTABLE_RELEASE=0.6.1-alpha.1
@@ -107,12 +106,9 @@ rpm -Uvh ./${CSM_STABLE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
 
 ### Manual Step 4: Create the Bootable Media
 
-1. Fetch artifacts and format the USB device
+1. Format the USB device
 
     ```bash
-    # Clone the script, CSI will auto-search for this at /root/
-    git clone $PIT_REPO_URL
-
     # Make the USB. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
     csi pit format $PIT_USB_DEVICE $PIT_ISO_NAME 50000
     ```
