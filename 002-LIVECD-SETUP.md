@@ -112,13 +112,13 @@ rpm -Uvh ./${CSM_STABLE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
     ```bash
     # Clone the script, CSI will auto-search for this at /root/
     git clone $PIT_REPO_URL
-    
+
     # Make the USB. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
     csi pit format $PIT_USB_DEVICE $PIT_ISO_NAME 50000
     ```
 
 2. Create and mount the partitions needed:
-    
+
     ```bash
     mkdir -pv /mnt/{cow,pitdata}
     mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
@@ -216,8 +216,8 @@ The configuration payload comes from the `csi config init` command below.
     ``` 
 
 2. Clone the shasta-cfg repository for the system.
-    > **IMPORTANT - NOTE FOR `INTERNAL`** - It is recommended to sync with STABLE after cloning if you have not already done so. 
- 
+    > **IMPORTANT - NOTE FOR `INTERNAL`** - It is recommended to sync with STABLE after cloning if you have not already done so.
+
     > **IMPORTANT - NOTE FOR `AIRGAP`** - You must do this now while preparing the USB on your local machine if your CRAY is airgapped or if it cannot otherwise reach your local GIT server.
    ```bash
     pit:~ # export SYSTEM_NAME=sif
@@ -227,7 +227,7 @@ The configuration payload comes from the `csi config init` command below.
 3. Apply workarounds
 
     Check for workarounds in the `/root/$CSM_RELEASE/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
-    
+
     ```bash
     # Example
     linux:~ # ls /root/$CSM_RELEASE/fix/csi-config
@@ -261,26 +261,31 @@ statics.conf------------------> /mnt/cow/rw/etc/dnsmasq.d/statics.conf...OK
 
 Populate your live cd with the kernel, initrd, and squashfs images (KIS), as well as the basecamp configs and any files you may have in your dir that you'll want on the livecd.
 
-```bash
+```
+linux:~ # mkdir -p /mnt/pitdata/data/configs/
+linux:~ # mkdir -p /mnt/pitdata/data/{k8s,ceph}/
+
 # 1. Copy basecamp data
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT ${SYSTEM_NAME} -b
+linux:~ # csi pit populate pitdata /root/system_name/ /mnt/pitdata/data/configs -b
+data.json---------------------> /mnt/pitdata/data/configs/data.json...OK
 
-# 2. Copy kernel to data dir
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -k
+# 2. Copy k8s KIS
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/kubernetes/ /mnt/pitdata/data/k8s/ -k
+5.3.18-24.37-default-0.0.6.kernel-----------------> /mnt/pitdata/data/k8s/...OK
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/kubernetes/ /mnt/pitdata/data/k8s/ -i
+initrd.img-0.0.6.xz-------------------------------> /mnt/pitdata/data/k8s/...OK
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/kubernetes/ /mnt/pitdata/data/k8s/ -K
+kubernetes-0.0.6.squashfs-------------------------> /mnt/pitdata/data/k8s/...OK
 
-# 3. Copy initrd to data dir
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -i
+# 2. Copy ceph/storage KIS
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/storage-ceph/ /mnt/pitdata/data/ceph/ -k
+5.3.18-24.37-default-0.0.5.kernel-----------------> /mnt/pitdata/data/ceph/...OK
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/storage-ceph/ /mnt/pitdata/data/ceph/ -i
+initrd.img-0.0.5.xz-------------------------------> /mnt/pitdata/data/ceph/...OK
+linux:~ # csi pit populate pitdata /root/csm-0.7.1/images/storage-ceph/ /mnt/pitdata/data/ceph/ -C
+storage-ceph-0.0.5.squashfs-----------------------> /mnt/pitdata/data/ceph/...OK
 
-# 4. Copy ceph image to ceph dir
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_CEPH_DIR -C
-
-# 5. Copy kube image to k8s dir
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT $PIT_K8S_DIR -K
-
-# 6. Copy any files in the current dir to the prep dir (example: copying over your three config files or vars.sh file)
-linux:~ # csi pit populate pitdata $PIT_DATA_MOUNT . -p
-
-# 7. Copy the CSI config files to prep dir
+# 3. Copy the CSI config files to prep dir
 linux:~ # cp -r /root/${system_name} $PIT_DATA_MOUNT/prep
 ```
 
