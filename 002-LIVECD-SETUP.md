@@ -156,7 +156,7 @@ The configuration payload comes from the `csi config init` command below.
 
 1. To execute this command you will need the following:
 
-    > The hsn_connections.json, ncn_metadata.csv, and switch_metadata.csv files in the current directory as well as values for the flags listed below.
+    > The hmn_connections.json, ncn_metadata.csv, and switch_metadata.csv files in the current directory as well as values for the flags listed below.
 
     > An example of the command to run with the required options.
 
