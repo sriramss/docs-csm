@@ -5,13 +5,44 @@ You will need to parse the output of `efibootmgr` to determine which device is y
 ```bash
 # Print off the UEFI's boot selections:
 ncn-m001:~ # efibootmgr
+BootCurrent: 0015
+Timeout: 1 seconds
+BootOrder: 000E,000D,0011,0012,0007,0005,0006,0008,0009,0000,0001,0002,000A,000B,000C,0003,0004,000F,0010,0013,0014
+Boot0000* Enter Setup
+Boot0001  Boot Device List
+Boot0002  Network Boot
+Boot0003* Launch EFI Shell
+Boot0004* UEFI HTTPv6: Network 00 at Riser 02 Slot 01
+Boot0005* UEFI HTTPv6: Intel Network 00 at Baseboard
+Boot0006* UEFI HTTPv4: Intel Network 00 at Baseboard
+Boot0007* UEFI IPv4: Intel Network 00 at Baseboard
+Boot0008* UEFI IPv6: Intel Network 00 at Baseboard
+Boot0009* UEFI HTTPv6: Intel Network 01 at Baseboard
+Boot000A* UEFI HTTPv4: Intel Network 01 at Baseboard
+Boot000B* UEFI IPv4: Intel Network 01 at Baseboard
+Boot000C* UEFI IPv6: Intel Network 01 at Baseboard
+Boot000D* UEFI HTTPv4: Network 00 at Riser 02 Slot 01
+Boot000E* UEFI IPv4: Network 00 at Riser 02 Slot 01
+Boot000F* UEFI IPv6: Network 00 at Riser 02 Slot 01
+Boot0010* UEFI HTTPv6: Network 01 at Riser 02 Slot 01
+Boot0011* UEFI HTTPv4: Network 01 at Riser 02 Slot 01
+Boot0012* UEFI IPv4: Network 01 at Riser 02 Slot 01
+Boot0013* UEFI IPv6: Network 01 at Riser 02 Slot 01
+Boot0014* UEFI Samsung Flash Drive 1100
+Boot0015* UEFI Samsung Flash Drive 1100
+Boot0018* UEFI SAMSUNG MZ7LH480HAHQ-00005 S45PNA0M838871
+Boot1001* Enter Setup
 
-# Select Boot0002 as the next device (notice the lack of "Boot" in the ID number.
-ncn-m001:~ # efibootmgr -n 0002
+
+
+
+# In the example above, our device is 0014 or 0015. We'll guess its the first one, and can correct this on-the-fly in POST
+# Notice the lack of "Boot" in the ID number given, we want Boot0014 so we pass '0014' to efibootmgr:
+ncn-m001:~ # efibootmgr -n 0014
 
 # Verify the BootNext device is what you selected:
 ncn-m001:~ # efibootmgr | grep -i bootnext
-BootNext
+BootNext: 0014
 ```
 
 Alternatively, if you cannot find the USB stick in `efibootmgr` you can use ipmitool to set the node to boot into the bios and you can select the USB device from there.
