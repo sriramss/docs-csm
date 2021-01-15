@@ -197,12 +197,12 @@ statics.conf------------------> /mnt/cow/rw/etc/dnsmasq.d/statics.conf...OK
 Populate your live cd with the kernel, initrd, and squashfs images (KIS), as well as the basecamp configs and any files you may have in your dir that you'll want on the livecd.
 
 ```
-linux:~ # mkdir -p /mnt/pitdata/data/configs/
+linux:~ # mkdir -p /mnt/pitdata/configs/
 linux:~ # mkdir -p /mnt/pitdata/data/{k8s,ceph}/
 
 # 1. Copy basecamp data
-linux:~ # csi pit populate pitdata ~/eniac/ /mnt/pitdata/data/configs -b
-data.json---------------------> /mnt/pitdata/data/configs/data.json...OK
+linux:~ # csi pit populate pitdata ~/eniac/ /mnt/pitdata/configs -b
+data.json---------------------> /mnt/pitdata/configs/data.json...OK
 
 # 2. Copy k8s KIS
 linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/kubernetes/ /mnt/pitdata/data/k8s/ -k
