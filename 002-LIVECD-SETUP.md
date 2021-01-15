@@ -152,6 +152,7 @@ If you see warnings from `csi config init` that are similar to the following, it
 
 2. Clone the shasta-cfg repository for the system.
   > **IMPORTANT - NOTE FOR `INTERNAL`** - It is recommended to sync with STABLE after cloning if you have not already done so.
+  > **IMPORTANT - NOTE FOR `INTERNAL`** - Configure Cray Datacenter LDAP if this hasn't been done for this system. See the section [Configuring Cray Datacenter LDAP](054-NCN-LDAP.md).
 
   > **IMPORTANT - NOTE FOR `AIRGAP`** - You must do this now while preparing the USB on your local machine if your CRAY is airgapped or if it cannot otherwise reach your local GIT server.
 
