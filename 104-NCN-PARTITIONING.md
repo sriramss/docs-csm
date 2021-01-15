@@ -3,7 +3,7 @@
 This page serves to provide technical detail for the various filesystems on the non-compute nodes.
 
 
-### Quick-Reference FSTable
+### Disk Layout Quick-Reference Tables
 
 The table below represents all recognizable FSLabels on any given NCN, varying slightly by node-role (i.e. kubernetes-manager vs. kubernetes-worker).
 
@@ -17,15 +17,25 @@ In general, there are 3 kinds of disks:
 
 
 
-| k8s-manager | k8s-worker | storage-ceph | FS Label | Partitions | Device | OverlayFS | Size on Disk | Work Order(s) | Memo
+| k8s-manager | k8s-worker | storage-ceph | FS Label | Partitions | Device |  Partition Size | OverlayFS | Work Order(s) | Memo
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ✅ | ✅ | ✅ | `BOOTRAID` | _Not Mounted_ | 2 small disks in RAID-1 | `500 MiB` | ❌ | Present since Shasta-Preview 1 |
-| ✅ | ✅ | ✅ | `SQFSRAID` | `/run/initramfs/live` | 2 small disks in RAID-1 | `100 GiB` | ✅ | [CASM-1885](https://connect.us.cray.com/jira/browse/MTL-1885) |  squashfs should compress our images to about 1/3rd their uncompressed size. (20G → 6.6G)  On pepsi's ncn-w001, we're at ~20G of non-volatile data storage needed. |
-| ✅ | ✅ | ✅ | `ROOTRAID` | `/run/initramfs/overlayfs` | 2 small disks in RAID-1 | Max/Remainder | ✅ | Present since Shasta-Preview 1 | The persistent image file is loaded from this partition, when the image file is loaded the underlying drive is lazily unmounted (`umount -l`) so that when the overlay closes the disk follows suit. |
+| ✅ | ✅ | ✅ | `BOOTRAID` | _Not Mounted_ | 2 small disks in RAID1 | `500 MiB` | ❌ | Present since Shasta-Preview 1 |
+| ✅ | ✅ | ✅ | `SQFSRAID` | `/run/initramfs/live` | 2 small disks in RAID1 | `100 GiB` | ✅ | [CASM-1885](https://connect.us.cray.com/jira/browse/MTL-1885) |  squashfs should compress our images to about 1/3rd their uncompressed size. (20G → 6.6G)  On pepsi's ncn-w001, we're at ~20G of non-volatile data storage needed. |
+| ✅ | ✅ | ✅ | `ROOTRAID` | `/run/initramfs/overlayfs` | 2 small disks in RAID1 | Max/Remainder | ✅ | Present since Shasta-Preview 1 | The persistent image file is loaded from this partition, when the image file is loaded the underlying drive is lazily unmounted (`umount -l`) so that when the overlay closes the disk follows suit. |
 | ❌ | ✅ | ❌ | `CONRUN` | `/run/containerd` | Ephemeral | `75 GiB` | ❌ | [MTL-916](https://connect.us.cray.com/jira/browse/MTL-916) | On pepsi ncn-w001, we have less than 200G of operational storage for this. |
-| ❌ | ✅ | ❌ | `CONLIB` | `/var/lib/containerd` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
-| ✅ | ❌ | ❌ | `K8SETCD` | `/var/lib/etcd` |  Ephemeral | `32 GiB` | ❌ | [CASMPET-338](https://connect.us.cray.com/jira/browse/CASMPPET-338) | |
-| ❌ | ❌ | ❌ | `K8SKUBE` | `/var/lib/kubelet`| Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
+| ❌ | ✅ | ❌ | `CONLIB` | `/run/lib-containerd` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
+| ✅ | ❌ | ❌ | `ETCDK8S` | `/run/lib-etcd` | Ephemeral | `32 GiB` | ✅ | [CASMPET-338](https://connect.us.cray.com/jira/browse/CASMPPET-338) | |
+| ✅ | ❌ | ❌ | `K8SKUBE` | `/var/lib-kubelet` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
+
+The above table's rows with overlayFS map their "Mount Paths" to the "Upper Directory" in the table below:
+
+> The "OverlayFS Name" is the name used in fstab and seen in the output of `mount`.
+
+| OverlayFS Name | Upper Directory | Lower Directory (or more) 
+| --- | --- | --- |
+| `etcd_overlayfs` | `/run/lib-etcd` | `/var/lib/etcd` |
+| `containerd_overlayfs` | `/run/lib-containerd` | `/var/lib/containerd` |
+| `kubelet_overlayfs` | `/var/lib-kubelet` | `/var/lib/kubelet` |
 
 > For notes on previous/old labels, scroll to the bottom.
 
@@ -35,7 +45,8 @@ There are a few overlays used for NCN image boots. These enable two critical fun
 
 1. `ROOTRAID` is the persistent root overlayFS, it commits and saves all changes made to the running OS and it stands on a RAID1 mirror.
 2. `CONLIB` is a persistent overlayFS for containerd, it commits and saves all new changes while allowing read-through to pre-existing (baked-in) data from the squashFS.
-3. `K8SKUBE` is a persistent overlayFS for kubelet, it works exactly as the `CONLIB` overlayFS.
+3. `ETCDK8S` is a persistent overlayFS for etcd, it works like the `CONLIB` overlayFS however this exists in an encrypted LUKS2 partition.
+4. `K8SKUBE` is a persistent overlayFS for kubelet, it works exactly as the `CONLIB` overlayFS.
 
 #### OverlayFS Example
 
@@ -48,9 +59,9 @@ There are a few overlays used for NCN image boots. These enable two critical fun
 Let's pick apart the `SQFSRAID` and `ROOTRAID` overlays. 
 - `/run/rootfsbase` is the SquashFS image itself
 - `/run/initramfs/live` is the squashFS's storage array, where one or more squashFS can live
-- `/run/initranfs/overlayfs` is the overlayFS storage array, where the persistent directories live
+- `/run/initramfs/overlayfs` is the overlayFS storage array, where the persistent directories live
 - `/run/overlayfs` and `/run/ovlwork` are symlinks to `/run/initramfs/overlayfs/overlayfs-SQFSRAID-$(blkid -s UUID -o value /dev/disk/by-label/SQFSRAID) and the neighboring work directory
-- Admin note: The "work" directory is where the operating system processes data, it's the interrim where data passes between RAM and persistent storage
+- Admin note: The "work" directory is where the operating system processes data, it's the interim where data passes between RAM and persistent storage
 
 Using the above bullets, one may be able to better understand the machine output below:
 
