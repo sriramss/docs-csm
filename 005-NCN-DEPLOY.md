@@ -178,8 +178,8 @@ pit:~ # ls -l /var/www
 Platform Certificate Authority (CA) certificates must be added to Basecamp (cloud-init), so that NCN nodes can verify the certificates for components such as the ingress gateways.
 
 > **Failure to perform this step will result in subsequent, often hard to diagnose and fix, problems.**
- 
-> **IMPORTANT - NOTE FOR `AIRGAP`** You must have already brought this with you from [002 LiveCD Setup](002-LIVECD-SETUP.md), or your Git server must be reachable. If it is not because this is a true-airgapped environment, then you must obtain and port this manifiest repository to your LiveCD and return to this step. 
+
+> **IMPORTANT - NOTE FOR `AIRGAP`** You must have already brought this with you from [002 LiveCD Setup](002-LIVECD-SETUP.md), or your Git server must be reachable. If it is not because this is a true-airgapped environment, then you must obtain and port this manifiest repository to your LiveCD and return to this step.
 
 1. If you have not already done so, please clone the shasta-cfg repository for the system.
 
@@ -207,17 +207,17 @@ Platform Certificate Authority (CA) certificates must be added to Basecamp (clou
     pit:~ # systemctl restart basecamp
     ```
 
-### Manual Step 3: Apply "Pre-NCN Boot" Workarounds 
+### Manual Step 3: Apply "Pre-NCN Boot" Workarounds
 
-Check for workarounds in the `/var/www/ephemeral/prep/$CSM_RELEASE/fix/before-ncn-boot` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+Check for workarounds in the `/var/www/ephemeral/prep/csm-x.x.x/fix/before-ncn-boot` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
 ```bash
 # Example
-pit:~ # ls /var/www/ephemeral/prep/$CSM_RELEASE/fix/before-ncn-boot
+pit:~ # ls /var/www/ephemeral/prep/csm-x.x.x/fix/before-ncn-boot
 casminst-124
 ```
 
-### Manual Step 4: Power Off NCNs and Set Network Boot 
+### Manual Step 4: Power Off NCNs and Set Network Boot
 
 1. **IMPORTANT** all other NCNs (not including the one your liveCD will be on) must be powered **off**. If you still have access to the BMC IPs, you can use `ipmitool` to confirm power state:
 
@@ -247,7 +247,7 @@ casminst-124
 
 The NCNs are now primed, ready for booting.
 
-> Note: some BMCs will "flake" and not adhear to these `ipmitool chassi bootdev` options. As a fallback, cloud-init will 
+> Note: some BMCs will "flake" and not adhear to these `ipmitool chassi bootdev` options. As a fallback, cloud-init will
 > correct the bootorder after NCNs complete their first boot. The boot order is defined in [101 NCN Booting](101-NCN-BOOTING.md).
 
 
@@ -337,7 +337,7 @@ for bmc in $(grep -Eo ncn-.*-mgmt /var/lib/misc/dnsmasq.leases | grep -v s | sor
 done
 ```
 
-> **NOTE FOR `HPE Systems`:** Some systems hang at system POST with the following messages on the console, if you hang here for more than five minutes, power the node off and back on again. If this is the case, you can wait or 
+> **NOTE FOR `HPE Systems`:** Some systems hang at system POST with the following messages on the console, if you hang here for more than five minutes, power the node off and back on again. If this is the case, you can wait or
 > attempt a reboot. A short-term fix for this is in [304 NCN PCIe Netboot and Recable](304-NCN-PCIE-NETBOOT-AND-RECABLE.md) which disables SR-IOV on Mellanox cards.
 
 ```bash
@@ -386,7 +386,7 @@ After 5-10 minutes, the first master should be provisioning other nodes in the c
 obtained.
 
 Copy the Kubernetes config to the LiveCD to be able to use `kubectl` as cluster administrator.
-> This will always be whatever node is the `first-master-hostname` in your `/var/www/ephemeral/configs/data.json | jq` file. Often if you are provisioning your CRAY from `ncn-m001` then you can expect to fetch these from `ncn-m002`. 
+> This will always be whatever node is the `first-master-hostname` in your `/var/www/ephemeral/configs/data.json | jq` file. Often if you are provisioning your CRAY from `ncn-m001` then you can expect to fetch these from `ncn-m002`.
 
 ```bash
 pit:~ # mkdir ~/.kube
@@ -405,10 +405,10 @@ Now you can run `kubectl get nodes` to see the nodes in the cluster.
     ncn-m003   Ready    master   127m   v1.18.6   10.252.1.13   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
     ncn-w001   Ready    <none>   90m    v1.18.6   10.252.1.12   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
     ncn-w002   Ready    <none>   88m    v1.18.6   10.252.1.11   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
-    ncn-w003   Ready    <none>   82m    v1.18.6   10.252.1.10   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4 
+    ncn-w003   Ready    <none>   82m    v1.18.6   10.252.1.10   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
     ```
 
-2. Verify 3 storage config maps have been created 
+2. Verify 3 storage config maps have been created
     > Run on `ncn-s001.nmn`
     ```bash
     ncn-s001:~ # kubectl get cm | grep csi-sc

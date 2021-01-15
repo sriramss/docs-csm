@@ -1,8 +1,8 @@
 # LiveCD Installation and Configuration
 
-This page will assist you with configuring and activating your booted LiveCD.
+## If you've arrived here with files from [002 LiveCD Setup](002-LIVECD-SETUP.md) then you can skip to [Manual Check 1: Validate the LiveCD platform](#manual-check-1-validate-the-livecd-platform)
 
-If you've arrived here with files from [002 LiveCD Setup](002-LIVECD-SETUP.md) then you can skip 
+This page will assist you with configuring and activating your booted LiveCD.
 
 ### Manual Step 1: Interfaces
 
@@ -54,7 +54,7 @@ pit:~ # /root/bin/csi-setup-vlan004.sh $hmn_cidr
 pit:~ # /root/bin/csi-setup-vlan007.sh $can_cidr
 ```
 
-### Manual Check 1 :: STOP :: Validate the LiveCD platform.
+### Manual Check 1: Validate the LiveCD platform.
 
 Check that IPs are set for each interface:
 
@@ -81,7 +81,7 @@ Start and configure NTP on the LiveCD for a fallback/recovery server:
 pit:~ # /root/bin/configure-ntp.sh
 ```
 
-### Manual Check 2 :: STOP :: Validate the Services
+### Manual Check 2: Validate the Services
 
 Now verify service health:
 - dnsmasq, basecamp, and nexus should report HEALTHY and running.
