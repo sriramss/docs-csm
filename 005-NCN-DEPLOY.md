@@ -451,3 +451,9 @@ Now you can run `kubectl get nodes` to see the nodes in the cluster.
 ### Next: Run Loftsman Platform Deployments
 
 Move onto Installing platform services [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md).
+
+
+### Manual Step 8: Update BGP peers on switches.
+
+After the NCNs are booted the BGP peers will need to be checked and updated if the neighbors IPs are incorrect on the switches.  
+See the doc to [Update BGP Neighbors](400-SWITCH-BGP-NEIGHBORS.md).
