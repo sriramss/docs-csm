@@ -1,10 +1,10 @@
 # Verify and Update BGP neighbors
 
-This page will detail how-to manually configure and verify BGP neighbors on the management switches.
+This page will detail how to manually configure and verify BGP neighbors on the management switches.
 
 - How do I check the status of the BGP neighbors?
 - Log into the spine switches and run `show bgp ipv4 unicast summary` for Aruba/HPE switches and `show ip bgp summary` for Mellanox
-- The BGP neighbors will be the worker NCN IPs on the NMN (node managmenet network) (VLAN002), If your system is using HPE/Aruba one of the neighbors will be the other spine switch.
+- The BGP neighbors will be the worker NCN IPs on the NMN (node management network) (VLAN002). If your system is using HPE/Aruba, one of the neighbors will be the other spine switch.
 - On the Aruba/HPE switches properly configured BGP will look like the following.
 
 ```
@@ -48,6 +48,7 @@ Neighbor          V    AS           MsgRcvd   MsgSent   TblVer    InQ    OutQ   
 - If the BGP neighbors are not in the `ESTABLISHED` state make sure the IPs are correct for the route-map and BGP configuration.
 - If IPs are incorrect you will have to update the configuration to match the IPs, the configuration below will need to be edited.
 - You can get the NCN IPs from the CSI generated files (NMN.yaml, CAN.yaml, HMN.yaml), these IPs are also located in /etc/dnsmasq.d/statics.conf on the LiveCD/m001.
+- The Aruba configuration will require you to set the other peering switch as a BGP neighbor, the mellanox configuration does not require this. 
 
 Aruba
 ```
