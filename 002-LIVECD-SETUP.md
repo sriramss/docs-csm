@@ -57,6 +57,11 @@ rpm -Uvh ./csm-x.x.x/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
     mkdir -pv /mnt/{cow,pitdata}
     mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
     ```
+3.  Unpack the release so it's available on the livecd:
+
+    ```bash
+    tar -zxvf ~/csm-x.x.x.tar.gz -C /mnt/pitdata/
+    ```
 
 ### Gather / Create Seed Files
 
@@ -86,7 +91,7 @@ Create [switch_metadata.csv](305-SWITCH-METADATA.md).
 
 #### application-node-config.yaml
 
-Create [application-node-config.yaml](308-APPLICATION-NODE-CONFIG.md). Optional configuration file. It allows modification to how CSI finds and treats application nodes discovered from the `hmn_connections.json` file when building the SLS Input file. 
+Create [application-node-config.yaml](308-APPLICATION-NODE-CONFIG.md). Optional configuration file. It allows modification to how CSI finds and treats application nodes discovered from the `hmn_connections.json` file when building the SLS Input file.
 
 ### Configuration Payload
 
