@@ -110,4 +110,4 @@ In 1.4, the site connections that were previously connection to ncn-w001 will be
     If you did not find an IP in step 3e or you cannot access that IP, then SSH to ncn-w001 from ncn-m001 and execute `shutdown -h now`.   Make sure you have moved anything you need from ncn-w001 because we will not have access to bring it back up until we bring up another DHCP server on the LiveCD.
 
 
-You can now go back to [LiveCD Creation](002-LIVECD-CREATION.md)
+You can now go back to [LiveCD Creation](002-LIVECD-SETUP.md)

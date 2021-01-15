@@ -12,9 +12,9 @@ reinitialize to an empty password for `root`, and again at next login it will re
 to be changed.
 
 ```bash
-mypc:~ > mount -L PITCOW /mnt
+mypc:~ > mount -L cow /mnt
 mypc:~ > sudo rm -f /mnt/rw/etc/shadow
-mypc:~ > umount -L PITCOW
+mypc:~ > umount -L cow
 ```
 
 ### Basecamp
