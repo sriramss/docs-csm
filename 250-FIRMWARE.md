@@ -12,4 +12,17 @@ Firmware upgrades while the LiveCD is in flight can be done, but are not part of
 
 Firmware needs to be updated prior to install through the same services used for NCNs.
 
+## Management Switches
+
+| Vendor | Model | Version	|
+| --- | --- | ---| --- | --- | --- | --- |
+| Aruba | 6300 | ArubaOS-CX_6400-6300_10.05.0040 |
+| Aruba | 8320 | ArubaOS-CX_8320_10.05.0040 |
+| Aruba | 8325 | ArubaOS-CX_8325_10.05.0040 |
+| Dell | S3048-ON | 10.5.0.2P1 |
+| Dell | S4148F-ON | 10.5.0.2P1 |
+| Dell | S4148T-ON | 10.5.0.2P1 |
+| Mellanox | MSN2100 | 3.9.1014 |
+| Mellanox | MSN2700 | 3.9.1014 |
+
 
