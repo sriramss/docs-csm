@@ -250,6 +250,21 @@ The NCNs are now primed, ready for booting.
 > Note: some BMCs will "flake" and not adhear to these `ipmitool chassi bootdev` options. As a fallback, cloud-init will
 > correct the bootorder after NCNs complete their first boot. The boot order is defined in [101 NCN Booting](101-NCN-BOOTING.md).
 
+**Important Note**
+```bash
+Our recommended boot order for the ncn management plane is as follows
+  1. storage
+  2. managers
+  3. workers
+
+Please keep in mind the timing of the ceph installation is dependent on the number of storage nodes.
+You can opt to use this boot stratedgy. 
+  1. storage then wait 1-2 minutes
+  2. boot managers then wait 1-2 minutes
+  3. boot workers.
+
+There is code in place to handle waiting for the different node types to come online so additional configuration step can be completed.
+``` 
 
 ### Manual Step 5: Boot Storage Nodes
 
@@ -285,11 +300,15 @@ pit:~ # conman -j ncn-s001
 ```
 
 Once you see your first 3 storage nodes boot, you should start seeing the CEPH installer running
-on the first storage nodes console. After 4-5 minutes, CEPH should be deployed.
+on the first storage nodes console. Optionally, you can also tail -f /var/log/cloud-init-ouput.log.
+**Remember, the ceph installation time is dependent on the number of storage nodes**
 
-### Manual Check 1 :: STOP :: Manually Inspect Storage
+You can start booting the manager and worker nodes during the ceph installation.  
 
-Run this to get validtion commands for ceph.
+### Manual Check 1 :: STOP :: Manually Inspect Storage 
+**This is optional at this point since a very large cluster will take longer to install.  We also have a similar check in the install so watching the logs should suffice.**
+
+Run this to get validation commands for ceph.
 ```bash
 pit:~ # csi pit validate --ceph
 ```
@@ -394,6 +413,39 @@ pit:~ # scp ncn-m002.nmn:/etc/kubernetes/admin.conf ~/.kube/config
 ```
 Now you can run `kubectl get nodes` to see the nodes in the cluster.
 
+### Manual Check 1 :: STOP :: Manually Inspect Storage
+
+Run this to get validation commands for ceph.
+```bash
+pit:~ # csi pit validate --ceph
+```
+
+The gist of it is to run `ceph -s` and verify cluster is healthy from `ncn-s001.nmn`.  Verify that health is `HEALTH_OK, and that we have mon, mgr, mds, osd and rgw services in the output:
+
+```bash
+ncn-s001:~ # ceph -s
+  cluster:
+    id:     99ffa799-1209-49d4-9889-c7c3056e2062
+    health: HEALTH_OK
+
+  services:
+    mon: 3 daemons, quorum ncn-s001,ncn-s002,ncn-s003 (age 13m)
+    mgr: ncn-s001(active, since 5m), standbys: ncn-s003, ncn-s002
+    mds: cephfs:1 {0=ncn-s002=up:active} 2 up:standby
+    osd: 18 osds: 18 up (since 10m), 18 in (since 10m)
+    rgw: 3 daemons active (ncn-s001.rgw0, ncn-s002.rgw0, ncn-s003.rgw0)
+
+  task status:
+    scrub status:
+        mds.ncn-s002: idle
+
+  data:
+    pools:   10 pools, 968 pgs
+    objects: 342 objects, 26 KiB
+    usage:   18 GiB used, 24 TiB / 24 TiB avail
+    pgs:     968 active+clean
+```
+
 ### Manual Check 2 :: STOP :: Verify Quorum and Expected Counts
 
 1. Verify all nodes have joined the cluster
@@ -409,7 +461,7 @@ Now you can run `kubectl get nodes` to see the nodes in the cluster.
     ```
 
 2. Verify 3 storage config maps have been created
-    > Run on `ncn-s001.nmn`
+    > You can also run this fromm any k8s-manager/k8s-worker node or ncn-s001
     ```bash
     ncn-s001:~ # kubectl get cm | grep csi-sc
     cephfs-csi-sc                    1      8d
@@ -447,6 +499,8 @@ Now you can run `kubectl get nodes` to see the nodes in the cluster.
     weave-net-vwqbt                    2/2     Running   0          2m35s	10.252.1.14   ncn-m002   <none>           <none>
     weave-net-zm5t4                    2/2     Running   0          2m35s	10.252.1.11   ncn-w002   <none>           <none>
     ```
+
+**Important to make sure Manual Checks 1 & 2 pass before continuing.**
 
 ### Next: Run Loftsman Platform Deployments
 
