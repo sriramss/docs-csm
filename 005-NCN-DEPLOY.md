@@ -18,6 +18,7 @@ If you are unsure, see the bottom of [LiveCD Install and Config](004-LIVECD-INST
 9. [Post-NCN Boot Workarounds](#manual-step-7-post-ncn-boot-work-arounds)
 10. [Get Kubernetes Cluster Credentials](#manual-step-8-add-cluster-credentials-to-the-livecd)
 11. [Check Kubernetes](#manual-check-2--stop--verify-quorum-and-expected-counts)
+12. [Update BGP Peers](#manual-step-9-update-bgp-peers-on-switches)
 
 ## Warm-up / Pre-flight Checks
 
@@ -453,7 +454,8 @@ Now you can run `kubectl get nodes` to see the nodes in the cluster.
 Move onto Installing platform services [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md).
 
 
-### Manual Step 8: Update BGP peers on switches.
+### Manual Step 9: Update BGP peers on switches.
 
-After the NCNs are booted the BGP peers will need to be checked and updated if the neighbors IPs are incorrect on the switches.  
+After the NCNs are booted the BGP peers will need to be checked and updated if the neighbors IPs are incorrect on the switches.
+At this point the BGP peering sessions on the switches will not be established.
 See the doc to [Update BGP Neighbors](400-SWITCH-BGP-NEIGHBORS.md).

@@ -45,7 +45,7 @@ Neighbor          V    AS           MsgRcvd   MsgSent   TblVer    InQ    OutQ   
 10.252.0.10       4    65533        37423     42968     308       0      0      12:23:16:07   ESTABLISHED/53
 10.252.0.11       4    65533        37423     42980     308       0      0      12:23:16:06   ESTABLISHED/53
 ```
-- If the BGP neighbors are not in the `ESATBLISHED` state make sure the IPs are correct for the route-map and BGP configuration.
+- If the BGP neighbors are not in the `ESTABLISHED` state make sure the IPs are correct for the route-map and BGP configuration.
 - If IPs are incorrect you will have to update the configuration to match the IPs, the configuration below will need to be edited.
 - You can get the NCN IPs from the CSI generated files (NMN.yaml, CAN.yaml, HMN.yaml), these IPs are also located in /etc/dnsmasq.d/statics.conf on the LiveCD/m001.
 
@@ -150,6 +150,6 @@ Mellanox
    router bgp 65533 vrf default neighbor 10.252.0.11 route-map rm-ncn-w005
 ```
 
-- Once the IPs are updated for the route-maps and BGP neighbors you may need to restart the BGP process on the switches, you do this by running `clear ip bgp all` on the mellanox and `clear bgp *` on the Arubas.
+- Once the IPs are updated for the route-maps and BGP neighbors you may need to restart the BGP process on the switches, you do this by running `clear ip bgp all` on the mellanox and `clear bgp *` on the Arubas. (This may need to be done multiple times for all the peers to come up)
 - When workers are reinstalled the BGP process will need to be restarted. 
 - If the BGP peers are still not coming up you should check the Metallb.yaml config file for errors. 
