@@ -14,6 +14,8 @@ Firmware needs to be updated prior to install through the same services used for
 
 ## Management Switches
 
+Firmware needs to be updated prior to install.
+
 | Vendor | Model | Version	|
 | --- | --- | ---| --- | --- | --- | --- |
 | Aruba | 6300 | ArubaOS-CX_6400-6300_10.05.0040 |
