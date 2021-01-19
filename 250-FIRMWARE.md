@@ -14,6 +14,8 @@ Firmware needs to be updated prior to install through the same services used for
 
 ## Management Switches
 
+Firmware needs to be updated prior to install.
+
 | Vendor | Model | Version	|
 | --- | --- | ---| --- | --- | --- | --- |
 | Aruba | 6300 | ArubaOS-CX_6400-6300_10.05.0040 |
@@ -24,5 +26,3 @@ Firmware needs to be updated prior to install through the same services used for
 | Dell | S4148T-ON | 10.5.0.2P1 |
 | Mellanox | MSN2100 | 3.9.1014 |
 | Mellanox | MSN2700 | 3.9.1014 |
-
-
