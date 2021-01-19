@@ -15,7 +15,7 @@ spec:
           - type: static
             args:
               name: ldap_connection_url
-              value: ldap://172.30.79.14
+              value: ldap://172.30.79.134
 ```
 
 Run `utils/secrets-seed-customizations.sh customizations.yaml` to generate the encrypted value.
