@@ -29,6 +29,36 @@ Anyone with Git access to this repo may feel free to submit changes for review, 
 
 All changes undergo a review process, this governance is up to the reviewers' own discrestions. The review serves to keep core contributors on the "same page" while maintaining coherency throughout the doc.
 
+### Releases and Vintages
+
+This guide follows a basic release model for enabling amendments and maintenance across releases.
+
+> Note: Leading up to a release heads out the door the "stable" and "unstable" branches may be _equal_.
+> However once a release has shipped, any amendments to that release must be made to the respective release branch.
+
+- The "stable" (release) version of this guide exists within branches prefixed with "`release/`"
+- The "unstable" (latest) version of this guide exists within the `master` branch
+
+### Versioning
+
+This guide is versioned and packaged for offline or in-field reference.
+
+    X.Y.Z-HASH
+
+The HASH will always change, it changes for every contribution that is pushed to this repository.
+
+The X.Y.Z does not always change, it must be incremented by the contributor or this repository's owner(s).
+This pattern follows [semver](https://semver.org/):
+- X: Major Version - this should be incremented by the repo owner for dramatic, or substantial changes to the structure or format of the guide.
+- Y: Minor Version - this should be incremented by the developer when making new pages or large amendments to the flow.
+- Z: Bug Fix/patch - this should be incremented by the developer when making amendments confined to a page.
+
+Any contributor should feel welcome to ask for clarification on versioning within their change's review.
+
+### Discussions
+
+See the Cray /HPE Slack [#docs-csm-install][1] (not public; external access may be available for various partners & customers).
+
 ##### Original Authors / Reviewers
 
 This document can be discussed in [#docs-csm-install](https://cray.slack.com/messages/docs-csm-install).

@@ -1,7 +1,7 @@
-# NCN Deployment
+# NCN Boots
 
 Before starting this you are expected to have networking and services setup.
-If you are unsure, see the bottom of [LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md).
+If you are unsure, see the bottom of [LiveCD Setup](004-LIVECD-SETUP.md).
 
 ## Overview:
 
@@ -152,37 +152,61 @@ Once warmup / pre-flight checks are done the following procedure can be started.
 
 This will create folders for each host in `/var/www`, allowing each host to have their own unique kernel, initrd, and squashfs image (KIS).
 
-```
+```bash
 pit:~ # /root/bin/set-sqfs-links.sh
 ```
 
 Make sure there is a folder for each NCN and it has KIS artifacts in each directory.
 
-```
-pit:~ # ls -R /var/www/ncn*
+```bash
+pit:~ # ls -Rl /var/www/ncn*
 /var/www/ncn-m002:
-filesystem.squashfs  initrd.img.xz  kernel
+total 4
+lrwxrwxrwx 1 root root 59 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/k8s/0.0.16-1/kubernetes-0.0.16-1.squashfs
+lrwxrwxrwx 1 root root 53 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/k8s/0.0.16-1/initrd.img-0.0.16-1.xz
+lrwxrwxrwx 1 root root 67 Jan 22 08:43 kernel -> ../ephemeral/data/k8s/0.0.16-1/5.3.18-24.43-default-0.0.16-1.kernel
 
 /var/www/ncn-m003:
-filesystem.squashfs  initrd.img.xz  kernel
+total 4
+lrwxrwxrwx 1 root root 59 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/k8s/0.0.16-1/kubernetes-0.0.16-1.squashfs
+lrwxrwxrwx 1 root root 53 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/k8s/0.0.16-1/initrd.img-0.0.16-1.xz
+lrwxrwxrwx 1 root root 67 Jan 22 08:43 kernel -> ../ephemeral/data/k8s/0.0.16-1/5.3.18-24.43-default-0.0.16-1.kernel
 
 /var/www/ncn-s001:
-filesystem.squashfs  initrd.img.xz  kernel
+total 8
+lrwxrwxrwx 1 root root 62 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/ceph/0.0.14-1/storage-ceph-0.0.14-1.squashfs
+lrwxrwxrwx 1 root root 54 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/ceph/0.0.14-1/initrd.img-0.0.14-1.xz
+lrwxrwxrwx 1 root root 68 Jan 22 08:43 kernel -> ../ephemeral/data/ceph/0.0.14-1/5.3.18-24.43-default-0.0.14-1.kernel
 
 /var/www/ncn-s002:
-filesystem.squashfs  initrd.img.xz  kernel
+total 8
+lrwxrwxrwx 1 root root 62 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/ceph/0.0.14-1/storage-ceph-0.0.14-1.squashfs
+lrwxrwxrwx 1 root root 54 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/ceph/0.0.14-1/initrd.img-0.0.14-1.xz
+lrwxrwxrwx 1 root root 68 Jan 22 08:43 kernel -> ../ephemeral/data/ceph/0.0.14-1/5.3.18-24.43-default-0.0.14-1.kernel
 
 /var/www/ncn-s003:
-filesystem.squashfs  initrd.img.xz  kernel
+total 8
+lrwxrwxrwx 1 root root 62 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/ceph/0.0.14-1/storage-ceph-0.0.14-1.squashfs
+lrwxrwxrwx 1 root root 54 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/ceph/0.0.14-1/initrd.img-0.0.14-1.xz
+lrwxrwxrwx 1 root root 68 Jan 22 08:43 kernel -> ../ephemeral/data/ceph/0.0.14-1/5.3.18-24.43-default-0.0.14-1.kernel
 
 /var/www/ncn-w001:
-filesystem.squashfs  initrd.img.xz  kernel
+total 4
+lrwxrwxrwx 1 root root 59 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/k8s/0.0.16-1/kubernetes-0.0.16-1.squashfs
+lrwxrwxrwx 1 root root 53 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/k8s/0.0.16-1/initrd.img-0.0.16-1.xz
+lrwxrwxrwx 1 root root 67 Jan 22 08:43 kernel -> ../ephemeral/data/k8s/0.0.16-1/5.3.18-24.43-default-0.0.16-1.kernel
 
 /var/www/ncn-w002:
-filesystem.squashfs  initrd.img.xz  kernel
+total 4
+lrwxrwxrwx 1 root root 59 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/k8s/0.0.16-1/kubernetes-0.0.16-1.squashfs
+lrwxrwxrwx 1 root root 53 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/k8s/0.0.16-1/initrd.img-0.0.16-1.xz
+lrwxrwxrwx 1 root root 67 Jan 22 08:43 kernel -> ../ephemeral/data/k8s/0.0.16-1/5.3.18-24.43-default-0.0.16-1.kernel
 
 /var/www/ncn-w003:
-filesystem.squashfs  initrd.img.xz  kernel
+total 4
+lrwxrwxrwx 1 root root 59 Jan 22 08:43 filesystem.squashfs -> ../ephemeral/data/k8s/0.0.16-1/kubernetes-0.0.16-1.squashfs
+lrwxrwxrwx 1 root root 53 Jan 22 08:43 initrd.img.xz -> ../ephemeral/data/k8s/0.0.16-1/initrd.img-0.0.16-1.xz
+lrwxrwxrwx 1 root root 67 Jan 22 08:43 kernel -> ../ephemeral/data/k8s/0.0.16-1/5.3.18-24.43-default-0.0.16-1.kernel
 ```
 
 ## Add CA to cloud-init Metadata Server
@@ -191,7 +215,7 @@ Platform Certificate Authority (CA) certificates must be added to Basecamp (clou
 
 > **Failure to perform this step will result in subsequent, often hard to diagnose and fix, problems.**
 
-> **IMPORTANT - NOTE FOR `AIRGAP`** You must have already brought this with you from [002 LiveCD Setup](002-LIVECD-SETUP.md), or your Git server must be reachable. If it is not because this is a true-airgapped environment, then you must obtain and port this manifiest repository to your LiveCD and return to this step.
+> **IMPORTANT - NOTE FOR `AIRGAP`** You must have already brought this with you from [002 LiveCD Creation](002-LIVECD-CREATION.md), or your Git server must be reachable. If it is not because this is a true-airgapped environment, then you must obtain and port this manifiest repository to your LiveCD and return to this step.
 
 1. If you have not already done so, please clone the shasta-cfg repository for the system.
 
@@ -453,10 +477,16 @@ weave-net-zm5t4                    2/2     Running   0          2m35s	10.252.1.1
 
 After the NCNs are booted the BGP peers will need to be checked and updated if the neighbors IPs are incorrect on the switches. At this point the BGP peering sessions on the switches will not be established.  See the doc to [Update BGP Neighbors](400-SWITCH-BGP-NEIGHBORS.md).
 
-### Change root password
 
-[Change the default root password on all NCNs](056-NCN-RESET-PASSWORDS.md)
+### Manual Step 10: Update New Password
+
+> **`EXTERNAL USE`** 
+
+The NCNs are now confirmed up and their default password can no be customized. For details on changing
+the root password, see [056 NCN Reset Passwords](056-NCN-RESET-PASSWORDS.md).
+
+> **`NOTE`**: This step is **strongly encouraged** for external/site deployments. Airgapped deployments may opt to skip this step, as well as internal CI deployments.
 
 ### Run Loftsman Platform Deployments
 
-Move onto Installing platform services [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md).
+Move onto the [CSM Platform Install](006-CSM-PLATFORM-INSTALL.md) page to continue the CSM install.

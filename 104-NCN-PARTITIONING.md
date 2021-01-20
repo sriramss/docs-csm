@@ -25,7 +25,7 @@ In general, there are 3 kinds of disks:
 | ❌ | ✅ | ❌ | `CONRUN` | `/run/containerd` | Ephemeral | `75 GiB` | ❌ | [MTL-916](https://connect.us.cray.com/jira/browse/MTL-916) | On pepsi ncn-w001, we have less than 200G of operational storage for this. |
 | ❌ | ✅ | ❌ | `CONLIB` | `/run/lib-containerd` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
 | ✅ | ❌ | ❌ | `ETCDK8S` | `/run/lib-etcd` | Ephemeral | `32 GiB` | ✅ | [CASMPET-338](https://connect.us.cray.com/jira/browse/CASMPPET-338) | |
-| ✅ | ❌ | ❌ | `K8SKUBE` | `/var/lib-kubelet` | Ephemeral | `25%` | ✅ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
+| ✅ | ❌ | ❌ | `K8SKUBE` | `/var/lib/kubelet` | Ephemeral | `25%` | ❌ | [MTL-892](https://connect.us.cray.com/jira/browse/MTL-892) [CASMINST-255](https://connect.us.cray.com/jira/browse/CASMINST-255) | |
 
 The above table's rows with overlayFS map their "Mount Paths" to the "Upper Directory" in the table below:
 
@@ -35,7 +35,6 @@ The above table's rows with overlayFS map their "Mount Paths" to the "Upper Dire
 | --- | --- | --- |
 | `etcd_overlayfs` | `/run/lib-etcd` | `/var/lib/etcd` |
 | `containerd_overlayfs` | `/run/lib-containerd` | `/var/lib/containerd` |
-| `kubelet_overlayfs` | `/var/lib-kubelet` | `/var/lib/kubelet` |
 
 > For notes on previous/old labels, scroll to the bottom.
 
@@ -46,7 +45,6 @@ There are a few overlays used for NCN image boots. These enable two critical fun
 1. `ROOTRAID` is the persistent root overlayFS, it commits and saves all changes made to the running OS and it stands on a RAID1 mirror.
 2. `CONLIB` is a persistent overlayFS for containerd, it commits and saves all new changes while allowing read-through to pre-existing (baked-in) data from the squashFS.
 3. `ETCDK8S` is a persistent overlayFS for etcd, it works like the `CONLIB` overlayFS however this exists in an encrypted LUKS2 partition.
-4. `K8SKUBE` is a persistent overlayFS for kubelet, it works exactly as the `CONLIB` overlayFS.
 
 #### OverlayFS Example
 
