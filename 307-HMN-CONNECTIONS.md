@@ -54,10 +54,10 @@ This guide shows the process for generating the `hmn_connections.json` from the 
 
     __If using Podman__:
     ```
-    ncn-m001:~/ # podman run --rm -it --name hms-shcd-parser -v "$SHCD_FILE":/input/shcd_file.xlsx -v "$(pwd)":/output dtr.dev.cray.com/cray/hms-shcd-parser:1.1.1
+    ncn-m001:~/ # podman run --rm -it --name hms-shcd-parser -v "$(realpath "$SHCD_FILE")":/input/shcd_file.xlsx -v "$(pwd)":/output dtr.dev.cray.com/cray/hms-shcd-parser:1.1.1
     ```
 
     __If using Docker__:
     ```
-    ncn-m001:~/ # docker run --rm -it --name hms-shcd-parser -v "$SHCD_FILE":/input/shcd_file.xlsx -v "$(pwd)":/output dtr.dev.cray.com/cray/hms-shcd-parser:1.1.1
+    ncn-m001:~/ # docker run --rm -it --name hms-shcd-parser -v "$(realpath "$SHCD_FILE")":/input/shcd_file.xlsx -v "$(pwd)":/output dtr.dev.cray.com/cray/hms-shcd-parser:1.1.1
     ```
