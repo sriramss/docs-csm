@@ -63,6 +63,26 @@ This will set the hostname if you did not do it in a previous section.
 pit:~ # /root/bin/csi-setup-hostname.sh
 ```
 
+### Set BMCs to DHCP (if needed)
+
+If you are reinstalling a system, the BMCs for the NCNs may be set to static.  We check `/var/lib/misc/dnsmasq.leases` for setting up the symlinks for the artifacts each node needs to boot.  So if your BMCs are set to static, those artifacts will not get setup correctly.  You can set them back to DHCP by using a command as such:
+
+```bash
+for h in $( grep mgmt /etc/dnsmasq.d/statics.conf | grep -v m001 | awk -F ',' '{print $2}' )
+do
+ipmitool -U username -I lanplus -H $h -P password lan set 1 ipsrc dhcp
+done
+```
+
+Some BMCs need a cold reset in order to fully pick up this change:
+
+```bash
+for h in $( grep mgmt /etc/dnsmasq.d/statics.conf | grep -v m001 | awk -F ',' '{print $2}' )
+do
+ipmitool -U username -I lanplus -H $h -P password mc reset cold
+done
+```
+
 ### Manual Check 1: Validate the LiveCD platform.
 
 Check that IPs are set for each interface:
