@@ -69,7 +69,7 @@ linux# rpm -Uvh ./${CSM_RELEASE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_6
 This example shows the USB device is /dev/sdd on the host. 
 
 ```bash
-host# lsscsi
+linux# lsscsi
 [6:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sda 
 [7:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdb 
 [8:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdc 
@@ -80,7 +80,7 @@ host# lsscsi
 If building the LiveCD on ncn-m001 which is booted from a previous v1.3 install, there will be three real disks/SSDs, and the fourth disk will be the USB device.  This example shows the fourth disk is clearly a different vendor than the others.
 
 ```bash
-host# export USB=/dev/sdd  
+linux# export USB=/dev/sdd  
 ```
 
 2. Format the USB device
