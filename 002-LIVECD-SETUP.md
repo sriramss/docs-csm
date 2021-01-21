@@ -166,6 +166,8 @@ If the piece of hardware is expected to be an application node then [follow the 
   pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/eniac.git /mnt/pitdata/prep/site-init
   ```
 
+  If you would like to customize the PKI Certificate Authority (CA) used by the platform, see [Customizing the Platform CA](055-CERTIFICATE-AUTHORITY.md). This is an optional step. Note that the CA can not be modified after install.
+
 3. Apply workarounds
 
   Check for workarounds in the `~/csm-x.x.x/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
