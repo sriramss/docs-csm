@@ -3,6 +3,7 @@
 This page will detail how to manually configure and verify BGP neighbors on the management switches.
 
 - How do I check the status of the BGP neighbors?
+- Are my Neighbors stuck in IDLE? running `clear ip bgp all` on the mellanox and `clear bgp *` on the Arubas will restart the BGP process, this process may need to be done when a system is reinstalled.  If only some neighbors are showing `ESTABLISHED` you may need to run the command multiple times for all the BGP peers to come up. 
 - Log into the spine switches and run `show bgp ipv4 unicast summary` for Aruba/HPE switches and `show ip bgp summary` for Mellanox
 - The BGP neighbors will be the worker NCN IPs on the NMN (node management network) (VLAN002). If your system is using HPE/Aruba, one of the neighbors will be the other spine switch.
 - On the Aruba/HPE switches properly configured BGP will look like the following.
