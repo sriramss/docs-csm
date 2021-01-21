@@ -11,7 +11,7 @@ This page will assist you with configuring the LiveCD, a.k.a. CRAY Pre-Install T
 3. The drive letter of that device (i.e. `/dev/sdx`)
 4. Access to stash/bitbucket
 5. The CCD/SHCD `.xlsx` file for your system
-6. The number of mountain and river cabinets in the system.
+6. The number of mountain, hill, and river cabinets in the system.
 7. A set of configuration information sufficient to fill out the [listed flags for the `csi config init` command](#configuration-payload)
 
 To begin these LiveCD creation steps, you must be logged in to an operating system that is running on the disk of ncn-m001.  You should not be on the LiveCD running on the USB stick or other block device.
@@ -30,37 +30,77 @@ To begin these LiveCD creation steps, you must be logged in to an operating syst
 
 ### Download and Expand the CSM Release
 
+Download the CSM software release to the Linux host which will be preparing the LiveCD.
+
+Customer-only-begin
 ```bash
-cd ~
-wget https://arti.dev.cray.com/artifactory/csm-distribution-stable-local/csm-x.x.x.tar.gz
-tar -zxvf csm-x.x.x.tar.gz
+linux# cd ~
+linux# export CSM_RELEASE=csm-x.y.z
+linux# wget ${CSM_RELEASE}.tar.gz
+```
+Customer-only-end
+
+HPE-internal-only-begin
+```bash
+linux# cd ~
+linux# export CSM_RELEASE=csm-x.y.z
+linux# wget https://arti.dev.cray.com/artifactory/shasta-distribution-stable-local/csm/${CSM_RELEASE}.tar.gz
+
+```
+HPE-internal-only-end
+
+Expand the CSM software release
+```bash
+linux# tar -zxvf ${CSM_RELEASE}.tar.gz
 ```
 
 ### Install `csi`
 
+Install the cray-site-init rpm to get the installation program, csi.
+
 ```bash
-rpm -Uvh ./csm-x.x.x/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
+linux# rpm -Uvh ./${CSM_RELEASE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
 ```
 
 ### Create the Bootable Media
 
-1. Format the USB device
+1. Identify the USB device.
+
+This example shows the USB device is /dev/sdd on the host. 
+
+```bash
+host# lsscsi
+[6:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sda 
+[7:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdb 
+[8:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdc 
+[14:0:0:0]   disk    SanDisk  Extreme SSD      1012  /dev/sdd 
+[14:0:0:1]   enclosu SanDisk  SES Device       1012  -      
+```
+
+If building the LiveCD on ncn-m001 which is booted from a previous v1.3 install, there will be three real disks/SSDs, and the fourth disk will be the USB device.  This example shows the fourth disk is clearly a different vendor than the others.
+
+```bash
+host# export USB=/dev/sdd  
+```
+
+2. Format the USB device
+
+Format the USB device to receive the LiveCD ISO. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
 
     ```bash
-    # Make the USB. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
-    csi pit format /dev/sdx ./csm-x.x.x/cray-pre-install-toolkit-latest.iso 50000
+    linux# csi pit format /dev/sdx ./${CSM_RELEASE}/cray-pre-install-toolkit-latest.iso 50000
     ```
 
-2. Create and mount the partitions needed:
+3. Create and mount the partitions needed:
 
     ```bash
-    mkdir -pv /mnt/{cow,pitdata}
-    mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
+    linux# mkdir -pv /mnt/{cow,pitdata}
+    linux# mount -L cow /mnt/cow && mount -L PITDATA /mnt/pitdata
     ```
-3.  Unpack the release so it's available on the livecd:
+4.  Unpack the release so it's available on the livecd:
 
     ```bash
-    tar -zxvf ~/csm-x.x.x.tar.gz -C /mnt/pitdata/
+    linux# tar -zxvf ~/${CSM_RELEASE}.tar.gz -C /mnt/pitdata/
     ```
 
 ### Gather / Create Seed Files
@@ -105,11 +145,12 @@ The configuration payload comes from the `csi config init` command below.
 > An example of the command to run with the required options.
 
 ```bash
-linux:~ $ csi config init \
+linux# csi config init \
     --bootstrap-ncn-bmc-user root \
     --bootstrap-ncn-bmc-pass changeme \
     --system-name eniac  \
     --mountain-cabinets 0 \
+    --hill-cabinets 0 \
     --river-cabinets 1  \
     --can-cidr 10.103.11.0/24 \
     --can-gateway 10.103.11.1 \
@@ -128,7 +169,7 @@ linux:~ $ csi config init \
 This will generate the following files in a subdirectory with the system name.
 
 ```
-linux:~ # ls -R eniac
+linux# ls -R eniac
 eniac/:
 basecamp  conman.conf  cpt-files  credentials  dnsmasq.d  manufacturing  metallb.yaml  networks  sls_input_file.json  system_config
 
@@ -163,16 +204,16 @@ If the piece of hardware is expected to be an application node then [follow the 
   > **IMPORTANT - NOTE FOR `AIRGAP`** - You must do this now while preparing the USB on your local machine if your CRAY is airgapped or if it cannot otherwise reach your local GIT server.
 
   ```bash
-  pit:~ # git clone https://stash.us.cray.com/scm/shasta-cfg/eniac.git /mnt/pitdata/prep/site-init
+  linux# git clone https://stash.us.cray.com/scm/shasta-cfg/eniac.git /mnt/pitdata/prep/site-init
   ```
 
 3. Apply workarounds
 
-  Check for workarounds in the `~/csm-x.x.x/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
+  Check for workarounds in the `~/${CSM_RELEASE}/fix/csi-config` directory.  If there are any workarounds in that directory, run those now.   Instructions are in the README files.
 
   ```bash
   # Example
-  linux:~ # ls ~/csm-x.x.x/fix/csi-config
+  linux# ls ~/${CSM_RELEASE}/fix/csi-config
   casminst-999
   ```
 
@@ -181,7 +222,7 @@ If the piece of hardware is expected to be an application node then [follow the 
 This is accomplished by populating the cow partition with the necessary config files generated by `csi`
 
 ```bash
-linux:~ # csi pit populate cow /mnt/cow/ eniac/
+linux# csi pit populate cow /mnt/cow/ eniac/
 config------------------------> /mnt/cow/rw/etc/sysconfig/network/config...OK
 ifcfg-bond0-------------------> /mnt/cow/rw/etc/sysconfig/network/ifcfg-bond0...OK
 ifcfg-lan0--------------------> /mnt/cow/rw/etc/sysconfig/network/ifcfg-lan0...OK
@@ -204,31 +245,31 @@ statics.conf------------------> /mnt/cow/rw/etc/dnsmasq.d/statics.conf...OK
 Populate your live cd with the kernel, initrd, and squashfs images (KIS), as well as the basecamp configs and any files you may have in your dir that you'll want on the livecd.
 
 ```
-linux:~ # mkdir -p /mnt/pitdata/configs/
-linux:~ # mkdir -p /mnt/pitdata/data/{k8s,ceph}/
+linux# mkdir -p /mnt/pitdata/configs/
+linux# mkdir -p /mnt/pitdata/data/{k8s,ceph}/
 
 # 1. Copy basecamp data
-linux:~ # csi pit populate pitdata ~/eniac/ /mnt/pitdata/configs -b
+linux# csi pit populate pitdata ~/eniac/ /mnt/pitdata/configs -b
 data.json---------------------> /mnt/pitdata/configs/data.json...OK
 
 # 2. Copy k8s KIS
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/kubernetes/ /mnt/pitdata/data/k8s/ -k
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/kubernetes/ /mnt/pitdata/data/k8s/ -k
 5.3.18-24.37-default-0.0.6.kernel-----------------> /mnt/pitdata/data/k8s/...OK
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/kubernetes/ /mnt/pitdata/data/k8s/ -i
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/kubernetes/ /mnt/pitdata/data/k8s/ -i
 initrd.img-0.0.6.xz-------------------------------> /mnt/pitdata/data/k8s/...OK
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/kubernetes/ /mnt/pitdata/data/k8s/ -K
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/kubernetes/ /mnt/pitdata/data/k8s/ -K
 kubernetes-0.0.6.squashfs-------------------------> /mnt/pitdata/data/k8s/...OK
 
 # 3. Copy ceph/storage KIS
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/storage-ceph/ /mnt/pitdata/data/ceph/ -k
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/storage-ceph/ /mnt/pitdata/data/ceph/ -k
 5.3.18-24.37-default-0.0.5.kernel-----------------> /mnt/pitdata/data/ceph/...OK
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/storage-ceph/ /mnt/pitdata/data/ceph/ -i
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/storage-ceph/ /mnt/pitdata/data/ceph/ -i
 initrd.img-0.0.5.xz-------------------------------> /mnt/pitdata/data/ceph/...OK
-linux:~ # csi pit populate pitdata ~/csm-x.x.x/images/storage-ceph/ /mnt/pitdata/data/ceph/ -C
+linux# csi pit populate pitdata ~/${CSM_RELEASE}/images/storage-ceph/ /mnt/pitdata/data/ceph/ -C
 storage-ceph-0.0.5.squashfs-----------------------> /mnt/pitdata/data/ceph/...OK
 
 # 4. Copy the CSI config files to prep dir
-linux:~ # cp -r ~/eniac /mnt/pitdata/prep
+linux# cp -r ~/eniac /mnt/pitdata/prep
 ```
 
 ### Next: Boot into your LiveCD.
