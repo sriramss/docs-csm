@@ -19,23 +19,7 @@ To boot an NCN, you need 3 artifacts for each node-type (kubernetes-manager/work
     - `$version-[RELEASE].kernel`
     - `storage-ceph-[RELEASE].squashfs`
 
-### Fetch Commands
-
-> NCN Artifacts
-```bash
-# NOTE: the kernel version; for now the version here should be correct and updated. 
-stream=stable
-id_ceph=0.0.7
-id_k8s=0.0.8
-wget --mirror -np -nH --cut-dirs=4 -A *.kernel,*initrd*,*.squashfs -nv https://arti.dev.cray.com:443/artifactory/node-images-${stream}-local/shasta/storage-ceph/$id_ceph/
-wget --mirror -np -nH --cut-dirs=4 -A *.kernel,*initrd*,*.squashfs -nv https://arti.dev.cray.com:443/artifactory/node-images-${stream}-local/shasta/kubernetes/$id_k8s/
-```
-
-[1]: https://stash.us.cray.com/projects/CLOUD/repos/node-image-docs/browse
-[4]: http://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/kubernetes
-[5]: http://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/kubernetes
-[6]: http://arti.dev.cray.com/artifactory/node-images-stable-local/shasta/storage-ceph
-[7]: http://arti.dev.cray.com/artifactory/node-images-unstable-local/shasta/storage-ceph
+For information on pulling and swapping other NCN images, see [107-NCN-DEVEL](107-NCN-DEVEL.md).
 
 ### LiveCD Server
 
