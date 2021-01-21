@@ -503,13 +503,13 @@ ncn-s001:~ # ceph -s
 
 **Important to make sure Manual Checks 1 & 2 pass before continuing.**
 
-### Next: Run Loftsman Platform Deployments
-
-Move onto Installing platform services [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md).
-
-
 ### Manual Step 9: Update BGP peers on switches.
 
 After the NCNs are booted the BGP peers will need to be checked and updated if the neighbors IPs are incorrect on the switches.
 At this point the BGP peering sessions on the switches will not be established.
 See the doc to [Update BGP Neighbors](400-SWITCH-BGP-NEIGHBORS.md).
+
+### Next: Run Loftsman Platform Deployments
+
+Move onto Installing platform services [NCN Platform Install](006-NCN-PLATFORM-INSTALL.md).
+
