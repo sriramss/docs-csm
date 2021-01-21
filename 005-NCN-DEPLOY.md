@@ -449,7 +449,7 @@ ncn-s001:~ # ceph -s
 ### Manual Check 2 :: STOP :: Verify Quorum and Expected Counts
 
 1. Verify all nodes have joined the cluster
-    > You can also run this fromm any k8s-manager/k8s-worker node
+    > You can also run this from any k8s-manager/k8s-worker node
     ```bash
     pit:~ # kubectl get nodes -o wide
     NAME       STATUS   ROLES    AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                                                  KERNEL-VERSION         CONTAINER-RUNTIME
@@ -461,7 +461,7 @@ ncn-s001:~ # ceph -s
     ```
 
 2. Verify 3 storage config maps have been created
-    > You can also run this fromm any k8s-manager/k8s-worker node or ncn-s001
+    > You can also run this from any k8s-manager/k8s-worker node or ncn-s001
     ```bash
     ncn-s001:~ # kubectl get cm | grep csi-sc
     cephfs-csi-sc                    1      8d
