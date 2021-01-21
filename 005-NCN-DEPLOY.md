@@ -461,7 +461,21 @@ ncn-s001:~ # ceph -s
     ncn-w003   Ready    <none>   82m    v1.18.6   10.252.1.10   <none>        SUSE Linux Enterprise High Performance Computing 15 SP2   5.3.18-24.37-default   containerd://1.3.4
     ```
 
-2. Verify 3 storage config maps have been created
+2. Verify etcd is running outside kubernetes on master nodes
+    > Run this on each of the master nodes and verify in active/running state:
+    ```bash
+    ncn-m002:~ # systemctl status etcd.service
+    * etcd.service - etcd
+       Loaded: loaded (/etc/systemd/system/etcd.service; enabled; vendor preset: disabled)
+       Active: active (running) since Thu 2021-01-21 02:34:09 UTC; 11h ago
+         Docs: https://github.com/coreos/etcd
+     Main PID: 13194 (etcd)
+        Tasks: 56
+       CGroup: /system.slice/etcd.service
+               └─13194 /usr/bin/etcd --election-timeout 5000 --heartbeat-interval 1000 --advertise-client-urls https://10.252.1.11:2379,https://127.0.0.1:2379...
+    ```
+
+3. Verify 3 storage config maps have been created
     > You can also run this from any k8s-manager/k8s-worker node or ncn-s001
     ```bash
     ncn-s001:~ # kubectl get cm | grep csi-sc
@@ -470,14 +484,12 @@ ncn-s001:~ # ceph -s
     sma-csi-sc                       1      8d
     ```
 
-3. Verify that all the pods in the kube-system namespace are running.  Make sure all pods except coredns have an IP starting with 10.252.
+4. Verify that all the pods in the kube-system namespace are running.  Make sure all pods except coredns have an IP starting with 10.252.
     ```bash
     ncn-m002:~ # kubectl get po -n kube-system
     NAME                               READY   STATUS    RESTARTS   AGE	IP            NODE       NOMINATED NODE   READINESS GATES
     coredns-66bff467f8-7psjb           1/1     Running   0          8m12s	10.36.0.44    ncn-w001   <none>           <none>
     coredns-66bff467f8-hhw8f           1/1     Running   0          8m12s	10.44.0.3     ncn-m003   <none>           <none>
-    etcd-ncn-m002                      1/1     Running   0          7m25s	10.252.1.14   ncn-m002   <none>           <none>
-    etcd-ncn-m003                      1/1     Running   0          2m34s	10.252.1.13   ncn-m003   <none>           <none>
     kube-apiserver-ncn-m002            1/1     Running   0          7m5s	10.252.1.14   ncn-m002   <none>           <none>
     kube-apiserver-ncn-m003            1/1     Running   0          2m21s	10.252.1.13   ncn-m003   <none>           <none>
     kube-controller-manager-ncn-m002   1/1     Running   0          7m5s	10.252.1.14   ncn-m002   <none>           <none>
