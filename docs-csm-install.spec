@@ -1,7 +1,7 @@
 # Copyright 2020 Cray Inc. All Rights Reserved.
 Name: docs-csm-install
 Provides: metal-docs-ncn
-License: Cray Proprietary
+License: MIT License
 Summary: Documentation for Non-Compute Nodes on a Metal Cluster
 BuildArchitectures: noarch
 Version: %(cat .version)
@@ -26,4 +26,5 @@ cat INSTALLED_FILES | xargs -i sh -c 'test -L {} && exit || test -f $RPM_BUILD_R
 
 %files -f INSTALLED_FILES_2
 %docdir /usr/share/doc/metal
+%license LICENSE
 %defattr(-,root,root)
