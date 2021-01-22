@@ -59,21 +59,21 @@ linux# tar -zxvf ${CSM_RELEASE}.tar.gz
 Install the cray-site-init rpm to get the installation program, csi.
 
 ```bash
-linux# rpm -Uvh ./${CSM_RELEASE}/rpm/csm-sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
+rpm -Uvh ./csm-x.x.x/rpm/cray/csm/sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
 ```
 
 ### Create the Bootable Media
 
 1. Identify the USB device.
 
-This example shows the USB device is /dev/sdd on the host. 
+This example shows the USB device is /dev/sdd on the host.
 
 ```bash
 linux# lsscsi
-[6:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sda 
-[7:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdb 
-[8:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdc 
-[14:0:0:0]   disk    SanDisk  Extreme SSD      1012  /dev/sdd 
+[6:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sda
+[7:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdb
+[8:0:0:0]    disk    ATA      SAMSUNG MZ7LH480 404Q  /dev/sdc
+[14:0:0:0]   disk    SanDisk  Extreme SSD      1012  /dev/sdd
 [14:0:0:1]   enclosu SanDisk  SES Device       1012  -      
 ```
 
