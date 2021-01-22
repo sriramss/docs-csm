@@ -1,4 +1,4 @@
-# Platform Install
+# CSM Platform Install
 
 This page will go over how to install CSM applications and services (i.e., into the CSM Kubernetes cluster).
 
@@ -22,4 +22,4 @@ This page will go over how to install CSM applications and services (i.e., into 
     pit:/var/www/ephemeral/prep/site-init # ./deploy/deploydecryptionkey.sh
     ```
 
-3. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process. See [002-LIVECD-CREATION](002-LIVECD-SETUP.md) for further details.
+3. Change into the directory where you extracted the CSM Release distribution. Complete the CSM install by following instructions in ```INSTALL``` and as otherwise directed by the installer process. See [002-LIVECD-CREATION](002-LIVECD-CREATION.md) for further details.

@@ -1,24 +1,30 @@
-# LiveCD Setup
+# LiveCD Creation
 
-This page will assist you with configuring the LiveCD, a.k.a. CRAY Pre-Install Toolkit.
+This page will assist you with creating a LiveCD for a CSM install (formally known by "CRAY Pre-Install Toolkit") from a laptop
+or an existing shasta-1.3+ system.
+
+> **`NOTE`** For installs using the remote mounted LiveCD (no USB stick), pay attention to your memory usage while download and also extracting artifacts.
+> 
+> Remote LiveCDs run entirely in memory, which fills as artifacts are downloaded and subsequently extracted. For most cases this is fine, but in cases when RAM is limited to less than 128GB memory pressure may occur from increasing usage file-system usage.
+>
+> For instances where memory is scarce, an NFS/CIF or HTTP/S share can be mounted in-place of the USB's data partition at `/var/www/ephemeral`. Using the same
+mount point as the USB data partition will help ward off mistakes when following along.
 
 ## Requirements:
 
-1. If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001
-   - See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md).
-2. A USB stick or other Block Device, local to ncn-m001.
-   - The block device should be `>=256GB`
-3. The drive letter of that device (i.e. `/dev/sdx`)
-4. Access to stash/bitbucket
-5. The CCD/SHCD `.xlsx` file for your system
-6. The number of mountain, hill, and river cabinets in the system.
-7. A set of configuration information sufficient to fill out the [listed flags for the `csi config init` command](#configuration-payload)
+> If you are installing a system that previously had 1.3 installed, move external network connections from ncn-w001 to ncn-m001. See [MOVE-SITE-CONNECTIONS](050-MOVE-SITE-CONNECTIONS.md) for instructions.
 
-To begin these LiveCD creation steps, you must be logged in to an operating system that is running on the disk of ncn-m001.  You should not be on the LiveCD running on the USB stick or other block device.
+1. A USB stick or other Block Device
+   - The block device should be `>=256GB`
+2. The drive letter of that device (i.e. `/dev/sdx`)
+3. The number of mountain and river cabinets in the system.
+4. A set of configuration information sufficient to fill out the [listed flags for the `csi config init` command](#configuration-payload)
+
+> **`INTERNAL USE`** 
+5. Access to stash/bitbucket
+6. The system's CCD/SHCD `.xlsx` file
 
 ## Overview:
-
-> NOTE: These steps will be automated. CASM/MTL is automating this process  with the cray-site-init tool.
 
 1. [Download and expand the CSM release](#download-and-expand-the-csm-release)
 2. [Install `csi`](#install-csi)
@@ -32,31 +38,27 @@ To begin these LiveCD creation steps, you must be logged in to an operating syst
 
 Download the CSM software release to the Linux host which will be preparing the LiveCD.
 
-Customer-only-begin
+> **`INTERNAL USE`** The `ENDPOINT` URL below are for internal use, customer/external should
+> use the URL for the server hosting their tarball. 
+
 ```bash
 linux# cd ~
+linux# export ENDPOINT=https://arti.dev.cray.com/artifactory/shasta-distribution-stable-local/csm/
 linux# export CSM_RELEASE=csm-x.y.z
-linux# wget ${CSM_RELEASE}.tar.gz
+linux# wget ${ENDPOINT}/${CSM_RELEASE}.tar.gz
 ```
-Customer-only-end
-
-HPE-internal-only-begin
-```bash
-linux# cd ~
-linux# export CSM_RELEASE=csm-x.y.z
-linux# wget https://arti.dev.cray.com/artifactory/shasta-distribution-stable-local/csm/${CSM_RELEASE}.tar.gz
-
-```
-HPE-internal-only-end
 
 Expand the CSM software release
+
 ```bash
 linux# tar -zxvf ${CSM_RELEASE}.tar.gz
 ```
 
 ### Install `csi`
 
-Install the cray-site-init rpm to get the installation program, csi.
+> **`IMPORTANT`** If you're using the remote ISO please skip this step and move onto [LiveCD Setup](004-LIVECD-SETUP.md), return here to "Gather / Create Seed Files" if needed.
+
+Install the included Cray Site Init package from the tarball:
 
 ```bash
 rpm -Uvh ./csm-x.x.x/rpm/cray/csm/sle-15sp2/x86_64/cray-site-init-*.x86_64.rpm
@@ -85,7 +87,7 @@ linux# export USB=/dev/sdd
 
 2. Format the USB device
 
-Format the USB device to receive the LiveCD ISO. This example creates a 50GB partition.  ~15-30GB is currently needed for the release tarball
+    > **`IMPORTANT`** If you're using the remote ISO please skip this step and move onto [LiveCD Setup](004-LIVECD-SETUP.md), return here to "Gather / Create Seed Files" if needed.
 
     ```bash
     linux# csi pit format /dev/sdx ./${CSM_RELEASE}/cray-pre-install-toolkit-latest.iso 50000
@@ -276,4 +278,4 @@ linux# cp -r ~/eniac /mnt/pitdata/prep
 
 ### Next: Boot into your LiveCD.
 
-Now you can boot into your LiveCD [LiveCD Startup](003-LIVECD-STARTUP.md)
+Now you can boot into your LiveCD [LiveCD USB Boot](003-LIVECD-USB-BOOT.md)

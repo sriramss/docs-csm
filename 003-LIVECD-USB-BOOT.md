@@ -1,4 +1,4 @@
-# Booting Into Your LiveCD
+# LiveCD USB Booting
 
 You will need to parse the output of `efibootmgr` to determine which device is your USB stick. You can and should use tools such as `lsblk`, `blkid`, or kernel-fu if `efibootmgr` is insufficient. As an example, you can sometimes match up `ls -l /dev/disk/by-partuuid` with `efibootmgr -v`.  Some systems very obviously print out which device is the USB, other systems (like Gigabyte based) do not.
 
@@ -176,5 +176,5 @@ pit:~ #
 ```
 
 Then you can move onto these next two pages:
-1. Setting up communication...[LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md))
-2. Booting NCNs [NCN Deploy](005-NCN-DEPLOY.md)
+1. Setting up communication...[LiveCD Setup](004-LIVECD-SETUP.md))
+2. Booting NCNs [NCN Boots](005-NCN-BOOTS.md)

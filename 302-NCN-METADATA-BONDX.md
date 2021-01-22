@@ -24,7 +24,7 @@ boot-check nodes to dump network device information without an OS. This works by
 2. BMC MACs already collected
 3. LiveCD conman is configured for each BMC (`conman -q` to see consoles)
 
-For help with either of those, see [LiveCD Install and Config](004-LIVECD-INSTALL-AND-CONFIG.md).
+For help with either of those, see [LiveCD Setup](004-LIVECD-SETUP.md).
 
 #### MAC Collection
 
@@ -71,7 +71,7 @@ will prevent the nodes from continuing to boot and end in undesired states.
     done
     ```
 6. From the output you must fish out 2 MACs to use for bond0, and 2 more to use for bond1 based on your topology.
-    - Examine the output, you can use the table provided on [NCN Networking](103-NETWORKING.md) for referencing commonly seen devices.
+    - Examine the output, you can use the table provided on [NCN Networking](103-NCN-NETWORKING.md) for referencing commonly seen devices.
     - Note that worker nodes also have the high-speed network cards. If you know these cards, you can filter their device IDs out from the above output using this snippet:
         ```bash
         unset did # clear it if you used it.

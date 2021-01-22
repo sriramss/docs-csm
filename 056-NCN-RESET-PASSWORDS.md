@@ -2,6 +2,9 @@
 
 The NCNs deploy with a default password.  It is recommended to change that password before continuing.  In addition, this step will also generate ssh keys, which can be used for a more secure login to NCNs.
 
+> **`NOTE`** This is a work-around for applying a new password. There will be a procedure for setting this in the 
+> image before booting NCNs - or for booting new NCNs. 
+
 First, generate a new keypair from the LiveCD.  
 
 ```bash

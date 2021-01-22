@@ -1,8 +1,8 @@
-# LiveCD Installation and Configuration
-
-## If you've arrived here with files from [002 LiveCD Setup](002-LIVECD-SETUP.md) then you can skip to [Set hostname](#set-hostname)
+# LiveCD 
 
 This page will assist you with configuring and activating your booted LiveCD.
+
+>**`IMPORTANT`** If you've arrived here with files from [002 LiveCD Creation](002-LIVECD-CREATION.md) then you can skip to [Set hostname](#set-hostname)
 
 ### Manual Step 1: Interfaces
 
@@ -160,4 +160,4 @@ ping dtr.dev.cray.com
 
 ### Next: Deploy the NCNs
 
-Now you can now pass GO, collect $200, and begin the [NCN Deploy](005-NCN-DEPLOY.md) page...
+Now you can now pass GO, collect $200, and begin the [NCN Boots](005-NCN-BOOTS.md) page...
