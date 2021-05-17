@@ -1,2 +1,5 @@
-# Ignore 999 prefixed pages to allow for transient/unstashed pages.
-999*
+_site
+.sass-cache
+.jekyll-cache
+.jekyll-metadata
+vendor
