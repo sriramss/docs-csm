@@ -531,7 +531,7 @@ In the event that the Capsules Warehouse Postgres cluster is in a state that the
     ncn-w001# NAMESPACE=services
     ncn-w001# POSTGRESQL=capsules-warehouse-server-postgres
 
-    ncn-w001# kubectl scale statefulset ${CLIENT} -n ${NAMESPACE} --replicas=0
+    ncn-w001# kubectl scale -n ${NAMESPACE} --replicas=0 deployment/${CLIENT}
 
     # Wait for the pods to terminate
     ncn-w001# while [ $(kubectl get pods -n ${NAMESPACE} -l app.kubernetes.io/name="${CLIENT}" | grep -v NAME | wc -l) != 0 ] ; do echo "  waiting for pods to terminate"; sleep 2; done
@@ -638,7 +638,7 @@ In the event that the Capsules Warehouse Postgres cluster is in a state that the
 10. Scale the capsules-warehouse-server service back to 3 replicas.
 
     ```bash
-    ncn-w001# kubectl scale statefulset ${CLIENT} -n ${NAMESPACE} --replicas=3
+    ncn-w001# kubectl scale -n ${NAMESPACE} --replicas=3 deployment/${CLIENT}
 
     # Wait for the capsules-warehouse-server pods to start
     ncn-w001# while [ $(kubectl get pods -n ${NAMESPACE} -l app.kubernetes.io/name="${CLIENT}" | grep -v NAME | wc -l) != 3 ] ; do echo "  waiting for pods to start"; sleep 2; done
