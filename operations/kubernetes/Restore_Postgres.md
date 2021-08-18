@@ -593,7 +593,7 @@ In the event that the Capsules Warehouse Postgres cluster is in a state that the
 
     ```bash
     ncn-w001# kubectl exec "${POSTGRESQL}-0" -n ${NAMESPACE} -c postgres -it -- bash
-    root@spire-postgres-0:/home/postgres# /usr/bin/psql postgres postgres
+    root@capsules-warehouse-server-postgres-0:/home/postgres# /usr/bin/psql postgres postgres
     postgres=# ALTER USER postgres WITH PASSWORD 'ABCXYZ';
     ALTER ROLE
     postgres=# ALTER USER service-account WITH PASSWORD 'ABC123';
