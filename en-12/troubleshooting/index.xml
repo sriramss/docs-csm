@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troubleshooting Information on Cray System Management (CSM)</title>
+    <link>/csm/en-12/troubleshooting/</link>
+    <description>Recent content in Troubleshooting Information on Cray System Management (CSM)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 24 Sep 2021 05:10:43 +0000</lastBuildDate><atom:link href="/csm/en-12/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PXE Booting Runbook</title>
+      <link>/csm/en-12/troubleshooting/pxe_runbook/</link>
+      <pubDate>Fri, 24 Sep 2021 05:10:45 +0000</pubDate>
+      
+      <guid>/csm/en-12/troubleshooting/pxe_runbook/</guid>
+      <description>PXE Booting Runbook PXE booting is a key component of a working Shasta system. There are a lot of different components involved which increases the complexity. This guide runs through the most common issues and shows the user what is needed in order to have a successful PXE boot.
+ NCNs on install ncn-m001 on reboot or NCN boot2.1. Verify DHCP packets can be forwarded from the workers to the MTL network (VLAN1)2.</description>
+    </item>
+    
+    <item>
+      <title>Interpreting Hms Health Check Results</title>
+      <link>/csm/en-12/troubleshooting/interpreting_hms_health_check_results/</link>
+      <pubDate>Fri, 24 Sep 2021 05:10:43 +0000</pubDate>
+      
+      <guid>/csm/en-12/troubleshooting/interpreting_hms_health_check_results/</guid>
+      <description>Interpreting HMS Health Check Results Table of contents:  Introduction HMS Smoke Tests HMS Functional Tests Additional Troubleshooting  Introduction This document describes how to interpret the results of the HMS health check scripts and techniques for troubleshooting when failures occur.
+HMS Smoke Tests The HMS smoke tests consist of bash scripts that check the status of HMS service pods and jobs in Kubernetes and verify HTTP status codes returned by the HMS service APIs.</description>
+    </item>
+    
+  </channel>
+</rss>
