@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>System Management Health on Cray System Management (CSM)</title>
-    <link>/csm/en-09/operations/system_management_health/</link>
+    <link>/docs-csm/en-09/operations/system_management_health/</link>
     <description>Recent content in System Management Health on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 24 Sep 2021 05:09:39 +0000</lastBuildDate><atom:link href="/csm/en-09/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 15:46:31 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Troubleshoot Prometheus Alerts</title>
-      <link>/csm/en-09/operations/system_management_health/troubleshoot_prometheus_alerts/</link>
-      <pubDate>Fri, 24 Sep 2021 05:09:10 +0000</pubDate>
+      <link>/docs-csm/en-09/operations/system_management_health/troubleshoot_prometheus_alerts/</link>
+      <pubDate>Fri, 24 Sep 2021 15:46:03 +0000</pubDate>
       
-      <guid>/csm/en-09/operations/system_management_health/troubleshoot_prometheus_alerts/</guid>
+      <guid>/docs-csm/en-09/operations/system_management_health/troubleshoot_prometheus_alerts/</guid>
       <description>Troubleshoot Prometheus Alerts General Prometheus Alert Troubleshooting Topics
  PostgresqlFollowerReplicationLagSMA PostgresqlHighRollbackRate PostgresqlInactiveReplicationSlot PostgresqlNotEnoughConnections CPUThrottlingHigh  PostgresqlFollowerReplicationLagSMA Alerts for PostgresqlFollowerReplicationLagSMA on sma-postgres-cluster pods with slot_name=&amp;ldquo;permanent_physical_1&amp;rdquo; can be ignored. This slot_name is disabled and will be removed in a future release.
 PostgresqlHighRollbackRate Alerts for PostgresqlHighRollbackRate on spire-postgres pods can be ignored. This is caused by an idle session that requires a timeout. This will be fixed in a future release.

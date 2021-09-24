@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>0.9.4 To 1.0.0 Upgrade Process on Cray System Management (CSM)</title>
-    <link>/csm/en-10/upgrade/1.0/</link>
+    <link>/docs-csm/en-10/upgrade/1.0/</link>
     <description>Recent content in 0.9.4 To 1.0.0 Upgrade Process on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 24 Sep 2021 05:10:46 +0000</lastBuildDate><atom:link href="/csm/en-10/upgrade/1.0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 15:47:39 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

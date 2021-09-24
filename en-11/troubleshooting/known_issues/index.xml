@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Known Issues on Cray System Management (CSM)</title>
-    <link>/csm/en-11/troubleshooting/known_issues/</link>
+    <link>/docs-csm/en-11/troubleshooting/known_issues/</link>
     <description>Recent content in Known Issues on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 24 Sep 2021 05:10:48 +0000</lastBuildDate><atom:link href="/csm/en-11/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Sep 2021 15:47:40 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Air Cooled Hardware Is Not Getting Properly Discovered With Aruba Leaf Switches.</title>
-      <link>/csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</link>
-      <pubDate>Fri, 24 Sep 2021 05:10:45 +0000</pubDate>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</link>
+      <pubDate>Fri, 24 Sep 2021 15:47:37 +0000</pubDate>
       
-      <guid>/csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</guid>
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</guid>
       <description>Air cooled hardware is not getting properly discovered with Aruba leaf switches. Symptoms:  The System has Aruba leaf switches. Air cooled hardware is reported to not be present under State Components and Inventory Redfish Endpoints in Hardware State Manager by the hsm_discovery_verify.sh script. BMCs have IP addresses given out by DHCP, but in DNS their xname hostname does not resolve.  Procedure to determine if you affected by this known issue:   Determine the name of the last HSM discovery job that ran.</description>
     </item>
     
     <item>
       <title>Cray Cli 403 Forbidden Errors</title>
-      <link>/csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</link>
-      <pubDate>Fri, 24 Sep 2021 05:10:45 +0000</pubDate>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</link>
+      <pubDate>Fri, 24 Sep 2021 15:47:37 +0000</pubDate>
       
-      <guid>/csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</guid>
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</guid>
       <description>Cray CLI 403 Forbidden Errors There is a known issue where the keycloak configuration obtained from LDAP is incomplete causing the keycloak-users-localize job to fail to complete. This, in turn, causes 403 Forbidden errors when trying to use the craycli.
 Fix To recover from this situation, the following can be done.
  Log into the Keycloak admin console. See Access the Keycloak User Management UI Delete the shasta-user-federation-ldap entry from the “User Federation” page.</description>
@@ -29,19 +29,19 @@ Fix To recover from this situation, the following can be done.
     
     <item>
       <title>Hms Discovery Job Not Creating Redfishendpoints In Hardware State Manager</title>
-      <link>/csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</link>
-      <pubDate>Fri, 24 Sep 2021 05:10:45 +0000</pubDate>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</link>
+      <pubDate>Fri, 24 Sep 2021 15:47:37 +0000</pubDate>
       
-      <guid>/csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</guid>
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</guid>
       <description>HMS Discovery job not creating RedfishEndpoints in Hardware State Manager There is a known issue with the HMS Discovery cronjob when a BMC does not respond by its IP address for some reason the discovery job will not create a RedfishEndpoint for the BMC in Hardware State Manager (HSM). However, it does update the BMC MAC address in HSM with its xname. The discovery job only creates a new RedfishEndpoints when it encounters an unknown MAC address without a xname associated with it.</description>
     </item>
     
     <item>
       <title>Sat/HSM/CAPMC Component Power State Mismatch</title>
-      <link>/csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</link>
-      <pubDate>Fri, 24 Sep 2021 05:10:44 +0000</pubDate>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</link>
+      <pubDate>Fri, 24 Sep 2021 15:47:37 +0000</pubDate>
       
-      <guid>/csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</guid>
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</guid>
       <description>SAT/HSM/CAPMC Component Power State Mismatch Because of various hardware or communication issues, the node state reported by SAT and HSM (Hardware State Manager) may become out of sync with the actual hardware state reported by CAPMC or via redfish. In most cases this will be noticed when trying to power on or off nodes with BOS/BOA and will present as SAT or HSM reporting nodes are &amp;lsquo;On&amp;rsquo; while CAPMC reports them as &amp;lsquo;Off&amp;rsquo; (or vice versa).</description>
     </item>
     
