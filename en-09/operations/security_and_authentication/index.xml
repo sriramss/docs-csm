@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security And Authentication on Cray System Management (CSM)</title>
+    <link>/docs-csm/en-09/operations/security_and_authentication/</link>
+    <description>Recent content in Security And Authentication on Cray System Management (CSM)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 28 Sep 2021 19:18:08 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/security_and_authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add LDAP User Federation</title>
+      <link>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</link>
+      <pubDate>Tue, 28 Sep 2021 19:18:02 +0000</pubDate>
+      
+      <guid>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</guid>
+      <description>Add LDAP User Federation Add LDAP user federation using the Keycloak localization tool.
+Prerequisites LDAP user federation is not currently configured in Keycloak. For example, if it was not configured in Keycloak when the system was initially installed or the LDAP user federation was removed.
+Procedure   Prepare to customize the customizations.yaml file.
+If the customizations.yaml file is managed in an external Git repository (as recommended), then clone a local working tree.</description>
+    </item>
+    
+  </channel>
+</rss>
