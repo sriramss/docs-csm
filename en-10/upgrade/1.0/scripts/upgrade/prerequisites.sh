@@ -63,7 +63,7 @@ if [[ -z ${TARBALL_FILE} ]]; then
     state_name="GET_CSM_TARBALL_FILE"
     state_recorded=$(is_state_recorded "${state_name}" $(hostname))
     if [[ $state_recorded == "0" ]]; then
-        # Since we are getting a new tarball
+        # Because we are getting a new tarball
         # this has to be a new upgrade
         # clean up myenv 
         # this is block/breaking 1.0 to 1.0 upgrade
@@ -123,7 +123,7 @@ if [[ $state_recorded == "0" && $(hostname) == "ncn-m001" ]]; then
     
   "${BASEDIR}"/CASMINST-2689.sh
 
-  # only fix ntp if we're coming from 0.9
+  # only fix ntp if we are coming from 0.9
   if [[ "$CSM1_EXISTS" == "false" ]]; then
   # Check if ncn-m001 is using itself for an upstream server
   if [[ "$(awk '/^server/ {print $2}' /etc/chrony.d/cray.conf)" == ncn-m001 ]] ||
@@ -235,7 +235,7 @@ if [[ $state_recorded == "0" ]]; then
     if [[ ! -f docs-csm-latest.noarch.rpm ]]; then
         echo "Please make sure 'docs-csm-latest.noarch.rpm' exists under: $(pwd)"
     fi
-    cp docs-csm-latest.noarch.rpm ${CSM_ARTI_DIR}/rpm/cray/csm/sle-15sp2/
+    cp /root/docs-csm-latest.noarch.rpm ${CSM_ARTI_DIR}/rpm/cray/csm/sle-15sp2/
     record_state ${state_name} $(hostname)
 else
     echo "====> ${state_name} has been completed"
@@ -392,6 +392,8 @@ sed -i '/^\(  echo "logchange 1.0" >>"$CHRONY_CONF"$\)/a \ \ echo "initstepslew 
 rm -f etc/chrony.d/pool.conf
 # silence some of the noise mksquashfs creates
 sed -i 's/^mksquashfs.*/& 1>\/dev\/null/' srv/cray/scripts/common/create-kis-artifacts.sh
+# silence xattr/inode errors
+sed -i 's/-xattrs/-no-xattrs/' srv/cray/scripts/common/create-kis-artifacts.sh
 # Create the new artifacts
 srv/cray/scripts/common/create-kis-artifacts.sh
 # set -e back
@@ -476,7 +478,7 @@ if [[ $state_recorded == "0" ]]; then
     kubectl get cm -n services cray-product-catalog -o json | jq  -r '.data.csm' | yq r -  -d '*' -j | jq -r 'keys[]' > /tmp/csm_versions
     # sort -V: version sort
     highest_version=$(sort -V /tmp/csm_versions | tail -1)
-    minimum_version="0.9.5"
+    minimum_version="0.9.4"
     # compare sorted versions with unsorted so we know if our highest is greater than minimum
     if [[ $(printf "$minimum_version\n$highest_version") != $(printf "$minimum_version\n$highest_version" | sort -V) ]]; then
       echo "Required CSM patch $minimum_version or above has not been applied to this system"
