@@ -6,22 +6,11 @@
     <description>Recent content in River Endpoint Discovery Service on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 01 Oct 2021 04:14:52 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/river_endpoint_discovery_service/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Verify Node Removal</title>
-      <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/verify_node_removal/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:44 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/verify_node_removal/</guid>
-      <description>Verify Node Removal Use this procedure to verify that a node has been successfully removed from the system.
-Prerequisites  The Cray command line interface (CLI) tool is initialized and configured on the system. This procedure requires the xname of the removed node to be known.  Limitations The REDS mapping file is not automatically updated when the system is changed. It must be manually updated.
-Procedure   Ensure that the Redfish endpoint of the removed node&amp;rsquo;s BMC has been disabled.</description>
-    </item>
-    
+    <lastBuildDate>Sat, 02 Oct 2021 03:04:40 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/river_endpoint_discovery_service/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Clear State And Restart REDS</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/clear_state_and_restart_reds/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/clear_state_and_restart_reds/</guid>
       <description>Clear State and Restart REDS Many solutions to common River Endpoint Discovery Service (REDS) errors require that the REDS state be deleted and the service restarted. Use this procedure if an error has occurred that requires a restart of REDS.
@@ -31,7 +20,7 @@ Prerequisites  The Cray command line interface (CLI) tool is initialized and con
     <item>
       <title>Configure A Management Switch For REDS</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/configure_a_management_switch_for_reds/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/configure_a_management_switch_for_reds/</guid>
       <description>Configure a Management Switch for REDS Every switch listed in the River Endpoint Discovery Service (REDS) mapping file requires additional configuration for REDS to function properly. This procedure configures a switch to add a group named cray-reds-group, add a user to that group (username) with appropriate permissions, and create a view named cray-reds-view.
@@ -41,7 +30,7 @@ The IP address used in example commands in this procedure corresponds to the def
     <item>
       <title>Initialize And Geolocate Nodes</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/initialize_and_geolocate_nodes/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/initialize_and_geolocate_nodes/</guid>
       <description>Initialize and Geolocate Nodes This procedure initializes and geolocates compute nodes. Initialization provides base configuration for system hardware. Geolocation adds compute nodes to the Hardware State Manager (HSM) service.
@@ -51,7 +40,7 @@ This procedure is performed automatically during installation of the system&amp;
     <item>
       <title>River Endpoint Discovery Service (REDS)</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/</guid>
       <description>River Endpoint Discovery Service (REDS) The River Endpoint Discovery Service (REDS) performs geolocation and initialization of compute nodes, based on a mapping file that is provided with each system. In geolocation, names are assigned to compute nodes based on their physical location in the system, and the nodes are added to the Hardware State Manager (HSM). In initialization, hardware is assigned the required base configuration.
@@ -61,7 +50,7 @@ REDS reads its configuration from the System Layout Service (SLS).</description>
     <item>
       <title>Troubleshoot Common Error Messages In REDS Logs</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/</guid>
       <description>Troubleshoot Common Error Messages in REDS Logs Examine logs for error messages that indicate common errors in the setup or running of the River Endpoint Discovery Service (REDS).
@@ -73,11 +62,22 @@ ncn-m001# REDSPOD=$(kubectl -n services get pods -l app.</description>
     <item>
       <title>Troubleshoot Common REDS Issues</title>
       <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/troubleshoot_common_reds_issues/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:43 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/troubleshoot_common_reds_issues/</guid>
       <description>Troubleshoot Common REDS Issues This procedure provides troubleshooting steps for two different scenarios:
  No nodes can be geolocated. One of the nodes can be geolocated.  Prerequisites  The River Endpoint Discovery Service (REDS) failed to geolocate one or more nodes. The Cray command line interface (CLI) tool is initialized and configured on the system.  Limitations This procedure does not cover the list of all possible issues that can be encountered while using REDS.</description>
+    </item>
+    
+    <item>
+      <title>Verify Node Removal</title>
+      <link>/docs-csm/en-10/operations/river_endpoint_discovery_service/verify_node_removal/</link>
+      <pubDate>Sat, 02 Oct 2021 03:04:32 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/operations/river_endpoint_discovery_service/verify_node_removal/</guid>
+      <description>Verify Node Removal Use this procedure to verify that a node has been successfully removed from the system.
+Prerequisites  The Cray command line interface (CLI) tool is initialized and configured on the system. This procedure requires the xname of the removed node to be known.  Limitations The REDS mapping file is not automatically updated when the system is changed. It must be manually updated.
+Procedure   Ensure that the Redfish endpoint of the removed node&amp;rsquo;s BMC has been disabled.</description>
     </item>
     
   </channel>

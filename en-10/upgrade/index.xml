@@ -6,26 +6,26 @@
     <description>Recent content in Upgrade on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 01 Oct 2021 04:14:51 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Oct 2021 03:04:39 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Update Management Network From 1.4 To 1.5</title>
+      <link>/docs-csm/en-10/upgrade/update_management_network/</link>
+      <pubDate>Sat, 02 Oct 2021 03:04:40 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/upgrade/update_management_network/</guid>
+      <description>Update management network from 1.4 to 1.5 New Features and Functions for v1.5  Static Lags from the CDU switches to the CMMs (Aruba and Dell). HPE Apollo server port config, requires a trunk port to the iLO. BGP TFTP static route removal (Aruba). BGP passive neighbors (Aruba and Mellanox)  Some of these changes are applied as hotfixes and patches for 1.4, they may have already been applied.
+CMM Static Lag configuration For systems with mountain cabinets ONLY.</description>
+    </item>
+    
     <item>
       <title>Prepare For Upgrade</title>
       <link>/docs-csm/en-10/upgrade/prepare_for_upgrade/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:51 +0000</pubDate>
+      <pubDate>Sat, 02 Oct 2021 03:04:39 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/prepare_for_upgrade/</guid>
       <description>Prepare for Upgrade Before beginning an upgrade to a new version of CSM, there are a few things to do on the system first.
   Graceful Shutdown of Workloads affected by CSM Upgrade
 Warning: Although it is expected that compute nodes and application nodes will continue to provide their services without interruption when the management nodes and services are being upgraded by CSM, it is important to be aware of the possibility of interruption of running jobs.</description>
-    </item>
-    
-    <item>
-      <title>Update Management Network From 1.4 To 1.5</title>
-      <link>/docs-csm/en-10/upgrade/update_management_network/</link>
-      <pubDate>Fri, 01 Oct 2021 04:14:51 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/upgrade/update_management_network/</guid>
-      <description>Update management network from 1.4 to 1.5 New Features and Functions for v1.5  Static Lags from the CDU switches to the CMMs (Aruba and Dell). HPE Apollo server port config, requires a trunk port to the iLO. BGP TFTP static route removal (Aruba). BGP passive neighbors (Aruba and Mellanox)  Some of these changes are applied as hotfixes and patches for 1.4, they may have already been applied.
-CMM Static Lag configuration For systems with mountain cabinets ONLY.</description>
     </item>
     
   </channel>
