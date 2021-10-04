@@ -72,7 +72,23 @@ For help with either of those, see [LiveCD Setup](bootstrap_livecd_remote_iso.md
     pit# sleep 10
     pit# grep -oP "($mtoken|$stoken|$wtoken)" /etc/dnsmasq.d/statics.conf | sort -u | xargs -t -i ipmitool -I lanplus -U $USERNAME -E -H {} power on
     ```
-4. Now wait for the nodes to netboot. You can follow them with `conman -j ncn-*id*-mgmt` (use `conman -q` to see the list of nodes). This takes less than 3 minutes, speed depends on how quickly your nodes POST.
+4. Now wait for the nodes to netboot. You can follow them with `conman -m ncn-*id*-mgmt` (use `conman -q` to see the list of nodes). This takes less than 3 minutes, speed depends on how quickly your nodes POST.  To exit the console session, use the command `&.` and to see a conman help screen for all supported escape sequences use `&?`.
+
+    > example:
+    ```bash
+    pit# conman -q
+    ncn-m001-mgmt
+    ncn-m002-mgmt
+    ncn-m003-mgmt
+    ncn-s001-mgmt
+    ncn-s002-mgmt
+    ncn-s003-mgmt
+    ncn-w001-mgmt
+    ncn-w002-mgmt
+    ncn-w003-mgmt
+    pit# conman -m ncn-w001-mgmt
+    ```
+
 5. Print off what has been found in the console logs, this snippet will omit duplicates from multiple boot attempts:
     ```bash
     pit# for file in /var/log/conman/*; do
