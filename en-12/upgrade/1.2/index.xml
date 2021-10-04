@@ -6,11 +6,11 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 03 Oct 2021 03:07:00 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Oct 2021 03:07:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.1 To 1.2 Upgrade Process</title>
       <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Sun, 03 Oct 2021 03:06:36 +0000</pubDate>
+      <pubDate>Mon, 04 Oct 2021 03:06:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
       <description>CSM 1.1 to 1.2 Upgrade Process Introduction This document is intended to guide an administrator through the upgrade process going from Cray Systems Management v1.1 to v1.2. When upgrading a system, this top-level README.md file should be followed top to bottom, and the content on this top level page is meant to be terse. See the additional files in the various directories under the resource_material directory for additional reference material in support of the process/scripts mentioned explicitly on this page.</description>
