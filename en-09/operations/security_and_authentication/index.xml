@@ -6,11 +6,11 @@
     <description>Recent content in Security And Authentication on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 04 Oct 2021 03:04:03 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/security_and_authentication/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Oct 2021 03:05:12 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/security_and_authentication/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Add LDAP User Federation</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</link>
-      <pubDate>Mon, 04 Oct 2021 03:03:57 +0000</pubDate>
+      <pubDate>Tue, 05 Oct 2021 03:05:07 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</guid>
       <description>Add LDAP User Federation Add LDAP user federation using the Keycloak localization tool.
