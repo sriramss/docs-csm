@@ -6,11 +6,47 @@
     <description>Recent content in 0.9.4 Or Later To 1.0.0 Upgrade Process on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 05 Oct 2021 03:05:48 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Oct 2021 03:05:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stage 3 - Kubernetes Upgrade From 1.18.6 To 1.19.9</title>
+      <link>/docs-csm/en-10/upgrade/1.0/stage_3/</link>
+      <pubDate>Wed, 06 Oct 2021 03:05:03 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/upgrade/1.0/stage_3/</guid>
+      <description>Stage 3 - Kubernetes Upgrade from 1.18.6 to 1.19.9  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
+ Stage 3.1 For each master node in the cluster (exclude ncn-m001), again follow the steps:</description>
+    </item>
+    
+    <item>
+      <title>Stage 4 - Service Upgrades</title>
+      <link>/docs-csm/en-10/upgrade/1.0/stage_4/</link>
+      <pubDate>Wed, 06 Oct 2021 03:05:03 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/upgrade/1.0/stage_4/</guid>
+      <description>Stage 4 - CSM Service Upgrades Run csm-service-upgrade.sh to deploy upgraded CSM applications and services:
+ncn-m002# /usr/share/doc/csm/upgrade/1.0/scripts/upgrade/csm-service-upgrade.sh Once Stage 4 service upgrade is complete, proceed to Stage 5</description>
+    </item>
+    
+    <item>
+      <title>Stage 5 - Workaround For Mac-learning Issue With Aruba 8325 Switches</title>
+      <link>/docs-csm/en-10/upgrade/1.0/stage_5/</link>
+      <pubDate>Wed, 06 Oct 2021 03:05:03 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/upgrade/1.0/stage_5/</guid>
+      <description>Stage 5 - Workaround for MAC-learning issue with Aruba 8325 switches Issue description:
+ Aruba CR: 90598
+Affected platform: Aruba 8325 switches
+Symptom: MAC learning stops
+Scenario: Under extremely rare DMA stress conditions, an L2 learning thread may timeout and exit, preventing future MAC learning
+Workaround: Reboot the switch or monitor the L2 thread and restart it with an NAE script
+Fixed in: 10.06.0130, 10.7.0010, and above
+Aruba release notes</description>
+    </item>
+    
     <item>
       <title>Stage 0 - Prerequisites And Preflight Checks</title>
       <link>/docs-csm/en-10/upgrade/1.0/stage_0_prerequisites/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
+      <pubDate>Wed, 06 Oct 2021 03:05:02 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0/stage_0_prerequisites/</guid>
       <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-0.9.4 or later CSM 0.9.x is required in order to upgrade to CSM-1.0.0 (available with Shasta v1.5).
@@ -21,7 +57,7 @@ NOTE: Installed CSM versions may be listed from the product catalog using the fo
     <item>
       <title>Stage 1 - Ceph Upgrade From Nautilus (14.2.x) To Octopus (15.2.x)</title>
       <link>/docs-csm/en-10/upgrade/1.0/stage_1/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
+      <pubDate>Wed, 06 Oct 2021 03:05:02 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0/stage_1/</guid>
       <description>Stage 1 - Ceph upgrade from Nautilus (14.2.x) to Octopus (15.2.x) Stage 1.1 Run:
@@ -33,48 +69,12 @@ IMPORTANT If this has be run previously, then check point files may need to be d
     <item>
       <title>Stage 2 - Ceph Image Upgrade</title>
       <link>/docs-csm/en-10/upgrade/1.0/stage_2/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
+      <pubDate>Wed, 06 Oct 2021 03:05:02 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0/stage_2/</guid>
       <description>Stage 2 - Ceph image upgrade For each storage node in the cluster, start by following the steps:
 ncn-m001# /usr/share/doc/csm/upgrade/1.0/scripts/upgrade/ncn-upgrade-ceph-nodes.sh ncn-s001 NOTE: Run the script once each for all storage nodes. Follow output of the script carefully. The script will pause for manual interaction. NOTE: These steps should be performed on one storage node at a time.
 After the last storage node has been rebooted you will need to deploy node-exporter and alertmanager.</description>
-    </item>
-    
-    <item>
-      <title>Stage 3 - Kubernetes Upgrade From 1.18.6 To 1.19.9</title>
-      <link>/docs-csm/en-10/upgrade/1.0/stage_3/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/upgrade/1.0/stage_3/</guid>
-      <description>Stage 3 - Kubernetes Upgrade from 1.18.6 to 1.19.9  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
- Stage 3.1 For each master node in the cluster (exclude ncn-m001), again follow the steps:</description>
-    </item>
-    
-    <item>
-      <title>Stage 4 - Service Upgrades</title>
-      <link>/docs-csm/en-10/upgrade/1.0/stage_4/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/upgrade/1.0/stage_4/</guid>
-      <description>Stage 4 - CSM Service Upgrades Run csm-service-upgrade.sh to deploy upgraded CSM applications and services:
-ncn-m002# /usr/share/doc/csm/upgrade/1.0/scripts/upgrade/csm-service-upgrade.sh Once Stage 4 service upgrade is complete, proceed to Stage 5</description>
-    </item>
-    
-    <item>
-      <title>Stage 5 - Workaround For Mac-learning Issue With Aruba 8325 Switches</title>
-      <link>/docs-csm/en-10/upgrade/1.0/stage_5/</link>
-      <pubDate>Tue, 05 Oct 2021 03:05:49 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/upgrade/1.0/stage_5/</guid>
-      <description>Stage 5 - Workaround for MAC-learning issue with Aruba 8325 switches Issue description:
- Aruba CR: 90598
-Affected platform: Aruba 8325 switches
-Symptom: MAC learning stops
-Scenario: Under extremely rare DMA stress conditions, an L2 learning thread may timeout and exit, preventing future MAC learning
-Workaround: Reboot the switch or monitor the L2 thread and restart it with an NAE script
-Fixed in: 10.06.0130, 10.7.0010, and above
-Aruba release notes</description>
     </item>
     
   </channel>
