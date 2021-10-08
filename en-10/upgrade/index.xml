@@ -6,11 +6,11 @@
     <description>Recent content in Upgrade on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 07 Oct 2021 03:05:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Oct 2021 03:05:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prepare For Upgrade</title>
       <link>/docs-csm/en-10/upgrade/prepare_for_upgrade/</link>
-      <pubDate>Thu, 07 Oct 2021 03:05:02 +0000</pubDate>
+      <pubDate>Fri, 08 Oct 2021 03:05:20 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/prepare_for_upgrade/</guid>
       <description>Prepare for Upgrade Before beginning an upgrade to a new version of CSM, there are a few things to do on the system first.
@@ -21,7 +21,7 @@ Warning: Although it is expected that compute nodes and application nodes will c
     <item>
       <title>Update Management Network From 1.4 To 1.5</title>
       <link>/docs-csm/en-10/upgrade/update_management_network/</link>
-      <pubDate>Thu, 07 Oct 2021 03:05:02 +0000</pubDate>
+      <pubDate>Fri, 08 Oct 2021 03:05:20 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/update_management_network/</guid>
       <description>Update management network from 1.4 to 1.5 New Features and Functions for v1.5  Static Lags from the CDU switches to the CMMs (Aruba and Dell). HPE Apollo server port config, requires a trunk port to the iLO. BGP TFTP static route removal (Aruba). BGP passive neighbors (Aruba and Mellanox)  Some of these changes are applied as hotfixes and patches for 1.4, they may have already been applied.
