@@ -6,11 +6,11 @@
     <description>Recent content in Known Issues on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 13 Oct 2021 03:04:46 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Oct 2021 21:44:42 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CFS Sessions Are Stuck In Pending State</title>
       <link>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</link>
-      <pubDate>Wed, 13 Oct 2021 03:04:40 +0000</pubDate>
+      <pubDate>Wed, 13 Oct 2021 21:44:36 +0000</pubDate>
       
       <guid>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</guid>
       <description>CFS Sessions are Stuck in Pending State In rare cases it is possible that a CFS session can be stuck in a pending state. Sessions should only enter the pending state briefly, for no more than a few seconds while the corresponding Kubernetes job is being scheduled. If any sessions are in this state for more than a minute, they can safely be deleted. If the sessions were created automatically and retires are enabled, the sessions should be recreated automatically.</description>
@@ -19,7 +19,7 @@
     <item>
       <title>Copying File From The Cray-conman Pod Fails</title>
       <link>/docs-csm/en-09/troubleshooting/known_issues/conman_pod_kubernetes_copy_fails/</link>
-      <pubDate>Wed, 13 Oct 2021 03:04:40 +0000</pubDate>
+      <pubDate>Wed, 13 Oct 2021 21:44:36 +0000</pubDate>
       
       <guid>/docs-csm/en-09/troubleshooting/known_issues/conman_pod_kubernetes_copy_fails/</guid>
       <description>Copying file from the cray-conman pod fails The &amp;lsquo;tar&amp;rsquo; command is not installed in the pod image, so the usual kubernetes command to copy files from the cray-conman pod fails:
