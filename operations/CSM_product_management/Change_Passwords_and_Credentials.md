@@ -20,6 +20,7 @@ See the following topics for more information:
    * [Change Root Passwords for Compute Nodes](../security_and_authentication/Change_Root_Passwords_for_Compute_Nodes.md)
    * [Change the Keycloak Admin Password](../security_and_authentication/Change_the_Keycloak_Admin_Password.md)
    * [Set BMC Credentials](../system_configuration_service/Set_BMC_Credentials.md)
+   * [Change Cray EX Cabinet Global Default Password](../security_and_authentication/Change_EX_Cabinet_Global_Default_Password.md)
 
 
 ### Passwords Managed in Other Product Streams

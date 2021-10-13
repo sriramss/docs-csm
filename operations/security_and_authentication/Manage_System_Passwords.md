@@ -7,6 +7,7 @@ Many system services require login credentials to gain access to them. The infor
 Contact HPE Cray service in order to obtain the default usernames and passwords for any of these components or services.
 
 
+
 ### Keycloak
 
 Default Keycloak admin user login credentials:
@@ -53,11 +54,13 @@ The initial Gitea login credentials for the `crayvcs` username are stored in thr
 **IMPORTANT:** These three sources of credentials are not currently synced by any mechanism, and so changing the default password requires that it be changed in all three places. Changing only one many result in difficulty determining the password at a later date, or may result in lost access to Gitea.
 
 
+
 ### System Management Health Service
 
 The default username is admin.
 
 **NOTE:** Contact HPE Cray service in order to obtain the default password for Grafana and Kiali.
+
 
 
 ### Management Network Switches
@@ -293,6 +296,23 @@ To adjust the SNMP credentials, the following need to get performed:
 1. Update the credentials actively being used for existing leaf switches.
    
    Refer to **CASMHMS-4817/5164/5163 PROCEDURE** for more information.
+
+
+
+
+### HPE Cray EX Liquid-Cooled Cabinet Hardware
+
+Change the global default credential on HPE Cray EX liquid-cooled cabinet embedded controllers (BMCs). The chassis management module (CMM) controller (cC), node controller (nC), and Slingshot switch controller (sC) are generically referred to as "BMCs" in these procedures.
+
+* See [Change Cray EX Cabinet Global Default Password](Change_EX_Cabinet_Global_Default_Password.md)
+
+Provision a Glibc compatible SHA-512 administrative password hash to a cabinet environmental controller (CEC). This password becomes the Redfish default global credential to access the CMM controllers and node controllers (BMCs).
+
+* See [Provisioning a Liquid-Cooled EX Cabinet CEC with Default Credentials](Provisioning_a_Liquid-Cooled_EX_Cabinet_CEC_with_Default_Credentials.md)
+
+Change the credential for HPE Cray EX liquid-cooled cabinet chassis controllers and node controller (BMCs) used by CSM services after the CECs have been set to a new global default credential.
+
+* See [Updating the Liquid-Cooled EX Cabinet CEC with Default Credentials after a CEC Password Change](Updating_the_Liquid-Cooled_EX_Cabinet_Default_Credentials_after_a_CEC_Password_Change.md)
 
 
 
