@@ -1,3 +1,5 @@
+
+
 ## Update NCN Passwords
 
 Change the passwords for non-compute nodes (NCNs) on the system using the
@@ -12,9 +14,9 @@ It is a recommended best practice for system security to change the root
 password after the install is complete.
 
 The NCN root user password is stored in the Hashicorp Vault instance, and
-applied with the `csm.password` Ansible role via a CFS session.
+applied with the `csm.password` Ansible role via a Configuration Framework Service (CFS) session.
 
-NOTE: The root password is also updated when applying the CSM Configuration Layer
+**NOTE:** The root password is also updated when applying the CSM Configuration Layer
 during NCN personalization using the `site.yml` playbook. See the
 [Managing Configuration with CFS](operations/managing_configuration_with_CFS.md)
 procedure for more information.
@@ -22,6 +24,7 @@ procedure for more information.
 Use the following procedure with the `rotate-pw-mgmt-nodes.yml` playbook to
 change the root password as a quicker alternative to running a full NCN
 personalization.
+
 
 ### Procedure
 
@@ -42,8 +45,7 @@ personalization.
    command will request the token value from the output of step 2 above. The
    `vault read` command verifies the hash was stored correctly.
 
-   ***NOTE***: It is important to enclose the hash in single quotes to preserve
-   any special characters.
+   **NOTE:** Enclose the hash in single quotes to preserve any special characters.
 
    ```bash
    ncn# kubectl exec -itn vault cray-vault-0 -- sh
@@ -58,8 +60,9 @@ personalization.
    Replace the branch name in the JSON below with the branch in the CSM
    configuration management Git repository that is in use. Alternatively, the
    `branch` key can be replaced with the `commit` key and the git commit id
-   that is in use. See [Use Branches in Configuration Layers](#operations/configuration_management/Configuration_Layers.md)
-   for more information.
+   that is in use.
+   
+   See [Use Branches in Configuration Layers](#operations/configuration_management/Configuration_Layers.md) for more information.
 
    ```bash
    ncn# cat config.json
@@ -82,7 +85,7 @@ personalization.
    ncn# cray cfs sessions create --name ncn-password-update-`date +%Y%m%d%H%M%S` --configuration-name ncn-password-update
    ```
 
-   ***NOTE***: Subsequent password changes need only update the password hash in
-   Hashicorp Vault and create the CFS session as long as the branch of the CSM
+   **NOTE:** Subsequent password changes only require updating the password hash in
+   Hashicorp Vault and creating the CFS session, as long as the branch of the CSM
    configuration management repository hasn't changed.
 
