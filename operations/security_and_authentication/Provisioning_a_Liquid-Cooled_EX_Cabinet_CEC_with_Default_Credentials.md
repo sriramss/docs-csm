@@ -113,4 +113,7 @@ This procedure provisions a Glibc compatible SHA-512 administrative password has
     - The odd numbered CEC handles the CMM serial console for chassis 1, 3, 5, 7 on TCP port numbers 50000-50003 respectively. 
     - If using this script snippet to connect to the CMM console type `exit` to get back to the CMM login prompt and enter ctrl-c to close the console connection.
 
-11. Repeat this procedure for the other CEC in the cabinet. HPE Cray EX2000 cabinets (Hill) have a single CEC.
+11. Repeat this procedure for the other CEC in the cabinet. 
+
+    - HPE Cray EX3000 and EX4000 systems each have a two CECs per cabinet.
+    - HPE Cray EX2000 systems have a single CEC per cabinet.
