@@ -6,63 +6,11 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 15 Oct 2021 03:08:54 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>1.1.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
-      <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
-      <description>CSM 1.1.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc
-Introduction This document is intended to guide an administrator through the upgrade process going from Cray Systems Management v1.1 to v1.2. When upgrading a system, this top-level README.md file should be followed top to bottom, and the content on this top level page is meant to be terse. See the additional files in the various directories under the resource_material directory for additional reference material in support of the process/scripts mentioned explicitly on this page.</description>
-    </item>
-    
-    <item>
-      <title>Stage 0 - Prerequisites And Preflight Checks</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
-      <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-1.1.0 is required in order to upgrade to CSM-1.2.0
-NOTE: Installed CSM versions may be listed from the product catalog using the following command. This will sort a semantic version without a hyphenated suffix after the same semantic version with a hyphenated suffix, e.g. 1.0.0 &amp;gt; 1.0.0-beta.19.
- Use the following command can be used to check the CSM version on the system:</description>
-    </item>
-    
-    <item>
-      <title>Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.11</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
-      <description>Stage 1 - Kubernetes Upgrade from 1.19.9 to 1.20.11  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
- Stage 1.1 For each master node in the cluster (exclude ncn-m001), again follow the steps:</description>
-    </item>
-    
-    <item>
-      <title>Stage 2 - Ceph Image Upgrade</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
-      <description>Stage 2 - Ceph image upgrade For each storage node in the cluster, start by following the steps:
-ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.sh ncn-s001 NOTE: Run the script once each for all storage nodes. Follow output of the script carefully. The script will pause for manual interaction. NOTE: These steps should be performed on one storage node at a time.
-After the last storage node has been rebooted you will need to deploy node-exporter and alertmanager.</description>
-    </item>
-    
-    <item>
-      <title>Stage 3 - Service Upgrades</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
-      <description>Stage 3 - CSM Service Upgrades Run csm-service-upgrade.sh to deploy upgraded CSM applications and services:
-ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/csm-service-upgrade.sh Once Stage 3 service upgrade is complete, proceed to Stage 4</description>
-    </item>
-    
+    <lastBuildDate>Fri, 15 Oct 2021 22:47:00 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stage 4 - Workaround For Mac-learning Issue With Aruba 8325 Switches</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_4/</link>
-      <pubDate>Fri, 15 Oct 2021 03:08:26 +0000</pubDate>
+      <pubDate>Fri, 15 Oct 2021 22:45:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_4/</guid>
       <description>Stage 4 - Workaround for MAC-learning issue with Aruba 8325 switches Issue description:
@@ -73,6 +21,58 @@ Scenario: Under extremely rare DMA stress conditions, an L2 learning thread may 
 Workaround: Reboot the switch or monitor the L2 thread and restart it with an NAE script
 Fixed in: 10.06.0130, 10.7.0010, and above
 Aruba release notes</description>
+    </item>
+    
+    <item>
+      <title>1.1.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
+      <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
+      <pubDate>Fri, 15 Oct 2021 22:45:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
+      <description>CSM 1.1.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc
+Introduction This document is intended to guide an administrator through the upgrade process going from Cray Systems Management v1.1 to v1.2. When upgrading a system, this top-level README.md file should be followed top to bottom, and the content on this top level page is meant to be terse. See the additional files in the various directories under the resource_material directory for additional reference material in support of the process/scripts mentioned explicitly on this page.</description>
+    </item>
+    
+    <item>
+      <title>Stage 0 - Prerequisites And Preflight Checks</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
+      <pubDate>Fri, 15 Oct 2021 22:45:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
+      <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-1.1.0 is required in order to upgrade to CSM-1.2.0
+NOTE: Installed CSM versions may be listed from the product catalog using the following command. This will sort a semantic version without a hyphenated suffix after the same semantic version with a hyphenated suffix, e.g. 1.0.0 &amp;gt; 1.0.0-beta.19.
+ Use the following command can be used to check the CSM version on the system:</description>
+    </item>
+    
+    <item>
+      <title>Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.11</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
+      <pubDate>Fri, 15 Oct 2021 22:45:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
+      <description>Stage 1 - Kubernetes Upgrade from 1.19.9 to 1.20.11  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
+ Stage 1.1 For each master node in the cluster (exclude ncn-m001), again follow the steps:</description>
+    </item>
+    
+    <item>
+      <title>Stage 2 - Ceph Image Upgrade</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
+      <pubDate>Fri, 15 Oct 2021 22:45:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
+      <description>Stage 2 - Ceph image upgrade For each storage node in the cluster, start by following the steps:
+ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.sh ncn-s001 NOTE: Run the script once each for all storage nodes. Follow output of the script carefully. The script will pause for manual interaction. NOTE: These steps should be performed on one storage node at a time.
+After the last storage node has been rebooted you will need to deploy node-exporter and alertmanager.</description>
+    </item>
+    
+    <item>
+      <title>Stage 3 - Service Upgrades</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
+      <pubDate>Fri, 15 Oct 2021 22:45:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
+      <description>Stage 3 - CSM Service Upgrades Run csm-service-upgrade.sh to deploy upgraded CSM applications and services:
+ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/csm-service-upgrade.sh Once Stage 3 service upgrade is complete, proceed to Stage 4</description>
     </item>
     
   </channel>
