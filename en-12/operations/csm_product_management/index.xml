@@ -6,53 +6,11 @@
     <description>Recent content in Product Management on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 14 Oct 2021 05:33:52 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/csm_product_management/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Manage A Configuration With CFS</title>
-      <link>/docs-csm/en-12/operations/csm_product_management/manage_a_configuration_with_cfs/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:59 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/csm_product_management/manage_a_configuration_with_cfs/</guid>
-      <description>Manage a Configuration with CFS Many product streams need to use the Configuration Framework Service (CFS) to apply post-boot configuration to the management nodes. This post-boot configuration is known as NCN personalization.
-NCN personalization applies post-boot configuration to the HPE Cray EX management nodes. Many HPE Cray EX management services outside of CSM (including DVS and SMA) require NCN personalization to function.
-NCN Personalization is set up via the following steps:</description>
-    </item>
-    
-    <item>
-      <title>Post-install Customizations</title>
-      <link>/docs-csm/en-12/operations/csm_product_management/post_install_customizations/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:59 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/csm_product_management/post_install_customizations/</guid>
-      <description>Post-Install Customizations Post-install customizations may be needed as systems scale. These customizations also need to persist across future installs or upgrades. Not all resources can be customized post-install; common scenarios are documented in the following sections.
-The following is a guide for determining where issues may exist, how to adjust the resources, and how to ensure the changes will persist. Different values may be be needed for systems as they scale.</description>
-    </item>
-    
-    <item>
-      <title>Remove Artifacts From Product Installations</title>
-      <link>/docs-csm/en-12/operations/csm_product_management/remove_artifacts_from_product_installations/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:59 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/csm_product_management/remove_artifacts_from_product_installations/</guid>
-      <description>Remove Artifacts from Product Installations Remove product artifacts that were imported from various Cray products. These instructions provide guidance for removing Image Management Service (IMS) images, IMS recipes, and Git repositories present in the Cray Product Catalog from the system.
-The examples in this procedure show how to remove the product artifacts for the Cray System Management (CSM) product.
-WARNING: If individual Cray products have removal procedures, those instructions supersede this procedure.</description>
-    </item>
-    
-    <item>
-      <title>Validate Signed Rpms</title>
-      <link>/docs-csm/en-12/operations/csm_product_management/validate_signed_rpms/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:59 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/csm_product_management/validate_signed_rpms/</guid>
-      <description>Validate Signed RPMs The HPE Cray EX system signs RPMs to provide an extra level of security. Use the following procedure to import a key from either CrayPort or a Kubernetes Secret, and then use that key to validate the RPM package signatures on each node type.
-The RPMs will vary on compute, application, worker, master, and storage nodes. Check each node type to ensure the RPMs are correctly signed.</description>
-    </item>
-    
+    <lastBuildDate>Fri, 15 Oct 2021 03:08:47 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/csm_product_management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Change Passwords And Credentials</title>
       <link>/docs-csm/en-12/operations/csm_product_management/change_passwords_and_credentials/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:58 +0000</pubDate>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/csm_product_management/change_passwords_and_credentials/</guid>
       <description>Change Passwords and Credentials There are many passwords and credentials used in different contexts to manage the system. These can be changed as needed. Their initial settings are documented, so it is recommended to change them during or soon after a CSM software installation.
@@ -63,12 +21,54 @@ See these topics for more information.
     <item>
       <title>Configure Keycloak Account</title>
       <link>/docs-csm/en-12/operations/csm_product_management/configure_keycloak_account/</link>
-      <pubDate>Thu, 14 Oct 2021 05:32:58 +0000</pubDate>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/csm_product_management/configure_keycloak_account/</guid>
       <description>Configure Keycloak Account Installation of CSM software includes a default account for administrative access to keycloak.
 Depending on choices made during the installation, there may be a federated connection to an external Identity Provider (IdP), such as an LDAP or AD server, which enables the use of external accounts in keycloak.
 However, if the external accounts are not available, then an &amp;ldquo;internal user account&amp;rdquo; could be created in keycloak. Having a usable account in keycloak with administrative authorization enables the use of the cray CLI for many administrative commands, such as those used to Validate CSM Health and general operation of the management services via the API gateway.</description>
+    </item>
+    
+    <item>
+      <title>Manage A Configuration With CFS</title>
+      <link>/docs-csm/en-12/operations/csm_product_management/manage_a_configuration_with_cfs/</link>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/csm_product_management/manage_a_configuration_with_cfs/</guid>
+      <description>Manage a Configuration with CFS Many product streams need to use the Configuration Framework Service (CFS) to apply post-boot configuration to the management nodes. This post-boot configuration is known as NCN personalization.
+NCN personalization applies post-boot configuration to the HPE Cray EX management nodes. Many HPE Cray EX management services outside of CSM (including DVS and SMA) require NCN personalization to function.
+NCN Personalization is set up via the following steps:</description>
+    </item>
+    
+    <item>
+      <title>Post-install Customizations</title>
+      <link>/docs-csm/en-12/operations/csm_product_management/post_install_customizations/</link>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/csm_product_management/post_install_customizations/</guid>
+      <description>Post-Install Customizations Post-install customizations may be needed as systems scale. These customizations also need to persist across future installs or upgrades. Not all resources can be customized post-install; common scenarios are documented in the following sections.
+The following is a guide for determining where issues may exist, how to adjust the resources, and how to ensure the changes will persist. Different values may be be needed for systems as they scale.</description>
+    </item>
+    
+    <item>
+      <title>Remove Artifacts From Product Installations</title>
+      <link>/docs-csm/en-12/operations/csm_product_management/remove_artifacts_from_product_installations/</link>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/csm_product_management/remove_artifacts_from_product_installations/</guid>
+      <description>Remove Artifacts from Product Installations Remove product artifacts that were imported from various Cray products. These instructions provide guidance for removing Image Management Service (IMS) images, IMS recipes, and Git repositories present in the Cray Product Catalog from the system.
+The examples in this procedure show how to remove the product artifacts for the Cray System Management (CSM) product.
+WARNING: If individual Cray products have removal procedures, those instructions supersede this procedure.</description>
+    </item>
+    
+    <item>
+      <title>Validate Signed Rpms</title>
+      <link>/docs-csm/en-12/operations/csm_product_management/validate_signed_rpms/</link>
+      <pubDate>Fri, 15 Oct 2021 03:07:52 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/csm_product_management/validate_signed_rpms/</guid>
+      <description>Validate Signed RPMs The HPE Cray EX system signs RPMs to provide an extra level of security. Use the following procedure to import a key from either CrayPort or a Kubernetes Secret, and then use that key to validate the RPM package signatures on each node type.
+The RPMs will vary on compute, application, worker, master, and storage nodes. Check each node type to ensure the RPMs are correctly signed.</description>
     </item>
     
   </channel>
