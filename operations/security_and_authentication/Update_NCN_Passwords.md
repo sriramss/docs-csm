@@ -13,13 +13,8 @@ for more information.
 It is a recommended best practice for system security to change the root
 password after the install is complete.
 
-<<<<<<< HEAD
 The NCN root user password is stored in the Hashicorp Vault instance, and
 applied with the `csm.password` Ansible role via a Configuration Framework Service (CFS) session.
-=======
-The NCN root user password is stored in the HashiCorp Vault instance, and
-applied with the `csm.password` Ansible role via a CFS session.
->>>>>>> release/1.0
 
 **NOTE:** The root password is also updated when applying the CSM Configuration Layer
 during NCN personalization using the `site.yml` playbook. See the
@@ -90,13 +85,7 @@ personalization.
    ncn# cray cfs sessions create --name ncn-password-update-`date +%Y%m%d%H%M%S` --configuration-name ncn-password-update
    ```
 
-<<<<<<< HEAD
    **NOTE:** Subsequent password changes only require updating the password hash in
    Hashicorp Vault and creating the CFS session, as long as the branch of the CSM
    configuration management repository hasn't changed.
-=======
-   ***NOTE***: Subsequent password changes need only update the password hash in
-   HashiCorp Vault and create the CFS session as long as the branch of the CSM
-   configuration management repository has not changed.
->>>>>>> release/1.0
 
