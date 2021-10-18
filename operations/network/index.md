@@ -2,11 +2,15 @@
 
 Description
 
-This is network landing page for management network. 
+This is network landing page for management network related documention.
 
 ## Management network version matrix
 
-matrix - blue or red pill?
+| Network revision | Shasta version | CANU  |
+| ------------- |:-------------:| -----:|
+| 1.0 | 1.0 | N/A |
+| 1.1 | 1.1 | N/A |
+| 1.2 | 1.2 | 1.0 |
 
 ## Release notes
 
@@ -40,10 +44,6 @@ Network revision
 
 
 ## Feature specific guides
-* [PXE runbook](./docs-csm/troubleshooting/pxe_runbook.md)
-* [DNS runbook](./docs-csm/operations/network/dns/DNS.md)
-* [DNS ennable ncsd on UANs](./docs-csm/operations/network/dns/Enable_ncsd_on_UANs.md)
-* [DNS manage the DNS unbound resolver](./docs-csm/operations/network/dns/Manage_the_DNS_Unbound_Resolver.md)
 * [Network onnect to the HPE Cray EX Environment](./docs-csm/operations/network/Connect_to_the_HPE_Cray_EX_Environment.md)
 * [Network default IP ranges](./docs-csm/operations/network/Default_IP_Address_Ranges.md)
 * [Network](./docs-csm/operations/network/Network.md)
@@ -53,18 +53,13 @@ Network revision
 * [Network management network switch rename](./docs-csm/operations/network/management_network/Management_Network_Switch_Rename.md)
 * [Network management network CAN setup](./docs-csm/operations/network/management_network/Management_Network_CAN_Setup.md)
 * [Network update management network firmware](./docs-csm/operations/network/management_network/update_management_network_firmware.md)
-* [DNS enable ncsd on UANs](./docs-csm/operations/network/dns/Enable_ncsd_on_UANs.md)
-* [DNS manageg the dns unbound resolver](/docs-csm/operations/network/dns/Manage_the_DNS_Unbound_Resolver.md)
-* [DHCP](./docs-csm/operations/network/dhcp/DHCP.md)
 
 
 ## Known issues / troubleshooting
 
 * [Aruba SNMP discovery issue 10.06.0010](./docs-csm/troubleshooting/known_issues/discovery_aruba_snmp_issue.md)
 * [Aruba 8325 mac learning issue 10.06.0010](./docs-csm/install/8325_mac_learning_hotfix.md)
-* [Troubleshoot common dns issues](./docs-csm/operations/network/dns/Troubleshoot_Common_DNS_Issues.md)
-* [Troubleshoot DNS configuration issues](/docs-csm/operations/network/dns/Troubleshoot_DNS_Configuration_Issues.md)
-* [Troubleshoot DHCP issues](./docs-csm/operations/network/dhcp/Troubleshoot_DHCP_Issues.md)
+
 
 
 
