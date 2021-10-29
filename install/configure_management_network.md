@@ -31,11 +31,11 @@ The management network switches should be configured in this order: Spine, Aggre
 Only systems with liquid-cooled cabinets will have the CDU switches. Only systems with many nodes in air-cooled cabinets
 will have Aggregation switches.
 
+   1. [Update Management Network Firmware](../operations/network/management_network/Update_Management_Network_Firmware.md)
    1. [Configure Aruba Spine Switch](configure_aruba_spine_switch.md)
    1. [Configure Aruba Aggregation Switch](configure_aruba_aggregation_switch.md) (if present)
    1. [Configure Aruba CDU Switch](configure_aruba_cdu_switch.md) (if present)
    1. [Configure Aruba Leaf Switch](configure_aruba_leaf_switch.md)
-   1. [Update Management Network Firmware](../operations/network/management_network/Update_Management_Network_Firmware.md)
    1. [Workaround for known mac-learning issue with 8325.](8325_mac_learning_hotfix.md)
 
 <a name="dell_and_mellanox_switch_configuration"></a>
@@ -47,11 +47,11 @@ cabinets will have Aggregation switches.
 
 On a typical system, the Mellanox switches are Spine switches and the Dell switches are used for Aggregation, CDU, and Leaf switches.
 
+   1. [Update Management Network Firmware](../operations/network/management_network/Update_Management_Network_Firmware.md)
    1. [Configure Mellanox Spine Switch](configure_mellanox_spine_switch.md)
    1. [Configure Dell Aggregation Switch](configure_dell_aggregation_switch.md) (if present)
    1. [Configure Dell CDU Switch](configure_dell_cdu_switch.md) (if present)
    1. [Configure Dell Leaf Switch](configure_dell_leaf_switch.md)
-   1. [Update Management Network Firmware](../operations/network/management_network/Update_Management_Network_Firmware.md)
 
 <a name="next-topic"></a>
 # Next Topic
