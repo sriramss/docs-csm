@@ -9,25 +9,25 @@
 
     <link rel="icon" href="/docs-csm/images/favicon.png" type="image/png">
 
-    <title>Troubleshoot Pods Failing To Restart On Other Worker Nodes :: Cray System Management (CSM)</title>
+    <title>Prepare Storage Node :: Cray System Management (CSM)</title>
 
     
-    <link href="/docs-csm/css/nucleus.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/fontawesome-all.min.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/hybrid.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/featherlight.min.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/perfect-scrollbar.min.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/auto-complete.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/atom-one-dark-reasonable.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/theme.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/tabs.css?1635477458" rel="stylesheet">
-    <link href="/docs-csm/css/hugo-theme.css?1635477458" rel="stylesheet">
+    <link href="/docs-csm/css/nucleus.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/fontawesome-all.min.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/hybrid.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/featherlight.min.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/perfect-scrollbar.min.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/auto-complete.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/atom-one-dark-reasonable.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/theme.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/tabs.css?1635563874" rel="stylesheet">
+    <link href="/docs-csm/css/hugo-theme.css?1635563874" rel="stylesheet">
     
-    <link href="/docs-csm/css/theme-blue.css?1635477458" rel="stylesheet">
+    <link href="/docs-csm/css/theme-blue.css?1635563874" rel="stylesheet">
     
     
 
-    <script src="/docs-csm/js/jquery-3.3.1.min.js?1635477458"></script>
+    <script src="/docs-csm/js/jquery-3.3.1.min.js?1635563874"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_failing_to_restart_on_other_worker_nodes/">
+  <body class="" data-url="/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/">
     <nav id="sidebar" class="">
 
 
@@ -65,12 +65,12 @@
                   
               
                   
-              
+                    
+                    
+                      <option id="en-10" value="/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_storage_nodes/">1.0</option>
+                    
                   
-                    
-                    
-                      <option id="en-11" value="/docs-csm/en-11/operations/utility_storage/troubleshoot_pods_failing_to_restart_on_other_worker_nodes/">1.1</option>
-                    
+              
                   
               
                   
@@ -87,7 +87,7 @@
                   
                     
                     
-                      <option id="en-12" value="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_failing_to_restart_on_other_worker_nodes/" selected>1.2</option>
+                      <option id="en-12" value="/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/" selected>1.2</option>
                     
                   
               
@@ -117,14 +117,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/docs-csm/js/lunr.min.js?1635477458"></script>
-<script type="text/javascript" src="/docs-csm/js/auto-complete.js?1635477458"></script>
+<script type="text/javascript" src="/docs-csm/js/lunr.min.js?1635563874"></script>
+<script type="text/javascript" src="/docs-csm/js/auto-complete.js?1635563874"></script>
 <script type="text/javascript">
     
         var baseurl = "\/docs-csm\/\/en-12";
     
 </script>
-<script type="text/javascript" src="/docs-csm/js/search.js?1635477458"></script>
+<script type="text/javascript" src="/docs-csm/js/search.js?1635563874"></script>
 
     
   </div>
@@ -159,48 +159,6 @@
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/background/ncn_mounts_and_file_systems/" title="NCN Mounts And File Systems" class="dd-item ">
-        <a href="/docs-csm/en-12/background/ncn_mounts_and_file_systems/">
-        NCN Mounts And File Systems
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/background/ncn_networking/" title="NCN Networking" class="dd-item ">
-        <a href="/docs-csm/en-12/background/ncn_networking/">
-        NCN Networking
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -295,6 +253,69 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/background/ncn_mounts_and_file_systems/" title="NCN Mounts And File Systems" class="dd-item ">
+        <a href="/docs-csm/en-12/background/ncn_mounts_and_file_systems/">
+        NCN Mounts And File Systems
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/background/ncn_networking/" title="NCN Networking" class="dd-item ">
+        <a href="/docs-csm/en-12/background/ncn_networking/">
+        NCN Networking
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/background/cray_site_init_files/" title="Cray Site Init Files" class="dd-item ">
+        <a href="/docs-csm/en-12/background/cray_site_init_files/">
+        Cray Site Init Files
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/background/ncn_bios/" title="Non-compute Node Bios" class="dd-item ">
         <a href="/docs-csm/en-12/background/ncn_bios/">
         Non-compute Node Bios
@@ -340,27 +361,6 @@
       <li data-nav-id="/docs-csm/en-12/background/cloud-init_basecamp_configuration/" title="Cloud-init Basecamp Configuration" class="dd-item ">
         <a href="/docs-csm/en-12/background/cloud-init_basecamp_configuration/">
         Cloud-init Basecamp Configuration
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/background/cray_site_init_files/" title="Cray Site Init Files" class="dd-item ">
-        <a href="/docs-csm/en-12/background/cray_site_init_files/">
-        Cray Site Init Files
         
         </a>
     </li>
@@ -461,27 +461,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/system_configuration_service/configure_bmc_and_controller_parameters_with_scsd/" title="Configure BMC And Controller Parameters With Scsd" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_configuration_service/configure_bmc_and_controller_parameters_with_scsd/">
-        Configure BMC And Controller Parameters With Scsd
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/system_configuration_service/manage_parameters_with_the_scsd_service/" title="Manage Parameters With The Scsd Service" class="dd-item ">
         <a href="/docs-csm/en-12/operations/system_configuration_service/manage_parameters_with_the_scsd_service/">
         Manage Parameters With The Scsd Service
@@ -536,6 +515,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_configuration_service/configure_bmc_and_controller_parameters_with_scsd/" title="Configure BMC And Controller Parameters With Scsd" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_configuration_service/configure_bmc_and_controller_parameters_with_scsd/">
+        Configure BMC And Controller Parameters With Scsd
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -581,9 +581,51 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_bad_parameters/" title="Troubleshoot A Failed CRUS Session Because Of Bad Parameters" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_bad_parameters/">
+        Troubleshoot A Failed CRUS Session Because Of Bad Parameters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_unmet_conditions/" title="Troubleshoot A Failed CRUS Session Because Of Unmet Conditions" class="dd-item ">
         <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_unmet_conditions/">
         Troubleshoot A Failed CRUS Session Because Of Unmet Conditions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_nodes_failing_to_upgrade_in_a_crus_session/" title="Troubleshoot Nodes Failing To Upgrade In A CRUS Session" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_nodes_failing_to_upgrade_in_a_crus_session/">
+        Troubleshoot Nodes Failing To Upgrade In A CRUS Session
         
         </a>
     </li>
@@ -644,48 +686,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_bad_parameters/" title="Troubleshoot A Failed CRUS Session Because Of Bad Parameters" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_a_failed_crus_session_due_to_bad_parameters/">
-        Troubleshoot A Failed CRUS Session Because Of Bad Parameters
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_nodes_failing_to_upgrade_in_a_crus_session/" title="Troubleshoot Nodes Failing To Upgrade In A CRUS Session" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/troubleshoot_nodes_failing_to_upgrade_in_a_crus_session/">
-        Troubleshoot Nodes Failing To Upgrade In A CRUS Session
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/compute_rolling_upgrades/crus_workflow/" title="CRUS Workflow" class="dd-item ">
         <a href="/docs-csm/en-12/operations/compute_rolling_upgrades/crus_workflow/">
         CRUS Workflow
@@ -717,7 +717,7 @@
   
     
     <li data-nav-id="/docs-csm/en-12/operations/utility_storage/" title="Utility Storage" class="dd-item
-        parent
+        
         
         
         ">
@@ -848,8 +848,8 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_failing_to_restart_on_other_worker_nodes/" title="Troubleshoot Pods Failing To Restart On Other Worker Nodes" class="dd-item active">
-        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_failing_to_restart_on_other_worker_nodes/">
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_multi-attach_error/" title="Troubleshoot Pods Failing To Restart On Other Worker Nodes" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_pods_multi-attach_error/">
         Troubleshoot Pods Failing To Restart On Other Worker Nodes
         
         </a>
@@ -932,27 +932,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph-mon_processes_stopping_and_exceeding_max_restarts/" title="Troubleshoot Ceph-mon Processes Stopping And Exceeding Max Restarts" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph-mon_processes_stopping_and_exceeding_max_restarts/">
-        Troubleshoot Ceph-mon Processes Stopping And Exceeding Max Restarts
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_failure_to_get_ceph_health/" title="Troubleshoot Failure To Get Ceph Health" class="dd-item ">
         <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_failure_to_get_ceph_health/">
         Troubleshoot Failure To Get Ceph Health
@@ -974,9 +953,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph_mds_reporting_slow_requests_and_failure_on_client/" title="Troubleshooting Ceph Mds Slow Ops" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph_mds_reporting_slow_requests_and_failure_on_client/">
-        Troubleshooting Ceph Mds Slow Ops
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_insufficient_standby_mds_daemons_available/" title="Troubleshoot Insufficient Standby Mds Daemons Available" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_insufficient_standby_mds_daemons_available/">
+        Troubleshoot Insufficient Standby Mds Daemons Available
         
         </a>
     </li>
@@ -995,9 +974,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/dump_ceph_crash_data/" title="Dump Ceph Crash Data" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/utility_storage/dump_ceph_crash_data/">
-        Dump Ceph Crash Data
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph_mds_reporting_slow_requests_and_failure_on_client/" title="Troubleshooting Ceph Mds Slow Ops" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph_mds_reporting_slow_requests_and_failure_on_client/">
+        Troubleshooting Ceph Mds Slow Ops
         
         </a>
     </li>
@@ -1079,9 +1058,30 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/shrink_ceph_osds/" title="Shrink Ceph Osds" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/utility_storage/shrink_ceph_osds/">
-        Shrink Ceph Osds
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/remove_ceph_node/" title="Shrink The Ceph Cluster" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/remove_ceph_node/">
+        Shrink The Ceph Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph-mon_processes_stopping_and_exceeding_max_restarts/" title="Troubleshoot Ceph-mon Processes Stopping And Exceeding Max Restarts" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/troubleshoot_ceph-mon_processes_stopping_and_exceeding_max_restarts/">
+        Troubleshoot Ceph-mon Processes Stopping And Exceeding Max Restarts
         
         </a>
     </li>
@@ -1166,6 +1166,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/utility_storage/collect_information_about_the_ceph_cluster/" title="Collect Information About The Ceph Cluster" class="dd-item ">
         <a href="/docs-csm/en-12/operations/utility_storage/collect_information_about_the_ceph_cluster/">
         Collect Information About The Ceph Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/dump_ceph_crash_data/" title="Dump Ceph Crash Data" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/dump_ceph_crash_data/">
+        Dump Ceph Crash Data
         
         </a>
     </li>
@@ -1271,6 +1292,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/utility_storage/ceph_orchestrator_usage/" title="Ceph Orchestrator General Usage And Tips" class="dd-item ">
         <a href="/docs-csm/en-12/operations/utility_storage/ceph_orchestrator_usage/">
         Ceph Orchestrator General Usage And Tips
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/utility_storage/add_ceph_node/" title="Adding A Ceph Node To The Ceph Cluster" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/utility_storage/add_ceph_node/">
+        Adding A Ceph Node To The Ceph Cluster
         
         </a>
     </li>
@@ -1598,27 +1640,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/increase_kafka_pod_resource_limits/" title="Increase Kafka Pod Resource Limits" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/kubernetes/increase_kafka_pod_resource_limits/">
-        Increase Kafka Pod Resource Limits
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/kubernetes/increase_pod_resource_limits/" title="Increase Pod Resource Limits" class="dd-item ">
         <a href="/docs-csm/en-12/operations/kubernetes/increase_pod_resource_limits/">
         Increase Pod Resource Limits
@@ -1685,27 +1706,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/kubernetes/kubernetes_storage/" title="Kubernetes Storage" class="dd-item ">
         <a href="/docs-csm/en-12/operations/kubernetes/kubernetes_storage/">
         Kubernetes Storage
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/configure_kubectl_credentials_to_access_the_kubernetes_apis/" title="Configure Kubectl Credentials To Access The Kubernetes Apis" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/kubernetes/configure_kubectl_credentials_to_access_the_kubernetes_apis/">
-        Configure Kubectl Credentials To Access The Kubernetes Apis
         
         </a>
     </li>
@@ -1808,9 +1808,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/backups_for_etcd-operator_clusters/" title="Backups For Etcd-operator Clusters" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/kubernetes/backups_for_etcd-operator_clusters/">
-        Backups For Etcd-operator Clusters
+      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/increase_kafka_pod_resource_limits/" title="Increase Kafka Pod Resource Limits" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/kubernetes/increase_kafka_pod_resource_limits/">
+        Increase Kafka Pod Resource Limits
         
         </a>
     </li>
@@ -1874,6 +1874,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/kubernetes/clear_space_in_an_etcd_cluster_database/" title="Clear Space In An Etcd Cluster Database" class="dd-item ">
         <a href="/docs-csm/en-12/operations/kubernetes/clear_space_in_an_etcd_cluster_database/">
         Clear Space In An Etcd Cluster Database
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/configure_kubectl_credentials_to_access_the_kubernetes_apis/" title="Configure Kubectl Credentials To Access The Kubernetes Apis" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/kubernetes/configure_kubectl_credentials_to_access_the_kubernetes_apis/">
+        Configure Kubectl Credentials To Access The Kubernetes Apis
         
         </a>
     </li>
@@ -1988,6 +2009,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/kubernetes/backups_for_etcd-operator_clusters/" title="Backups For Etcd-operator Clusters" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/kubernetes/backups_for_etcd-operator_clusters/">
+        Backups For Etcd-operator Clusters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -2090,93 +2132,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_uan_boot_issues/" title="Troubleshoot UAN Boot Issues" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_uan_boot_issues/">
-        Troubleshoot UAN Boot Issues
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/" title="Upload Node Boot Information To Boot Script Service (bss)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/">
-        Upload Node Boot Information To Boot Script Service (bss)
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/view_the_status_of_a_bos_session/" title="View The Status Of A BOS Session" class="dd-item ">
         <a href="/docs-csm/en-12/operations/boot_orchestration/view_the_status_of_a_bos_session/">
         View The Status Of A BOS Session
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_the_boot_script_service_bss/" title="Troubleshoot Compute Node Boot Issues Related To The Boot Script Service (bss)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_the_boot_script_service_bss/">
-        Troubleshoot Compute Node Boot Issues Related To The Boot Script Service (bss)
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_unified_extensible_firmware_interface_uefi/" title="Troubleshoot Compute Node Boot Issues Related To Unified Extensible Firmware Interface (uefi)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_unified_extensible_firmware_interface_uefi/">
-        Troubleshoot Compute Node Boot Issues Related To Unified Extensible Firmware Interface (uefi)
         
         </a>
     </li>
@@ -2237,9 +2195,30 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_dynamic_host_configuration_protocol_dhcp/" title="Troubleshoot Compute Node Boot Issues Related To Dynamic Host Configuration Protocol (DHCP)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_dynamic_host_configuration_protocol_dhcp/">
-        Troubleshoot Compute Node Boot Issues Related To Dynamic Host Configuration Protocol (DHCP)
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_uan_boot_issues/" title="Troubleshoot UAN Boot Issues" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_uan_boot_issues/">
+        Troubleshoot UAN Boot Issues
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/" title="Upload Node Boot Information To Boot Script Service (bss)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/">
+        Upload Node Boot Information To Boot Script Service (bss)
         
         </a>
     </li>
@@ -2279,6 +2258,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_the_boot_script_service_bss/" title="Troubleshoot Compute Node Boot Issues Related To The Boot Script Service (bss)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_the_boot_script_service_bss/">
+        Troubleshoot Compute Node Boot Issues Related To The Boot Script Service (bss)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_trivial_file_transfer_protocol_tftp/" title="Troubleshoot Compute Node Boot Issues Related To Trivial File Transfer Protocol (tftp)" class="dd-item ">
         <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_trivial_file_transfer_protocol_tftp/">
         Troubleshoot Compute Node Boot Issues Related To Trivial File Transfer Protocol (tftp)
@@ -2300,30 +2300,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/sessions/" title="BOS Sessions" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/sessions/">
-        BOS Sessions
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/stage_changes_without_bos/" title="Stage Changes Without BOS" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/stage_changes_without_bos/">
-        Stage Changes Without BOS
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_unified_extensible_firmware_interface_uefi/" title="Troubleshoot Compute Node Boot Issues Related To Unified Extensible Firmware Interface (uefi)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_unified_extensible_firmware_interface_uefi/">
+        Troubleshoot Compute Node Boot Issues Related To Unified Extensible Firmware Interface (uefi)
         
         </a>
     </li>
@@ -2384,6 +2363,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_dynamic_host_configuration_protocol_dhcp/" title="Troubleshoot Compute Node Boot Issues Related To Dynamic Host Configuration Protocol (DHCP)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/troubleshoot_compute_node_boot_issues_related_to_dynamic_host_configuration_protocol_dhcp/">
+        Troubleshoot Compute Node Boot Issues Related To Dynamic Host Configuration Protocol (DHCP)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/session_templates/" title="BOS Session Templates" class="dd-item ">
         <a href="/docs-csm/en-12/operations/boot_orchestration/session_templates/">
         BOS Session Templates
@@ -2405,9 +2405,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/node_boot_root_cause_analysis/" title="Node Boot Root Cause Analysis" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/node_boot_root_cause_analysis/">
-        Node Boot Root Cause Analysis
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/sessions/" title="BOS Sessions" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/sessions/">
+        BOS Sessions
         
         </a>
     </li>
@@ -2447,30 +2447,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/limitations_for_gigabyte_bmc_hardware/" title="BOS Limitations For Gigabyte BMC Hardware" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/limitations_for_gigabyte_bmc_hardware/">
-        BOS Limitations For Gigabyte BMC Hardware
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/log_file_locations_and_ports_used_in_compute_node_boot_troubleshooting/" title="Log File Locations And Ports Used In Compute Node Boot Troubleshooting" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/log_file_locations_and_ports_used_in_compute_node_boot_troubleshooting/">
-        Log File Locations And Ports Used In Compute Node Boot Troubleshooting
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/stage_changes_without_bos/" title="Stage Changes Without BOS" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/stage_changes_without_bos/">
+        Stage Changes Without BOS
         
         </a>
     </li>
@@ -2531,9 +2510,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/edit_the_ipxe_embedded_boot_script/" title="Edit The IPXE Embedded Boot Script" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/edit_the_ipxe_embedded_boot_script/">
-        Edit The IPXE Embedded Boot Script
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/node_boot_root_cause_analysis/" title="Node Boot Root Cause Analysis" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/node_boot_root_cause_analysis/">
+        Node Boot Root Cause Analysis
         
         </a>
     </li>
@@ -2552,9 +2531,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/healthy_compute_node_boot_process/" title="Healthy Compute Node Boot Process" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/healthy_compute_node_boot_process/">
-        Healthy Compute Node Boot Process
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/limitations_for_gigabyte_bmc_hardware/" title="BOS Limitations For Gigabyte BMC Hardware" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/limitations_for_gigabyte_bmc_hardware/">
+        BOS Limitations For Gigabyte BMC Hardware
         
         </a>
     </li>
@@ -2615,6 +2594,132 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/log_file_locations_and_ports_used_in_compute_node_boot_troubleshooting/" title="Log File Locations And Ports Used In Compute Node Boot Troubleshooting" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/log_file_locations_and_ports_used_in_compute_node_boot_troubleshooting/">
+        Log File Locations And Ports Used In Compute Node Boot Troubleshooting
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/create_a_session_template_to_boot_compute_nodes_with_cps/" title="Create A Session Template To Boot Compute Nodes With Cps" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/create_a_session_template_to_boot_compute_nodes_with_cps/">
+        Create A Session Template To Boot Compute Nodes With Cps
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/edit_the_ipxe_embedded_boot_script/" title="Edit The IPXE Embedded Boot Script" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/edit_the_ipxe_embedded_boot_script/">
+        Edit The IPXE Embedded Boot Script
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/healthy_compute_node_boot_process/" title="Healthy Compute Node Boot Process" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/healthy_compute_node_boot_process/">
+        Healthy Compute Node Boot Process
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_message_about_invalid_eeprom_checksum_in_node_console_or_log/" title="Compute Node Boot Issue Symptom Message About Invalid Eeprom Checksum In Node Console Or Log" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_message_about_invalid_eeprom_checksum_in_node_console_or_log/">
+        Compute Node Boot Issue Symptom Message About Invalid Eeprom Checksum In Node Console Or Log
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_node_is_not_able_to_download_the_required_artifacts/" title="Compute Node Boot Issue Symptom Node Is Not Able To Download The Required Artifacts" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_node_is_not_able_to_download_the_required_artifacts/">
+        Compute Node Boot Issue Symptom Node Is Not Able To Download The Required Artifacts
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_sequence/" title="Compute Node Boot Sequence" class="dd-item ">
         <a href="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_sequence/">
         Compute Node Boot Sequence
@@ -2657,9 +2762,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/create_a_session_template_to_boot_compute_nodes_with_cps/" title="Create A Session Template To Boot Compute Nodes With Cps" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/create_a_session_template_to_boot_compute_nodes_with_cps/">
-        Create A Session Template To Boot Compute Nodes With Cps
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/clean_up_after_a_bos-boa_job_is_completed_or_cancelled/" title="Clean Up After A BOS/boa Job Is Completed Or CANcelled" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/clean_up_after_a_bos-boa_job_is_completed_or_cancelled/">
+        Clean Up After A BOS/boa Job Is Completed Or CANcelled
         
         </a>
     </li>
@@ -2720,30 +2825,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_message_about_invalid_eeprom_checksum_in_node_console_or_log/" title="Compute Node Boot Issue Symptom Message About Invalid Eeprom Checksum In Node Console Or Log" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_message_about_invalid_eeprom_checksum_in_node_console_or_log/">
-        Compute Node Boot Issue Symptom Message About Invalid Eeprom Checksum In Node Console Or Log
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_node_is_not_able_to_download_the_required_artifacts/" title="Compute Node Boot Issue Symptom Node Is Not Able To Download The Required Artifacts" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/compute_node_boot_issue_symptom_node_is_not_able_to_download_the_required_artifacts/">
-        Compute Node Boot Issue Symptom Node Is Not Able To Download The Required Artifacts
+      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/boot_issue_symptom_node_hsn_interface_does_not_appear_or_shows_no_link_detected/" title="Boot Issue Symptom Node HSN Interface Does Not Appear Or Show Detected Links Detected" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/boot_orchestration/boot_issue_symptom_node_hsn_interface_does_not_appear_or_shows_no_link_detected/">
+        Boot Issue Symptom Node HSN Interface Does Not Appear Or Show Detected Links Detected
         
         </a>
     </li>
@@ -2807,48 +2891,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/check_the_progress_of_bos_session_operations/" title="Check The Progress Of BOS Session Operations" class="dd-item ">
         <a href="/docs-csm/en-12/operations/boot_orchestration/check_the_progress_of_bos_session_operations/">
         Check The Progress Of BOS Session Operations
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/clean_up_after_a_bos-boa_job_is_completed_or_cancelled/" title="Clean Up After A BOS/boa Job Is Completed Or CANcelled" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/clean_up_after_a_bos-boa_job_is_completed_or_cancelled/">
-        Clean Up After A BOS/boa Job Is Completed Or CANcelled
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/boot_orchestration/boot_issue_symptom_node_hsn_interface_does_not_appear_or_shows_no_link_detected/" title="Boot Issue Symptom Node HSN Interface Does Not Appear Or Show Detected Links Detected" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/boot_orchestration/boot_issue_symptom_node_hsn_interface_does_not_appear_or_shows_no_link_detected/">
-        Boot Issue Symptom Node HSN Interface Does Not Appear Or Show Detected Links Detected
         
         </a>
     </li>
@@ -3128,69 +3170,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/" title="Upload BMC Recovery Firmware Into Tftp Server" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/">
-        Upload BMC Recovery Firmware Into Tftp Server
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_cli/" title="FAS Cli" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/firmware/fas_cli/">
-        FAS Cli
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_filters/" title="FAS Filters" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/firmware/fas_filters/">
-        FAS Filters
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_use_cases/" title="FAS Use Cases" class="dd-item ">
         <a href="/docs-csm/en-12/operations/firmware/fas_use_cases/">
         FAS Use Cases
@@ -3254,9 +3233,72 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/" title="Upload BMC Recovery Firmware Into Tftp Server" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/">
+        Upload BMC Recovery Firmware Into Tftp Server
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_admin_procedures/" title="FAS Admin Procedures" class="dd-item ">
         <a href="/docs-csm/en-12/operations/firmware/fas_admin_procedures/">
         FAS Admin Procedures
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_cli/" title="FAS Cli" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/firmware/fas_cli/">
+        FAS Cli
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/firmware/fas_filters/" title="FAS Filters" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/firmware/fas_filters/">
+        FAS Filters
         
         </a>
     </li>
@@ -3285,7 +3327,7 @@
   
     
     <li data-nav-id="/docs-csm/en-12/operations/node_management/" title="Node Management" class="dd-item
-        
+        parent
         
         
         ">
@@ -3298,9 +3340,110 @@
         <ul>
           
           
+            
+          
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/docs-csm/en-12/operations/node_management/rebuild_ncns/" title="Rebuild NCNs" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/docs-csm/en-12/operations/node_management/rebuild_ncns/">
+          Rebuild NCNs
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/" title="Prepare Storage Node" class="dd-item active">
+        <a href="/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/">
+        Prepare Storage Node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/node_management/view_bios_logs_for_liquid_cooled_nodes/" title="View Bios Logs For Liquid Cooled Nodes" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/node_management/view_bios_logs_for_liquid_cooled_nodes/">
+        View Bios Logs For Liquid Cooled Nodes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/node_management/troubleshoot_issues_with_redfish_endpoint_discovery/" title="Troubleshoot Issues With Redfish Endpoint Discovery" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/node_management/troubleshoot_issues_with_redfish_endpoint_discovery/">
+        Troubleshoot Issues With Redfish Endpoint Discovery
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -3395,27 +3538,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/node_management/view_bios_logs_for_liquid_cooled_nodes/" title="View Bios Logs For Liquid Cooled Nodes" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/node_management/view_bios_logs_for_liquid_cooled_nodes/">
-        View Bios Logs For Liquid Cooled Nodes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/node_management/reset_credentials_on_redfish_devices_for_reinstallation/" title="Reset Credentials On Redfish Devices" class="dd-item ">
         <a href="/docs-csm/en-12/operations/node_management/reset_credentials_on_redfish_devices_for_reinstallation/">
         Reset Credentials On Redfish Devices
@@ -3482,27 +3604,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/node_management/troubleshoot_interfaces_with_ip_address_issues/" title="Troubleshoot Interfaces With Ip Address Issues" class="dd-item ">
         <a href="/docs-csm/en-12/operations/node_management/troubleshoot_interfaces_with_ip_address_issues/">
         Troubleshoot Interfaces With Ip Address Issues
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/node_management/troubleshoot_issues_with_redfish_endpoint_discovery/" title="Troubleshoot Issues With Redfish Endpoint Discovery" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/node_management/troubleshoot_issues_with_redfish_endpoint_discovery/">
-        Troubleshoot Issues With Redfish Endpoint Discovery
         
         </a>
     </li>
@@ -4082,6 +4183,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/package_repository_management/package_repository_management_with_nexus/" title="Package Repository Management With Nexus" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/package_repository_management/package_repository_management_with_nexus/">
+        Package Repository Management With Nexus
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/package_repository_management/repair_yum_repository_metadata/" title="Repair Yum Repository Metadata" class="dd-item ">
         <a href="/docs-csm/en-12/operations/package_repository_management/repair_yum_repository_metadata/">
         Repair Yum Repository Metadata
@@ -4220,27 +4342,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/package_repository_management/package_repository_management_with_nexus/" title="Package Repository Management With Nexus" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/package_repository_management/package_repository_management_with_nexus/">
-        Package Repository Management With Nexus
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -4276,6 +4377,27 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/" title="Use S3 Libraries And Clients" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/">
+        Use S3 Libraries And Clients
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -4340,27 +4462,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/" title="Use S3 Libraries And Clients" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/">
-        Use S3 Libraries And Clients
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -4406,27 +4507,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/restore_sls_postgres_without_an_existing_backup/" title="Restore SLS Postgres Without An Existing Backup" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_layout_service/restore_sls_postgres_without_an_existing_backup/">
-        Restore SLS Postgres Without An Existing Backup
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/system_layout_service_sls/" title="System Layout Service (SLS)" class="dd-item ">
         <a href="/docs-csm/en-12/operations/system_layout_service/system_layout_service_sls/">
         System Layout Service (SLS)
@@ -4451,48 +4531,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/update_sls_with_uan_aliases/" title="Update SLS With UAN Aliases" class="dd-item ">
         <a href="/docs-csm/en-12/operations/system_layout_service/update_sls_with_uan_aliases/">
         Update SLS With UAN Aliases
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/add_uan_can_ip_addresses_to_sls/" title="Add UAN CAN Ip Addresses To SLS" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_layout_service/add_uan_can_ip_addresses_to_sls/">
-        Add UAN CAN Ip Addresses To SLS
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/create_a_backup_of_the_sls_postgres_database/" title="Create A Backup Of The SLS Postgres Database" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_layout_service/create_a_backup_of_the_sls_postgres_database/">
-        Create A Backup Of The SLS Postgres Database
         
         </a>
     </li>
@@ -4565,6 +4603,69 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/restore_sls_postgres_without_an_existing_backup/" title="Restore SLS Postgres Without An Existing Backup" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_layout_service/restore_sls_postgres_without_an_existing_backup/">
+        Restore SLS Postgres Without An Existing Backup
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/add_uan_can_ip_addresses_to_sls/" title="Add UAN CAN Ip Addresses To SLS" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_layout_service/add_uan_can_ip_addresses_to_sls/">
+        Add UAN CAN Ip Addresses To SLS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_layout_service/create_a_backup_of_the_sls_postgres_database/" title="Create A Backup Of The SLS Postgres Database" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_layout_service/create_a_backup_of_the_sls_postgres_database/">
+        Create A Backup Of The SLS Postgres Database
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -4600,69 +4701,6 @@
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/view_configuration_session_logs/" title="View Configuration Session Logs" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/view_configuration_session_logs/">
-        View Configuration Session Logs
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/write_ansible_code_for_cfs/" title="Write Ansible Code For CFS" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/write_ansible_code_for_cfs/">
-        Write Ansible Code For CFS
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/use_a_custom_ansible-cfg_file/" title="Use A Custom Ansible-cfg File" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/use_a_custom_ansible-cfg_file/">
-        Use A Custom Ansible-cfg File
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -4736,9 +4774,30 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/troubleshoot_ansible_play_failures_in_cfs_sessions/" title="Troubleshoot Ansible Play Failures In CFS Sessions" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/troubleshoot_ansible_play_failures_in_cfs_sessions/">
-        Troubleshoot Ansible Play Failures In CFS Sessions
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/view_configuration_session_logs/" title="View Configuration Session Logs" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/view_configuration_session_logs/">
+        View Configuration Session Logs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/write_ansible_code_for_cfs/" title="Write Ansible Code For CFS" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/write_ansible_code_for_cfs/">
+        Write Ansible Code For CFS
         
         </a>
     </li>
@@ -4820,9 +4879,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/set_the_ansible-cfg_for_a_session/" title="Set The `ansible.cfg` For A Session" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/set_the_ansible-cfg_for_a_session/">
-        Set The `ansible.cfg` For A Session
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/use_a_custom_ansible-cfg_file/" title="Use A Custom Ansible-cfg File" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/use_a_custom_ansible-cfg_file/">
+        Use A Custom Ansible-cfg File
         
         </a>
     </li>
@@ -4883,9 +4942,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/enable_ansible_profiling/" title="Enable Ansible Profiling" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/enable_ansible_profiling/">
-        Enable Ansible Profiling
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/troubleshoot_ansible_play_failures_in_cfs_sessions/" title="Troubleshoot Ansible Play Failures In CFS Sessions" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/troubleshoot_ansible_play_failures_in_cfs_sessions/">
+        Troubleshoot Ansible Play Failures In CFS Sessions
         
         </a>
     </li>
@@ -4967,6 +5026,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/set_the_ansible-cfg_for_a_session/" title="Set The `ansible.cfg` For A Session" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/set_the_ansible-cfg_for_a_session/">
+        Set The `ansible.cfg` For A Session
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/configuration_management/create_and_populate_a_vcs_configuration_repository/" title="Create And Populate A Vcs Configuration Repository" class="dd-item ">
         <a href="/docs-csm/en-12/operations/configuration_management/create_and_populate_a_vcs_configuration_repository/">
         Create And Populate A Vcs Configuration Repository
@@ -5030,9 +5110,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_sessions/" title="Configuration Sessions" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/configuration_sessions/">
-        Configuration Sessions
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/enable_ansible_profiling/" title="Enable Ansible Profiling" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/enable_ansible_profiling/">
+        Enable Ansible Profiling
         
         </a>
     </li>
@@ -5114,48 +5194,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_layers/" title="Configuration Layers" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/configuration_layers/">
-        Configuration Layers
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_management/" title="Configuration Management" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/configuration_management/">
-        Configuration Management
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_management_of_system_components/" title="Configuration Management Of System Components" class="dd-item ">
         <a href="/docs-csm/en-12/operations/configuration_management/configuration_management_of_system_components/">
         Configuration Management Of System Components
@@ -5198,9 +5236,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/automatic_session_deletion_with_sessionttl/" title="Automatic Session Deletion With `sessionttl`" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/configuration_management/automatic_session_deletion_with_sessionttl/">
-        Automatic Session Deletion With `sessionttl`
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_sessions/" title="Configuration Sessions" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/configuration_sessions/">
+        Configuration Sessions
         
         </a>
     </li>
@@ -5261,6 +5299,48 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_layers/" title="Configuration Layers" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/configuration_layers/">
+        Configuration Layers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/configuration_management/" title="Configuration Management" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/configuration_management/">
+        Configuration Management
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/configuration_management/ansible_execution_environments/" title="Ansible Execution Environments" class="dd-item ">
         <a href="/docs-csm/en-12/operations/configuration_management/ansible_execution_environments/">
         Ansible Execution Environments
@@ -5285,6 +5365,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/configuration_management/ansible_inventory/" title="Ansible Inventory" class="dd-item ">
         <a href="/docs-csm/en-12/operations/configuration_management/ansible_inventory/">
         Ansible Inventory
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/configuration_management/automatic_session_deletion_with_sessionttl/" title="Automatic Session Deletion With `sessionttl`" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/configuration_management/automatic_session_deletion_with_sessionttl/">
+        Automatic Session Deletion With `sessionttl`
         
         </a>
     </li>
@@ -5339,27 +5440,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/manage_hms_locks/" title="Manage Hms Locks" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/manage_hms_locks/">
-        Manage Hms Locks
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/restore_hsm_postgres_from_backup/" title="Restore Hardware State Manager (HSM) Postgres Database From Backup" class="dd-item ">
         <a href="/docs-csm/en-12/operations/hardware_state_manager/restore_hsm_postgres_from_backup/">
         Restore Hardware State Manager (HSM) Postgres Database From Backup
@@ -5384,27 +5464,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/restore_hsm_postgres_without_a_backup/" title="Restore Hardware State Manager (HSM) Postgres Without An Existing Backup" class="dd-item ">
         <a href="/docs-csm/en-12/operations/hardware_state_manager/restore_hsm_postgres_without_a_backup/">
         Restore Hardware State Manager (HSM) Postgres Without An Existing Backup
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/hardware_state_manager/" title="Hardware State Manager (HSM)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/hardware_state_manager/">
-        Hardware State Manager (HSM)
         
         </a>
     </li>
@@ -5507,30 +5566,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/component_memberships/" title="Component Memberships" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/component_memberships/">
-        Component Memberships
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/component_partition_members/" title="Component Partition Members" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/component_partition_members/">
-        Component Partition Members
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/manage_hms_locks/" title="Manage Hms Locks" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/manage_hms_locks/">
+        Manage Hms Locks
         
         </a>
     </li>
@@ -5591,9 +5629,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/hsm_roles_and_subroles/" title="HSM Roles And Subroles" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/hsm_roles_and_subroles/">
-        HSM Roles And Subroles
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/hardware_state_manager/" title="Hardware State Manager (HSM)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/hardware_state_manager/">
+        Hardware State Manager (HSM)
         
         </a>
     </li>
@@ -5612,9 +5650,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/add_a_switch_to_the_hsm_database/" title="Add A Switch To The HSM Database" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/hardware_state_manager/add_a_switch_to_the_hsm_database/">
-        Add A Switch To The HSM Database
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/hsm_roles_and_subroles/" title="HSM Roles And Subroles" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/hsm_roles_and_subroles/">
+        HSM Roles And Subroles
         
         </a>
     </li>
@@ -5678,6 +5716,69 @@
       <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/component_groups_and_partitions/" title="Component Groups And Partitions" class="dd-item ">
         <a href="/docs-csm/en-12/operations/hardware_state_manager/component_groups_and_partitions/">
         Component Groups And Partitions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/component_memberships/" title="Component Memberships" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/component_memberships/">
+        Component Memberships
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/component_partition_members/" title="Component Partition Members" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/component_partition_members/">
+        Component Partition Members
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/hardware_state_manager/add_a_switch_to_the_hsm_database/" title="Add A Switch To The HSM Database" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/hardware_state_manager/add_a_switch_to_the_hsm_database/">
+        Add A Switch To The HSM Database
         
         </a>
     </li>
@@ -5789,48 +5890,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/transport_layer_security_for_ingress_services/" title="Transport Layer Security (tls) For Ingress Services" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/transport_layer_security_for_ingress_services/">
-        Transport Layer Security (tls) For Ingress Services
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_common_vault_cluster_issues/" title="Troubleshoot Common Vault Cluster Issues" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_common_vault_cluster_issues/">
-        Troubleshoot Common Vault Cluster Issues
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_spire_failing_to_start_on_ncns/" title="Troubleshoot Spire Failing To Start On NCNs" class="dd-item ">
         <a href="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_spire_failing_to_start_on_ncns/">
         Troubleshoot Spire Failing To Start On NCNs
@@ -5894,9 +5953,135 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/system_security_and_authentication/" title="System Security And Authentication" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/system_security_and_authentication/">
+        System Security And Authentication
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/transport_layer_security_for_ingress_services/" title="Transport Layer Security (tls) For Ingress Services" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/transport_layer_security_for_ingress_services/">
+        Transport Layer Security (tls) For Ingress Services
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_common_vault_cluster_issues/" title="Troubleshoot Common Vault Cluster Issues" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/troubleshoot_common_vault_cluster_issues/">
+        Troubleshoot Common Vault Cluster Issues
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/ssh_keys/" title="Update NCN SSH Keys" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/ssh_keys/">
+        Update NCN SSH Keys
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/resync_keycloak_users_to_compute_nodes/" title="Re-sync Keycloak Users To Compute Nodes" class="dd-item ">
         <a href="/docs-csm/en-12/operations/security_and_authentication/resync_keycloak_users_to_compute_nodes/">
         Re-sync Keycloak Users To Compute Nodes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/remove_the_email_mapper_from_the_ldap_user_federation/" title="Remove The Email Mapper From The LDAP User Federation" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/remove_the_email_mapper_from_the_ldap_user_federation/">
+        Remove The Email Mapper From The LDAP User Federation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/remove_the_ldap_user_federation_from_keycloak/" title="Remove The LDAP User Federation From Keycloak" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/remove_the_ldap_user_federation_from_keycloak/">
+        Remove The LDAP User Federation From Keycloak
         
         </a>
     </li>
@@ -5957,9 +6142,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/system_security_and_authentication/" title="System Security And Authentication" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/system_security_and_authentication/">
-        System Security And Authentication
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/pki_services/" title="PKI Services" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/pki_services/">
+        PKI Services
         
         </a>
     </li>
@@ -5978,9 +6163,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/ssh_keys/" title="Update NCN SSH Keys" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/ssh_keys/">
-        Update NCN SSH Keys
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/preserve_username_capitalization_for_users_exported_from_keycloak/" title="Preserve Username Capitalization For Users Exported From Keycloak" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/preserve_username_capitalization_for_users_exported_from_keycloak/">
+        Preserve Username Capitalization For Users Exported From Keycloak
         
         </a>
     </li>
@@ -6062,9 +6247,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/remove_the_email_mapper_from_the_ldap_user_federation/" title="Remove The Email Mapper From The LDAP User Federation" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/remove_the_email_mapper_from_the_ldap_user_federation/">
-        Remove The Email Mapper From The LDAP User Federation
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/hashicorp_vault/" title="Hashicorp Vault" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/hashicorp_vault/">
+        Hashicorp Vault
         
         </a>
     </li>
@@ -6083,9 +6268,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/remove_the_ldap_user_federation_from_keycloak/" title="Remove The LDAP User Federation From Keycloak" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/remove_the_ldap_user_federation_from_keycloak/">
-        Remove The LDAP User Federation From Keycloak
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/keycloak_operations/" title="Keycloak Operations" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/keycloak_operations/">
+        Keycloak Operations
         
         </a>
     </li>
@@ -6167,9 +6352,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/pki_services/" title="PKI Services" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/pki_services/">
-        PKI Services
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/create_a_service_account_in_keycloak/" title="Create A Service Account In Keycloak" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/create_a_service_account_in_keycloak/">
+        Create A Service Account In Keycloak
         
         </a>
     </li>
@@ -6188,9 +6373,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/preserve_username_capitalization_for_users_exported_from_keycloak/" title="Preserve Username Capitalization For Users Exported From Keycloak" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/preserve_username_capitalization_for_users_exported_from_keycloak/">
-        Preserve Username Capitalization For Users Exported From Keycloak
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/create_internal_user_accounts_in_the_keycloak_shasta_realm/" title="Create Internal User Accounts In The Keycloak Shasta Realm" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/create_internal_user_accounts_in_the_keycloak_shasta_realm/">
+        Create Internal User Accounts In The Keycloak Shasta Realm
         
         </a>
     </li>
@@ -6272,9 +6457,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/hashicorp_vault/" title="Hashicorp Vault" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/hashicorp_vault/">
-        Hashicorp Vault
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_existing_ldap_server_content/" title="Change The LDAP Server Ip Address For Existing Ldap Server Content" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_existing_ldap_server_content/">
+        Change The LDAP Server Ip Address For Existing Ldap Server Content
         
         </a>
     </li>
@@ -6293,9 +6478,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/keycloak_operations/" title="Keycloak Operations" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/keycloak_operations/">
-        Keycloak Operations
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_new_ldap_server_content/" title="Change The LDAP Server Ip Address For New Ldap Server Content" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_new_ldap_server_content/">
+        Change The LDAP Server Ip Address For New Ldap Server Content
         
         </a>
     </li>
@@ -6356,27 +6541,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/create_a_service_account_in_keycloak/" title="Create A Service Account In Keycloak" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/create_a_service_account_in_keycloak/">
-        Create A Service Account In Keycloak
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/create_internal_groups_in_the_keycloak_shasta_realm/" title="Create Internal Groups In The Keycloak Shasta Realm" class="dd-item ">
         <a href="/docs-csm/en-12/operations/security_and_authentication/create_internal_groups_in_the_keycloak_shasta_realm/">
         Create Internal Groups In The Keycloak Shasta Realm
@@ -6398,9 +6562,30 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/create_internal_user_accounts_in_the_keycloak_shasta_realm/" title="Create Internal User Accounts In The Keycloak Shasta Realm" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/create_internal_user_accounts_in_the_keycloak_shasta_realm/">
-        Create Internal User Accounts In The Keycloak Shasta Realm
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/certificate_types/" title="Certificate Types" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/certificate_types/">
+        Certificate Types
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_ex_liquid-cooled_cabinet_global_default_password/" title="Change Cray Ex Liquid-cooled Cabinet Global Default Password" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/change_ex_liquid-cooled_cabinet_global_default_password/">
+        Change Cray Ex Liquid-cooled Cabinet Global Default Password
         
         </a>
     </li>
@@ -6482,30 +6667,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_existing_ldap_server_content/" title="Change The LDAP Server Ip Address For Existing Ldap Server Content" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_existing_ldap_server_content/">
-        Change The LDAP Server Ip Address For Existing Ldap Server Content
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_new_ldap_server_content/" title="Change The LDAP Server Ip Address For New Ldap Server Content" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/change_the_ldap_server_ip_address_for_new_ldap_server_content/">
-        Change The LDAP Server Ip Address For New Ldap Server Content
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/access_the_keycloak_user_management_ui/" title="Access The Keycloak User Management Ui" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/access_the_keycloak_user_management_ui/">
+        Access The Keycloak User Management Ui
         
         </a>
     </li>
@@ -6527,6 +6691,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/add_ldap_user_federation/" title="Add LDAP User Federation" class="dd-item ">
         <a href="/docs-csm/en-12/operations/security_and_authentication/add_ldap_user_federation/">
         Add LDAP User Federation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/api_authorization/" title="Api Authorization" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/security_and_authentication/api_authorization/">
+        Api Authorization
         
         </a>
     </li>
@@ -6578,90 +6763,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/certificate_types/" title="Certificate Types" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/certificate_types/">
-        Certificate Types
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/change_ex_liquid-cooled_cabinet_global_default_password/" title="Change Cray Ex Liquid-cooled Cabinet Global Default Password" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/change_ex_liquid-cooled_cabinet_global_default_password/">
-        Change Cray Ex Liquid-cooled Cabinet Global Default Password
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/access_the_keycloak_user_management_ui/" title="Access The Keycloak User Management Ui" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/access_the_keycloak_user_management_ui/">
-        Access The Keycloak User Management Ui
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/security_and_authentication/api_authorization/" title="Api Authorization" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/security_and_authentication/api_authorization/">
-        Api Authorization
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -6697,69 +6798,6 @@
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/resiliency/recreate_statefulset_pods_on_another_node/" title="Recreate Statefulset Pods On Another Node" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/resiliency/recreate_statefulset_pods_on_another_node/">
-        Recreate Statefulset Pods On Another Node
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/resiliency/resilience_of_system_management_services/" title="Resilience Of System Management Services" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/resiliency/resilience_of_system_management_services/">
-        Resilience Of System Management Services
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/resiliency/resiliency/" title="Resiliency" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/resiliency/resiliency/">
-        Resiliency
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -6824,6 +6862,69 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/resiliency/recreate_statefulset_pods_on_another_node/" title="Recreate Statefulset Pods On Another Node" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/resiliency/recreate_statefulset_pods_on_another_node/">
+        Recreate Statefulset Pods On Another Node
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/resiliency/resilience_of_system_management_services/" title="Resilience Of System Management Services" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/resiliency/resilience_of_system_management_services/">
+        Resilience Of System Management Services
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/resiliency/resiliency/" title="Resiliency" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/resiliency/resiliency/">
+        Resiliency
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -6859,48 +6960,6 @@
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/" title="Configure Prometheus Email Alert Notifications" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/">
-        Configure Prometheus Email Alert Notifications
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/system_management_health/grafterm/" title="Grafterm" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/system_management_health/grafterm/">
-        Grafterm
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -6986,6 +7045,48 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/" title="Configure Prometheus Email Alert Notifications" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/">
+        Configure Prometheus Email Alert Notifications
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/system_management_health/grafterm/" title="Grafterm" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/system_management_health/grafterm/">
+        Grafterm
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -7031,93 +7132,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/conman/troubleshoot_conman_asking_for_password_on_ssh_connection/" title="Troubleshoot Conman Asking For Password On SSH Connection" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/conman/troubleshoot_conman_asking_for_password_on_ssh_connection/">
-        Troubleshoot Conman Asking For Password On SSH Connection
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/conman/troubleshoot_conman_blocking_access_to_a_node_bmc/" title="Troubleshoot Conman Blocking Access To A Node BMC" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/conman/troubleshoot_conman_blocking_access_to_a_node_bmc/">
-        Troubleshoot Conman Blocking Access To A Node BMC
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/conman/troubleshoot_conman_failing_to_connect_to_a_console/" title="Troubleshoot Conman Failing To Connect To A Console" class="dd-item ">
         <a href="/docs-csm/en-12/operations/conman/troubleshoot_conman_failing_to_connect_to_a_console/">
         Troubleshoot Conman Failing To Connect To A Console
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/conman/conman/" title="Conman" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/conman/conman/">
-        Conman
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/conman/disable_conman_after_system_software_installation/" title="Disable Conman After The System Software Installation" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/conman/disable_conman_after_system_software_installation/">
-        Disable Conman After The System Software Installation
         
         </a>
     </li>
@@ -7199,6 +7216,48 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/conman/troubleshoot_conman_asking_for_password_on_ssh_connection/" title="Troubleshoot Conman Asking For Password On SSH Connection" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/conman/troubleshoot_conman_asking_for_password_on_ssh_connection/">
+        Troubleshoot Conman Asking For Password On SSH Connection
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/conman/troubleshoot_conman_blocking_access_to_a_node_bmc/" title="Troubleshoot Conman Blocking Access To A Node BMC" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/conman/troubleshoot_conman_blocking_access_to_a_node_bmc/">
+        Troubleshoot Conman Blocking Access To A Node BMC
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/conman/access_compute_node_logs/" title="Access Compute Node Logs" class="dd-item ">
         <a href="/docs-csm/en-12/operations/conman/access_compute_node_logs/">
         Access Compute Node Logs
@@ -7223,6 +7282,48 @@
       <li data-nav-id="/docs-csm/en-12/operations/conman/access_console_log_data_via_the_system_monitoring_framework_smf/" title="Access Console Log Data Via The System Monitoring Framework (smf)" class="dd-item ">
         <a href="/docs-csm/en-12/operations/conman/access_console_log_data_via_the_system_monitoring_framework_smf/">
         Access Console Log Data Via The System Monitoring Framework (smf)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/conman/conman/" title="Conman" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/conman/conman/">
+        Conman
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/conman/disable_conman_after_system_software_installation/" title="Disable Conman After The System Software Installation" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/conman/disable_conman_after_system_software_installation/">
+        Disable Conman After The System Software Installation
         
         </a>
     </li>
@@ -7468,6 +7569,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/update_the_cmn-external-dns_value_post-installation/" title="Update The Cmn-external-DNS Value Post-installation" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/network/external_dns/update_the_cmn-external-dns_value_post-installation/">
+        Update The Cmn-external-DNS Value Post-installation
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/update_the_system-name_site-domain_value_post-installation/" title="Update The System-name.site-domain Value Post-installation" class="dd-item ">
         <a href="/docs-csm/en-12/operations/network/external_dns/update_the_system-name_site-domain_value_post-installation/">
         Update The System-name.site-domain Value Post-installation
@@ -7492,6 +7614,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/external_dns_csi_config_init_input_values/" title="External DNS Csi Config Init Input Values" class="dd-item ">
         <a href="/docs-csm/en-12/operations/network/external_dns/external_dns_csi_config_init_input_values/">
         External DNS Csi Config Init Input Values
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/external_dns_failing_to_discover_services_workaround/" title="External DNS Failing To Discover Services Workaround" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/network/external_dns/external_dns_failing_to_discover_services_workaround/">
+        External DNS Failing To Discover Services Workaround
         
         </a>
     </li>
@@ -7573,27 +7716,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/update_the_cmn-external-dns_value_post-installation/" title="Update The Cmn-external-DNS Value Post-installation" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/network/external_dns/update_the_cmn-external-dns_value_post-installation/">
-        Update The Cmn-external-DNS Value Post-installation
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/add_ncns_and_uans_to_external_dns/" title="Add NCNs And UANs To External DNS" class="dd-item ">
         <a href="/docs-csm/en-12/operations/network/external_dns/add_ncns_and_uans_to_external_dns/">
         Add NCNs And UANs To External DNS
@@ -7618,27 +7740,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/external_dns/" title="External DNS" class="dd-item ">
         <a href="/docs-csm/en-12/operations/network/external_dns/external_dns/">
         External DNS
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/network/external_dns/external_dns_failing_to_discover_services_workaround/" title="External DNS Failing To Discover Services Workaround" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/network/external_dns/external_dns_failing_to_discover_services_workaround/">
-        External DNS Failing To Discover Services Workaround
         
         </a>
     </li>
@@ -7683,6 +7784,27 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/network/customer_access_network/customer_access_network_can/" title="Customer Access Network" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/network/customer_access_network/customer_access_network_can/">
+        Customer Access Network
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -7789,27 +7911,6 @@
 
             
           
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/network/customer_access_network/customer_access_network_can/" title="Customer Access Network" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/network/customer_access_network/customer_access_network_can/">
-        Customer Access Network
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
         
         </ul>
       
@@ -7845,6 +7946,27 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/network/management_network/management_network_flow_control_settings/" title="Management Network Flow Control Settings" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/network/management_network/management_network_flow_control_settings/">
+        Management Network Flow Control Settings
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -7942,27 +8064,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/network/management_network/management_network_can_setup/" title="Management Network CAN Setup" class="dd-item ">
         <a href="/docs-csm/en-12/operations/network/management_network/management_network_can_setup/">
         Management Network CAN Setup
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/network/management_network/management_network_flow_control_settings/" title="Management Network Flow Control Settings" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/network/management_network/management_network_flow_control_settings/">
-        Management Network Flow Control Settings
         
         </a>
     </li>
@@ -8350,6 +8451,48 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/" title="Volumes" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/">
+        Volumes
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/" title="Update A UAS Volume" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/">
+        Update A UAS Volume
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/user_access_service_uas/" title="User Access Service (UAS)" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/user_access_service_uas/">
         User Access Service (UAS)
@@ -8392,9 +8535,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/" title="Volumes" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/">
-        Volumes
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/" title="UAS And UAI Health Checks" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/">
+        UAS And UAI Health Checks
         
         </a>
     </li>
@@ -8413,9 +8556,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/" title="UAS And UAI Health Checks" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/">
-        UAS And UAI Health Checks
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/" title="UAS Limitations" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/">
+        UAS Limitations
         
         </a>
     </li>
@@ -8458,27 +8601,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uai_image_registration/" title="Update A UAI Image Registration" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uai_image_registration/">
         Update A UAI Image Registration
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/" title="Update A UAS Volume" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/">
-        Update A UAS Volume
         
         </a>
     </li>
@@ -8560,9 +8682,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/" title="UAS Limitations" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/">
-        UAS Limitations
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/" title="UAI Classes" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/">
+        UAI Classes
         
         </a>
     </li>
@@ -8707,9 +8829,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/" title="UAI Classes" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/">
-        UAI Classes
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/" title="Troubleshoot Stale Brokered UAIs" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/">
+        Troubleshoot Stale Brokered UAIs
         
         </a>
     </li>
@@ -8836,27 +8958,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_missing_or_incorrect_uai_images/" title="Troubleshoot Missing Or Incorrect UAI Images" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_missing_or_incorrect_uai_images/">
         Troubleshoot Missing Or Incorrect UAI Images
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/" title="Troubleshoot Stale Brokered UAIs" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/">
-        Troubleshoot Stale Brokered UAIs
         
         </a>
     </li>
@@ -9127,27 +9228,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/" title="List UAS Information" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/">
-        List UAS Information
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_volumes_registered_in_uas/" title="List Volumes Registered In UAS" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_volumes_registered_in_uas/">
         List Volumes Registered In UAS
@@ -9253,6 +9333,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/" title="List UAS Information" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/">
+        List UAS Information
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/" title="Examine A UAI Using A Direct Administrative Command" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/">
         Examine A UAI Using A Direct Administrative Command
@@ -9319,27 +9420,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_images_in_legacy_mode/" title="List Available UAI Images In Legacy Mode" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_images_in_legacy_mode/">
         List Available UAI Images In Legacy Mode
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/" title="Delete A UAI Using An Administrative Command" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/">
-        Delete A UAI Using An Administrative Command
         
         </a>
     </li>
@@ -9484,6 +9564,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/" title="Delete A UAI Using An Administrative Command" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/">
+        Delete A UAI Using An Administrative Command
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_use_default_uais_in_legacy_mode/" title="Create And Use Default UAIs In Legacy Mode" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_use_default_uais_in_legacy_mode/">
         Create And Use Default UAIs In Legacy Mode
@@ -9550,27 +9651,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai/" title="Delete A UAI" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai/">
         Delete A UAI
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/" title="Create A UAI Resource Specification" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/">
-        Create A UAI Resource Specification
         
         </a>
     </li>
@@ -9694,6 +9774,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/" title="Create A UAI Resource Specification" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/">
+        Create A UAI Resource Specification
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_uais_from_specific_uai_images_in_legacy_mode/" title="Create UAIs From Specific Uai Images In Legacy Mode" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/create_uais_from_specific_uai_images_in_legacy_mode/">
         Create UAIs From Specific Uai Images In Legacy Mode
@@ -9739,27 +9840,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/" title="Configure A Default UAI Class For Legacy Mode" class="dd-item ">
         <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/">
         Configure A Default UAI Class For Legacy Mode
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/" title="Configure End-user UAI Classes For Broker Mode" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/">
-        Configure End-user UAI Classes For Broker Mode
         
         </a>
     </li>
@@ -9832,6 +9912,27 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/" title="Configure End-user UAI Classes For Broker Mode" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/">
+        Configure End-user UAI Classes For Broker Mode
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -9880,6 +9981,48 @@
       <li data-nav-id="/docs-csm/en-12/operations/power_management/power_management/" title="Power Management" class="dd-item ">
         <a href="/docs-csm/en-12/operations/power_management/power_management/">
         Power Management
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/power_management/shut_down_and_power_off_the_management_kubernetes_cluster/" title="Shut Down And Power Off The Management Kubernetes Cluster" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/power_management/shut_down_and_power_off_the_management_kubernetes_cluster/">
+        Shut Down And Power Off The Management Kubernetes Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/power_management/standard_rack_node_power_management/" title="Standard Rack Node Power Management" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/power_management/standard_rack_node_power_management/">
+        Standard Rack Node Power Management
         
         </a>
     </li>
@@ -9961,6 +10104,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/operations/power_management/recover_from_a_liquid_cooled_cabinet_epo_event/" title="Recover From A Liquid Cooled Cabinet Epo Event" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/power_management/recover_from_a_liquid_cooled_cabinet_epo_event/">
+        Recover From A Liquid Cooled Cabinet Epo Event
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/operations/power_management/save_management_network_switch_configurations/" title="Save Management Network Switch Configuration Settings" class="dd-item ">
         <a href="/docs-csm/en-12/operations/power_management/save_management_network_switch_configurations/">
         Save Management Network Switch Configuration Settings
@@ -10024,48 +10188,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/power_management/shut_down_and_power_off_the_management_kubernetes_cluster/" title="Shut Down And Power Off The Management Kubernetes Cluster" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/power_management/shut_down_and_power_off_the_management_kubernetes_cluster/">
-        Shut Down And Power Off The Management Kubernetes Cluster
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/power_management/standard_rack_node_power_management/" title="Standard Rack Node Power Management" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/power_management/standard_rack_node_power_management/">
-        Standard Rack Node Power Management
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/power_management/power_on_and_boot_compute_nodes_and_user_access_nodes/" title="Power On And Boot Compute And User Access Nodes" class="dd-item ">
         <a href="/docs-csm/en-12/operations/power_management/power_on_and_boot_compute_nodes_and_user_access_nodes/">
         Power On And Boot Compute And User Access Nodes
@@ -10090,6 +10212,27 @@
       <li data-nav-id="/docs-csm/en-12/operations/power_management/power_on_and_start_the_management_kubernetes_cluster/" title="Power On And Start The Management Kubernetes Cluster" class="dd-item ">
         <a href="/docs-csm/en-12/operations/power_management/power_on_and_start_the_management_kubernetes_cluster/">
         Power On And Start The Management Kubernetes Cluster
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/power_management/power_on_compute_and_io_cabinets/" title="Power On Compute And Io Cabinets" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/power_management/power_on_compute_and_io_cabinets/">
+        Power On Compute And Io Cabinets
         
         </a>
     </li>
@@ -10150,9 +10293,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/power_management/recover_from_a_liquid_cooled_cabinet_epo_event/" title="Recover From A Liquid Cooled Cabinet Epo Event" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/power_management/recover_from_a_liquid_cooled_cabinet_epo_event/">
-        Recover From A Liquid Cooled Cabinet Epo Event
+      <li data-nav-id="/docs-csm/en-12/operations/power_management/cray_advanced_platform_monitoring_and_control_capmc/" title="Cray Advanced Platform Monitoring And Control (CAPMC)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/power_management/cray_advanced_platform_monitoring_and_control_capmc/">
+        Cray Advanced Platform Monitoring And Control (CAPMC)
         
         </a>
     </li>
@@ -10255,51 +10398,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/power_management/power_on_compute_and_io_cabinets/" title="Power On Compute And Io Cabinets" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/power_management/power_on_compute_and_io_cabinets/">
-        Power On Compute And Io Cabinets
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/power_management/bring_up_the_slingshot_fabric/" title="Bring Up The Slingshot Fabric" class="dd-item ">
         <a href="/docs-csm/en-12/operations/power_management/bring_up_the_slingshot_fabric/">
         Bring Up The Slingshot Fabric
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/power_management/cray_advanced_platform_monitoring_and_control_capmc/" title="Cray Advanced Platform Monitoring And Control (CAPMC)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/power_management/cray_advanced_platform_monitoring_and_control_capmc/">
-        Cray Advanced Platform Monitoring And Control (CAPMC)
         
         </a>
     </li>
@@ -10344,48 +10445,6 @@
           
 
         
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/image_management/customize_an_image_root_using_ims/" title="Customize An Image Root Using IMS" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/image_management/customize_an_image_root_using_ims/">
-        Customize An Image Root Using IMS
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/image_management/delete_or_recover_deleted_ims_content/" title="Delete Or Recover Deleted IMS Content" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/image_management/delete_or_recover_deleted_ims_content/">
-        Delete Or Recover Deleted IMS Content
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
           
             
             
@@ -10459,48 +10518,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/operations/image_management/build_a_new_uan_image_using_the_default_recipe/" title="Build A New UAN Image Using The Default Recipe" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/image_management/build_a_new_uan_image_using_the_default_recipe/">
-        Build A New UAN Image Using The Default Recipe
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/image_management/build_an_image_using_ims_rest_service/" title="Build An Image Using IMS Rest Service" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/image_management/build_an_image_using_ims_rest_service/">
-        Build An Image Using IMS Rest Service
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/operations/image_management/configure_ims_to_validate_rpms/" title="Configure IMS To Validate Rpms" class="dd-item ">
         <a href="/docs-csm/en-12/operations/image_management/configure_ims_to_validate_rpms/">
         Configure IMS To Validate Rpms
@@ -10555,6 +10572,90 @@
 
             
           
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/image_management/customize_an_image_root_using_ims/" title="Customize An Image Root Using IMS" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/image_management/customize_an_image_root_using_ims/">
+        Customize An Image Root Using IMS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/image_management/delete_or_recover_deleted_ims_content/" title="Delete Or Recover Deleted IMS Content" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/image_management/delete_or_recover_deleted_ims_content/">
+        Delete Or Recover Deleted IMS Content
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/image_management/build_a_new_uan_image_using_the_default_recipe/" title="Build A New UAN Image Using The Default Recipe" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/image_management/build_a_new_uan_image_using_the_default_recipe/">
+        Build A New UAN Image Using The Default Recipe
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/image_management/build_an_image_using_ims_rest_service/" title="Build An Image Using IMS Rest Service" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/image_management/build_an_image_using_ims_rest_service/">
+        Build An Image Using IMS Rest Service
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
         
         </ul>
       
@@ -10590,6 +10691,48 @@
           
 
         
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/" title="River Endpoint Discovery Service (REDS)" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/">
+        River Endpoint Discovery Service (REDS)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/" title="Troubleshoot Common Error Messages In REDS Logs" class="dd-item ">
+        <a href="/docs-csm/en-12/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/">
+        Troubleshoot Common Error Messages In REDS Logs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
           
             
             
@@ -10687,48 +10830,6 @@
       <li data-nav-id="/docs-csm/en-12/operations/river_endpoint_discovery_service/initialize_and_geolocate_nodes/" title="Initialize And Geolocate Nodes" class="dd-item ">
         <a href="/docs-csm/en-12/operations/river_endpoint_discovery_service/initialize_and_geolocate_nodes/">
         Initialize And Geolocate Nodes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/" title="River Endpoint Discovery Service (REDS)" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/river_endpoint_discovery_service/river_endpoint_discovery_service/">
-        River Endpoint Discovery Service (REDS)
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/" title="Troubleshoot Common Error Messages In REDS Logs" class="dd-item ">
-        <a href="/docs-csm/en-12/operations/river_endpoint_discovery_service/troubleshoot_common_error_messages_in_reds_logs/">
-        Troubleshoot Common Error Messages In REDS Logs
         
         </a>
     </li>
@@ -10893,27 +10994,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/troubleshooting_installation/" title="Troubleshooting Installation Problems" class="dd-item ">
-        <a href="/docs-csm/en-12/install/troubleshooting_installation/">
-        Troubleshooting Installation Problems
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/" title="Utility Storage Installation Troubleshooting" class="dd-item ">
         <a href="/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/">
         Utility Storage Installation Troubleshooting
@@ -11040,9 +11120,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/reinstall_livecd/" title="Reinstall Livecd" class="dd-item ">
-        <a href="/docs-csm/en-12/install/reinstall_livecd/">
-        Reinstall Livecd
+      <li data-nav-id="/docs-csm/en-12/install/troubleshooting_installation/" title="Troubleshooting Installation Problems" class="dd-item ">
+        <a href="/docs-csm/en-12/install/troubleshooting_installation/">
+        Troubleshooting Installation Problems
         
         </a>
     </li>
@@ -11124,27 +11204,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/prepare_management_nodes/" title="Prepare Management Nodes" class="dd-item ">
-        <a href="/docs-csm/en-12/install/prepare_management_nodes/">
-        Prepare Management Nodes
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/install/prepare_site_init/" title="Prepare Site Init" class="dd-item ">
         <a href="/docs-csm/en-12/install/prepare_site_init/">
         Prepare Site Init
@@ -11208,9 +11267,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/install_csm_services/" title="Install Services" class="dd-item ">
-        <a href="/docs-csm/en-12/install/install_csm_services/">
-        Install Services
+      <li data-nav-id="/docs-csm/en-12/install/reinstall_livecd/" title="Reinstall Livecd" class="dd-item ">
+        <a href="/docs-csm/en-12/install/reinstall_livecd/">
+        Reinstall Livecd
         
         </a>
     </li>
@@ -11271,9 +11330,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/create_ncn_metadata_csv/" title="Create NCN Metadata Csv" class="dd-item ">
-        <a href="/docs-csm/en-12/install/create_ncn_metadata_csv/">
-        Create NCN Metadata Csv
+      <li data-nav-id="/docs-csm/en-12/install/prepare_management_nodes/" title="Prepare Management Nodes" class="dd-item ">
+        <a href="/docs-csm/en-12/install/prepare_management_nodes/">
+        Prepare Management Nodes
         
         </a>
     </li>
@@ -11334,9 +11393,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/" title="Connect To Switch Over Usb-serial Cable" class="dd-item ">
-        <a href="/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/">
-        Connect To Switch Over Usb-serial Cable
+      <li data-nav-id="/docs-csm/en-12/install/install_csm_services/" title="Install Services" class="dd-item ">
+        <a href="/docs-csm/en-12/install/install_csm_services/">
+        Install Services
         
         </a>
     </li>
@@ -11418,6 +11477,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/install/create_ncn_metadata_csv/" title="Create NCN Metadata Csv" class="dd-item ">
+        <a href="/docs-csm/en-12/install/create_ncn_metadata_csv/">
+        Create NCN Metadata Csv
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/install/configure_dell_leaf_switch/" title="Configure Dell Leaf Switch" class="dd-item ">
         <a href="/docs-csm/en-12/install/configure_dell_leaf_switch/">
         Configure Dell Leaf Switch
@@ -11481,9 +11561,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/configure_aruba_management_network_base/" title="Configure Aruba Management Network Base" class="dd-item ">
-        <a href="/docs-csm/en-12/install/configure_aruba_management_network_base/">
-        Configure Aruba Management Network Base
+      <li data-nav-id="/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/" title="Connect To Switch Over Usb-serial Cable" class="dd-item ">
+        <a href="/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/">
+        Connect To Switch Over Usb-serial Cable
         
         </a>
     </li>
@@ -11565,27 +11645,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/configure_administrative_access/" title="Configure Administrative Access" class="dd-item ">
-        <a href="/docs-csm/en-12/install/configure_administrative_access/">
-        Configure Administrative Access
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/install/configure_aruba_aggregation_switch/" title="Configure Aruba Aggregation Switch" class="dd-item ">
         <a href="/docs-csm/en-12/install/configure_aruba_aggregation_switch/">
         Configure Aruba Aggregation Switch
@@ -11631,6 +11690,27 @@
       <li data-nav-id="/docs-csm/en-12/install/configure_aruba_leaf_switch/" title="Configure Aruba Leaf Switch" class="dd-item ">
         <a href="/docs-csm/en-12/install/configure_aruba_leaf_switch/">
         Configure Aruba Leaf Switch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/install/configure_aruba_management_network_base/" title="Configure Aruba Management Network Base" class="dd-item ">
+        <a href="/docs-csm/en-12/install/configure_aruba_management_network_base/">
+        Configure Aruba Management Network Base
         
         </a>
     </li>
@@ -11712,9 +11792,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/install/bootstrap_livecd_usb/" title="Bootstrap Pit Node From Livecd Usb" class="dd-item ">
-        <a href="/docs-csm/en-12/install/bootstrap_livecd_usb/">
-        Bootstrap Pit Node From Livecd Usb
+      <li data-nav-id="/docs-csm/en-12/install/configure_administrative_access/" title="Configure Administrative Access" class="dd-item ">
+        <a href="/docs-csm/en-12/install/configure_administrative_access/">
+        Configure Administrative Access
         
         </a>
     </li>
@@ -11859,6 +11939,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/install/bootstrap_livecd_usb/" title="Bootstrap Pit Node From Livecd Usb" class="dd-item ">
+        <a href="/docs-csm/en-12/install/bootstrap_livecd_usb/">
+        Bootstrap Pit Node From Livecd Usb
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/install/8325_mac_learning_hotfix/" title="Hotfix To Workaround Known Mac-learning Issue With 8325" class="dd-item ">
         <a href="/docs-csm/en-12/install/8325_mac_learning_hotfix/">
         Hotfix To Workaround Known Mac-learning Issue With 8325
@@ -11914,27 +12015,6 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/introduction/differences/" title="Differences From Previous Release" class="dd-item ">
-        <a href="/docs-csm/en-12/introduction/differences/">
-        Differences From Previous Release
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
       <li data-nav-id="/docs-csm/en-12/introduction/documentation_conventions/" title="Documentation Conventions" class="dd-item ">
         <a href="/docs-csm/en-12/introduction/documentation_conventions/">
         Documentation Conventions
@@ -11977,9 +12057,9 @@
  
   
     
-      <li data-nav-id="/docs-csm/en-12/introduction/capmc_deprecation/" title="CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated" class="dd-item ">
-        <a href="/docs-csm/en-12/introduction/capmc_deprecation/">
-        CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated
+      <li data-nav-id="/docs-csm/en-12/introduction/differences/" title="Differences From Previous Release" class="dd-item ">
+        <a href="/docs-csm/en-12/introduction/differences/">
+        Differences From Previous Release
         
         </a>
     </li>
@@ -12022,6 +12102,27 @@
       <li data-nav-id="/docs-csm/en-12/introduction/powerdns_migration/" title="PowerDNS Migration Notice" class="dd-item ">
         <a href="/docs-csm/en-12/introduction/powerdns_migration/">
         PowerDNS Migration Notice
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/docs-csm/en-12/introduction/capmc_deprecation/" title="CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated" class="dd-item ">
+        <a href="/docs-csm/en-12/introduction/capmc_deprecation/">
+        CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated
         
         </a>
     </li>
@@ -12751,6 +12852,27 @@
  
   
     
+      <li data-nav-id="/docs-csm/en-12/upgrade/1.2/stage_2/" title="Stage 2 - Ceph Image Upgrade" class="dd-item ">
+        <a href="/docs-csm/en-12/upgrade/1.2/stage_2/">
+        Stage 2 - Ceph Image Upgrade
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
       <li data-nav-id="/docs-csm/en-12/upgrade/1.2/stage_3/" title="Stage 3 - Service Upgrades" class="dd-item ">
         <a href="/docs-csm/en-12/upgrade/1.2/stage_3/">
         Stage 3 - Service Upgrades
@@ -12838,27 +12960,6 @@
       <li data-nav-id="/docs-csm/en-12/upgrade/1.2/stage_1/" title="Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.11" class="dd-item ">
         <a href="/docs-csm/en-12/upgrade/1.2/stage_1/">
         Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.11
-        
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-      <li data-nav-id="/docs-csm/en-12/upgrade/1.2/stage_2/" title="Stage 2 - Ceph Image Upgrade" class="dd-item ">
-        <a href="/docs-csm/en-12/upgrade/1.2/stage_2/">
-        Stage 2 - Ceph Image Upgrade
         
         </a>
     </li>
@@ -12956,7 +13057,13 @@
             
           
           
-            <a href='/docs-csm/en-12/'>Cray System Management Documentation</a> > <a href='/docs-csm/en-12/operations/'>Cray System Management Administration Guide</a> > <a href='/docs-csm/en-12/operations/utility_storage/'>Utility Storage</a> > Troubleshoot Pods Failing To Restart On Other Worker Nodes
+            
+            
+          
+          
+            <a href='/docs-csm/en-12/'>Cray System Management Documentation</a> > <a href='/docs-csm/en-12/operations/'>Cray System Management Administration Guide</a> > <a href='/docs-csm/en-12/operations/node_management/'>Node Management</a> > <a href='/docs-csm/en-12/operations/node_management/rebuild_ncns/'>Rebuild NCNs</a> > Prepare Storage Node
+          
+        
           
         
           
@@ -12973,8 +13080,9 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#procedure">Procedure</a></li>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#prequisites">Prequisites</a></li>
+    <li><a href="#step-1---check-the-status-of-ceph">Step 1 - Check the status of Ceph</a></li>
   </ul>
 </nav>
     </div>
@@ -12998,120 +13106,145 @@
         
 
 
-<h1 id="troubleshoot-pods-failing-to-restart-on-other-worker-nodes">Troubleshoot Pods Failing to Restart on Other Worker Nodes</h1>
-<p>Troubleshoot an issue where pods cannot restart on another worker node because of the &ldquo;Volume is already exclusively attached to one node and can&rsquo;t be attached to another&rdquo; error. Kubernetes does not currently support &ldquo;readwritemany&rdquo; access mode for Rados Block Device (RBD) devices, which causes an issue where devices fail to unmap correctly.</p>
-<p>The issue occurs when unmounting the mounts tied to the RBD devices, which causes the rbd-task (watcher) to not stop for the RBD device.</p>
-<p><strong>WARNING:</strong> If this process is followed and there are mount points that cannot be unmounted without using the force option, then a process may still be writing to them. If mount points are forcefully unmounted, there is a high probability of data loss or corruption.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>This procedure requires administrative privileges.</p>
-<h2 id="procedure">Procedure</h2>
+<h1 id="prepare-storage-node">Prepare Storage Node</h1>
+<h2 id="description">Description</h2>
+<p>Prepare a storage node before rebuilding it.</p>
+<p><strong>IMPORTANT:</strong> All of the output examples may not reflect the cluster status where this operation is being performed.  For example, if this is a rebuild in place then ceph components will not be reporting down, versus a failed node rebuild.</p>
+<h2 id="prequisites">Prequisites</h2>
+<p>If rebuilding ncn-s001, it is critical that the storage-ceph-cloudinit.sh has been removed from the runcmd in bss.</p>
 <ol>
 <li>
-<p>Force delete the pod.</p>
-<p>This may not be successful, but it is important to try before proceeding.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-w001# kubectl delete pod -n NAMESPACE POD_NAME --force --grace-period<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+<p>Get the xname for ncn-s001.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ssh ncn-s001 cat /etc/cray/xname
 </code></pre></div></li>
 <li>
-<p>Log in to a manager node and proceed if the previous step did not fix the issue.</p>
-</li>
+<p>Check the bss boot parameters for ncn-s001.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cray bss bootparameters list --name x3000c0s7b0n0 --format<span style="color:#f92672">=</span>json|jq -r <span style="color:#e6db74">&#39;.[]|.[&#34;cloud-init&#34;]|.[&#34;user-data&#34;].runcmd&#39;</span>
+</code></pre></div><p>Expected Output:</p>
+<pre><code class="language-screen" data-lang="screen">[
+&quot;/srv/cray/scripts/metal/install-bootloader.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-host-records.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-dhcp-to-static.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-dns-config.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-ntp-config.sh&quot;,
+&quot;/srv/cray/scripts/metal/enable-lldp.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-bmc-bbs.sh&quot;,
+&quot;/srv/cray/scripts/metal/set-efi-bbs.sh&quot;,
+&quot;/srv/cray/scripts/metal/disable-cloud-init.sh&quot;,
+&quot;/srv/cray/scripts/common/update_ca_certs.py&quot;,
+&quot;/srv/cray/scripts/metal/install-rpms.sh&quot;,
+&quot;/srv/cray/scripts/common/pre-load-images.sh&quot;,
+&quot;/srv/cray/scripts/common/ceph-enable-services.sh&quot;
+]
+</code></pre><p>If it is there then it will need to be fixed by running:</p>
+<p><strong>IMPORTANT:</strong> The below python script is provided by the docs-csm rpm being installed.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 /usr/share/doc/csm/scripts/patch-ceph-runcmd.py
+</code></pre></div></li>
+</ol>
+<h2 id="step-1---check-the-status-of-ceph">Step 1 - Check the status of Ceph</h2>
+<ol>
 <li>
-<p>Describe the pod experiencing issues.</p>
-<p>The returned Persistent Volume Claim (PVC) information will be needed in future steps.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# kubectl -n services describe pod POD_ID
-...
-Events:
-  Type     Reason              Age   From                     Message
-  ----     ------              ----  ----                     -------
-  Normal   Scheduled           23s   default-scheduler        Successfully assigned services/cray-ims-6578bf7874-twwp7 to ncn-w002
-  Warning  FailedAttachVolume  23s   attachdetach-controller  Multi-Attach error <span style="color:#66d9ef">for</span> volume <span style="color:#e6db74">&#34;**pvc-6ac68e32-de91-4e21-ac9f-c743b3ecb776**&#34;</span> Volume is already exclusively attached to one node and can<span style="color:#960050;background-color:#1e0010">&#39;</span>t be attached to another
+<p>Check the OSD status, weight, and location:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-s# ceph osd tree
+ID CLASS WEIGHT   TYPE NAME         STATUS REWEIGHT PRI-AFF
+-1       20.95917 root default
+-3        6.98639     host ncn-s001
+ <span style="color:#ae81ff">2</span>   ssd  1.74660         osd.2         up  1.00000 1.00000
+ <span style="color:#ae81ff">5</span>   ssd  1.74660         osd.5         up  1.00000 1.00000
+ <span style="color:#ae81ff">8</span>   ssd  1.74660         osd.8         up  1.00000 1.00000
+<span style="color:#ae81ff">11</span>   ssd  1.74660         osd.11        up  1.00000 1.00000
+-7        6.98639     host ncn-s002
+ <span style="color:#ae81ff">0</span>   ssd  1.74660         osd.0         up  1.00000 1.00000
+ <span style="color:#ae81ff">4</span>   ssd  1.74660         osd.4         up  1.00000 1.00000
+ <span style="color:#ae81ff">7</span>   ssd  1.74660         osd.7         up  1.00000 1.00000
+<span style="color:#ae81ff">10</span>   ssd  1.74660         osd.10        up  1.00000 1.00000
+-5        6.98639     host ncn-s003
+ <span style="color:#ae81ff">1</span>   ssd  1.74660         osd.1       down        <span style="color:#ae81ff">0</span> 1.00000
+ <span style="color:#ae81ff">3</span>   ssd  1.74660         osd.3       down        <span style="color:#ae81ff">0</span> 1.00000
+ <span style="color:#ae81ff">6</span>   ssd  1.74660         osd.6       down        <span style="color:#ae81ff">0</span> 1.00000
+ <span style="color:#ae81ff">9</span>   ssd  1.74660         osd.9       down        <span style="color:#ae81ff">0</span> 1.00000
+</code></pre></div></li>
+<li>
+<p>Check the status of the Ceph cluster:</p>
+<pre><code class="language-screen" data-lang="screen">ncn-s# ceph -s
+  cluster:
+    id:     184b8c56-172d-11ec-aa96-a4bf0138ee14
+    health: HEALTH_WARN
+            1/3 mons down, quorum ncn-s001,ncn-s002
+            6 osds down
+            1 host (6 osds) down
+            Degraded data redundancy: 21624/131171 objects degraded (16.485%),     522 pgs degraded, 763 pgs undersized
 
-</code></pre></div><p>In this example, pvc-6ac68e32-de91-4e21-ac9f-c743b3ecb776 is the PVC information required for the next step.</p>
-</li>
-<li>
-<p>Retrieve the Ceph volume.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# kubectl describe -n NAMESPACE pv PVC_NAME
-Name:            pvc-6ac68e32-de91-4e21-ac9f-c743b3ecb776
-Labels:          &lt;none&gt;
-Annotations:     pv.kubernetes.io/provisioned-by: ceph.com/rbd
-                 rbdProvisionerIdentity: ceph.com/rbd
-Finalizers:      <span style="color:#f92672">[</span>kubernetes.io/pv-protection<span style="color:#f92672">]</span>
-StorageClass:    ceph-rbd-external
-Status:          Bound
-Claim:           services/cray-ims-data-claim
-Reclaim Policy:  Delete
-Access Modes:    RWO
-VolumeMode:      Filesystem
-Capacity:        10Gi
-Node Affinity:   &lt;none&gt;
-Message:
-Source:
-    Type:          RBD <span style="color:#f92672">(</span>a Rados Block Device mount on the host that shares a pod<span style="color:#960050;background-color:#1e0010">&#39;</span>s lifetime<span style="color:#f92672">)</span>
-    CephMonitors:  <span style="color:#f92672">[</span>10.252.0.10 10.252.0.11 10.252.0.12<span style="color:#f92672">]</span>
-    RBDImage:      kubernetes-dynamic-pvc-3ce9ec37-846b-11ea-acae-86f521872f4c  &lt;&lt;-- Ceph image name
-    FSType:
-    RBDPool:       kube                                                         &lt;&lt;-- Ceph pool
-    RadosUser:     kube
-    Keyring:       /etc/ceph/keyring
-    SecretRef:     &amp;SecretReference<span style="color:#f92672">{</span>Name:ceph-rbd-kube,Namespace:ceph-rbd,<span style="color:#f92672">}</span>
-    ReadOnly:      false
-Events:            &lt;none&gt;
-</code></pre></div></li>
-<li>
-<p>Find the worker node that has the RBD locked.</p>
-<ol>
-<li>
-<p>Find the RBD status.</p>
-<p>Take a note of the returned IP address.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# rbd status CEPH_POOL_NAME/CEPH_IMAGE_NAME
-</code></pre></div><p>For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# rbd status kube/kubernetes-dynamic-pvc-3ce9ec37-846b-11ea-acae-86f521872f4c
-Watchers:
-    watcher<span style="color:#f92672">=</span>**10.252.0.4**:0/3520479722 client.689192 cookie<span style="color:#f92672">=</span><span style="color:#ae81ff">18446462598732840976</span>
-</code></pre></div></li>
-<li>
-<p>Use the returned IP address to get the host name attached to it.</p>
-<p>Take note of the returned host name.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# grep IP_ADDRESS /etc/hosts
-10.252.0.4      ncn-w001.local ncn-w001 ncn-w001-nmn.local x3000c0s7b0n0 ncn-w001-nmn sms01-nmn.local sms04-nmn sms.local sms-nmn sms-nmn.local mgmt-plane-cmn mgmt-plane-cmn.local mgmt-plane-nmn.local bis.local bis time-nmn time-nmn.local <span style="color:#75715e">#-label-10.252.0.4</span>
+  services:
+    mon: 3 daemons, quorum ncn-s001,ncn-s002 (age 3m), out of quorum: ncn-s003
+    mgr: ncn-s001.afiqwl(active, since 14h), standbys: ncn-s002.nafbdr
+    mds: cephfs:1 {0=cephfs.ncn-s001.nzsgxr=up:active} 1 up:standby-replay
+    osd: 36 osds: 30 up (since 3m), 36 in (since 14h)
+    rgw: 3 daemons active (site1.zone1.ncn-s002.tipbuf, site1.zone1.ncn-s004.    uvzcms, site1.zone1.ncn-s005.twisxx)
 
-</code></pre></div></li>
+  task status:
+
+  data:
+    pools:   12 pools, 1641 pgs
+    objects: 43.72k objects, 81 GiB
+    usage:   228 GiB used, 63 TiB / 63 TiB avail
+    pgs:     21624/131171 objects degraded (16.485%)
+             878 active+clean
+             522 active+undersized+degraded
+             241 active+undersized
+
+  io:
+    client:   6.2 KiB/s rd, 280 KiB/s wr, 2 op/s rd, 49 op/s wr
+</code></pre></li>
+<li>
+<p>If the node is up, then stop and disable all the ceph services on the node being rebuilt.</p>
+<p>On the node being rebuilt run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> service in <span style="color:#66d9ef">$(</span>cephadm ls |jq -r <span style="color:#e6db74">&#39;.[].systemd_unit&#39;</span><span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> systemctl stop $service; systemctl disable $service; <span style="color:#66d9ef">done</span>
+</code></pre></div><p>Example output:</p>
+<pre><code class="language-screen" data-lang="screen">Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.39.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@mgr.ncn-s003.tjuyhj.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@mon.ncn-s003.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.41.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.36.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.37.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@mds.cephfs.ncn-s003.jcnovs.    service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.40.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@crash.ncn-s003.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@node-exporter.ncn-s003.service.
+Removed /etc/systemd/system/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14.target.    wants/ceph-184b8c56-172d-11ec-aa96-a4bf0138ee14@osd.38.service.
+</code></pre></li>
+<li>
+<p>Remove Ceph OSDs.</p>
+<p>The <code>ceph osd tree</code> capture indicated that there are down OSDs on <code>ncn-s003</code>.</p>
+<pre><code class="language-screen" data-lang="screen"> # ceph osd tree down
+ ID  CLASS  WEIGHT    TYPE NAME          STATUS  REWEIGHT  PRI-AFF
+ -1         62.87750  root default
+ -9         10.47958      host ncn-s003
+ 36    ssd   1.74660          osd.36       down   1.00000  1.00000
+ 37    ssd   1.74660          osd.37       down   1.00000  1.00000
+ 38    ssd   1.74660          osd.38       down   1.00000  1.00000
+ 39    ssd   1.74660          osd.39       down   1.00000  1.00000
+ 40    ssd   1.74660          osd.40       down   1.00000  1.00000
+ 41    ssd   1.74660          osd.41       down   1.00000  1.00000
+</code></pre><ol>
+<li>Remove the OSD references to allow the rebuild to re-use the original OSD references on the drives.  By default if the OSD reference is not removed, then there will still a reference to them in the crush map and will show down OSDs down that no longer exist.</li>
 </ol>
-</li>
-<li>
-<p>SSH to the host name returned in the previous step.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# ssh HOST_NAME
-</code></pre></div></li>
-<li>
-<p>Unmap the device.</p>
-<ol>
-<li>
-<p>Find the RBD number.</p>
-<p>Use the CEPH_IMAGE_NAME value returned in step 4.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# rbd showmapped|grep CEPH_IMAGE_NAME
-<span style="color:#ae81ff">16</span> kube           kubernetes-dynamic-pvc-3ce9ec37-846b-11ea-acae-86f521872f4c -    /dev/**rbd16**
-</code></pre></div><p>Take note of the returned RBD number, which will be used in the next step.</p>
-</li>
-<li>
-<p>Verify it is not in use by an unstopped container.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# mount|grep RBD_NUMBER
-</code></pre></div><p>If no mount points are returned, proceed to the next step. If mount points are returned, run the following command:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# unmount MOUNT_POINT
-</code></pre></div><p><strong>Troubleshooting:</strong> If that still does not succeed, use the unmount <code>-f</code> option.</p>
-<p><strong>WARNING:</strong> If mount points are forcefully unmounted, there is a chance for data loss or corruption.</p>
-</li>
-<li>
-<p>Unmap the device.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# rbd unmap -o force /dev/RBD_NUMBER
-</code></pre></div></li>
+<p>This command assumes you have set the variables from <a href="/docs-csm/en-12/operations/node_management/rebuild_ncns/#Prerequisites">the prerequisites section</a>.</p>
+<p>This must be run from a ceph-mon node (ncn-s00[1/2/3])</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#66d9ef">for</span> osd in <span style="color:#66d9ef">$(</span>ceph osd ls-tree $NODE<span style="color:#66d9ef">)</span>; <span style="color:#66d9ef">do</span> ceph osd destroy osd.$osd --force; ceph osd purge osd.$osd --force; <span style="color:#66d9ef">done</span>
+</code></pre></div><p>Example Output:</p>
+<pre><code class="language-screen" data-lang="screen">destroyed osd.1
+purged osd.1
+destroyed osd.3
+purged osd.3
+destroyed osd.6
+purged osd.6
+destroyed osd.9
+purged osd.9
+</code></pre></li>
 </ol>
-</li>
-<li>
-<p>Check the status of the pod.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# kubectl get pod -n NAMESPACE POD_NAME
-</code></pre></div><p><strong>Troubleshooting:</strong> If the pod status has not changes, try deleting the pod to restart it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ncn-m001# kubectl delete pod -n NAMESPACE POD_NAME
-</code></pre></div></li>
-</ol>
+<p><a href="">Click Here to Proceed to the Next Step</a></p>
+<p>Or <a href="/docs-csm/en-12/operations/node_management/rebuild_ncns/">Click Here to Return to Main page</a></p>
 
 
 <footer class="footline">
@@ -13931,7 +14064,6 @@ Watchers:
             
                 
                     
-                    
                 
                 
 
@@ -13945,8 +14077,21 @@ Watchers:
             
                 
                     
-                        
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -14028,7 +14173,6 @@ Watchers:
             
                 
                     
-                    
                 
                 
 
@@ -14045,8 +14189,21 @@ Watchers:
             
                 
                     
-                        
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
                         
+            
+            
+                
                     
                 
                 
@@ -15821,11 +15978,42 @@ Watchers:
                     
             
         
+                    
+                        
+            
+            
+                
+                    
                     
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
                         
             
             
                 
+                    
                     
                 
                 
@@ -15834,11 +16022,20 @@ Watchers:
                     
                     
 
+                    
+            
+        
                     
+            
+        
+                    
                         
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -16031,6 +16228,7 @@ Watchers:
             
             
                 
+                    
                     
                 
                 
@@ -16047,6 +16245,9 @@ Watchers:
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -22402,19 +22603,19 @@ Watchers:
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/docs-csm/js/clipboard.min.js?1635477458"></script>
-    <script src="/docs-csm/js/perfect-scrollbar.min.js?1635477458"></script>
-    <script src="/docs-csm/js/perfect-scrollbar.jquery.min.js?1635477458"></script>
-    <script src="/docs-csm/js/jquery.sticky.js?1635477458"></script>
-    <script src="/docs-csm/js/featherlight.min.js?1635477458"></script>
-    <script src="/docs-csm/js/highlight.pack.js?1635477458"></script>
+    <script src="/docs-csm/js/clipboard.min.js?1635563874"></script>
+    <script src="/docs-csm/js/perfect-scrollbar.min.js?1635563874"></script>
+    <script src="/docs-csm/js/perfect-scrollbar.jquery.min.js?1635563874"></script>
+    <script src="/docs-csm/js/jquery.sticky.js?1635563874"></script>
+    <script src="/docs-csm/js/featherlight.min.js?1635563874"></script>
+    <script src="/docs-csm/js/highlight.pack.js?1635563874"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/docs-csm/js/modernizr.custom-3.6.0.js?1635477458"></script>
-    <script src="/docs-csm/js/learn.js?1635477458"></script>
-    <script src="/docs-csm/js/hugo-learn.js?1635477458"></script>
+    <script src="/docs-csm/js/modernizr.custom-3.6.0.js?1635563874"></script>
+    <script src="/docs-csm/js/learn.js?1635563874"></script>
+    <script src="/docs-csm/js/hugo-learn.js?1635563874"></script>
     
         
-            <script src="/docs-csm/mermaid/mermaid.js?1635477458"></script>
+            <script src="/docs-csm/mermaid/mermaid.js?1635563874"></script>
         
         <script>
             mermaid.initialize({ startOnLoad: true });
