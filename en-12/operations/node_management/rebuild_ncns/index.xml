@@ -6,11 +6,11 @@
     <description>Recent content in Rebuild NCNs on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 01 Nov 2021 03:15:51 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Nov 2021 03:16:14 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prepare Storage Node</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</link>
-      <pubDate>Mon, 01 Nov 2021 03:14:10 +0000</pubDate>
+      <pubDate>Tue, 02 Nov 2021 03:14:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</guid>
       <description>Prepare Storage Node Description Prepare a storage node before rebuilding it.
