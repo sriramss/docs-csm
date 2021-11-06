@@ -6,11 +6,21 @@
     <description>Recent content in Node Management on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 05 Nov 2021 03:14:19 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Nov 2021 03:14:42 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Reboot NCNs</title>
+      <link>/docs-csm/en-09/operations/node_management/reboot_ncns/</link>
+      <pubDate>Sat, 06 Nov 2021 03:14:06 +0000</pubDate>
+      
+      <guid>/docs-csm/en-09/operations/node_management/reboot_ncns/</guid>
+      <description>Reboot NCNs The following is a high-level overview of the non-compute node (NCN) reboot workflow:
+ Run the NCN pre-reboot checks and procedures:  Ensure ncn-m001 is not running in &amp;ldquo;LiveCD&amp;rdquo; or install mode Check the metal.no-wipe settings for all NCNs Enable pod priorities Run all platform health checks, including checks on the Border Gateway Protocol (BGP) peering sessions   Run the rolling NCN reboot procedure:  Loop through reboots on storage NCNs, worker NCNs, and master NCNs, where each boot consists of the following workflow: - Establish console session with NCN to reboot  Check the hostname of the NCN to be rebooted  Execute a power off/on sequence to the NCN to allow it to boot up to completion   Check the hosthame of the NCN after reboot and reset it if it is not correct  Execute NCN/platform health checks and do not go on to reboot the next NCN until health has been ensured on the most recently rebooted NCN Disconnect console session with the NCN that was rebooted       Re-run all platform health checks, including checks on BGP peering sessions  The time duration for this procedure (if health checks are being executed in between each boot, as recommended) could take between two to four hours for a system with approximately nine NCNs.</description>
+    </item>
+    
     <item>
       <title>Check And Set The `metal.no-wipe` Setting On NCNs</title>
       <link>/docs-csm/en-09/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</link>
-      <pubDate>Fri, 05 Nov 2021 03:13:45 +0000</pubDate>
+      <pubDate>Sat, 06 Nov 2021 03:14:05 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</guid>
       <description>Check and Set the metal.no-wipe Setting on NCNs Configure the metal.no-wipe setting on non-compute nodes (NCNs) to preserve data on the nodes before doing an NCN reboot.
@@ -22,21 +32,11 @@ It also requires that the CSM_SCRIPTDIR variable is defined. Set this variable a
     <item>
       <title>Enable Kdump</title>
       <link>/docs-csm/en-09/operations/node_management/enable_kdump/</link>
-      <pubDate>Fri, 05 Nov 2021 03:13:45 +0000</pubDate>
+      <pubDate>Sat, 06 Nov 2021 03:14:05 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/enable_kdump/</guid>
       <description>Enable Kdump CSM 0.9.x does not have kdump enabled by default. It is necessary to run the workaround script on each NCN when rebuilding them.
 ncn-m001# /opt/cray/csm/workarounds/livecd-post-reboot/CASMINST-3341/CASMINST-3341.sh </description>
-    </item>
-    
-    <item>
-      <title>Reboot NCNs</title>
-      <link>/docs-csm/en-09/operations/node_management/reboot_ncns/</link>
-      <pubDate>Fri, 05 Nov 2021 03:13:45 +0000</pubDate>
-      
-      <guid>/docs-csm/en-09/operations/node_management/reboot_ncns/</guid>
-      <description>Reboot NCNs The following is a high-level overview of the non-compute node (NCN) reboot workflow:
- Run the NCN pre-reboot checks and procedures:  Ensure ncn-m001 is not running in &amp;ldquo;LiveCD&amp;rdquo; or install mode Check the metal.no-wipe settings for all NCNs Enable pod priorities Run all platform health checks, including checks on the Border Gateway Protocol (BGP) peering sessions   Run the rolling NCN reboot procedure:  Loop through reboots on storage NCNs, worker NCNs, and master NCNs, where each boot consists of the following workflow: - Establish console session with NCN to reboot  Check the hostname of the NCN to be rebooted  Execute a power off/on sequence to the NCN to allow it to boot up to completion   Check the hosthame of the NCN after reboot and reset it if it is not correct  Execute NCN/platform health checks and do not go on to reboot the next NCN until health has been ensured on the most recently rebooted NCN Disconnect console session with the NCN that was rebooted       Re-run all platform health checks, including checks on BGP peering sessions  The time duration for this procedure (if health checks are being executed in between each boot, as recommended) could take between two to four hours for a system with approximately nine NCNs.</description>
     </item>
     
   </channel>
