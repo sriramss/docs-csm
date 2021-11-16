@@ -6,27 +6,27 @@
     <description>Recent content in Spire on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Nov 2021 18:41:43 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/spire/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 19:15:15 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/spire/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshoot Spire Failing To Start On NCNs</title>
+      <link>/docs-csm/en-12/operations/spire/troubleshoot_spire_failing_to_start_on_ncns/</link>
+      <pubDate>Tue, 16 Nov 2021 19:14:08 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/spire/troubleshoot_spire_failing_to_start_on_ncns/</guid>
+      <description>Troubleshoot Spire Failing to Start on NCNs The spire-agent service may fail to start on Kubernetes non-compute nodes (NCNs). A key indication of this failure is when logging errors occur with the journalctl command. The following are logging errors that will indicate if the spire-agent is failing to start:
+ The join token does not exist or has already been used message is returned The last lines of the logs contain multiple lines of systemd[1]: spire-agent.</description>
+    </item>
+    
     <item>
       <title>Restore Spire Postgres Without An Existing Backup</title>
       <link>/docs-csm/en-12/operations/spire/restore_spire_postgres_without_a_backup/</link>
-      <pubDate>Tue, 16 Nov 2021 18:40:36 +0000</pubDate>
+      <pubDate>Tue, 16 Nov 2021 19:14:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/spire/restore_spire_postgres_without_a_backup/</guid>
       <description>Restore Spire Postgres without an Existing Backup Reinstall the Spire helm chart in the event that spire-postgres databases cannot be restored from a backup.
 Uninstall Spire   Uninstall the Spire helm chart.
 ncn# helm uninstall -n spire spire   Wait for the pods in the Spire namespace to terminate. Once that is done, remove the spire-data-server pvcs.
 ncn# kubectl get pvc -n spire | grep spire-data-spire-server | awk &amp;#39;{print $1}&amp;#39; | xargs kubectl delete -n spire pvc   Disable spire-agent on all of the Kubernetes NCNs and delete the join data.</description>
-    </item>
-    
-    <item>
-      <title>Troubleshoot Spire Failing To Start On NCNs</title>
-      <link>/docs-csm/en-12/operations/spire/troubleshoot_spire_failing_to_start_on_ncns/</link>
-      <pubDate>Tue, 16 Nov 2021 18:40:36 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/spire/troubleshoot_spire_failing_to_start_on_ncns/</guid>
-      <description>Troubleshoot Spire Failing to Start on NCNs The spire-agent service may fail to start on Kubernetes non-compute nodes (NCNs). A key indication of this failure is when logging errors occur with the journalctl command. The following are logging errors that will indicate if the spire-agent is failing to start:
- The join token does not exist or has already been used message is returned The last lines of the logs contain multiple lines of systemd[1]: spire-agent.</description>
     </item>
     
   </channel>

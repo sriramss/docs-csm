@@ -6,11 +6,11 @@
     <description>Recent content in DNS on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Nov 2021 18:40:38 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/network/dns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 19:14:10 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/network/dns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Manage The DNS Unbound Resolver</title>
       <link>/docs-csm/en-10/operations/network/dns/manage_the_dns_unbound_resolver/</link>
-      <pubDate>Tue, 16 Nov 2021 18:39:22 +0000</pubDate>
+      <pubDate>Tue, 16 Nov 2021 19:12:53 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/network/dns/manage_the_dns_unbound_resolver/</guid>
       <description>Manage the DNS Unbound Resolver The unbound DNS instance is used to resolve names for the physical equipment on the management networks within the system, such as NCNs, UANs, switches, compute nodes, and more. This instance is accessible only within the HPE Cray EX system.
@@ -21,7 +21,7 @@ ncn-w001# kubectl get -n services pods | grep unbound cray-dns-unbound-696c58647
     <item>
       <title>Troubleshoot Common DNS Issues</title>
       <link>/docs-csm/en-10/operations/network/dns/troubleshoot_common_dns_issues/</link>
-      <pubDate>Tue, 16 Nov 2021 18:39:22 +0000</pubDate>
+      <pubDate>Tue, 16 Nov 2021 19:12:53 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/network/dns/troubleshoot_common_dns_issues/</guid>
       <description>Troubleshoot Common DNS Issues The Domain Name Service (DNS) is part of an integrated infrastructure set designed to provide dynamic host discovery, addressing, and naming. There are several different place to look for troubleshooting as DNS interacts with Dynamic Host Configuration Protocol (DHCP), the Hardware Management Service (HMS), the System Layout Service (SLS), and the State Manager Daemon (SMD).
@@ -31,7 +31,7 @@ The information below describes what to check when experiencing issues with DNS.
     <item>
       <title>Domain Name Service (DNS)</title>
       <link>/docs-csm/en-10/operations/network/dns/dns/</link>
-      <pubDate>Tue, 16 Nov 2021 18:39:21 +0000</pubDate>
+      <pubDate>Tue, 16 Nov 2021 19:12:52 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/network/dns/dns/</guid>
       <description>Domain Name Service (DNS) The central DNS infrastructure provides the structural networking hierarchy and datastore for the system. All DNS requests are managed by resolvers, not by the central DNS infrastructure. Resolvers provide the following within DNS:
@@ -44,7 +44,7 @@ For example, disallowing cross-network DNS lookups.
     <item>
       <title>Enable Ncsd On UANs</title>
       <link>/docs-csm/en-10/operations/network/dns/enable_ncsd_on_uans/</link>
-      <pubDate>Tue, 16 Nov 2021 18:39:21 +0000</pubDate>
+      <pubDate>Tue, 16 Nov 2021 19:12:52 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/network/dns/enable_ncsd_on_uans/</guid>
       <description>Enable ncsd on UANs Configure User Access Nodes (UANs) to start the ncsd service at boot time.
