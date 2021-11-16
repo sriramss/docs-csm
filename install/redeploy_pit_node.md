@@ -161,14 +161,20 @@ the Kubernetes cluster as the final of three master nodes forming a quorum.
         export CEPH_VERSION=x.y.z
         ```
 
-    1. Run the `export` commands listed at the end of the output from the previous step.
+    3. Run the `export` commands listed at the end of the output from the previous step.
 
 1. <a name="csi-handoff-bss-metadata"></a>Upload the same `data.json` file we used to BSS, our Kubernetes cloud-init DataSource. 
-   
-   __If you have made any changes__ to this file as a result of any customizations or workarounds, use the path to that file instead. This step will prompt for the root password of the NCNs.
+
+    __If you have made any changes__ to this file as a result of any customizations or workarounds, use the path to that file instead. This step will prompt for the root password of the NCNs.
 
     ```bash
     pit# csi handoff bss-metadata --data-file /var/www/ephemeral/configs/data.json || echo "ERROR: csi handoff bss-metadata failed"
+    ```
+
+1. Patch the metadata for the CEPH nodes to have the correct run commands:
+
+    ```bash
+    pit# python3 /usr/share/doc/csm/scripts/patch-ceph-runcmd.py
     ```
 
 1. Ensure the DNS server value is correctly set to point toward Unbound at `10.92.100.225`.
@@ -212,7 +218,7 @@ the Kubernetes cluster as the final of three master nodes forming a quorum.
     pit# efibootmgr | grep -Ei "ip(v4|4)"
     ```
 
-1. Set and trim the boot order on the PIT node.
+1. Set the boot order and trim the boot order on the PIT node.
 
     In [Deploy Management Nodes](deploy_management_nodes.md#configure-and-trim-uefi-entries), this procedure was done on the other NCNs. Now it is time to do it on the PIT node. See [Setting Boot Order](../background/ncn_boot_workflow.md#setting-order) and [Trimming Boot Order](../background/ncn_boot_workflow.md#trimming_boot_order).
 
@@ -503,33 +509,33 @@ the Kubernetes cluster as the final of three master nodes forming a quorum.
 <a name="configure-dns-and-ntp-on-each-bmc"></a>
 ### 6. Configure DNS and NTP on each BMC
 
- > **`NOTE`** If the system uses Gigabyte or Intel hardware, skip this section.
+ > **`NOTE`** If the system uses Gigabyte nodes or Intel nodes, skip this section.
 
-Perform the following steps on every NCN **except ncn-m001**.
+The following steps will configure DNS and NTP on the BMC for each management node **except ncn-m001**.
 
 1. Set environment variables. Make sure to set the appropriate value for the `IPMI_PASSWORD` variable.
 
     ```bash
-    ncn# export IPMI_PASSWORD=changeme
-    ncn# export USERNAME=root
+    ncn-m001# export IPMI_PASSWORD=changeme
+    ncn-m001# export USERNAME=root
     ```
 
 1. Disable DHCP and configure NTP on the BMC using data from cloud-init.
 
     ```bash
-    ncn# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -S -n
+    ncn-m001# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -S -n
     ```
 
 1. Configure DNS on the BMC using data from cloud-init.
 
     ```bash
-    ncn# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -d
+    ncn-m001# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -d
     ```
 
 1. (Optional) View the settings of the BMC:
 
     ```bash
-    ncn# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -s
+    ncn-m001# /opt/cray/csm/scripts/node_management/set-bmc-ntp-dns.sh ilo -H "$(hostname)-mgmt" -s
     ```
 
 <a name="validate-bootraid-artifacts"></a>

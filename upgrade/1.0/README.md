@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This document is intended to guide an administrator through the upgrade process going from Cray Systems Management v0.9 to v1.0. When upgrading a system, this top-level README.md file should be followed top to bottom, and the content on this top level page is meant to be terse. See the additional files in the various directories under the resource_material directory for additional reference material in support of the process/scripts mentioned explicitly on this page.
+This document is intended to guide an administrator through the upgrade process going from Cray Systems Management v0.9.4 or later to v1.0. When upgrading a system, this top-level README.md file should be followed top to bottom, and the content on this top level page is meant to be terse. See the additional files in the various directories under the resource_material directory for additional reference material in support of the process/scripts mentioned explicitly on this page.
 
 ## Terminology
 
@@ -60,8 +60,9 @@ Please see [Troubleshoot Postgres Database](../../operations/kubernetes/Troubles
 
 ### Troubleshooting Spire Pods Not Staring on NCNs
 
-Please see [Troubleshoot SPIRE Failing to Start on NCNs](../../operations/security_and_authentication/Troubleshoot_SPIRE_Failing_to_Start_on_NCNs.md).
-`
+Please see [Troubleshoot Spire Failing to Start on NCNs](../../operations/spire/Troubleshoot_Spire_Failing_to_Start_on_NCNs.md).
+
+
 ### Rerun a step/script
 
 When running upgrade scripts, each script record what has been done successfully on a node. This `state` file is stored at `/ect/cray/upgrade/csm/{CSM_VERSION}/{NAME_OF_NODE}/state`. If a rerun is required, you will need to remove the recorded steps from this file.

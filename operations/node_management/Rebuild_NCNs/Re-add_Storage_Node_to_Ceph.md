@@ -6,6 +6,8 @@
 
 1. Copy and paste the below script into `/srv/cray/scripts/common/join_ceph_cluster.sh`
 
+   **NOTE:** This script may also available in the `/usr/share/doc/csm/scripts` directory where the latest ***docs-csm*** rpm is installed. If so, it can be copied from that node to the new storage node being rebuilt and skip to step 2.
+
    ```bash
    #!/bin/bash
    
@@ -16,10 +18,15 @@
    > ~/.ssh/known_hosts
    
    for node in ncn-s001 ncn-s002 ncn-s003; do
+     ssh-keyscan -H "$node" >> ~/.ssh/known_hosts
+     pdsh -w $node > ~/.ssh/known_hosts
+     if [[ "$host" == "$node" ]]; then
+       continue
+     fi
+
      if [[ $(nc -z -w 10 $node 22) ]] || [[ $counter -lt 3 ]]
      then
-       ssh-keyscan -H "$node" >> ~/.ssh/known_hosts
-       if [[ "$host" =~ ^("ncn-s001"|"ncn-s002"|"ncn-s003")$ ]] && [[ "$host" != "$node" ]]
+       if [[ "$host" =~ ^("ncn-s001"|"ncn-s002"|"ncn-s003")$ ]]
        then
          scp $node:/etc/ceph/* /etc/ceph
        else
@@ -91,13 +98,13 @@
    /srv/cray/scripts/common/join_ceph_cluster.sh
    ```
 
-   **IMPORTANT:** While watching your window running `watch ceph -s` you will see the health go to a  HEALTH_WARN state.  This is expected.  Most commonly you will see an alert about "failed to probe daemons or devices" and this will clear.
+   **IMPORTANT:** While watching your window running `watch ceph -s` you will see the health go to a `HEALTH_WARN` state. This is expected. Most commonly you will see an alert about "failed to probe daemons or devices" and this will clear.
 
 ## Zapping OSDs
 
    **IMPORTANT:** Only do this if you were not able to wipe the node prior to rebuild.
 
-   **NOTE:** The commands in the Zapping OSDs section will need to be run from a node running ceph-mon.  Typically ncn-s00(1/2/3).
+   **NOTE:** The commands in the Zapping OSDs section will need to be run from a node running ceph-mon. Typically ncn-s00(1/2/3).
 
 1. Find the devices on the node being rebuilt
 
@@ -117,9 +124,9 @@
    ncn-s003  /dev/sdh  ssd   S455NY0MB42468  1920G  Unknown  N/A    N/A    No
    ```
 
-   **IMPORTANT:** In the above example the drives on our rebuilt node are showing "Available = no".  This is expected since the check is based on the presence of an lvm on the volume.
+   **IMPORTANT:** In the above example the drives on our rebuilt node are showing "Available = no". This is expected because the check is based on the presence of an LVM on the volume.
 
-   **NOTE:** The `ceph orch device ls $NODE` command excludes the drives being used for the OS.  Please double check that you are not seeing OS drives.  These will have a size of 480G.
+   **NOTE:** The `ceph orch device ls $NODE` command excludes the drives being used for the OS. Please double check that you are not seeing OS drives. These will have a size of 480G.
 
 1. Zap the drives
 
@@ -136,7 +143,7 @@
    watch ceph -s
    ```
 
-   You will see the OSD count UP and IN counts increase.  **If** you see your **IN** count increase but not reflect the amount of drives being added back in, then you will need to fail over the ceph mgr daemon.  This is a known bug and is addressed in newer releases.
+   You will see the OSD count UP and IN counts increase. **If** you see your **IN** count increase but not reflect the amount of drives being added back in, then you will need to fail over the ceph mgr daemon. This is a known bug and is addressed in newer releases.
 
    If you need to fail over the ceph-mgr daemon please run:
 
@@ -146,7 +153,7 @@
 
 ## Regenerate Rados-GW Load Balancer Configuration for the Rebuilt Nodes
 
-   **IMPORTANT:** Radosgw by default is deployed to the first 3 storage nodes.  This includes haproxy and keepalived.  This is automated as part of the install, but you may have to regenerate the configuration if you are not running on the first 3 storage nodes or all nodes.  Please see the 2 examples in step 1.
+   **IMPORTANT:** Radosgw by default is deployed to the first 3 storage nodes. This includes haproxy and keepalived. This is automated as part of the install, but you may have to regenerate the configuration if you are not running on the first 3 storage nodes or all nodes. Please see the 2 examples in step 1.
 
 1. Deploy Rados Gateway containers to the new nodes.
 

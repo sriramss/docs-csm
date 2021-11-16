@@ -66,7 +66,7 @@ If you are reinstalling a system, the BMCs for the NCNs may be set to static IP 
 ```bash
 ncn# export USERNAME=root
 ncn# export IPMI_PASSWORD=changeme
-ncn# for h in $( grep mgmt /etc/dnsmasq.d/statics.conf | grep -v m001 | awk -F ',' '{print $2}' )
+ncn# for h in $( grep mgmt /etc/hosts | grep -v m001 | awk -F ',' '{print $2}' )
 do
 ipmitool -U $USERNAME -I lanplus -H $h -E lan set 1 ipsrc dhcp
 done
@@ -77,7 +77,7 @@ Some BMCs need a cold reset in order to pick up this change fully:
 ```bash
 ncn# export USERNAME=root
 ncn# export IPMI_PASSWORD=changeme
-ncn# for h in $( grep mgmt /etc/dnsmasq.d/statics.conf | grep -v m001 | awk -F ',' '{print $2}' )
+ncn# for h in $( grep mgmt /etc/hosts | grep -v m001 | awk -F ',' '{print $2}' )
 do
 ipmitool -U $USERNAME -I lanplus -H $h -E mc reset cold
 done
@@ -89,7 +89,7 @@ done
 - `ipmitool` can set and edit boot order; it works better for some vendors based on their BMC implementation
 - `efibootmgr` speaks directly to the node's UEFI; it can only be ignored by new BIOS activity
 
-> **`NOTE`** Cloud-init will set boot order when it runs, but this does not always work with certain hardware vendors.
+> **`NOTE`** Cloud-init will set boot order when it runs, but this does not always work with certain hardware vendors. An administrator can invoke the cloud-init script at `/srv/cray/scripts/metal/set-efi-bbs.sh` on any NCN. Find the script [here, on GitHub](https://github.com/Cray-HPE/node-image-build/blob/lts/csm-1.0/boxes/ncn-common/files/scripts/metal/set-efi-bbs.sh).
 
 <a name="setting-order"></a>
 ## Setting Order

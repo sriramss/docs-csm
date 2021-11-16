@@ -41,6 +41,8 @@ Fetch the base installation CSM tarball and extract it, installing the contained
 
    **Important:** Download to a location that has sufficient space for both the tarball and the expanded tarball.
 
+   > Note: Expansion of the tarball may take more than 45 minutes.
+
    The rest of this procedure will use the CSM_RELEASE variable and expect to have the
    contents of the CSM software release tarball plus any patches, workarounds, or hotfixes.
 
@@ -368,7 +370,7 @@ Some files are needed for generating the configuration payload. See these topics
           --can-dynamic-pool 10.103.11.128/25 \
           --nmn-cidr 10.252.0.0/17 \
           --hmn-cidr 10.254.0.0/17 \
-          --ntp-pool time.nist.gov \
+          --ntp-pools time.nist.gov \
           --site-domain dev.cray.com \
           --site-ip 172.30.53.79/20 \
           --site-gw 172.30.48.1 \
@@ -402,7 +404,7 @@ Some files are needed for generating the configuration payload. See these topics
       * An override to default cabinet IPv4 subnets can be made with the `hmn-mtn-cidr` and `nmn-mtn-cidr` parameters.
       * By default, spine switches are used as MetalLB peers. Use `--bgp-peers aggregation` to use aggregation switches instead.
       * Several parameters (`can-gateway`, `can-cidr`, `can-static-pool`, `can-dynamic-pool`) describe the CAN (Customer Access network). The `can-gateway` is the common gateway IP address used for both spine switches and commonly referred to as the Virtual IP address for the CAN. The `can-cidr` is the IP subnet for the CAN assigned to this system. The `can-static-pool` and `can-dynamic-pool` are the MetalLB address static and dynamic pools for the CAN. The `can-external-dns` is the static IP address assigned to the DNS instance running in the cluster to which requests the cluster subdomain will be forwarded. The `can-external-dns` IP address must be within the `can-static-pool` range.
-      * Set `ntp-pool` to a reachable NTP server
+      * Set `ntp-pools` to reachable NTP pools
 
       These warnings from `csi config init` for issues in `hmn_connections.json` can be ignored.
       * The node with the external connection (`ncn-m001`) will have a warning similar to this because its BMC is connected to the site and not the HMN like the other management NCNs. It can be ignored.
@@ -549,9 +551,9 @@ This will enable SSH, and other services when the LiveCD starts.
 1. Quit the typescript session with the `exit` command and copy the file (csm-install-usb.<date>.txt) to the data partition on the USB drive.
 
     ```bash
-    linux# mkdir -pv /mnt/pitdata/prep/logs
+    linux# mkdir -pv /mnt/pitdata/prep/admin
     linux# exit
-    linux# cp ~/csm-install-usb.*.txt /mnt/pitdata/prep/logs
+    linux# cp ~/csm-install-usb.*.txt /mnt/pitdata/prep/admin
     ```
 
 1. Unmount the data partition:
@@ -663,8 +665,8 @@ On first login (over SSH or at local console) the LiveCD will prompt the adminis
 1. Start a typescript to record this section of activities done on ncn-m001 while booted from the LiveCD.
 
    ```bash
-   pit# mkdir -pv /var/www/ephemeral/prep/logs
-   pit# script -af /var/www/ephemeral/prep/logs/booted-csm-livecd.$(date +%Y-%m-%d).txt
+   pit# mkdir -pv /var/www/ephemeral/prep/admin
+   pit# script -af /var/www/ephemeral/prep/admin/booted-csm-livecd.$(date +%Y-%m-%d).txt
    pit# export PS1='\u@\H \D{%Y-%m-%d} \t \w # '
    ```
 
