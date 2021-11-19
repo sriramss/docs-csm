@@ -36,35 +36,27 @@ fi
 #     exit 2
 # fi
 
-# upgrade_ntp_timezone_metadata() will query a data.json to pull out the new ntp keys and then push them back into bss
-upgrade_ntp_timezone_metadata() {
-  local ntp_query
-  local ntp_payload
-  local timezone_query
-  local timezone_payload
+# upgrade_ipam_metadata() will query a data.json to pull out the new key/value pairs
+upgrade_ipam_metadata() {
+  local query
+  local payload
   local upgrade_file
-  # jq -r '.["b8:59:9f:fe:49:f1"]["user-data"]["ntp"]' ntp.json
-  for k in $(jq -r 'to_entries[] | "\(.key)"' data.json)
+  # jq -r '.["b8:59:9f:fe:49:f1"]'
+  for k in $(jq -r 'to_entries[] | "\(.key)"."meta-data"."ipam"' data.json)
   do
     # if it is not the global key, it is one of the host records we need to manipulate
     if ! [[ "$k" == "Global" ]]; then
       # shellcheck disable=SC2089
-      ntp_query=".[\"$k\"][\"user-data\"][\"ntp\"]"
+      query=".[\"$k\"][\"meta-data\"][\"ipam\"]"
       # shellcheck disable=SC2090
-      ntp_payload="$(jq $ntp_query data.json)"
-
-      # shellcheck disable=SC2089
-      timezone_query=".[\"$k\"][\"user-data\"][\"timezone\"]"
-      # shellcheck disable=SC2090
-      timezone_payload="$(jq $timezone_query data.json)"
+      payload="$(jq $query data.json)"
 
       # save the payload to a unique file
       upgrade_file="upgrade-metadata-${k//:}.json"
       cat <<EOF>"$upgrade_file"
 {
-  "user-data": {
-    "ntp": $ntp_payload,
-    "timezone": $timezone_payload
+  "meta-data": {
+    "ipam": $payload
   }
 }
 EOF
@@ -72,7 +64,7 @@ EOF
       csi handoff bss-update-cloud-init --user-data="$upgrade_file" --limit=${UPGRADE_XNAME}
     fi
   done
-  # jq -r 'keys[] as $k | "\($k), \(.[$k] | .["user-data"]["ntp"])"' data.json
+  # jq -r 'keys[] as $k | "\($k), \(.[$k] | .["meta-data"]["ipam"])"' data.json
 }
 
 # patch_in_new_metadata() will mount PITDATA and run 'csi config init' in order to grab the newly-generated data.json and then push it into bss
@@ -116,17 +108,17 @@ patch_in_new_metadata() {
       && [[ -f "$system_config" ]]; then
         # find the system name
         system_name=$(awk '/system-name/ {print $2}' "$system_config")
-        if ! [[ -d "$prep_dir/$system_name-0.9" ]]; then
+        if ! [[ -d "$prep_dir/$system_name-1.0" ]]; then
           pushd "$prep_dir" || exit 1
             # move the original generated configs out of the way
-            mv "$system_name" "$system_name-0.9"
+            mv "$system_name" "$system_name-1.0"
             echo "Generating new config payload for $system_name with csi..."
             # Run config init to get the new metadata
             csi config init
-            echo "Getting new ntp metadata..."
+            echo "Getting new metadata..."
             # handoff the new data to bss
             pushd "$system_name/basecamp" || exit 1
-              upgrade_ntp_timezone_metadata
+              upgrade_ipam_metadata
             popd || exit 1
           popd || exit 1
         fi
