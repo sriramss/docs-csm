@@ -6,11 +6,21 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 18 Nov 2021 03:07:16 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 19 Nov 2021 03:07:28 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.12</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
+      <pubDate>Fri, 19 Nov 2021 03:06:24 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
+      <description>Stage 1 - Kubernetes Upgrade from 1.19.9 to 1.20.12  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
+ Stage 1.1   Run ncn-upgrade-k8s-master.sh for ncn-m002.</description>
+    </item>
+    
     <item>
       <title>Stage 2 - Ceph Image Upgrade</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:16 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 03:06:24 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
       <description>Stage 2 - Ceph image upgrade   Run ncn-upgrade-ceph-nodes.sh for ncn-s001. Follow output of the script carefully. The script will pause for manual interaction.
@@ -22,7 +32,7 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.
     <item>
       <title>Stage 3 - Service Upgrades</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:16 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 03:06:24 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
       <description>Stage 3 - CSM Service Upgrades Run csm-service-upgrade.sh to deploy upgraded CSM applications and services:
@@ -32,7 +42,7 @@ ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/csm-service-upgrade.sh 
     <item>
       <title>Stage 4 - Workaround For Mac-learning Issue With Aruba 8325 Switches</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_4/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:16 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 03:06:24 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_4/</guid>
       <description>Stage 4 - Workaround for MAC-learning issue with Aruba 8325 switches Issue description:
@@ -48,7 +58,7 @@ Aruba release notes</description>
     <item>
       <title>1.1.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
       <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:15 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 03:06:23 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
       <description>CSM 1.1.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc
@@ -58,22 +68,12 @@ Introduction This document is intended to guide an administrator through the upg
     <item>
       <title>Stage 0 - Prerequisites And Preflight Checks</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:15 +0000</pubDate>
+      <pubDate>Fri, 19 Nov 2021 03:06:23 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
       <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-1.1.0 is required in order to upgrade to CSM-1.2.0
 NOTE: Installed CSM versions may be listed from the product catalog using the following command. This will sort a semantic version without a hyphenated suffix after the same semantic version with a hyphenated suffix, e.g. 1.0.0 &amp;gt; 1.0.0-beta.19.
  Use the following command can be used to check the CSM version on the system:</description>
-    </item>
-    
-    <item>
-      <title>Stage 1 - Kubernetes Upgrade From 1.19.9 To 1.20.12</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
-      <pubDate>Thu, 18 Nov 2021 03:06:15 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
-      <description>Stage 1 - Kubernetes Upgrade from 1.19.9 to 1.20.12  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
- Stage 1.1   Run ncn-upgrade-k8s-master.sh for ncn-m002.</description>
     </item>
     
   </channel>
