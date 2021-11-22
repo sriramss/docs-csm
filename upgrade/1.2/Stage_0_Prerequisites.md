@@ -13,6 +13,153 @@ ncn# kubectl get cm -n services cray-product-catalog -o json | jq -r '.data.csm'
 
 This check will also be conducted in the 'prerequisites.sh' script listed below and will fail if the system is not running CSM-0.9.4 or CSM-0.9.5.
 
+
+### Update cloud-init metadata
+
+Since CSM v1.x, new metadata has been included with each minor release.  
+
+- In 1.0, new NTP metadata was added to facilitate the cloud-init cc_ntp module
+- In 1.1 new metadata was added to facilitate the cloud-init cc_network module
+
+Future versions are likely to include new metadata.  This is not a problem for fresh installs since the metadata is generated during `csi config init` at the start of an install.  For upgrades, however, that metadata does not exist anywhere, so it needs to be created prior to an upgrade.
+
+For 1.0 to 1.2 upgrades, the following metadata needs to be updated.
+
+**a new `ipam` key added to each host under the `meta-data` key**:
+
+```bash
+cat <<EOF>ipam.json
+{
+"meta-data": {
+ "ipam": {
+  "can": {
+    "gateway": "10.102.9.129",
+    "ip": "10.102.9.137/25",
+    "parent_device": "bond0",
+    "vlanid": 7
+  },
+  "cmn": {
+    "gateway": "10.102.9.1",
+    "ip": "10.102.9.9/25",
+    "parent_device": "bond0",
+    "vlanid": 6
+  },
+  "hmn": {
+    "gateway": "10.254.1.4",
+    "ip": "10.254.1.12/17",
+    "parent_device": "bond0",
+    "vlanid": 4
+  },
+  "mtl": {
+    "gateway": "10.1.1.2",
+    "ip": "10.1.1.6/16",
+    "parent_device": "bond0",
+    "vlanid": 0
+  },
+  "nmn": {
+    "gateway": "10.252.0.1",
+    "ip": "10.252.1.8/17",
+    "parent_device": "bond0",
+    "vlanid": 2
+  }
+}
+}
+}
+EOF
+
+csi handoff bss-update-cloud-init --user-data=ipam.json --limit=${UPGRADE_XNAME}
+```
+
+**The `runcmd` needs to be updated on k8s nodes in the `user-data` key**:
+
+```bash
+cat <<EOF>k8s-runcmd-user-data.json
+{
+  "user-data": {
+    "runcmd": [
+      "/srv/cray/scripts/metal/net-init.sh",
+      "/srv/cray/scripts/common/update_ca_certs.py",
+      "/srv/cray/scripts/metal/install.sh",
+      "/srv/cray/scripts/common/kubernetes-cloudinit.sh",
+      "/srv/cray/scripts/join-spire-on-storage.sh",
+      "touch /etc/cloud/cloud-init.disabled"
+    ]
+  }
+}
+EOF
+
+csi handoff bss-update-cloud-init --user-data=k8s-runcmd-user-data.json --limit=${UPGRADE_XNAME}
+```
+
+**The primary storage node needs it's `runcmd` updated**:
+
+```bash
+cat <<EOF>first-ceph-runcmd-user-data.json
+{
+  "user-data": {
+    "runcmd": [
+      "/srv/cray/scripts/metal/net-init.sh",
+      "/srv/cray/scripts/common/update_ca_certs.py",
+      "/srv/cray/scripts/metal/install.sh",
+      "/srv/cray/scripts/common/pre-load-images.sh",
+      "touch /etc/cloud/cloud-init.disabled",
+      "/srv/cray/scripts/common/ceph-enable-services.sh"
+    ]
+  }
+}
+EOF
+
+csi handoff bss-update-cloud-init --user-data=first-ceph-runcmd-user-data.json --limit=${UPGRADE_XNAME}
+```
+
+**The other storage nodes also needs to have their `runcmd` updated**:
+
+```bash
+cat <<EOF>ceph-worker-runcmd-user-data.json
+{
+  "user-data": {
+    "runcmd": [
+      "/srv/cray/scripts/metal/net-init.sh",
+      "/srv/cray/scripts/common/update_ca_certs.py",
+      "/srv/cray/scripts/metal/install.sh",
+      "/srv/cray/scripts/common/pre-load-images.sh",
+      "touch /etc/cloud/cloud-init.disabled",
+      "/srv/cray/scripts/common/ceph-enable-services.sh"
+    ]
+  }
+}
+EOF
+
+csi handoff bss-update-cloud-init --user-data=ceph-worker-runcmd-user-data.json --limit=${UPGRADE_XNAME}
+```
+
+The `write_files` key needs to be updated with the new interface names:
+
+```bash
+cat <<EOF>write_files.json
+{
+  "user-data": {
+    "write_files": [
+      {
+        "content": "10.106.0.0/22 10.252.0.1 - bond0.nmn0\n10.1.0.0/16 10.252.0.1 - bond0.nmn0\n10.92.100.0/24 10.252.0.1 - bond0.nmn0\n",
+        "owner": "root:root",
+        "path": "/etc/sysconfig/network/ifroute-bond0.nmn0",
+        "permissions": "0644"
+      },
+      {
+        "content": "10.107.0.0/22 10.254.0.1 - bond0.hmn0\n10.94.100.0/24 10.254.0.1 - bond0.hmn0\n",
+        "owner": "root:root",
+        "path": "/etc/sysconfig/network/ifroute-bond0.hmn0",
+        "permissions": "0644"
+      }
+    ]
+  }
+}
+EOF
+
+csi handoff bss-update-cloud-init --user-data=write_files.json --limit=${UPGRADE_XNAME}
+```
+
 ## Stage 0.1 - Install latest docs RPM
 
 1. Install latest document RPM package:
