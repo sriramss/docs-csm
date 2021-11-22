@@ -52,11 +52,42 @@ upgrade_ipam_metadata() {
       payload="$(jq $query data.json)"
 
       # save the payload to a unique file
-      upgrade_file="upgrade-metadata-${k//:}.json"
+      upgrade_file="upgrade-ipam-${k//:}.json"
       cat <<EOF>"$upgrade_file"
 {
   "meta-data": {
     "ipam": $payload
+  }
+}
+EOF
+      # handoff the new payload to bss
+      csi handoff bss-update-cloud-init --user-data="$upgrade_file" --limit=${UPGRADE_XNAME}
+    fi
+  done
+  # jq -r 'keys[] as $k | "\($k), \(.[$k] | .["meta-data"]["ipam"])"' data.json
+}
+
+# upgrade_write_files_metadata() will query a data.json to pull out the new key/value pairs
+upgrade_write_files_metadata() {
+  local query
+  local payload
+  local upgrade_file
+  # jq -r '.["b8:59:9f:fe:49:f1"]'
+  for k in $(jq -r 'to_entries[] | "\(.key)"."user-data"."write_files"' data.json)
+  do
+    # if it is not the global key, it is one of the host records we need to manipulate
+    if ! [[ "$k" == "Global" ]]; then
+      # shellcheck disable=SC2089
+      query=".[\"$k\"][\"user-data\"][\"write_files\"]"
+      # shellcheck disable=SC2090
+      payload="$(jq $query data.json)"
+
+      # save the payload to a unique file
+      upgrade_file="upgrade-write_files-${k//:}.json"
+      cat <<EOF>"$upgrade_file"
+{
+  "user-data": {
+    "write_files": $payload
   }
 }
 EOF
