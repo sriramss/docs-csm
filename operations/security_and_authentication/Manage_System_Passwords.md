@@ -51,7 +51,7 @@ The initial Gitea login credentials for the `crayvcs` username are stored in thr
 
 - Keycloak - These credentials are used to allow access to the Gitea UI. They must be changed through Keycloak.
 
-**IMPORTANT:** These three sources of credentials are not currently synced by any mechanism, and so changing the default password requires that it be changed in all three places. Changing only one many result in difficulty determining the password at a later date, or may result in lost access to Gitea.
+> **IMPORTANT:** These three sources of credentials are not currently synced by any mechanism, and so changing the default password requires that it be changed in all three places. Changing only one many result in difficulty determining the password at a later date, or may result in lost access to Gitea.
 
 
 
@@ -59,7 +59,7 @@ The initial Gitea login credentials for the `crayvcs` username are stored in thr
 
 The default username is admin.
 
-**NOTE:** Contact HPE Cray service in order to obtain the default password for Grafana and Kiali.
+> **NOTE:** Contact HPE Cray service in order to obtain the default password for Grafana and Kiali.
 
 
 
@@ -67,7 +67,7 @@ The default username is admin.
 
 Each rack type includes a different set of passwords. During different stages of installation, these passwords are subject to change. 
 
-**NOTE:** Contact HPE Cray service in order to obtain the default passwords.
+> **NOTE:** Contact HPE Cray service in order to obtain the default passwords.
 
 The tables below include the default login credentials for each rack type. These passwords can be changed by going into the console on a given switch and changing it. However, if the user gets locked out attempting to change the password or the configuration gets corrupted for an individual switch, it can wipe out the entire network configuration for the system.
 
@@ -120,7 +120,7 @@ Three accounts are created by default:
 - ReadOnly - Log in, configure self, and read values
     - Username: guest
 
-**NOTE:** Contact HPE Cray service in order to obtain the default passwords.
+> **NOTE:** Contact HPE Cray service in order to obtain the default passwords.
 
 The System Configuration Service (SCSD) is used to set the credentials for Redfish BMCs.
 Refer to [Set BMC Credentials](../system_configuration_service/Set_BMC_Credentials.md) for more information.
@@ -239,7 +239,7 @@ Update an account's password with the `curl` command:
 > **WARNING**: Changing Redfish credentials outside of Cray System Management (CSM) services may cause the Redfish device to be no longer manageable under CSM.
 > If the credentials for other devices need to be changed, refer to the following device-specific credential changing procedures:
 > - To change liquid-cooled BMC credentials, refer to [Change Cray EX Liquid-Cooled Cabinet Global Default Password](../security_and_authentication/Change_EX_Liquid-Cooled_Cabinet_Global_Default_Password.md).
-> - To change air-cooled Node BMC credentials, refer to [Change Air-Cooled Node BMC Credentials](../security_and_authentication/Change_Air-Cooled_Node_BMC_Credentials.md).
+> - To change air-cooled node BMC credentials, refer to [Change Air-Cooled Node BMC Credentials](../security_and_authentication/Change_Air-Cooled_Node_BMC_Credentials.md).
 > - To change Slingshot switch BMC credentials, refer to "Change Rosetta Login and Redfish API Credentials" in the *Slingshot Operations Guide (> 1.6.0)*.
 
 ```bash
@@ -267,7 +267,7 @@ For SSH access, the system controllers have the following default credentials:
 - sC minimal recovery firmware image \(rec\)
     - Username: root
 
-**NOTE:** Contact HPE Cray service in order to obtain the default passwords.
+> **NOTE:** Contact HPE Cray service in order to obtain the default passwords.
 
 Passwords for nC, cC, and sC controllers are all managed with the following process. The cfgsh tool is a configuration shell that can be used interactively or scripted. Interactively, it may be used as follows after logging in as root via `ssh`:
 
@@ -297,12 +297,8 @@ To adjust the SNMP credentials, the following need to get performed:
 1. Update the default credentials specified in the customizations.yaml file.
    
    This is needed if a new leaf switch is added to the system post-install.
-   Refer to **CASMHMS-4817/5164/5163 PROCEDURE** for more information.
 
-1. Update the credentials actively being used for existing leaf switches.
-   
-   Refer to **CASMHMS-4817/5164/5163 PROCEDURE** for more information.
-
+2. Update the credentials actively being used for existing leaf switches.
 
 
 
@@ -321,12 +317,11 @@ Change the credential for HPE Cray EX liquid-cooled cabinet chassis controllers 
 * See [Updating the Liquid-Cooled EX Cabinet CEC with Default Credentials after a CEC Password Change](Updating_the_Liquid-Cooled_EX_Cabinet_Default_Credentials_after_a_CEC_Password_Change.md)
 
 
-
 ### Gigabyte
 
 The default username is admin.
 
-**NOTE:** Contact HPE Cray service in order to obtain the default password for Gigabyte.
+> **NOTE:** Contact HPE Cray service in order to obtain the default password for Gigabyte.
 
 
 ### Passwords Managed in Other Product Streams
