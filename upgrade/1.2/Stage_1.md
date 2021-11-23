@@ -1,6 +1,6 @@
 # Stage 1 - Kubernetes Upgrade from 1.19.9 to 1.20.12
 
-> NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
+> NOTE: During the CSM install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
 
 ## Stage 1.1
 
