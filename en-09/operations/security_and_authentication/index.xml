@@ -6,11 +6,31 @@
     <description>Recent content in Security And Authentication on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 23 Nov 2021 03:04:34 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/security_and_authentication/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Nov 2021 03:04:15 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/security_and_authentication/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Updating The Liquid-cooled Ex Cabinet Default Credentials After A Cec Password Change</title>
+      <link>/docs-csm/en-09/operations/security_and_authentication/updating_the_liquid-cooled_ex_cabinet_default_credentials_after_a_cec_password_change/</link>
+      <pubDate>Wed, 24 Nov 2021 03:03:44 +0000</pubDate>
+      
+      <guid>/docs-csm/en-09/operations/security_and_authentication/updating_the_liquid-cooled_ex_cabinet_default_credentials_after_a_cec_password_change/</guid>
+      <description>Updating the Liquid-Cooled EX Cabinet Default Credentials after a CEC Password Change This procedure changes the credential for liquid-cooled EX cabinet chassis controllers and node controller (BMCs) used by CSM services after the CECs have been set to a new global default credential.
+NOTE: This procedure does not provision Slingshot switch BMCs (RouterBMCs). Slingshot switch BMC default credentials must be changed using the procedures in the Slingshot product documentation. To update Slingshot switch BMCs, refer to &amp;ldquo;Change Rosetta Login and Redfish API Credentials&amp;rdquo; in the Slingshot Operations Guide (&amp;gt;1.</description>
+    </item>
+    
+    <item>
+      <title>Provisioning A Liquid-cooled Ex Cabinet Cec With Default Credentials</title>
+      <link>/docs-csm/en-09/operations/security_and_authentication/provisioning_a_liquid-cooled_ex_cabinet_cec_with_default_credentials/</link>
+      <pubDate>Wed, 24 Nov 2021 03:03:43 +0000</pubDate>
+      
+      <guid>/docs-csm/en-09/operations/security_and_authentication/provisioning_a_liquid-cooled_ex_cabinet_cec_with_default_credentials/</guid>
+      <description>Provisioning a Liquid-Cooled EX Cabinet CEC with Default Credentials This procedure provisions a Glibc compatible SHA-512 administrative password hash to a cabinet environmental controller (CEC). This password becomes the Redfish default global credential to access the CMM controllers and node controllers (BMCs).
+This procedure does not provision Slingshot switch BMCs. Slingshot switch BMC default credentials must be changed using the procedures in the Slingshot product documentation. To update Slingshot switch BMCs, refer to &amp;ldquo;Change Rosetta Login and Redfish API Credentials&amp;rdquo; in the Slingshot Operations Guide (&amp;gt;1.</description>
+    </item>
+    
     <item>
       <title>Update Default Air-cooled BMC And Leaf Switch Snmp Credentials</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/update_default_air-cooled_bmc_and_leaf_switch_snmp_credentials/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:04 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:43 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/update_default_air-cooled_bmc_and_leaf_switch_snmp_credentials/</guid>
       <description>Update Default Air-Cooled BMC and Leaf Switch SNMP Credentials This procedure updates the default credentials used when new air-cooled hardware is discovered for the first time. This includes the default Redfish credentials used for new air-cooled NodeBMCs and Slingshot switch BMCs (RouterBMCs), and SNMP credentials for new management leaf switches.
@@ -20,7 +40,7 @@ Important: After this procedure is completed going forward all future air-cooled
     <item>
       <title>Update Default Servertech Pdu Credentials Used By The Redfish Translation Service (rts)</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/update_default_servertech_pdu_credentials_used_by_the_redfish_translation_service/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:04 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:43 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/update_default_servertech_pdu_credentials_used_by_the_redfish_translation_service/</guid>
       <description>Update Default ServerTech PDU Credentials used by the Redfish Translation Service (RTS) This procedure updates the default credentials used by the Redfish Translation Service (RTS) for when new ServerTech PDUs are discovered in a system.
@@ -28,19 +48,20 @@ The Redfish Translation Service provides a Redfish interface that the Hardware S
     </item>
     
     <item>
-      <title>Updating The Liquid-cooled Ex Cabinet Default Credentials After A Cec Password Change</title>
-      <link>/docs-csm/en-09/operations/security_and_authentication/updating_the_liquid-cooled_ex_cabinet_default_credentials_after_a_cec_password_change/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:04 +0000</pubDate>
+      <title>Change Air-cooled Node BMC Credentials</title>
+      <link>/docs-csm/en-09/operations/security_and_authentication/change_air-cooled_node_bmc_credentials/</link>
+      <pubDate>Wed, 24 Nov 2021 03:03:42 +0000</pubDate>
       
-      <guid>/docs-csm/en-09/operations/security_and_authentication/updating_the_liquid-cooled_ex_cabinet_default_credentials_after_a_cec_password_change/</guid>
-      <description>Updating the Liquid-Cooled EX Cabinet Default Credentials after a CEC Password Change This procedure changes the credential for liquid-cooled EX cabinet chassis controllers and node controller (BMCs) used by CSM services after the CECs have been set to a new global default credential.
-NOTE: This procedure does not provision Slingshot switch BMCs (RouterBMCs). Slingshot switch BMC default credentials must be changed using the procedures in the Slingshot product documentation. To update Slingshot switch BMCs, refer to &amp;ldquo;Change Rosetta Login and Redfish API Credentials&amp;rdquo; in the Slingshot Operations Guide (&amp;gt;1.</description>
+      <guid>/docs-csm/en-09/operations/security_and_authentication/change_air-cooled_node_bmc_credentials/</guid>
+      <description>Change Air-Cooled Node BMC Credentials This procedure will use the System Configuration Service (SCSD) to change all air-cooled Node BMCs in the system to the same global credential.
+Limitations All air-cooled and liquid-cooled BMCs share the same global credentials. The air-cooled Slingshot switch controllers (Router BMCs) must have the same credentials as the liquid-cooled Slingshot switch controllers.
+Prerequisites  The Cray command line interface (CLI) tool is initialized and configured on the system.</description>
     </item>
     
     <item>
       <title>Change Cray Ex Cabinet Global Default Password</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/change_ex_cabinet_global_default_password/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:03 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:42 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/change_ex_cabinet_global_default_password/</guid>
       <description>Change Cray EX Cabinet Global Default Password This procedure changes the global default credential on HPE Cray EX liquid-cooled cabinet embedded controllers (BMCs). The chassis management module (CMM) controller (cC), node controller (nC), and Slingshot switch controller (sC) are generically referred to as &amp;ldquo;BMCs&amp;rdquo; in these procedures.
@@ -50,7 +71,7 @@ Prerequisites  HPE Cray EX 1.4.2 software is installed and operating. The Cray c
     <item>
       <title>Change Credentials On Servertech Pdus</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/change_credentials_on_servertech_pdus/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:03 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:42 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/change_credentials_on_servertech_pdus/</guid>
       <description>Change Credentials on ServerTech PDUs This procedure changes password used by the admn user on ServerTech PDUs. Either a single PDU can be updated to a new credential, or update all ServerTech PDUs in the system to the same global credentials.
@@ -60,7 +81,7 @@ NOTE: This procedure does not update the default credentials that RTS uses for n
     <item>
       <title>Change Smnp Credentials On Leaf Switches</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/change_smnp_credentials_on_leaf_switches/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:03 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:42 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/change_smnp_credentials_on_leaf_switches/</guid>
       <description>Change SMNP Credentials on Leaf Switches This procedure changes the SNMP credentials on management leaf switches in the system. Either a single leaf switch can be updated to use new SNMP credentials, or update all leaf switches in the system to use the same global SNMP credentials.
@@ -68,36 +89,15 @@ NOTE: This procedure will not update the default SNMP credentials used when new 
     </item>
     
     <item>
-      <title>Provisioning A Liquid-cooled Ex Cabinet Cec With Default Credentials</title>
-      <link>/docs-csm/en-09/operations/security_and_authentication/provisioning_a_liquid-cooled_ex_cabinet_cec_with_default_credentials/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:03 +0000</pubDate>
-      
-      <guid>/docs-csm/en-09/operations/security_and_authentication/provisioning_a_liquid-cooled_ex_cabinet_cec_with_default_credentials/</guid>
-      <description>Provisioning a Liquid-Cooled EX Cabinet CEC with Default Credentials This procedure provisions a Glibc compatible SHA-512 administrative password hash to a cabinet environmental controller (CEC). This password becomes the Redfish default global credential to access the CMM controllers and node controllers (BMCs).
-This procedure does not provision Slingshot switch BMCs. Slingshot switch BMC default credentials must be changed using the procedures in the Slingshot product documentation. To update Slingshot switch BMCs, refer to &amp;ldquo;Change Rosetta Login and Redfish API Credentials&amp;rdquo; in the Slingshot Operations Guide (&amp;gt;1.</description>
-    </item>
-    
-    <item>
       <title>Add LDAP User Federation</title>
       <link>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:02 +0000</pubDate>
+      <pubDate>Wed, 24 Nov 2021 03:03:41 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/security_and_authentication/add_ldap_user_federation/</guid>
       <description>Add LDAP User Federation Add LDAP user federation using the Keycloak localization tool.
 Prerequisites LDAP user federation is not currently configured in Keycloak. For example, if it was not configured in Keycloak when the system was initially installed or the LDAP user federation was removed.
 Procedure   Prepare to customize the customizations.yaml file.
 If the customizations.yaml file is managed in an external Git repository (as recommended), then clone a local working tree.</description>
-    </item>
-    
-    <item>
-      <title>Change Air-cooled Node BMC Credentials</title>
-      <link>/docs-csm/en-09/operations/security_and_authentication/change_air-cooled_node_bmc_credentials/</link>
-      <pubDate>Tue, 23 Nov 2021 03:04:02 +0000</pubDate>
-      
-      <guid>/docs-csm/en-09/operations/security_and_authentication/change_air-cooled_node_bmc_credentials/</guid>
-      <description>Change Air-Cooled Node BMC Credentials This procedure will use the System Configuration Service (SCSD) to change all air-cooled Node BMCs in the system to the same global credential.
-Limitations All air-cooled and liquid-cooled BMCs share the same global credentials. The air-cooled Slingshot switch controllers (Router BMCs) must have the same credentials as the liquid-cooled Slingshot switch controllers.
-Prerequisites  The Cray command line interface (CLI) tool is initialized and configured on the system.</description>
     </item>
     
   </channel>
