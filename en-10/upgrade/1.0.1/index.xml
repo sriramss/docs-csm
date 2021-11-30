@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1.0.1 on Cray System Management (CSM)</title>
+    <link>/docs-csm/en-10/upgrade/1.0.1/</link>
+    <description>Recent content in 1.0.1 on Cray System Management (CSM)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Tue, 30 Nov 2021 03:07:18 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1.0.1 Patch Installation Instructions</title>
+      <link>/docs-csm/en-10/upgrade/1.0.1/readme/</link>
+      <pubDate>Tue, 30 Nov 2021 03:05:49 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/upgrade/1.0.1/readme/</guid>
+      <description>CSM 1.0.1 Patch Installation Instructions Steps  Preparation Setup Nexus Upgrade Services Rollout Deployment Restart Verification Exit Typescript  Preparation   Start a typescript on ncn-m001 to capture the commands and output from this procedure.
+ncn-m001# script -af csm-update.$(date +%Y-%m-%d).txt ncn-m001# export PS1=&amp;#39;\u@\H \D{%Y-%m-%d} \t \w # &amp;#39;   Download and extract the CSM 1.0.1 release to ncn-m001.
+See Download and Extract CSM Product Release.
+  Set CSM_DISTDIR to the directory of the extracted files:</description>
+    </item>
+    
+  </channel>
+</rss>

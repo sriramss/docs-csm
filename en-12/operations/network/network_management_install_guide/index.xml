@@ -6,6 +6,16 @@
     <description>Recent content in Network Management Install Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 29 Nov 2021 03:07:17 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/network_management_install_guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 Nov 2021 03:06:54 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/network_management_install_guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction To CANu</title>
+      <link>/docs-csm/en-12/operations/network/network_management_install_guide/introduction_to_canu/</link>
+      <pubDate>Tue, 30 Nov 2021 03:05:26 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/network_management_install_guide/introduction_to_canu/</guid>
+      <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
+You can also use CANU to check if the management switches on a Shasta network meet the firmware version requirements and check their cabling status using LLDP. Alternatively you could use the Canu generated configuration to. Compare against your existing network configuration against best practice configuration.</description>
+    </item>
+    
   </channel>
 </rss>
