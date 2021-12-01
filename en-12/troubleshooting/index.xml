@@ -6,11 +6,11 @@
     <description>Recent content in Troubleshooting Information on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 30 Nov 2021 03:06:25 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 03:06:30 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/troubleshooting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>PXE Booting Runbook</title>
       <link>/docs-csm/en-12/troubleshooting/pxe_runbook/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:27 +0000</pubDate>
+      <pubDate>Wed, 01 Dec 2021 03:06:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/troubleshooting/pxe_runbook/</guid>
       <description>PXE Booting Runbook PXE booting is a key component of a working Shasta system. There are a lot of different components involved which increases the complexity. This guide runs through the most common issues and shows the user what is needed in order to have a successful PXE boot.
@@ -22,7 +22,7 @@
     <item>
       <title>Interpreting Hms Health Check Results</title>
       <link>/docs-csm/en-12/troubleshooting/interpreting_hms_health_check_results/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:25 +0000</pubDate>
+      <pubDate>Wed, 01 Dec 2021 03:06:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/troubleshooting/interpreting_hms_health_check_results/</guid>
       <description>Interpreting HMS Health Check Results Table of contents:  Introduction HMS Smoke Tests HMS Functional Tests Additional Troubleshooting Install Blocking vs. Non-Blocking Failures  Introduction This document describes how to interpret the results of the HMS Health Check scripts and techniques for troubleshooting when failures occur.
@@ -30,31 +30,9 @@ HMS Smoke Tests The HMS smoke tests consist of bash scripts that check the statu
     </item>
     
     <item>
-      <title>Manual Procedure For Determining If Aruba Snmp Issue Is Causing HSM Discovery Issues</title>
-      <link>/docs-csm/en-12/troubleshooting/aruba_snmp_manual_fixup/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:24 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/troubleshooting/aruba_snmp_manual_fixup/</guid>
-      <description>Manual Procedure For Determining If Aruba SNMP Issue Is Causing HSM Discovery Issues   Determine the name of the last HSM discovery job that ran.
-ncn# HMS_DISCOVERY_POD=$(kubectl -n services get pods -l app=hms-discovery | tail -n 1 | awk &amp;#39;{ print $1 }&amp;#39;) ncn# echo $HMS_DISCOVERY_POD hms-discovery-1624314420-r8c49   Look at the logs of the HMS discovery job to find the MAC addresses associated with instances of the MAC address in HSM not found in any switch!</description>
-    </item>
-    
-    <item>
-      <title>Manual SSH Key Setting Process</title>
-      <link>/docs-csm/en-12/troubleshooting/bmc_ssh_key_manual_fixup/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:24 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/troubleshooting/bmc_ssh_key_manual_fixup/</guid>
-      <description>Manual SSH Key Setting Process If for whatever reason this script fails, SSH keys can be set manually using the following process:
-  Save the public SSH key for the root user.
-ncn# export SCSD_SSH_KEY=$(cat /root/.ssh/id_rsa.pub | sed &amp;#39;s/[[:space:]]*$//&amp;#39;) If a different SSH key is to be used (for example from conman) set the SCSD_SSH_KEY environment variable to that key value.
-  Generate a System Configuration Service configuration via the scsd tool.</description>
-    </item>
-    
-    <item>
       <title>Running Ct Tests Manually</title>
       <link>/docs-csm/en-12/troubleshooting/hms_ct_manual_run/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:24 +0000</pubDate>
+      <pubDate>Wed, 01 Dec 2021 03:06:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/troubleshooting/hms_ct_manual_run/</guid>
       <description>Running CT Tests Manually To run the tests manually:
@@ -66,11 +44,33 @@ ncn# /opt/cray/tests/ncn-resources/hms/hms-test/hms_run_ct_functional_tests_ncn-
     <item>
       <title>Troubleshoot The Cms Barebones Image Boot Test</title>
       <link>/docs-csm/en-12/troubleshooting/cms_barebones_image_boot/</link>
-      <pubDate>Tue, 30 Nov 2021 03:06:24 +0000</pubDate>
+      <pubDate>Wed, 01 Dec 2021 03:06:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/troubleshooting/cms_barebones_image_boot/</guid>
       <description>Troubleshoot the CMS Barebones Image Boot Test Verify that the CSM services needed to boot a node are available and working properly. This section describes how the barebonesImageTest script works and how to interpret the results. If the script is unavailable, the manual steps for reproducing the barebones image boot test are provided.
 Topics  1. Steps the Script Performs 2. Controlling Which Node Is Used 3. Controlling Output 4. Manual Steps  4.</description>
+    </item>
+    
+    <item>
+      <title>Manual Procedure For Determining If Aruba Snmp Issue Is Causing HSM Discovery Issues</title>
+      <link>/docs-csm/en-12/troubleshooting/aruba_snmp_manual_fixup/</link>
+      <pubDate>Wed, 01 Dec 2021 03:06:29 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/troubleshooting/aruba_snmp_manual_fixup/</guid>
+      <description>Manual Procedure For Determining If Aruba SNMP Issue Is Causing HSM Discovery Issues   Determine the name of the last HSM discovery job that ran.
+ncn# HMS_DISCOVERY_POD=$(kubectl -n services get pods -l app=hms-discovery | tail -n 1 | awk &amp;#39;{ print $1 }&amp;#39;) ncn# echo $HMS_DISCOVERY_POD hms-discovery-1624314420-r8c49   Look at the logs of the HMS discovery job to find the MAC addresses associated with instances of the MAC address in HSM not found in any switch!</description>
+    </item>
+    
+    <item>
+      <title>Manual SSH Key Setting Process</title>
+      <link>/docs-csm/en-12/troubleshooting/bmc_ssh_key_manual_fixup/</link>
+      <pubDate>Wed, 01 Dec 2021 03:06:29 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/troubleshooting/bmc_ssh_key_manual_fixup/</guid>
+      <description>Manual SSH Key Setting Process If for whatever reason this script fails, SSH keys can be set manually using the following process:
+  Save the public SSH key for the root user.
+ncn# export SCSD_SSH_KEY=$(cat /root/.ssh/id_rsa.pub | sed &amp;#39;s/[[:space:]]*$//&amp;#39;) If a different SSH key is to be used (for example from conman) set the SCSD_SSH_KEY environment variable to that key value.
+  Generate a System Configuration Service configuration via the scsd tool.</description>
     </item>
     
   </channel>
