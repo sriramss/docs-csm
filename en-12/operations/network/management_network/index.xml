@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Management Network on Cray System Management (CSM)</title>
+    <link>/docs-csm/en-12/operations/network/management_network/</link>
+    <description>Recent content in Management Network on Cray System Management (CSM)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Fri, 03 Dec 2021 03:06:58 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Update Management Network Firmware</title>
+      <link>/docs-csm/en-12/operations/network/management_network/update_management_network_firmware/</link>
+      <pubDate>Fri, 03 Dec 2021 03:04:46 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/update_management_network_firmware/</guid>
+      <description>Update Management Network Firmware This page describes how to update firmware on the management network switches.
+Requirements Access to the switches from the LiveCD/ncn-m001.
+Configuration All firmware can be found in the HFP package provided with the Shasta release.
+Switch Firmware    Vendor Model Version     Aruba 6300 ArubaOS-CX_6400-6300_10.06.0010   Aruba 8320 ArubaOS-CX_8320_10.06.0010 or ArubaOS-CX_8320_10.06.0110   Aruba 8325 ArubaOS-CX_8325_10.06.0010   Aruba 8360 ArubaOS-CX_8360_10.</description>
+    </item>
+    
+  </channel>
+</rss>
