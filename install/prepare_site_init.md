@@ -612,7 +612,11 @@ off-cluster. Add a remote repository and push the baseline configuration on
 <a name="patch-cloud-init-with-the-ca"></a>
 ### 6. Patch cloud-init with the CA
 
-**`NOTE`** Skip this if using a USB LiveCD. These steps are done elsewhere in that procedure.
+This section lives as a reference, but is not required on either USB or RemoteISO path.
+
+This portion is taken care of by `pit-init.sh`, which is invoked after the "First Boot" in both the USB and RemoteISO path.
+
+To manually patch the CA into cloud-init, follow the ad-hoc procedure below:
 
 Using `csi` on a generated site-init directory...
 
