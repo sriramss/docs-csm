@@ -6,11 +6,11 @@
     <description>Recent content in 1.0.1 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 13 Dec 2021 03:07:11 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 14 Dec 2021 03:06:57 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1.0.1 Patch Installation Instructions</title>
       <link>/docs-csm/en-10/upgrade/1.0.1/readme/</link>
-      <pubDate>Mon, 13 Dec 2021 03:05:49 +0000</pubDate>
+      <pubDate>Tue, 14 Dec 2021 03:05:36 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0.1/readme/</guid>
       <description>CSM 1.0.1 Patch Installation Instructions Steps  Preparation Setup Nexus Upgrade Services Rollout Deployment Restart Verification Exit Typescript  Preparation   Start a typescript on ncn-m001 to capture the commands and output from this procedure.
