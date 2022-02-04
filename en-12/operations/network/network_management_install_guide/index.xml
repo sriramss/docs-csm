@@ -6,11 +6,11 @@
     <description>Recent content in Network Management Install Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 04 Feb 2022 00:09:35 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/network_management_install_guide/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Feb 2022 03:04:27 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/network_management_install_guide/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Links To Vendor Specific User Guides.</title>
       <link>/docs-csm/en-12/operations/network/network_management_install_guide/user_guides/</link>
-      <pubDate>Fri, 04 Feb 2022 00:08:38 +0000</pubDate>
+      <pubDate>Fri, 04 Feb 2022 03:03:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/network_management_install_guide/user_guides/</guid>
       <description>Links to vendor specific user guides. Aruba  https://asp.arubanetworks.com/downloads  Dell  https://www.dell.com/support/manuals/en-us/force10-s4048-on/smartfabric-os-user-guide-10-5-1  Mellanox  https://docs.nvidia.com/networking/spaces/viewspace.action?key=Onyxv393210  </description>
@@ -19,7 +19,7 @@
     <item>
       <title>Introduction To CANu</title>
       <link>/docs-csm/en-12/operations/network/network_management_install_guide/introduction_to_canu/</link>
-      <pubDate>Fri, 04 Feb 2022 00:08:22 +0000</pubDate>
+      <pubDate>Fri, 04 Feb 2022 03:03:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/network_management_install_guide/introduction_to_canu/</guid>
       <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
