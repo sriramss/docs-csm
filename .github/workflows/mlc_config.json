@@ -6,6 +6,5 @@
         {
             "pattern": "https://www.hpe.com/support/ex-gsg"
         }
-    ],
-    "aliveStatusCodes": [503]
+    ]
 }
