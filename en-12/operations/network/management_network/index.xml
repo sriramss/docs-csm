@@ -1,22 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Management Network on Cray System Management (CSM)</title>
+    <title>HPE Cray Ex Management Network Installation And Configuration Guide on Cray System Management (CSM)</title>
     <link>/docs-csm/en-12/operations/network/management_network/</link>
-    <description>Recent content in Management Network on Cray System Management (CSM)</description>
+    <description>Recent content in HPE Cray Ex Management Network Installation And Configuration Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 07 Feb 2022 17:10:13 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 08 Feb 2022 03:02:57 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Update Management Network Firmware</title>
-      <link>/docs-csm/en-12/operations/network/management_network/update_management_network_firmware/</link>
-      <pubDate>Mon, 07 Feb 2022 17:07:53 +0000</pubDate>
+      <title>Links To Vendor Specific User Guides.</title>
+      <link>/docs-csm/en-12/operations/network/management_network/user_guides/</link>
+      <pubDate>Tue, 08 Feb 2022 03:03:13 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/update_management_network_firmware/</guid>
-      <description>Update Management Network Firmware This page describes how to update firmware on the management network switches.
-Requirements Access to the switches from the LiveCD/ncn-m001.
-Configuration All firmware can be found in the HFP package provided with the Shasta release.
-Switch Firmware    Vendor Model Version     Aruba 6300 ArubaOS-CX_6400-6300_10.06.0010   Aruba 8320 ArubaOS-CX_8320_10.06.0010 or ArubaOS-CX_8320_10.06.0110   Aruba 8325 ArubaOS-CX_8325_10.06.0010   Aruba 8360 ArubaOS-CX_8360_10.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/user_guides/</guid>
+      <description>Links to vendor specific user guides. Aruba  https://asp.arubanetworks.com/downloads  Dell  https://www.dell.com/support/manuals/en-us/force10-s4048-on/smartfabric-os-user-guide-10-5-1  Mellanox  https://docs.nvidia.com/networking/spaces/viewspace.action?key=Onyxv393210  </description>
+    </item>
+    
+    <item>
+      <title>Introduction To CANu</title>
+      <link>/docs-csm/en-12/operations/network/management_network/introduction_to_canu/</link>
+      <pubDate>Tue, 08 Feb 2022 03:02:57 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/introduction_to_canu/</guid>
+      <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
+You can also use CANU to check if the management switches on a Shasta network meet the firmware version requirements and check their cabling status using LLDP. Alternatively you could use the Canu generated configuration to. Compare against your existing network configuration against best practice configuration.</description>
     </item>
     
   </channel>

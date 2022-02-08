@@ -437,7 +437,8 @@ set +e
 trap - ERR
 kubectl get pod -n services | grep -q cray-cps
 if [ "$?" -eq 0 ]; then
-  cps_deployment_snapshot=$(cray cps deployment list --format json | jq -r '.[] | .node' || true)
+  cps_deployment_snapshot=$(cray cps deployment list --format json | jq -r \
+    '.[] | select(."podname" != "NA" and ."podname" != "") | .node' || true)
   echo $cps_deployment_snapshot > /etc/cray/upgrade/csm/${CSM_RELEASE}/cp.deployment.snapshot
 fi
 trap 'err_report' ERR
@@ -508,6 +509,18 @@ EOF
     # make sure we have cfs created
     cray cfs sessions delete rebuild-ncn  2>/dev/null || true
     cray cfs configurations update rebuild-ncn --file /root/rebuild-ncn.json --format json
+    record_state ${state_name} $(hostname)
+else
+    echo "====> ${state_name} has been completed"
+fi
+
+state_name="CREATE_CEPH_RO_KEY"
+state_recorded=$(is_state_recorded "${state_name}" $(hostname))
+if [[ $state_recorded == "0" && $(hostname) == "ncn-m001" ]]; then
+    echo "====> ${state_name} ..."
+    ceph-authtool -C /etc/ceph/ceph.client.ro.keyring -n client.ro --cap mon 'allow r' --cap mds 'allow r' --cap osd 'allow r' --cap mgr 'allow r' --gen-key
+    ceph auth import -i /etc/ceph/ceph.client.ro.keyring
+    for node in $(ceph orch host ls --format=json|jq -r '.[].hostname'); do scp /etc/ceph/ceph.client.ro.keyring $node:/etc/ceph/ceph.client.ro.keyring; done
     record_state ${state_name} $(hostname)
 else
     echo "====> ${state_name} has been completed"
