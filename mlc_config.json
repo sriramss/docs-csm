@@ -1,7 +1,8 @@
 {
     "ignorePatterns": [
         {
-            "pattern": "https?://[^/]+.local/.*"
+            "pattern": "https?://[^/]+.local/.*+.SYSTEM*+.SHASTA*"
         }
-    ]
+    ],
+    "aliveStatusCodes": [503]
 }
