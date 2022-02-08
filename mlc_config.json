@@ -1,7 +1,7 @@
 {
     "ignorePatterns": [
         {
-            "pattern": "^https?://[^/]+\.local/.*"
+            "pattern": "https?://[^/]+.local/.*"
         }
     ]
 }
