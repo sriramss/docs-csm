@@ -1,0 +1,11 @@
+{
+    "ignorePatterns": [
+        {
+            "pattern": "https?://[^/]+\.local/.*"
+        }
+        {
+            "pattern": "https://www.hpe.com/support/ex-gsg"
+        }
+    ],
+    "aliveStatusCodes": [503]
+}
