@@ -1,10 +1,10 @@
 {
     "ignorePatterns": [
         {
-            "pattern": "https?://[^/]+\.local/.*"
+            "pattern": "^https://www.hpe.com/support/ex-gsg"
         }
         {
-            "pattern": "https://www.hpe.com/support/ex-gsg"
+            "pattern": "^https://localhost"
         }
     ]
 }
