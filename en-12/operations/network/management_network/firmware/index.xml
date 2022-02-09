@@ -6,17 +6,16 @@
     <description>Recent content in Firmware on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 08 Feb 2022 03:04:31 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 03:04:32 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/firmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Update Management Network Firmware</title>
       <link>/docs-csm/en-12/operations/network/management_network/firmware/update_management_network_firmware/</link>
-      <pubDate>Tue, 08 Feb 2022 03:02:56 +0000</pubDate>
+      <pubDate>Wed, 09 Feb 2022 03:03:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/firmware/update_management_network_firmware/</guid>
-      <description>Update Management Network Firmware This page describes how to update firmware on the management network switches.
-Requirements Access to the switches from the LiveCD/ncn-m001.
-Configuration All firmware can be found in the HFP package provided with the Shasta release.
-Switch Firmware    Vendor Model Version     Aruba 6300 ArubaOS-CX_6400-6300_10.06.0010   Aruba 8320 ArubaOS-CX_8320_10.06.0010 or ArubaOS-CX_8320_10.06.0110   Aruba 8325 ArubaOS-CX_8325_10.06.0010   Aruba 8360 ArubaOS-CX_8360_10.</description>
+      <description>Update Management Network Firmware This page describes how to update firmware on the management network switches. More details and other options to upgrade firmware can be found in the switch user guides.
+Prerequisites  Access to the switches. Firmware in a location that the switches can reach.  All firmware can be found in the HFP package provided with the Shasta release.
+Switch Firmware    Model software version     Aruba 8320 Switch Series 10.</description>
     </item>
     
   </channel>
