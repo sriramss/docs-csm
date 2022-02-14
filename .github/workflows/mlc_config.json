@@ -4,9 +4,6 @@
             "pattern": "https?://[^/]+\.local/.*"
         },
         {
-            "pattern": "^https://www.hpe.com/support/ex-gsg"
-        },
-        {
             "pattern": "https://jira-pro\.its\.hpecorp\.net:8443/.*"
         }
     ]
