@@ -6,11 +6,20 @@
     <description>Recent content in Management Network User Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 15 Feb 2022 03:03:14 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Feb 2022 03:02:55 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Links To Vendor Specific User Guides.</title>
+      <link>/docs-csm/en-12/operations/network/management_network/user_guides/</link>
+      <pubDate>Wed, 16 Feb 2022 03:03:13 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/user_guides/</guid>
+      <description>Links to vendor specific user guides. Aruba  https://asp.arubanetworks.com/downloads  Dell  https://www.dell.com/support/manuals/en-us/force10-s4048-on/smartfabric-os-user-guide-10-5-1  Mellanox  https://docs.nvidia.com/networking/spaces/viewspace.action?key=Onyxv393210  </description>
+    </item>
+    
     <item>
       <title>Validate Switch Configs</title>
       <link>/docs-csm/en-12/operations/network/management_network/validate_switch_configs/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:33 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/validate_switch_configs/</guid>
       <description>Validate switch configs Prerequisites  SSH access to the switches or the running config file. Generated Switch configs.  Generate Switch Config    Compare CSM 1.2 switch configs with running configs Next you would want to compare the current running configuration with the generated configuration.
@@ -20,7 +29,7 @@ For the comparison, since we’ve pulled the configuration to our working direct
     <item>
       <title>Validate The Shcd</title>
       <link>/docs-csm/en-12/operations/network/management_network/validate_shcd/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:33 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/validate_shcd/</guid>
       <description>Validate the SHCD Prerequisites  Up to date SHCD.  Use CANU (CSM Automated Network Utility) to validate the SHCD. SHCD validation is required to ensure Plan-of-Record network configurations are generated. This is an iterative process to create a model of the entire network topology connection-by-connection.
@@ -31,7 +40,7 @@ For the comparison, since we’ve pulled the configuration to our working direct
     <item>
       <title>Wipe Switch Config</title>
       <link>/docs-csm/en-12/operations/network/management_network/wipe_mgmt_switches/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:33 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/wipe_mgmt_switches/</guid>
       <description>Wipe Switch Config Prerequisites  Out of band access to the switches (console).  Aruba It is recommended to create a checkpoint before erasing the switch config.
@@ -41,18 +50,20 @@ sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CS
     </item>
     
     <item>
-      <title>Links To Vendor Specific User Guides.</title>
-      <link>/docs-csm/en-12/operations/network/management_network/user_guides/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:32 +0000</pubDate>
+      <title>Network Tests</title>
+      <link>/docs-csm/en-12/operations/network/management_network/network_tests/</link>
+      <pubDate>Wed, 16 Feb 2022 03:03:12 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/user_guides/</guid>
-      <description>Links to vendor specific user guides. Aruba  https://asp.arubanetworks.com/downloads  Dell  https://www.dell.com/support/manuals/en-us/force10-s4048-on/smartfabric-os-user-guide-10-5-1  Mellanox  https://docs.nvidia.com/networking/spaces/viewspace.action?key=Onyxv393210  </description>
+      <guid>/docs-csm/en-12/operations/network/management_network/network_tests/</guid>
+      <description>Network tests Prerequisites  SSH access to the switches. SLS file or SLS API access.  Canu has the ability to run tests against the management network. (Aruba Only)
+Canu has to be on version 1.1.4 or later. run canu --version to verify.
+The switch inventory is dynamically created from either an sls file --sls-file or it will automatically query the sls API if an sls file is not specified.</description>
     </item>
     
     <item>
       <title>Reinstall</title>
       <link>/docs-csm/en-12/operations/network/management_network/reinstall/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:32 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/reinstall/</guid>
       <description>Reinstall Reinstalling the same CSM version.
@@ -63,7 +74,7 @@ sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CS
     <item>
       <title>Replace Switch</title>
       <link>/docs-csm/en-12/operations/network/management_network/replace_switch/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:32 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/replace_switch/</guid>
       <description>Replace Switch Do not plug in a switch that is not configured.  This can cause unpredicted behavior and network outages.  Prerequisites  Out of band access to the switches (console). Generated Switch config or backed up switch config.  Generate Switch Config Configuration Management    Steps  Update Firmware.  Update management network firmware   Apply Configuration.  Apply Switch Configs   Plug back in.</description>
@@ -72,7 +83,7 @@ sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CS
     <item>
       <title>Upgrade</title>
       <link>/docs-csm/en-12/operations/network/management_network/upgrade/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:32 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:03:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/upgrade/</guid>
       <description>Upgrade Upgrading to a new CSM version.
@@ -81,31 +92,9 @@ sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CS
     </item>
     
     <item>
-      <title>Network Tests</title>
-      <link>/docs-csm/en-12/operations/network/management_network/network_tests/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:31 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/network_tests/</guid>
-      <description>Network tests Prerequisites  SSH access to the switches. SLS file or SLS API access.  Canu has the ability to run tests against the management network. (Aruba Only)
-Canu has to be on version 1.1.4 or later. run canu --version to verify.
-The switch inventory is dynamically created from either an sls file --sls-file or it will automatically query the sls API if an sls file is not specified.</description>
-    </item>
-    
-    <item>
-      <title>Load Saved Switch Configuration</title>
-      <link>/docs-csm/en-12/operations/network/management_network/load_saved_switch_config/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:15 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/load_saved_switch_config/</guid>
-      <description>Load Saved Switch Configuration This page will show you how to switch between already saved switch configurations. To save switch configurations see the config management page.
-Aruba View the checkpoints. Make sure that CSM1_0 and CSM1_2 exist. If they do you can proceed.
-sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CSM1_0 latest User 2022-01-13T16:51:37Z GL.10.08.1021 CSM1_2 latest User 2022-01-13T16:51:48Z GL.10.08.1021 startup-config startup User 2021-12-20T17:35:58Z GL.10.08.1021 Rollback to desired checkpoint.</description>
-    </item>
-    
-    <item>
       <title>Manual Switch Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/manual_switch_config/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:15 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:56 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/manual_switch_config/</guid>
       <description>Manual Switch Configuration Some switch configuration is not generated by CANU and needs to be manually applied.
@@ -114,20 +103,9 @@ Once these credentials are retrieved from vault you can fill in the xxxxxx field
     </item>
     
     <item>
-      <title>Fresh Install</title>
-      <link>/docs-csm/en-12/operations/network/management_network/fresh_install/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:14 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/fresh_install/</guid>
-      <description>Fresh Install This is either a first time install or the previous CSM was wiped and requires a new install.
-:exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:
- Update management network firmware  Upgrade switch firmware to specified firmware version.   Backup custom config  If the system had a previous version of CSM on it, you need to backup all custom configuration and credential configuration.</description>
-    </item>
-    
-    <item>
       <title>Generate Switch Configs</title>
       <link>/docs-csm/en-12/operations/network/management_network/generate_switch_configs/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:14 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/generate_switch_configs/</guid>
       <description>Generate switch configs Prerequisites  Validated SHCD.  Validate SHCD   JSON output from validated SHCD.  Validate SHCD   sls input file.  Collect data    Generating configuration files can be done for singular switch or for the full system. For example; in a case where you suspect a configuration issue on single switch you can generate just that one file for easier debugging purposes.</description>
@@ -136,7 +114,7 @@ Once these credentials are retrieved from vault you can fill in the xxxxxx field
     <item>
       <title>Introduction To CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/introduction_to_canu/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:14 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/introduction_to_canu/</guid>
       <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
@@ -144,21 +122,31 @@ You can also use CANU to check if the management switches on a Shasta network me
     </item>
     
     <item>
-      <title>Configuration Management</title>
-      <link>/docs-csm/en-12/operations/network/management_network/config_management/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:08 +0000</pubDate>
+      <title>Load Saved Switch Configuration</title>
+      <link>/docs-csm/en-12/operations/network/management_network/load_saved_switch_config/</link>
+      <pubDate>Wed, 16 Feb 2022 03:02:55 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/config_management/</guid>
-      <description>Configuration Management This page is designed for:
- Showing users how initially save switch configs so they can be used again. Switching between saved configurations.  :exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:
-It is recommended to do a show run on each switch and save that configuration before attempting the procedures below.
-All this info can be found in the switch user guides.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/load_saved_switch_config/</guid>
+      <description>Load Saved Switch Configuration This page will show you how to switch between already saved switch configurations. To save switch configurations see the config management page.
+Aruba View the checkpoints. Make sure that CSM1_0 and CSM1_2 exist. If they do you can proceed.
+sw-spine-001# show checkpoint NAME TYPE WRITER DATE(YYYY/MM/DD) IMAGE VERSION CSM1_0 latest User 2022-01-13T16:51:37Z GL.10.08.1021 CSM1_2 latest User 2022-01-13T16:51:48Z GL.10.08.1021 startup-config startup User 2021-12-20T17:35:58Z GL.10.08.1021 Rollback to desired checkpoint.</description>
+    </item>
+    
+    <item>
+      <title>Fresh Install</title>
+      <link>/docs-csm/en-12/operations/network/management_network/fresh_install/</link>
+      <pubDate>Wed, 16 Feb 2022 03:02:54 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/fresh_install/</guid>
+      <description>Fresh Install This is either a first time install or the previous CSM was wiped and requires a new install.
+:exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:
+ Update management network firmware  Upgrade switch firmware to specified firmware version.   Backup custom config  If the system had a previous version of CSM on it, you need to backup all custom configuration and credential configuration.</description>
     </item>
     
     <item>
       <title>Backup Custom Config</title>
       <link>/docs-csm/en-12/operations/network/management_network/backup_custom_config/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:07 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:48 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/backup_custom_config/</guid>
       <description>Backup Custom Config Prerequisites  Access to the switches.  If your doing a fresh install of CSM but previously had a different version of CSM installed you will need to backup/restore certain switch config after the switch has been wiped.
@@ -170,7 +158,7 @@ This includes:
     <item>
       <title>Collect Data</title>
       <link>/docs-csm/en-12/operations/network/management_network/collect_data/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:07 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:48 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/collect_data/</guid>
       <description>Collect Data Prerequisites  SSH access to the switches. SLS API access.   Step 1: Retrieve the most up-to-date SHCD spreadsheet. Accuracy in this spreadsheet is critical.  For example:
@@ -180,9 +168,21 @@ This includes:
     </item>
     
     <item>
+      <title>Configuration Management</title>
+      <link>/docs-csm/en-12/operations/network/management_network/config_management/</link>
+      <pubDate>Wed, 16 Feb 2022 03:02:48 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/config_management/</guid>
+      <description>Configuration Management This page is designed for:
+ Showing users how initially save switch configs so they can be used again. Switching between saved configurations.  :exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:
+It is recommended to do a show run on each switch and save that configuration before attempting the procedures below.
+All this info can be found in the switch user guides.</description>
+    </item>
+    
+    <item>
       <title>Typical CANu Validation Errors And How To Fix Them</title>
       <link>/docs-csm/en-12/operations/network/management_network/canu_validation_error/</link>
-      <pubDate>Tue, 15 Feb 2022 03:03:07 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:48 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/canu_validation_error/</guid>
       <description>Typical CANU validation errors and how to fix them  Example 1:   validate_shcd - CRITICAL: A port number must be specified. Please correct the SHCD for HMN:V36 with an empty value SOLUTION: Blank cell. Minimally the Source or Destination and Port needs to be specified.
@@ -190,24 +190,24 @@ This includes:
     </item>
     
     <item>
-      <title>Added Hardware</title>
-      <link>/docs-csm/en-12/operations/network/management_network/added_hardware/</link>
-      <pubDate>Tue, 15 Feb 2022 03:02:45 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/added_hardware/</guid>
-      <description>Added Hardware New hardware was added to the system.
- Validate the SHCD  The SHCD defines the topology of a Shasta system, this is needed when generating switch configs.   Generate switch configs Validate switch configs  Checks differences between generated configs and the configs on the system.   Network tests  Run a suite of tests against the management network switches.    </description>
-    </item>
-    
-    <item>
       <title>Apply Switch Configs</title>
       <link>/docs-csm/en-12/operations/network/management_network/apply_switch_configs/</link>
-      <pubDate>Tue, 15 Feb 2022 03:02:45 +0000</pubDate>
+      <pubDate>Wed, 16 Feb 2022 03:02:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/apply_switch_configs/</guid>
       <description>Apply Switch Configs Prerequisites  Custom switch config backed up.  Manual Switch Config   Switch without any configuration.  Wipe Mgmt Switches   Generated Switch configs.  Generate Switch Config    This process is generally straight forward and requires the user to copy and paste the generated switch configuration and custom configuration into the terminal.
 There are some caveats that are mentioned below.
 Aruba   Be sure to type auto-confirm before pasting in the configuration.</description>
+    </item>
+    
+    <item>
+      <title>Added Hardware</title>
+      <link>/docs-csm/en-12/operations/network/management_network/added_hardware/</link>
+      <pubDate>Wed, 16 Feb 2022 03:02:26 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/added_hardware/</guid>
+      <description>Added Hardware New hardware was added to the system.
+ Validate the SHCD  The SHCD defines the topology of a Shasta system, this is needed when generating switch configs.   Generate switch configs Validate switch configs  Checks differences between generated configs and the configs on the system.   Network tests  Run a suite of tests against the management network switches.    </description>
     </item>
     
   </channel>
