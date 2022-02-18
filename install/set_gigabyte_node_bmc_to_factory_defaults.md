@@ -2,6 +2,8 @@
 
 ### Prerequisites
 
+**Note**: This section refers to scripts that exist only in the PIT environment.  If necessary, copy the LiveCD data from a different machine to get these scripts.
+
 Use the management scripts and text files to reset Gigabyte BMC to factory default settings. Set the BMC to the factory default settings in the following cases:
 
 - There are problems using the ipmitool command and Redfish does not respond
@@ -17,28 +19,26 @@ Use the management scripts and text files to reset Gigabyte BMC to factory defau
 
 #### Apply the BMC Factory Command
 
-1. Create a `node.txt` file and add the target node information as shown:
+1.  Create a `node.txt` file and add the target node information as shown:
 
-   Example `node.txt` file with two nodes:
+    Example `node.txt` file with two nodes:
 
-   ```screen
+    ```screen
     10.254.1.11 x3000c0s9b0 ncn-w002
     10.254.1.21 x3000c0s27b0 uan01
-   ```
+    ```
 
-   Example `node.txt` file with one node:
+    Example `node.txt` file with one node:
 
-   ```screen
+    ```screen
     10.254.1.11 x3000c0s9b0 ncn-w002
-   ```
+    ```
 
-2. Use Redfish to reset the BMC to factory default.
-
-   The BMC is running 12.84.01 or a later version.
-
-   ```bash
-   ncn-w001# sh do_Redfish_BMC_Factory.sh
-   ```
+2. Use Redfish to reset the BMC to factory default, the BMC is running 12.84.01 or later version, run:
+      
+      ```bash
+      ncn-w001# sh do_Redfish_BMC_Factory.sh
+      ```
 
    - Alternatively, use `ipmitool` to reset the BMC to factory defaults:
 
@@ -54,7 +54,7 @@ Use the management scripts and text files to reset Gigabyte BMC to factory defau
 
    #### After the BMC has Been Reset to Factory Defaults
 
-3. Wait 5 minutes for BMC and Redfish initialization.
+3. Wait five minutes for BMC and Redfish initialization.
 
    ```bash
    ncn-w001# sleep 300
