@@ -6,11 +6,11 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 19 Feb 2022 03:02:52 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Feb 2022 03:02:58 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:51 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:57 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</guid>
       <description>This is a reusable python library for safely interacting with SLS network data (in JSON format).
@@ -20,7 +20,7 @@ The library has been tested against python version 3.6 and up.</description>
     <item>
       <title>Upgrade SLS Offline From 1.0.x To Csm 1.2</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:51 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:57 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</guid>
       <description>Upgrade SLS Offline from CSM 1.0.x to CSM 1.2 TL;DR  Get a token:  export TOKEN=$(curl -s -k -S -d grant_type=client_credentials -d client_id=admin-client -d client_secret=`kubectl get secrets admin-client-auth -o jsonpath=&amp;#39;{.data.client-secret}&amp;#39; | base64 -d` https://api-gw-service-nmn.local/keycloak/realms/shasta/protocol/openid-connect/token | jq -r &amp;#39;.access_token&amp;#39;)  Extract SLS data to a file:  curl -k -H &amp;#34;Authorization: Bearer ${TOKEN}&amp;#34; https://api-gw-service-nmn.local/apis/sls/v1/dumpstate | jq -S . &amp;gt; sls_input_file.json  Upgrade SLS data (Example 1): Upgrade, using the CHN as the system default route (will by default output to migrated_sls_file.</description>
@@ -29,7 +29,7 @@ The library has been tested against python version 3.6 and up.</description>
     <item>
       <title>Stage 3 - Service Upgrades</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:50 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:56 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
       <description>Stage 3 - CSM Service Upgrades IMPORTANT:
@@ -41,7 +41,7 @@ ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/csm-service-upgrade.sh 
     <item>
       <title>1.0.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
       <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:49 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
       <description>CSM 1.0.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc
@@ -51,7 +51,7 @@ Introduction This document is intended to guide an administrator through the upg
     <item>
       <title>Stage 0 - Prerequisites And Preflight Checks</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:49 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
       <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-1.0.1 is required in order to upgrade to CSM-1.2.0
@@ -64,7 +64,7 @@ ncn-m001# cp [PATH_TO_docs-csm-*.noarch.rpm] /root ncn-m001# rpm -Uvh [PATH_TO_d
     <item>
       <title>Stage 1 - Ceph Image Upgrade</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:49 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
       <description>Stage 1 - Ceph image upgrade   Run ncn-upgrade-ceph-nodes.sh for ncn-s001. Follow output of the script carefully. The script will pause for manual interaction.
@@ -76,7 +76,7 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.
     <item>
       <title>Stage 2 - Kubernetes Upgrade From 1.19.9 To 1.20.13</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
-      <pubDate>Sat, 19 Feb 2022 03:02:49 +0000</pubDate>
+      <pubDate>Sun, 20 Feb 2022 03:02:55 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
       <description>Stage 2 - Kubernetes Upgrade from 1.19.9 to 1.20.13  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
