@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <sitemap>
+    <loc>/docs-csm/en-09/sitemap.xml</loc>
+    
+      <lastmod>2022-03-01T21:22:44+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>/docs-csm/en-10/sitemap.xml</loc>
+    
+      <lastmod>2022-03-01T21:24:19+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>/docs-csm/en-11/sitemap.xml</loc>
+    
+      <lastmod>2022-03-01T21:24:08+00:00</lastmod>
+    
+  </sitemap>
+  
+  <sitemap>
+    <loc>/docs-csm/en-12/sitemap.xml</loc>
+    
+      <lastmod>2022-03-01T21:24:26+00:00</lastmod>
+    
+  </sitemap>
+  
+</sitemapindex>
