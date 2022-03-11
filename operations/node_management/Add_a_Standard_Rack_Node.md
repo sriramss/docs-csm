@@ -106,9 +106,26 @@ For this procedure, a new object must be created in the SLS and modifications wi
         }' https://api-gw-service-nmn.local/apis/sls/v1/hardware | jq
     ```
 
+#### Configure the management network switch ports
+
+This process will vary slightly depending on architecture and switch vendor.
+3.  
+
+- UAN with Aruba.  Depending on the architecture the UAN could connect to either an aggregation or a spine switch.
+  - [Aggregation switch](../../install/configure_aruba_aggregation_switch.md)
+  - [Spine switch](../../install/configure_aruba_spine_switch.md)
+  - [Leaf switch](../../install/configure_aruba_leaf_switch.md)
+- UAN with Dell/Mellanox
+  - [Spine switch](../../install/configure_mellanox_spine_switch.md)
+  - [Leaf switch](../../install/configure_dell_leaf_switch.md)
+- Compute with Aruba
+  - [Leaf switch](../../install/configure_aruba_leaf_switch.md)
+- Compute with Dell/Mellanox
+  - [Leaf switch](../../install/configure_dell_leaf_switch.md)
+
 #### Install the Node Hardware in the Rack
 
-3.  Install the new node hardware in the rack and connect power cables, HSN cables, and management network cables \(if it has not already been installed\).
+4.  Install the new node hardware in the rack and connect power cables, HSN cables, and management network cables \(if it has not already been installed\).
 
     If the node was added before modifying the SLS, then the node's BMC should have been able to DHCP with Kea, and there will be an unknown MAC address in HSM Ethernet interfaces table.
 
