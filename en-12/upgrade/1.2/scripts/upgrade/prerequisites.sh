@@ -452,10 +452,12 @@ if [[ $state_recorded == "0" && $(hostname) == "ncn-m001" ]]; then
     SUBNET=$(cray sls networks describe MTL --format json | \
         jq -r '.ExtraProperties.Subnets[]|select(.FullName=="MTL Management Network Infrastructure")|.CIDR')
     DEVICE="vlan002"
+    set +e
     ip addr show | grep $DEVICE
     if [[ $? -ne 0 ]]; then
         DEVICE="bond0.nmn0"
     fi
+    set -e
     pdsh -w $HOSTS ip route add $SUBNET via $GATEWAY dev $DEVICE
     Rcount=$(pdsh -w $HOSTS ip route show | grep $SUBNET | wc -l)
     pdsh -w $HOSTS ip route show | grep $SUBNET
@@ -490,7 +492,16 @@ if [[ $state_recorded == "0" && $(hostname) == "ncn-m001" ]]; then
     echo "====> ${state_name} ..."
     
     cray bss bootparameters list --format=json > bss-backup-$(date +%Y-%m-%d).json
-    cray artifacts create vbis bss-backup-$(date +%Y-%m-%d).json bss-backup-$(date +%Y-%m-%d).json
+
+    backupBucket="config-data"
+    set +e
+    cray artifacts list config-data
+    if [[ $? -ne 0 ]]; then
+        backupBucket="vbis"
+    fi
+    set -e
+
+    cray artifacts create ${backupBucket} bss-backup-$(date +%Y-%m-%d).json bss-backup-$(date +%Y-%m-%d).json
     
     record_state ${state_name} $(hostname)
 else
