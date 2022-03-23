@@ -23,7 +23,7 @@
  *  OTHER DEALINGS IN THE SOFTWARE.
  *
  */
-@Library('csm-shared-library') _
+@Library('casminst-4305') _
 
 pipeline {
     agent {
