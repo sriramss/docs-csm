@@ -19,7 +19,7 @@ Until an upstream NTP server is configured. The time on the NCNs may not match t
 <a name="change_ntp_config"></a>
 ### Change NTP Config
 
-There are three different methods for configuring NTP, which are described below. The first option is the
+There are two different methods for configuring NTP, which are described below. The first option is the
 recommended method.
 
    * Edit /etc/chrony.d/cray.conf and restart chronyd on each node.
@@ -27,14 +27,6 @@ recommended method.
       ```bash
       ncn# vi /etc/chrony.d/cray.conf
       ncn# systemctl restart chronyd
-      ```
-
-   * Edit the data.json file, restart basecamp, and run the NTP script on each node.
-
-      ```bash
-      ncn-m001# vi data.json
-      ncn-m001# systemctl restart basecamp
-      ncn# /srv/cray/scripts/metal/set-ntp-config.sh
       ```
 
    * Edit the data.json file, restart basecamp, and restart nodes so cloud-init runs on boot.
@@ -181,6 +173,7 @@ server time.nist.gov iburst trust
 # or 
 pool time.nist.gov iburst
 # ncn-m001 should NOT use itself as a server and is known to cause issues
+# ensure that the upstream server or pool is reachable by ncn-m001
 
 # this allows the clock to step itself during a restart without affecting running apps if it drifts more than 1 second
 initstepslew 1 time.nist.gov
@@ -201,7 +194,7 @@ initstepslew 1 ncn-m001
 # the ncns peer with each other at a high stratum, and choose ncn-m001 (statum 8 or lower) in the event of a tie
 local stratum 10 orphan
 
-# The nodes should have a max of 9 peers and should not include themselves in the list
+# All nodes should have a max of 8 peers and should not include themselves in the list.
 peer ncn-m001 minpoll -2 maxpoll 9 iburst
 peer ncn-m003 minpoll -2 maxpoll 9 iburst
 peer ncn-s001 minpoll -2 maxpoll 9 iburst
@@ -338,108 +331,4 @@ there. You can find a list of timezones to use in the commands below by running 
 <a name="configure_ncn_images_to_use_local_timezone"></a>
 #### Configure NCN Images to Use Local Timezone
 
-You need to adjust the node images so that they also boot in the local timezone. This is accomplished by `chroot`ing into the unsquashed images, making some modifications, and then squashing it back up and moving the new images into place.
-
-1. Set some variables.
-
-   This example uses `IMGTYPE=ceph` for the utility storage nodes, but the same process should also be done
-   with `IMGTYPE=k8s` for the Kubernetes master and worker nodes.
-
-   ```bash
-   pit# export NEWTZ=America/Chicago
-   pit# export IMGTYPE=ceph
-   pit# export IMGDIR=/var/www/ephemeral/data/${IMGTYPE}
-   ```
-
-1. Go to the Ceph image directory and unsquash the image.
-
-    ```bash
-    pit# cd ${IMGDIR}
-    pit# unsquashfs *.squashfs
-    ```
-
-1. Start a chroot session inside the unsquashed image. Your prompt may change to reflect that you are now in the root directory of the image.
-
-    ```bash
-    pit# chroot ./squashfs-root
-    ```
-
-1. Inside the chroot session, you will modify a few files by running the following commands, and then exit from the chroot session.
-
-    ```bash
-    pit-chroot# echo TZ=${NEWTZ} >> /etc/environment
-    pit-chroot# sed -i "s#^timedatectl set-timezone UTC#timedatectl set-timezone $NEWTZ#" /srv/cray/scripts/metal/set-ntp-config.sh
-    pit-chroot# /srv/cray/scripts/common/create-kis-artifacts.sh
-    pit-chroot# exit
-    pit#
-    ```
-
-1. Back outside the chroot session, you will now back up the original images and copy the new ones into place.
-
-    ```bash
-    pit# mkdir -v ${IMGDIR}/orig
-    pit# mv -v *.kernel *.xz *.squashfs ${IMGDIR}/orig/
-    pit# cp -v squashfs-root/squashfs/* .
-    pit# chmod -v 644 ${IMGDIR}/initrd.img.xz
-    ```
-
-1. Unmount the squashfs mount (which was mounted by the earlier unsquashfs command).
-
-    ```bash
-    pit# umount -v ${IMGDIR}/squashfs-root/mnt/squashfs
-    ```
-
-1. Repeat all of the previous steps, with this change to the IMGTYPE variable.
-
-   This example uses `IMGTYPE=k8s` for the Kubernetes master and worker nodes.
-
-   ```bash
-   pit# export IMGTYPE=k8s
-   pit# export IMGDIR=/var/www/ephemeral/data/${IMGTYPE}
-   ```
-
-1. Go to the k8s image directory and unsquash the image.
-
-    ```bash
-    pit# cd ${IMGDIR}
-    pit# unsquashfs *.squashfs
-    ```
-
-1. Start a chroot session inside the unsquashed image. Your prompt may change to reflect that you are now in the root directory of the image.
-
-    ```bash
-    pit# chroot ./squashfs-root
-    ```
-
-1. Inside the chroot session, you will modify a few files by running the following commands, and then exit from the chroot session.
-
-    ```bash
-    pit-chroot# echo TZ=${NEWTZ} >> /etc/environment
-    pit-chroot# sed -i "s#^timedatectl set-timezone UTC#timedatectl set-timezone $NEWTZ#" /srv/cray/scripts/metal/set-ntp-config.sh
-    pit-chroot# /srv/cray/scripts/common/create-kis-artifacts.sh
-    pit-chroot# exit
-    pit#
-    ```
-
-1. Back outside the chroot session, you will now back up the original images and copy the new ones into place.
-
-    ```bash
-    pit# mkdir -v ${IMGDIR}/orig
-    pit# mv -v *.kernel *.xz *.squashfs ${IMGDIR}/orig/
-    pit# cp -v squashfs-root/squashfs/* .
-    pit# chmod -v 644 ${IMGDIR}/initrd.img.xz
-    ```
-
-1. Unmount the squashfs mount (which was mounted by the earlier unsquashfs command)
-
-    ```bash
-    pit# umount -v ${IMGDIR}/squashfs-root/mnt/squashfs
-    ```
-
-1. Now link the new images so that the NCNs will get them from the LiveCD node when they boot.
-
-    ```bash
-    pit# set-sqfs-links.sh
-    ```
-
-1. Make a note that when performing the [csi handoff of NCN boot artifacts in Deploy Final NCN](../../install/deploy_final_ncn.md#ncn-boot-artifacts-hand-off), you must be sure to specify these new images. Otherwise ncn-m001 will use the default timezone when it boots, and subsequent reboots of the other NCNs will also lose the customized timezone changes.
+NCN timezones are set with cloud-init which is configured with the command `csi config init` by passing in the `--ntp-timezone string` parameter during system configuration. If the system is already configured then the timezone must be updated in BSS.

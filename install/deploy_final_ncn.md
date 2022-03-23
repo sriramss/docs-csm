@@ -125,9 +125,7 @@ the Kubernetes cluster as the final of three master nodes forming a quorum.
 
     1. Set the variables.
 
-        **IMPORTANT:** The variables you set depend on whether you customized the default NCN images. The most
-        common procedures that involve customizing the images are
-        [Configuring NCN Images to Use Local Timezone](../operations/node_management/Configure_NTP_on_NCNs.md#configure_ncn_images_to_use_local_timezone) and
+        **IMPORTANT:** The variables you set depend on whether you customized the default NCN images. The most common procedure that involve customizing the images is
         [Changing NCN Image Root Password and SSH Keys](../operations/security_and_authentication/Change_NCN_Image_Root_Password_and_SSH_Keys.md).
         The two paths forward are listed below:
 
