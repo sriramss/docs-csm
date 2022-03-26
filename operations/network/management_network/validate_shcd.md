@@ -3,7 +3,7 @@
 ### Topics
 
    * [Prequiresites before validating the SHCD](#prerequisites)
-   * [Begin validation in the following order](begin-validation-in-the-following-order)
+   * [Begin validation in the following order](#begin-validation-in-the-following-order)
    * [Checks and Validations](#checks-and-validations)
    * [Logging and Updates](#logging-and-updates)
    * [Output SHCD to JSON](#output-shcd-to-json)
