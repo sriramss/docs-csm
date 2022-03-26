@@ -1,5 +1,13 @@
 # Validate the SHCD
 
+### Topics
+
+   * [Prequiresites before validating the SHCD](#prerequisites)
+   * [Begin validation in the following order](begin-validation-in-the-following-order)
+   * [Checks and Validations](#checks-and-validations)
+   * [Logging and Updates](#logging-and-updates)
+   * [Output SHCD to JSON](#output-shcd-to-json)
+
 #### Prerequisites 
 - Up to date SHCD.
 - CANU installed with version 1.1.11 or greater.
@@ -32,7 +40,7 @@ This is a block of data on the right hand of the worksheet and is not the calcul
 
 ![](./img/shcd_example.png)
 
-In this example above the 10G_25G_40G_100G worksheet has the upper left and lower right corners of I37 and T107 respectively. 
+In this example above, the 10G_25G_40G_100G worksheet has the upper left and lower right corners of I37 and T107 respectively. Note, the above screenshot is trimmed and only the first full 68 rows are shown.
 
 Use CANU to validate this worksheet. 
 
@@ -58,13 +66,13 @@ ncn# canu validate shcd -a full --shcd ./HPE\ System\ Hela\ CCD.revA27.xlsx --ta
 
 A worksheet that runs "cleanly" will have checked that: 
 
-Nodes are "architecturally allowed" to connect to each other. 
+* Nodes are "architecturally allowed" to connect to each other. 
 
-* No overlapping ports specified. 
+	* No overlapping ports specified. 
 
-* Node connections can be made at the appropriate speeds. 
+	* Node connections can be made at the appropriate speeds. 
 
-A clean run will have the following sections: 
+In addition, a clean run will have the following sections: 
 
 * SHCD Node Connections – A high level list of all node connections on the system. 
 
@@ -126,23 +134,23 @@ Today CANU validates many things, but a future feature is full cable specificati
 
 Once the SHCD has run cleanly through CANU and CANU output has been manually validated, changes to the SHCD should be "committed" so that work is not lost, and other users can take advantage of the CANU changes.  
 
-Add an entry to the changelog Config. Summary first worksheet. The changelog should include: 
+* Add an entry to the changelog Config. Summary first worksheet. The changelog should include: 
 
-* The CANU command line used to validate the spreadsheet. 
+	* The CANU command line used to validate the spreadsheet. 
 
-* The CANU version being used to validate the spreadsheet. 
+	* The CANU version being used to validate the spreadsheet. 
 
-* An overview of changes made to the spreadsheet. 
+	* An overview of changes made to the spreadsheet. 
 
-After an SHCD has been validated it should be uploaded to an official storage location 
+* After an SHCD has been validated it should be uploaded to an official storage location 
 
-* customer communication (CAST ticket for customers) 
-* or SharePoint (internal systems and sometimes customer systems). 
+	* customer communication (CAST ticket for customers) 
+	* or SharePoint (internal systems and sometimes customer systems). 
 
 #### Output SHCD to JSON
 
-- Once the SHCD is fully validate, the user will be able to output all the connection details to a `json` file.
-- This is used to generate switch configs.
+- Once the SHCD is fully validated, the user will be able to output all the connection details to a `json` file.
+- This output `json` file is used to generate switch configs.
 
 ```bash
 ncn# canu validate shcd -a v1 --shcd ./test.xlsx --tabs 40G_10G,NMN,HMN --corners I12,S37,I9,S20,I20,S31  --json --out cabling.json

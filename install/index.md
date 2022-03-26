@@ -3,12 +3,16 @@
 Installation of the CSM product stream has many steps in multiple procedures which should be done in a
 specific order. Information about the HPE Cray EX system and the site is used to prepare the configuration
 payload. The initial node used to bootstrap the installation process is called the PIT node because the
-Pre-Install Toolkit (PIT) is installed there. Once the management network switches have been configured, the other
+Pre-Install Toolkit (PIT) is installed there.
+
+Once the management network switches have been configured, the other
 management nodes can be deployed with an operating system and the software to create a Kubernetes cluster
 utilizing Ceph storage. The CSM services provide essential software infrastructure including the API gateway
 and many micro-services with REST APIs for managing the system. Once administrative access has been configured,
 the installation of CSM software can be validated with health checks before doing operational tasks
 like the checking and updating of firmware on system components or the preparation of compute nodes. 
+
+
 Once the CSM installation has completed, other product streams for the HPE Cray EX system can be installed.
 
 ### Topics:
@@ -33,7 +37,7 @@ Once the CSM installation has completed, other product streams for the HPE Cray 
 
 The topics in this chapter need to be done as part of an ordered procedure so are shown here with numbered topics.
 
-**Note**: If problems are encountered during the installation, some topics have their own troubleshooting
+**Note**: If problems are encountered during the installation, some topics have their own [troubleshooting topics found in the operations index](../opertion/index.md)
 sections, but there is also a general troubleshooting topic.
 
 ## Details
