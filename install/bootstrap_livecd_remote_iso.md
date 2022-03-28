@@ -311,7 +311,7 @@ On first login (over SSH or at local console) the LiveCD will prompt the adminis
 <a name="generate-installation-files"></a>
 #### 4.1 Generate Installation Files
 
-Some files are needed for generating the configuration payload. See the [Command Line Configuration Payload](prepare_configuration_payload.md#command_line_configuration_payload) and [Configuration Payload Files](prepare_configuration_payload.md#configuration_payload_files) topics if one has not already prepared the information for this system.
+Some files are needed for generating the configuration payload. See the [Command Line Configuration Payload](prepare_configuration_payload.md#command_line_configuration_payload) and [Configuration Payload Files](prepare_configuration_payload.md#configuration_payload_files) topics if one has not already prepared the information for this system. Continue to step 1 below.
 
 1. At this time see [Create HMN Connections JSON](create_hmn_connections_json.md) for instructions about creating the `hmn_connections.json`. Return to this section when completed.
 
