@@ -132,8 +132,8 @@ making a backup of them, in case they need to be examined at a later time.
 
     > **`Note:`** Note that bond0.can0 is optional in CSM 1.2+
 
-    1. Check IP addresses. Do not run tests if these are missing and instead start triaging the issue.
-
+    ```bash
+    Check IP addresses. Do not run tests if these are missing and instead start triaging the issue.
        
        pit# wicked show bond0 bond0.nmn0 bond0.hmn0 bond0.can0
        bond0           up
@@ -165,6 +165,7 @@ making a backup of them, in case they need to be examined at a later time.
        leases:   ipv4 static granted
        addr:     ipv4 10.254.1.4/17 [static]
        
+    ```
 
 1. Copy the service config files generated earlier by `csi config init` for DNSMasq, Metal
    Basecamp (cloud-init), and Conman.
