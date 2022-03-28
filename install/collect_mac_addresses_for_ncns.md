@@ -351,7 +351,7 @@ making a backup of them, in case they need to be examined at a later time.
        config:   compat:suse:/etc/sysconfig/network/ifcfg-bond0.hmn0
        leases:   ipv4 static granted
        addr:     ipv4 10.254.1.4/17 [static]
-       ```
+    ```
 
 1. Copy the service config files generated earlier by `csi config init` for DNSMasq, Metal
    Basecamp (cloud-init), and Conman.
