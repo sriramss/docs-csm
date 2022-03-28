@@ -36,7 +36,9 @@ the number of storage and worker nodes.
       1. [Validation](#validation)
       1. [Optional Validation](#optional-validation)
    1. [Next Topic](#next-topic)
-
+$
+## Details$
+$
 <a name="prepare_for_management_node_deployment"></a>
 ## 1. Prepare for Management Node Deployment
 
@@ -61,13 +63,13 @@ Preparation of the environment must be done before attempting to deploy the mana
 
    Examples:
 
-   Check power status of all NCNs.
+1.   Check power status of all NCNs.
 
    ```bash
    pit# grep -oP "($mtoken|$stoken|$wtoken)" /etc/dnsmasq.d/statics.conf | sort -u | xargs -t -i ipmitool -I lanplus -U $USERNAME -E -H {} power status
    ```
 
-   Power off all NCNs.
+2.   Power off all NCNs.
 
    ```bash
    pit# grep -oP "($mtoken|$stoken|$wtoken)" /etc/dnsmasq.d/statics.conf | sort -u | xargs -t -i ipmitool -I lanplus -U $USERNAME -E -H {} power off
