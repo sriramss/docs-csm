@@ -186,7 +186,6 @@ On first login (over SSH or at local console) the LiveCD will prompt the adminis
     because it/they are in use. As a result, the old partition(s) will remain in use. You should reboot now before making 
     further changes.
     ```
-
     In that case, the following steps may resolve the problem without needing to reboot. These commands will remove 
     volume groups and raid arrays that may be using the disk.
     **`Note:`** These commands only need to be run if the earlier `parted` command failed.
