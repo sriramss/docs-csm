@@ -106,7 +106,7 @@ The Ceph image `ceph-image` is used by the utility storage nodes.
           The process can be fully automated by using the SQUASHFS_ROOT_PW_HASH
           environment variable (see below) along with either -d or -N
 
-          -a             Do *not* modifify the authorized_keys file in the squashfs.
+          -a             Do *not* modify the authorized_keys file in the squashfs.
                          If modifying a previously modified image, or an
                          authorized_keys file that contains the public key is already
                          included in the directory used with the -d option, you may
@@ -167,7 +167,7 @@ The Ceph image `ceph-image` is used by the utility storage nodes.
 
    In this example the root password hash in `/etc/shadow` in the NCN image will be replaced with the contents
    of the `$SQUASHFS_ROOT_PW_HASH` variable. Ensure you use single quotes when setting the environment variable.
-   This invocation aslo creates new ssh keys. 
+   This invocation also creates new SSH keys. 
 
    The newly created images will have a `secure-` prefix. The original images are retained in an `./old` directory
    at the same level in the filesystem as the squashfs files.
