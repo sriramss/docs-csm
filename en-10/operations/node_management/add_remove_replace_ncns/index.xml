@@ -6,11 +6,11 @@
     <description>Recent content in Add Remove Replace NCNs on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 28 Mar 2022 03:15:34 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Mar 2022 03:15:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Remove Roles</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/remove_ncn_from_role/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:25 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:11 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/remove_ncn_from_role/</guid>
       <description>Remove Roles Description Remove master, worker or storage NCN from current roles. Select the procedure below based on the node type, then complete the remaining wipe the drives and power off the node steps.
@@ -21,7 +21,7 @@ Procedure IMPORTANT: The following procedures assume you have set the variables 
     <item>
       <title>Update Firmware</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/update_firmware/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:25 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:11 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/update_firmware/</guid>
       <description>Update Firmware Description Use FAS to update the firmware and set the BMC password.
@@ -31,7 +31,7 @@ Procedure </description>
     <item>
       <title>Update Networking</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/update_networking/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:25 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:11 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/update_networking/</guid>
       <description>Update Networking Description Update the networking as needed to add or remove a NCN.
@@ -41,7 +41,7 @@ Procedure  Update Networking to Add NCN Update Networking to Remove NCN  Update 
     <item>
       <title>Validate NCN</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/validation/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:25 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:11 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/validation/</guid>
       <description>Validate NCN Description Validate that the NCN has been added or removed.
@@ -51,7 +51,7 @@ Procedure  Validate Added NCN Validate Removed NCN  Validate Added NCN Validate 
     <item>
       <title>Validate Shcd</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/validate_shcd/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:25 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:11 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/validate_shcd/</guid>
       <description>Validate SHCD Description Validate the SHCD and generate any needed configurations.
@@ -61,7 +61,7 @@ Procedure  Validate SHCD Before Adding NCN Validate SHCD After Removing NCN  Val
     <item>
       <title>Add NCN Data</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/add_ncn_data/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:24 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:10 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/add_ncn_data/</guid>
       <description>Add NCN Data Description Add NCN data to System Layout Service (SLS), Hardware Management Services (HMS) and Boot Script Service (BSS) as needed to add an NCN.
@@ -71,7 +71,7 @@ Procedure Add an additional NCN to an existing cabinet (requires &amp;hellip;) A
     <item>
       <title>Boot NCN</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/boot_ncn/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:24 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:10 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/boot_ncn/</guid>
       <description>Boot NCN Description Boot a master, worker, or storage non-compute node (NCN) that is to be added to the cluster.
@@ -82,7 +82,7 @@ Please open this link in a new tab or page Log in to a Node Using ConMan</descri
     <item>
       <title>Remove NCN Data</title>
       <link>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/remove_ncn_data/</link>
-      <pubDate>Mon, 28 Mar 2022 03:14:24 +0000</pubDate>
+      <pubDate>Tue, 29 Mar 2022 03:14:10 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/add_remove_replace_ncns/remove_ncn_data/</guid>
       <description>Remove NCN Data Description Remove NCN data to System Layout Service (SLS), Hardware Management Services (HMS) and Boot Script Service (BSS) as needed to remove an NCN.
