@@ -2,7 +2,7 @@
 
 ## SSL Validation Fails During the Installation Process
 
-If the Intermediate CA that's used to sign service certificates changes after
+If the Intermediate CA that is used to sign service certificates changes after
 the NCNs are brought up then this causes the platform-ca on the NCNs to no
 longer be valid. This is due to the platform-ca only being pulled via cloud-init
 on first boot. You can run the following goss test to validate this is the
@@ -33,18 +33,18 @@ how to fix it, please visit the web page mentioned above.
 ### Resolution
 
 ```bash
-goss -g /opt/cray/tests/install/ncn/tests/goss-platform-ca-certs-match-cloud-init.yaml v
+ncn# goss -g /opt/cray/tests/install/ncn/tests/goss-platform-ca-certs-match-cloud-init.yaml v
 ```
 
 If this test fails, then you should run the following commands to update the
 platform-ca.
 
 ```bash
-mv /var/lib/ca-certificates/ca-bundle.pem /root/ca-bundle.pem.bak
-curl http://10.92.100.71:8888/meta-data | jq -r  '.Global."ca-certs".trusted[]' \
-> /etc/pki/trust/anchors/platform-ca-certs.crt
-update-ca-certificates
-systemctl restart containerd
+ncn# mv /var/lib/ca-certificates/ca-bundle.pem /root/ca-bundle.pem.bak &&
+	 curl http://10.92.100.71:8888/meta-data |
+		jq -r  '.Global."ca-certs".trusted[]' > /etc/pki/trust/anchors/platform-ca-certs.crt &&
+	 update-ca-certificates &&
+	 systemctl restart containerd
 ```
 
 Note: This will save a copy of the original CA bundle in `/root/ca-bundle.pem.bak`.
@@ -56,27 +56,31 @@ CA bundle if the file exists.
 
 ### Example Error Messages
 
-```bash
+```
 python3[3705657]: Unable to contact CFS to report component status: HTTPSConnectionPool(host='api-gw-service-nmn.local', port=443):
 Max retries exceeded with url: /apis/cfs/v2/components/XNAME (Caused by SSLError(SSLError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate
 verify failed (_ssl.c:852)'),))
 ```
 
-```bash
+```
 Error calling https://api-gw-service-nmn.local/keycloak/realms/shasta/protocol/openid-connect/token: HTTPSConnectionPool(host='api-gw-service-nmn.local', port=443): Max retries exceeded with url: /keycloak/realms/shasta/protocol/openid-connect/token (Caused by SSLError(SSLError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:852)'),))
 ```
 
 ### Resolution
 
 Python3 applications, such as CFS, will fail to validate the API Gateway's SSL
-certificate if a non-SuSE provided certifi python package is used. This is due
-to the official certifi package using its own CA certificate bundle instead
+certificate if a non-SuSE provided `certifi` python package is used. This is due
+to the official `certifi` package using its own CA certificate bundle instead
 of the system's bundle. This normally happens if `pip install` is used to
-install an application with a certifi dependency. To see what version of certifi
+install an application with a `certifi` dependency. To see what version of `certifi`
 you are using, run `pip show certifi`.
 
 ```bash
 ncn# pip show certifi
+```
+
+Example output:
+```
 Name: certifi
 Version: 2021.10.8
 Summary: Python package for providing Mozilla's CA Bundle.
@@ -90,7 +94,7 @@ Required-by: canu, kubernetes, requests
 ```
 
 If this points to a local directory or is a different version then `2018.1.18`
-then you will need to uninstall this certifi package in order to trust the
+then uninstall this `certifi` package in order to trust the
 platform CA. The following command shows the expected output on a `1.2.5`
 system.
 
@@ -110,14 +114,14 @@ Required-by: kubernetes, requests
 
 ## SSL Validation Only Fails with Podman and/or Pulling Down Kubernetes Containers
 
-If the platform CA wasn't available in the system's CA certificate bundle when
+If the platform CA was not available in the system's CA certificate bundle when
 containerd started then the system will show SSL validation errors when talking
 to `https://registry.local`. This is due to containerd caching the CA bundle on
 startup.
 
 ### Example Error Message
 
-```bash
+```
 Get https://registry.local/v2/: x509: certificate signed by unknown authority
 Error: unable to pull registry.local/IMAGE:TAG: Error initializing source docker://registry.local/IMAGE:TAG: error pinging docker registry
 registry.local: Get https://registry.local/v2/: x509: certificate signed by unknown authority
@@ -128,5 +132,5 @@ registry.local: Get https://registry.local/v2/: x509: certificate signed by unkn
 Restart the `containerd` service.
 
 ```bash
-systemctl restart containerd
+ncn# systemctl restart containerd
 ```
