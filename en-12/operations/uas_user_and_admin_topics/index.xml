@@ -6,11 +6,23 @@
     <description>Recent content on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 31 Mar 2022 03:11:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/uas_user_and_admin_topics/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 03:23:18 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/uas_user_and_admin_topics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Update A Resource Specification</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_resource_specification/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_resource_specification/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Delete a UAI Resource Specification
+Update a Resource Specification Modify a specific UAI resource specification using the resource_id of that specification.
+Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the Resource ID of the resource specification to be updated: List UAI Resource Specifications  Procedure To modify a particular resource specification, use a command of the following form:</description>
+    </item>
+    
     <item>
       <title>Update A UAI Image Registration</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uai_image_registration/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:20 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uai_image_registration/</guid>
       <description>Top: User Access Service (UAS)
@@ -22,7 +34,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Update A UAS Volume</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:20 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_uas_volume/</guid>
       <description>Top: User Access Service (UAS)
@@ -34,7 +46,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>User Access Service (UAS)</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/user_access_service_uas/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:20 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/user_access_service_uas/</guid>
       <description>Next Topic: UAS Limitations
@@ -45,7 +57,7 @@ At a high level, there are two ways to configure UAS with respect to allowing us
     <item>
       <title>View A UAI Class</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/view_a_uai_class/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:20 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/view_a_uai_class/</guid>
       <description>Top: User Access Service (UAS)
@@ -57,7 +69,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Volumes</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:20 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/volumes/</guid>
       <description>Top: User Access Service (UAS)
@@ -70,7 +82,7 @@ The following are examples of how volumes are commonly used by UAIs:
     <item>
       <title>UAI Images</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_images/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_images/</guid>
       <description>Top: User Access Service (UAS)
@@ -82,7 +94,7 @@ UAI Images There are three kinds of UAI images used by UAS:
     <item>
       <title>UAI Macvlans Network Attachments</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_macvlans_network_attachments/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_macvlans_network_attachments/</guid>
       <description>Top: User Access Service (UAS)
@@ -93,7 +105,7 @@ UAI macvlans Network Attachments UAIs need to be able to reach compute nodes acr
     <item>
       <title>UAI Management</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_management/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_management/</guid>
       <description>Top: User Access Service (UAS)
@@ -105,7 +117,7 @@ UAI Management UAS supports two manual methods and one automated method of UAI m
     <item>
       <title>UAI Network Attachment Customization</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_network_attachments/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_network_attachments/</guid>
       <description>Top: User Access Service (UAS)
@@ -117,7 +129,7 @@ This section describes the data at each of those stages to show how the final ne
     <item>
       <title>UAS And UAI Legacy Mode Health Checks</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_and_uai_health_checks/</guid>
       <description>Top: User Access Service (UAS)
@@ -129,7 +141,7 @@ UAS and UAI Legacy Mode Health Checks Check the health of UAS and UAI to validat
     <item>
       <title>UAS Limitations</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uas_limitations/</guid>
       <description>Top: User Access Service (UAS)
@@ -139,21 +151,9 @@ Functionality Not Currently Supported by the User Access Service  Lustre (lfs) c
     </item>
     
     <item>
-      <title>Update A Resource Specification</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_resource_specification/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:19 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/update_a_resource_specification/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Delete a UAI Resource Specification
-Update a Resource Specification Modify a specific UAI resource specification using the resource_id of that specification.
-Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the Resource ID of the resource specification to be updated: List UAI Resource Specifications  Procedure To modify a particular resource specification, use a command of the following form:</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_image_customization/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_image_customization/</guid>
       <description>Top: User Access Service (UAS)
@@ -165,7 +165,7 @@ This section covers common customizations of both End-User UAIs and Broker UAIs.
     <item>
       <title>Troubleshoot UAS By Viewing Log Output</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uas_by_viewing_log_output/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uas_by_viewing_log_output/</guid>
       <description>Top: User Access Service (UAS)
@@ -177,7 +177,7 @@ Troubleshoot UAS by Viewing Log Output At times there will be problems with UAS.
     <item>
       <title>Troubleshoot UAS Issues</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uas_issues/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uas_issues/</guid>
       <description>Top: User Access Service (UAS)
@@ -189,7 +189,7 @@ Troubleshoot Connection Issues packet_write_wait: Connection to 203.0.113.0 port
     <item>
       <title>UAI Classes</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_classes/</guid>
       <description>Top: User Access Service (UAS)
@@ -200,7 +200,7 @@ UAI Classes UAI Classes provide templates for the creation of UAIs. They permit 
     <item>
       <title>UAI Host Node Selection</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_host_node_selection/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_host_node_selection/</guid>
       <description>Top: User Access Service (UAS)
@@ -211,7 +211,7 @@ UAI Host Node Selection When selecting UAI host nodes, it is a good idea to take
     <item>
       <title>UAI Host Nodes</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_host_nodes/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:18 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/uai_host_nodes/</guid>
       <description>Top: User Access Service (UAS)
@@ -220,9 +220,21 @@ UAI Host Nodes UAIs run as Kubernetes pods on Kubernetes worker nodes. UAS provi
     </item>
     
     <item>
+      <title>Troubleshoot Duplicate Mount Paths In A UAI</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_duplicate_mount_paths_in_a_uai/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_duplicate_mount_paths_in_a_uai/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Troubleshoot Missing or Incorrect UAI Images
+Troubleshoot Duplicate Mount Paths in a UAI If a user attempts to create a UAI in the legacy mode and cannot create the UAI at all, a good place to look is at volumes. Duplicate mount_path specifications in the list of volumes in a UAI will cause a failure that looks like this:
+ncn-m001-pit# cray uas create --publickey ~/.</description>
+    </item>
+    
+    <item>
       <title>Troubleshoot Missing Or Incorrect UAI Images</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_missing_or_incorrect_uai_images/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_missing_or_incorrect_uai_images/</guid>
       <description>Top: User Access Service (UAS)
@@ -234,7 +246,7 @@ Either obtaining and pushing the image to the image registry, or correcting the 
     <item>
       <title>Troubleshoot Stale Brokered UAIs</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_stale_brokered_uais/</guid>
       <description>Top: User Access Service (UAS)
@@ -245,7 +257,7 @@ Troubleshoot Stale Brokered UAIs When a Broker UAI terminates and restarts, the 
     <item>
       <title>Troubleshoot UAI Stuck In &#34;containercreating&#34;</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uai_stuck_in_containercreating/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uai_stuck_in_containercreating/</guid>
       <description>Top: User Access Service (UAS)
@@ -256,7 +268,7 @@ Troubleshoot UAI Stuck in &amp;ldquo;ContainerCreating&amp;rdquo; Resolve an iss
     <item>
       <title>Troubleshoot UAIs By Viewing Log Output</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uais_by_viewing_log_output/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uais_by_viewing_log_output/</guid>
       <description>Top: User Access Service (UAS)
@@ -270,7 +282,7 @@ ncn-m001-pit# cray uas admin uais list Example output:</description>
     <item>
       <title>Troubleshoot UAIs With Administrative Access</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uais_with_administrative_access/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uais_with_administrative_access/</guid>
       <description>Top: User Access Service (UAS)
@@ -281,7 +293,7 @@ Troubleshoot UAIs with Administrative Access Sometimes there is no better way to
     <item>
       <title>Troubleshoot UAS / Cli Authentication Issues</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uai_authentication_issues/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:17 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:15 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_uai_authentication_issues/</guid>
       <description>Top: User Access Service (UAS)
@@ -292,9 +304,19 @@ Internal Server Error An error was encountered while accessing Keycloak because 
     </item>
     
     <item>
+      <title></title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/select_and_configure_host_nodes_for_uais/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/select_and_configure_host_nodes_for_uais/</guid>
+      <description>Top: User Access Service (UAS)
+The information on this page has moved to UAI Host Node Selection. Please refer to that page.</description>
+    </item>
+    
+    <item>
       <title>Broker UAI Resiliency And Load Balancing</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/setting_up_multi-replica_brokers/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/setting_up_multi-replica_brokers/</guid>
       <description>Top: User Access Service (UAS)
@@ -305,7 +327,7 @@ Broker UAI Resiliency and Load Balancing Broker UAI resiliency and load balancin
     <item>
       <title>Setting UAI Timeouts</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/setting_uai_timeouts/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/setting_uai_timeouts/</guid>
       <description>Top: User Access Service (UAS)
@@ -317,7 +339,7 @@ On systems where UAIs are used as part of normal user activities, the number of 
     <item>
       <title>Special Purpose UAIs</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/special_purpose_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/special_purpose_uais/</guid>
       <description>Top: User Access Service (UAS)
@@ -329,7 +351,7 @@ One kind of special purpose UAI is the Broker UAI, which provides on demand End-
     <item>
       <title>Start A Broker UAI</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/start_a_broker_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/start_a_broker_uai/</guid>
       <description>Top: User Access Service (UAS)
@@ -341,7 +363,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Troubleshoot Broker UAI Sssd CANnot Use /etc/sssd/sssd.conf</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_broker_sssd_cant_use_sssd_conf/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_broker_sssd_cant_use_sssd_conf/</guid>
       <description>Top: User Access Service (UAS)
@@ -354,7 +376,7 @@ Diagnose the problem as follows:
     <item>
       <title>Troubleshoot Common Mistakes When Creating A Custom End-user UAI Image</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_common_mistakes_when_creating_a_custom_end-user_uai_image/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:14 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_common_mistakes_when_creating_a_custom_end-user_uai_image/</guid>
       <description>Top: User Access Service (UAS)
@@ -364,31 +386,9 @@ Troubleshoot Common Mistakes when Creating a Custom End-User UAI Image There a s
     </item>
     
     <item>
-      <title>Troubleshoot Duplicate Mount Paths In A UAI</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_duplicate_mount_paths_in_a_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:16 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/troubleshoot_duplicate_mount_paths_in_a_uai/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Troubleshoot Missing or Incorrect UAI Images
-Troubleshoot Duplicate Mount Paths in a UAI If a user attempts to create a UAI in the legacy mode and cannot create the UAI at all, a good place to look is at volumes. Duplicate mount_path specifications in the list of volumes in a UAI will cause a failure that looks like this:
-ncn-m001-pit# cray uas create --publickey ~/.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/select_and_configure_host_nodes_for_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/select_and_configure_host_nodes_for_uais/</guid>
-      <description>Top: User Access Service (UAS)
-The information on this page has moved to UAI Host Node Selection. Please refer to that page.</description>
-    </item>
-    
-    <item>
       <title>Clear UAS Configuration</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/reset_the_uas_configuration_to_original_installed_settings/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/reset_the_uas_configuration_to_original_installed_settings/</guid>
       <description>Top: User Access Service (UAS)
@@ -396,9 +396,21 @@ Clear UAS Configuration WARNING: The procedure described here will remove all UA
     </item>
     
     <item>
+      <title>Obtain The Configuration Of A UAS Volume</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/obtain_configuration_of_a_uas_volume/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/obtain_configuration_of_a_uas_volume/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Update a UAS Volume
+Obtain the Configuration of a UAS Volume View the configuration information of a specific UAS volume. This procedure requires the volume_ID of that volume.
+Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the Volume ID of the volume to be retrieved: List Volumes Registered in UAS  Procedure View the configuration of a specific UAS volume.</description>
+    </item>
+    
+    <item>
       <title>Register A UAI Image</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/register_a_uai_image/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/register_a_uai_image/</guid>
       <description>Top: User Access Service (UAS)
@@ -410,7 +422,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Resource Specifications</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/resource_specifications/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/resource_specifications/</guid>
       <description>Top: User Access Service (UAS)
@@ -422,7 +434,7 @@ In the UAS configuration, resource specifications contain that configuration. A 
     <item>
       <title>Retrieve Resource Specification Details</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/retrieve_resource_specification_details/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/retrieve_resource_specification_details/</guid>
       <description>Top: User Access Service (UAS)
@@ -434,7 +446,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Retrieve UAI Image Registration Information</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/retrieve_uai_image_registration_information/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:15 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:13 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/retrieve_uai_image_registration_information/</guid>
       <description>Top: User Access Service (UAS)
@@ -447,7 +459,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_and_delete_all_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_and_delete_all_uais/</guid>
       <description>Top: User Access Service (UAS)
@@ -458,7 +470,7 @@ The information on this page has been split into two pages and moved to:
     <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/login_to_a_users_uai_to_troubleshoot_issues/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/login_to_a_users_uai_to_troubleshoot_issues/</guid>
       <description>Top: User Access Service (UAS)
@@ -466,9 +478,22 @@ The information on this page has moved to Troubleshoot UAIs with Administrative 
     </item>
     
     <item>
+      <title>List UAS Version Information</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/</guid>
+      <description>Top: User Access Service (UAS)
+Next-Topic: End-User UAIs
+List UAS Version Information Use the cray uas mgr-info list command to determine the version and service name of UAS.
+List UAS Version with cray uas mgr-info list ncn-w001# cray uas mgr-info list Example output:
+service_name = &amp;quot;cray-uas-mgr&amp;quot; version = &amp;quot;1.16.1&amp;quot; Next-Topic: End-User UAIs</description>
+    </item>
+    
+    <item>
       <title>List Volumes Registered In UAS</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_volumes_registered_in_uas/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_volumes_registered_in_uas/</guid>
       <description>Top: User Access Service (UAS)
@@ -480,7 +505,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Log In To A Broker UAI</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/log_in_to_a_broker_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/log_in_to_a_broker_uai/</guid>
       <description>Top: User Access Service (UAS)
@@ -492,7 +517,7 @@ Prerequisites  The user must be logged into a host that can reach the external I
     <item>
       <title>Modify A UAI Class</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/modify_a_uai_class/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:12 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/modify_a_uai_class/</guid>
       <description>Top: User Access Service (UAS)
@@ -502,21 +527,21 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     </item>
     
     <item>
-      <title>Obtain The Configuration Of A UAS Volume</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/obtain_configuration_of_a_uas_volume/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:14 +0000</pubDate>
+      <title>Examine A UAI Using A Direct Administrative Command</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/obtain_configuration_of_a_uas_volume/</guid>
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/</guid>
       <description>Top: User Access Service (UAS)
-Next Topic: Update a UAS Volume
-Obtain the Configuration of a UAS Volume View the configuration information of a specific UAS volume. This procedure requires the volume_ID of that volume.
-Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the Volume ID of the volume to be retrieved: List Volumes Registered in UAS  Procedure View the configuration of a specific UAS volume.</description>
+Next Topic: Deleting a UAI
+Examine a UAI Using a Direct Administrative Command Print out information about a UAI.
+Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the UAI Name of the target UAI: List UAIs  Procedure Print out information about a UAI.</description>
     </item>
     
     <item>
       <title>Legacy Mode User-driven UAI Management</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/legacy_mode_user-driven_uai_management/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/legacy_mode_user-driven_uai_management/</guid>
       <description>Top: User Access Service (UAS)
@@ -527,7 +552,7 @@ Legacy Mode User-Driven UAI Management In the legacy mode, users create and mana
     <item>
       <title>List Available UAI Classes</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_classes/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_classes/</guid>
       <description>Top: User Access Service (UAS)
@@ -539,7 +564,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>List Available UAI Images In Legacy Mode</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_images_in_legacy_mode/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_available_uai_images_in_legacy_mode/</guid>
       <description>Top: User Access Service (UAS)
@@ -552,7 +577,7 @@ vers&amp;gt; cray uas images list default_image = &amp;quot;registry.local/cray/
     <item>
       <title>List Registered UAI Images</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_registered_uai_images/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_registered_uai_images/</guid>
       <description>Top: User Access Service (UAS)
@@ -564,7 +589,7 @@ While Registering a UAI image name with UAS is necessary for UAIs to use the ima
     <item>
       <title>List UAI Resource Specifications</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uai_resource_specifications/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uai_resource_specifications/</guid>
       <description>Top: User Access Service (UAS)
@@ -576,7 +601,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>List UAIs</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:11 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uais/</guid>
       <description>Top: User Access Service (UAS)
@@ -586,22 +611,9 @@ View the details of every UAI that is running by using a direct UAS administrati
     </item>
     
     <item>
-      <title>List UAS Version Information</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:13 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/list_uas_information/</guid>
-      <description>Top: User Access Service (UAS)
-Next-Topic: End-User UAIs
-List UAS Version Information Use the cray uas mgr-info list command to determine the version and service name of UAS.
-List UAS Version with cray uas mgr-info list ncn-w001# cray uas mgr-info list Example output:
-service_name = &amp;quot;cray-uas-mgr&amp;quot; version = &amp;quot;1.16.1&amp;quot; Next-Topic: End-User UAIs</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_using_an_administrative_command/</guid>
       <description>Top: User Access Service (UAS)
@@ -609,9 +621,21 @@ The information on this page has moved to Delete a UAI. Please see that page.</d
     </item>
     
     <item>
+      <title>Delete A UAI Image Registration</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_image_registration/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_image_registration/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Volumes
+Delete a UAI Image Registration Unregister a UAI image from UAS.
+Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the name of the UAI Image Registration to be deleted: List Registered UAI Images  Procedure Deleting a UAI image from UAS unregisters the UAI image from UAS.</description>
+    </item>
+    
+    <item>
       <title>Delete A UAI Resource Specification</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_resource_specification/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_resource_specification/</guid>
       <description>Top: User Access Service (UAS)
@@ -623,7 +647,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Delete A Volume Configuration</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_volume_configuration/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_volume_configuration/</guid>
       <description>Top: User Access Service (UAS)
@@ -635,7 +659,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Elements Of A UAI</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/elements_of_a_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/elements_of_a_uai/</guid>
       <description>Top: User Access Service (UAS)
@@ -648,7 +672,7 @@ UAI container image The container image for a UAI (UAI image) defines and provid
     <item>
       <title>End-user UAIs</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/end_user_uais/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:10 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/end_user_uais/</guid>
       <description>Top: User Access Service (UAS)
@@ -658,21 +682,9 @@ End-User UAIs are not dedicated hardware like UANs. They are implemented as cont
     </item>
     
     <item>
-      <title>Examine A UAI Using A Direct Administrative Command</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:12 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/examine_a_uai_using_a_direct_administrative_command/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Deleting a UAI
-Examine a UAI Using a Direct Administrative Command Print out information about a UAI.
-Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the UAI Name of the target UAI: List UAIs  Procedure Print out information about a UAI.</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_register_a_custom_uai_image/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_register_a_custom_uai_image/</guid>
       <description>Top: User Access Service (UAS)
@@ -682,7 +694,7 @@ The content on this page has moved to Customized End-User UAI Images. Please ref
     <item>
       <title>Create And Use Default UAIs In Legacy Mode</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_use_default_uais_in_legacy_mode/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_and_use_default_uais_in_legacy_mode/</guid>
       <description>Top: User Access Service (UAS)
@@ -695,7 +707,7 @@ user&amp;gt; cray uas create --public-key &#39;&amp;lt;path&amp;gt;&#39; &amp;lt
     <item>
       <title>Customize End-user UAI Images</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/customize_end-user_uai_images/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/customize_end-user_uai_images/</guid>
       <description>Top: User Access Service (UAS)
@@ -706,7 +718,7 @@ Customize End-User UAI Images The provided End-User UAI image is a basic UAI ima
     <item>
       <title>Customize The Broker UAI Image</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/customize_the_broker_uai_image/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/customize_the_broker_uai_image/</guid>
       <description>Top: User Access Service (UAS)
@@ -719,7 +731,7 @@ The key pieces of the Broker UAI image are:
     <item>
       <title>Delete A UAI</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai/</guid>
       <description>Top: User Access Service (UAS)
@@ -731,7 +743,7 @@ When a UAI is deleted, any running WLM sessions associated with the owner of the
     <item>
       <title>Delete A UAI Class</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_class/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:09 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_class/</guid>
       <description>Top: User Access Service (UAS)
@@ -741,21 +753,9 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     </item>
     
     <item>
-      <title>Delete A UAI Image Registration</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_image_registration/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:11 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/delete_a_uai_image_registration/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Volumes
-Delete a UAI Image Registration Unregister a UAI image from UAS.
-Prerequisites  The administrator must be logged into an NCN or a host that has administrative access to the HPE Cray EX System API Gateway The administrator must have the HPE Cray EX System CLI (cray command) installed on the above host The HPE Cray EX System CLI must be configured (initialized - cray init command) to reach the HPE Cray EX System API Gateway The administrator must be logged in as an administrator to the HPE Cray EX System CLI (cray auth login command) The administrator must know the name of the UAI Image Registration to be deleted: List Registered UAI Images  Procedure Deleting a UAI image from UAS unregisters the UAI image from UAS.</description>
-    </item>
-    
-    <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_using_a_direct_administrative_command/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_using_a_direct_administrative_command/</guid>
       <description>Top: User Access Service (UAS)
@@ -763,9 +763,21 @@ The information on this page has moved to Create a UAI. Please refer to that pag
     </item>
     
     <item>
+      <title>Configure A Default UAI Class For Legacy Mode</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Create and Use Default UAIs in Legacy Mode
+Configure a Default UAI Class for Legacy Mode Using a default UAI class is optional but recommended for any site using the legacy UAI management mode that wants to have some control over UAIs created by users. UAI classes used for this purpose need to have certain minimum configuration in them:
+ The image_id field set to identify the image used to construct UAIs The volume_list field set to the list of volumes to mount in UAIs The public_ip field set to true The uai_compute_network flag set to true (if workload management will be used) The default flag set to true to make this the default UAI class  To make UAIs useful, there is a minimum set of volumes that should be defined in the UAS configuration:</description>
+    </item>
+    
+    <item>
       <title>Create A UAI</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai/</guid>
       <description>Top: User Access Service (UAS)
@@ -777,7 +789,7 @@ It is rare that an an administrator would hand-craft an End-User UAI using this 
     <item>
       <title>Create A UAI Class</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_class/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_class/</guid>
       <description>Top: User Access Service (UAS)
@@ -789,7 +801,7 @@ Prerequisites  The administrator must be logged into an NCN or a host that has a
     <item>
       <title>Create A UAI Resource Specification</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_resource_specification/</guid>
       <description>Top: User Access Service (UAS)
@@ -800,7 +812,7 @@ Create a UAI Resource Specification Add a resource specification to UAS. Once ad
     <item>
       <title>Create A UAI With Additional Ports</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_with_additional_ports/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_a_uai_with_additional_ports/</guid>
       <description>Top: User Access Service (UAS)
@@ -811,7 +823,7 @@ Prerequisites  The user must be logged into a host that has user access to the H
     <item>
       <title>Create UAIs From Specific Uai Images In Legacy Mode</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_uais_from_specific_uai_images_in_legacy_mode/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:10 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:08 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/create_uais_from_specific_uai_images_in_legacy_mode/</guid>
       <description>Top: User Access Service (UAS)
@@ -825,7 +837,7 @@ vers&amp;gt; cray uas images list default_image = &amp;quot;registry.</descripti
     <item>
       <title></title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/common_uai_config/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/common_uai_config/</guid>
       <description>Top: User Access Service (UAS)
@@ -835,9 +847,20 @@ This section provides guidance on common UAI configuration activities. Specific 
     </item>
     
     <item>
+      <title>Broker Mode UAI Management</title>
+      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/broker_mode_uai_management/</link>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/broker_mode_uai_management/</guid>
+      <description>Top: User Access Service (UAS)
+Next Topic: Configure End-User UAI Classes for Broker Mode
+Broker Mode UAI Management A Broker UAI is a special kind of UAI whose job is not to host users directly but to accept attempts to reach a UAI, locate or create a UAI for the user making the attempt, and then pass the user&amp;rsquo;s connection on to the correct UAI. Multiple Broker UAIs can be created, each serving users with UAIs of a different classes.</description>
+    </item>
+    
+    <item>
       <title>Choosing UAI Resource Settings</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/choosing_uai_resource_settings/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/choosing_uai_resource_settings/</guid>
       <description>Top: User Access Service (UAS)
@@ -848,7 +871,7 @@ Choosing UAI Resource Settings The Resource Specifications and UAI Classes secti
     <item>
       <title>Configure A Broker UAI Class</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_broker_uai_class/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_broker_uai_class/</guid>
       <description>Top: User Access Service (UAS)
@@ -858,21 +881,9 @@ Configure a Broker UAI Class Configuring a Broker UAI class consists of the foll
     </item>
     
     <item>
-      <title>Configure A Default UAI Class For Legacy Mode</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_a_default_uai_class_for_legacy_mode/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Create and Use Default UAIs in Legacy Mode
-Configure a Default UAI Class for Legacy Mode Using a default UAI class is optional but recommended for any site using the legacy UAI management mode that wants to have some control over UAIs created by users. UAI classes used for this purpose need to have certain minimum configuration in them:
- The image_id field set to identify the image used to construct UAIs The volume_list field set to the list of volumes to mount in UAIs The public_ip field set to true The uai_compute_network flag set to true (if workload management will be used) The default flag set to true to make this the default UAI class  To make UAIs useful, there is a minimum set of volumes that should be defined in the UAS configuration:</description>
-    </item>
-    
-    <item>
       <title>Configure End-user UAI Classes For Broker Mode</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_end-user_uai_classes_for_broker_mode/</guid>
       <description>Top: User Access Service (UAS)
@@ -883,7 +894,7 @@ Configure End-User UAI Classes for Broker Mode Each UAI broker will create and m
     <item>
       <title>Configure UAIs In UAS</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_uais_in_uas/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:09 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:07 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/configure_uais_in_uas/</guid>
       <description>Top: User Access Service (UAS)
@@ -896,7 +907,7 @@ Options for the elements of a UAI are maintained in the UAS configuration. The f
     <item>
       <title>Add A Volume To UAS</title>
       <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/add_a_volume_to_uas/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:08 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:23:06 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/add_a_volume_to_uas/</guid>
       <description>Top: User Access Service (UAS)
@@ -904,17 +915,6 @@ Next Topic: Obtain Configuration of a UAS Volume
 Add a Volume to UAS This procedure registers and configures a volume in UAS so that the volume can be mounted in UAIs.
 See List Volumes Registered in UAS for examples of valid volume configurations. Refer to Elements of a UAI for descriptions of the volume configuration fields and values.
 Note the following caveats about adding volumes to UAS:</description>
-    </item>
-    
-    <item>
-      <title>Broker Mode UAI Management</title>
-      <link>/docs-csm/en-12/operations/uas_user_and_admin_topics/broker_mode_uai_management/</link>
-      <pubDate>Thu, 31 Mar 2022 03:11:08 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/uas_user_and_admin_topics/broker_mode_uai_management/</guid>
-      <description>Top: User Access Service (UAS)
-Next Topic: Configure End-User UAI Classes for Broker Mode
-Broker Mode UAI Management A Broker UAI is a special kind of UAI whose job is not to host users directly but to accept attempts to reach a UAI, locate or create a UAI for the user making the attempt, and then pass the user&amp;rsquo;s connection on to the correct UAI. Multiple Broker UAIs can be created, each serving users with UAIs of a different classes.</description>
     </item>
     
   </channel>

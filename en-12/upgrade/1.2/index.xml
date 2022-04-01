@@ -6,11 +6,11 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 31 Mar 2022 03:12:45 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 03:24:41 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:44 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</guid>
       <description>This is a reusable python library for safely interacting with SLS network data (in JSON format).
@@ -20,7 +20,7 @@ The library has been tested against python version 3.6 and up.</description>
     <item>
       <title>Upgrade Automation</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/upgrade/upgrade_automation/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:44 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/upgrade/upgrade_automation/</guid>
       <description>Upgrade automation This document describes how we automate upgrade process. In a nutshell, an upgrade is to upload new artifacts into a running system, then rebuild each ncn with newer images we uploaded and deploy new charts after storage/k8s nodes are upgraded.
@@ -32,36 +32,16 @@ The prereq script is required to run on both m001 and m002. If an action is only
     <item>
       <title>Upgrade SLS Offline From 1.0.x To Csm 1.2</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:44 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</guid>
       <description>Upgrade SLS Offline from CSM 1.0.x to CSM 1.2 TL;DR  Get a token:  export TOKEN=$(curl -s -k -S -d grant_type=client_credentials -d client_id=admin-client -d client_secret=`kubectl get secrets admin-client-auth -o jsonpath=&amp;#39;{.data.client-secret}&amp;#39; | base64 -d` https://api-gw-service-nmn.local/keycloak/realms/shasta/protocol/openid-connect/token | jq -r &amp;#39;.access_token&amp;#39;)  Extract SLS data to a file:  curl -k -H &amp;#34;Authorization: Bearer ${TOKEN}&amp;#34; https://api-gw-service-nmn.local/apis/sls/v1/dumpstate | jq -S . &amp;gt; sls_input_file.json  Upgrade SLS data (Example 1): Upgrade, using the CHN as the system default route (will by default output to migrated_sls_file.</description>
     </item>
     
     <item>
-      <title>Stage 4 - Ceph Upgrade</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_4/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:43 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_4/</guid>
-      <description>Stage 4 - Ceph Upgrade Addresses CVEs  CVE-2021-3531: Swift API denial of service. CVE-2021-3524: HTTP header injects via CORS in RGW. CVE-2021-3509: Dashboard XSS via token cookie. CVE-2021-20288: Unauthorized global_id reuse in cephx.  IMPORTANT:
-  This upgrade is performed using the ceph orchestrator. The upgrade includes all fixes from v15.2.9 through to v15.2.15 listed here Ceph version index   Procedure Upgrade   Check to ensure the upgrade is possible.</description>
-    </item>
-    
-    <item>
-      <title>Stage 5 - Perform NCN Personalization</title>
-      <link>/docs-csm/en-12/upgrade/1.2/stage_5/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:43 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/stage_5/</guid>
-      <description>Stage 5 - Perform NCN Personalization Procedure   Set the root user password and SSH keys before running NCN personalization. The location where the password is stored in Vault has changed since previous CSM versions. See Configure the Root Password and Root SSH Keys in Vault.
-  If custom configuration content was merged with content from a previous CSM installation, merge the new CSM configuration in with it in the csm-config-management git repository.</description>
-    </item>
-    
-    <item>
       <title>1.0.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
       <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:42 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
       <description>CSM 1.0.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc
@@ -71,7 +51,7 @@ Introduction This document is intended to guide an administrator through the upg
     <item>
       <title>Stage 0 - Prerequisites And Preflight Checks</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:42 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
       <description>Stage 0 - Prerequisites and Preflight Checks  NOTE: CSM-1.0.1 or higher is required in order to upgrade to CSM-1.2.0
@@ -81,7 +61,7 @@ Introduction This document is intended to guide an administrator through the upg
     <item>
       <title>Stage 1 - Ceph Image Upgrade</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:42 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
       <description>Stage 1 - Ceph image upgrade   Run ncn-upgrade-ceph-nodes.sh for ncn-s001. Follow output of the script carefully. The script will pause for manual interaction.
@@ -92,7 +72,7 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.
     <item>
       <title>Stage 2 - Kubernetes Upgrade From 1.19.9 To 1.20.13</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:42 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
       <description>Stage 2 - Kubernetes Upgrade from 1.19.9 to 1.20.13  NOTE: During the CSM-0.9 install the LiveCD containing the initial install files for this system should have been unmounted from the master node when rebooting into the Kubernetes cluster. The scripts run in this section will also attempt to unmount/eject it if found to ensure the USB stick does not get erased.
@@ -102,13 +82,33 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.
     <item>
       <title>Stage 3 - Service Upgrades</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
-      <pubDate>Thu, 31 Mar 2022 03:12:42 +0000</pubDate>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
       <description>Stage 3 - CSM Service Upgrades IMPORTANT:
  During this stage there will be a brief (approximately 5 minutes) window where pods with PVCs will not be able to migrate between nodes. This is due to a redeployment of the Ceph csi provisioners into namespaces to accommodate the newer charts and a better upgrade strategy.
  Run csm-upgrade.sh to deploy upgraded CSM applications and services:
 ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/csm-upgrade.sh Once Stage 3 is completed, proceed to Stage 4</description>
+    </item>
+    
+    <item>
+      <title>Stage 4 - Ceph Upgrade</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_4/</link>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_4/</guid>
+      <description>Stage 4 - Ceph Upgrade Addresses CVEs  CVE-2021-3531: Swift API denial of service. CVE-2021-3524: HTTP header injects via CORS in RGW. CVE-2021-3509: Dashboard XSS via token cookie. CVE-2021-20288: Unauthorized global_id reuse in cephx.  IMPORTANT:
+  This upgrade is performed using the ceph orchestrator. The upgrade includes all fixes from v15.2.9 through to v15.2.15 listed here Ceph version index   Procedure Upgrade   Check to ensure the upgrade is possible.</description>
+    </item>
+    
+    <item>
+      <title>Stage 5 - Perform NCN Personalization</title>
+      <link>/docs-csm/en-12/upgrade/1.2/stage_5/</link>
+      <pubDate>Fri, 01 Apr 2022 03:24:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/stage_5/</guid>
+      <description>Stage 5 - Perform NCN Personalization Procedure   Set the root user password and SSH keys before running NCN personalization. The location where the password is stored in Vault has changed since previous CSM versions. See Configure the Root Password and Root SSH Keys in Vault.
+  If custom configuration content was merged with content from a previous CSM installation, merge the new CSM configuration in with it in the csm-config-management git repository.</description>
     </item>
     
   </channel>
