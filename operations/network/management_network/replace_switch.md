@@ -4,7 +4,7 @@
 
 This can cause unpredicted behavior and network outages.
 
-### Prerequisites 
+### Prerequisites
 
 - Out of band access to the switches (console).
 - GA generated switch config or backed-up switch config exists.

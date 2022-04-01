@@ -1,9 +1,9 @@
 # Network tests
 
-#### Prerequisites 
+#### Prerequisites
 - SSH access to the switches.
 - SLS file or SLS API access.
- 
+
 CANU has the ability to run tests against the management network.
 
 CANU has to be on version `1.1.4` or later. Run `canu --version` to verify. If doing a CSM install or upgrade, a CANU RPM is located in the release tarball. For more information, see this procedure: [Update CANU From CSM Tarball](update_canu_from_csm_tarball.md)

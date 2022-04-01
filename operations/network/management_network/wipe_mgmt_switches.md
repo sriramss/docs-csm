@@ -1,6 +1,6 @@
 # Wipe Switch Config
 
-#### Prerequisites 
+#### Prerequisites
 - Out of band access to the switches (console).
 ### Aruba
 
@@ -13,19 +13,19 @@ sw-spine-001# copy running-config checkpoint CSM1_0
 ```
 Make sure the checkpoint was created.
 ```
-sw-spine-001# show checkpoint 
+sw-spine-001# show checkpoint
 NAME                                                TYPE        WRITER  DATE(YYYY/MM/DD)      IMAGE VERSION
 CSM1_0                                              latest      User    2022-01-27T18:52:31Z  GL.10.08.1021
 ```
 
 Erase Startup config
 ```
-sw-spine-002# erase startup-config 
+sw-spine-002# erase startup-config
 Erase checkpoint startup-config ? (y/n): y
 ```
-Reboot 
+Reboot
 ```
-sw-spine-001# boot system                                      
+sw-spine-001# boot system
 Checking if the configuration needs to be saved...
 
 Do you want to save the current configuration (y/n)? n
@@ -87,14 +87,14 @@ NVIDIA Switch
 
 Configuration wizard
 
-Do you want to use the wizard for initial configuration? 
+Do you want to use the wizard for initial configuration?
 Please answer 'yes' or 'no'.
 Do you want to use the wizard for initial configuration? no
 
 Enable password hardening: [yes] no
 
-New password for 'admin' account must be typed, please enter new password: 
-Confirm: 
-New password for 'monitor' account must be typed, please enter new password: 
-Confirm: 
+New password for 'admin' account must be typed, please enter new password:
+Confirm:
+New password for 'monitor' account must be typed, please enter new password:
+Confirm:
 ```

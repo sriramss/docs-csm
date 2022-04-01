@@ -1,6 +1,6 @@
-# Collect Data 
+# Collect Data
 
-## Prerequisites 
+## Prerequisites
 
 - SSH access to the switches.
 - SLS API access.
@@ -18,7 +18,7 @@
     **IMPORTANT:** If this is an upgrade SLS needs to be updated to the correct CSM version first.
 
     ```bash
-    ncn# cray sls dumpstate list  --format json >> sls_file.json   
+    ncn# cray sls dumpstate list  --format json >> sls_file.json
     ```
 
 1. Retrieve switch running configurations.
@@ -48,10 +48,10 @@
 
 1. Retrieve the customizations file. (log in from `ncn-m001`)
 
-    Run the command  
+    Run the command
 
     ```bash
-    ncn# kubectl -n loftsman get secret site-init -o json | jq -r '.data."customizations.yaml"' | base64 -d > customizations.yaml 
+    ncn# kubectl -n loftsman get secret site-init -o json | jq -r '.data."customizations.yaml"' | base64 -d > customizations.yaml
     ```
 
     This will output the customizations file to a file called `customizations.yaml` in your current working directory.

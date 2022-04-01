@@ -44,7 +44,7 @@ System configuration has been modified. Save? [yes/no]:no
 ### Mellanox
 
 1. View the configuration files.
-   
+
     Ensure that `csm1.0` and `csm1.2` exist. If they exist, proceed to the next step.
 
     ```
