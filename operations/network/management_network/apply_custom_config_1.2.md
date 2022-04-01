@@ -1,6 +1,6 @@
 # Apply Custom Switch Config CSM 1.2
 
-#### Prerequisites 
+#### Prerequisites
 - access to the switches.
 - Custom Switch configs.
     - [Backup Custom Config](backup_custom_config.md)
@@ -16,9 +16,9 @@
 
 ```
 sw-spine-001# conf t
-interface 1/1/36 
+interface 1/1/36
     no shutdown
-    vrf attach Customer 
+    vrf attach Customer
     description to:CANswitch_cfcanb6s1-31:from:sw-25g01_x3000u39-j36
     ip address 10.101.15.142/30
     exit
@@ -29,8 +29,8 @@ sw-spine-001(config)# system interface-group 3 speed 10g
 ```
 ```
 sw-spine-002# conf t
-interface 1/1/36 
-    no shutdown 
+interface 1/1/36
+    no shutdown
     vrf attach Customer
     description to:CANswitch_cfcanb6s1-46:from:sw-25g02_x3000u40-j36
     ip address 10.101.15.190/30
@@ -51,7 +51,7 @@ sw-spine-002(config)# ip route 0.0.0.0/0 10.101.15.189 vrf Customer
 ```
 ##### Mellanox
 
-- `vrf forwarding Customer` will be added to the port config.  
+- `vrf forwarding Customer` will be added to the port config.
 - This has to be applied before the `ip address` configuration.
 ```
 sw-spine-001 [mlag-domain: master] # conf t
@@ -82,7 +82,7 @@ sw-spine-002 [mlag-domain: master] # conf t
  #### Apply users/password
 
 All that is required to re-apply the users is get into global configuration mode `conf t` and paste in the config that was copied from the previous step.
- 
+
 ##### Aruba
 ```
 sw-leaf-bmc-001# conf t

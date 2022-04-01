@@ -1,6 +1,6 @@
 # Apply Switch Configs
 
-#### Prerequisites 
+#### Prerequisites
 
 - Switch without any configuration.
     - [Wipe Mgmt Switches](wipe_mgmt_switches.md)

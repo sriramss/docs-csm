@@ -9,7 +9,7 @@
     ```bash
     ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-master-nodes.sh ncn-m002
     ```
-    
+
 1. Repeat the previous step for each other master node **excluding `ncn-m001`**, one at a time.
 
 ## Stage 2.2
@@ -19,7 +19,7 @@
     ```bash
     ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-worker-nodes.sh ncn-w001
     ```
-    
+
     > NOTE: You may need to reset the root password for each node after it is rebooted
 
 1. Repeat the previous step for each other worker node, one at a time.
@@ -52,17 +52,17 @@ For `ncn-m001`, use `ncn-m002` as the stable NCN. Use `bond0.cmn0`/CAN IP addres
             ```
 
         1. Set the `ENDPOINT` variable to the URL of the directory containing the CSM release tarball.
-        
+
             In other words, the full URL to the CSM release tarball will be `${ENDPOINT}${CSM_RELEASE}.tar.gz`
-        
+
             **NOTE** This step is optional for Cray/HPE internal installs.
-        
+
             ```bash
             ncn-m002# ENDPOINT=https://put.the/url/here/
             ```
 
         1. Run the script
-        
+
             **NOTE** The `--endpoint` argument is optional for Cray/HPE internal use.
 
             ```bash
@@ -82,7 +82,7 @@ For `ncn-m001`, use `ncn-m002` as the stable NCN. Use `bond0.cmn0`/CAN IP addres
             ```
 
         1. Set the `TAR_DIR` variable to the directory on `ncn-m002` containing the CSM release tarball.
-        
+
             In other words, the full path to the CSM release tarball will be `${TAR_DIR}/${CSM_RELEASE}.tar.gz`
 
             ```bash

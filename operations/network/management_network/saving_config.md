@@ -9,11 +9,11 @@ To keep track of what version of config is running on the switch create a new co
 1. Get the CSM and CANU versions from the MOTD banner.
 
 ```
-sw-spine-001 [mlag-domain: master] (config) # show banner 
+sw-spine-001 [mlag-domain: master] (config) # show banner
 
 Banners:
   Message of the Day (MOTD):
-    
+
     ###############################################################################
     # CSM version:  1.0
     # CANU version: 1.1.11
@@ -51,7 +51,7 @@ Copy completed
 1. Get the CSM and CANU versions from the MOTD banner.
 
  ```
-sw-leaf-bmc-001(config)# show banner motd 
+sw-leaf-bmc-001(config)# show banner motd
 ###############################################################################
 # CSM version:  1.2
 # CANU version: 1.1.11

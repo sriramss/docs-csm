@@ -5,7 +5,7 @@ This page is designed for:
 - Showing users how initially save switch configs so they can be used again.
 - Switching between saved configurations.
 
-:exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:  
+:exclamation: All of these steps should be done using an out of band connection. This process is disruptive and will require downtime :exclamation:
 
 It is recommended to do a `show run` on each switch and save that configuration before attempting the procedures below.
 
@@ -175,7 +175,7 @@ This process should be used when config files for the desired CSM version are cu
 In the following example, the switch config will go from CSM 1.2 to CSM 1.0.
 
 1. Verify that the correct configuration file exists on the switch.
-    
+
     ```
     sw-spine-001 [mlag-domain: master] (config) # show configuration files
     ```
@@ -199,9 +199,9 @@ In the following example, the switch config will go from CSM 1.2 to CSM 1.0.
     This requires a reboot.
     Type 'yes' to confirm: yes
     ```
-    
-    The switch should boot to the config version typed in the previous command. 
-    
+
+    The switch should boot to the config version typed in the previous command.
+
 1. Verify the config version after the switch is booted.
 
     ```
