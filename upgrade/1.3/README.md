@@ -6,4 +6,3 @@ This document is intended to guide an administrator through the upgrade process 
 
 ## Terminology
 
-
