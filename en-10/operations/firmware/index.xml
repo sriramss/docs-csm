@@ -6,11 +6,11 @@
     <description>Recent content in Firmware on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 04 Apr 2022 03:18:05 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 05 Apr 2022 03:13:15 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upload BMC Recovery Firmware Into Tftp Server</title>
       <link>/docs-csm/en-10/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:55 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</guid>
       <description>Upload BMC Recovery Firmware into TFTP Server cray-upload-recovery-images is a utility for uploading the BMC recovery files for ChassisBMCs, NodeBMCs, and RouterBMCs to be served by the cray-tftp service. The tool uses the cray cli (fas, artifacts) and cray-tftp to download the s3 recovery images (as remembered by FAS) then upload them into the PVC that is used by cray-tftp. cray-upload-recovery-images should be run on every system.
@@ -20,7 +20,7 @@ Procedure   Execute the cray-upload-recovery-images script.</description>
     <item>
       <title>FAS Admin Procedures</title>
       <link>/docs-csm/en-10/operations/firmware/fas_admin_procedures/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/fas_admin_procedures/</guid>
       <description>FAS Admin Procedures 
@@ -31,7 +31,7 @@ Topics  FAS Admin Procedures  Topics Warning for Non-Compute Nodes (NCNs) Ignore
     <item>
       <title>FAS Cli</title>
       <link>/docs-csm/en-10/operations/firmware/fas_cli/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/fas_cli/</guid>
       <description>FAS CLI This section describes the basic capabilities of the Firmware Action Service (FAS) CLI commands. These commands can be used to manage firmware for system hardware supported by FAS. Refer to the prerequisites section before proceeding to any of the sections for the supported operations.
@@ -42,7 +42,7 @@ The following CLI operations are described:
     <item>
       <title>FAS Filters</title>
       <link>/docs-csm/en-10/operations/firmware/fas_filters/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/fas_filters/</guid>
       <description>FAS Filters FAS uses five primary filters for actions and snapshots to determine what operations to create. The filters are listed below:
@@ -52,7 +52,7 @@ The following CLI operations are described:
     <item>
       <title>FAS Use Cases</title>
       <link>/docs-csm/en-10/operations/firmware/fas_use_cases/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/fas_use_cases/</guid>
       <description>FAS Use Cases Use the Firmware Action Service (FAS) to update the firmware on supported hardware devices. Each procedure includes the prerequisites and example recipes required to update the firmware.
@@ -63,7 +63,7 @@ Refer to FAS Filters for more information on the content used in the example JSO
     <item>
       <title>Recipes</title>
       <link>/docs-csm/en-10/operations/firmware/fas_recipes/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/fas_recipes/</guid>
       <description>Recipes NOTE: This file contains a collection of various FAS recipes for performing updates. For step by step directions and commands, see FAS_Use_Cases
@@ -74,7 +74,7 @@ When updating an entire system, walk down the device hierarchy component type by
     <item>
       <title>Update Firmware With FAS</title>
       <link>/docs-csm/en-10/operations/firmware/update_firmware_with_fas/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/update_firmware_with_fas/</guid>
       <description>Update Firmware with FAS The Firmware Action Service (FAS) provides an interface for managing firmware versions of Redfish-enabled hardware in the system. FAS interacts with the Hardware State Managers (HSM), device data, and image data in order to update firmware.
@@ -85,14 +85,14 @@ FAS images contain the following information that is needed for a hardware devic
     <item>
       <title>Updating BMC Firmware And Bios For NCN-m001</title>
       <link>/docs-csm/en-10/operations/firmware/updating_firmware_m001/</link>
-      <pubDate>Mon, 04 Apr 2022 03:16:54 +0000</pubDate>
+      <pubDate>Tue, 05 Apr 2022 03:12:09 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/firmware/updating_firmware_m001/</guid>
       <description>Updating BMC Firmware and BIOS for ncn-m001 NOTE: ON HPE nodes, the BMC is iLO 5 and BIOS is System ROM
 The commands in the procedure must be run on ncn-m001
 Prerequisite:
 The following information is needed:
- IP Address of ncn-m001 bmc IP Address of ncn-m001 Root password for ncn-m001 bmc  Find the Model Name Use one of the following commands to find the model name for the node type in use.</description>
+ IP Address of ncn-m001 BMC IP Address of ncn-m001 Root password for ncn-m001 BMC  Find the Model Name Use one of the following commands to find the model name for the node type in use.</description>
     </item>
     
   </channel>
