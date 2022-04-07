@@ -6,11 +6,11 @@
     <description>Recent content in DHCP on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 06 Apr 2022 03:14:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/dhcp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Apr 2022 03:13:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/dhcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DHCP</title>
       <link>/docs-csm/en-12/operations/network/dhcp/dhcp/</link>
-      <pubDate>Wed, 06 Apr 2022 03:12:54 +0000</pubDate>
+      <pubDate>Thu, 07 Apr 2022 03:11:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/dhcp/dhcp/</guid>
       <description>DHCP The Dynamic Host Configuration Protocol (DHCP) service on the HPE Cray EX system uses the Internet Systems Consortium (ISC) Kea tool. Kea provides more robust management capabilities for DHCP servers.
@@ -22,7 +22,7 @@ The following improvements to the DHCP service are included:
     <item>
       <title>Troubleshoot DHCP Issues</title>
       <link>/docs-csm/en-12/operations/network/dhcp/troubleshoot_dhcp_issues/</link>
-      <pubDate>Wed, 06 Apr 2022 03:12:54 +0000</pubDate>
+      <pubDate>Thu, 07 Apr 2022 03:11:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/dhcp/troubleshoot_dhcp_issues/</guid>
       <description>Troubleshoot DHCP Issues There are several things to check for when troubleshooting issues with Dynamic Host Configuration Protocol (DHCP) servers.
