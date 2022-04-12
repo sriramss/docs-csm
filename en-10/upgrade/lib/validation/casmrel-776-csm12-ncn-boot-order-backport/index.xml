@@ -6,11 +6,11 @@
     <description>Recent content in Casmrel-776-12-NCN-boot-order-backport on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 Apr 2022 03:21:03 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/lib/validation/casmrel-776-csm12-ncn-boot-order-backport/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 03:16:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/lib/validation/casmrel-776-csm12-ncn-boot-order-backport/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NCN Boot Order Hot-fix/backport</title>
       <link>/docs-csm/en-10/upgrade/lib/validation/casmrel-776-csm12-ncn-boot-order-backport/readme/</link>
-      <pubDate>Mon, 11 Apr 2022 03:21:02 +0000</pubDate>
+      <pubDate>Tue, 12 Apr 2022 03:16:19 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/lib/validation/casmrel-776-csm12-ncn-boot-order-backport/readme/</guid>
       <description>NCN Boot Order Hot-fix/Backport This hot-fix applies the CSM 1.2 boot order tooling to the non-compute nodes.

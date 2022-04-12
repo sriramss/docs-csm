@@ -6,16 +6,16 @@
     <description>Recent content in Upgrade on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Mon, 11 Apr 2022 03:21:27 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 12 Apr 2022 03:16:49 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prepare For Upgrade</title>
       <link>/docs-csm/en-12/upgrade/prepare_for_upgrade/</link>
-      <pubDate>Mon, 11 Apr 2022 03:21:27 +0000</pubDate>
+      <pubDate>Tue, 12 Apr 2022 03:16:49 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/prepare_for_upgrade/</guid>
       <description>Prepare for Upgrade Before beginning an upgrade to a new version of CSM, there are a few things to do on the system first.
-  Graceful Shutdown of Workloads affected by CSM Upgrade
-Warning: Although it is expected that compute nodes and application nodes will continue to provide their services without interruption when the management nodes and services are being upgraded by CSM, it is important to be aware of the possibility of interruption of running jobs.</description>
+  Understand that management service resiliency is reduced during the upgrade.
+Warning: Although it is expected that compute nodes and application nodes will continue to provide their services without interruption, it is important to be aware that the degree of management services resiliency is reduced during the upgrade.</description>
     </item>
     
   </channel>
