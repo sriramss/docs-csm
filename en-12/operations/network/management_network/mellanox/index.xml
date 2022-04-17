@@ -6,11 +6,11 @@
     <description>Recent content in HPE Cray Supercomputer on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 16 Apr 2022 03:11:30 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/mellanox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Apr 2022 03:13:34 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/mellanox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Verify Route To Tftp</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/verify_route_to_tftp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/verify_route_to_tftp/</guid>
       <description>Verify route to TFTP On BOTH Aruba switches we need a single route to the TFTP server 10.92.100.60 (your configuration may differ).
@@ -21,7 +21,7 @@ sw-spine-002# show ip route 10.92.100.60 Displaying ipv4 routes selected for for
     <item>
       <title>Verify The DHCP Traffic On The Workers</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/verify_dhcp_traffic_on_workers/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/verify_dhcp_traffic_on_workers/</guid>
       <description>Verify the DHCP traffic on the workers Example issue: Source address of the DHCP Offer is the MetalLB address of KEA &amp;ldquo;10.92.100.222&amp;rdquo;.
@@ -33,7 +33,7 @@ ncn-w001# tcpdump -envli bond0 port 67 or 68 You are looking for the source IP a
     <item>
       <title>Very Large (exascale)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/very_large/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/very_large/</guid>
       <description>Very large (exascale) Back to Index</description>
@@ -42,7 +42,7 @@ ncn-w001# tcpdump -envli bond0 port 67 or 68 You are looking for the source IP a
     <item>
       <title>Virtual Local Access Networks (vlans)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/vlan/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/vlan/</guid>
       <description>Virtual local access networks (VLANs) VLANs allow for the logical grouping of switch interfaces, enabling communication as if all connected devices were on the same isolated network.
@@ -56,7 +56,7 @@ switch (config interface ethernet 1/22) # switchport mode access From within the
     <item>
       <title>Vlan Interface</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/vlan_interface/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/vlan_interface/</guid>
       <description>VLAN interface The switch also supports classic L3 VLAN interfaces.
@@ -71,7 +71,7 @@ switch# show vlan Expected Results
     <item>
       <title>Vlan Trunking 802.1q</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/vlan_trunking_8021q/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/vlan_trunking_8021q/</guid>
       <description>VLAN trunking 802.1Q A trunk port carries packets on one or more VLANs specified. Packet that ingress on a trunk port are in the VLAN specified in its 802.1Q header, or native VLAN if the packet has no 802.1Q header. A packet that egresses through a trunk port will have an 802.1Q header if it has a nonzero VLAN ID. Any packet that ingresses on a trunk port tagged with a VLAN that the port does not trunk is dropped.</description>
@@ -80,7 +80,7 @@ switch# show vlan Expected Results
     <item>
       <title>Web User Interface (webui)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/web-ui/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:38 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/web-ui/</guid>
       <description>Web user interface (WebUI) A web-based management user interface provides a visual representation of a subset of the current switch configuration and states. The Web-UI allows for easy access from modern browsers to modify some aspects of the configuration.
@@ -95,7 +95,7 @@ switch# show web Expected Results
     <item>
       <title>Performing Upgrade On Mellanox Switches</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/upgrade/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/upgrade/</guid>
       <description>Performing upgrade on Mellanox switches Supported Software Upgrades
@@ -105,9 +105,18 @@ The Switch OS software packages include the switch firmware and the CPU software
     </item>
     
     <item>
+      <title>Test Tftp Traffic (aruba Only)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/test_tftp_traffic/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/test_tftp_traffic/</guid>
+      <description>Test TFTP traffic (Aruba Only)  You can test the TFTP traffic by trying to download the ipxe.efi binary. Log into the leaf switch and try to download the iPXE binary. This requires that the leaf switch can talk to the TFTP server &amp;ldquo;10.92.100.60&amp;rdquo;  sw-leaf-001# start-shell sw-leaf-001:~$ sudo su sw-leaf-001:/home/admin# tftp 10.92.100.60 tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.</description>
+    </item>
+    
+    <item>
       <title>Typical Configuration Of Mlag Between Switches</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/typical_mlag_switch_configuration/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/typical_mlag_switch_configuration/</guid>
       <description>Typical configuration of MLAG between switches The intent here is to show case very basic mlag configuration between two spine switches.
@@ -117,7 +126,7 @@ The Switch OS software packages include the switch firmware and the CPU software
     <item>
       <title>Typical Configuration Of Mlag Link Connecting To NCN</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/typical_mlag_port_configuration/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/typical_mlag_port_configuration/</guid>
       <description>Typical configuration of MLAG link connecting to NCN The intent here is to show case very basic MLAG link configuration and your configuration may differ. This is what defines the LAG to be able to peer both to Spine-01 and Spine-02.
@@ -127,7 +136,7 @@ The Switch OS software packages include the switch firmware and the CPU software
     <item>
       <title>Uninstall CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/uninstall_canu/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/uninstall_canu/</guid>
       <description>Uninstall CANU Uninstalling CANU can be achieved by:
@@ -137,7 +146,7 @@ pip3 uninstall canu Back to Index</description>
     <item>
       <title>Using CANu To Generate Full Network Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/using_canu_to_generate_full_network_config/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/using_canu_to_generate_full_network_config/</guid>
       <description>Using CANU to generate full network configuration CANU can also generate switch config for all the switches on a network.
@@ -148,7 +157,7 @@ The instructions are exactly the same as the above except there will not be a ho
     <item>
       <title>Verify BGP</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/verify_bgp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/verify_bgp/</guid>
       <description>Verify BGP Verify the BGP neighbors are in the established state on BOTH the switches.
@@ -159,7 +168,7 @@ sw-spine-002# show bgp ipv4 u s VRF : default BGP Summary ----------- Local AS :
     <item>
       <title>Verify The Switches Are Forwarding DHCP Traffic</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/verify-switches_are_forwarding_dhcp_traffic/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:37 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:40 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/verify-switches_are_forwarding_dhcp_traffic/</guid>
       <description>Verify the switches are forwarding DHCP traffic If you made it this far and still cannot pxe boot, you may have run into the IP-Helper breaking on the switch.
@@ -169,7 +178,7 @@ Back to Index</description>
     <item>
       <title>Confirm The Status Of The Cray-DHCP-kea Pods/services</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/status_of_cray-dhcp-kea_pods/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/status_of_cray-dhcp-kea_pods/</guid>
       <description>Confirm the status of the cray-dhcp-kea pods/services Check if the kea DHCP services are running. On ncn-w001 or a worker/manager with kubectl, run:
@@ -180,7 +189,7 @@ ncn# kubectl get services -n services | grep kea cray-dhcp-kea-api Cluster IP 10
     <item>
       <title>Mac Address Table</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/static_mac/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/static_mac/</guid>
       <description>Mac address Table You can configure static MAC addresses for unicast traffic. This feature improves security and reduces unknown unicast flooding.
@@ -192,7 +201,7 @@ switch (config) # mac-address-table static 00:11:22:33:44:55 vlan 1 interface et
     <item>
       <title>Secure Shell (SSH)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/ssh/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ssh/</guid>
       <description>Secure shell (SSH) SSH server enables an SSH client to make a secure and encrypted connection to a switch. Currently, switch supports SSH version 2.0 only. The user authentication mechanisms supported for SSH are public key authentication and password authentication (RADIUS, TACACS+ or locally stored password). Secure File Transfer Protocol (SFTP) provides file transfer. SSH Server and sftp-client via the copy command are supported for managing the router.
@@ -200,9 +209,30 @@ Relevant Configuration</description>
     </item>
     
     <item>
+      <title>Spine-leaf Architecture</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture/</guid>
+      <description>Spine-leaf architecture Description
+The network design used in majority of our supercomputer installations is spine leaf architecture. In more sizeable systems we also utilize super-spine to accommodate number of spines that connect the network to provide additional HA capabilities.
+What is Spine-Leaf Architecture? A spine-leaf architecture is data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers and connect directly into the spine or network core.</description>
+    </item>
+    
+    <item>
+      <title>Spine-leaf Architecture</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture2/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture2/</guid>
+      <description>Spine-leaf architecture How does a spine-leaf architecture differ from traditional network designs? Traditionally, data center networks were based on a three-tier model:
+ Access switches connect to servers Aggregation or distribution switches provide redundant connections to access switches Core switches provide fast transport between aggregation switches, typically connected in a redundant pair for high availability  At the most basic level, a spine-leaf architecture collapses one of these tiers, as depicted in these diagrams.</description>
+    </item>
+    
+    <item>
       <title>Static Routing</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/static_routing/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/static_routing/</guid>
       <description>Static routing &amp;ldquo;Static routing is manually performed by the network administrator. The administrator is responsible for discovering and propagating routes through the network. These definitions are manually programmed in every routing device in the environment. After a device has been configured, it simply forwards packets out the predetermined ports. There is no communication between routers regarding the current topology of the network.&amp;rdquo; –IBM Redbook, TCP/IP
@@ -213,7 +243,7 @@ switch(config)# ip route vrf default 0.</description>
     <item>
       <title>System Images</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/system_images/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/system_images/</guid>
       <description>System images Mellanox switches can hold two firmware images. These images, once uploaded, are called the Running and Image available for install.
@@ -224,18 +254,9 @@ switch (config)#image boot next switch (config)#configuration write switch (conf
     </item>
     
     <item>
-      <title>Test Tftp Traffic (aruba Only)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/test_tftp_traffic/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/test_tftp_traffic/</guid>
-      <description>Test TFTP traffic (Aruba Only)  You can test the TFTP traffic by trying to download the ipxe.efi binary. Log into the leaf switch and try to download the iPXE binary. This requires that the leaf switch can talk to the TFTP server &amp;ldquo;10.92.100.60&amp;rdquo;  sw-leaf-001# start-shell sw-leaf-001:~$ sudo su sw-leaf-001:/home/admin# tftp 10.92.100.60 tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.</description>
-    </item>
-    
-    <item>
       <title>Why Are Spine-leaf Architectures Becoming More Popular?</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture3/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:36 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:39 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture3/</guid>
       <description>Why are spine-leaf architectures becoming more popular? Given the prevalence of cloud and containerized infrastructure in modern data centers, east-west traffic continues to increase. East-west traffic moves laterally, from server to server. This shift is primarily explained by modern applications having components that are distributed across more servers or VMs.
@@ -243,9 +264,48 @@ With east-west traffic, having low-latency, optimized traffic flows is imperativ
     </item>
     
     <item>
+      <title>How To Connect Management Network To Your Campus Network</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/requirements_and_optional_configuration/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/requirements_and_optional_configuration/</guid>
+      <description>How to connect management network to your campus network In the event that you want to connect the Supercomputer directly to your campus network. In this guide we will go over the two most typical ways of accomplishing this. Further explained in Scenario A and B that will cover the examples of adding connections through management network or highspeed network.
+Requirements and optional configuration
+ System needs to be completely installed and running.</description>
+    </item>
+    
+    <item>
+      <title>Remote Logging</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/remote_logging/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/remote_logging/</guid>
+      <description>Remote logging &amp;ldquo;In its most simplistic terms, the syslog protocol provides a transport to allow a machine to send event notification messages across IP networks to event message collectors - also known as syslog servers.&amp;rdquo; –rfc3164
+Note: the default facility is 3(DAEMON)
+Relevant Configuration
+Configure logging
+switch(config)# logging &amp;lt;syslog-ip-address&amp;gt; [trap {&amp;lt;log-level&amp;gt; | override class &amp;lt;class&amp;gt; priority &amp;lt;log-level&amp;gt;}] Expected Results
+ Step 1: You can configure remote logging Step 2: You can see the log files from the switch on the remote server  Back to Index</description>
+    </item>
+    
+    <item>
+      <title>Routed Interfaces</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/routed_interface/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/routed_interface/</guid>
+      <description>Routed interfaces By default Mellanox interfaces are set as &amp;ldquo;switchports&amp;rdquo; which is to allow L2 communication. To change to routed only port, you have to disable L2 functionality.
+Relevant Configuration
+Disable L2 functionality
+Switch (config) # interface ethernet ¼ Switch (config-int) no switchport force Give an interface an IP address
+switch (config) # interface ethernet 1/14 ip address 192.168.75.1/31 primary Show Commands to Validate Functionality
+switch# show ethernet interface IFACE Expected Results</description>
+    </item>
+    
+    <item>
       <title>Scenario A Network Connection Via Management Network</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/scenario-a/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/scenario-a/</guid>
       <description>Scenario A: network connection via management network Description The example here covers outside connections achieved via management network.
@@ -255,7 +315,7 @@ Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP proces
     <item>
       <title>Scenario B Network Connection Via High Speed Network</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/scenario-b/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/scenario-b/</guid>
       <description>Scenario B: network connection via high speed network Description The example here covers outside connections achieved via highspeed network.
@@ -265,7 +325,7 @@ Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP proces
     <item>
       <title>Small</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/small/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/small/</guid>
       <description>Small Back to Index</description>
@@ -274,7 +334,7 @@ Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP proces
     <item>
       <title>Snmpv2c Community</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/snmp_community/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/snmp_community/</guid>
       <description>SNMPv2c community The switch supports SNMPv2c community-based security for Read-Only access.
@@ -290,7 +350,7 @@ switch# show snmp Expected Results
     <item>
       <title>Snmpv3 Users</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/snmpv3_users/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/snmpv3_users/</guid>
       <description>SNMPv3 users SNMPv3 supports cryptographic security by a combination of authenticating and encrypting the SNMP protocol packets over the network. Read-Only access is currently supported. The admin user can add or remove SNMPv3 users.
@@ -301,41 +361,44 @@ switch# show snmp users Back to Index</description>
     </item>
     
     <item>
-      <title>Spine-leaf Architecture</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <title>Network Time Protocol (NTP) Client</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/ntp/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture/</guid>
-      <description>Spine-leaf architecture Description
-The network design used in majority of our supercomputer installations is spine leaf architecture. In more sizeable systems we also utilize super-spine to accommodate number of spines that connect the network to provide additional HA capabilities.
-What is Spine-Leaf Architecture? A spine-leaf architecture is data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers and connect directly into the spine or network core.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ntp/</guid>
+      <description>Network time protocol (NTP) client &amp;ldquo;NTP is used to synchronize timekeeping among a set of distributed time servers and clients [&amp;hellip;] It provides the protocol mechanisms to synchronize time in principle to precisions in the order of nanoseconds while preserving a non-ambiguous date well into the next century.&amp;rdquo; –rfc1305
+Relevant Configuration
+Enable NTP
+switch (config) # ntp enable Test the NTP server by querying the current time.
+switch (config) # ntpdate 10.</description>
     </item>
     
     <item>
-      <title>Spine-leaf Architecture</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture2/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:35 +0000</pubDate>
+      <title>Network Traffic Pattern Inside Of The System</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/network_traffic_pattern/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/spine_leaf_architecture2/</guid>
-      <description>Spine-leaf architecture How does a spine-leaf architecture differ from traditional network designs? Traditionally, data center networks were based on a three-tier model:
- Access switches connect to servers Aggregation or distribution switches provide redundant connections to access switches Core switches provide fast transport between aggregation switches, typically connected in a redundant pair for high availability  At the most basic level, a spine-leaf architecture collapses one of these tiers, as depicted in these diagrams.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/network_traffic_pattern/</guid>
+      <description>Network traffic pattern inside of the system Internal Networks:
+ Node Management Network (NMN) - Provides the internal control plane for systems management and jobs control. Hardware Management Network (HMN) - Provides internal access to system baseboard management controllers (BMC/iLO) and other lower-level hardware access.  External and Edge Networks:
+ Customer Management Network (CMN) - Provides customer access from the Site to the System for administrators. Customer Access Network (CAN) or Customer High Speed Network (CHN) provide:  Customer access from the site to the System for job control and jobs data movement.</description>
     </item>
     
     <item>
-      <title>How To Connect Management Network To Your Campus Network</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/requirements_and_optional_configuration/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <title>Network Types – Naming And Segment Function</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/network_naming_function/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/requirements_and_optional_configuration/</guid>
-      <description>How to connect management network to your campus network In the event that you want to connect the Supercomputer directly to your campus network. In this guide we will go over the two most typical ways of accomplishing this. Further explained in Scenario A and B that will cover the examples of adding connections through management network or highspeed network.
-Requirements and optional configuration
- System needs to be completely installed and running.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/network_naming_function/</guid>
+      <description>Network types – Naming and segment Function Description
+In below you can find the overview of the different networks services defined inside of our spine and leaf architecture.
+   *********** Administration: Hardware Administration: Cloud/Job Customer: Jobs Customer: Administration Storage     Full name Hardware Management Network Node Management Network Customer Access Network Customer Management Network Storage User Network   Short name / acronym HMN NMN CAN CMN SUN    Back to Index</description>
     </item>
     
     <item>
       <title>Open Shortest Path First (ospf) V2</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/ospfv2/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ospfv2/</guid>
       <description>Open shortest path first (OSPF) v2 &amp;ldquo;OSPF is a link-state based routing protocol. It is designed to be run internal to a single Autonomous System. Each OSPF router maintains an identical database describing the Autonomous System&amp;rsquo;s topology. From this database, a routing table is calculated by constructing a shortest-path tree. OSPF recalculates routes quickly in the face of topological changes, utilizing a minimum of routing protocol traffic. OSPF provides support for equal-cost multipath.</description>
@@ -344,7 +407,7 @@ Requirements and optional configuration
     <item>
       <title>Physical Interfaces</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/physical_interfaces/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/physical_interfaces/</guid>
       <description>Physical interfaces Interfaces in Mellanox are enabled by default.
@@ -358,7 +421,7 @@ switch# show interfaces ethernet 1/1 Expected Results
     <item>
       <title>Pim-sm Bootstrap Router (bsr) And Rendezvous-point (rp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/pim/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/pim/</guid>
       <description>PIM-SM bootstrap router (BSR) and rendezvous-point (RP) &amp;ldquo;Every PIM multicast group needs to be associated with the IP address of a Rendezvous Point (RP) [&amp;hellip;] For all senders to reach all receivers, it is crucial that all routers in the domain use the same mappings of group addresses to RP addresses. [&amp;hellip;] The BSR mechanism provides a way in which viable group-to-RP mappings can be created and rapidly distributed to all the PIM routers in a domain.</description>
@@ -367,7 +430,7 @@ switch# show interfaces ethernet 1/1 Expected Results
     <item>
       <title>Quick Start Guide To CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/quick_start_guide_to_canu/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/quick_start_guide_to_canu/</guid>
       <description>Quick start guide to CANU Usage To run, type canu. It should run and display help.
@@ -380,7 +443,7 @@ ncn# canu -s 1.5 To checkout a fresh system using CSI:
     <item>
       <title>Rebooting NCN And PXE Fails</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/reboot_pxe_fail/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/reboot_pxe_fail/</guid>
       <description>Rebooting NCN and PXE fails Common Error messages.
@@ -391,37 +454,55 @@ Verify DHCP packets can be forwarded from the workers to the MTL network (VLAN1)
     </item>
     
     <item>
-      <title>Remote Logging</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/remote_logging/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <title>Medium</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/medium/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/remote_logging/</guid>
-      <description>Remote logging &amp;ldquo;In its most simplistic terms, the syslog protocol provides a transport to allow a machine to send event notification messages across IP networks to event message collectors - also known as syslog servers.&amp;rdquo; –rfc3164
-Note: the default facility is 3(DAEMON)
-Relevant Configuration
-Configure logging
-switch(config)# logging &amp;lt;syslog-ip-address&amp;gt; [trap {&amp;lt;log-level&amp;gt; | override class &amp;lt;class&amp;gt; priority &amp;lt;log-level&amp;gt;}] Expected Results
- Step 1: You can configure remote logging Step 2: You can see the log files from the switch on the remote server  Back to Index</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/medium/</guid>
+      <description>Medium Back to Index</description>
     </item>
     
     <item>
-      <title>Routed Interfaces</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/routed_interface/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:34 +0000</pubDate>
+      <title>Mlag</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_switch/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/routed_interface/</guid>
-      <description>Routed interfaces By default Mellanox interfaces are set as &amp;ldquo;switchports&amp;rdquo; which is to allow L2 communication. To change to routed only port, you have to disable L2 functionality.
-Relevant Configuration
-Disable L2 functionality
-Switch (config) # interface ethernet ¼ Switch (config-int) no switchport force Give an interface an IP address
-switch (config) # interface ethernet 1/14 ip address 192.168.75.1/31 primary Show Commands to Validate Functionality
-switch# show ethernet interface IFACE Expected Results</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_switch/</guid>
+      <description>MLAG A link aggregation group (LAG) is used for extending the bandwidth from a single link to multiple links and provide redundancy in case of link failure. Extending the implementation of the LAG to more than a single device provides yet another level of redundancy that extends from the link level to the node level. This extrapolation of the LAG from single to multiple switches is referred to as multi-chassis link aggregation (MLAG).</description>
+    </item>
+    
+    <item>
+      <title>Mlag (multi-chassis Lag)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_architecture/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_architecture/</guid>
+      <description>MLAG (Multi-Chassis LAG) Is a type of Link Aggregation Group where ports from single device such as server terminate on two separate switches providing switch-level redundancy.
+What are the benefits of MLAG
+  Increased bandwidth achieved by dual connection to node.
+  High availability (HA) for servers while allowing full use of the bandwidth of both links
+  To achieve HA on a switch level without the using of STP</description>
+    </item>
+    
+    <item>
+      <title>Multi-chassis Interface</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag/</guid>
+      <description>Multi-chassis interface Multi-Chassis Link Aggregation Group (MCLAG) is a link aggregation technique where two or more links across two switches are aggregated together to form a trunk.
+Creating an MLAG interface:
+Create an MLAG interface for the host. Run:
+switch (config)# interface mlag-port-channel 1 switch (config interface mlag-port-channel 1)# The MPO interfaces should be configured in the same sequence on both switches of MLAG cluster.
+Example:
+On Switch 1:
+interface mlag-port-channel 1-10 interface mlag-port-channel 30-40 On Switch 2:</description>
     </item>
     
     <item>
       <title>Multiple Spanning Tree Protocol (mstp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/mstp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mstp/</guid>
       <description>Multiple spanning tree protocol (MSTP) MSTP (802.1s) ensures that only one active path exists between any two nodes in a spanning-tree instance. A spanning-tree instance comprises a unique set of VLANs. MSTP instances significantly improve network resource utilization while maintaining a loop-free environment.
@@ -433,7 +514,7 @@ switch(config)# spanning-tree switch(config)# spanning-tree mode mstp switch(con
     <item>
       <title>Native Vlan</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/native_vlan/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/native_vlan/</guid>
       <description>Native VLAN Untagged ingress packets are destined to the native VLAN. An interface can be configured in one of 2 native modes - Native-Untagged or Native-Tagged.
@@ -444,7 +525,7 @@ Packets that egress on a native-untagged port in the native VLAN will not have a
     <item>
       <title>NCNs On Install</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/ncns_on_install/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ncns_on_install/</guid>
       <description>NCNs on install Verify the DNSMASQ config file matches what is configured on the switches.
@@ -454,44 +535,9 @@ This configuration is commonly missed on the CSI input file.</description>
     </item>
     
     <item>
-      <title>Network Time Protocol (NTP) Client</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/ntp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ntp/</guid>
-      <description>Network time protocol (NTP) client &amp;ldquo;NTP is used to synchronize timekeeping among a set of distributed time servers and clients [&amp;hellip;] It provides the protocol mechanisms to synchronize time in principle to precisions in the order of nanoseconds while preserving a non-ambiguous date well into the next century.&amp;rdquo; –rfc1305
-Relevant Configuration
-Enable NTP
-switch (config) # ntp enable Test the NTP server by querying the current time.
-switch (config) # ntpdate 10.</description>
-    </item>
-    
-    <item>
-      <title>Network Traffic Pattern Inside Of The System</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/network_traffic_pattern/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/network_traffic_pattern/</guid>
-      <description>Network traffic pattern inside of the system Internal Networks:
- Node Management Network (NMN) - Provides the internal control plane for systems management and jobs control. Hardware Management Network (HMN) - Provides internal access to system baseboard management controllers (BMC/iLO) and other lower-level hardware access.  External and Edge Networks:
- Customer Management Network (CMN) - Provides customer access from the Site to the System for administrators. Customer Access Network (CAN) or Customer High Speed Network (CHN) provide:  Customer access from the site to the System for job control and jobs data movement.</description>
-    </item>
-    
-    <item>
-      <title>Network Types – Naming And Segment Function</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/network_naming_function/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/network_naming_function/</guid>
-      <description>Network types – Naming and segment Function Description
-In below you can find the overview of the different networks services defined inside of our spine and leaf architecture.
-   *********** Administration: Hardware Administration: Cloud/Job Customer: Jobs Customer: Administration Storage     Full name Hardware Management Network Node Management Network Customer Access Network Customer Management Network Storage User Network   Short name / acronym HMN NMN CAN CMN SUN    Back to Index</description>
-    </item>
-    
-    <item>
       <title>Tcpdump</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/ncn_tcpdump/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:33 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ncn_tcpdump/</guid>
       <description>TCPDUMP If your host is not getting an IP address you can run a packet capture to see if DHCP traffic is being transmitted.
@@ -502,7 +548,7 @@ tcpdump -w dhcp.pcap -envli bond0.nmn0 port 67 or port 68 This will make a .pcap
     <item>
       <title>Example Of How To Configure Scenario A Or B</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_configuration_example/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_configuration_example/</guid>
       <description>Example of how to configure Scenario A or B Create the CAN VRF
@@ -516,99 +562,9 @@ interface vlan 7 vsx-sync active-gateways vrf attach CAN description CAN ip mtu 
     </item>
     
     <item>
-      <title>Management Interface</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/management_interface/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/management_interface/</guid>
-      <description>Management interface The management interface can be used to gain remote management access to the switch. The management interface is accessible using the &amp;ldquo;mgmt&amp;rdquo; VRF and is separate from the data plane interfaces, which are in the &amp;ldquo;default&amp;rdquo; VRF. Mellanox switches support out-of-band (OOB) dedicated interfaces (e.g. mgmt0, mgmt1) and in-band dedicated interfaces.
-Relevant Configuration
-Enter Config configuration mode. Run:
-switch &amp;gt; enable switch # configure terminal Disable setting IP addresses using the DHCP using the following command:</description>
-    </item>
-    
-    <item>
-      <title>Medium</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/medium/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/medium/</guid>
-      <description>Medium Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Mlag</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_switch/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_switch/</guid>
-      <description>MLAG A link aggregation group (LAG) is used for extending the bandwidth from a single link to multiple links and provide redundancy in case of link failure. Extending the implementation of the LAG to more than a single device provides yet another level of redundancy that extends from the link level to the node level. This extrapolation of the LAG from single to multiple switches is referred to as multi-chassis link aggregation (MLAG).</description>
-    </item>
-    
-    <item>
-      <title>Mlag (multi-chassis Lag)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_architecture/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag_architecture/</guid>
-      <description>MLAG (Multi-Chassis LAG) Is a type of Link Aggregation Group where ports from single device such as server terminate on two separate switches providing switch-level redundancy.
-What are the benefits of MLAG
-  Increased bandwidth achieved by dual connection to node.
-  High availability (HA) for servers while allowing full use of the bandwidth of both links
-  To achieve HA on a switch level without the using of STP</description>
-    </item>
-    
-    <item>
-      <title>Multi-chassis Interface</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/mlag/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/mlag/</guid>
-      <description>Multi-chassis interface Multi-Chassis Link Aggregation Group (MCLAG) is a link aggregation technique where two or more links across two switches are aggregated together to form a trunk.
-Creating an MLAG interface:
-Create an MLAG interface for the host. Run:
-switch (config)# interface mlag-port-channel 1 switch (config interface mlag-port-channel 1)# The MPO interfaces should be configured in the same sequence on both switches of MLAG cluster.
-Example:
-On Switch 1:
-interface mlag-port-channel 1-10 interface mlag-port-channel 30-40 On Switch 2:</description>
-    </item>
-    
-    <item>
-      <title>System Management Network Functions In More Detail</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_function_in_detail/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_function_in_detail/</guid>
-      <description>System management network functions in more detail Description
-  Edge - Any interactions with the Customer network or Internet.
- Customer Jobs (Customer Access Network - CAN) User-facing cloud APIs.  UAI (User Access Instances).   Customer Administration (Customer Management Network - CMN).  Administrative Access to the system by Customer Admins. Access from the system to external services:  Customer/Internet DNS. LDAP authentication. System installation and upgrade media (e.</description>
-    </item>
-    
-    <item>
-      <title>Introduction To CANu</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/introduction_to_canu/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/introduction_to_canu/</guid>
-      <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
-Some of the tasks that CANU can perform are:
- Check if the management switches on a Shasta network meet the firmware version requirements Check the cabling status of the management switches on a Shasta network using LLDP. Use a CANU-generated configuration to compare an existing network configuration against the best practice configuration.</description>
-    </item>
-    
-    <item>
-      <title>Ip Filter</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/ip_filter/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ip_filter/</guid>
-      <description>Ip filter There are two types of malicious traffic that can be received from external sources to the data center:
- Traffic that target the switch&amp;rsquo;s CPU, either inband or out of band (e.g. via mgmt0) targeted one of the IP interfaces of the switch (loopback, router IP). To protect or filter those traffic threats use the ip filter set of commands. Traffic that target the data center servers transferred via the switch.</description>
-    </item>
-    
-    <item>
       <title>Key Features Used In The Management Network Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/key_features/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/key_features/</guid>
       <description>Key features used in the management network configuration This section is to list and define the key features used in the management network configuration.
@@ -619,7 +575,7 @@ Feature list:
     <item>
       <title>Large</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/large/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/large/</guid>
       <description>Large Back to Index</description>
@@ -628,7 +584,7 @@ Feature list:
     <item>
       <title>Link Aggregation Group (lag)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/lag/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/lag/</guid>
       <description>Link aggregation group (LAG) Link Aggregation allows you to assign multiple physical links to one logical link that functions as a single, higher-speed link providing dramatically increased bandwidth.
@@ -641,7 +597,7 @@ switch (config interface port-channel 1) # exit switch (config) # Associate memb
     <item>
       <title>Link Layer Discovery Protocol (lldp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/lldp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/lldp/</guid>
       <description>Link layer discovery protocol (LLDP) LLDP is used to advertise the device&amp;rsquo;s identity and abilities and read other devices connected to the same network. Note: LLDP is enabled by default.
@@ -656,7 +612,7 @@ switch# show lldp local Expected Results
     <item>
       <title>Loopback Interface</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/loopback/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:31 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/loopback/</guid>
       <description>Loopback interface You can think of loopbacks as internal virtual interfaces. Loopback interfaces are not bound to a physical port and are used for device management and routing protocols.
@@ -668,23 +624,32 @@ switch# show interfaces loopback 2 Expected Results</description>
     </item>
     
     <item>
-      <title>Domain Name</title>
-      <link>/docs-csm/en-12/operations/network/management_network/mellanox/domain_name/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <title>Management Interface</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/management_interface/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/domain_name/</guid>
-      <description>Domain name A domain name is a name to identify the person, group, or organization that controls the devices within an area. An example of a domain name could be us.cray.com
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/management_interface/</guid>
+      <description>Management interface The management interface can be used to gain remote management access to the switch. The management interface is accessible using the &amp;ldquo;mgmt&amp;rdquo; VRF and is separate from the data plane interfaces, which are in the &amp;ldquo;default&amp;rdquo; VRF. Mellanox switches support out-of-band (OOB) dedicated interfaces (e.g. mgmt0, mgmt1) and in-band dedicated interfaces.
 Relevant Configuration
-Creating a domain name
-switch(config)# ip map-hostname Show Commands to Validate Functionality
-switch# show hosts Expected Results
- Step 1: You can configure the domain name Step 2: The output of all show commands is correct  Back to Index</description>
+Enter Config configuration mode. Run:
+switch &amp;gt; enable switch # configure terminal Disable setting IP addresses using the DHCP using the following command:</description>
+    </item>
+    
+    <item>
+      <title>System Management Network Functions In More Detail</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_function_in_detail/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:35 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/management_network_function_in_detail/</guid>
+      <description>System management network functions in more detail Description
+  Edge - Any interactions with the Customer network or Internet.
+ Customer Jobs (Customer Access Network - CAN) User-facing cloud APIs.  UAI (User Access Instances).   Customer Administration (Customer Management Network - CMN).  Administrative Access to the system by Customer Admins. Access from the system to external services:  Customer/Internet DNS. LDAP authentication. System installation and upgrade media (e.</description>
     </item>
     
     <item>
       <title>Exec Banners</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/exec_banner/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/exec_banner/</guid>
       <description>Exec banners Banners are custom messages displayed to users attempting to connect to the management interfaces. MOTD banners are displayed pre-login while exec banners are displayed post-login. Multiple lines of text can be stored using a custom delimiter to mark the end of message.
@@ -698,7 +663,7 @@ ufmapl [ mgmt-sa ] (config) # show banner Banners: MOTD: Mellanox UFM Appliance 
     <item>
       <title>Hostname</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/hostname/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/hostname/</guid>
       <description>Hostname A hostname is a human-friendly name used to identify a device. An example of a hostname could be the name &amp;ldquo;Test.&amp;rdquo;
@@ -712,7 +677,7 @@ switch# show hosts Expected Results
     <item>
       <title>Igmp</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/igmp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/igmp/</guid>
       <description>IGMP The Internet Group Multicast Protocol (IGMP) is a communications protocol used by hosts and adjacent routers on IP networks to establish multicast group memberships. The host joins a multicast-group by sending a join request message towards the network router, and responds to queries sent from the network router by dispatching a join report.
@@ -724,7 +689,7 @@ switch (config) # ip igmp snooping Enable IGMP snooping on a VLAN.</description>
     <item>
       <title>Initializing CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/initializing_canu/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/initializing_canu/</guid>
       <description>Initializing CANU To help creating the switch configuration. CANU can automatically parse CSI output or the Shasta SLS API for switch IPv4 addresses.
@@ -732,9 +697,30 @@ CSI Input  In order to parse CSI output, use the --csi-folder FOLDER flag to pas
     </item>
     
     <item>
+      <title>Introduction To CANu</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/introduction_to_canu/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/introduction_to_canu/</guid>
+      <description>Introduction to CANU CANU (CSM Automatic Network Utility) will guide you through to install new Shasta network and make the installation to follow best practices and set you up with supported configuration.
+Some of the tasks that CANU can perform are:
+ Check if the management switches on a Shasta network meet the firmware version requirements Check the cabling status of the management switches on a Shasta network using LLDP. Use a CANU-generated configuration to compare an existing network configuration against the best practice configuration.</description>
+    </item>
+    
+    <item>
+      <title>Ip Filter</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/ip_filter/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/ip_filter/</guid>
+      <description>Ip filter There are two types of malicious traffic that can be received from external sources to the data center:
+ Traffic that target the switch&amp;rsquo;s CPU, either inband or out of band (e.g. via mgmt0) targeted one of the IP interfaces of the switch (loopback, router IP). To protect or filter those traffic threats use the ip filter set of commands. Traffic that target the data center servers transferred via the switch.</description>
+    </item>
+    
+    <item>
       <title>You Are Getting An Ip Address, But Not The Correct One. Duplicate Ip Address Check</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/duplicate_ip/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:30 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/duplicate_ip/</guid>
       <description>You are getting an IP address, but not the correct one. Duplicate IP address check A sign of a duplicate IP address is seeing a DECLINE message from the client to the server.
@@ -744,7 +730,7 @@ CSI Input  In order to parse CSI output, use the --csi-folder FOLDER flag to pas
     <item>
       <title>Check BGP And Metallb</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/check_bgp_and_metallb/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/check_bgp_and_metallb/</guid>
       <description>Check BGP and MetalLB Log in to the spine switches if you have access and check that MetalLB is peering to the spines via BGP.
@@ -758,7 +744,7 @@ sw-spine01 [standalone: master] # show ip bgp summary VRF name : default BGP rou
     <item>
       <title>Check Current DHCP Leases</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/check_current_dhcp_leases/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/check_current_dhcp_leases/</guid>
       <description>Check current DHCP leases We will use the Kea API to retrieve data from the DHCP lease database. First you need to get the auth token, On ncn-w001 or a worker/manager with kubectl, run:
@@ -768,7 +754,7 @@ export TOKEN=$(curl -s -k -S -d grant_type=client_credentials -d client_id=admin
     <item>
       <title>Check DHCP Lease Is Getting Allocated</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/check_dhcp_lease_is_getting_allocated/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/check_dhcp_lease_is_getting_allocated/</guid>
       <description>Check DHCP lease is getting allocated  Check the KEA logs and verify that the lease is getting allocated.  kubectl logs -n services pod/$(kubectl get -n services pods | grep kea | head -n1 | cut -f 1 -d &#39; &#39;) -c cray-dhcp-kea 2021-04-21 00:13:05.416 INFO [kea-dhcp4.leases/24.139710796402304] DHCP4_LEASE_ ***ALLOC*** [hwtype=1 02:23:28:01:30:10], cid=[00:78:39:30:30:30:63:31:73:30:62:31], tid=0x21f2433a: lease 10.104.0.23 has been allocated for 300 seconds
@@ -778,7 +764,7 @@ export TOKEN=$(curl -s -k -S -d grant_type=client_credentials -d client_id=admin
     <item>
       <title>Check HSM</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/check_hsm/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/check_hsm/</guid>
       <description>Check HSM Hardware State Manager has two important parts:
@@ -790,7 +776,7 @@ curl -H &amp;quot;Authorization: Bearer ${TOKEN}&amp;quot; https://api_gw_servic
     <item>
       <title>Check Kea DHCP Logs</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/check_kea_dhcp_logs/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/check_kea_dhcp_logs/</guid>
       <description>Check KEA DHCP logs In order to check the logs for the pod you will need to know the pod name, run this command to see the pod name:
@@ -801,7 +787,7 @@ ncn-w001# kubectl logs -n services -l app.kubernetes.io/instance=cray-dhcp-kea -
     <item>
       <title>Computes/UANs/application Nodes</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/compute_uan_application_nodes/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/compute_uan_application_nodes/</guid>
       <description>Computes/UANs/Application Nodes If the Computes make it past PXE and go into the PXE shell you can verify DNS and connectivity.
@@ -809,9 +795,23 @@ iPXE&amp;gt; dhcp Configuring (net0 98:03:9b:a8:60:88).................. No conf
     </item>
     
     <item>
+      <title>Domain Name</title>
+      <link>/docs-csm/en-12/operations/network/management_network/mellanox/domain_name/</link>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/mellanox/domain_name/</guid>
+      <description>Domain name A domain name is a name to identify the person, group, or organization that controls the devices within an area. An example of a domain name could be us.cray.com
+Relevant Configuration
+Creating a domain name
+switch(config)# ip map-hostname Show Commands to Validate Functionality
+switch# show hosts Expected Results
+ Step 1: You can configure the domain name Step 2: The output of all show commands is correct  Back to Index</description>
+    </item>
+    
+    <item>
       <title>Domain Name System (DNS) Client</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/dns-client/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/dns-client/</guid>
       <description>Domain name system (DNS) client The Domain Name System (DNS) translates domain and host names to and from IP addresses. A DNS client resolves hostnames to IP addresses by querying assigned DNS servers for the appropriate IP address.
@@ -825,7 +825,7 @@ switch# show hosts Expected Results</description>
     <item>
       <title>Large Number Of DHCP Declines During A Node Boot</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/dhcp_decline/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/dhcp_decline/</guid>
       <description>Large number of DHCP declines during a node boot If you are seeing something similar too this in your logs;
@@ -835,7 +835,7 @@ dracut-initqueue[1902]: wicked: eth0: Declining DHCPv4 lease with address 10.252
     <item>
       <title>Access Control Lists (ACLs)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/acl/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/acl/</guid>
       <description>Access control lists (ACLs) ACLs are used to help improve network performance and restrict network usage by creating policies to eliminate unwanted IP traffic by filtering packets where they enter the switch on layer 2 and layer 3 interfaces. An ACL is an ordered list of one or more access control list entries (ACEs) prioritized by sequence number. An incoming packet is matched sequentially against each entry in an ACL. When a match is made, the action of that ACE is taken and the packet is not compared against any other ACEs in the list.</description>
@@ -844,7 +844,7 @@ dracut-initqueue[1902]: wicked: eth0: Declining DHCPv4 lease with address 10.252
     <item>
       <title>Address Resolution Protocol (arp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/arp/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/arp/</guid>
       <description>Address resolution protocol (ARP) ARP is commonly used for mapping IPv4 addresses to MAC addresses. Static ARP addresses only supported in management interfaces;
@@ -858,7 +858,7 @@ switch# show ip arp Expected Results
     <item>
       <title>Backing Up Switch Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/backup/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/backup/</guid>
       <description>Backing up switch configuration Backing up current configuration of the switch in text format Example
@@ -872,7 +872,7 @@ switch (config) # configuration text file my-filename upload scp://root@my-serve
     <item>
       <title>BGP Basics</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/bgp_basic/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/bgp_basic/</guid>
       <description>BGP basics &amp;ldquo;The primary function of a Border Gateway Protocol (BGP) speaking system is to exchange network reachability information with other BGP systems. This network reachability information includes information on the list of Autonomous Systems (ASes) that reachability information traverses. This information is sufficient for constructing a graph of AS connectivity for this reachability, from which routing loops may be pruned and, at the AS level, some policy decisions may be enforced.</description>
@@ -881,7 +881,7 @@ switch (config) # configuration text file my-filename upload scp://root@my-serve
     <item>
       <title>Cable Diagnostics</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/cable_diagnostics/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/cable_diagnostics/</guid>
       <description>Cable diagnostics Cable plugin collects various information from the cables attached to the fabric ports.
@@ -894,7 +894,7 @@ ibdiagnet --get-cable-info --cable_info_disconnected The data is dumped to the i
     <item>
       <title>CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/canu_installation/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/canu_installation/</guid>
       <description>CANU Installation Prerequisites In order to run CANU, both python3 and pip3 need to be installed.
@@ -906,7 +906,7 @@ pip3 install --editable Back to Index</description>
     <item>
       <title>Use CANu To Verify, Generate Or Compare Switch Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/mellanox/canu_verify_generate_compare_switch_configuration/</link>
-      <pubDate>Sat, 16 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Sun, 17 Apr 2022 03:13:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/mellanox/canu_verify_generate_compare_switch_configuration/</guid>
       <description>Use CANU to verify, generate or compare switch configuration Check Single Switch Firmware To check the firmware of a single switch run:
