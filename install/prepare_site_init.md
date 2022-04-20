@@ -3,7 +3,7 @@
 These procedures guide administrators through setting up the `site-init`
 directory which contains important customizations for various products.
 
-  **Note:** There are two media available to bootstrap the PIT node--the RemoteISO or a bootable USB device. Both of those can use this procedure.  The only difference in this procedure is that the RemoteISO method will execute these commands on the `PIT` node with command prompt `pit#` while the USB method could be done on any Linux system with the command prompt `linux#`. This procedure works for both methods, but has the command prompt of `linux#`, even though it would normally be `pit#` for the RemoteISO method.
+   **Note:** There are two media available to bootstrap the PIT node--the RemoteISO or a bootable USB device. Both of those can use this procedure. The only difference in this procedure is that the RemoteISO method will execute these commands on the `PIT` node with command prompt `pit#` while the USB method could be done on any Linux system with the command prompt `linux#`. This procedure works for both methods, but has the command prompt of `linux#`, even though it would normally be `pit#` for the RemoteISO method.
 
 ### Topics:
    1. [Background](#background)
@@ -207,7 +207,7 @@ with system-specific customizations.
             2.  Extract the issuer's certificate using `awk`:
 
                 > **`NOTE`** The issuer DN is properly escaped as part of the
-                > `awk` pattern below. It must be changed to match the value 
+                > `awk` pattern below. It must be changed to match the value
                 > for emailAddress, CN, OU, etc. for your LDAP. If the value
                 > you are using is different, be sure to escape it properly!
 

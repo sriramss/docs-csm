@@ -1,4 +1,4 @@
-## Manage Parameters with the scsd Service
+# Manage Parameters with the scsd Service
 
 The System Configuration Service commands below enable administrators to set various BMC and controller parameters. These parameters are controlled with the scsd command in the Cray CLI.
 
@@ -41,13 +41,13 @@ ncn-m001# cray scsd bmc dumpcfg create PAYLOAD_FILE --format json
         {
               "NTPServerInfo":
               {
-                  "NTPServers": "sms-ncn-w001",
+                  "NTPServers": ["sms-ncn-w001"],
                   "Port": 123,
                   "ProtocolEnabled": true
               },
               "SyslogServerInfo":
               {
-                  "SyslogServers": "sms-ncn-w001",
+                  "SyslogServers": ["sms-ncn-w001"],
                   "Port":514,
                   "ProtocolEnabled": true
               },
@@ -64,13 +64,13 @@ ncn-m001# cray scsd bmc dumpcfg create PAYLOAD_FILE --format json
         {
               "NTPServerInfo":
               {
-                  "NTPServers": "sms-ncn-w001",
+                  "NTPServers": ["sms-ncn-w001"],
                   "Port": 123,
                   "ProtocolEnabled": true
               },
               "SyslogServerInfo":
               {
-                  "SyslogServers": "sms-ncn-w001",
+                  "SyslogServers": ["sms-ncn-w001"],
                   "Port":514,
                   "ProtocolEnabled": true
               },
@@ -148,13 +148,13 @@ The following is an example payload file that was used to generate the output in
     {
         "NTPServerInfo":
         {
-            "NTPServers": "sms-ncn-w001",
+            "NTPServers": ["sms-ncn-w001"],
             "Port": 123,
             "ProtocolEnabled": true
         },
         "SyslogServerInfo":
         {
-            "SyslogServers": "sms-ncn-w001",
+            "SyslogServers": ["sms-ncn-w001"],
             "Port":514,
             "ProtocolEnabled": true
         },
@@ -198,13 +198,13 @@ The following is an example payload file that was used to generate the output in
     {
         "NTPServerInfo":
         {
-            "NTPServers": "sms-ncn-w001",
+            "NTPServers": ["sms-ncn-w001"],
             "Port": 123,
             "ProtocolEnabled": true
         },
         "SyslogServerInfo":
         {
-            "SyslogServers": "sms-ncn-w001",
+            "SyslogServers": ["sms-ncn-w001"],
             "Port":514,
             "ProtocolEnabled": true
         },
@@ -300,4 +300,3 @@ ncn-m001# cray scsd bmc creds create XNAME --format json
     "StatusMsg": "OK"
 }
 ```
-

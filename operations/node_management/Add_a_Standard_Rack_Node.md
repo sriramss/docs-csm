@@ -1,5 +1,4 @@
-
-## Add a Standard Rack Node
+# Add a Standard Rack Node
 
 These procedures are intended for trained technicians and support personnel only. Always follow ESD precautions when handling this equipment.
 
@@ -145,7 +144,7 @@ This process will vary slightly depending on architecture and switch vendor.
     ncn-m001# ping x3000c0s27b0
     ```
 
-8. Verify that discovery has completed. The 
+8. Verify that discovery has completed. The
 
     ```screen
     ncn-m001# cray hsm inventory redfishEndpoints describe x3000c0s27b0
@@ -235,6 +234,4 @@ This process will vary slightly depending on architecture and switch vendor.
     ```
 
 14. Verify the chassis status LEDs indicate normal operation.
-
-
 

@@ -36,7 +36,7 @@ The following lists enumerate the improvements and enhancements since CSM 1.0.1
 * Adds hardware discovery and power control for Bard Peak Olympus blades. (Power-capping not supported yet.)
 
 ### Bug Fixes
-* Fixes an intermittent issue where kernel dumps wouldn't deliver because the CA cert for Spire needed to be reset.
+* Fixes an intermittent issue where kernel dumps would not deliver because the CA cert for Spire needed to be reset.
 * Fixes an intermittent issue where PXE booting of NCNs was timing out.
 * Fixes an intermittent UX issue where Console was replaying output.
 * Fixes an issue with FAS loader not handling the new Slingshot 1.6 firmware version scheme.
@@ -46,7 +46,7 @@ The following lists enumerate the improvements and enhancements since CSM 1.0.1
 * Fixes an issue preventing SCSD changing root credentials for DL325/385.
 * Fixes an intermittent issue where Gigabyte firmware updates via FAS would return an error.
 * Fixes a rare issue where Nexus would not be available when scaling down to two nodes.
-* Fixes an issue where the boot order for Gigabyte NCNs wasn't persisting after a reboot or reinstall.
+* Fixes an issue where the boot order for Gigabyte NCNs was not persisting after a reboot or reinstall.
 * Fixes an intermittent issue where storage nodes would have clock skew during fresh install.
 
 ## CSM 1.0.1
@@ -148,7 +148,7 @@ Critical Issues Resolved:
 * CFS should check if the configuration is valid/exists when a session is created.
 * CFS does not set session start time until after job starts.
 * CFS will not list pending sessions.
-* MEDS, should not overwrite a components credentials when a xname becomes present again.
+* MEDS, should not overwrite a components credentials when an xname becomes present again.
 * The Cray HSM locks command locked more nodes than specified.
 * HSM crashes when discovering Bard Peak.
 * Resources limits are hit on three NCN systems.
@@ -156,7 +156,7 @@ Critical Issues Resolved:
 * For better reliability, the orphan stratum in Chrony config needed to be adjusted.
 * The UEFI Boot Order Reverts/Restores on every reboot on an HPE DL325.
 and many more...
-        
+
 ### Known Issues
 * Incorrect_output_for_bos_command_rerun: When a Boot Orchestration Service (BOS) session fails, it may output a message in the Boot Orchestration Agent (BOA) log associated with that session. This output contains a command that instructs the user how to re-run the failed session. It will only contain the nodes that failed during that session. The command is faulty, and this issue addresses correcting it.
 * Cfs_session_stuck_in_pending: Under some circumstances, Configuration Framework Service (CFS) sessions can get stuck in a `pending` state, never completing and potentially blocking other sessions. This addresses cleaning up those sessions.
@@ -176,3 +176,4 @@ and many more...
 * Intermittently, storage nodes have clock skew during fresh install.
 * Kube-multus pods may fail to restart due to ImagePullBackOff. For more information see [Kube-multus pod is in ImagePullBackOff](troubleshooting/known_issues/kube_multus_pod_in_ImagePullBackOff.md).
 * Power capping Olympus and River compute hardware via CAPMC is not supported.
+* On fresh install, API calls to Gitea/VCS may give 401 Errors. See [Gitea/VCS 401 Errors](troubleshooting/known_issues/gitea_vcs_401_errors.md) for more information.

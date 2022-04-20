@@ -2,11 +2,12 @@
 
 This document provides troubleshooting information for services and functionality provided by CSM.
 
-### Topics
+**Topics**
  * [Known Issues](#known-issues)
     * [Hardware Discovery](#known-issues-hardware-discovery)
     * [initrd.img.xz not found](#initrd-not-found)
     * [Power Capping](#power-capping)
+    * [Gitea/VCS 401 Errors](known_issues/gitea_vcs_401_errors.md)
     * [SAT/HSM/CAPMC Component Power State Mismatch](known_issues/component_power_state_mismatch.md)
     * [BOS/BOA Incorrect command is output to rerun a failed operation.](known_issues/incorrect_output_for_bos_command_rerun.md)
     * [CFS Sessions are Stuck in a Pending State](known_issues/cfs_sessions_stuck_in_pending.md)
@@ -35,7 +36,7 @@ Known issues related to hardware discovery in a system.
 <a name="initrd-not-found"></a>
 ### `initrd.img.xz` Not Found
 
-This is a problem that is fixed in CSM 1.0+, but if your system was upgraded from CSM 0.9.x you may run into this. Below is the full error seen when attempting to boot:
+This is a problem that is fixed in CSM 1.0+, but if your system was upgraded from CSM 0.9 you may run into this. Below is the full error seen when attempting to boot:
 
 ```
 Loading Linux  ...
@@ -75,8 +76,9 @@ Follow these steps on any NCN to fix the issue:
 
       ```bash
       ncn# for i in $(grep -oP 'ncn-\w\d+' /etc/hosts | sort -u |  tr -t '\n' ' '); do
-         scp -r csm-install-workarounds/workarounds/livecd-post-reboot/CASMINST-2689/ $i:/opt/cray/csm/workarounds/livecd-post-reboot/
-      done
+               scp -r csm-install-workarounds/workarounds/livecd-post-reboot/CASMINST-2689/ \
+                   $i:/opt/cray/csm/workarounds/livecd-post-reboot/
+           done
       ncn# pdsh -b -S -w $(grep -oP 'ncn-\w\d+' /etc/hosts | sort -u |  tr -t '\n' ',') '/opt/cray/csm/workarounds/livecd-post-reboot/CASMINST-2689/CASMINST-2689.sh'
       ```
 
@@ -86,7 +88,7 @@ Follow these steps on any NCN to fix the issue:
       ncn# rpm -e csm-install-workarounds
       ```
 
-##### Validate
+#### Validate
 
 Running the script again will produce this output:
 

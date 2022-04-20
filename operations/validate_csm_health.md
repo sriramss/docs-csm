@@ -36,6 +36,7 @@ The areas should be tested in the order they are listed on this page. Errors in 
   - [3 Software Management Services Health Checks](#sms-health-checks)
     - [3.1 SMS Test Execution](#sms-checks)
     - [3.2 Interpreting cmsdev Results](#cmsdev-results)
+    - [3.3 Known Issues](#sms-checks-known-issues)
   - [4. Booting CSM Barebones Image](#booting-csm-barebones-image)
     - [4.1 Locate CSM Barebones Image in IMS](#locate-csm-barebones-image-in-ims)
     - [4.2 Create a BOS Session Template for the CSM Barebones Image](#csm-bos-session-template)
@@ -173,7 +174,7 @@ Execute ncnPostgresHealthChecks script and analyze the output of each individual
       1. Verify there are three cluster members (with the exception of sma-postgres-cluster where there should be only two cluster members).
       If the number of cluster members is not correct, refer to [Troubleshoot Postgres Database](./kubernetes/Troubleshoot_Postgres_Database.md#missing).
 
-      2. Verify there is one cluster member with the Leader Role. 
+      2. Verify there is one cluster member with the Leader Role.
       If there is no Leader, refer to [Troubleshoot Postgres Database](./kubernetes/Troubleshoot_Postgres_Database.md#leader).
 
       3. Verify the State of each cluster member is 'running'.
@@ -434,6 +435,7 @@ Run the NCN health checks against the three different types of nodes with the fo
 
 **IMPORTANT:** These tests should only be run while booted into the PIT node. Do not run these as part of upgrade testing. This includes the Kubernetes check in the next block.
 
+**IMPORTANT:** It is possible that the first pass of running these tests may fail due to could-init not being completed on the storage nodes. In this case please wait 5 minutes and re-run the tests.
 
 ```bash
 pit# /opt/cray/tests/install/ncn/automated/ncn-healthcheck-master
@@ -547,7 +549,7 @@ ALL OK
 #### 2.2.1 Interpreting results
 
 Both sections `BMCs in SLS not in HSM components` and `BMCs in SLS not in HSM Redfish Endpoints` have the same format for mismatches between SLS and HSM. Each row starts with the xname of the BMC. If the BMC does not have an associated `MgmtSwitchConnector` in SLS, then `# No mgmt port association` will be displayed alongside the BMC xname.
-> MgmtSwitchConnectors in SLS are used to represent the switch port on a leaf switch that an the BMC of an air cooled device is connected to.
+> `MgmtSwitchConnector`s in SLS are used to represent the switch port on a leaf switch that is connected to the BMC of an air-cooled device.
 
 ```
 =============== BMCs in SLS not in HSM components ===============
@@ -568,10 +570,10 @@ __For each__ of the BMCs that show up in either of mismatch lists use the follow
    x3000c0s1b0  # No mgmt port association
    ```
 
-* The node BMCs for HPE Apollo XL645D nodes may report as a mismatch depending on the state of the system when the `hsm_discovery_verify.sh` script is run. If the system is currently going through the process of installation, then this is an expected mismatch as the [Prepare Compute Nodes](../install/prepare_compute_nodes.md) procedure required to configure the BMC of the HPE Apollo 6500 XL645D node may not have been completed yet. 
+* The node BMCs for HPE Apollo XL645D nodes may report as a mismatch depending on the state of the system when the `hsm_discovery_verify.sh` script is run. If the system is currently going through the process of installation, then this is an expected mismatch as the [Prepare Compute Nodes](../install/prepare_compute_nodes.md) procedure required to configure the BMC of the HPE Apollo 6500 XL645D node may not have been completed yet.
    > For more information refer to [Configure HPE Apollo 6500 XL645d Gen10 Plus Compute Nodes](../install/prepare_compute_nodes.md#configure-hpe-apollo-6500-x645d-gen10-plus-compute-nodes) for additional required configuration for this type of BMC.
 
-   Example mismatch for the BMC of a HPE Apollo XL654D:
+   Example mismatch for the BMC of an HPE Apollo XL654D:
    ```bash
    =============== BMCs in SLS not in HSM components ===============
    x3000c0s30b1
@@ -666,6 +668,19 @@ If one or more checks failed:
         ```
 
 Additional test execution details can be found in `/opt/cray/tests/cmsdev.log`.
+
+<a name="sms-checks-known-issues"></a>
+### 3.3 Known Issues
+
+#### Failed To Create VCS Organization
+
+On a fresh install, it is possible that `cmsdev` reports an error similar to the following:
+```text
+ERROR (run tag zl7ak-vcs): POST https://api-gw-service-nmn.local/vcs/api/v1/orgs: expected status code 201, got 401
+ERROR (run tag zl7ak-vcs): Failed to create vcs organization
+```
+
+In this case, follow the [Gitea/VCS 401 Errors](../troubleshooting/known_issues/gitea_vcs_401_errors.md) troubleshooting procedure.
 
 <a name="booting-csm-barebones-image"></a>
 ## 4. Booting CSM Barebones Image

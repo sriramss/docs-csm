@@ -3,16 +3,16 @@
 The following is a high-level overview of the non-compute node \(NCN\) reboot workflow:
 
 - Run the NCN pre-reboot checks and procedures:
-  - Ensure `ncn-m001` is not running in "LiveCD" or install mode
-  - Check the `metal.no-wipe` settings for all NCNs
-  - Run all platform health checks, including checks on the Border Gateway Protocol \(BGP\) peering sessions
-  - [Validate the current boot order](../../background/ncn_boot_workflow.md#determine-the-current-boot-order) (or [specify the boot order](../../background/ncn_boot_workflow.md#set-boot-order))
+   - Ensure `ncn-m001` is not running in "LiveCD" or install mode
+   - Check the `metal.no-wipe` settings for all NCNs
+   - Run all platform health checks, including checks on the Border Gateway Protocol \(BGP\) peering sessions
+   - [Validate the current boot order](../../background/ncn_boot_workflow.md#determine-the-current-boot-order) (or [specify the boot order](../../background/ncn_boot_workflow.md#set-boot-order))
 - Run the rolling NCN reboot procedure:
-  - Loop through reboots on storage nodes, worker nodes, and master nodes, where each boot consists of the following workflow:
-         - Establish console session with node to reboot
-         - Execute a Linux graceful shutdown or power off/on sequence to the node to allow it to boot up to completion
-         - Execute NCN/platform health checks and do not go on to reboot the next NCN until health has been ensured on the most recently rebooted NCN
-         -   Disconnect console session with the node that was rebooted
+   - Loop through reboots on storage nodes, worker nodes, and master nodes, where each boot consists of the following workflow:
+      - Establish console session with node to reboot
+      - Execute a Linux graceful shutdown or power off/on sequence to the node to allow it to boot up to completion
+      - Execute NCN/platform health checks and do not go on to reboot the next NCN until health has been ensured on the most recently rebooted NCN
+      - Disconnect console session with the node that was rebooted
 - Re-run all platform health checks, including checks on BGP peering sessions
 
 The time duration for this procedure \(if health checks are being executed in between each boot, as recommended\) could take between two to four hours for a system with nine management nodes.
@@ -21,9 +21,9 @@ This same procedure can be used to reboot a single management node as outlined a
 
 **`IMPORTANT`** whenever an NCN is rebooted the CASMINST-2015 script should be run to remove any dynamically assigned IP addresses that were not released automatically.
 
-  ```bash
-  ncn-m001# /usr/share/doc/csm/scripts/CASMINST-2015.sh
-  ```
+```bash
+ncn-m001# /usr/share/doc/csm/scripts/CASMINST-2015.sh
+```
 
 ## Prerequisites
 
@@ -144,10 +144,10 @@ The `kubectl` command is installed.
         This check will need to be run after all worker node have been rebooted. Ensure that the checks have been run to check BGP peering sessions on the spine switches \(instructions will vary for Aruba and Mellanox switches\)
 
         If there are BGP Peering sessions that are not ESTABLISHED on either switch, refer to [Check BGP Status and Reset Sessions](../network/metallb_bgp/Check_BGP_Status_and_Reset_Sessions.md).
-        
+
 1. Ensure that no nodes are in a `failed` state in CFS.
     Nodes that are in a failed state prior to the reboot will not be automatically
-    configured once they have been rebooted.  To get a list of nodes in the failed state:
+    configured once they have been rebooted. To get a list of nodes in the failed state:
    ```
    ncn-m001# cray cfs components list --status failed | jq .[].id
    ```
@@ -162,8 +162,8 @@ The `kubectl` command is installed.
        cray cfs components update $xname --enabled False --error-count 0
    done
    ```
-   This will leave the nodes in a disabled state in CFS.  CFS will automatically
-   re-enable them when they reboot, this is just so that CFS doesn't immediately
+   This will leave the nodes in a disabled state in CFS. CFS will automatically
+   re-enable them when they reboot, this is just so that CFS does not immediately
    start retrying configuration against the failed node.
 
     1. Check for components that have `failed` status in CFS.
@@ -192,7 +192,7 @@ Before rebooting NCNs:
     1. Establish a console session to each storage node.
 
         Use the [Establish a Serial Connection to NCNs](../conman/Establish_a_Serial_Connection_to_NCNs.md) procedure referenced in step 4.
-   
+
     2. If booting from disk is desired then [set the boot order](../../background/ncn_boot_workflow.md#set-boot-order).
 
     3. Reboot the selected node.
@@ -223,9 +223,9 @@ Before rebooting NCNs:
 
         Ensure the power is reporting as on. This may take 5-10 seconds for this to update.
     4. Watch on the console until the node has successfully booted and the login prompt is reached.
-   
+
     5. If desired verify method of boot is expected. If the `/proc/cmdline` begins with `BOOT_IMAGE` then this NCN booted from disk:
-   
+
    ```bash
    ncn# egrep -o '^(BOOT_IMAGE.+/kernel)' /proc/cmdline
    BOOT_IMAGE=(mduuid/a3899572a56f5fd88a0dec0e89fc12b4)/boot/grub2/../kernel
@@ -334,7 +334,7 @@ Before rebooting NCNs:
        ```
 
     4. If booting from disk is desired then [set the boot order](../../background/ncn_boot_workflow.md#set-boot-order).
-   
+
     5. Reboot the selected node.
 
         ```bash
@@ -364,9 +364,9 @@ Before rebooting NCNs:
         Ensure the power is reporting as on. This may take 5-10 seconds for this to update.
 
     6. Watch on the console until the node has successfully booted and the login prompt is reached.
-   
+
     7. If desired verify method of boot is expected. If the `/proc/cmdline` begins with `BOOT_IMAGE` then this NCN booted from disk:
-   
+
    ```bash
    ncn# egrep -o '^(BOOT_IMAGE.+/kernel)' /proc/cmdline
    BOOT_IMAGE=(mduuid/a3899572a56f5fd88a0dec0e89fc12b4)/boot/grub2/../kernel
@@ -442,7 +442,7 @@ Before rebooting NCNs:
         See step [Establish a Serial Connection to NCNs](../conman/Establish_a_Serial_Connection_to_NCNs.md) for more information.
 
     2. If booting from disk is desired then [set the boot order](../../background/ncn_boot_workflow.md#set-boot-order).
-   
+
     3. Reboot the selected node.
 
         ```bash
@@ -472,9 +472,9 @@ Before rebooting NCNs:
         Ensure the power is reporting as on. This may take 5-10 seconds for this to update.
 
     4. Watch on the console until the node has successfully booted and the login prompt is reached.
-   
+
     5. If desired verify method of boot is expected. If the `/proc/cmdline` begins with `BOOT_IMAGE` then this NCN booted from disk:
-   
+
    ```bash
    ncn# egrep -o '^(BOOT_IMAGE.+/kernel)' /proc/cmdline
    BOOT_IMAGE=(mduuid/a3899572a56f5fd88a0dec0e89fc12b4)/boot/grub2/../kernel
@@ -524,7 +524,7 @@ Before rebooting NCNs:
     1. Determine the CAN IP address for one of the other NCNs in the system to establish an SSH session with that NCN.
 
     2. Establish a console session to `ncn-m001` from a remote system, as `ncn-m001` is the NCN that has an externally facing IP address.
-   
+
     3. If booting from disk is desired then [set the boot order](../../background/ncn_boot_workflow.md#set-boot-order).
 
     4. Power cycle the node

@@ -1,5 +1,3 @@
-
-
 # Cray System Management (CSM) Administration Guide
 
 The Cray System Management (CSM) operational activities are administrative procedures required to operate an HPE Cray EX system with CSM software installed.
@@ -121,6 +119,8 @@ Use the Boot Orchestration Service \(BOS\) to boot, configure, and shut down col
 Procedures required for a full power off of an HPE Cray EX system.
 
   * [System Power Off Procedures](power_management/System_Power_Off_Procedures.md)
+
+Additional links to *power off sub procedures* provided for reference. Refer to the main procedure linked above before using any of these sub-procedures:
   * [Prepare the System for Power Off](power_management/Prepare_the_System_for_Power_Off.md)
   * [Shut Down and Power Off Compute and User Access Nodes](power_management/Shut_Down_and_Power_Off_Compute_and_User_Access_Nodes.md)
   * [Save Management Network Switch Configuration Settings](power_management/Save_Management_Network_Switch_Configurations.md)
@@ -136,9 +136,11 @@ Procedures required for a full power off of an HPE Cray EX system.
 Procedures required for a full power on of an HPE Cray EX system.
 
   * [System Power On Procedures](power_management/System_Power_On_Procedures.md)
+
+Additional links to *power on sub procedures* provided for reference. Refer to the main procedure linked above before using any of these sub-procedures:
   * [Power On and Start the Management Kubernetes Cluster](power_management/Power_On_and_Start_the_Management_Kubernetes_Cluster.md)
-  * [Power On the External Lustre File System](power_management/Power_On_the_External_Lustre_File_System.md)
   * [Power On Compute and IO Cabinets](power_management/Power_On_Compute_and_IO_Cabinets.md)
+  * [Power On the External Lustre File System](power_management/Power_On_the_External_Lustre_File_System.md)
   * [Bring Up the Slingshot Fabric](power_management/Bring_up_the_Slingshot_Fabric.md)
   * [Power On and Boot Compute and User Access Nodes](power_management/Power_On_and_Boot_Compute_Nodes_and_User_Access_Nodes.md)
   * [Recover from a Liquid Cooled Cabinet EPO Event](power_management/Recover_from_a_Liquid_Cooled_Cabinet_EPO_Event.md)
@@ -259,6 +261,7 @@ The system management components are broken down into a series of micro-services
        *   [Restore Postgres](kubernetes/Restore_Postgres.md)
        *   [Disaster Recovery for Postgres](kubernetes/Disaster_Recovery_Postgres.md)
        *   [View Postgres Information for System Databases](kubernetes/View_Postgres_Information_for_System_Databases.md)
+   *   [Kubernetes CronJobs](kubernetes/CronJobs.md)
 
 
 <a name="package-repository-management"></a>
@@ -286,6 +289,7 @@ Mechanisms used by the system to ensure the security and authentication of inter
    * [Manage System Passwords](security_and_authentication/Manage_System_Passwords.md)
      * [Update NCN Passwords](security_and_authentication/Update_NCN_Passwords.md)
      * [Change Root Passwords for Compute Nodes](security_and_authentication/Change_Root_Passwords_for_Compute_Nodes.md)
+     * [Change NCN Image Root Password and SSH Keys on Pit Node](security_and_authentication/Change_NCN_Image_Root_Password_and_SSH_Keys_on_PIT_Node.md)
      * [Change NCN Image Root Password and SSH Keys](security_and_authentication/Change_NCN_Image_Root_Password_and_SSH_Keys.md)
      * [Change EX Liquid-Cooled Cabinet Global Default Password](security_and_authentication/Change_EX_Liquid-Cooled_Cabinet_Global_Default_Password.md)
      * [Provisioning a Liquid-Cooled EX Cabinet CEC with Default Credentials](security_and_authentication/Provisioning_a_Liquid-Cooled_EX_Cabinet_CEC_with_Default_Credentials.md)
@@ -465,7 +469,7 @@ Use the Hardware State Manager \(HSM\) to monitor and interrogate hardware compo
 
 ## Hardware Management (HM) Collector
 
-The Hardware Management (HM) Collector is used to collect telemetry and Redfish events from hardware in the system. 
+The Hardware Management (HM) Collector is used to collect telemetry and Redfish events from hardware in the system.
 
  * [Adjust HM Collector resource limits and requests](hmcollector/adjust_hmcollector_resource_limits_requests.md)
 
@@ -627,6 +631,7 @@ Spire provides the ability to authenticate nodes and workloads, and to securely 
 
   * [Restore Spire Postgres without a Backup](spire/Restore_Spire_Postgres_without_a_Backup.md)
   * [Troubleshoot Spire Failing to Start on NCNs](spire/Troubleshoot_Spire_Failing_to_Start_on_NCNs.md)
+  * [Update Spire Intermediate CA Certificate](spire/Update_Spire_Intermediate_CA_Certificate.md)
 
 
 <a name="update-firmware-with-fas"></a>
