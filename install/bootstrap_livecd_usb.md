@@ -198,7 +198,7 @@ which device will be used for it.
         >   ```
 
     * On MacOS, use the `write-livecd.sh` script to do this.
-    
+
         This script is contained in the CSI tool RPM. See [install latest version of the CSI tool](#install-csi-rpm) step.
 
         ```bash
@@ -210,9 +210,9 @@ which device will be used for it.
 1. Mount the configuration and persistent data partitions.
 
     ```bash
-    linux# mkdir -pv /mnt/{cow,pitdata} && 
-           mount -vL cow /mnt/cow && 
-           mount -vL PITDATA ${PITDATA} && 
+    linux# mkdir -pv /mnt/{cow,pitdata} &&
+           mount -vL cow /mnt/cow &&
+           mount -vL PITDATA ${PITDATA} &&
            mkdir -pv ${PITDATA}/{admin,configs} ${PITDATA}/prep/{admin,logs} ${PITDATA}/data/{k8s,ceph}
     ```
 
@@ -574,7 +574,7 @@ Now that the configuration is generated, the LiveCD must be populated with the g
 
 1. Move the USB device to the system to be installed, if needed.
 
-   If the USB device was created somewhere other than `ncn-m001` of the system to be installed, 
+   If the USB device was created somewhere other than `ncn-m001` of the system to be installed,
    move it there from its current location.
 
 1. Proceed to the next step to boot into the LiveCD image.
@@ -586,7 +586,7 @@ Some systems will boot the USB device automatically if no other OS exists (bare-
 administrator may need to use the BIOS Boot Selection menu to choose the USB device.
 
 If an administrator has the node booted with an operating system which will next be rebooting into the LiveCD,
-then use `efibootmgr` to set the boot order to be the USB device. See the 
+then use `efibootmgr` to set the boot order to be the USB device. See the
 [set boot order](../background/ncn_boot_workflow.md#set-boot-order) page for more information about how to set the
 boot order to have the USB device first.
 
@@ -680,7 +680,7 @@ On first log in (over SSH or at local console), the LiveCD will prompt the admin
 
    The data partition is set to `fsopt=noauto` to facilitate LiveCDs over virtual-ISO mount. Therefore, USB installations
    need to mount this manually by running the following command.
-   
+
    > **Note:** When creating the USB PIT image, this was mounted over `/mnt/pitdata`. Now that the USB PIT is booted,
    > it will mount over `/var/www/ephemeral`. The FSLabel `PITDATA` is already in `/etc/fstab`, so the path is omitted
    > in the following call to `mount`.
@@ -716,7 +716,7 @@ On first log in (over SSH or at local console), the LiveCD will prompt the admin
    pit# hostnamectl
    ```
 
-   > **Note:** The hostname should be similar to `eniac-ncn-m001-pit` when booted from the LiveCD, but it will be shown as `pit#` 
+   > **Note:** The hostname should be similar to `eniac-ncn-m001-pit` when booted from the LiveCD, but it will be shown as `pit#`
    > in the documentation command prompts from this point onward.
 
    > **Note:** If the hostname returned by the `hostnamectl` command is `pit`, then set the hostname manually with `hostnamectl`. In that case, be sure to append the `-pit` suffix to prevent masquerading a PIT node as a real NCN to administrators and automation.
@@ -730,7 +730,7 @@ On first log in (over SSH or at local console), the LiveCD will prompt the admin
    ```bash
    pit# /root/bin/metalid.sh
    ```
-   
+
    Expected output looks similar to the following:
 
    ```
