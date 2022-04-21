@@ -53,7 +53,7 @@ Run the tests by executing the following the command. The system domain (e.g. en
 linux# /usr/share/doc/csm/scripts/operations/gateway-test/gateway-test.py eniac.dev.cray.com
 ```
 
-## Running gateway tests on a UAI 
+## Running gateway tests on a UAI
 
 In order to test the gateways from a UAI, you will need to run `uai-gateway-test.sh`.
 
@@ -73,7 +73,7 @@ ncn# /usr/share/doc/csm/scripts/operations/gateway-test/uai-gateway-test.sh
 
 The test will find the first UAI `cray-uai-gateway-test` image to create the test UAI. A different image may optionally be specified by using the `--imagename` option.
 
-## Example Results 
+## Example Results
 
 The results of running the tests will show the following
 
@@ -357,7 +357,7 @@ Overall Gateway Test Status:  PASS
 ### Running from a UAI
 
 ```bash
-ncn-m001# ./uai-gateway-test.sh 
+ncn-m001# ./uai-gateway-test.sh
 Creating Gateway Test UAI with image artifactory.algol60.net/csm-docker/stable/cray-gateway_test:1.4.0-20220418215843_786bfac
 Waiting for uai-vers-733eea45 to be ready
 status = Running: Not Ready

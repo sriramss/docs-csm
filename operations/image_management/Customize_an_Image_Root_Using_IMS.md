@@ -91,7 +91,7 @@ Afterwards, the IMS customization workflow automatically copies the NCN CA publi
     * It is in SquashFS format.
     * It has been uploaded to S3 via the Cray CLI.
     * It is registered with the IMS service.
-    
+
     Select one of the following options based on the current state of the image root being used:
 
     * If the image root being customized meets the above requirements, proceed to [Locate an IMS Image to Customize](#locate).
