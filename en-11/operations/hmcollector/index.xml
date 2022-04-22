@@ -6,11 +6,11 @@
     <description>Recent content in Hmcollector on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:29:38 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/hmcollector/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:33:01 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/hmcollector/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adjust Hm Collector Resource Limits And Requests</title>
       <link>/docs-csm/en-11/operations/hmcollector/adjust_hmcollector_resource_limits_requests/</link>
-      <pubDate>Thu, 21 Apr 2022 03:28:51 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:32:09 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/hmcollector/adjust_hmcollector_resource_limits_requests/</guid>
       <description>Adjust HM Collector resource limits and requests  Resource Limit Tuning Guidance Customize cray-hms-hmcollector resource limits and requests in customizations.yaml Redeploy cray-hms-hmcollector with new resource limits and requests  Resource Limit Tuning Guidance Inspect current resource usage in the cray-hms-hmcollector pod View resource usage of the containers in the cray-hms-hmcollector pod:

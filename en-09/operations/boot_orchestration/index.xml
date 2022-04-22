@@ -6,11 +6,11 @@
     <description>Recent content in Boot Orchestration on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:28:46 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/boot_orchestration/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:32:04 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/boot_orchestration/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Stage Changes Without BOS</title>
       <link>/docs-csm/en-09/operations/boot_orchestration/stage_changes_without_bos/</link>
-      <pubDate>Thu, 21 Apr 2022 03:28:22 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:31:38 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/boot_orchestration/stage_changes_without_bos/</guid>
       <description>Stage Changes Without BOS Sometimes there is a need to stages changes to take place on a reboot, without immediately rebooting a node. When this is called for, users can bypass BOS, and set boot artifacts or configuration that will only take place when a node is later booted, whether that occurs manually, or triggered by a task manager.
@@ -20,7 +20,7 @@ Stage Boot Artifacts For information on staging boot artifacts, see the section 
     <item>
       <title>Upload Node Boot Information To Boot Script Service (bss)</title>
       <link>/docs-csm/en-09/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/</link>
-      <pubDate>Thu, 21 Apr 2022 03:28:22 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:31:38 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/boot_orchestration/upload_node_boot_information_to_boot_script_service_bss/</guid>
       <description>Upload Node Boot Information to Boot Script Service (BSS) The following information must be uploaded to BSS as a prerequisite to booting a node via iPXE:

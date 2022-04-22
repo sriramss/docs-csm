@@ -6,11 +6,11 @@
     <description>Recent content in Kubernetes on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:28:47 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:32:05 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Kubernetes And Bare Metal Etcd Certificate Renewal</title>
       <link>/docs-csm/en-09/operations/kubernetes/cert_renewal_for_kubernetes_and_bare_metal_etcd/</link>
-      <pubDate>Thu, 21 Apr 2022 03:28:22 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:31:39 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/kubernetes/cert_renewal_for_kubernetes_and_bare_metal_etcd/</guid>
       <description>Kubernetes and Bare Metal EtcD Certificate Renewal Scope As part of the installation, Kubernetes generates certificates for the required subcomponents. This document will help walk through the process of renewing the certificates.

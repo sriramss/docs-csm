@@ -6,11 +6,11 @@
     <description>Recent content in Storage on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:29:32 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/resource_material/storage/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:32:55 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/resource_material/storage/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cephadm</title>
       <link>/docs-csm/en-10/upgrade/1.0.1/resource_material/storage/cephadm-reference/</link>
-      <pubDate>Thu, 21 Apr 2022 03:29:27 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:32:48 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0.1/resource_material/storage/cephadm-reference/</guid>
       <description>CEPHADM cephadm is a new function introduced in Ceph Octopus 15. It allows for an easier method to install and manage Ceph nodes.

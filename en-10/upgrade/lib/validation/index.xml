@@ -6,11 +6,11 @@
     <description>Recent content in Validation on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:29:30 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/lib/validation/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:32:52 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/lib/validation/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Pre-upgrade Scripts</title>
       <link>/docs-csm/en-10/upgrade/lib/validation/readme/</link>
-      <pubDate>Thu, 21 Apr 2022 03:29:29 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:32:51 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/lib/validation/readme/</guid>
       <description>Pre-Upgrade Scripts These scripts must be invoked before an upgrade.</description>

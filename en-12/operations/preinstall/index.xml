@@ -6,11 +6,11 @@
     <description>Recent content in Preinstall on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 21 Apr 2022 03:30:22 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/preinstall/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Apr 2022 03:33:48 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/preinstall/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Change Credentials On Servertech Pdus</title>
       <link>/docs-csm/en-12/operations/preinstall/change_servertech_pdu_credentials/</link>
-      <pubDate>Thu, 21 Apr 2022 03:29:35 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:33:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/preinstall/change_servertech_pdu_credentials/</guid>
       <description>Change Credentials on ServerTech PDUs This procedure changes password used by the admn user on ServerTech PDUs. This procedure should be used to update all ServerTech PDUs in the system to the same global credentials.
@@ -21,7 +21,7 @@ Prerequisites  The ServerTech PDUs must be accessible via a workstation or lapto
     <item>
       <title>Fresh Install Setting NodeBMC And Routerbmc Redfish Credentials</title>
       <link>/docs-csm/en-12/operations/preinstall/change_river_bmc_credentials/</link>
-      <pubDate>Thu, 21 Apr 2022 03:29:35 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:33:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/preinstall/change_river_bmc_credentials/</guid>
       <description>Fresh Install: Setting NodeBMC and RouterBMC Redfish Credentials These steps are performed before the installation of Shasta System Management or HPCM management software stacks. The goal is to set the BMC Redfish credentials to values that the management software will be expecting so that all software systems work smoothly with the Redfish hardware.
@@ -32,7 +32,7 @@ Prerequisites Before doing these operations, the following is assumed:
     <item>
       <title>Pre-install Steps</title>
       <link>/docs-csm/en-12/operations/preinstall/preinstall/</link>
-      <pubDate>Thu, 21 Apr 2022 03:29:35 +0000</pubDate>
+      <pubDate>Fri, 22 Apr 2022 03:33:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/preinstall/preinstall/</guid>
       <description>Pre-Install Steps This section provides information on what needs to be done before an initial install of CSM.
