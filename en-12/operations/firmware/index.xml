@@ -6,33 +6,11 @@
     <description>Recent content in Firmware on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 22 Apr 2022 03:33:42 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>FAS Use Cases</title>
-      <link>/docs-csm/en-12/operations/firmware/fas_use_cases/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:07 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/firmware/fas_use_cases/</guid>
-      <description>FAS Use Cases Use the Firmware Action Service (FAS) to update the firmware on supported hardware devices. Each procedure includes the prerequisites and example recipes required to update the firmware.
-When updating an entire system, walk down the device hierarchy component type by component type, starting first with Routers (switches), proceeding to Chassis, and then finally to Nodes. While this is not strictly necessary, it does help eliminate confusion.
-Refer to FAS Filters for more information on the content used in the example JSON files.</description>
-    </item>
-    
-    <item>
-      <title>Update Firmware With FAS</title>
-      <link>/docs-csm/en-12/operations/firmware/update_firmware_with_fas/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:07 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/firmware/update_firmware_with_fas/</guid>
-      <description>Update Firmware with FAS The Firmware Action Service (FAS) provides an interface for managing firmware versions of Redfish-enabled hardware in the system. FAS interacts with the Hardware State Managers (HSM), device data, and image data in order to update firmware.
-Reset Gigabyte node BMC to factory defaults if having problems with ipmitool, using Redfish, or when flashing procedures fail. See Set Gigabyte Node BMC to Factory Defaults.
-FAS images contain the following information that is needed for a hardware device to update firmware versions:</description>
-    </item>
-    
+    <lastBuildDate>Sat, 23 Apr 2022 03:16:49 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Updating BMC Firmware And Bios For NCN-m001</title>
       <link>/docs-csm/en-12/operations/firmware/updating_firmware_m001/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:07 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/updating_firmware_m001/</guid>
       <description>Updating BMC Firmware and BIOS for ncn-m001 NOTE: On HPE nodes, the BMC Firmware is iLO 5 and BIOS is System ROM
@@ -45,7 +23,7 @@ The following information is needed:
     <item>
       <title>Upload BMC Recovery Firmware Into Tftp Server</title>
       <link>/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:07 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</guid>
       <description>Upload BMC Recovery Firmware into TFTP Server cray-upload-recovery-images is a utility for uploading the BMC recovery files for ChassisBMCs, NodeBMCs, and RouterBMCs to be served by the cray-tftp service. The tool uses the cray cli (fas, artifacts) and cray-tftp to download the s3 recovery images (as remembered by FAS) then upload them into the PVC that is used by cray-tftp. cray-upload-recovery-images should be run on every system.
@@ -55,7 +33,7 @@ Procedure   Execute the cray-upload-recovery-images script.</description>
     <item>
       <title>FAS Admin Procedures</title>
       <link>/docs-csm/en-12/operations/firmware/fas_admin_procedures/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:06 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/fas_admin_procedures/</guid>
       <description>FAS Admin Procedures 
@@ -66,7 +44,7 @@ Topics  FAS Admin Procedures  Topics Warning for Non-Compute Nodes (NCNs) Ignore
     <item>
       <title>FAS Cli</title>
       <link>/docs-csm/en-12/operations/firmware/fas_cli/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:06 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/fas_cli/</guid>
       <description>FAS CLI This section describes the basic capabilities of the Firmware Action Service (FAS) CLI commands. These commands can be used to manage firmware for system hardware supported by FAS. Refer to the prerequisites section before proceeding to any of the sections for the supported operations.
@@ -77,7 +55,7 @@ The following CLI operations are described:
     <item>
       <title>FAS Filters</title>
       <link>/docs-csm/en-12/operations/firmware/fas_filters/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:06 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/fas_filters/</guid>
       <description>FAS Filters FAS uses five primary filters for actions and snapshots to determine what operations to create. The filters are listed below:
@@ -85,14 +63,36 @@ The following CLI operations are described:
     </item>
     
     <item>
+      <title>FAS Use Cases</title>
+      <link>/docs-csm/en-12/operations/firmware/fas_use_cases/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/firmware/fas_use_cases/</guid>
+      <description>FAS Use Cases Use the Firmware Action Service (FAS) to update the firmware on supported hardware devices. Each procedure includes the prerequisites and example recipes required to update the firmware.
+When updating an entire system, walk down the device hierarchy component type by component type, starting first with Routers (switches), proceeding to Chassis, and then finally to Nodes. While this is not strictly necessary, it does help eliminate confusion.
+Refer to FAS Filters for more information on the content used in the example JSON files.</description>
+    </item>
+    
+    <item>
       <title>Recipes</title>
       <link>/docs-csm/en-12/operations/firmware/fas_recipes/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:06 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/firmware/fas_recipes/</guid>
       <description>Recipes NOTE: This file contains a collection of various FAS recipes for performing updates. For step by step directions and commands, see FAS_Use_Cases
 The following example JSON files are useful to reference when updating specific hardware components. In all of these examples, the overrideDryrun field will be set to false; set them to true to perform a live update.
 When updating an entire system, walk down the device hierarchy component type by component type, starting first with Routers (switches), proceeding to Chassis, and then finally to Nodes.</description>
+    </item>
+    
+    <item>
+      <title>Update Firmware With FAS</title>
+      <link>/docs-csm/en-12/operations/firmware/update_firmware_with_fas/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/firmware/update_firmware_with_fas/</guid>
+      <description>Update Firmware with FAS The Firmware Action Service (FAS) provides an interface for managing firmware versions of Redfish-enabled hardware in the system. FAS interacts with the Hardware State Managers (HSM), device data, and image data in order to update firmware.
+Reset Gigabyte node BMC to factory defaults if having problems with ipmitool, using Redfish, or when flashing procedures fail. See Set Gigabyte Node BMC to Factory Defaults.
+FAS images contain the following information that is needed for a hardware device to update firmware versions:</description>
     </item>
     
   </channel>

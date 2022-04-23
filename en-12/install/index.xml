@@ -6,11 +6,32 @@
     <description>Recent content in Install on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 22 Apr 2022 03:31:32 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/install/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 03:15:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/install/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Troubleshooting Installation Problems</title>
+      <link>/docs-csm/en-12/install/troubleshooting_installation/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/troubleshooting_installation/</guid>
+      <description>Troubleshooting Installation Problems The installation of the Cray System Management (CSM) product requires knowledge of the various nodes and switches for the HPE Cray EX system. The procedures in this section should be referenced during the CSM install for additional information on system hardware, troubleshooting, and administrative tasks related to CSM.
+Topics:  Reset root Password on LiveCD Reinstall LiveCD PXE Boot Troubleshooting Wipe NCN Disks for Reinstallation Restart Network Services and Interfaces on NCNs Utility Storage Node Installation Troubleshooting Ceph CSI Troubleshooting Safeguards for CSM NCN Upgrades  Details</description>
+    </item>
+    
+    <item>
+      <title>Utility Storage Installation Troubleshooting</title>
+      <link>/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/</guid>
+      <description>Utility Storage Installation Troubleshooting If there is a failure in the creation of Ceph storage on the utility storage nodes for one of these scenarios, the Ceph storage might need to be reinitialized.
+Topics  Scenario 1 (Shasta v1.4 only) Scenario 2 (Shasta v1.5 only)  Details Scenario 1 (Shasta 1.4 only) IMPORTANT (FOR NODE INSTALLS/REINSTALLS ONLY): If the Ceph install failed, check the following:
+ncn-s# ceph osd tree ID CLASS WEIGHT TYPE NAME STATUS REWEIGHT PRI-AFF -1 83.</description>
+    </item>
+    
     <item>
       <title>Wipe NCN Disks For Reinstallation</title>
       <link>/docs-csm/en-12/install/wipe_ncn_disks_for_reinstallation/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/wipe_ncn_disks_for_reinstallation/</guid>
       <description>Wipe NCN Disks for Reinstallation This page will detail how disks to wipe NCN disks.
@@ -23,89 +44,9 @@ The following are potential use cases for wiping disks:
     </item>
     
     <item>
-      <title>Set Gigabyte Node BMC To Factory Defaults</title>
-      <link>/docs-csm/en-12/install/set_gigabyte_node_bmc_to_factory_defaults/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:34 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/set_gigabyte_node_bmc_to_factory_defaults/</guid>
-      <description>Set Gigabyte Node BMC to Factory Defaults Prerequisites Use the management scripts and text files to reset Gigabyte BMC to factory default settings. Set the BMC to the factory default settings in the following cases:
- There are problems using the ipmitool command and Redfish does not respond There are problems using the ipmitool command and Redfish is running When BIOS or BMC flash procedures fail using Redfish  Run the do_bmc_factory_default.</description>
-    </item>
-    
-    <item>
-      <title>Shcd Hmn Tab/hmn Connections Rules</title>
-      <link>/docs-csm/en-12/install/shcd_hmn_connections_rules/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:34 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/shcd_hmn_connections_rules/</guid>
-      <description>SHCD HMN Tab/HMN Connections Rules Table of Contents  Introduction Compute Node  Dense 4 node chassis - Gigabyte or Intel chassis Single node chassis - Apollo 6500 XL675D Dual node chassis - Apollo 6500 XL645D   Chassis Management Controller (CMC) Management Node  Master Worker Storage   Application Node  Single Node Chassis  Building component names (xnames) for nodes in a single application node chassis   Dual Node Chassis  Building component names (xnames) for nodes in a dual application node chassis     Columbia Slingshot Switch PDU Cabinet Controller Cooling Door Management Switches  Introduction The HMN tab of the SHCD describes the air-cooled hardware present in the system and how these devices are connected to the Hardware Management Network (HMN).</description>
-    </item>
-    
-    <item>
-      <title>Switch PXE Boot From Onboard NIC To Pcie</title>
-      <link>/docs-csm/en-12/install/switch_pxe_boot_from_onboard_nic_to_pcie/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:34 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/switch_pxe_boot_from_onboard_nic_to_pcie/</guid>
-      <description>Switch PXE Boot from Onboard NIC to PCIe This section details how to migrate NCNs from using their onboard NICs for PXE booting to booting over the PCIe cards.
- Switch PXE Boot from Onboard NIC to PCIe  Enabling UEFI PXE Mode  Mellanox  Print Current UEFI and SR-IOV State Setting Expected Values High-Speed Network  Obtaining Mellanox Tools     QLogic FastLinq  Kernel Modules     Disabling or Removing On-Board Connections    This applies to Newer systems (Spring 2020 or newer) where onboard NICs are still used.</description>
-    </item>
-    
-    <item>
-      <title>Troubleshooting Installation Problems</title>
-      <link>/docs-csm/en-12/install/troubleshooting_installation/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:34 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/troubleshooting_installation/</guid>
-      <description>Troubleshooting Installation Problems The installation of the Cray System Management (CSM) product requires knowledge of the various nodes and switches for the HPE Cray EX system. The procedures in this section should be referenced during the CSM install for additional information on system hardware, troubleshooting, and administrative tasks related to CSM.
-Topics:  Reset root Password on LiveCD Reinstall LiveCD PXE Boot Troubleshooting Wipe NCN Disks for Reinstallation Restart Network Services and Interfaces on NCNs Utility Storage Node Installation Troubleshooting Ceph CSI Troubleshooting Safeguards for CSM NCN Upgrades  Details</description>
-    </item>
-    
-    <item>
-      <title>Utility Storage Installation Troubleshooting</title>
-      <link>/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:34 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/utility_storage_node_installation_troubleshooting/</guid>
-      <description>Utility Storage Installation Troubleshooting If there is a failure in the creation of Ceph storage on the utility storage nodes for one of these scenarios, the Ceph storage might need to be reinitialized.
-Topics  Scenario 1 (Shasta v1.4 only) Scenario 2 (Shasta v1.5 only)  Details Scenario 1 (Shasta 1.4 only) IMPORTANT (FOR NODE INSTALLS/REINSTALLS ONLY): If the Ceph install failed, check the following:
-ncn-s# ceph osd tree ID CLASS WEIGHT TYPE NAME STATUS REWEIGHT PRI-AFF -1 83.</description>
-    </item>
-    
-    <item>
-      <title>Prepare Management Nodes</title>
-      <link>/docs-csm/en-12/install/prepare_management_nodes/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/prepare_management_nodes/</guid>
-      <description>Prepare Management Nodes The procedures described on this page must be completed before any node is booted with the Cray Pre-Install Toolkit (PIT), which is performed in a later document. When the PIT node is referenced during these procedures, it means the node that will be booted as the PIT node.
-Topics  Quiesce Compute and Application Nodes Disable DHCP Service (if any management nodes are booted) Wipe Disks on Booted Nodes Power Off Booted Nodes Set Node BMCs to DHCP Wipe USB Device on PIT Node (Only if switching from USB LiveCD method to RemoteISO LiveCD method) Power Off PIT Node  Quiesce compute nodes and application nodes.</description>
-    </item>
-    
-    <item>
-      <title>Prepare Site Init</title>
-      <link>/docs-csm/en-12/install/prepare_site_init/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/prepare_site_init/</guid>
-      <description>Prepare Site Init These procedures guide administrators through setting up the site-init directory which contains important customizations for various products.
-Note: There are two media available to bootstrap the PIT node: the RemoteISO or a bootable USB device. Both of those can use this procedure. The only difference in this procedure is that the RemoteISO method will execute these commands on the PIT node, while the USB method could be done on any Linux system.</description>
-    </item>
-    
-    <item>
-      <title>PXE Boot Troubleshooting</title>
-      <link>/docs-csm/en-12/install/pxe_boot_troubleshooting/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/install/pxe_boot_troubleshooting/</guid>
-      <description>PXE Boot Troubleshooting This page is designed to cover various issues that arise when trying to PXE boot nodes in an HPE Cray EX system.
- PXE Boot Troubleshooting  Configuration required for PXE booting Switch Configuration  Aruba Configuration Mellanox Configuration   Next steps  Restart BSS Restart KEA Missing BSS Data      In order for PXE booting to work successfully, the management network switches need to be configured correctly.</description>
-    </item>
-    
-    <item>
       <title>Reinstall Livecd</title>
       <link>/docs-csm/en-12/install/reinstall_livecd/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/reinstall_livecd/</guid>
       <description>Reinstall LiveCD Setup a re-install of LiveCD on a node using the previous configuration.
@@ -117,7 +58,7 @@ The USB device should now contain all the information already loaded, as well as
     <item>
       <title>Reset Root Password On Livecd</title>
       <link>/docs-csm/en-12/install/reset_root_password_on_livecd/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/reset_root_password_on_livecd/</guid>
       <description>Reset root Password on LiveCD It may become desirable to clear the password on the LiveCD.
@@ -128,7 +69,7 @@ If a site/user needs to reset/clear the password for root, they can mount their 
     <item>
       <title>Restart Network Services And Interfaces On NCNs</title>
       <link>/docs-csm/en-12/install/restart_network_services_and_interfaces_on_ncns/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/restart_network_services_and_interfaces_on_ncns/</guid>
       <description>Restart Network Services and Interfaces on NCNs Interfaces within the network stack can be reloaded or reset to fix wedged interfaces. The NCNs have network device names set during first boot. The names vary based on the available hardware. For more information, see NCN Networking. Any process covered on this page will be covered by the installer.
@@ -139,7 +80,7 @@ The use cases for resetting services:
     <item>
       <title>Safeguards For</title>
       <link>/docs-csm/en-12/install/safeguards_for_csm_ncn_upgrades/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:33 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/safeguards_for_csm_ncn_upgrades/</guid>
       <description>Safeguards for CSM This page covers safe-guards for preventing destructive behaviors on management nodes.
@@ -149,28 +90,38 @@ If reinstalling or upgrading, run through these safe-guards on a by-case basis:
     </item>
     
     <item>
-      <title>Deploy Final NCN</title>
-      <link>/docs-csm/en-12/install/deploy_final_ncn/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:32 +0000</pubDate>
+      <title>Set Gigabyte Node BMC To Factory Defaults</title>
+      <link>/docs-csm/en-12/install/set_gigabyte_node_bmc_to_factory_defaults/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/install/deploy_final_ncn/</guid>
-      <description>Deploy Final NCN The following procedure contains information for rebooting and deploying the management node that is currently hosting the LiveCD. At the end of this procedure, the LiveCD will no longer be active. The node it was using will join the Kubernetes cluster as the final of three master nodes, forming a quorum.
-IMPORTANT: While the node is rebooting, it will only be available through Serial-Over-LAN (SOL) and local terminals.</description>
+      <guid>/docs-csm/en-12/install/set_gigabyte_node_bmc_to_factory_defaults/</guid>
+      <description>Set Gigabyte Node BMC to Factory Defaults Prerequisites Use the management scripts and text files to reset Gigabyte BMC to factory default settings. Set the BMC to the factory default settings in the following cases:
+ There are problems using the ipmitool command and Redfish does not respond There are problems using the ipmitool command and Redfish is running When BIOS or BMC flash procedures fail using Redfish  Run the do_bmc_factory_default.</description>
     </item>
     
     <item>
-      <title>Deploy Management Nodes</title>
-      <link>/docs-csm/en-12/install/deploy_management_nodes/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:32 +0000</pubDate>
+      <title>Shcd Hmn Tab/hmn Connections Rules</title>
+      <link>/docs-csm/en-12/install/shcd_hmn_connections_rules/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/install/deploy_management_nodes/</guid>
-      <description>Deploy Management Nodes The following procedure deploys Linux and Kubernetes software to the management NCNs. Deployment of the nodes starts with booting the storage nodes followed by the master nodes and worker nodes together. After the operating system boots on each node, there are some configuration actions which take place. Watching the console or the console log for certain nodes can help to understand what happens and when. When the process completes for all nodes, the Ceph storage is initialized and the Kubernetes cluster is created and ready for a workload.</description>
+      <guid>/docs-csm/en-12/install/shcd_hmn_connections_rules/</guid>
+      <description>SHCD HMN Tab/HMN Connections Rules Table of Contents  Introduction Compute Node  Dense 4 node chassis - Gigabyte or Intel chassis Single node chassis - Apollo 6500 XL675D Dual node chassis - Apollo 6500 XL645D   Chassis Management Controller (CMC) Management Node  Master Worker Storage   Application Node  Single Node Chassis  Building component names (xnames) for nodes in a single application node chassis   Dual Node Chassis  Building component names (xnames) for nodes in a dual application node chassis     Columbia Slingshot Switch PDU Cabinet Controller Cooling Door Management Switches  Introduction The HMN tab of the SHCD describes the air-cooled hardware present in the system and how these devices are connected to the Hardware Management Network (HMN).</description>
+    </item>
+    
+    <item>
+      <title>Switch PXE Boot From Onboard NIC To Pcie</title>
+      <link>/docs-csm/en-12/install/switch_pxe_boot_from_onboard_nic_to_pcie/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:03 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/switch_pxe_boot_from_onboard_nic_to_pcie/</guid>
+      <description>Switch PXE Boot from Onboard NIC to PCIe This section details how to migrate NCNs from using their onboard NICs for PXE booting to booting over the PCIe cards.
+ Switch PXE Boot from Onboard NIC to PCIe  Enabling UEFI PXE Mode  Mellanox  Print Current UEFI and SR-IOV State Setting Expected Values High-Speed Network  Obtaining Mellanox Tools     QLogic FastLinq  Kernel Modules     Disabling or Removing On-Board Connections    This applies to Newer systems (Spring 2020 or newer) where onboard NICs are still used.</description>
     </item>
     
     <item>
       <title>Install Services</title>
       <link>/docs-csm/en-12/install/install_csm_services/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:32 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/install_csm_services/</guid>
       <description>Install CSM Services This procedure will install CSM applications and services into the CSM Kubernetes cluster.
@@ -181,7 +132,7 @@ IMPORTANT: While the node is rebooting, it will only be available through Serial
     <item>
       <title>Prepare Compute Nodes</title>
       <link>/docs-csm/en-12/install/prepare_compute_nodes/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:32 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/prepare_compute_nodes/</guid>
       <description>Prepare Compute Nodes Topics:  Configure HPE Apollo 6500 XL645d Gen10 Plus Compute Nodes  Gather information Configure the iLO to use VLAN 4 Configure the switch port for the iLO to use VLAN 4 Clear bad MAC and IP address out of KEA Clear bad ID out of HSM   Update the BIOS Time on Gigabyte Compute Nodes  Details Configure HPE Apollo 6500 XL645d Gen10 Plus Compute Nodes The HPE Apollo 6500 XL645d Gen10 Plus compute node uses a NIC/shared iLO network port.</description>
@@ -190,7 +141,7 @@ IMPORTANT: While the node is rebooting, it will only be available through Serial
     <item>
       <title>Prepare Configuration Payload</title>
       <link>/docs-csm/en-12/install/prepare_configuration_payload/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:32 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/prepare_configuration_payload/</guid>
       <description>Prepare Configuration Payload The configuration payload consists of the information which must be known about the HPE Cray EX system so it can be passed to the csi (Cray Site Init) program during the CSM installation process.
@@ -198,9 +149,39 @@ Information gathered from a site survey is needed to feed into the CSM installat
     </item>
     
     <item>
+      <title>Prepare Management Nodes</title>
+      <link>/docs-csm/en-12/install/prepare_management_nodes/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/prepare_management_nodes/</guid>
+      <description>Prepare Management Nodes The procedures described on this page must be completed before any node is booted with the Cray Pre-Install Toolkit (PIT), which is performed in a later document. When the PIT node is referenced during these procedures, it means the node that will be booted as the PIT node.
+Topics  Quiesce Compute and Application Nodes Disable DHCP Service (if any management nodes are booted) Wipe Disks on Booted Nodes Power Off Booted Nodes Set Node BMCs to DHCP Wipe USB Device on PIT Node (Only if switching from USB LiveCD method to RemoteISO LiveCD method) Power Off PIT Node  Quiesce compute nodes and application nodes.</description>
+    </item>
+    
+    <item>
+      <title>Prepare Site Init</title>
+      <link>/docs-csm/en-12/install/prepare_site_init/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/prepare_site_init/</guid>
+      <description>Prepare Site Init These procedures guide administrators through setting up the site-init directory which contains important customizations for various products.
+Note: There are two media available to bootstrap the PIT node: the RemoteISO or a bootable USB device. Both of those can use this procedure. The only difference in this procedure is that the RemoteISO method will execute these commands on the PIT node, while the USB method could be done on any Linux system.</description>
+    </item>
+    
+    <item>
+      <title>PXE Boot Troubleshooting</title>
+      <link>/docs-csm/en-12/install/pxe_boot_troubleshooting/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:02 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/pxe_boot_troubleshooting/</guid>
+      <description>PXE Boot Troubleshooting This page is designed to cover various issues that arise when trying to PXE boot nodes in an HPE Cray EX system.
+ PXE Boot Troubleshooting  Configuration required for PXE booting Switch Configuration  Aruba Configuration Mellanox Configuration   Next steps  Restart BSS Restart KEA Missing BSS Data      In order for PXE booting to work successfully, the management network switches need to be configured correctly.</description>
+    </item>
+    
+    <item>
       <title>Connect To Switch Over Usb-serial Cable</title>
       <link>/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/connect_to_switch_over_usb_serial_cable/</guid>
       <description>Connect to Switch over USB-Serial Cable In the event that network plumbing is lacking, down, or unconfigured for procuring devices, then it is recommended to use the Serial/COM ports on the management switches.
@@ -212,7 +193,7 @@ Common Manufacturers Refer to the external support/documentation portals for mor
     <item>
       <title>Create Application Node Config Yaml</title>
       <link>/docs-csm/en-12/install/create_application_node_config_yaml/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/create_application_node_config_yaml/</guid>
       <description>Create Application Node Config YAML This topic provides directions on constructing the application_node_config.yaml file. This file controls how the csi config init command finds and treats application nodes discovered in the hmn_connections.json file when generating configuration files for the system.
@@ -223,7 +204,7 @@ Common Manufacturers Refer to the external support/documentation portals for mor
     <item>
       <title>Create Cabinets Yaml</title>
       <link>/docs-csm/en-12/install/create_cabinets_yaml/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/create_cabinets_yaml/</guid>
       <description>Create Cabinets YAML This page provides directions on constructing the optional cabinets.yaml file. This file lists cabinet IDs for any systems with non-contiguous cabinet ID numbers and controls how the csi config init command treats cabinet IDs.
@@ -233,7 +214,7 @@ The following example file is manually created and follows this format. Each &am
     <item>
       <title>Create Hmn Connections Json File</title>
       <link>/docs-csm/en-12/install/create_hmn_connections_json/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/create_hmn_connections_json/</guid>
       <description>Create HMN Connections JSON File Use this procedure to generate the hmn_connections.json from the system&amp;rsquo;s SHCD Excel document. This process is typically needed when generating the hmn_connections.json file for a new system, or regenerating it when a system&amp;rsquo;s SHCD file is changed (specifically the HMN tab). The hms-shcd-parser tool can be used to generate the hmn_connections.json file.
@@ -243,7 +224,7 @@ The SHCD/HMN Connections Rules document explains the expected naming conventions
     <item>
       <title>Create NCN Metadata Csv</title>
       <link>/docs-csm/en-12/install/create_ncn_metadata_csv/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/create_ncn_metadata_csv/</guid>
       <description>Create NCN Metadata CSV The information in the ncn_metadata.csv file identifies each of the management nodes, assigns the function as a master, worker, or storage node, and provides the MAC address information needed to identify the BMC and the NIC which will be used to boot the node.
@@ -253,7 +234,7 @@ Some of the data in the ncn_metadata.csv can be found in the SHCD in the HMN tab
     <item>
       <title>Create Switch Metadata Csv</title>
       <link>/docs-csm/en-12/install/create_switch_metadata_csv/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:31 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/create_switch_metadata_csv/</guid>
       <description>Create Switch Metadata CSV This page provides directions on constructing the switch_metadata.csv file.
@@ -263,9 +244,28 @@ Switch Xname,Type,Brand d0w1,CDU,Dell d0w2,CDU,Dell x3000c0w38,leafBMC,Dell x300
     </item>
     
     <item>
+      <title>Deploy Final NCN</title>
+      <link>/docs-csm/en-12/install/deploy_final_ncn/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/deploy_final_ncn/</guid>
+      <description>Deploy Final NCN The following procedure contains information for rebooting and deploying the management node that is currently hosting the LiveCD. At the end of this procedure, the LiveCD will no longer be active. The node it was using will join the Kubernetes cluster as the final of three master nodes, forming a quorum.
+IMPORTANT: While the node is rebooting, it will only be available through Serial-Over-LAN (SOL) and local terminals.</description>
+    </item>
+    
+    <item>
+      <title>Deploy Management Nodes</title>
+      <link>/docs-csm/en-12/install/deploy_management_nodes/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:01 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/install/deploy_management_nodes/</guid>
+      <description>Deploy Management Nodes The following procedure deploys Linux and Kubernetes software to the management NCNs. Deployment of the nodes starts with booting the storage nodes followed by the master nodes and worker nodes together. After the operating system boots on each node, there are some configuration actions which take place. Watching the console or the console log for certain nodes can help to understand what happens and when. When the process completes for all nodes, the Ceph storage is initialized and the Kubernetes cluster is created and ready for a workload.</description>
+    </item>
+    
+    <item>
       <title>Ceph Csi Troubleshooting</title>
       <link>/docs-csm/en-12/install/ceph_csi_troubleshooting/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/ceph_csi_troubleshooting/</guid>
       <description>Ceph CSI Troubleshooting If there has been a failure to initialize all Ceph CSI components on ncn-s001, then the storage node cloud-init may need to be rerun.
@@ -277,7 +277,7 @@ ncn-s001# ceph -s If it returns a connection error, then assume Ceph is not inst
     <item>
       <title>Clear Gigabyte Cmos</title>
       <link>/docs-csm/en-12/install/clear_gigabyte_cmos/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/clear_gigabyte_cmos/</guid>
       <description>Clear Gigabyte CMOS Because of a bug in the Gigabyte firmware, the Shasta 1.5 install may negatively impact Gigabyte motherboards when attempting to boot using bonded Mellanox network cards. The result is a board that is unusable until a CMOS clear is physically done via a jumper on the board itself.
@@ -287,7 +287,7 @@ A patched firmware release (newer than C20 BIOS) is expected to be available for
     <item>
       <title>Collect Mac Addresses For NCNs</title>
       <link>/docs-csm/en-12/install/collect_mac_addresses_for_ncns/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/collect_mac_addresses_for_ncns/</guid>
       <description>Collect MAC Addresses for NCNs Now that the PIT node has been booted with the LiveCD and the management network switches have been configured, the actual MAC addresses for the management nodes can be collected. This process will include repetition of some of the steps done up to this point because csi config init will need to be run with the proper MAC addresses and some services will need to be restarted.</description>
@@ -296,7 +296,7 @@ A patched firmware release (newer than C20 BIOS) is expected to be available for
     <item>
       <title>Collecting NCN Mac Addresses</title>
       <link>/docs-csm/en-12/install/collecting_ncn_mac_addresses/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/collecting_ncn_mac_addresses/</guid>
       <description>Collecting NCN MAC Addresses This procedure will detail how to collect the NCN MAC addresses from an HPE Cray EX system. The MAC addresses needed for the Bootstrap MAC, Bond0 MAC0, and Bond0 MAC1 columns in ncn_metadata.csv will be collected.
@@ -307,7 +307,7 @@ The Bond0 MAC0 and Bond0 MAC1 are the MAC addresses for the physical interfaces 
     <item>
       <title>Collecting The BMC Mac Addresses</title>
       <link>/docs-csm/en-12/install/collecting_bmc_mac_addresses/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/collecting_bmc_mac_addresses/</guid>
       <description>Collecting the BMC MAC Addresses This guide will detail how to collect BMC MAC addresses from an HPE Cray EX system with configured switches. The BMC MAC address is the exclusive, dedicated LAN for the onboard BMC.
@@ -318,7 +318,7 @@ Prerequisites  There is a configured switch with SSH access or unconfigured with
     <item>
       <title>Configure Administrative Access</title>
       <link>/docs-csm/en-12/install/configure_administrative_access/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/configure_administrative_access/</guid>
       <description>Configure Administrative Access There are several operations which configure administrative access to different parts of the system. Ensuring that the cray CLI can be used by administrative credentials enables use of many management services via commands. The management nodes can be locked from accidental manipulation by the cray capmc and cray fas commands when the intent is to work on the entire system except the management nodes. The cray scsd command can change the SSH keys, NTP server, syslog server, and BMC/controller passwords.</description>
@@ -327,7 +327,7 @@ Prerequisites  There is a configured switch with SSH access or unconfigured with
     <item>
       <title>Configure Management Network</title>
       <link>/docs-csm/en-12/install/configure_management_network/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:30 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:00 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/configure_management_network/</guid>
       <description>Configure Management Network HPE Cray EX systems can have network switches in many roles: spine switches, leaf switches, leaf-bmc switches, and CDU switches. Newer systems have HPE Aruba switches, while older systems have Dell and Mellanox switches. Switch IP addresses are generated by Cray Site Init (CSI).
@@ -338,7 +338,7 @@ The configuration for these switches will be generated from CSM Automated Networ
     <item>
       <title>Boot Livecd Virtual Iso</title>
       <link>/docs-csm/en-12/install/boot_livecd_virtual_iso/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:29 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:14:59 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/boot_livecd_virtual_iso/</guid>
       <description>Boot LiveCD Virtual ISO This page will walk-through booting the LiveCD .iso file directly onto a BMC.
@@ -348,7 +348,7 @@ Topics  Boot LiveCD Virtual ISO  Topics Details  Prerequisites BMCs&#39; Virtual
     <item>
       <title>Bootstrap Pit Node From Livecd Remote Iso</title>
       <link>/docs-csm/en-12/install/bootstrap_livecd_remote_iso/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:29 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:14:59 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/bootstrap_livecd_remote_iso/</guid>
       <description>Bootstrap PIT Node from LiveCD Remote ISO The Pre-Install Toolkit (PIT) node needs to be bootstrapped from the LiveCD. There are two media available to bootstrap the PIT node: the RemoteISO or a bootable USB device. This procedure describes using the USB device. If not using the RemoteISO, see Bootstrap PIT Node from LiveCD USB
@@ -358,7 +358,7 @@ The installation process is similar to the USB-based installation, with adjustme
     <item>
       <title>Bootstrap Pit Node From Livecd Usb</title>
       <link>/docs-csm/en-12/install/bootstrap_livecd_usb/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:29 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:14:59 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/bootstrap_livecd_usb/</guid>
       <description>Bootstrap PIT Node from LiveCD USB The Pre-Install Toolkit (PIT) node needs to be bootstrapped from the LiveCD. There are two media available to bootstrap the PIT node: the RemoteISO or a bootable USB device. This procedure describes using the USB device. If not using the USB device, see Bootstrap PIT Node from LiveCD Remote ISO.
@@ -368,7 +368,7 @@ These steps provide a bootable USB with SSH enabled, capable of installing this 
     <item>
       <title>Cable Management Network Servers</title>
       <link>/docs-csm/en-12/install/cable_management_network_servers/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:29 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:14:59 +0000</pubDate>
       
       <guid>/docs-csm/en-12/install/cable_management_network_servers/</guid>
       <description>Cable Management Network Servers This topic describes nodes in the air-cooled cabinet with diagrams and pictures showing where to find the ports on the nodes and how to cable the nodes to the management network switches.

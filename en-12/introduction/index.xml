@@ -6,11 +6,21 @@
     <description>Recent content in Introduction To Installation on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 22 Apr 2022 03:31:35 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 03:15:05 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Scenarios For Shasta V1.5</title>
+      <link>/docs-csm/en-12/introduction/scenarios/</link>
+      <pubDate>Sat, 23 Apr 2022 03:15:05 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/introduction/scenarios/</guid>
+      <description>Scenarios for Shasta v1.5 There are multiple scenarios for installing CSM software which are described in this documentation with many supporting procedures.
+ Scenarios for Shasta v1.5  Installation Upgrade Migration    Installation There are two ways to install the CSM software. There are some differences between a first time install which must create the initial configuration payload and configure the management network switches, whereas a reinstall can reuse a previous configuration payload and skip the configuration of management network switches.</description>
+    </item>
+    
     <item>
       <title>CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated</title>
       <link>/docs-csm/en-12/introduction/capmc_deprecation/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
       
       <guid>/docs-csm/en-12/introduction/capmc_deprecation/</guid>
       <description>CAPMC Deprecation Notice: many CAPMC v1 features are being partially deprecated Deprecated Features in CSM 1.0 Many CAPMC v1 REST API and CLI features are being deprecated as part of CSM version 1.0; Full removal of the following deprecated CAPMC features will happen in CSM version 1.3. Further development of CAPMC service or CLI has stopped. CAPMC has entered end-of-life but will still be generally available. CAPMC is going to be replaced with the Power Control Service (PCS) in a future release.</description>
@@ -19,7 +29,7 @@
     <item>
       <title>Differences From Previous Release</title>
       <link>/docs-csm/en-12/introduction/differences/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
       
       <guid>/docs-csm/en-12/introduction/differences/</guid>
       <description>Differences from Previous Release The most noteworthy changes since the previous release are described here.
@@ -30,7 +40,7 @@ Topics  New Features Deprecated Features Removed Features Other Changes  Details
     <item>
       <title>Documentation Conventions</title>
       <link>/docs-csm/en-12/introduction/documentation_conventions/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
       
       <guid>/docs-csm/en-12/introduction/documentation_conventions/</guid>
       <description>Documentation Conventions Several conventions have been used in the preparation of this documentation.
@@ -40,21 +50,11 @@ Topics  New Features Deprecated Features Removed Features Other Changes  Details
     <item>
       <title>Overview</title>
       <link>/docs-csm/en-12/introduction/csm_overview/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:04 +0000</pubDate>
       
       <guid>/docs-csm/en-12/introduction/csm_overview/</guid>
       <description>CSM Overview This CSM Overview describes the Cray System Management ecosystem with its hardware, software, and network. It describes how to access these services and components.
 The CSM installation prepares and deploys a distributed system across a group of management nodes organized into a Kubernetes cluster which uses Ceph for utility storage. These nodes perform their function as Kubernetes master nodes, Kubernetes worker nodes, or utility storage nodes with the Ceph storage.</description>
-    </item>
-    
-    <item>
-      <title>Scenarios For Shasta V1.5</title>
-      <link>/docs-csm/en-12/introduction/scenarios/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:35 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/introduction/scenarios/</guid>
-      <description>Scenarios for Shasta v1.5 There are multiple scenarios for installing CSM software which are described in this documentation with many supporting procedures.
- Scenarios for Shasta v1.5  Installation Upgrade Migration    Installation There are two ways to install the CSM software. There are some differences between a first time install which must create the initial configuration payload and configure the management network switches, whereas a reinstall can reuse a previous configuration payload and skip the configuration of management network switches.</description>
     </item>
     
   </channel>

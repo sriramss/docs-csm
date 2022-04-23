@@ -6,11 +6,11 @@
     <description>Recent content in HPE Pdu on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 22 Apr 2022 03:33:39 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/hpe_pdu/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 03:16:46 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/hpe_pdu/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HPE Pdu Admin Procedures</title>
       <link>/docs-csm/en-12/operations/hpe_pdu/hpe_pdu_admin_procedures/</link>
-      <pubDate>Fri, 22 Apr 2022 03:32:10 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/hpe_pdu/hpe_pdu_admin_procedures/</guid>
       <description>HPE PDU Admin Procedures The following procedures are used to manage the HPE Power Distribution Unit (PDU):

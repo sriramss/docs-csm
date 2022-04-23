@@ -6,11 +6,11 @@
     <description>Recent content in Metallb BGP on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 22 Apr 2022 03:32:03 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/network/metallb_bgp/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Apr 2022 03:15:28 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/network/metallb_bgp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Check BGP Status And Reset Sessions</title>
       <link>/docs-csm/en-09/operations/network/metallb_bgp/check_bgp_status_and_reset_sessions/</link>
-      <pubDate>Fri, 22 Apr 2022 03:31:39 +0000</pubDate>
+      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/network/metallb_bgp/check_bgp_status_and_reset_sessions/</guid>
       <description>Check BGP Status and Reset Sessions Check the Border Gateway Protocol (BGP) status on the Aruba and Mellanox switches and verify that all sessions are in an Established state. If the state of any session in the table is Idle, the BGP sessions needs to be reset.
