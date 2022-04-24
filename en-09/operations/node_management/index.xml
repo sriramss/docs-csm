@@ -6,11 +6,11 @@
     <description>Recent content in Node Management on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:15:30 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:11:56 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Adding A Liquid-cooled Blade To A System</title>
       <link>/docs-csm/en-09/operations/node_management/adding_a_liquid-cooled_blade_to_a_system/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:31 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/adding_a_liquid-cooled_blade_to_a_system/</guid>
       <description>Adding a Liquid-cooled blade to a System This procedure will add a liquid-cooled blades from a HPE Cray EX system.
@@ -22,7 +22,7 @@ Perquisites   The Cray command line interface (CLI) tool is initialized and conf
     <item>
       <title>Check And Set The Metal.no-wipe Setting On NCNs</title>
       <link>/docs-csm/en-09/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:31 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</guid>
       <description>Check and Set the metal.no-wipe Setting on NCNs Configure the metal.no-wipe setting on non-compute nodes (NCNs) to preserve data on the nodes before doing an NCN reboot.
@@ -34,7 +34,7 @@ It also requires that the CSM_SCRIPTDIR variable is defined. Set this variable a
     <item>
       <title>Enable Kdump</title>
       <link>/docs-csm/en-09/operations/node_management/enable_kdump/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:31 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/enable_kdump/</guid>
       <description>Enable Kdump CSM 0.9.x does not have kdump enabled by default. It is necessary to run the workaround script on each NCN when rebuilding them.
@@ -44,7 +44,7 @@ ncn-m001# /opt/cray/csm/workarounds/livecd-post-reboot/CASMINST-3341/CASMINST-33
     <item>
       <title>Reboot NCNs</title>
       <link>/docs-csm/en-09/operations/node_management/reboot_ncns/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:31 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/reboot_ncns/</guid>
       <description>Reboot NCNs The following is a high-level overview of the non-compute node (NCN) reboot workflow:
@@ -54,7 +54,7 @@ ncn-m001# /opt/cray/csm/workarounds/livecd-post-reboot/CASMINST-3341/CASMINST-33
     <item>
       <title>Removing A Liquid-cooled Blade From A System</title>
       <link>/docs-csm/en-09/operations/node_management/removing_a_liquid-cooled_blade_from_a_system/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:31 +0000</pubDate>
       
       <guid>/docs-csm/en-09/operations/node_management/removing_a_liquid-cooled_blade_from_a_system/</guid>
       <description>Removing a Liquid-cooled blade from a System This procedure will remove a liquid-cooled blades from a HPE Cray EX system.

@@ -6,11 +6,11 @@
     <description>Recent content in Firmware on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:42 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:13:24 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/firmware/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Update Management Network Firmware</title>
       <link>/docs-csm/en-12/operations/network/management_network/firmware/update_management_network_firmware/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:55 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:26 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/firmware/update_management_network_firmware/</guid>
       <description>Update Management Network Firmware This page describes how to update firmware on the management network switches. More details and other options to upgrade firmware can be found in the switch External User Guides.

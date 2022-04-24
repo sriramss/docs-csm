@@ -6,11 +6,11 @@
     <description>Recent content in Upgrade on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:07 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:12:42 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prepare For Upgrade</title>
       <link>/docs-csm/en-10/upgrade/prepare_for_upgrade/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/prepare_for_upgrade/</guid>
       <description>Prepare for Upgrade Before beginning an upgrade to a new version of CSM, there are a few things to do on the system first.
@@ -21,7 +21,7 @@ Warning: Although it is expected that compute nodes and application nodes will c
     <item>
       <title>Update Management Network From 1.4 To 1.5</title>
       <link>/docs-csm/en-10/upgrade/update_management_network/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/update_management_network/</guid>
       <description>Update Management Network From 1.4 To 1.5 IMPORTANT: These procedures only need to be followed if upgrading from CSM 0.9 (Shasta 1.4). If upgrading from CSM 1.0.1 (Shasta 1.5), these procedures should already have been done.

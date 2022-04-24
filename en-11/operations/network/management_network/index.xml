@@ -6,11 +6,11 @@
     <description>Recent content in Management Network on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:10 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:12:46 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/network/management_network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Management Network Access Port Configurations</title>
       <link>/docs-csm/en-11/operations/network/management_network/management_network_access_port_configurations/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/management_network/management_network_access_port_configurations/</guid>
       <description>Management Network Access Port Configurations Requirements  Access to switches SHCD  Configuration   This configuration describes the edge port configuration. This configuration is in the NMN/HMN/Mountain-TDS Management Tab of the SHCD.
@@ -19,20 +19,9 @@ sw-leaf-001(config)# interface 1/1/35 no shutdown no routing vlan access 4 spann
     </item>
     
     <item>
-      <title>Management Network ACL Configuration</title>
-      <link>/docs-csm/en-11/operations/network/management_network/management_network_acl_configuration/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/operations/network/management_network/management_network_acl_configuration/</guid>
-      <description>Management Network ACL Configuration This page describes the purpose of the ACLs and how they are configured.
-Requirements  Access to the switches  Aruba Configuration These ACLs are designed to block traffic from the Node Management Network (NMN) to and from the Hardware Management Network (HMN).
-These need to be set where the Layer3 interface is located, this will most likely be a VSX pair of switches. These ACLs are required on both switches in the pair.</description>
-    </item>
-    
-    <item>
       <title>Management Network CAN Setup</title>
       <link>/docs-csm/en-11/operations/network/management_network/management_network_can_setup/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/management_network/management_network_can_setup/</guid>
       <description>Management Network CAN Setup Access from the customer site to the system over shared networks is known as the Customer Access Network (CAN).
@@ -43,7 +32,7 @@ To access the HPE Cray EX nodes and services from the customer network, there is
     <item>
       <title>Management Network Flow Control Settings</title>
       <link>/docs-csm/en-11/operations/network/management_network/management_network_flow_control_settings/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/management_network/management_network_flow_control_settings/</guid>
       <description>Management Network Flow Control Settings This page is designed to go over all the flow control settings for Dell/Mellanox systems.
@@ -54,7 +43,7 @@ NOTE: If using a TDS system involving a Hill cabinet, make sure to confirm that 
     <item>
       <title>Management Network Switch Rename</title>
       <link>/docs-csm/en-11/operations/network/management_network/management_network_switch_rename/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/management_network/management_network_switch_rename/</guid>
       <description>Management Network Switch Rename Any system moving from Shasta v1.3 to Shasta v1.4 software needs to adjust the hostnames and IP addresses for all switches to match the new standard. There is now a virtual IP address ending in .1 which is used by spine switches. In Shasta v1.3, the first spine switch used the .1 address. In Shasta v1.4, the ordering of the switches has changed with spine switches being grouped first.</description>
@@ -63,13 +52,24 @@ NOTE: If using a TDS system involving a Hill cabinet, make sure to confirm that 
     <item>
       <title>Update Management Network Firmware</title>
       <link>/docs-csm/en-11/operations/network/management_network/update_management_network_firmware/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:40 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/management_network/update_management_network_firmware/</guid>
       <description>Update Management Network Firmware This page describes how to update firmware on the management network switches.
 Requirements Access to the switches from the LiveCD/ncn-m001.
 Configuration All firmware will be located at /var/www/fw/network on the LiveCD. It should contain the following files:
 ncn-m001-pit:/var/www/network/firmware # ls -lh total 2.7G -rw-rw-r--+ 1 root root 658353828 Jan 7 2021 ArubaOS-CX_6400-6300_10_06_0010.stable.swi -rw-rw-r--+ 1 root root 384156519 May 3 22:18 ArubaOS-CX_8320_10_06_0110.stable.swi -rw-rw-r--+ 1 root root 444610797 Jan 7 2021 ArubaOS-CX_8325_10_06_0010.</description>
+    </item>
+    
+    <item>
+      <title>Management Network ACL Configuration</title>
+      <link>/docs-csm/en-11/operations/network/management_network/management_network_acl_configuration/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:09 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/operations/network/management_network/management_network_acl_configuration/</guid>
+      <description>Management Network ACL Configuration This page describes the purpose of the ACLs and how they are configured.
+Requirements  Access to the switches  Aruba Configuration These ACLs are designed to block traffic from the Node Management Network (NMN) to and from the Hardware Management Network (HMN).
+These need to be set where the Layer3 interface is located, this will most likely be a VSX pair of switches. These ACLs are required on both switches in the pair.</description>
     </item>
     
   </channel>

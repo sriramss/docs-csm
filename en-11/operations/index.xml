@@ -6,11 +6,11 @@
     <description>Recent content in Cray System Management Administration Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:15:34 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:12:02 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Validate Health</title>
       <link>/docs-csm/en-11/operations/validate_csm_health/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:58 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:31 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/validate_csm_health/</guid>
       <description>Validate CSM Health Anytime after the installation of the CSM services, the health of the management nodes and all CSM services can be validated.
@@ -21,7 +21,7 @@ The following are examples of when to run health checks:
     <item>
       <title>Configure The Cray Command Line Interface (cray Cli)</title>
       <link>/docs-csm/en-11/operations/configure_cray_cli/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:28 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:55 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/configure_cray_cli/</guid>
       <description>Configure the Cray Command Line Interface (cray CLI) The cray command line interface (CLI) is a framework created to integrate all of the system management REST APIs into easily usable commands.
@@ -31,7 +31,7 @@ Later procedures in the installation workflow use the cray CLI to interact with 
     <item>
       <title>Component Names (xnames)</title>
       <link>/docs-csm/en-11/operations/component_names_xnames/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:07 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:30 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/component_names_xnames/</guid>
       <description>Component Names (xnames) Component names (xnames) identify the geolocation for hardware components in the HPE Cray EX system. Every component is uniquely identified by these component names. Some, like the system cabinet number or the CDU number, can be changed by site needs. There is no geolocation encoded within the cabinet number, such as an X-Y coordinate system to relate to the floor layout of the cabinets. Other component names refer to the location within a cabinet and go down to the port on a card or switch or the socket holding a processor or a memory DIMM location.</description>
@@ -40,7 +40,7 @@ Later procedures in the installation workflow use the cray CLI to interact with 
     <item>
       <title>Accessing Livecd Usb Device After Reboot</title>
       <link>/docs-csm/en-11/operations/access_livecd_usb_device_after_reboot/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:06 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:29 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/access_livecd_usb_device_after_reboot/</guid>
       <description>Accessing LiveCD USB Device After Reboot This is an procedure that only applies to the LiveCD USB device after the PIT node has been rebooted.

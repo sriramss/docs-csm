@@ -6,11 +6,11 @@
     <description>Recent content in Artifact Management on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:51 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/artifact_management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:13:35 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/artifact_management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Artifact Management</title>
       <link>/docs-csm/en-12/operations/artifact_management/artifact_management/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:17 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/artifact_management/artifact_management/</guid>
       <description>Artifact Management The Ceph Object Gateway Simple Storage Service (S3) API is used for artifact management. The RESTful API that Ceph provides via the gateway is compatible with the basic data access model of the Amazon S3 API. See the https://docs.ceph.com/en/pacific/radosgw/s3/ for more information about compatibility. The object gateway is also referred to as the RADOS gateway or simply RGW.
@@ -20,7 +20,7 @@ S3 is an object storage service that provides high-level performance, scalabilit
     <item>
       <title>Generate Temporary S3 Credentials</title>
       <link>/docs-csm/en-12/operations/artifact_management/generate_temporary_s3_credentials/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:17 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/artifact_management/generate_temporary_s3_credentials/</guid>
       <description>Generate Temporary S3 Credentials Cray provides a simple token service (STS) via the API gateway for administrators to generate temporary Simple Storage Service (S3) credentials for use with S3 buckets. Temporary S3 credentials are generated using either cURL or Python.
@@ -33,7 +33,7 @@ See Retrieve an Authentication Token for more information.</description>
     <item>
       <title>Manage Artifacts With The Cray Cli</title>
       <link>/docs-csm/en-12/operations/artifact_management/manage_artifacts_with_the_cray_cli/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:17 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/artifact_management/manage_artifacts_with_the_cray_cli/</guid>
       <description>Manage Artifacts with the Cray CLI The artifacts (objects) available for use on the system are created and managed with the Cray CLI. The cray artifacts command provides the ability to manage any given artifact. The Cray CLI automatically authenticates users and provides Simple Storage Service (S3) credentials.
@@ -43,7 +43,7 @@ All operations with the cray artifacts command assume that the user has already 
     <item>
       <title>Use S3 Libraries And Clients</title>
       <link>/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:17 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:41 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/artifact_management/use_s3_libraries_and_clients/</guid>
       <description>Use S3 Libraries and Clients Several command line clients and language-specific libraries are available in addition to the Simple Storage Service (S3) RESTful API. Developers and system administrators can interact with artifacts in the S3 object store with these tools.

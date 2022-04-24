@@ -6,34 +6,11 @@
     <description>Recent content in Rebuild NCNs on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:54 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Prepare Storage Nodes</title>
-      <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:09 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</guid>
-      <description>Prepare Storage Nodes Prepare a storage node before rebuilding it.
-IMPORTANT: All of the output examples may not reflect the cluster status where this operation is being performed. For example, if this is a rebuild in place, then Ceph components will not be reporting down, in contrast to a failed node rebuild.
-Prerequisites If rebuilding ncn-s001, it is critical that the storage-ceph-cloudinit.sh has been removed from the runcmd in BSS.</description>
-    </item>
-    
-    <item>
-      <title>Re-add A Storage Node To Ceph</title>
-      <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:09 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</guid>
-      <description>Re-Add a Storage Node to Ceph Use the following procedure to re-add a Ceph node to the Ceph cluster.
-NOTE: This operation can be done to add more than one node at the same time.
-Add Join Script   Copy and paste the below script into /srv/cray/scripts/common/join_ceph_cluster.sh.
-NOTE: This script may also available in the /usr/share/doc/csm/scripts directory where the latest docs-csm RPM is installed. If so, it can be copied from that node to the new storage node being rebuilt and skip to step 2.</description>
-    </item>
-    
+    <lastBuildDate>Sun, 24 Apr 2022 03:13:38 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rebuild NCNs</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/rebuild_ncns/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:09 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:43 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/rebuild_ncns/</guid>
       <description>Rebuild NCNs Rebuild a master, worker, or storage non-compute node (NCN). Use this procedure in the event that a node has a hardware failure, or some other issue with the node has occurred that warrants rebuilding the node.
@@ -44,7 +21,7 @@ The following is a high-level overview of the NCN rebuild workflow:
     <item>
       <title>Validate Bootraid Artifacts</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/validate_boot_raid/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:09 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:43 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/validate_boot_raid/</guid>
       <description>Validate BOOTRAID Artifacts Perform the following steps on ncn-m001.
@@ -56,7 +33,7 @@ ncn-m001# /opt/cray/tests/install/ncn/scripts/validate-bootraid-artifacts.sh   W
     <item>
       <title>Wipe Drives</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/wipe_drives/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:09 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:43 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/wipe_drives/</guid>
       <description>Wipe Drives WARNING: This is the point of no return. Once the disks are wiped, the node must be rebuilt.
@@ -68,7 +45,7 @@ Only follow the steps in the section for the node type that is being rebuilt:
     <item>
       <title>Final Validation Steps</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/final_validation_steps/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/final_validation_steps/</guid>
       <description>Final Validation Steps Use this procedure to finish validating the success of a rebuilt NCN(s).
@@ -81,7 +58,7 @@ ncn# cray cfs components describe $XNAME --format json Example output:</descript
     <item>
       <title>Identify Nodes And Update Metadata</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/identify_nodes_and_update_metadata/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/identify_nodes_and_update_metadata/</guid>
       <description>Identify Nodes and Update Metadata Use the following procedure to inspect and modify the Boot Script Service (BSS) boot parameters JSON file.
@@ -94,7 +71,7 @@ ncn# cray bss bootparameters list --name $XNAME --format=json | jq .</descriptio
     <item>
       <title>Post Rebuild Storage Node Validation</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/post_rebuild_storage_node_validation/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/post_rebuild_storage_node_validation/</guid>
       <description>Post Rebuild Storage Node Validation Validate the storage node rebuilt successfully.
@@ -107,13 +84,36 @@ ncn-m# ceph -s Example output:
     <item>
       <title>Power Cycle And Rebuild Nodes</title>
       <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/power_cycle_and_rebuild_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:08 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/power_cycle_and_rebuild_nodes/</guid>
       <description>Power Cycle and Rebuild Nodes This section applies to all node types. The commands in this section assume the variables from the prerequisites section have been set.
 Procedure   Open and Watch the console for the node being rebuilt.
   Log in to a second session to use it to watch the console using the instructions at the link below:
 Please open this link in a new tab or page Log in to a Node Using ConMan</description>
+    </item>
+    
+    <item>
+      <title>Prepare Storage Nodes</title>
+      <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/prepare_storage_nodes/</guid>
+      <description>Prepare Storage Nodes Prepare a storage node before rebuilding it.
+IMPORTANT: All of the output examples may not reflect the cluster status where this operation is being performed. For example, if this is a rebuild in place, then Ceph components will not be reporting down, in contrast to a failed node rebuild.
+Prerequisites If rebuilding ncn-s001, it is critical that the storage-ceph-cloudinit.sh has been removed from the runcmd in BSS.</description>
+    </item>
+    
+    <item>
+      <title>Re-add A Storage Node To Ceph</title>
+      <link>/docs-csm/en-12/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:42 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</guid>
+      <description>Re-Add a Storage Node to Ceph Use the following procedure to re-add a Ceph node to the Ceph cluster.
+NOTE: This operation can be done to add more than one node at the same time.
+Add Join Script   Copy and paste the below script into /srv/cray/scripts/common/join_ceph_cluster.sh.
+NOTE: This script may also available in the /usr/share/doc/csm/scripts directory where the latest docs-csm RPM is installed. If so, it can be copied from that node to the new storage node being rebuilt and skip to step 2.</description>
     </item>
     
   </channel>

@@ -6,11 +6,39 @@
     <description>Recent content in System Management Health on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:48 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:13:32 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>System Management Health</title>
+      <link>/docs-csm/en-12/operations/system_management_health/system_management_health/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:59 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/system_management_health/system_management_health/</guid>
+      <description>System Management Health The primary goal of the System Management Health service is to enable system administrators to assess the health of their system. Operators need to quickly and efficiently troubleshoot system issues as they occur and be confident that a lack of issues indicates the system is operating normally. This service currently runs as a Helm chart on the system&amp;rsquo;s management Kubernetes cluster and monitors the health status of core system components, triggering alerts as potential issues are observed.</description>
+    </item>
+    
+    <item>
+      <title>System Management Health Checks And Alerts</title>
+      <link>/docs-csm/en-12/operations/system_management_health/system_management_health_checks_and_alerts/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:59 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/system_management_health/system_management_health_checks_and_alerts/</guid>
+      <description>System Management Health Checks and Alerts A health check corresponds to a Prometheus query against metrics aggregated to the Prometheus instance. Core platform components like Kubernetes and Istio collect service-related metrics by default, which enables the System Management Health service to implement generic service health checks without custom instrumentation. Health checks are intended to be coarse-grained and comprehensive, as opposed to fine-grained and exhaustive. Health checks related to infrastructure adhere to the Utilization Saturation Errors (USE) method whereas services follow the Rate Errors Duration (RED) method.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshoot Grafana Dashboard</title>
+      <link>/docs-csm/en-12/operations/system_management_health/troubleshoot_grafana_dashboard/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:59 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/system_management_health/troubleshoot_grafana_dashboard/</guid>
+      <description>Troubleshoot Grafana Dashboard General Grafana dashboard troubleshooting topics
+ Ceph - OSD Overview Dashboard Ceph - RBD Overview Dashboard Ceph - RGW Instance Detail Dashboard Ceph - RGW Overview Dashboard  Ceph - OSD Overview Dashboard: 3 panels not found Currently skipping cray-sysmgmt-health pie chart plugin installation for airgapped systems. If the system is non airgapped then comment out or remove plugins property in customizations.yaml. This will be fixed in a future release.</description>
+    </item>
+    
     <item>
       <title>Troubleshoot Prometheus Alerts</title>
       <link>/docs-csm/en-12/operations/system_management_health/troubleshoot_prometheus_alerts/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:23 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:59 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/system_management_health/troubleshoot_prometheus_alerts/</guid>
       <description>Troubleshoot Prometheus Alerts General Prometheus Alert Troubleshooting Topics
@@ -22,7 +50,7 @@ ncn-s001# ceph mgr module ls | jq &amp;#39;.enabled_modules&amp;#39; Example out
     <item>
       <title>Access System Management Health Services</title>
       <link>/docs-csm/en-12/operations/system_management_health/access_system_management_health_services/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:58 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/system_management_health/access_system_management_health_services/</guid>
       <description>Access System Management Health Services All System Management Health services are exposed outside the cluster through the Keycloak gatekeeper and Istio&amp;rsquo;s ingress gateway to enforce the authentication and authorization policies. The URLs to access these services are available on any system with CAN, BGP, MetalLB, and external DNS properly configured.
@@ -32,7 +60,7 @@ The {{shasta_domain}} value in the examples below is an Ansible variable defined
     <item>
       <title>Configure Prometheus Email Alert Notifications</title>
       <link>/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:58 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/system_management_health/configure_prometheus_email_alert_notifications/</guid>
       <description>Configure Prometheus Email Alert Notifications Configure an email alert notification for all Prometheus Postgres replication alerts: PostgresReplicationLagSMA, PostgresReplicationServices, PostgresqlFollowerReplicationLagSMA and PostgresqlFollowerReplicationLagServices.
@@ -43,41 +71,13 @@ ncn-w001# kubectl get secret -n sysmgmt-health \ alertmanager-cray-sysmgmt-healt
     <item>
       <title>Grafterm</title>
       <link>/docs-csm/en-12/operations/system_management_health/grafterm/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:58 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/system_management_health/grafterm/</guid>
       <description>Grafterm Visualize metrics dashboards on the terminal, like a simplified and minimalist version of Grafana for terminal.
 The utility(script) can be found in the /opt/cray/platform-utils directory in all NCNs.
 Running options Exit with q or Esc.
 Help ncn-m001# ./grafterm.sh --help List available terminal dashboards ncn-m001# ./grafterm.sh --list Default usage To view the dashboard, pass the value(dashboard json file) to the -c parameter to the script. The Grafterm will query for all data accessible in the datasource by default, and the dashboard refresh frequency is set to 10 seconds.</description>
-    </item>
-    
-    <item>
-      <title>System Management Health</title>
-      <link>/docs-csm/en-12/operations/system_management_health/system_management_health/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/system_management_health/system_management_health/</guid>
-      <description>System Management Health The primary goal of the System Management Health service is to enable system administrators to assess the health of their system. Operators need to quickly and efficiently troubleshoot system issues as they occur and be confident that a lack of issues indicates the system is operating normally. This service currently runs as a Helm chart on the system&amp;rsquo;s management Kubernetes cluster and monitors the health status of core system components, triggering alerts as potential issues are observed.</description>
-    </item>
-    
-    <item>
-      <title>System Management Health Checks And Alerts</title>
-      <link>/docs-csm/en-12/operations/system_management_health/system_management_health_checks_and_alerts/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/system_management_health/system_management_health_checks_and_alerts/</guid>
-      <description>System Management Health Checks and Alerts A health check corresponds to a Prometheus query against metrics aggregated to the Prometheus instance. Core platform components like Kubernetes and Istio collect service-related metrics by default, which enables the System Management Health service to implement generic service health checks without custom instrumentation. Health checks are intended to be coarse-grained and comprehensive, as opposed to fine-grained and exhaustive. Health checks related to infrastructure adhere to the Utilization Saturation Errors (USE) method whereas services follow the Rate Errors Duration (RED) method.</description>
-    </item>
-    
-    <item>
-      <title>Troubleshoot Grafana Dashboard</title>
-      <link>/docs-csm/en-12/operations/system_management_health/troubleshoot_grafana_dashboard/</link>
-      <pubDate>Sat, 23 Apr 2022 03:16:22 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/system_management_health/troubleshoot_grafana_dashboard/</guid>
-      <description>Troubleshoot Grafana Dashboard General Grafana dashboard troubleshooting topics
- Ceph - OSD Overview Dashboard Ceph - RBD Overview Dashboard Ceph - RGW Instance Detail Dashboard Ceph - RGW Overview Dashboard  Ceph - OSD Overview Dashboard: 3 panels not found Currently skipping cray-sysmgmt-health pie chart plugin installation for airgapped systems. If the system is non airgapped then comment out or remove plugins property in customizations.yaml. This will be fixed in a future release.</description>
     </item>
     
   </channel>

@@ -6,11 +6,21 @@
     <description>Recent content in Firmware on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:20 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:12:57 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/firmware/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FAS Filters</title>
+      <link>/docs-csm/en-11/operations/firmware/fas_filters/</link>
+      <pubDate>Sun, 24 Apr 2022 03:11:58 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/operations/firmware/fas_filters/</guid>
+      <description>FAS Filters FAS uses five primary filters for actions and snapshots to determine what operations to create. The filters are listed below:
+ Selection Filters - Determine what operations will be created. The following selection filters are available:  stateComponentFilter targetFilter inventoryHardwareFilter  imageFilter   Command Filters - Determine how the operations will be executed. The following command filters are available:  command    All filters are logically connected with AND logic.</description>
+    </item>
+    
     <item>
       <title>FAS Use Cases</title>
       <link>/docs-csm/en-11/operations/firmware/fas_use_cases/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:31 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:58 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/firmware/fas_use_cases/</guid>
       <description>FAS Use Cases Use the Firmware Action Service (FAS) to update the firmware on supported hardware devices. Each procedure includes the prerequisites and example recipes required to update the firmware.
@@ -18,9 +28,19 @@
     </item>
     
     <item>
+      <title>Recipes</title>
+      <link>/docs-csm/en-11/operations/firmware/fas_recipes/</link>
+      <pubDate>Sun, 24 Apr 2022 03:11:58 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/operations/firmware/fas_recipes/</guid>
+      <description>Recipes The following example JSON files are useful to reference when updating specific hardware components. In all of these examples, the overrideDryrun field will be set to false; set them to true to perform a live update.
+When updating an entire system, walk down the device hierarchy component type by component type, starting first with &amp;lsquo;Routers&amp;rsquo; (switches), proceeding to Chassis, and then finally to Nodes. While this is not strictly necessary, it does help eliminate confusion.</description>
+    </item>
+    
+    <item>
       <title>Update Firmware With FAS</title>
       <link>/docs-csm/en-11/operations/firmware/update_firmware_with_fas/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:31 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:58 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/firmware/update_firmware_with_fas/</guid>
       <description>Update Firmware with FAS The Firmware Action Service (FAS) provides an interface for managing firmware versions of Redfish-enabled hardware in the system. FAS interacts with the Hardware State Managers (HSM), device data, and image data in order to update firmware.
@@ -31,7 +51,7 @@ FAS images contain the following information that is needed for a hardware devic
     <item>
       <title>Upload BMC Recovery Firmware Into Tftp Server</title>
       <link>/docs-csm/en-11/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:31 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:58 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/firmware/upload_olympus_bmc_recovery_firmware_into_tftp_server/</guid>
       <description>Upload BMC Recovery Firmware into TFTP Server cray-upload-recovery-images is a utility for uploading the BMC recovery files for ChassisBMCs, NodeBMCs, and RouterBMCs to be served by the cray-tftp service. The tool uses the cray cli (fas, artifacts) and cray-tftp to download the s3 recovery images (as remembered by FAS) then upload them into the PVC that is used by cray-tftp. cray-upload-recovery-images should be run on every system.
@@ -41,7 +61,7 @@ Procedure   Execute the cray-upload-recovery-images script.</description>
     <item>
       <title>FAS Admin Procedures</title>
       <link>/docs-csm/en-11/operations/firmware/fas_admin_procedures/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:57 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/firmware/fas_admin_procedures/</guid>
       <description>FAS Admin Procedures 
@@ -52,32 +72,12 @@ Topics  FAS Admin Procedures  Topics Warning for Non-Compute Nodes (NCNs) Ignore
     <item>
       <title>FAS Cli</title>
       <link>/docs-csm/en-11/operations/firmware/fas_cli/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:11:57 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/firmware/fas_cli/</guid>
       <description>FAS CLI This section describes the basic capabilities of the Firmware Action Service (FAS) CLI commands. These commands can be used to manage firmware for system hardware supported by FAS. Refer to the prerequisites section before proceeding to any of the sections for the supported operations.
 The following CLI operations are described:
  Action  Execute an Action Abort an Action Describe an Action   Snapshots  Create a Snapshot View a Snapshot List Snapshots   Update an Image FAS Loader Commands  Prerequisites The Cray command line interface (CLI) tool is initialized and configured on the system.</description>
-    </item>
-    
-    <item>
-      <title>FAS Filters</title>
-      <link>/docs-csm/en-11/operations/firmware/fas_filters/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/operations/firmware/fas_filters/</guid>
-      <description>FAS Filters FAS uses five primary filters for actions and snapshots to determine what operations to create. The filters are listed below:
- Selection Filters - Determine what operations will be created. The following selection filters are available:  stateComponentFilter targetFilter inventoryHardwareFilter  imageFilter   Command Filters - Determine how the operations will be executed. The following command filters are available:  command    All filters are logically connected with AND logic.</description>
-    </item>
-    
-    <item>
-      <title>Recipes</title>
-      <link>/docs-csm/en-11/operations/firmware/fas_recipes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:30 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/operations/firmware/fas_recipes/</guid>
-      <description>Recipes The following example JSON files are useful to reference when updating specific hardware components. In all of these examples, the overrideDryrun field will be set to false; set them to true to perform a live update.
-When updating an entire system, walk down the device hierarchy component type by component type, starting first with &amp;lsquo;Routers&amp;rsquo; (switches), proceeding to Chassis, and then finally to Nodes. While this is not strictly necessary, it does help eliminate confusion.</description>
     </item>
     
   </channel>

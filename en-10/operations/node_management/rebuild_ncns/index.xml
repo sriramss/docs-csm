@@ -6,11 +6,23 @@
     <description>Recent content in Rebuild NCNs on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sat, 23 Apr 2022 03:16:43 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Apr 2022 03:13:25 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/operations/node_management/rebuild_ncns/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wipe Disks</title>
+      <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/wipe_drives/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/wipe_drives/</guid>
+      <description>Wipe Disks Warning: This is the point of no return. Once the disks are wiped, the node must be rebuilt.
+All commands in this section must be run on the node being rebuilt (unless otherwise indicated). These commands can be done from the ConMan console window.
+Only follow the steps in the section for the node type that is being rebuilt:
+ Wipe Disks  Wipe Disks: Master Wipe Disks: Worker Node Wipe Disks: Utility Storage Node    Wipe Disks: Master   Unmount the etcd volume and remove the volume group.</description>
+    </item>
+    
     <item>
       <title>6. Validate Bootraid Artifacts</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/validate_boot_raid/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/validate_boot_raid/</guid>
       <description>6. Validate BOOTRAID artifacts Perform the following steps on ncn-m001.
@@ -20,21 +32,9 @@ ncn-m001# /opt/cray/tests/install/ncn/scripts/validate-bootraid-artifacts.sh   W
     </item>
     
     <item>
-      <title>6.2. Validate Master Node</title>
-      <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_master_node_validation/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_master_node_validation/</guid>
-      <description>6.2. Validate Master Node Validate the master node rebuilt successfully.
-Skip this section if a worker or storage node was rebuilt.
-  Verify the new node is in the cluster.
-Run the following command from any master or worker node that is already in the cluster. It is helpful to run this command several times to watch for the newly rebuilt node to join the cluster. This should occur within 10 to 20 minutes.</description>
-    </item>
-    
-    <item>
       <title>6.3. Validate Storage Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_storage_node_validation/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_storage_node_validation/</guid>
       <description>6.3. Validate Storage Node Validate the storage node rebuilt successfully.
@@ -46,7 +46,7 @@ ncn-m# ceph -s cluster: id: 22d01fcd-a75b-4bfc-b286-2ed8645be2b5 health: HEALTH_
     <item>
       <title>7.1. Validate Worker Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_worker_node_validation/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_worker_node_validation/</guid>
       <description>7.1. Validate Worker Node Validate the worker node rebuilt successfully.
@@ -58,7 +58,7 @@ Run the following command from any master or worker node that is already in the 
     <item>
       <title>Adding A Ceph Node To The Ceph Cluster</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/re-add_storage_node_to_ceph/</guid>
       <description>Adding a Ceph Node to the Ceph Cluster NOTE: This operation can be done to add more than one node at the same time.
@@ -69,7 +69,7 @@ NOTE: This script may also available in the /usr/share/doc/csm/scripts directory
     <item>
       <title>Power Cycle And Rebuild Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/power_cycle_and_rebuild_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/power_cycle_and_rebuild_nodes/</guid>
       <description>Power Cycle and Rebuild Node Description This section applies to all node types. The commands in this section assume you have set the variables from the prerequisites section.
@@ -80,7 +80,7 @@ Please open this link in a new tab or page Log in to a Node Using ConMan</descri
     <item>
       <title>Prepare Master Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_master_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_master_nodes/</guid>
       <description>Prepare Master Node Description Prepare a master node before rebuilding it.
@@ -91,7 +91,7 @@ ncn-m# cray cfs components describe $XNAME --format json { &amp;#34;configuratio
     <item>
       <title>Prepare Storage Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_storage_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_storage_nodes/</guid>
       <description>Prepare Storage Node Description Prepare a storage node before rebuilding it.
@@ -102,7 +102,7 @@ Prerequisites If rebuilding ncn-s001, it is critical that the storage-ceph-cloud
     <item>
       <title>Prepare Worker Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_worker_nodes/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/prepare_worker_nodes/</guid>
       <description>Prepare Worker Node Description Prepare a worker node before rebuilding it.
@@ -112,21 +112,21 @@ cray cps deployment list --format json | grep -C1 podname   Example output:</des
     </item>
     
     <item>
-      <title>Wipe Disks</title>
-      <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/wipe_drives/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:46 +0000</pubDate>
+      <title>6.2. Validate Master Node</title>
+      <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_master_node_validation/</link>
+      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
       
-      <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/wipe_drives/</guid>
-      <description>Wipe Disks Warning: This is the point of no return. Once the disks are wiped, the node must be rebuilt.
-All commands in this section must be run on the node being rebuilt (unless otherwise indicated). These commands can be done from the ConMan console window.
-Only follow the steps in the section for the node type that is being rebuilt:
- Wipe Disks  Wipe Disks: Master Wipe Disks: Worker Node Wipe Disks: Utility Storage Node    Wipe Disks: Master   Unmount the etcd volume and remove the volume group.</description>
+      <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/post_rebuild_master_node_validation/</guid>
+      <description>6.2. Validate Master Node Validate the master node rebuilt successfully.
+Skip this section if a worker or storage node was rebuilt.
+  Verify the new node is in the cluster.
+Run the following command from any master or worker node that is already in the cluster. It is helpful to run this command several times to watch for the newly rebuilt node to join the cluster. This should occur within 10 to 20 minutes.</description>
     </item>
     
     <item>
       <title>Confirm What The Configuration Framework Service (CFS) Configurationstatus Is For The Desiredconfig After Rebooting The Node</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/final_validation_steps/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:45 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/final_validation_steps/</guid>
       <description>Confirm what the Configuration Framework Service (CFS) configurationStatus is for the desiredConfig after rebooting the node NOTE: The following command will indicate if a CFS job is currently in progress for this node.
@@ -137,7 +137,7 @@ ncn# cray cfs components describe $XNAME --format json { &amp;#34;configurationS
     <item>
       <title>Identify Nodes And Update Metadata</title>
       <link>/docs-csm/en-10/operations/node_management/rebuild_ncns/identify_nodes_and_update_metadata/</link>
-      <pubDate>Sat, 23 Apr 2022 03:15:45 +0000</pubDate>
+      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
       
       <guid>/docs-csm/en-10/operations/node_management/rebuild_ncns/identify_nodes_and_update_metadata/</guid>
       <description>Identify Nodes and Update Metadata Inspect and modify the JSON file This section applies to all node types. The commands in this section assume you have set the variables from the prerequisites section.
