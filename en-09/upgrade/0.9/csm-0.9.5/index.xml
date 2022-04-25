@@ -6,11 +6,11 @@
     <description>Recent content in -0.9.5 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:48 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/upgrade/0.9/csm-0.9.5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:06 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/upgrade/0.9/csm-0.9.5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Cve-2021-22555 Cve-2021-33909</title>
       <link>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/readme/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:54 +0000</pubDate>
       
       <guid>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/readme/</guid>
       <description>CVE-2021-22555 CVE-2021-33909 This procedure covers patching CVE-2021-22555 and CVE-2021-33909 on Shasta V1.4.X (and upgrades CSM to v0.9.5). These special directions are only for Linux dependencies, such as the kernel and internal packages compiled against the kernel.

@@ -6,11 +6,41 @@
     <description>Recent content in Background Information on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:16 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/background/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:21:37 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/background/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Plan Of Record</title>
+      <link>/docs-csm/en-12/background/ncn_plan_of_record/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:39 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/background/ncn_plan_of_record/</guid>
+      <description>Plan of Record This document outlines the hardware necessary to meet CSM&amp;rsquo;s Plan of Record (PoR). This serves as the minimum, necessary pieces required per each server in the management plane.
+ If the system&amp;rsquo;s NICs do not align to the PoR NICs outlined below (e.g. Onboard NICs are used instead of PCIe), then follow Customize PCIe Hardware before booting the NCN(s). If there are more disks than what is listed below in the PoR for disks, then follow Customize Disk Hardware before booting the NCN(s).</description>
+    </item>
+    
+    <item>
+      <title>NCN Boot Workflow</title>
+      <link>/docs-csm/en-12/background/ncn_boot_workflow/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/background/ncn_boot_workflow/</guid>
+      <description>NCN Boot Workflow Non-compute nodes boot two ways:
+ Network/PXE booting Disk Booting  Topics:  Determine the Current Boot Order Reasons to Change the Boot Order After CSM Install Determine if NCNs Booted via Disk or PXE Set BMCs to DHCP Boot Order Overview Setting Order Trimming Boot Order Example Boot Orders Reverting Changes Locating USB Device  Determine the Current Boot Order Under normal operations, the NCNs use the following boot order:</description>
+    </item>
+    
+    <item>
+      <title>NCN Images</title>
+      <link>/docs-csm/en-12/background/ncn_images/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/background/ncn_images/</guid>
+      <description>NCN Images The management nodes boot from NCN images which are created from layers on top of a common base image. The common image is customized with a Kubernetes layer for the master nodes and worker nodes. The common image is customized with a storage-ceph layer for the utility storage nodes..
+Topics:  Overview of NCN Images LiveCD Server  Details Overview of NCN Images There are several flavors of NCN images, each share a common base image.</description>
+    </item>
+    
     <item>
       <title>NCN Mounts And File Systems</title>
       <link>/docs-csm/en-12/background/ncn_mounts_and_file_systems/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/background/ncn_mounts_and_file_systems/</guid>
       <description>NCN Mounts and File Systems The management nodes use drive storage for persistence and block storage. This page outlines reference information for these disks, their partition tables, and their management.
@@ -20,7 +50,7 @@ Topics:  What Controls Partitioning? Plan of Record / Baseline  Problems When Ab
     <item>
       <title>NCN Networking</title>
       <link>/docs-csm/en-12/background/ncn_networking/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/background/ncn_networking/</guid>
       <description>NCN Networking Non-compute nodes and compute nodes have different network interfaces used for booting, this topic focuses on the network interfaces for management nodes.
@@ -31,7 +61,7 @@ Topics:  NCN Network Interfaces Device Naming Vendor and Bus ID Identification  
     <item>
       <title>NCN Operating System Releases</title>
       <link>/docs-csm/en-12/background/ncn_operating_system_releases/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/background/ncn_operating_system_releases/</guid>
       <description>NCN Operating System Releases The NCNs define their products per image layer:
@@ -42,7 +72,7 @@ The ses-release RPM is installed on top of the sle_HPC-release RPM in the Ceph i
     <item>
       <title>NCN Packages</title>
       <link>/docs-csm/en-12/background/ncn_packages/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/background/ncn_packages/</guid>
       <description>NCN Packages The management nodes boot from images which have many (RPM) packages installed. Lists of the packages for these images are generated on running nodes. A list of images can be collected by running a zypper command on one of the storage, worker, or master nodes.
@@ -51,54 +81,24 @@ Collection ncn-w002# zypper --disable-repositories se --installed-only | grep i+
     </item>
     
     <item>
-      <title>Plan Of Record</title>
-      <link>/docs-csm/en-12/background/ncn_plan_of_record/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/background/ncn_plan_of_record/</guid>
-      <description>Plan of Record This document outlines the hardware necessary to meet CSM&amp;rsquo;s Plan of Record (PoR). This serves as the minimum, necessary pieces required per each server in the management plane.
- If the system&amp;rsquo;s NICs do not align to the PoR NICs outlined below (e.g. Onboard NICs are used instead of PCIe), then follow Customize PCIe Hardware before booting the NCN(s). If there are more disks than what is listed below in the PoR for disks, then follow Customize Disk Hardware before booting the NCN(s).</description>
-    </item>
-    
-    <item>
-      <title>Certificate Authority</title>
-      <link>/docs-csm/en-12/background/certificate_authority/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/background/certificate_authority/</guid>
-      <description>Certificate Authority While a system is being installed for the first time, a certificate authority (CA) is needed. This can be generated for a system, or one can be supplied from a customer intermediate CA. Outside of a new installation, there is no supported method to rotate or change the platform CA in this release.
-Topics:  Overview Use Default Platform Generated CA Customize Platform Generated CA Use External CA  Overview At install time, a PKI certificate authority (CA) can either be generated for a system, or a customer can opt to supply their own (intermediate) CA.</description>
-    </item>
-    
-    <item>
-      <title>NCN Boot Workflow</title>
-      <link>/docs-csm/en-12/background/ncn_boot_workflow/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/background/ncn_boot_workflow/</guid>
-      <description>NCN Boot Workflow Non-compute nodes boot two ways:
- Network/PXE booting Disk Booting  Topics:  Determine the Current Boot Order Reasons to Change the Boot Order After CSM Install Determine if NCNs Booted via Disk or PXE Set BMCs to DHCP Boot Order Overview Setting Order Trimming Boot Order Example Boot Orders Reverting Changes Locating USB Device  Determine the Current Boot Order Under normal operations, the NCNs use the following boot order:</description>
-    </item>
-    
-    <item>
-      <title>NCN Images</title>
-      <link>/docs-csm/en-12/background/ncn_images/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/background/ncn_images/</guid>
-      <description>NCN Images The management nodes boot from NCN images which are created from layers on top of a common base image. The common image is customized with a Kubernetes layer for the master nodes and worker nodes. The common image is customized with a storage-ceph layer for the utility storage nodes..
-Topics:  Overview of NCN Images LiveCD Server  Details Overview of NCN Images There are several flavors of NCN images, each share a common base image.</description>
-    </item>
-    
-    <item>
       <title>Non-compute Node Bios</title>
       <link>/docs-csm/en-12/background/ncn_bios/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-12/background/ncn_bios/</guid>
       <description>Non-Compute Node BIOS This page denotes BIOS settings that are desirable for non-compute nodes.
  NOTE Any tunables in this page are in the interest of performance and stability. If either of those facets seem to be infringed by any of the content on this page, please contact Cray System Management for reconciliation.
   NOTE The table below declares desired settings; unlisted settings should remain at vendor-default. This table may be expanded as new settings are adjusted.</description>
+    </item>
+    
+    <item>
+      <title>Certificate Authority</title>
+      <link>/docs-csm/en-12/background/certificate_authority/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:37 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/background/certificate_authority/</guid>
+      <description>Certificate Authority While a system is being installed for the first time, a certificate authority (CA) is needed. This can be generated for a system, or one can be supplied from a customer intermediate CA. Outside of a new installation, there is no supported method to rotate or change the platform CA in this release.
+Topics:  Overview Use Default Platform Generated CA Customize Platform Generated CA Use External CA  Overview At install time, a PKI certificate authority (CA) can either be generated for a system, or a customer can opt to supply their own (intermediate) CA.</description>
     </item>
     
   </channel>

@@ -6,11 +6,11 @@
     <description>Recent content in Customer Access Network on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:12:47 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/network/customer_access_network/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:59 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/network/customer_access_network/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CAN With Dual-spine Configuration</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/can_with_dual-spine_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/can_with_dual-spine_configuration/</guid>
       <description>CAN with Dual-Spine Configuration The Customer Access Network (CAN) needs to be connected to both spines in a dual-spine configuration so that each spine can access the outside network. However, the NCNs should only have one default gateway. Therefore, the multi-active gateway protocol (MAGP) on the Mellanox spines can be used to create a virtual router gateway IP address that can direct to either of the spines, depending on the state of the spines.</description>
@@ -19,7 +19,7 @@
     <item>
       <title>Connect To The CAN</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/connect_to_the_can/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/connect_to_the_can/</guid>
       <description>Connect to the CAN How to connect to the CAN physically and via layer 3.
@@ -30,7 +30,7 @@ Physical Connection to the CAN The physical connection to the CAN is made via th
     <item>
       <title>Customer Access Network</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/customer_access_network_can/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/customer_access_network_can/</guid>
       <description>Customer Access Network The Customer Access Network (CAN) provides access from outside the customer network to services, non-compute nodes (NCNs), and User Access Nodes (UANs) in the system. This allows for the following:
@@ -40,7 +40,7 @@ Physical Connection to the CAN The physical connection to the CAN is made via th
     <item>
       <title>Externally Exposed Services</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/externally_exposed_services/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/externally_exposed_services/</guid>
       <description>Externally Exposed Services The following services are exposed on the Customer Access Network (CAN). Each of these services requires an IP address on the CAN subnet so they are reachable on the CAN. This IP address is allocated by the MetalLB component.
@@ -51,7 +51,7 @@ Each service is given a DNS name that is served by the External DNS service to m
     <item>
       <title>Required Labels If CAN Is Not Configured</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/required_labels_if_can_is_not_configured/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/required_labels_if_can_is_not_configured/</guid>
       <description>Required Labels if CAN is Not Configured Some services on the system are required to access services outside of the HPE Cray EX system. If the Customer Access Network (CAN) is not configured on the system, these services will need to be pinned to ncn-m001 because that is the only node that has external access. See Customer Access Network (CAN) for more implications if CAN is not configured.
@@ -61,7 +61,7 @@ The label used for scheduling these services is no_external_access:</description
     <item>
       <title>Troubleshoot CAN Issues</title>
       <link>/docs-csm/en-11/operations/network/customer_access_network/troubleshoot_can_issues/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:23 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/network/customer_access_network/troubleshoot_can_issues/</guid>
       <description>Troubleshoot CAN Issues Various connection points to check when using the CAN and how to fix any issues that arise.

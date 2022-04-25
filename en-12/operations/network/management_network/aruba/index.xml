@@ -6,11 +6,11 @@
     <description>Recent content in Aruba Installation And Configuration Guide on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:12:13 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/aruba/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:29 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/operations/network/management_network/aruba/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Erase All Zeroize</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/zeroize/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:22 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/zeroize/</guid>
       <description>Erase All zeroize Erases customer data on the management modules in a secure manner. The command prompts for confirmation of zeroization.
@@ -19,19 +19,9 @@ Example Erasing Customer Data on the Management Modules in a Secure Manner switc
     </item>
     
     <item>
-      <title>Web User Interface (webui)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/web-ui/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:22 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/web-ui/</guid>
-      <description>Web User Interface (WebUI) A web-based management user interface provides a visual representation of a subset of the current switch configuration and states. The Web-UI allows for easy access from modern browsers to modify some aspects of the configuration. The Web-UI also provides extensive access to the Network Analytics Engine. Many aspects of the hardware can be monitored in a dashboard view and customized.
-Configuration Commands Enable the WebUI on a VRF:</description>
-    </item>
-    
-    <item>
       <title>Switch Replacement In The Vsx Cluster</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vsx_switch_replacement/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:37 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsx_switch_replacement/</guid>
       <description>Switch Replacement in the VSX Cluster Replace the VSX primary or the VSX secondary with the following steps.
@@ -39,9 +29,41 @@ Configuration Commands Enable the WebUI on a VRF:</description>
     </item>
     
     <item>
+      <title>Vsx Sync</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/vsx_sync/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:37 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsx_sync/</guid>
+      <description>VSX Sync Configuration synchronization is one aspect of this VSX solution where the primary switch configuration is synced to the secondary switch. This allows for pseudo single pane of glass configuration and helps keep key configuration pieces in sync as operational changes are made. Since the solution is primarily for HA, it is expected that the vast majority of configuration policy is the same across both peers.
+Configuration Commands Synchronize VLANs:</description>
+    </item>
+    
+    <item>
+      <title>Web User Interface (webui)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/web-ui/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:37 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/web-ui/</guid>
+      <description>Web User Interface (WebUI) A web-based management user interface provides a visual representation of a subset of the current switch configuration and states. The Web-UI allows for easy access from modern browsers to modify some aspects of the configuration. The Web-UI also provides extensive access to the Network Analytics Engine. Many aspects of the hardware can be monitored in a dashboard view and customized.
+Configuration Commands Enable the WebUI on a VRF:</description>
+    </item>
+    
+    <item>
+      <title>Verify BGP</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/verify_bgp/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify_bgp/</guid>
+      <description>Verify BGP Verify the BGP neighbors are in the established state on BOTH the switches.
+Procedure   Check Aruba BGP status.
+sw-spine-002# show bgp ipv4 u s Example output:
+VRF : default BGP Summary ----------- Local AS : 65533 BGP Router Identifier : 10.252.0.3 Peers : 4 Log Neighbor Changes : No Cfg. Hold Time : 180 Cfg. Keep Alive : 60 Confederation Id : 0 Neighbor Remote-AS MsgRcvd MsgSent Up/Down Time State AdminStatus 10.</description>
+    </item>
+    
+    <item>
       <title>Verify Route To Tftp</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/verify_route_to_tftp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify_route_to_tftp/</guid>
       <description>Verify Route to TFTP On BOTH Aruba switches, a single route to the TFTP server 10.92.100.60 is needed. The configuration may differ on the system in use.
@@ -51,9 +73,21 @@ Displaying ipv4 routes selected for forwarding &#39;[x/y]&#39; denotes [distance
     </item>
     
     <item>
+      <title>Verify The DHCP Traffic On The Worker Nodes</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/verify_dhcp_traffic_on_workers/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify_dhcp_traffic_on_workers/</guid>
+      <description>Verify the DHCP Traffic on the Worker Nodes This section is an example issue of where the source address of the DHCP Offer is the Metallb address of KEA &amp;ldquo;10.92.100.222&amp;rdquo;.
+The source address of the DHCP Reply/Offer MUST be the address of the VLAN interface on the worker node.
+Use the following command to look at DHCP traffic on the workers:
+ncn-w001# tcpdump -envli bond0 port 67 or 68 Look for the source IP address of the DHCP Reply/Offer.</description>
+    </item>
+    
+    <item>
       <title>Virtual Local Access Networks (vlans)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vlan/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vlan/</guid>
       <description>Virtual Local Access Networks (VLANs) VLANs allow for the logical grouping of switch interfaces, enabling communication as if all connected devices were on the same isolated network.
@@ -66,7 +100,7 @@ switch(config-if)# vlan access VLAN Configure an interface as a trunk port:</des
     <item>
       <title>Virtual Switching Extension (vsx)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vsx/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsx/</guid>
       <description>Virtual Switching Extension (VSX) Aruba&amp;rsquo;s Virtual Switching Extension (VSX) is a solution that integrates two independent ArubaOS-CX switches into an active/active virtualized high availability (HA) solution. The two switch peers utilize a connected link for control and data. This solution allows the switches to present as one virtualized switch in critical areas.
@@ -76,7 +110,7 @@ Configuration synchronization is one aspect of this VSX solution where the prima
     <item>
       <title>Virtual Switching Framework (vsf) - 6300 Only</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vsf/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsf/</guid>
       <description>Virtual Switching Framework (VSF) - 6300 Only Virtual Switching Framework (VSF) defines a virtual switch comprised of multiple individual physical switches, inter-connected through standard Ethernet links. These physical switches will operate with one control plane, thereby visible to the peers as a virtual switch stack.
@@ -86,7 +120,7 @@ Within the stack, one switch is the &amp;ldquo;Master&amp;rdquo; switch, which r
     <item>
       <title>Vlan Interface</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vlan_interface/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vlan_interface/</guid>
       <description>VLAN Interface The switch also supports classic L3 VLAN interfaces.
@@ -99,26 +133,16 @@ switch# show vlan [VLAN|interface IFACE|summary] Example Output switch(config)# 
     <item>
       <title>Vlan Trunking 802.1q</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vlan_trunking_8021q/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vlan_trunking_8021q/</guid>
       <description>VLAN Trunking 802.1Q A trunk port carries packets on one or more VLANs specified. Packet that ingress on a trunk port are in the VLAN specified in its 802.1Q header, or native VLAN if the packet has no 802.1Q header. A packet that egresses through a trunk port will have an 802.1Q header if it has a nonzero VLAN ID. Any packet that ingresses on a trunk port tagged with a VLAN that the port does not trunk is dropped.</description>
     </item>
     
     <item>
-      <title>Vsx Sync</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/vsx_sync/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsx_sync/</guid>
-      <description>VSX Sync Configuration synchronization is one aspect of this VSX solution where the primary switch configuration is synced to the secondary switch. This allows for pseudo single pane of glass configuration and helps keep key configuration pieces in sync as operational changes are made. Since the solution is primarily for HA, it is expected that the vast majority of configuration policy is the same across both peers.
-Configuration Commands Synchronize VLANs:</description>
-    </item>
-    
-    <item>
       <title>What Is Vsx?</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/vsx_architecture/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:21 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:36 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/vsx_architecture/</guid>
       <description>What is VSX? Enterprise networks face the challenge of delivering 24x7 always-on reliable access and cloud-based services. As a business and network grows, this non-stop availability becomes more critical due to simple economics. Downtime leads to a loss of productivity, user satisfaction and revenue.
@@ -128,16 +152,28 @@ Switches in the campus and data center sit at the heart of the network and are r
     <item>
       <title>Perform A Vsx Upgrade On Aruba Switches</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/upgrade/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/upgrade/</guid>
       <description>Perform a VSX Upgrade on Aruba Switches The vsx update-software command is used to update the switch software with minimal to no downtime. This command gives administrators the option to save the running configuration on the primary and secondary VSX switches. After the command saves the running configuration, it downloads new software from the TFTP server and verifies the download. After a successful verification, the command installs the software to the alternative image of both the VSX primary and secondary switches.</description>
     </item>
     
     <item>
+      <title>Test Tftp Traffic (aruba Only)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/test_tftp_traffic/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/test_tftp_traffic/</guid>
+      <description>Test TFTP Traffic (Aruba Only) TFTP traffic can be tested by attempting to download the ipxe.efi binary.
+Log into the leaf switch and try to download the iPXE binary.
+This requires that the leaf switch can talk to the TFTP server &amp;ldquo;10.92.100.60&amp;rdquo;.
+sw-leaf-001# start-shell sw-leaf-001:~$ sudo su sw-leaf-001:/home/admin# tftp 10.92.100.60 tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.</description>
+    </item>
+    
+    <item>
       <title>Typical Configuration Of Mclag Link</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/typical_mclag_port_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/typical_mclag_port_configuration/</guid>
       <description>Typical Configuration of MCLAG Link The following is a very basic MCLAG link configuration connecting to NCNs. An administrators configuration may differ.
@@ -147,9 +183,30 @@ interface lag 1 multi-chassis no shutdown no routing vlan trunk native 1 vlan tr
     </item>
     
     <item>
+      <title>Typical Configuration Of Vsx</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/typical_vsx_configuration/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/typical_vsx_configuration/</guid>
+      <description>Typical Configuration of VSX The following is a very basic VSX configuration between two spine switches. Do note that the inter-switch-link (ISL) between the two spine switches is configured as regular lag, not a multi-chassis lag like a connected server would.
+   Spine-01 vrf keepalive interface lag 254 no shutdown description ISL link no routing vlan trunk native 1 tag vlan trunk allowed all lacp mode active
+interface 1/1/51 no shutdown mtu 9198 lag 254 interface 1/1/52 no shutdown mtu 9198 lag 254</description>
+    </item>
+    
+    <item>
+      <title>Typical Edge Port Configuration</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/typical_edge_port_configuration/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/typical_edge_port_configuration/</guid>
+      <description>Typical Edge Port Configuration The following is a very basic configuration for devices that are single homed to the network. For instance, network ILO cards, BMCs, PDUs, and so on.
+   Leaf-01 interface 1/1/47 no shutdown mtu 9198 description HMN no routing vlan access 4 spanning-tree bpdu-guard spanning-tree port-type admin-edge     Leaf-02 interface 1/1/47 no shutdown mtu 9198 description BMC no routing vlan access 4 spanning-tree bpdu-guard spanning-tree port-type admin-edge    Back to Index</description>
+    </item>
+    
+    <item>
       <title>Unidirectional Link Detection (udld)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/udld/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/udld/</guid>
       <description>Unidirectional Link Detection (UDLD) &amp;ldquo;The purpose of the UDLD protocol is to detect the presence of anomalous conditions in the Layer 2 communication channel, while relying on the mechanisms defined by the IEEE in the 802.3 standard to properly handle conditions inherent to the physical layer.&amp;rdquo; –rfc5171
@@ -159,7 +216,7 @@ interface lag 1 multi-chassis no shutdown no routing vlan trunk native 1 vlan tr
     <item>
       <title>Uninstall CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/uninstall_canu/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/uninstall_canu/</guid>
       <description>Uninstall CANU Uninstalling CANU can be achieved by:
@@ -169,7 +226,7 @@ pip3 uninstall canu Back to Index</description>
     <item>
       <title>Use CANu To Generate Full Network Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/using_canu_to_generate_full_network_config/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/using_canu_to_generate_full_network_config/</guid>
       <description>Use CANU to Generate Full Network Configuration CANU can also generate switch config for all the switches on a network.
@@ -178,33 +235,9 @@ The instructions are exactly the same as the above except there will not be a ho
     </item>
     
     <item>
-      <title>Verify BGP</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/verify_bgp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify_bgp/</guid>
-      <description>Verify BGP Verify the BGP neighbors are in the established state on BOTH the switches.
-Procedure   Check Aruba BGP status.
-sw-spine-002# show bgp ipv4 u s Example output:
-VRF : default BGP Summary ----------- Local AS : 65533 BGP Router Identifier : 10.252.0.3 Peers : 4 Log Neighbor Changes : No Cfg. Hold Time : 180 Cfg. Keep Alive : 60 Confederation Id : 0 Neighbor Remote-AS MsgRcvd MsgSent Up/Down Time State AdminStatus 10.</description>
-    </item>
-    
-    <item>
-      <title>Verify The DHCP Traffic On The Worker Nodes</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/verify_dhcp_traffic_on_workers/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify_dhcp_traffic_on_workers/</guid>
-      <description>Verify the DHCP Traffic on the Worker Nodes This section is an example issue of where the source address of the DHCP Offer is the Metallb address of KEA &amp;ldquo;10.92.100.222&amp;rdquo;.
-The source address of the DHCP Reply/Offer MUST be the address of the VLAN interface on the worker node.
-Use the following command to look at DHCP traffic on the workers:
-ncn-w001# tcpdump -envli bond0 port 67 or 68 Look for the source IP address of the DHCP Reply/Offer.</description>
-    </item>
-    
-    <item>
       <title>Verify The Switches Are Forwarding DHCP Traffic</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/verify-switches_are_forwarding_dhcp_traffic/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:20 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:35 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/verify-switches_are_forwarding_dhcp_traffic/</guid>
       <description>Verify the Switches are Forwarding DHCP Traffic If this point is reached and PXE booting is still not possible, it is likely the IP-Helper is broken on the switch.
@@ -212,9 +245,21 @@ Back to Index</description>
     </item>
     
     <item>
+      <title>Aruba Snmpv3 Users</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmpv3_users/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmpv3_users/</guid>
+      <description>Aruba SNMPv3 Users SNMPv3 supports cryptographic security through a combination of authenticating and encrypting the SNMP protocol packets over the network. Read-only access is currently supported. The admin user can add or remove SNMPv3 users.
+Configuration Commands Configure a new SNMPv3 user (minimum eight characters for passwords):
+switch(config)# snmpv3 user &amp;lt;USER&amp;gt; auth md5 auth-pass &amp;lt;A-PSWD&amp;gt; priv aes priv-pass &amp;lt;P-PSWD&amp;gt; Remove an SNMPv3 user:
+switch(config)# no snmpv3 user &amp;lt;USER&amp;gt; Show commands to validate functionality:</description>
+    </item>
+    
+    <item>
       <title>Confirm The Status Of The Cray-DHCP-kea Pods</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/status_of_cray-dhcp-kea_pods/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/status_of_cray-dhcp-kea_pods/</guid>
       <description>Confirm the Status of the cray-dhcp-kea Pods Use this procedure to verify the status of the cray-dhcp-kea pods and services. The commands in this procedure must be run on ncn-w001 or a worker/manager NCN with kubectl installed.
@@ -226,7 +271,7 @@ cray-dhcp-kea-api Cluster IP 10.31.247.201 &amp;lt;none&amp;gt; 8000/TCP 3h36m c
     <item>
       <title>HPE Cray Supercomputer</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/start/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/start/</guid>
       <description>HPE Cray supercomputer Management Network install and configuration guide ARUBA - CX Platform based networks © 2021 Hewlett Packard Enterprise Development LP</description>
@@ -235,7 +280,7 @@ cray-dhcp-kea-api Cluster IP 10.31.247.201 &amp;lt;none&amp;gt; 8000/TCP 3h36m c
     <item>
       <title>Secure Shell (SSH)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/ssh/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/ssh/</guid>
       <description>Secure Shell (SSH) SSH server enables an SSH client to make a secure and encrypted connection to a switch. Currently, switch supports SSH version 2.0 only. The user authentication mechanisms supported for SSH are public key authentication and password authentication (RADIUS, TACACS+ or locally stored password). Secure File Transfer Protocol (SFTP) provides file transfer. SSH Server and sftp-client via the copy command are supported for managing the router.
@@ -243,9 +288,41 @@ Configuration Commands Configure SSH authentication:</description>
     </item>
     
     <item>
+      <title>Snmp Traps</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp_trap/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp_trap/</guid>
+      <description>SNMP traps The SNMP agent can send trap notifications to a receiver. The receiver&amp;rsquo;s host IP address and port number can be defined along with the notification type, version, and community string.
+Configuration Commands Configure a SNMPv2c trap receiver host:
+switch(config)# snmp-server host IP-ADDR trap version v2c community xxx Show commands to validate functionality:
+switch# show snmp trap Example Output switch# show snmp trap ------------------------------------------------------------------------------------------ Host Port Type Version SecName vrf ------------------------------------------------------------------------------------------ 1.</description>
+    </item>
+    
+    <item>
+      <title>Spine-leaf Architecture</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture/</guid>
+      <description>Spine-Leaf Architecture The network design used in majority of HPE Cray EX installations is spine leaf architecture. In more sizeable systems, we also utilize super-spine to accommodate the number of spines that connect the network to provide additional HA capabilities.
+What is Spine-Leaf Architecture? A spine-leaf architecture is data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers and connect directly into the spine or network core.</description>
+    </item>
+    
+    <item>
+      <title>Spine-leaf Architecture</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture2/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture2/</guid>
+      <description>Spine-leaf architecture How does a spine-leaf architecture differ from traditional network designs? Traditionally, data center networks were based on a three-tier model:
+ Access switches connect to servers Leaf or distribution switches provide redundant connections to access switches Core switches provide fast transport between leaf switches, typically connected in a redundant pair for high availability  At the most basic level, a spine-leaf architecture collapses one of these tiers, as depicted in these diagrams.</description>
+    </item>
+    
+    <item>
       <title>Static Routing</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/static_routing/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/static_routing/</guid>
       <description>Static Routing &amp;ldquo;Static routing is manually performed by the network administrator. The administrator is responsible for discovering and propagating routes through the network. These definitions are manually programmed in every routing device in the environment. After a device has been configured, it simply forwards packets out the predetermined ports. There is no communication between routers regarding the current topology of the network.&amp;rdquo; –IBM Redbook, TCP/IP Tutorial and Technical Overview
@@ -255,7 +332,7 @@ Configuration Commands switch(config)# &amp;lt;ip|ipv6&amp;gt; route IP-ADDR/&am
     <item>
       <title>Tacacs</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/tacacs/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:34 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/tacacs/</guid>
       <description>TACACS &amp;ldquo;TACACS+ provides access control for routers, network access servers and other networked computing devices via one or more centralized servers. TACACS+ provides separate authentication, authorization and accounting services.&amp;rdquo; –ietf draft-grant-tacacs-02
@@ -266,145 +343,9 @@ switch(config)# aaa authentication login default group tacacs local switch(confi
     </item>
     
     <item>
-      <title>Test Tftp Traffic (aruba Only)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/test_tftp_traffic/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/test_tftp_traffic/</guid>
-      <description>Test TFTP Traffic (Aruba Only) TFTP traffic can be tested by attempting to download the ipxe.efi binary.
-Log into the leaf switch and try to download the iPXE binary.
-This requires that the leaf switch can talk to the TFTP server &amp;ldquo;10.92.100.60&amp;rdquo;.
-sw-leaf-001# start-shell sw-leaf-001:~$ sudo su sw-leaf-001:/home/admin# tftp 10.92.100.60 tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.efi Received 1007200 bytes in 2.2 seconds tftp&amp;gt; get ipxe.</description>
-    </item>
-    
-    <item>
-      <title>Typical Configuration Of Vsx</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/typical_vsx_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/typical_vsx_configuration/</guid>
-      <description>Typical Configuration of VSX The following is a very basic VSX configuration between two spine switches. Do note that the inter-switch-link (ISL) between the two spine switches is configured as regular lag, not a multi-chassis lag like a connected server would.
-   Spine-01 vrf keepalive interface lag 254 no shutdown description ISL link no routing vlan trunk native 1 tag vlan trunk allowed all lacp mode active
-interface 1/1/51 no shutdown mtu 9198 lag 254 interface 1/1/52 no shutdown mtu 9198 lag 254</description>
-    </item>
-    
-    <item>
-      <title>Typical Edge Port Configuration</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/typical_edge_port_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:19 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/typical_edge_port_configuration/</guid>
-      <description>Typical Edge Port Configuration The following is a very basic configuration for devices that are single homed to the network. For instance, network ILO cards, BMCs, PDUs, and so on.
-   Leaf-01 interface 1/1/47 no shutdown mtu 9198 description HMN no routing vlan access 4 spanning-tree bpdu-guard spanning-tree port-type admin-edge     Leaf-02 interface 1/1/47 no shutdown mtu 9198 description BMC no routing vlan access 4 spanning-tree bpdu-guard spanning-tree port-type admin-edge    Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Aruba Snmpv3 Users</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmpv3_users/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmpv3_users/</guid>
-      <description>Aruba SNMPv3 Users SNMPv3 supports cryptographic security through a combination of authenticating and encrypting the SNMP protocol packets over the network. Read-only access is currently supported. The admin user can add or remove SNMPv3 users.
-Configuration Commands Configure a new SNMPv3 user (minimum eight characters for passwords):
-switch(config)# snmpv3 user &amp;lt;USER&amp;gt; auth md5 auth-pass &amp;lt;A-PSWD&amp;gt; priv aes priv-pass &amp;lt;P-PSWD&amp;gt; Remove an SNMPv3 user:
-switch(config)# no snmpv3 user &amp;lt;USER&amp;gt; Show commands to validate functionality:</description>
-    </item>
-    
-    <item>
-      <title>Routed Interfaces</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/routed_interface/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/routed_interface/</guid>
-      <description>Routed interfaces For platforms 8400 and 83xx: By default, all interfaces are configured as routed interfaces with support for both IPv4 and IPv6.
-For platforms 6400 and 6300: By default, all interfaces are configured as access ports on VLAN 1
-Configuration Commands Give an interface an IP address:
-switch(config-if)# &amp;lt;ip|ipv6&amp;gt; address IP-ADDR/&amp;lt;SUBNET|PREFIX&amp;gt; Show commands to validate functionality:
-switch# show &amp;lt;ip|ipv6&amp;gt; interface IFACE Expected Results  Administrators are able to configure an IP address on the interface Administrators can configure an IP address on the connected network client The interface is up, and you can validate the IP address and subnet are correct Administrators can ping from the switch to the client and from the client to the switch  Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Scenario A Network Connection Via Management Network</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/scenario-a/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/scenario-a/</guid>
-      <description>Scenario A: Network Connection via Management Network The example here covers outside connections achieved with the management network.
-Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP process for the new VRF Setup the edge router Configure MetalLB Verification step for BGP routes Configure default route for workers Verification of external communication  Topology The following is an example topology:
-Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Scenario B Network Connection Via High-speed Network</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/scenario-b/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/scenario-b/</guid>
-      <description>Scenario B: Network Connection via High-Speed Network This example covers outside connections achieved via highspeed network.
-Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP process for the new VRF Setup the edge router Configure MetalLB Verification step for BGP routes Configure default route for workers Verification of external communication  Topology The following is an example topology:
-Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Simple Network Management Protocol (snmp) Agent</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp-agent/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp-agent/</guid>
-      <description>Simple Network Management Protocol (SNMP) Agent Simple Network Management Protocol (SNMP) minimizes the number and complexity of management functions. For monitoring and control, it is extensible to accommodate additional, possibly unanticipated aspects of network operation and management. SNMP is universal and independent of the architecture and mechanisms of particular hosts or particular gateways. SNMP server is supported either on the default or mgmt VRF.
-Configuration Commands Enable SNMP agent:
-switch(config)# snmp-server vrf VRF Configure the port to which the SNMP agent is bound:</description>
-    </item>
-    
-    <item>
-      <title>Snmp Traps</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp_trap/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp_trap/</guid>
-      <description>SNMP traps The SNMP agent can send trap notifications to a receiver. The receiver&amp;rsquo;s host IP address and port number can be defined along with the notification type, version, and community string.
-Configuration Commands Configure a SNMPv2c trap receiver host:
-switch(config)# snmp-server host IP-ADDR trap version v2c community xxx Show commands to validate functionality:
-switch# show snmp trap Example Output switch# show snmp trap ------------------------------------------------------------------------------------------ Host Port Type Version SecName vrf ------------------------------------------------------------------------------------------ 1.</description>
-    </item>
-    
-    <item>
-      <title>Snmpv2c Community</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp-community/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp-community/</guid>
-      <description>SNMPv2c Community The switch supports SNMPv2c community-based security for read-only access.
-Configuration Commands Configure an SNMPv2c community name:
-switch(config)# snmp-server community NAME Bind the SNMP server to a VRF:
-switch(config)# snmp-server vrf &amp;lt;default|VRF&amp;gt; Show commands to validate functionality:
-switch# show snmp community Example Output switch(config)# snmp-server community public switch(config)# snmp-server vrf default switch(config)# end switch# show snmp community --------------------- SNMP communities --------------------- mysnmp switch# show snmp vrf SNMP enabled VRF ---------------------------- default Expected Results  Administrators can configure the community name Administrators can bind the SNMP server to the default VRF Administrators can connect from the workstation using the community name  Back to Index</description>
-    </item>
-    
-    <item>
-      <title>Spine-leaf Architecture</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture/</guid>
-      <description>Spine-Leaf Architecture The network design used in majority of HPE Cray EX installations is spine leaf architecture. In more sizeable systems, we also utilize super-spine to accommodate the number of spines that connect the network to provide additional HA capabilities.
-What is Spine-Leaf Architecture? A spine-leaf architecture is data center network topology that consists of two switching layers—a spine and leaf. The leaf layer consists of access switches that aggregate traffic from servers and connect directly into the spine or network core.</description>
-    </item>
-    
-    <item>
-      <title>Spine-leaf Architecture</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture2/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:18 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/spine_leaf_architecture2/</guid>
-      <description>Spine-leaf architecture How does a spine-leaf architecture differ from traditional network designs? Traditionally, data center networks were based on a three-tier model:
- Access switches connect to servers Leaf or distribution switches provide redundant connections to access switches Core switches provide fast transport between leaf switches, typically connected in a redundant pair for high availability  At the most basic level, a spine-leaf architecture collapses one of these tiers, as depicted in these diagrams.</description>
-    </item>
-    
-    <item>
       <title>Connect The Management Network To A Campus Network</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/requirements_and_optional_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/requirements_and_optional_configuration/</guid>
       <description>Connect the Management Network to a Campus Network There are several ways to connect an HPE Cray EX system directly to a campus network. In this guide, the two most typical ways of accomplishing this will be covered. The Scenario A and Scenario B examples will cover adding connections through the management network or high-speed network.
@@ -413,51 +354,9 @@ Requirements and optional configuration:
     </item>
     
     <item>
-      <title>Pim-sm Bootstrap Router (bsr) And Rendezvous Point (rp)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/pim/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/pim/</guid>
-      <description>PIM-SM Bootstrap Router (BSR) and Rendezvous Point (RP) &amp;ldquo;Every PIM multicast group needs to be associated with the IP address of a Rendezvous Point (RP) [&amp;hellip;] For all senders to reach all receivers, it is crucial that all routers in the domain use the same mappings of group addresses to RP addresses. [&amp;hellip;] The BSR mechanism provides a way in which viable group-to-RP mappings can be created and rapidly distributed to all the PIM routers in a domain.</description>
-    </item>
-    
-    <item>
-      <title>Port Mirroring</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/port_mirroring/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/port_mirroring/</guid>
-      <description>Port Mirroring Port mirroring, also known as Switched Port Analyzer (SPAN), enables traffic on one or more switch interfaces to be replicated on another interface for purposes such as monitoring.
-Configuration Commands Create and enable a mirror session:
-switch(config)# mirror session &amp;lt;1-4&amp;gt; switch(config-mirror)# enable Configure a source interface:
-switch(config-mirror)# source interface IFACE &amp;lt;both|tx|rx&amp;gt; Configure an interface as the mirror destination:
-switch(config-mirror)# destination interface IFACE Configure a tunnel as the mirror destination (ERSPAN):</description>
-    </item>
-    
-    <item>
-      <title>Port Security</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/port_security/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/port_security/</guid>
-      <description>Port Security Port security allows user to do the following:
- Configure each switch port with a list of unique MAC addresses Limit network access to authorized MAC addresses Detect, prevent, and log unauthorized access of devices on individual ports Limit the number of MACs learned  Intrusion detection enables a device to notify the user or shutdown the port in the case of a violation, and a timer can be configured to allow auto-recovery of ports shutdown in a violation state to come back up after the timer expires.</description>
-    </item>
-    
-    <item>
-      <title>Queuing And Scheduling</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/queuing_and_scheduling/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/queuing_and_scheduling/</guid>
-      <description>Queuing and Scheduling When defining end-to-end behavior via CoS or DSCP, different priorities of traffic must be placed in different queues so the network device can service them appropriately. Separate queues allow delay- or jitter-sensitive traffic to be serviced before bulk or less time-critical traffic.
-Queue policies configure which queues the different priorities of traffic will use. Queues are numbered in priority order, with zero being the lowest priority. The larger the queue number, the higher the priority of that queue.</description>
-    </item>
-    
-    <item>
       <title>Radius</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/radius/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/radius/</guid>
       <description>RADIUS RADIUS servers provide a method for remote users to access the switch. The following commands show how to configure a RADIUS server, and how remote users can authenticate and access the switch.
@@ -469,7 +368,7 @@ switch(config)# aaa authentication login default group radius local switch(confi
     <item>
       <title>Rebooting NCNs And PXE Fails</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/reboot_pxe_fail/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/reboot_pxe_fail/</guid>
       <description>Rebooting NCNs and PXE Fails The following are common error messages when PXE fails:
@@ -482,7 +381,7 @@ Verify DHCP packets can be forwarded from the workers to the MTL network (VLAN1)
     <item>
       <title>Redundant Power Supplies</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/redundant_power_supplies/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/redundant_power_supplies/</guid>
       <description>Redundant Power Supplies There are no configuration commands for switch power supply functionality.
@@ -494,7 +393,7 @@ switch# show environment power-supply Expected Results  Validate the switch reco
     <item>
       <title>Remote Logging</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/remote_logging/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/remote_logging/</guid>
       <description>Remote Logging Configure remote logging to view log files from the switch on a remote server. This functionality is enabled by syslog.
@@ -504,21 +403,68 @@ switch(config)# logging IP-ADDR Expected Results  Administrators can configure r
     </item>
     
     <item>
-      <title>NCNs On Install</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/ncns_on_install/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <title>Routed Interfaces</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/routed_interface/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/ncns_on_install/</guid>
-      <description>NCNs on Install Use this procedure to verify the DNSMASQ config file on the NCNs is accurate.
-Procedure   Verify the DNSMASQ config file matches what is configured on the switches.
-The following is a DNSMASQ config file for the Metal network (VLAN1). The router is 10.1.0.1, which has to match what the IP address is on the switches doing the routing for the Metal (MTL) network.
-Example MTL DNSMASQ file:</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/routed_interface/</guid>
+      <description>Routed interfaces For platforms 8400 and 83xx: By default, all interfaces are configured as routed interfaces with support for both IPv4 and IPv6.
+For platforms 6400 and 6300: By default, all interfaces are configured as access ports on VLAN 1
+Configuration Commands Give an interface an IP address:
+switch(config-if)# &amp;lt;ip|ipv6&amp;gt; address IP-ADDR/&amp;lt;SUBNET|PREFIX&amp;gt; Show commands to validate functionality:
+switch# show &amp;lt;ip|ipv6&amp;gt; interface IFACE Expected Results  Administrators are able to configure an IP address on the interface Administrators can configure an IP address on the connected network client The interface is up, and you can validate the IP address and subnet are correct Administrators can ping from the switch to the client and from the client to the switch  Back to Index</description>
+    </item>
+    
+    <item>
+      <title>Scenario A Network Connection Via Management Network</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/scenario-a/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/scenario-a/</guid>
+      <description>Scenario A: Network Connection via Management Network The example here covers outside connections achieved with the management network.
+Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP process for the new VRF Setup the edge router Configure MetalLB Verification step for BGP routes Configure default route for workers Verification of external communication  Topology The following is an example topology:
+Back to Index</description>
+    </item>
+    
+    <item>
+      <title>Scenario B Network Connection Via High-speed Network</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/scenario-b/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/scenario-b/</guid>
+      <description>Scenario B: Network Connection via High-Speed Network This example covers outside connections achieved via highspeed network.
+Summary  Create a new VRF Move interfaces to the new VRF Create a new BGP process for the new VRF Setup the edge router Configure MetalLB Verification step for BGP routes Configure default route for workers Verification of external communication  Topology The following is an example topology:
+Back to Index</description>
+    </item>
+    
+    <item>
+      <title>Simple Network Management Protocol (snmp) Agent</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp-agent/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp-agent/</guid>
+      <description>Simple Network Management Protocol (SNMP) Agent Simple Network Management Protocol (SNMP) minimizes the number and complexity of management functions. For monitoring and control, it is extensible to accommodate additional, possibly unanticipated aspects of network operation and management. SNMP is universal and independent of the architecture and mechanisms of particular hosts or particular gateways. SNMP server is supported either on the default or mgmt VRF.
+Configuration Commands Enable SNMP agent:
+switch(config)# snmp-server vrf VRF Configure the port to which the SNMP agent is bound:</description>
+    </item>
+    
+    <item>
+      <title>Snmpv2c Community</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/snmp-community/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:33 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/snmp-community/</guid>
+      <description>SNMPv2c Community The switch supports SNMPv2c community-based security for read-only access.
+Configuration Commands Configure an SNMPv2c community name:
+switch(config)# snmp-server community NAME Bind the SNMP server to a VRF:
+switch(config)# snmp-server vrf &amp;lt;default|VRF&amp;gt; Show commands to validate functionality:
+switch# show snmp community Example Output switch(config)# snmp-server community public switch(config)# snmp-server vrf default switch(config)# end switch# show snmp community --------------------- SNMP communities --------------------- mysnmp switch# show snmp vrf SNMP enabled VRF ---------------------------- default Expected Results  Administrators can configure the community name Administrators can bind the SNMP server to the default VRF Administrators can connect from the workstation using the community name  Back to Index</description>
     </item>
     
     <item>
       <title>Network Time Protocol (NTP) Client</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/ntp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/ntp/</guid>
       <description>Network Time Protocol (NTP) Client The Network Time Protocol (NTP) client is essential for syncing time on various clients in the system. The following commands show how to configure NTP.
@@ -531,7 +477,7 @@ switch(config)# clock timezone TIMEZONE Show commands to validate functionality:
     <item>
       <title>Network Topologies</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/network_topologies/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/network_topologies/</guid>
       <description>Network Topologies The following images are example network topologies for systems of various sizes.
@@ -541,7 +487,7 @@ Very Large Large Medium Small </description>
     <item>
       <title>Network Traffic Pattern</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/network_traffic_pattern/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/network_traffic_pattern/</guid>
       <description>Network Traffic Pattern Internal Networks:
@@ -550,19 +496,9 @@ Very Large Large Medium Small </description>
     </item>
     
     <item>
-      <title>Network Types – Naming And Segment Function</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/network_naming_function/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/network_naming_function/</guid>
-      <description>Network Types – Naming and Segment Function The following table provides an overview of the different network services defined inside of the spine and leaf architectures.
-   *********** Administration: Hardware Administration: Cloud/Job Customer: Jobs Customer: Administration Storage     Full name Hardware Management Network Node Management Network Customer Access Network Customer Management Network Storage User Network   Short name / acronym HMN NMN CAN CMN SUN    Back to Index</description>
-    </item>
-    
-    <item>
       <title>Notices</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/notice/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/notice/</guid>
       <description>© 2021 Hewlett Packard Enterprise Development LP
@@ -573,7 +509,7 @@ Confidential computer software: Valid license from Hewlett Packard Enterprise re
     <item>
       <title>Open Shortest Path First (ospf) V2</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/ospfv2/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/ospfv2/</guid>
       <description>Open Shortest Path First (OSPF) v2 &amp;ldquo;OSPF is a link-state based routing protocol. It is designed to be run internal to a single Autonomous System. Each OSPF router maintains an identical database describing the Autonomous System&amp;rsquo;s topology. From this database, a routing table is calculated by constructing a shortest-path tree. OSPF recalculates routes quickly in the face of topological changes, utilizing a minimum of routing protocol traffic. OSPF provides support for equal-cost multipath.</description>
@@ -582,7 +518,7 @@ Confidential computer software: Valid license from Hewlett Packard Enterprise re
     <item>
       <title>Physical Interfaces</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/physical_interfaces/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/physical_interfaces/</guid>
       <description>Physical Interfaces Configure the physical interfaces for a switch.
@@ -592,9 +528,51 @@ switch# show interface IFACE [transceiver|brief|dom|extended] Expected Results  
     </item>
     
     <item>
+      <title>Pim-sm Bootstrap Router (bsr) And Rendezvous Point (rp)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/pim/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/pim/</guid>
+      <description>PIM-SM Bootstrap Router (BSR) and Rendezvous Point (RP) &amp;ldquo;Every PIM multicast group needs to be associated with the IP address of a Rendezvous Point (RP) [&amp;hellip;] For all senders to reach all receivers, it is crucial that all routers in the domain use the same mappings of group addresses to RP addresses. [&amp;hellip;] The BSR mechanism provides a way in which viable group-to-RP mappings can be created and rapidly distributed to all the PIM routers in a domain.</description>
+    </item>
+    
+    <item>
+      <title>Port Mirroring</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/port_mirroring/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/port_mirroring/</guid>
+      <description>Port Mirroring Port mirroring, also known as Switched Port Analyzer (SPAN), enables traffic on one or more switch interfaces to be replicated on another interface for purposes such as monitoring.
+Configuration Commands Create and enable a mirror session:
+switch(config)# mirror session &amp;lt;1-4&amp;gt; switch(config-mirror)# enable Configure a source interface:
+switch(config-mirror)# source interface IFACE &amp;lt;both|tx|rx&amp;gt; Configure an interface as the mirror destination:
+switch(config-mirror)# destination interface IFACE Configure a tunnel as the mirror destination (ERSPAN):</description>
+    </item>
+    
+    <item>
+      <title>Port Security</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/port_security/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/port_security/</guid>
+      <description>Port Security Port security allows user to do the following:
+ Configure each switch port with a list of unique MAC addresses Limit network access to authorized MAC addresses Detect, prevent, and log unauthorized access of devices on individual ports Limit the number of MACs learned  Intrusion detection enables a device to notify the user or shutdown the port in the case of a violation, and a timer can be configured to allow auto-recovery of ports shutdown in a violation state to come back up after the timer expires.</description>
+    </item>
+    
+    <item>
+      <title>Queuing And Scheduling</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/queuing_and_scheduling/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:32 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/queuing_and_scheduling/</guid>
+      <description>Queuing and Scheduling When defining end-to-end behavior via CoS or DSCP, different priorities of traffic must be placed in different queues so the network device can service them appropriately. Separate queues allow delay- or jitter-sensitive traffic to be serviced before bulk or less time-critical traffic.
+Queue policies configure which queues the different priorities of traffic will use. Queues are numbered in priority order, with zero being the lowest priority. The larger the queue number, the higher the priority of that queue.</description>
+    </item>
+    
+    <item>
       <title>Message-of-the-day (motd)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/motd/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/motd/</guid>
       <description>Message-Of-The-Day (MOTD) Banners are custom messages displayed to users attempting to connect to the management interfaces. MOTD banners are displayed pre-login while exec banners are displayed post-login. Multiple lines of text can be stored using a custom delimiter to mark the end of message.
@@ -606,7 +584,7 @@ switch# show banner &amp;lt;motd|exec&amp;gt; Example Output switch(config)# ban
     <item>
       <title>Multi-chassis Link Aggregation Group (mclag)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mlag/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mlag/</guid>
       <description>Multi-Chassis Link Aggregation Group (MCLAG) Multi-Chassis Link Aggregation Group (MCLAG) is a link aggregation technique where two or more links across two switches are aggregated together to form a trunk.
@@ -619,7 +597,7 @@ switch# show mclag &amp;lt;brief|configuration|status&amp;gt; Example Output swi
     <item>
       <title>Multicast Source Discovery Protocol (msdp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/msdp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/msdp/</guid>
       <description>Multicast Source Discovery Protocol (MSDP) The Multicast Source Discovery Protocol (MSDP) describes a mechanism to connect multiple IP Version 4 Protocol Independent Multicast Sparse-Mode (PIM-SM) domains together. Each PIM-SM domain uses its own independent Rendezvous Point (RP) and does not have to depend on RPs in other domains. When an RP in a PIM-SM domain first learns of a new sender, e.g., via PIM register messages, it constructs a &amp;ldquo;Source-Active&amp;rdquo; (SA) message and sends it to its MSDP peers.</description>
@@ -628,7 +606,7 @@ switch# show mclag &amp;lt;brief|configuration|status&amp;gt; Example Output swi
     <item>
       <title>Multiple Spanning Tree Protocol (mstp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mstp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mstp/</guid>
       <description>Multiple Spanning Tree Protocol (MSTP) MSTP (802.1s) ensures that only one active path exists between any two nodes in a spanning-tree instance. A spanning-tree instance comprises a unique set of VLANs. MSTP instances significantly improve network resource utilization while maintaining a loop-free environment.
@@ -639,7 +617,7 @@ switch(config)# spanning-tree switch(config)# spanning-tree config-name &amp;lt;
     <item>
       <title>Native Vlan</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/native_vlan/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/native_vlan/</guid>
       <description>Native VLAN Untagged ingress packets are destined to the native VLAN. An interface can be configured in one of two native modes - Native-Untagged or Native-Tagged. A native-untagged port accepts any untagged or tagged (with native VLAN ID) traffic on ingress. Packets that egress on a native-untagged port in the native VLAN will not have an 802.1Q header. A native-tagged port accepts only tagged traffic (with native VLAN ID) on ingress.</description>
@@ -648,7 +626,7 @@ switch(config)# spanning-tree switch(config)# spanning-tree config-name &amp;lt;
     <item>
       <title>NCN Tcpdump</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/ncn_tcpdump/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/ncn_tcpdump/</guid>
       <description>NCN TCPDUMP If a host is not getting an IP address, run a packet capture to see if DHCP traffic is being transmitted.
@@ -657,21 +635,31 @@ ncn# tcpdump -w dhcp.pcap -envli bond0.nmn0 port 67 or port 68 This will make a 
     </item>
     
     <item>
-      <title>Vsx Member Power Failure</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/mclag_power_failure/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <title>NCNs On Install</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/ncns_on_install/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/mclag_power_failure/</guid>
-      <description>VSX: Member Power Failure The intent here is to showcase a complete member failure scenario where the spine-01 switch is completely down.
-The following is a visualization of the powered down spine-01:
-The following is expected in this scenario:
- After disconnecting the power supply from one member the other member should be able to detect the member is down and continue a normal operation without any problems. If traffic was originally flowing through the member that was shut down, a small percentage of packets may be dropped.</description>
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/ncns_on_install/</guid>
+      <description>NCNs on Install Use this procedure to verify the DNSMASQ config file on the NCNs is accurate.
+Procedure   Verify the DNSMASQ config file matches what is configured on the switches.
+The following is a DNSMASQ config file for the Metal network (VLAN1). The router is 10.1.0.1, which has to match what the IP address is on the switches doing the routing for the Metal (MTL) network.
+Example MTL DNSMASQ file:</description>
+    </item>
+    
+    <item>
+      <title>Network Types – Naming And Segment Function</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/network_naming_function/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/network_naming_function/</guid>
+      <description>Network Types – Naming and Segment Function The following table provides an overview of the different network services defined inside of the spine and leaf architectures.
+   *********** Administration: Hardware Administration: Cloud/Job Customer: Jobs Customer: Administration Storage     Full name Hardware Management Network Node Management Network Customer Access Network Customer Management Network Storage User Network   Short name / acronym HMN NMN CAN CMN SUN    Back to Index</description>
     </item>
     
     <item>
       <title>Vsx Split</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mclag_split/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:31 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mclag_split/</guid>
       <description>VSX: Split The intent here is to showcase a complete inter-switch-link (ISL) link failure scenario where both of the ISL links between spine switches goes down.
@@ -683,7 +671,7 @@ The following is expected in this scenario:
     <item>
       <title>Example Of How To Configure Scenario A Or B</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/management_network_configuration_example/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/management_network_configuration_example/</guid>
       <description>Example of How to Configure Scenario A or B This section provides an example of how to configure the management network.
@@ -693,22 +681,9 @@ If you have existing CAN interface configuration, it will be deleted once you mo
     </item>
     
     <item>
-      <title>Link Layer Discovery Protocol (lldp)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/lldp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/lldp/</guid>
-      <description>Link Layer Discovery Protocol (LLDP) LLDP is used to advertise the device&amp;rsquo;s identity and abilities and read other devices connected to the same network.
- NOTE: LLDP is enabled by default.
- Configuration Commands Enable an interface to receive or transmit LLDP packets:
-switch(config-if)# lldp &amp;lt;receive|transmit&amp;gt; Show commands to validate functionality:
-switch# show lldp [local-device|neighbor-info|statistics] Example Output switch# show lldp configuration LLDP Global Configuration: LLDP Enabled :Yes LLDP Transmit Interval :30 LLDP Hold time Multiplier :4 LLDP Transmit Delay Interval:2 LLDP Reinit time Interval :2 Optional TLVs configured: Management Address Port description Port VLAN-ID System capabilities System description System name LLDP Port Configuration: Port Tx-Enabled Rx-Enabled 1/1/1 Yes Yes .</description>
-    </item>
-    
-    <item>
       <title>Locator Led</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/locator_led/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/locator_led/</guid>
       <description>Locator LED The Locator LED is an LED in the front of the chassis that you can turn on or make flash. This is a handy feature when guiding someone to your switch during a &amp;ldquo;remote hands&amp;rdquo; situation, such as asking data center engineer to run a cable to your switch.
@@ -720,7 +695,7 @@ switch# show environment led Example Output switch# show environment led Name St
     <item>
       <title>Loopback Interface</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/loopback/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/loopback/</guid>
       <description>Loopback Interface Loopbacks are essentially internal virtual interfaces. Loopback interfaces are not bound to a physical port and are used for device management and routing protocols.
@@ -730,7 +705,7 @@ Configuration Commands switch(config)# interface loopback LOOPBACK switch(config
     <item>
       <title>Mac Authentication</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mac_auth/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mac_auth/</guid>
       <description>MAC Authentication MAC Authentication (MAC Auth) is a method of authenticating devices for access to the network. The default mode of authentication is RADIUS, through which clients are authenticated by an external RADIUS server.
@@ -744,7 +719,7 @@ switch(config-macauth)# password &amp;lt;plaintext|ciphertext&amp;gt; PASSWORD C
     <item>
       <title>Management Interface</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/management_interface/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/management_interface/</guid>
       <description>Management Interface The management interface can be used to gain remote management access to the switch. The management interface is accessible using the &amp;ldquo;mgmt&amp;rdquo; VRF and is separate from the data plane interfaces, which are in the &amp;ldquo;default&amp;rdquo; VRF.
@@ -755,7 +730,7 @@ Address Mode Admin State Mac Address IPv4 address/subnet-mask Default gateway IP
     <item>
       <title>System Management Network Functions</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/management_network_function_in_detail/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/management_network_function_in_detail/</guid>
       <description>System Management Network Functions The following is a description of the system management network functions:
@@ -766,7 +741,7 @@ Address Mode Admin State Mac Address IPv4 address/subnet-mask Default gateway IP
     <item>
       <title>Vsx Isl Ha</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mclag_isl_ha/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mclag_isl_ha/</guid>
       <description>VSX: ISL HA The intent here is to showcase an inter-switch-link (ISL) link failover scenario where one of the two links between spine switches goes down, but ISL is still connected with single link.
@@ -778,7 +753,7 @@ The following things are expected to be seen in this scenario:
     <item>
       <title>Vsx Mclag Link Ha</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/mclag_link_ha/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:14 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/mclag_link_ha/</guid>
       <description>VSX: MCLAG Link HA The intent here is to showcase a typical MCLAG link failover scenario, where one of the links goes to the edge device, whether that is the connected switch or server.
@@ -786,9 +761,21 @@ In the following image, a typical traffic pattern coming off from MCLAG connecte
     </item>
     
     <item>
+      <title>Vsx Member Power Failure</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/mclag_power_failure/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:30 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/mclag_power_failure/</guid>
+      <description>VSX: Member Power Failure The intent here is to showcase a complete member failure scenario where the spine-01 switch is completely down.
+The following is a visualization of the powered down spine-01:
+The following is expected in this scenario:
+ After disconnecting the power supply from one member the other member should be able to detect the member is down and continue a normal operation without any problems. If traffic was originally flowing through the member that was shut down, a small percentage of packets may be dropped.</description>
+    </item>
+    
+    <item>
       <title>Configure Hostnames</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/hostname/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/hostname/</guid>
       <description>Configure Hostnames A hostname is a human-friendly name used to identify a device. An example of a hostname could be the name &amp;ldquo;Test.&amp;rdquo;
@@ -800,7 +787,7 @@ switch# show hostname Example Output switch(config)# hostname switch-test switch
     <item>
       <title>Configure Internet Group Multicast Protocol (igmp)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/igmp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/igmp/</guid>
       <description>Configure Internet Group Multicast Protocol (IGMP) The Internet Group Multicast Protocol (IGMP) is a communications protocol used by hosts and adjacent routers on IP networks to establish multicast group memberships. The host joins a multicast-group by sending a join request message towards the network router, and responds to queries sent from the network router by dispatching a join report.
@@ -811,7 +798,7 @@ General notes:
     <item>
       <title>Initial Prioritization</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/initial_prioritization/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/initial_prioritization/</guid>
       <description>Initial Prioritization For most switches, the local-priority has eight levels (0-7). Zero is the lowest priority. The allowed maximum will vary per product family. Local priority is used to determine which queue a packet will use. There are multiple options to configure the local-priority:
@@ -821,7 +808,7 @@ General notes:
     <item>
       <title>Initializing CANu</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/initializing_canu/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/initializing_canu/</guid>
       <description>Initializing CANU Initialize The CSM Automatic Network Utility (CANU) to help create the switch configuration. CANU can automatically parse CSI output or the Shasta System Layout Service (SLS) API for switch IPv4 addresses.
@@ -832,7 +819,7 @@ The sls_input_file.json file is generally stored in one of two places depending 
     <item>
       <title>Introduction</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/intro/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/intro/</guid>
       <description>Introduction The intent for the this documentation is to help install and manage Aruba CX network devices in an HPE Cray EX system installation.
@@ -842,7 +829,7 @@ The HPE Cray recommended way of configuring the network is with the CANU tool. T
     <item>
       <title>Key Features Used In The Management Network Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/key_features/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/key_features/</guid>
       <description>Key Features Used in the Management Network Configuration The following is a list of key features used in the management network configuration.
@@ -852,7 +839,7 @@ Feature List    Feature Notes Description     VSX MLAG  Layer 2 Redundancy, Allo
     <item>
       <title>Link Aggregation Group (lag)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/lag/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:13 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/lag/</guid>
       <description>Link Aggregation Group (LAG) Link Aggregation allows you to assign multiple physical links to one logical link that functions as a single, higher-speed link providing dramatically increased bandwidth.
@@ -863,9 +850,33 @@ switch# show lacp &amp;lt;interfaces|aggregates|configuration&amp;gt; Example Ou
     </item>
     
     <item>
+      <title>Link Layer Discovery Protocol (lldp)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/lldp/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:29 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/lldp/</guid>
+      <description>Link Layer Discovery Protocol (LLDP) LLDP is used to advertise the device&amp;rsquo;s identity and abilities and read other devices connected to the same network.
+ NOTE: LLDP is enabled by default.
+ Configuration Commands Enable an interface to receive or transmit LLDP packets:
+switch(config-if)# lldp &amp;lt;receive|transmit&amp;gt; Show commands to validate functionality:
+switch# show lldp [local-device|neighbor-info|statistics] Example Output switch# show lldp configuration LLDP Global Configuration: LLDP Enabled :Yes LLDP Transmit Interval :30 LLDP Hold time Multiplier :4 LLDP Transmit Delay Interval:2 LLDP Reinit time Interval :2 Optional TLVs configured: Management Address Port description Port VLAN-ID System capabilities System description System name LLDP Port Configuration: Port Tx-Enabled Rx-Enabled 1/1/1 Yes Yes .</description>
+    </item>
+    
+    <item>
+      <title>Check DHCP Lease Is Getting Allocated</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/check_dhcp_lease_is_getting_allocated/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_dhcp_lease_is_getting_allocated/</guid>
+      <description>Check DHCP Lease is Getting Allocated Check the KEA logs and verify that the lease is getting allocated.
+kubectl logs -n services pod/$(kubectl get -n services pods | grep kea | head -n1 | cut -f 1 -d &#39; &#39;) -c cray-dhcp-kea The following example shows that KEA is allocating a lease to 10.104.0.23. The lease MUST say DHCP4_LEASE_ALLOC; if it says DHCP4_LEASE_ADVERT, there is likely a problem.
+2021-04-21 00:13:05.416 INFO [kea-dhcp4.</description>
+    </item>
+    
+    <item>
       <title>Check For Duplicate Ip Addresses</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/duplicate_ip/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/duplicate_ip/</guid>
       <description>Check for Duplicate IP Addresses It is common to get an IP address that is not the correct one. A sign of a duplicate IP address is seeing a DECLINE message from the client to the server.
@@ -876,7 +887,7 @@ For example:
     <item>
       <title>Check Kea DHCP Logs</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/check_kea_dhcp_logs/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_kea_dhcp_logs/</guid>
       <description>Check KEA DHCP Logs Use this procedure to check the logs for a cray-dhcp-kea pod.
@@ -889,7 +900,7 @@ kubectl logs -n services -l app.kubernetes.io/instance=cray-dhcp-kea -c cray-dhc
     <item>
       <title>Check The Hardware State Manager (HSM)</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/check_hsm/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_hsm/</guid>
       <description>Check the Hardware State Manager (HSM) The Hardware State Manager (HSM) has two important parts:
@@ -900,7 +911,7 @@ curl -H &amp;quot;Authorization: Bearer ${TOKEN}&amp;quot; https://api_gw_servic
     <item>
       <title>Classifier Policies</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/classifier_policies/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/classifier_policies/</guid>
       <description>Classifier Policies Classifier policies allow a network administrator to define sets of rules based on network traffic addressing or other header content and use these rules to restrict or alter the passage of traffic through the switch.
@@ -911,7 +922,7 @@ Classification is achieved by creating a traffic class. There are three types of
     <item>
       <title>Configure Domain Name Service (DNS) Clients</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/dns-client/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/dns-client/</guid>
       <description>Configure Domain Name Service (DNS) Clients The Domain Name Service (DNS) translates domain and host names to and from IP addresses. A DNS client resolves hostnames to IP addresses by querying assigned DNS servers for the appropriate IP address.
@@ -923,7 +934,7 @@ switch(config)# ip dns domain-name NAME Show commands to validate functionality:
     <item>
       <title>Configure Domain Names</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/domain_name/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/domain_name/</guid>
       <description>Configure Domain Names A domain name is a name to identify the person, group, or organization that controls the devices within an area. An example of a domain name could be us.cray.com.
@@ -935,7 +946,7 @@ switch# show domain-name Expected Results  Administrators can configure the doma
     <item>
       <title>Configure Exec Banners</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/exec_banner/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/exec_banner/</guid>
       <description>Configure Exec Banners Exec banners are custom messages displayed to users attempting to connect to the management interfaces. Multiple lines of text can be stored using a custom delimiter to mark the end of message.
@@ -947,7 +958,7 @@ switch# show banner &amp;lt;motd|exec&amp;gt; Example Output switch(config)# ban
     <item>
       <title>Large Number Of DHCP Declines During A Node Boot</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/dhcp_decline/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/dhcp_decline/</guid>
       <description>Large Number of DHCP Declines During a Node Boot If something similar to the following is in the logs, this indicates an issue that an IP address being allocated is already being used and is not able to get the IP assigned to the device as previously set.
@@ -957,7 +968,7 @@ dracut-initqueue[1902]: wicked: eth0: Declining DHCPv4 lease with address 10.252
     <item>
       <title>Verify Computes/UANs/application Nodes</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/compute_uan_application_nodes/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:12 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:28 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/compute_uan_application_nodes/</guid>
       <description>Verify Computes/UANs/Application Nodes If the computes make it past PXE and go into the PXE shell, verify DNS and connectivity.
@@ -968,9 +979,30 @@ iPXE&amp;gt; nslookup address api-gw-service-nmn.local iPXE&amp;gt; echo ${addre
     </item>
     
     <item>
+      <title>Access Control Lists (ACLs)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/acl/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/acl/</guid>
+      <description>Access Control Lists (ACLs) ACLs are used to help improve network performance and restrict network usage by creating policies to eliminate unwanted IP traffic by filtering packets where they enter the switch on layer 2 and layer 3 interfaces. An ACL is an ordered list of one or more access control list entries (ACEs) prioritized by sequence number. An incoming packet is matched sequentially against each entry in an ACL.</description>
+    </item>
+    
+    <item>
+      <title>Address Resolution Protocol (arp)</title>
+      <link>/docs-csm/en-12/operations/network/management_network/aruba/arp/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/operations/network/management_network/aruba/arp/</guid>
+      <description>Address Resolution Protocol (ARP) ARP is commonly used for mapping IPv4 addresses to MAC addresses.
+Procedure   Configure static ARP on an interface.
+switch(config-if)# arp ipv4 IP-ADDR mac MAC-ADDR   Show commands to validate functionality: .
+switch# show arp   Expected Results  Administrators are able to ping the connected device Administrators can view the ARP entries  Back to Index</description>
+    </item>
+    
+    <item>
       <title>Backup A Switch Configuration</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/backup/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/backup/</guid>
       <description>Backup a Switch Configuration Copies the running configuration or the startup configuration to a remote location as a file. The configuration can be exported to a file of either type CLI or type JSON format. The  is used for the configuration of interfaces on a particular VRF.
@@ -981,7 +1013,7 @@ copy {running-config | startup-config} &amp;lt;REMOTE-URL&amp;gt; {cli | json} [
     <item>
       <title>Bluetooth Capabilities</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/bluetooth/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/bluetooth/</guid>
       <description>Bluetooth Capabilities The Bluetooth feature allows Bluetooth enabled devices to connect to and manage the switch on a wireless Bluetooth Personal Area Network (PAN). The user needs a supported USB Bluetooth dongle and to enable both the USB port and Bluetooth on the switch to use this feature. Bluetooth and REST write permissions for Bluetooth clients are both enabled by default.
@@ -992,7 +1024,7 @@ switch# usb mount Enable Bluetooth:</description>
     <item>
       <title>Border Gateway Protocol (BGP) Basics</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/bgp_basic/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/bgp_basic/</guid>
       <description>Border Gateway Protocol (BGP) Basics &amp;ldquo;The primary function of a Border Gateway Protocol (BGP) speaking system is to exchange network reachability information with other BGP systems. This network reachability information includes information on the list of Autonomous Systems (ASes) that reachability information traverses. This information is sufficient for constructing a graph of AS connectivity for this reachability, from which routing loops may be pruned and, at the AS level, some policy decisions may be enforced.</description>
@@ -1001,7 +1033,7 @@ switch# usb mount Enable Bluetooth:</description>
     <item>
       <title>Cable Diagnostics</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/cable_diagnostics/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/cable_diagnostics/</guid>
       <description>Cable Diagnostics Use the cable-diagnostic feature to test cables in the event where there might be a bad copper cable.
@@ -1014,7 +1046,7 @@ switch# diag cable-diagnostic &amp;lt;IFACE&amp;gt; Example output 6300# diagnos
     <item>
       <title>Check BGP And Metallb</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/check_bgp_and_metallb/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_bgp_and_metallb/</guid>
       <description>Check BGP and MetalLB Use the following procedure to verify if the spine switches are available and that MetalLB peering to the spine switches via Border Gateway Protocol (BGP) is established.
@@ -1028,7 +1060,7 @@ Check both spines if they are available (powered up):
     <item>
       <title>Check Current DHCP Leases</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/check_current_dhcp_leases/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_current_dhcp_leases/</guid>
       <description>Check Current DHCP Leases Use the Kea API to retrieve data from the DHCP lease database.
@@ -1037,20 +1069,9 @@ export TOKEN=$(curl -s -k -S -d grant_type=client_credentials -d client_id=admin
     </item>
     
     <item>
-      <title>Check DHCP Lease Is Getting Allocated</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/check_dhcp_lease_is_getting_allocated/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/check_dhcp_lease_is_getting_allocated/</guid>
-      <description>Check DHCP Lease is Getting Allocated Check the KEA logs and verify that the lease is getting allocated.
-kubectl logs -n services pod/$(kubectl get -n services pods | grep kea | head -n1 | cut -f 1 -d &#39; &#39;) -c cray-dhcp-kea The following example shows that KEA is allocating a lease to 10.104.0.23. The lease MUST say DHCP4_LEASE_ALLOC; if it says DHCP4_LEASE_ADVERT, there is likely a problem.
-2021-04-21 00:13:05.416 INFO [kea-dhcp4.</description>
-    </item>
-    
-    <item>
       <title>Use CANu To Verify, Generate, Or Compare Switch Configurations</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/canu_verify_generate_compare_switch_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:11 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:27 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/canu_verify_generate_compare_switch_configuration/</guid>
       <description>Use CANU to Verify, Generate, or Compare Switch Configurations Check Single Switch Firmware To check the firmware of a single switch run:
@@ -1061,32 +1082,11 @@ Check Firmware of Multiple Switches Multiple Aruba switches on a network can be 
     <item>
       <title>802.1x</title>
       <link>/docs-csm/en-12/operations/network/management_network/aruba/8021x/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:26 +0000</pubDate>
       
       <guid>/docs-csm/en-12/operations/network/management_network/aruba/8021x/</guid>
       <description>802.1X IEEE 802.1X is an IEEE standard for port-based network access control (PNAC). This standard provides an authentication mechanism to devices wishing to attach to a LAN or WLAN. IEEE 802.1X defines the encapsulation of the Extensible Authentication Protocol (EAP) over IEEE 802, which is known as EAP over LAN (EAPOL).
  NOTE: Port security is a feature of &amp;ldquo;edge&amp;rdquo; switches such as 63/6400, and it is not available on 83xx.</description>
-    </item>
-    
-    <item>
-      <title>Access Control Lists (ACLs)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/acl/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/acl/</guid>
-      <description>Access Control Lists (ACLs) ACLs are used to help improve network performance and restrict network usage by creating policies to eliminate unwanted IP traffic by filtering packets where they enter the switch on layer 2 and layer 3 interfaces. An ACL is an ordered list of one or more access control list entries (ACEs) prioritized by sequence number. An incoming packet is matched sequentially against each entry in an ACL.</description>
-    </item>
-    
-    <item>
-      <title>Address Resolution Protocol (arp)</title>
-      <link>/docs-csm/en-12/operations/network/management_network/aruba/arp/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:10 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/operations/network/management_network/aruba/arp/</guid>
-      <description>Address Resolution Protocol (ARP) ARP is commonly used for mapping IPv4 addresses to MAC addresses.
-Procedure   Configure static ARP on an interface.
-switch(config-if)# arp ipv4 IP-ADDR mac MAC-ADDR   Show commands to validate functionality: .
-switch# show arp   Expected Results  Administrators are able to ping the connected device Administrators can view the ARP entries  Back to Index</description>
     </item>
     
   </channel>

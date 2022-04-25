@@ -6,11 +6,11 @@
     <description>Recent content in Resource Material on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:12:45 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/resource_material/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:57 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/upgrade/1.0.1/resource_material/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Usage</title>
       <link>/docs-csm/en-10/upgrade/1.0.1/resource_material/readme/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:39 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:52 +0000</pubDate>
       
       <guid>/docs-csm/en-10/upgrade/1.0.1/resource_material/readme/</guid>
       <description>Usage Files in this directory (and its sub-directories) will be provided as reference material in support of the automated scripts which are intended to execute as much as possible during the upgrade process.</description>

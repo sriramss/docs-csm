@@ -6,21 +6,11 @@
     <description>Recent content in Background Information on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:16 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/background/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>NCN Mounts And File Systems</title>
-      <link>/docs-csm/en-10/background/ncn_mounts_and_file_systems/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
-      
-      <guid>/docs-csm/en-10/background/ncn_mounts_and_file_systems/</guid>
-      <description>NCN Mounts and File Systems The management nodes use drive storage for persistence and block storage. This page outlines reference information for these disks, their partition tables, and their management.
-Topics:  What Controls Partitioning? Plan of Record / Baseline  Problems When Above/Below Baseline Worker Nodes with ETCD  Disable Luks Expand the RAID     Disk Layout Quick-Reference Tables OverlayFS and Persistence  OverlayFS Example Persistent Directories  Layering - Upperdir and Lowerdir(s) Layering Real World Example   OverlayFS Control  Reset Toggles Reset On Next Boot Reset on Every Boot Re-sizing the Persistent Overlay Thin Overlay Feature     SystemD MetalFS Old/Retired FS-Labels  Details What Controls Partitioning?</description>
-    </item>
-    
+    <lastBuildDate>Mon, 25 Apr 2022 03:21:38 +0000</lastBuildDate><atom:link href="/docs-csm/en-10/background/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>NCN Networking</title>
       <link>/docs-csm/en-10/background/ncn_networking/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:39 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_networking/</guid>
       <description>NCN Networking Non-compute nodes and compute nodes have different network interfaces used for booting, this topic focuses on the network interfaces for management nodes.
@@ -31,7 +21,7 @@ Topics:  NCN Network Interfaces Device Naming Vendor and Bus ID Identification  
     <item>
       <title>NCN Operating System Releases</title>
       <link>/docs-csm/en-10/background/ncn_operating_system_releases/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:39 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_operating_system_releases/</guid>
       <description>NCN Operating System Releases The NCNs define their products per image layer:
@@ -42,7 +32,7 @@ The ses-release RPM is installed on top of the sle_HPC-release RPM in the Ceph i
     <item>
       <title>NCN Packages</title>
       <link>/docs-csm/en-10/background/ncn_packages/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:17 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:39 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_packages/</guid>
       <description>NCN Packages The management nodes boot from images which have many (RPM) packages installed. Lists of the packages for these images are generated on running nodes. A list of images can be collected by running a zypper command on one of the storage, worker, or master nodes.
@@ -53,7 +43,7 @@ Collection ncn-w002# zypper --disable-repositories se --installed-only | grep i+
     <item>
       <title>Cloud-init Basecamp Configuration</title>
       <link>/docs-csm/en-10/background/cloud-init_basecamp_configuration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/cloud-init_basecamp_configuration/</guid>
       <description>cloud-init Basecamp Configuration Metal Basecamp is a cloud-init DataSource available on the LiveCD. Basecamp&amp;rsquo;s configuration file offers many inputs for various cloud-init scripts baked into the NCN images.
@@ -64,7 +54,7 @@ This page details what those settings are.
     <item>
       <title>Cray Site Init Files</title>
       <link>/docs-csm/en-10/background/cray_site_init_files/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/cray_site_init_files/</guid>
       <description>Cray Site Init Files This page describes administrative knowledge around the pre-config files to csi or the output files from csi.
@@ -75,7 +65,7 @@ This page details what those settings are.
     <item>
       <title>NCN Boot Workflow</title>
       <link>/docs-csm/en-10/background/ncn_boot_workflow/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_boot_workflow/</guid>
       <description>NCN Boot Workflow Non-compute nodes boot two ways:
@@ -85,7 +75,7 @@ This page details what those settings are.
     <item>
       <title>NCN Images</title>
       <link>/docs-csm/en-10/background/ncn_images/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_images/</guid>
       <description>NCN Images The management nodes boot from NCN images which are created from layers on top of a common base image. The common image is customized with a Kubernetes layer for the master nodes and worker nodes. The common image is customized with a storage-ceph layer for the utility storage nodes..
@@ -93,9 +83,19 @@ Topics:  Overview of NCN Images LiveCD Server  Details Overview of NCN Images Th
     </item>
     
     <item>
+      <title>NCN Mounts And File Systems</title>
+      <link>/docs-csm/en-10/background/ncn_mounts_and_file_systems/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
+      
+      <guid>/docs-csm/en-10/background/ncn_mounts_and_file_systems/</guid>
+      <description>NCN Mounts and File Systems The management nodes use drive storage for persistence and block storage. This page outlines reference information for these disks, their partition tables, and their management.
+Topics:  What Controls Partitioning? Plan of Record / Baseline  Problems When Above/Below Baseline Worker Nodes with ETCD  Disable Luks Expand the RAID     Disk Layout Quick-Reference Tables OverlayFS and Persistence  OverlayFS Example Persistent Directories  Layering - Upperdir and Lowerdir(s) Layering Real World Example   OverlayFS Control  Reset Toggles Reset On Next Boot Reset on Every Boot Re-sizing the Persistent Overlay Thin Overlay Feature     SystemD MetalFS Old/Retired FS-Labels  Details What Controls Partitioning?</description>
+    </item>
+    
+    <item>
       <title>Non-compute Node Bios</title>
       <link>/docs-csm/en-10/background/ncn_bios/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:16 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:38 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/ncn_bios/</guid>
       <description>Non-Compute Node BIOS This page denotes BIOS settings that are desirable for non-compute nodes.
@@ -106,7 +106,7 @@ Topics:  Overview of NCN Images LiveCD Server  Details Overview of NCN Images Th
     <item>
       <title>Certificate Authority</title>
       <link>/docs-csm/en-10/background/certificate_authority/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:15 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:37 +0000</pubDate>
       
       <guid>/docs-csm/en-10/background/certificate_authority/</guid>
       <description>Certificate Authority While a system is being installed for the first time, a certificate authority (CA) is needed. This can be generated for a system, or one can be supplied from a customer intermediate CA. Outside of a new installation, there is no supported method to rotate or change the platform CA in this release.

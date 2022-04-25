@@ -6,11 +6,11 @@
     <description>Recent content in Node Management on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:50 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:08 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Check And Set The Metal.no-wipe Setting On NCNs</title>
       <link>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:55 +0000</pubDate>
       
       <guid>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/check_and_set_the_metalno-wipe_setting_on_ncns/</guid>
       <description>Check and Set the metal.no-wipe Setting on NCNs Configure the metal.no-wipe setting on non-compute nodes (NCNs) to preserve data on the nodes before doing an NCN reboot.
@@ -22,7 +22,7 @@ It also requires that the CSM_SCRIPTDIR variable was previously defined as part 
     <item>
       <title>Reboot NCNs</title>
       <link>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/reboot_ncns/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:35 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:55 +0000</pubDate>
       
       <guid>/docs-csm/en-09/upgrade/0.9/csm-0.9.5/operations/node_management/reboot_ncns/</guid>
       <description>Reboot NCNs The following is a high-level overview of the non-compute node (NCN) reboot workflow:

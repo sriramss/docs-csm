@@ -6,11 +6,11 @@
     <description>Recent content in Upgrade on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:13:09 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:23:19 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Prepare For Upgrade</title>
       <link>/docs-csm/en-12/upgrade/prepare_for_upgrade/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:09 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:19 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/prepare_for_upgrade/</guid>
       <description>Prepare for Upgrade Before beginning an upgrade to a new version of CSM, there are a few things to do on the system first.

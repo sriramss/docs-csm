@@ -6,21 +6,11 @@
     <description>Recent content in 1.2 on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:13:09 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title></title>
-      <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:09 +0000</pubDate>
-      
-      <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</guid>
-      <description>This is a reusable Python library for safely interacting with SLS network data (in JSON format).
-The library has been tested against Python version 3.6 and up.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 25 Apr 2022 03:23:19 +0000</lastBuildDate><atom:link href="/docs-csm/en-12/upgrade/1.2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Upgrade Automation</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/upgrade/upgrade_automation/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:09 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:19 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/upgrade/upgrade_automation/</guid>
       <description>Upgrade Automation This document describes how we automate upgrade process. In a nutshell, an upgrade is:
@@ -30,9 +20,19 @@ The prerequisites.sh script is required to run on both ncn-m001 and ncn-m002. If
     </item>
     
     <item>
+      <title></title>
+      <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</link>
+      <pubDate>Mon, 25 Apr 2022 03:23:18 +0000</pubDate>
+      
+      <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/sls_utils/readme/</guid>
+      <description>This is a reusable Python library for safely interacting with SLS network data (in JSON format).
+The library has been tested against Python version 3.6 and up.</description>
+    </item>
+    
+    <item>
       <title>SLS Updates Expert Mode</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/expert_mode/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:08 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/expert_mode/</guid>
       <description>SLS Updates Expert Mode The 1.2 SLS Upgrader aims to make the upgrade of SLS from pre-CMS 1.2 to CSM 1.2 as seamless as possible. However, certain system constraints and subnet sizes quickly necessitate overriding standard input.
@@ -43,7 +43,7 @@ Key Takeaways
     <item>
       <title>Upgrade SLS Offline From 1.0.x To Csm 1.2</title>
       <link>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:08 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:18 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/scripts/sls/readme.sls_upgrade/</guid>
       <description>Upgrade SLS Offline from CSM 1.0.x to CSM 1.2 Abstract During the update of SLS,at a minimum, answers to the following questions must be known prior to upgrading:
@@ -53,7 +53,7 @@ Key Takeaways
     <item>
       <title>Stage 0 - Prerequisites And Preflight Checks</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_0_prerequisites/</guid>
       <description>Stage 0 - Prerequisites and Preflight Checks  Note: CSM-1.0.1 or higher is required in order to upgrade to CSM-1.2.0
@@ -63,7 +63,7 @@ Key Takeaways
     <item>
       <title>Stage 1 - Ceph Image Upgrade</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_1/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_1/</guid>
       <description>Stage 1 - Ceph image upgrade   Run ncn-upgrade-ceph-nodes.sh for ncn-s001. Follow output of the script carefully. The script will pause for manual interaction.
@@ -75,7 +75,7 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-ceph-nodes.
     <item>
       <title>Stage 2 - Kubernetes Upgrade From 1.19.9 To 1.20.13</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_2/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_2/</guid>
       <description>Stage 2 - Kubernetes Upgrade from 1.19.9 to 1.20.13 Stage 2.1   Run ncn-upgrade-master-nodes.sh for ncn-m002. Follow output of the script carefully. The script will pause for manual interaction.
@@ -86,7 +86,7 @@ ncn-m001# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/ncn-upgrade-master-node
     <item>
       <title>Stage 3 - Service Upgrades</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_3/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_3/</guid>
       <description>Stage 3 - CSM Service Upgrades   Prepare assets:
@@ -101,7 +101,7 @@ ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/prepare-assets.sh --csm
     <item>
       <title>Stage 4 - Ceph Upgrade</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_4/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_4/</guid>
       <description>Stage 4 - Ceph Upgrade Addresses CVEs  CVE-2021-3531: Swift API denial of service. CVE-2021-3524: HTTP header injects via CORS in RGW. CVE-2021-3509: Dashboard XSS via token cookie. CVE-2021-20288: Unauthorized global_id reuse in cephx.  IMPORTANT:
@@ -111,7 +111,7 @@ ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/prepare-assets.sh --csm
     <item>
       <title>Stage 5 - Perform NCN Personalization</title>
       <link>/docs-csm/en-12/upgrade/1.2/stage_5/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:07 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:17 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/stage_5/</guid>
       <description>Stage 5 - Perform NCN Personalization Procedure   Set the root user password and SSH keys before running NCN personalization. The location where the password is stored in Vault has changed since previous CSM versions. See Configure the Root Password and Root SSH Keys in Vault.
@@ -121,7 +121,7 @@ ncn-m002# /usr/share/doc/csm/upgrade/1.2/scripts/upgrade/prepare-assets.sh --csm
     <item>
       <title>1.0.0 Or Later To 1.2.0 Upgrade Process (wip)</title>
       <link>/docs-csm/en-12/upgrade/1.2/readme/</link>
-      <pubDate>Sun, 24 Apr 2022 03:13:06 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:23:16 +0000</pubDate>
       
       <guid>/docs-csm/en-12/upgrade/1.2/readme/</guid>
       <description>CSM 1.0.0 or later to 1.2.0 Upgrade Process (WIP) #NOTE: this is a WIP doc

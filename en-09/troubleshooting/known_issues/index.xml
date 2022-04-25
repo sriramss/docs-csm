@@ -6,11 +6,20 @@
     <description>Recent content in Known Issues on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:51 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:09 +0000</lastBuildDate><atom:link href="/docs-csm/en-09/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CFS Sessions Are Stuck In Pending State</title>
+      <link>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:53 +0000</pubDate>
+      
+      <guid>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</guid>
+      <description>CFS Sessions are Stuck in Pending State In rare cases it is possible that a CFS session can be stuck in a pending state. Sessions should only enter the pending state briefly, for no more than a few seconds while the corresponding Kubernetes job is being scheduled. If any sessions are in this state for more than a minute, they can safely be deleted. If the sessions were created automatically and retires are enabled, the sessions should be recreated automatically.</description>
+    </item>
+    
     <item>
       <title>Copying File From The Cray-conman Pod Fails</title>
       <link>/docs-csm/en-09/troubleshooting/known_issues/conman_pod_kubernetes_copy_fails/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:53 +0000</pubDate>
       
       <guid>/docs-csm/en-09/troubleshooting/known_issues/conman_pod_kubernetes_copy_fails/</guid>
       <description>Copying file from the cray-conman pod fails The &amp;lsquo;tar&amp;rsquo; command is not installed in the pod image, so the usual kubernetes command to copy files from the cray-conman pod fails:
@@ -20,20 +29,11 @@ $ kubectl -n services cp cray-conman-92a6cb7d2a:/var/log/conman/console.x3000c1s
     <item>
       <title>Orphaned CFS Pods After Booting Or Rebooting</title>
       <link>/docs-csm/en-09/troubleshooting/known_issues/orphaned_cfs_pods/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:34 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:53 +0000</pubDate>
       
       <guid>/docs-csm/en-09/troubleshooting/known_issues/orphaned_cfs_pods/</guid>
       <description>Orphaned CFS Pods After Booting or Rebooting After a boot or reboot a few CFS Pods may continue running even after they&amp;rsquo;ve finished and never go away. The state of these Pod is that the only container still running in the Pod is istio-proxy and the Pod doesn&amp;rsquo;t have a metadata.ownerReference.
 If kubectl get pods -n services | grep cfs is run after a boot or reboot, the orphaned CFS Pods look like this:</description>
-    </item>
-    
-    <item>
-      <title>CFS Sessions Are Stuck In Pending State</title>
-      <link>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:33 +0000</pubDate>
-      
-      <guid>/docs-csm/en-09/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</guid>
-      <description>CFS Sessions are Stuck in Pending State In rare cases it is possible that a CFS session can be stuck in a pending state. Sessions should only enter the pending state briefly, for no more than a few seconds while the corresponding Kubernetes job is being scheduled. If any sessions are in this state for more than a minute, they can safely be deleted. If the sessions were created automatically and retires are enabled, the sessions should be recreated automatically.</description>
     </item>
     
   </channel>

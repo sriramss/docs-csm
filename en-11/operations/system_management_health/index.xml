@@ -6,11 +6,11 @@
     <description>Recent content in System Management Health on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:12:56 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:23:07 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/operations/system_management_health/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>System Management Health</title>
       <link>/docs-csm/en-11/operations/system_management_health/system_management_health/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:42 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/system_management_health/system_management_health/</guid>
       <description>System Management Health The primary goal of the System Management Health service is to enable system administrators to assess the health of their system. Operators need to quickly and efficiently troubleshoot system issues as they occur and be confident that a lack of issues indicates the system is operating normally. This service currently runs as a Helm chart on the system&amp;rsquo;s management Kubernetes cluster and monitors the health status of core system components, triggering alerts as potential issues are observed.</description>
@@ -19,7 +19,7 @@
     <item>
       <title>System Management Health Checks And Alerts</title>
       <link>/docs-csm/en-11/operations/system_management_health/system_management_health_checks_and_alerts/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:42 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/system_management_health/system_management_health_checks_and_alerts/</guid>
       <description>System Management Health Checks and Alerts A health check corresponds to a Prometheus query against metrics aggregated to the Prometheus instance. Core platform components like Kubernetes and Istio collect service-related metrics by default, which enables the System Management Health service to implement generic service health checks without custom instrumentation. Health checks are intended to be coarse-grained and comprehensive, as opposed to fine-grained and exhaustive. Health checks related to infrastructure adhere to the Utilization Saturation Errors (USE) method whereas services follow the Rate Errors Duration (RED) method.</description>
@@ -28,7 +28,7 @@
     <item>
       <title>Troubleshoot Prometheus Alerts</title>
       <link>/docs-csm/en-11/operations/system_management_health/troubleshoot_prometheus_alerts/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:42 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/system_management_health/troubleshoot_prometheus_alerts/</guid>
       <description>Troubleshoot Prometheus Alerts General Prometheus Alert Troubleshooting Topics
@@ -40,7 +40,7 @@ PostgresqlInactiveReplicationSlot Alerts for PostgresqlInactiveReplicationSlot o
     <item>
       <title>Access System Management Health Services</title>
       <link>/docs-csm/en-11/operations/system_management_health/access_system_management_health_services/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:27 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:41 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/system_management_health/access_system_management_health_services/</guid>
       <description>Access System Management Health Services All System Management Health services are exposed outside the cluster through the Keycloak gatekeeper and Istio&amp;rsquo;s ingress gateway to enforce the authentication and authorization policies. The URLs to access these services are available on any system with CAN, BGP, MetalLB, and external DNS properly configured.
@@ -50,7 +50,7 @@ The {{shasta_domain}} value in the examples below is an Ansible variable defined
     <item>
       <title>Configure Prometheus Email Alert Notifications</title>
       <link>/docs-csm/en-11/operations/system_management_health/configure_prometheus_email_alert_notifications/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:27 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:41 +0000</pubDate>
       
       <guid>/docs-csm/en-11/operations/system_management_health/configure_prometheus_email_alert_notifications/</guid>
       <description>Configure Prometheus Email Alert Notifications Configure an email alert notification for all Prometheus Postgres replication alerts: PostgresReplicationLagSMA, PostgresReplicationServices, PostgresqlFollowerReplicationLagSMA and PostgresqlFollowerReplicationLagServices.

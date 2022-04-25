@@ -6,11 +6,21 @@
     <description>Recent content in Introduction To Installation on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:11:29 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Apr 2022 03:21:49 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/introduction/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Documentation Conventions</title>
+      <link>/docs-csm/en-11/introduction/documentation_conventions/</link>
+      <pubDate>Mon, 25 Apr 2022 03:21:49 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/introduction/documentation_conventions/</guid>
+      <description>Documentation Conventions Several conventions have been used in the preparation of this documentation.
+ Markdown Format File Formats Typographic Conventions Command Prompt Conventions which describe the context for user, host, directory, chroot environment, or container environment  Markdown Format This documentation is in Markdown format. Although much of it can be viewed with any text editor, a richer experience will come from using a tool which can render the Markdown to show different font sizes, the use of bold and italics formatting, inclusion of diagrams and screen shots as image files, and to follow navigational links within a topic file and to other files.</description>
+    </item>
+    
     <item>
       <title>Scenarios For Shasta V1.5</title>
       <link>/docs-csm/en-11/introduction/scenarios/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:29 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:49 +0000</pubDate>
       
       <guid>/docs-csm/en-11/introduction/scenarios/</guid>
       <description>Scenarios for Shasta v1.5 There are multiple scenarios for installing CSM software which are described in this documentation with many supporting procedures.
@@ -20,7 +30,7 @@
     <item>
       <title>CAPMC Deprecation Notice Many Capmc V1 Features Are Being Partially Deprecated</title>
       <link>/docs-csm/en-11/introduction/capmc_deprecation/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:48 +0000</pubDate>
       
       <guid>/docs-csm/en-11/introduction/capmc_deprecation/</guid>
       <description>CAPMC Deprecation Notice: many CAPMC v1 features are being partially deprecated Deprecated Features in CSM 1.0 Many CAPMC v1 REST API and CLI features are being deprecated as part of CSM version 1.0; Full removal of the following deprecated CAPMC features will happen in CSM version 1.3. Further development of CAPMC service or CLI has stopped. CAPMC has entered end-of-life but will still be generally available. CAPMC is going to be replaced with the Power Control Service (PCS) in a future release.</description>
@@ -29,7 +39,7 @@
     <item>
       <title>Differences From Previous Release</title>
       <link>/docs-csm/en-11/introduction/differences/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:48 +0000</pubDate>
       
       <guid>/docs-csm/en-11/introduction/differences/</guid>
       <description>Differences from Previous Release The most noteworthy changes since the previous release are described here.
@@ -37,19 +47,9 @@ Topics:  New Features Deprecating Features Deprecated Features Other Changes  De
     </item>
     
     <item>
-      <title>Documentation Conventions</title>
-      <link>/docs-csm/en-11/introduction/documentation_conventions/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:28 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/introduction/documentation_conventions/</guid>
-      <description>Documentation Conventions Several conventions have been used in the preparation of this documentation.
- Markdown Format File Formats Typographic Conventions Command Prompt Conventions which describe the context for user, host, directory, chroot environment, or container environment  Markdown Format This documentation is in Markdown format. Although much of it can be viewed with any text editor, a richer experience will come from using a tool which can render the Markdown to show different font sizes, the use of bold and italics formatting, inclusion of diagrams and screen shots as image files, and to follow navigational links within a topic file and to other files.</description>
-    </item>
-    
-    <item>
       <title>Overview</title>
       <link>/docs-csm/en-11/introduction/csm_overview/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:48 +0000</pubDate>
       
       <guid>/docs-csm/en-11/introduction/csm_overview/</guid>
       <description>CSM Overview This CSM Overview describes the Cray System Management ecosystem with its hardware, software, and network. It describes how to access these services and components.
@@ -59,7 +59,7 @@ The CSM installation prepares and deploys a distributed system across a group of
     <item>
       <title>PowerDNS Migration Notice</title>
       <link>/docs-csm/en-11/introduction/powerdns_migration/</link>
-      <pubDate>Sun, 24 Apr 2022 03:11:28 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:21:48 +0000</pubDate>
       
       <guid>/docs-csm/en-11/introduction/powerdns_migration/</guid>
       <description>PowerDNS Migration Notice The migration to PowerDNS as the authoritative DNS source and the introduction of Bifurcated CAN (Customer Access Network) will result in some changes to the node and service naming conventions.

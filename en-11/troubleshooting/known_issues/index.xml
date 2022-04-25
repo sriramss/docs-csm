@@ -6,20 +6,11 @@
     <description>Recent content in Known Issues on Cray System Management (CSM)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 24 Apr 2022 03:12:35 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Air Cooled Hardware Is Not Getting Properly Discovered With Aruba Leaf Switches.</title>
-      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</guid>
-      <description>Air cooled hardware is not getting properly discovered with Aruba leaf switches. Symptoms:  The System has Aruba leaf switches. Air cooled hardware is reported to not be present under State Components and Inventory Redfish Endpoints in Hardware State Manager by the hsm_discovery_verify.sh script. BMCs have IP addresses given out by DHCP, but in DNS their xname hostname does not resolve.  Procedure to determine if you affected by this known issue:   Determine the name of the last HSM discovery job that ran.</description>
-    </item>
-    
+    <lastBuildDate>Mon, 25 Apr 2022 03:22:48 +0000</lastBuildDate><atom:link href="/docs-csm/en-11/troubleshooting/known_issues/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>BOS/boa Incorrect Command Is Output To Rerun A Failed Operation.</title>
       <link>/docs-csm/en-11/troubleshooting/known_issues/incorrect_output_for_bos_command_rerun/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:32 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:46 +0000</pubDate>
       
       <guid>/docs-csm/en-11/troubleshooting/known_issues/incorrect_output_for_bos_command_rerun/</guid>
       <description>BOS/BOA Incorrect command is output to rerun a failed operation. When the Boot Orchestration Agent (BOA), an agent of the Boot Orchestration Service (BOS), encounters a failure, it issues a command to rerun the operation for any nodes that experienced the failure. However, the syntax of this command is faulty.
@@ -27,9 +18,36 @@ The faulty command includes squiggly braces around a comma separated list of quo
     </item>
     
     <item>
+      <title>Hms Discovery Job Not Creating Redfishendpoints In Hardware State Manager</title>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:46 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</guid>
+      <description>HMS Discovery job not creating RedfishEndpoints in Hardware State Manager There is a known issue with the HMS Discovery cronjob when a BMC does not respond by its IP address for some reason the discovery job will not create a RedfishEndpoint for the BMC in Hardware State Manager (HSM). However, it does update the BMC MAC address in HSM with its xname. The discovery job only creates a new RedfishEndpoints when it encounters an unknown MAC address without a xname associated with it.</description>
+    </item>
+    
+    <item>
+      <title>Air Cooled Hardware Is Not Getting Properly Discovered With Aruba Leaf Switches.</title>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:45 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_aruba_snmp_issue/</guid>
+      <description>Air cooled hardware is not getting properly discovered with Aruba leaf switches. Symptoms:  The System has Aruba leaf switches. Air cooled hardware is reported to not be present under State Components and Inventory Redfish Endpoints in Hardware State Manager by the hsm_discovery_verify.sh script. BMCs have IP addresses given out by DHCP, but in DNS their xname hostname does not resolve.  Procedure to determine if you affected by this known issue:   Determine the name of the last HSM discovery job that ran.</description>
+    </item>
+    
+    <item>
+      <title>CFS Sessions Are Stuck In Pending State</title>
+      <link>/docs-csm/en-11/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</link>
+      <pubDate>Mon, 25 Apr 2022 03:22:45 +0000</pubDate>
+      
+      <guid>/docs-csm/en-11/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</guid>
+      <description>CFS Sessions are Stuck in Pending State In rare cases it is possible that a CFS session can be stuck in a pending state. Sessions should only enter the pending state briefly, for no more than a few seconds while the corresponding Kubernetes job is being scheduled. If any sessions are in this state for more than a minute, they can safely be deleted. If the sessions were created automatically and retires are enabled, the sessions should be recreated automatically.</description>
+    </item>
+    
+    <item>
       <title>Cray Cli 403 Forbidden Errors</title>
       <link>/docs-csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:32 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:45 +0000</pubDate>
       
       <guid>/docs-csm/en-11/troubleshooting/known_issues/craycli_403_forbidden_errors/</guid>
       <description>Cray CLI 403 Forbidden Errors There is a known issue where the keycloak configuration obtained from LDAP is incomplete causing the keycloak-users-localize job to fail to complete. This, in turn, causes 403 Forbidden errors when trying to use the craycli. This can also cause a keycloak test to fail during CSM health validation.
@@ -38,30 +56,12 @@ Fix To recover from this situation, the following can be done.
     </item>
     
     <item>
-      <title>Hms Discovery Job Not Creating Redfishendpoints In Hardware State Manager</title>
-      <link>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:32 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/troubleshooting/known_issues/discovery_job_not_creating_redfish_endpoints/</guid>
-      <description>HMS Discovery job not creating RedfishEndpoints in Hardware State Manager There is a known issue with the HMS Discovery cronjob when a BMC does not respond by its IP address for some reason the discovery job will not create a RedfishEndpoint for the BMC in Hardware State Manager (HSM). However, it does update the BMC MAC address in HSM with its xname. The discovery job only creates a new RedfishEndpoints when it encounters an unknown MAC address without a xname associated with it.</description>
-    </item>
-    
-    <item>
       <title>Sat/HSM/CAPMC Component Power State Mismatch</title>
       <link>/docs-csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:32 +0000</pubDate>
+      <pubDate>Mon, 25 Apr 2022 03:22:45 +0000</pubDate>
       
       <guid>/docs-csm/en-11/troubleshooting/known_issues/component_power_state_mismatch/</guid>
       <description>SAT/HSM/CAPMC Component Power State Mismatch Because of various hardware or communication issues, the node state reported by SAT and HSM (Hardware State Manager) may become out of sync with the actual hardware state reported by CAPMC or via redfish. In most cases this will be noticed when trying to power on or off nodes with BOS/BOA and will present as SAT or HSM reporting nodes are &amp;lsquo;On&amp;rsquo; while CAPMC reports them as &amp;lsquo;Off&amp;rsquo; (or vice versa).</description>
-    </item>
-    
-    <item>
-      <title>CFS Sessions Are Stuck In Pending State</title>
-      <link>/docs-csm/en-11/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</link>
-      <pubDate>Sun, 24 Apr 2022 03:12:31 +0000</pubDate>
-      
-      <guid>/docs-csm/en-11/troubleshooting/known_issues/cfs_sessions_stuck_in_pending/</guid>
-      <description>CFS Sessions are Stuck in Pending State In rare cases it is possible that a CFS session can be stuck in a pending state. Sessions should only enter the pending state briefly, for no more than a few seconds while the corresponding Kubernetes job is being scheduled. If any sessions are in this state for more than a minute, they can safely be deleted. If the sessions were created automatically and retires are enabled, the sessions should be recreated automatically.</description>
     </item>
     
   </channel>
